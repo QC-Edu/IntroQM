@@ -49,8 +49,7 @@ repository:
 
 #add launching buttons
 launch_buttons:
-  colab_url: https://colab.research.google.com/drive/1cbFLao_CTgxl1QpREotpcDzvudIsb5mb # The URL for your BinderHub (e.g., https://mybinder.org)
-  thebe: true
+  thebe                  : true
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
