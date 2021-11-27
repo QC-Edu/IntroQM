@@ -41,16 +41,16 @@ parse:
 bibtex_bibfiles:
   - references.bib
 
-#add launching buttons
-launch_buttons:
-  colab_url: https://hub.gke2.mybinder.org/user/richrick1-introqm2022-3exbzhdo/lab  # The URL for your BinderHub (e.g., https://mybinder.org)
-  thebe: true
-
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  url: https://github.com/RichRick1/IntroQM2022  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
+
+#add launching buttons
+launch_buttons:
+  binder_url: https://hub.gke2.mybinder.org/user/richrick1-introqm2022-3exbzhdo/lab  # The URL for your BinderHub (e.g., https://mybinder.org)
+  thebe: true
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
