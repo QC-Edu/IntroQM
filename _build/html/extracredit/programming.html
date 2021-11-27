@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra Credit Problems for Jupyter, Python, Numpy, etc. &#8212; My sample book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main_content.html">
+   Introduction to Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ipynb/jupyter.html">
+   1. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/Jupyter.html">
+     1.10. Introduction to Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/python.html">
+     1.11. Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/numpy.html">
+     1.12. Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/syzygy.html">
+     1.13. Computing Course Marks with Jupyter, Python, Numpy, and syzygy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ipynb/History.html">
+   2. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/IntroQM.html">
+     2.10. Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ipynb/IntroQMkey.html">
+     2.11. Assignment Key including extra problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/SchrodingerEq.html">
+   3. The Schrödinger Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/ParticleIn1DBox.html">
+   4. The Particle in a Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/ParticleInMultiD.html">
+   5. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/Postulates.html">
+   6. The Postulates of Quantum Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/OneElectronAtoms.html">
+   7. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/ApproximateMethods.html">
+   8. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ipynb/ManyElSystems.html">
+   9. Many-Electron Systems
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/extracredit/programming.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fextracredit/programming.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#codecademy-python-2">
+   Codecademy Python 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linkedin-learning">
+   Linkedin Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-python-tests">
+   Online Python Tests
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="extra-credit-problems-for-jupyter-python-numpy-etc">
+<h1>Extra Credit Problems for Jupyter, Python, Numpy, etc.<a class="headerlink" href="#extra-credit-problems-for-jupyter-python-numpy-etc" title="Permalink to this headline">¶</a></h1>
+<p>You can complete additional courses on LinkedIn Learning or other venues for extra credit. The below links are curated to be especially helpful and useful, but almost any online activity that you complete and can document the completion of is acceptable. I’ve indicated how many pages of homework this is considered to be equivalent to.</p>
+<div class="section" id="codecademy-python-2">
+<h2><a class="reference external" href="https://www.codecademy.com/learn/learn-python">Codecademy Python 2</a><a class="headerlink" href="#codecademy-python-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>This is Python 2, but Python 3 isn’t very different, and the Python 3 course requires a (paid) subscription to Codecademy, while the Python 2 course does not. To do this assignment, sign up for Codecademy (free) and work through the 12 topical modules by reading about Python syntax and solving the interactive web-based exercises on your own. If you get stuck, you’ll be provided with instructive hints. This <a class="reference external" href="https://www.codecademy.com/learn/learn-python">course</a> will take <em>much</em> less than the time they estimate, because you can skip projects and quizzes that are accessible only through a (paid) PRO account. <strong>(100 points)</strong></p>
+<ul>
+<li><p>Instructions: Take a screenshot of the certificate of completion and submit it for the extra credit marks. See image below.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="image" src="../_images/codecademy.png" /></p>
+</div>
+<div class="section" id="linkedin-learning">
+<h2>Linkedin Learning<a class="headerlink" href="#linkedin-learning" title="Permalink to this headline">¶</a></h2>
+<p>You can complete relevant LinkedIn Learning courses to earn extra credit; one will earn roughly 10 points/hour by doing this, though I will “round up” somewhat because working through the material in these courses does take time, I know. For example, you can choose to complete some of the courses you’ve already (partly) seen in the course material.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/programming-foundations-fundamentals-3/the-fundamentals-of-programming?u=56982905">Programming Foundations: Fundamentals</a></p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/python-data-analysis-2/get-started-in-data-analysis-with-python?u=56982905">Python Data Analysis</a></p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/learning-julia/julia-power-like-python-speed-like-c">Julia Power like Python, Speed like C</a></p>
+<ul>
+<li><p>Instructions: Submit the LinkedIn Learning certificate of completion for extra credit.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="online-python-tests">
+<h2>Online Python Tests<a class="headerlink" href="#online-python-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/python/exercise.asp"><strong>Python Exercises from W3Schools</strong></a> 95 simple interactive questions grouped by topic. <strong>(~1 hour; 10 points)</strong></p>
+<ul>
+<li><p>Instructions: Try to solve an exercise by filling in the missing parts of code. If you got stuck, hit the “Show Answer” button to see what you’ve done wrong. If you need to practice a certain topic more, you can go directly to the associated interactive tutorial. At the end, submit a screenshot showing “Completed 95 of 95 Exercises” for extra credit.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=PYTHON"><strong>Python Quiz from W3Schools</strong></a> 25 multiple-choice questions. <strong>(~10 minutes; 3 points)</strong></p>
+<ul>
+<li><p>Instructions: Your total score and the correct answers will be displayed at the end of the quiz. Take a screen shot of this page and receive up to 3 points (depending on your score).</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://pynative.com/python-quizzes/"><strong>PYnative Python Quizzes</strong></a> 14 topic-specific quizzes each with ~15 questions each. <strong>(~5 minutes per quiz; 2 points)</strong></p>
+<ul>
+<li><p>Instructions: Click on “Solve Quiz” to test your knowledge on each topic. Upon submitting, your score, correct answers are displayed. Take a screenshot of the “passed” quiz and submit it for extra credit.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://realpython.com/quizzes/"><strong>Interactive Python Quizzes from Real Python</strong></a> A collection of short interactive quizzes. <strong>(~5 minutes per quiz; 2 points)</strong></p>
+<ul>
+<li><p>Instructions: Take the quiz and then submit a screenshot of the score report to show that you passed the quiz.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://exercism.io/"><strong>Exercism</strong></a> Free mentor-based learning pathways for <a class="reference external" href="https://exercism.io/tracks/python">Python</a>, <a class="reference external" href="https://exercism.io/tracks/julia">Julia</a>, and much more.</p>
+<ul>
+<li><p>Instructions: If you use Exercism, you would be able to submit work you create therein for extra credit.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./extracredit"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

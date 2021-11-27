@@ -1,0 +1,59 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: main_content
+parts:
+  - caption: Topics
+    numbered: True
+    chapters:
+    - file: ipynb/jupyter.ipynb
+      title: Basics of Jupyter, Python, and Programming
+      sections:
+      - file: problems/Jupyter.md
+        title: Introduction to Jupyter
+      - file: problems/python.md
+        title: Basic Python
+      - file: problems/numpy.md
+        title: Introduction to Numpy
+      - file: problems/syzygy.md
+        title: Computing Course Marks with Jupyter, Python, Numpy, and syzygy
+
+    - file: ipynb/History.ipynb
+      title: From Newton to Schrödinger
+      sections:
+      - file: problems/IntroQM.md
+        title: Assignment
+      - file: ipynb/IntroQMkey.ipynb
+        title: Assignment Key including extra problems
+
+    - file: ipynb/SchrodingerEq.ipynb
+      title: The Schrödinger Equation
+
+    - file: ipynb/ParticleIn1DBox.ipynb
+      title: The Particle in a Box
+
+    - file: ipynb/ParticleInMultiD.ipynb
+      title: Particles confined in two and three dimensions
+
+    - file: ipynb/Postulates.ipynb
+      title: The Postulates of Quantum Mechanics
+
+    - file: ipynb/OneElectronAtoms.ipynb
+      title: 1-electron atoms
+
+    - file: ipynb/ApproximateMethods.ipynb
+      title: Approximate Methods
+    
+    - file: ipynb/ManyElSystems.ipynb
+      title:  "Many-electron systems: Structure and Spectroscopy"
+      sections:
+      - file: documents/2elatom.pdf
+        title: 2-electron atoms
+      - file: documents/atomsshort.pdf
+        title: Many-electron atoms
+      - file: documents/PES.pdf
+        title: The Born-Oppenheimer Approximation
+      - file: documents/molecules.pdf
+        title: Molecules
+ 

@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Postulates of Quantum Mechanics &#8212; My sample book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. One-Electron Atoms" href="OneElectronAtoms.html" />
+    <link rel="prev" title="5. Multi-dimensional Particle-in-a-Box" href="ParticleInMultiD.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main_content.html">
+   Introduction to Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   1. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/Jupyter.html">
+     1.10. Introduction to Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/python.html">
+     1.11. Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/numpy.html">
+     1.12. Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/syzygy.html">
+     1.13. Computing Course Marks with Jupyter, Python, Numpy, and syzygy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="History.html">
+   2. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/IntroQM.html">
+     2.10. Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroQMkey.html">
+     2.11. Assignment Key including extra problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SchrodingerEq.html">
+   3. The Schrödinger Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleIn1DBox.html">
+   4. The Particle in a Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   5. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. The Postulates of Quantum Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OneElectronAtoms.html">
+   7. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApproximateMethods.html">
+   8. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ManyElSystems.html">
+   9. Many-Electron Systems
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ipynb/Postulates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fipynb/Postulates.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ipynb/Postulates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   6.1. 🥅 Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   6.2. Postulates of Quantum Mechanics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
+     6.2.1.
+     <strong>
+      Completeness
+     </strong>
+     : All Observable Properties of a System can be Inferred from its Wavefunction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
+     6.2.2.
+     <strong>
+      Schrodinger Postulate
+     </strong>
+     : The wavefunction is found by solving the Schrödinger equation.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
+     6.2.3.
+     <strong>
+      Born Postulate
+     </strong>
+     :
+     <span class="math notranslate nohighlight">
+      \(\left|\Psi(x,t) \right|^2\)
+     </span>
+     is the probability of observing the system at position
+     <span class="math notranslate nohighlight">
+      \(x\)
+     </span>
+     at time
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     .
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
+     6.2.4.
+     <strong>
+      Correspondence Principle
+     </strong>
+     : Every observable operator corresponds to a linear Hermitian operator.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system">
+   6.3. Completeness of
+   <span class="math notranslate nohighlight">
+    \(\Psi\)
+   </span>
+   as a descriptor of a quantum system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schrodinger-postulate">
+   6.4. Schrödinger Postulate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#born-postulate">
+   6.5. Born Postulate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correspondence-principle-and-hermitian-operators">
+   6.6. Correspondence Principle and Hermitian Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correspondence-principle">
+     6.6.1. Correspondence Principle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hermitian-operators">
+     6.6.2. Hermitian Operators
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
+       6.6.2.1. 📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-momentum-operator-is-hermitian">
+       6.6.2.2. 📝 Exercise: Show that the momentum operator is Hermitian.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observable-values">
+     6.6.3. Observable Values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
+       6.6.3.1. 📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis">
+     6.6.4. Eigenvectors of Hermitian Operators form a Complete Basis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
+       6.6.4.1. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expectation-values">
+     6.6.5. Expectation Values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-equality-in-the-last-equation-is-true">
+       6.6.5.1. 📝 Exercise: Show that the equality in the last equation is true
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-born-postulate-revisited">
+     6.6.6. The Born Postulate, revisited
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bra-ket-notation-and-the-analogy-to-linear-algebra">
+   6.7. Bra- Ket- Notation and the Analogy to Linear Algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-expansion-in-a-basis-set">
+   6.8. Application: Expansion in a Basis Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-heisenberg-uncertainty-principle">
+   6.9. Application: Heisenberg Uncertainty Principle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-variational-principle">
+   6.10. Application: Variational Principle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
+     6.10.1. 📝 Exercise: Show why the expectation value of
+     <span class="math notranslate nohighlight">
+      \(Q\)
+     </span>
+     is always a lower bound on the largest eigenvalue of
+     <span class="math notranslate nohighlight">
+      \(\hat{Q}\)
+     </span>
+     .
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   6.11. Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   6.12. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   6.13. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   6.14. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   6.15. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   6.16. 📚 References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Postulates-of-Quantum-Mechanics" data-toc-modified-id="Postulates-of-Quantum-Mechanics-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Postulates of Quantum Mechanics</a></span><ul class="toc-item"><li><span><a href="#🥅-Learning-Objectives" data-toc-modified-id="🥅-Learning-Objectives-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>🥅 Learning Objectives</a></span></li><li><span><a href="#Postulates-of-Quantum-Mechanics" data-toc-modified-id="Postulates-of-Quantum-Mechanics-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Postulates of Quantum Mechanics</a></span><ul class="toc-item"><li><span><a href="#Completeness:-All-Observable-Properties-of-a-System-can-be-Inferred-from-its-Wavefunction" data-toc-modified-id="Completeness:-All-Observable-Properties-of-a-System-can-be-Inferred-from-its-Wavefunction-5.2.1"><span class="toc-item-num">5.2.1&nbsp;&nbsp;</span><strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction</a></span></li><li><span><a href="#Schrodinger-Postulate:-The-wavefunction-is-found-by-solving-the-Schrödinger-equation." data-toc-modified-id="Schrodinger-Postulate:-The-wavefunction-is-found-by-solving-the-Schrödinger-equation.-5.2.2"><span class="toc-item-num">5.2.2&nbsp;&nbsp;</span><strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.</a></span></li><li><span><a href="#Born-Postulate:-$\left|\Psi(x,t)-\right|^2$-is-the-probability-of-observing-the-system-at-position-$x$-at-time-$t$." data-toc-modified-id="Born-Postulate:-$\left|\Psi(x,t)-\right|^2$-is-the-probability-of-observing-the-system-at-position-$x$-at-time-$t$.-5.2.3"><span class="toc-item-num">5.2.3&nbsp;&nbsp;</span><strong>Born Postulate</strong>: $\left|\Psi(x,t) \right|^2$ is the probability of observing the system at position $x$ at time $t$.</a></span></li><li><span><a href="#Correspondence-Principle:-Every-observable-operator-corresponds-to-a-linear-Hermitian-operator." data-toc-modified-id="Correspondence-Principle:-Every-observable-operator-corresponds-to-a-linear-Hermitian-operator.-5.2.4"><span class="toc-item-num">5.2.4&nbsp;&nbsp;</span><strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.</a></span></li></ul></li><li><span><a href="#Completeness-of-$\Psi$-as-a-descriptor-of-a-quantum-system" data-toc-modified-id="Completeness-of-$\Psi$-as-a-descriptor-of-a-quantum-system-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Completeness of $\Psi$ as a descriptor of a quantum system</a></span></li><li><span><a href="#Schrödinger-Postulate" data-toc-modified-id="Schrödinger-Postulate-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Schrödinger Postulate</a></span></li><li><span><a href="#Born-Postulate" data-toc-modified-id="Born-Postulate-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Born Postulate</a></span></li><li><span><a href="#Correspondence-Principle-and-Hermitian-Operators" data-toc-modified-id="Correspondence-Principle-and-Hermitian-Operators-5.6"><span class="toc-item-num">5.6&nbsp;&nbsp;</span>Correspondence Principle and Hermitian Operators</a></span><ul class="toc-item"><li><span><a href="#Correspondence-Principle" data-toc-modified-id="Correspondence-Principle-5.6.1"><span class="toc-item-num">5.6.1&nbsp;&nbsp;</span>Correspondence Principle</a></span></li><li><span><a href="#Hermitian-Operators" data-toc-modified-id="Hermitian-Operators-5.6.2"><span class="toc-item-num">5.6.2&nbsp;&nbsp;</span>Hermitian Operators</a></span><ul class="toc-item"><li><span><a href="#📝-Exercise:-An-alternative-definition-for-an-Hermitian-operator-is-below.-Show-that-this-is-equivalent-to-the-preceding-definition." data-toc-modified-id="📝-Exercise:-An-alternative-definition-for-an-Hermitian-operator-is-below.-Show-that-this-is-equivalent-to-the-preceding-definition.-5.6.2.1"><span class="toc-item-num">5.6.2.1&nbsp;&nbsp;</span>📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.</a></span></li><li><span><a href="#📝-Exercise:-Show-that-the-momentum-operator-is-Hermitian." data-toc-modified-id="📝-Exercise:-Show-that-the-momentum-operator-is-Hermitian.-5.6.2.2"><span class="toc-item-num">5.6.2.2&nbsp;&nbsp;</span>📝 Exercise: Show that the momentum operator is Hermitian.</a></span></li></ul></li><li><span><a href="#Observable-Values" data-toc-modified-id="Observable-Values-5.6.3"><span class="toc-item-num">5.6.3&nbsp;&nbsp;</span>Observable Values</a></span><ul class="toc-item"><li><span><a href="#📝-Exercise:-Show-that-the-eigenvalues-of-Hermitian-operators-are-always-real." data-toc-modified-id="📝-Exercise:-Show-that-the-eigenvalues-of-Hermitian-operators-are-always-real.-5.6.3.1"><span class="toc-item-num">5.6.3.1&nbsp;&nbsp;</span>📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.</a></span></li></ul></li><li><span><a href="#Eigenvectors-of-Hermitian-Operators-form-a-Complete-Basis" data-toc-modified-id="Eigenvectors-of-Hermitian-Operators-form-a-Complete-Basis-5.6.4"><span class="toc-item-num">5.6.4&nbsp;&nbsp;</span>Eigenvectors of Hermitian Operators form a Complete Basis</a></span><ul class="toc-item"><li><span><a href="#📝-Exercise:-Show-that-the-eigenvectors-of-a-Hermitian-operator-with-different-eigenvalues-are-always-orthogonal." data-toc-modified-id="📝-Exercise:-Show-that-the-eigenvectors-of-a-Hermitian-operator-with-different-eigenvalues-are-always-orthogonal.-5.6.4.1"><span class="toc-item-num">5.6.4.1&nbsp;&nbsp;</span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.</a></span></li></ul></li><li><span><a href="#Expectation-Values" data-toc-modified-id="Expectation-Values-5.6.5"><span class="toc-item-num">5.6.5&nbsp;&nbsp;</span>Expectation Values</a></span><ul class="toc-item"><li><span><a href="#📝-Exercise:-Show-that-the-equality-in-the-last-equation-is-true" data-toc-modified-id="📝-Exercise:-Show-that-the-equality-in-the-last-equation-is-true-5.6.5.1"><span class="toc-item-num">5.6.5.1&nbsp;&nbsp;</span>📝 Exercise: Show that the equality in the last equation is true</a></span></li></ul></li><li><span><a href="#The-Born-Postulate,-revisited" data-toc-modified-id="The-Born-Postulate,-revisited-5.6.6"><span class="toc-item-num">5.6.6&nbsp;&nbsp;</span>The Born Postulate, revisited</a></span></li></ul></li><li><span><a href="#Bra--Ket--Notation-and-the-Analogy-to-Linear-Algebra" data-toc-modified-id="Bra--Ket--Notation-and-the-Analogy-to-Linear-Algebra-5.7"><span class="toc-item-num">5.7&nbsp;&nbsp;</span>Bra- Ket- Notation and the Analogy to Linear Algebra</a></span></li><li><span><a href="#Application:-Expansion-in-a-Basis-Set" data-toc-modified-id="Application:-Expansion-in-a-Basis-Set-5.8"><span class="toc-item-num">5.8&nbsp;&nbsp;</span>Application: Expansion in a Basis Set</a></span></li><li><span><a href="#Application:-Heisenberg-Uncertainty-Principle" data-toc-modified-id="Application:-Heisenberg-Uncertainty-Principle-5.9"><span class="toc-item-num">5.9&nbsp;&nbsp;</span>Application: Heisenberg Uncertainty Principle</a></span></li><li><span><a href="#Application:-Variational-Principle" data-toc-modified-id="Application:-Variational-Principle-5.10"><span class="toc-item-num">5.10&nbsp;&nbsp;</span>Application: Variational Principle</a></span><ul class="toc-item"><li><span><a href="#📝-Exercise:-Show-why-the-expectation-value-of-$Q$-is-always-a-lower-bound-on-the-largest-eigenvalue-of-$\hat{Q}$." data-toc-modified-id="📝-Exercise:-Show-why-the-expectation-value-of-$Q$-is-always-a-lower-bound-on-the-largest-eigenvalue-of-$\hat{Q}$.-5.10.1"><span class="toc-item-num">5.10.1&nbsp;&nbsp;</span>📝 Exercise: Show why the expectation value of $Q$ is always a lower bound on the largest eigenvalue of $\hat{Q}$.</a></span></li></ul></li><li><span><a href="#Summary" data-toc-modified-id="Summary-5.11"><span class="toc-item-num">5.11&nbsp;&nbsp;</span>Summary</a></span></li><li><span><a href="#🪞-Self-Reflection" data-toc-modified-id="🪞-Self-Reflection-5.12"><span class="toc-item-num">5.12&nbsp;&nbsp;</span>🪞 Self-Reflection</a></span></li><li><span><a href="#🤔-Thought-Provoking-Questions" data-toc-modified-id="🤔-Thought-Provoking-Questions-5.13"><span class="toc-item-num">5.13&nbsp;&nbsp;</span>🤔 Thought-Provoking Questions</a></span></li><li><span><a href="#🔁-Recapitulation" data-toc-modified-id="🔁-Recapitulation-5.14"><span class="toc-item-num">5.14&nbsp;&nbsp;</span>🔁 Recapitulation</a></span></li><li><span><a href="#🔮-Next-Up..." data-toc-modified-id="🔮-Next-Up...-5.15"><span class="toc-item-num">5.15&nbsp;&nbsp;</span>🔮 Next Up...</a></span></li><li><span><a href="#📚-References" data-toc-modified-id="📚-References-5.16"><span class="toc-item-num">5.16&nbsp;&nbsp;</span>📚 References</a></span></li></ul></li></ul></div><div class="tex2jax_ignore mathjax_ignore section" id="postulates-of-quantum-mechanics">
+<h1><span class="section-number">6. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#postulates-of-quantum-mechanics" title="Permalink to this headline">¶</a></h1>
+<p><img alt="Solvay Conference" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SolvayBerny.jfif?raw=true" /></p>
+<div class="section" id="learning-objectives">
+<h2><span class="section-number">6.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>List and Discuss the Postulates of Quantum Mechanics.</p></li>
+<li><p>Use Bra- Ket- notation.</p></li>
+<li><p>Learn how to manipulate quantum-mechanical operators.</p></li>
+<li><p>Understand the Heisenberg Uncertainty Principle.</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">6.2. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
+<h3><span class="section-number">6.2.1. </span><strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction<a class="headerlink" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\Psi \rightarrow \text{everything}\)</span></p>
+</div></blockquote>
+</div>
+<div class="section" id="schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
+<h3><span class="section-number">6.2.2. </span><strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.<a class="headerlink" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\hat{H}\Psi(x,t) = i \hbar \dot{\Psi}\)</span> or <span class="math notranslate nohighlight">\(\hat{H}\Psi = E \Psi\)</span>.</p>
+<p>Relativitistic quantum mechanics (the Dirac equation) is needed when particles are moving close to the speed of light</p>
+</div></blockquote>
+</div>
+<div class="section" id="born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
+<h3><span class="section-number">6.2.3. </span><strong>Born Postulate</strong>: <span class="math notranslate nohighlight">\(\left|\Psi(x,t) \right|^2\)</span> is the probability of observing the system at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.<a class="headerlink" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> is the “square root of reality”.</p>
+</div></blockquote>
+</div>
+<div class="section" id="correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
+<h3><span class="section-number">6.2.4. </span><strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.<a class="headerlink" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The analogue of a classical measurement is evaluating the expectation value of a suitable Hermitian operator. The only possible values that can be obtained from a measurement are the eigenvalues of the corresponding Hermitian operator.</p>
+</div></blockquote>
+<p>We will now elaborate on each of these key postulates. Note that <a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/intro_estruc/node4.html">some</a> <a class="reference external" href="http://web.mit.edu/8.05/handouts/jaffe1.pdf">people</a> list <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics">more</a> postulates. There is a some choice in how one groups the information in the postulates together, and I prefer to group the statements about Hermitian operators together.</p>
+</div>
+</div>
+<div class="section" id="completeness-of-psi-as-a-descriptor-of-a-quantum-system">
+<h2><span class="section-number">6.3. </span>Completeness of <span class="math notranslate nohighlight">\(\Psi\)</span> as a descriptor of a quantum system<a class="headerlink" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system" title="Permalink to this headline">¶</a></h2>
+<p>The wavefunction is sufficient to determine all observable information about a quantum system. This does not mean that all information about a system can be observed. For example, while every classical observable corresponds to a Hermitian operator, it can be impossible to determine the values of multiple classical observables simultaneously.</p>
+<p>As is often true, there are subtleties related to this postulate. In practice, we often use a density matrix, rather than a wavefunction, to describe a quantum system. A density matrix is just a mathematical way to capture a mixture of different quantum states, and can be written as,</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(x,t;x',t') = \sum_{k=1}^{\infty} p_k \left(\Psi_k(x',t') \right)^*\Psi_k(x,t) 
+\]</div>
+<p>The interpretation of a density matrix is that it is a mixture of quantum states, where the probability of observing the quantum state <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(p_k\)</span>. It makes sense, therefore, to restrict <span class="math notranslate nohighlight">\(p_k\)</span> to satisfy the constraints:</p>
+<div class="math notranslate nohighlight">
+\[
+1 = \sum_{k=1}^{\infty} p_k \qquad 0 \le p_k \le 1
+\]</div>
+<p>As with the wavefunction, the normalization of the density matrix is really only a convention. Any bounded (i.e. normalizable) positive semidefinite Hermitian operator can be interpreted as a density matrix. Bounded, positive semidefinite, non-Hermitian operators can be interpreted as transition density matrices, and are the mathematical representation for a change in a quantum state.</p>
+</div>
+<div class="section" id="schrodinger-postulate">
+<h2><span class="section-number">6.4. </span>Schrödinger Postulate<a class="headerlink" href="#schrodinger-postulate" title="Permalink to this headline">¶</a></h2>
+<p>The wavefunction (or density matrix) is the central object in quantum mechanics. It is found by solving the Schrödinger equation in its time-independent or time-dependent form. For relativisitic particles, one needs to instead consider the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_equation">Dirac equation</a>, and for relativisitic particles interacting with light, one needs to consider <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_electrodynamics">quantum electrodynamics</a>. If one needs to go beyond this (e.g., to include <span class="math notranslate nohighlight">\(\beta\)</span> decay of nuclei), then one needs to extend even further, eventually all the way to the <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model">standard model</a>.</p>
+<p>For the purposes of this course, the Schrödinger equation is adequate. <a class="reference external" href="https://en.wikipedia.org/wiki/Relativistic_quantum_chemistry#Periodic-table_deviations">Relativisitic effects</a> are <a class="reference external" href="https://www.annualreviews.org/doi/10.1146/annurev-physchem-032511-143755">important</a> in <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.3702628">chemistry</a>: it is not uncommon to consider that corrections to the nonrelativistic Schrödinger equation become important for molecules containing elements heavier than Zinc (Z=30) or Krypton (Z=36). However, actinide compounds can, <a class="reference external" href="https://en.wikipedia.org/wiki/Foldy%E2%80%93Wouthuysen_transformation">by mathematical trickery</a>, be treated by embellishing the Schrödinger equation in most cases. This means that for the purposes of understanding the structures of molecules and materials, their stability and thermodynamic properties, and the structural and chemical transformations between materials, the (relativistically-corrected) Schrödinger equation is used.</p>
+</div>
+<div class="section" id="born-postulate">
+<h2><span class="section-number">6.5. </span>Born Postulate<a class="headerlink" href="#born-postulate" title="Permalink to this headline">¶</a></h2>
+<p>Colloquially, the Born postulate states that <em>the wavefunction is the square root of reality</em>. The wavefunction is a mathematical artifice, and is not directly observable. It’s complex square is observable (<span class="math notranslate nohighlight">\(|\Psi(x,t)|^2\)</span> indicates the probability of finding the quantum system at the location <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>) and the overlap (interference patterns) between two wavefunctions (e.g., the system’s wavefunction and <a class="reference external" href="https://www.nature.com/articles/ncomms5156">light</a> or another <a class="reference external" href="https://www.nature.com/articles/nature03183">electron</a>) can also be observed.</p>
+</div>
+<div class="section" id="correspondence-principle-and-hermitian-operators">
+<h2><span class="section-number">6.6. </span>Correspondence Principle and Hermitian Operators<a class="headerlink" href="#correspondence-principle-and-hermitian-operators" title="Permalink to this headline">¶</a></h2>
+<p>The first two postulate of quantum mechanics indicate that the wavefunction is the conveyor of all information about a quantum system and how the wavefunction is to be determined. The remaining postulate(s) all indicate that information about a quantum system is deduced from the action of Hermitian operators.</p>
+<div class="section" id="correspondence-principle">
+<h3><span class="section-number">6.6.1. </span>Correspondence Principle<a class="headerlink" href="#correspondence-principle" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Correspondence_principle">correspondence principle</a> says that to every classical observable, there exists a Hermitian operator. This Hermitian operator provides the quantum manifestation of that classical observable. In the classical limit (where Planck’s constant approaches zero, <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>), the quantum mechanical operator and the classical observable coincide. For example, we have used that the quantum mechanical operator for the momentum of a particle moving in one dimension is</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} = -i \hbar \tfrac{d}{dx}
+\]</div>
+<p>There are some caveats associated with this. Some classical observables do not have unique representations in quantum mechanics. For example, in classical mechanics it is sensible to define, and measure, a <em>local kinetic energy</em>, that is, the kinetic energy at of a particle at a given point in space. Because one cannot specify the momentum (or its square) and position of a particle simultaneously, however, one cannot specify the kinetic energy at a point in space in quantum mechanics. So the local kinetic energy is not well-defined in quantum mechanics.</p>
+<p>In classical mechanics, all classical observables can be computed from the positions and momenta of the particles in the system. That is, classical observables of an <span class="math notranslate nohighlight">\(N\)</span>-particle system functions of particles’ positions ,<span class="math notranslate nohighlight">\(\{\mathbf{r}_k\}\)</span>,  and momenta, <span class="math notranslate nohighlight">\(\{\mathbf{p}_k\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N;\mathbf{p}_1,\mathbf{p}_2,\dots,\mathbf{p}_N)
+\]</div>
+<p>In quantum mechanics, operators that depend <em>either</em> on the particle’s positions or their momenta are clearly defined, but simultaneous observation of both is not. There can be multiple mathematical representations for the quantum-mechanical analogue of a single classical observable, therefore. In practice, such ambiguities do not matter much since the most important observables are those that can be clearly defined. Sometimes, however, chemists like to discuss quantities (like the energy of a single atom or functional group in a molecule, or the interaction energy between two subsystems in a intermolecular complex) which are <em>not</em> defined in quantum mechanics. Such discussions can be useful in practice, but they are contrary to the spirit of quantum mechanics (even though they are deeply entangled with the language of chemistry).</p>
+<p>There are also entities that emerge in molecular quantum mechanics that have no classical analogue whatsoever: concepts like electronegativity, oxidation state, and bond order. One should not expect for such quantities, which are intrinsically tied to the properties of electrons and have no classical analogue, to correspond to quantum-mechanical observable or Hermitian operators.</p>
+<p>In summary:</p>
+<ul class="simple">
+<li><p>every quantum-mechanical observable corresponds to a Hermitian operator.</p></li>
+<li><p>every quantum-mechanical observable reduces to a classical observable in the <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> limit.</p></li>
+<li><p>some classical observables do not have a unique quantum-mechanical analogue.</p></li>
+<li><p>some inherently quantum-mechanical concepts do not have a classical analogue, nor do they have a unique mathematical representation within quantum mechanics.</p></li>
+</ul>
+</div>
+<div class="section" id="hermitian-operators">
+<h3><span class="section-number">6.6.2. </span>Hermitian Operators<a class="headerlink" href="#hermitian-operators" title="Permalink to this headline">¶</a></h3>
+<p>Quantum-mechanical observables correspond to Hermitian operators. An operator, <span class="math notranslate nohighlight">\(\hat{Q}\)</span> is Hermitian if for any wavefunctions <span class="math notranslate nohighlight">\(\psi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(x)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int \left( \psi(x) \right)^* \hat{Q} \phi(x) dx 
+= \int \left(\hat{Q} \psi(x) \right)^* \phi(x) dx 
+= \int  \left( \hat{Q} \right)^*\left( \psi(x) \right)^*  \phi(x) dx 
+\]</div>
+<p>This basically means that a Hermitian operator can act either forwards or backwards. This is very useful in practice, since sometimes it is easier to apply  <span class="math notranslate nohighlight">\(\hat{Q}\)</span> to <span class="math notranslate nohighlight">\(\psi(x)\)</span> than to <span class="math notranslate nohighlight">\(\phi(x)\)</span>.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Quantum-mechanical observables do not need to be Hermitian; it is sufficient for them to be <a class="reference external" href="https://en.wikipedia.org/wiki/Self-adjoint_operator">essentially self-adjoint</a>, which is a somewhat weaker concept. While this is not quite a mere mathematical nuance (e.g., the molecular Hamiltonian is essentially self-adjoint), it does not affect the way we use quantum mechanics as a computational tool within chemistry.</p>
+</div></blockquote>
+<div class="section" id="exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
+<h4><span class="section-number">6.6.2.1. </span>📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.<a class="headerlink" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\int \left( \Psi(x) \right)^* \hat{Q} \Psi(x) dx 
+= \int \left(\hat{Q} \Psi(x) \right)^* \Psi(x) dx 
+\]</div>
+<blockquote>
+<div><p>Hint: Choose <span class="math notranslate nohighlight">\(\Psi(x) = \psi(x) + i \phi(x)\)</span>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="exercise-show-that-the-momentum-operator-is-hermitian">
+<h4><span class="section-number">6.6.2.2. </span>📝 Exercise: Show that the momentum operator is Hermitian.<a class="headerlink" href="#exercise-show-that-the-momentum-operator-is-hermitian" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Hint: use integration by parts and assume the wavefunction and its derivatives are zero at <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="observable-values">
+<h3><span class="section-number">6.6.3. </span>Observable Values<a class="headerlink" href="#observable-values" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Schrodinger's cat" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Schrodinger_cat_in_box.jpg" />
+In an experimental measurement of a quantum-mechanical observable, the measured value is always one of the eigenvalues of the Hermitian operator.</p>
+<p>Recall that Hermitian operators have real eigenvalues. This explains why Hermitian operators are so central to quantum mechanics: the result of an experimental measurement must be a real number. The “chunkiness” inherent in quantum mechanics emerges from the fact one cannot observe an arbitrary value for the observable, but only the discrete eigenvalues of the corresponding quantum-mechanical operator. Ergo, <a class="reference external" href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat">Schrödinger’s cat</a> can be alive or dead, but not half-dead.</p>
+<div class="section" id="exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
+<h4><span class="section-number">6.6.3.1. </span>📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.<a class="headerlink" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Hint: Use the Hermitian property of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> to evaluate <span class="math notranslate nohighlight">\(\int \left(\psi_k(x)\right)^* \hat{Q} \psi_k(x) dx\)</span> in two different ways.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="eigenvectors-of-hermitian-operators-form-a-complete-basis">
+<h3><span class="section-number">6.6.4. </span>Eigenvectors of Hermitian Operators form a Complete Basis<a class="headerlink" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis" title="Permalink to this headline">¶</a></h3>
+<p>Denote the eigenvectors and eigenvalues of a Hermitian operator in the obvious way,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{Q} \psi_k(x) = q_k \psi_k(x)
+\]</div>
+<ul class="simple">
+<li><p>As a consequence of the <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_theorem">spectral theorem</a>, the eigenvectors of a Hermitian operator form a complete basis. That is, any wavefunction can be exactly represented as a linear combination of the eigenfunctions of any Hermitian operator:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x) = \sum_{k=0}^{k=\infty} c_k \psi_k(x)
+\]</div>
+<ul class="simple">
+<li><p>Moreover, the eigenvectors, <span class="math notranslate nohighlight">\(\psi_k(x)\)</span>, can always be chosen to be orthogonal and normalized,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int \left(\psi_k(x)\right)^* \psi_l(x) dx = 
+\begin{cases}
+    1 &amp; k = l\\
+    0  &amp; k \ne l
+\end{cases}
+\end{split}\]</div>
+<p>We call orthogonal and normalized functions <em>orthonormal</em>. A short-hand notation for orthonormality is:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(\psi_k(x)\right)^* \psi_l(x) dx = \delta_{kl}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta_{kl} = 
+\begin{cases}
+    1 &amp; k = l\\
+    0  &amp; k \ne l
+\end{cases}
+\end{split}\]</div>
+<p>denotes the <a class="reference external" href="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</a> symbol. The Kronecker delta symbol is the analogue of the identity matrix (extended to infinite dimensions).</p>
+<div class="section" id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
+<h4><span class="section-number">6.6.4.1. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Hint: Use the Hermitian property of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> to evaluate <span class="math notranslate nohighlight">\(\int \left(\psi_k(x)\right)^* \hat{Q} \psi_l(x) dx\)</span> in two different ways.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="expectation-values">
+<h3><span class="section-number">6.6.5. </span>Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">¶</a></h3>
+<p>When we expand a wavefunction in the eigenfunctions of a Hermitian operator, we say it is a superposition of the eigenstates of that operator.</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x) = \sum_{k=0}^{k=\infty} c_k \psi_k(x)
+\]</div>
+<p>Measuring that operator always produces one of the eigenvalues, and the eigenvalues occur in proportion to the square magnitude of their coefficient in the eigenvector expansion,</p>
+<div class="math notranslate nohighlight">
+\[
+\text{probability of observing the eigenvalue }q_k = |c_k|^2 = c_k^* c_k
+\]</div>
+<p>The expectation value of the operator is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\left&lt;Q \right&gt; = \sum_{k=0}^{k=\infty} |c_k|^2 q_k = \int \left( \Psi(x) \right)^* \hat{Q} \Psi(x) dx
+\]</div>
+<p>This formula for the expectation value only holds for normalized wavefunctions. When the wavefunction is not normalized, instead one must use:</p>
+<div class="math notranslate nohighlight">
+\[
+\left&lt;Q \right&gt; = \frac{\sum_{k=0}^{k=\infty} |c_k|^2 q_k}{\sum_{k=0}^{k=\infty} |c_k|^2} = \frac{\int \left( \Psi(x) \right)^* \hat{Q} \Psi(x) dx}{\int \left( \Psi(x) \right)^* \Psi(x) dx}
+\]</div>
+<div class="section" id="exercise-show-that-the-equality-in-the-last-equation-is-true">
+<h4><span class="section-number">6.6.5.1. </span>📝 Exercise: Show that the equality in the last equation is true<a class="headerlink" href="#exercise-show-that-the-equality-in-the-last-equation-is-true" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Hint: expand the wavefunction in the eigenbasis, use the eigenvalue relation and the orthonormality of the eigenvectors.</p>
+</div></blockquote>
+<p>Immediately after performing a measurement of <span class="math notranslate nohighlight">\(Q\)</span> for the system defined by <span class="math notranslate nohighlight">\(\Psi(x)\)</span>, one knows definitively that the state of the system is described by <span class="math notranslate nohighlight">\(\Psi(x) = \psi_k(x)\)</span>, with eigenvalue <span class="math notranslate nohighlight">\(q_k\)</span>. This seems weird, as the wavefunction seems to have changed abruptly from <span class="math notranslate nohighlight">\(\Psi(x)\)</span> to <span class="math notranslate nohighlight">\(\psi_k(x)\)</span> <em>because</em> of the measurement. This would somehow imply that if the wavefunction for Schrödinger’s cat were:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_{cat} = \tfrac{1}{\sqrt{2}}|\text{alive} \rangle + \tfrac{1}{\sqrt{2}}|\text{dead} \rangle
+\]</div>
+<p>and you opened the box and observed that the cat was dead (so after you open the box, <span class="math notranslate nohighlight">\(\Psi_{cat} =  |\text{dead} \rangle\)</span>), then <em>you</em> killed Schrödinger’s cat. To mildly exaggerate, some physicists would have you believe that every dead animal was slaughtered by the person who first observes its corpse. (To diminish culpability, it must be said that it the cat in this example was only technically half-dead, so the observer was a halfway-cat-assassin.) Most modern <a class="reference external" href="https://en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics">interpretations of quantum mechanics</a> tend to <a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/">deny such culpability</a>. The physicists alibi is to assert that assert that while the system was described, mathematically, by <span class="math notranslate nohighlight">\(\Psi(x)\)</span> prior to the measurement, this does not that the system existed in the state <span class="math notranslate nohighlight">\(\Psi(x)\)</span>. Similarly, after the measurement the system is in a state mathematically described by <span class="math notranslate nohighlight">\(\psi_k(x)\)</span>. While it would be weird for observing a system to be able to change its state, it is not weird for an observation to change our mathematical description of a system. For example, before you observe <a class="reference external" href="https://en.wikipedia.org/wiki/Lake_Wobegon">Lake Wobegon</a>, it is reasonable to assume that all the women are strong, all the men are good-looking, and all the children are above average. But were you to visit Lake Wobegon, then based on your observation you might have to change your model.</p>
+<p>That said, you may find the aforementioned “Copenhagen interpretation” convenient. Before my mother visits my home, I always clean it thoroughly. Nonetheless, my thorough cleaning is not up to my mother’s standards, and she’s always scandalized to find dust-bunnies under the sofa. (Who moves the sofa to vacuum under it, just to put the sofa back the same place and obscure the now-clean carpet?) I always tell my mom that the dust-bunnies were not there until she observed them. Unfortunately, my mom taught quantum mechanics herself, and she tells me that the wavefunction was:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_{dust-bunnies} = \sqrt{.0001}|\text{clean} \rangle + \sqrt{.9999}|\text{dirty} \rangle
+\]</div>
+<p>I guess my home is only .01% clean (up to my mother’s standards, at least).</p>
+<p>The sudden change in the wavefunction upon observation is called wavefunction collapse. While the reality of wavefunction collapse in a physical sense is irresolvable, it is the mathematical description of what happens in a quantum system, and gives rise to strange quantum effects. If you find such things interesting, you may be interested to know that the aphorism that “a watched pot never boils” is <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_Zeno_effect">justifiable</a>, quantum-mechanically.</p>
+</div>
+</div>
+<div class="section" id="the-born-postulate-revisited">
+<h3><span class="section-number">6.6.6. </span>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Permalink to this headline">¶</a></h3>
+<p>While the Born postulate is usually presented separately, it is in fact a corollary of the fact that physical observables are represented by Hermitian operators. The Hermitian operator that represents a particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is <span class="math notranslate nohighlight">\(\delta(x-x_0)\)</span>, where the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</a> is effectively defined by its so-called <em>sifting property</em>.</p>
+<blockquote>
+<div><p><strong>Sifting property of the Dirac Delta function:</strong> Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a bounded function. Then</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^{+\infty} f(x) \delta(x-x_0) dx = f(x_0)
+\]</div>
+<p>Now according to the Hermitian postulate, the probability of observing the particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^{+\infty} \left(\Psi(x)\right)^* \delta(x-x_0) \Psi(x) dx = \left|\Psi(x_0)\right|^2
+\]</div>
+<p>which is the Born postulate.</p>
+<blockquote>
+<div><p><strong>Note</strong>: The Kronecker delta function has a sifting property similar to the Dirac delta function,</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+\sum_j f_j \delta_{jk} = f_k
+\]</div>
+<p>This can be deduced directly from the definition, since <span class="math notranslate nohighlight">\(\delta_{jk}\)</span> is one when <span class="math notranslate nohighlight">\(j=k\)</span>, and zero otherwise.</p>
+</div>
+</div>
+<div class="section" id="bra-ket-notation-and-the-analogy-to-linear-algebra">
+<h2><span class="section-number">6.7. </span>Bra- Ket- Notation and the Analogy to Linear Algebra<a class="headerlink" href="#bra-ket-notation-and-the-analogy-to-linear-algebra" title="Permalink to this headline">¶</a></h2>
+<p>At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for <a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac bra-ket notation</a>. A rather thorough explanation of this notation is available in my <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf?raw=true">pdf notes</a>, so I am only presenting the elements here. The basic idea is that a wavefunction is written as a <em>ket</em>,</p>
+<div class="math notranslate nohighlight">
+\[
+| \Psi \rangle = \Psi(x)
+\]</div>
+<p>and its complex conjugate as a <em>bra</em>,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Phi | = \left(\Phi(x)\right)^*
+\]</div>
+<p>The overlap between two wavefunctions, which as we shall see is very important when expanding a wavefunction as a linear combination of basis functions, is therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Phi | \Psi \rangle = \int \left(\Phi(x)\right)^* \Psi(x) dx
+\]</div>
+<p>Because a Hermitian operator could act either forward (towards the ket)</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Phi |\hat{Q} \Psi \rangle = \int \left(\Phi(x)\right)^* \hat{Q} \Psi(x) dx
+\]</div>
+<p>or backwards (towards the bra)</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\hat{Q} \Phi | \Psi \rangle = \int \left(\hat{Q} \Phi(x)\right)^* \Psi(x) dx
+\]</div>
+<p>we often use a notation that makes it clear that the operator can act in either direction,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Phi | \hat{Q} |\Psi \rangle = \int \left(\Phi(x)\right)^* \hat{Q} \Psi(x) dx
+\]</div>
+</div>
+<div class="section" id="application-expansion-in-a-basis-set">
+<h2><span class="section-number">6.8. </span>Application: Expansion in a Basis Set<a class="headerlink" href="#application-expansion-in-a-basis-set" title="Permalink to this headline">¶</a></h2>
+<p>A set of functions, <span class="math notranslate nohighlight">\(\{\phi_k(x) \}\)</span> is said to be a complete basis set if any wavefunction can be written exactly as a linear combination of these basis functions,</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x) = \sum_{k=0}^{\infty} c_k \phi_k(x)
+\]</div>
+<p>It is convenient and it is always possible, but it is not required, to choose the basis functions so that they are orthonormal,</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(\phi_j(x) \right)^* \phi_k(x) dx = \delta_{jk}
+\]</div>
+<p>where we have used the Kronecker-delta notation we introduced above.</p>
+<p>In bra-ket notation, the preceding equations are, respectively,</p>
+<div class="math notranslate nohighlight">
+\[
+|{\Psi}\rangle = \sum_{k=0}^{\infty} c_k |\phi_k\rangle
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi_j | \phi_k \rangle = \delta_{jk}
+\]</div>
+<p>To obtain an equation for the expansion coefficient, multiply both sides of the first equation by <span class="math notranslate nohighlight">\((\phi_j(x))^*\)</span> and integrate over <span class="math notranslate nohighlight">\(x\)</span>. This gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left( \phi_j(x) \right)^* \Psi(x) dx = \int \left( \phi_j(x) \right)^* 
+ \sum_{k=0}^{\infty} c_k \phi_k(x) dx
+\]</div>
+<p>Because the integral of a sum is the sum of the integrals, and because the integral of a constant is a constant times the integral, this simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\int \left( \phi_j(x) \right)^* \Psi(x) dx &amp;=\sum_{k=0}^{\infty} c_k \left[ \int \left( \phi_j(x) \right)^* 
+  \phi_k(x) dx \right] \\
+&amp;=\sum_{k=0}^{\infty} c_k \delta_{jk}
+\end{align}
+\end{split}\]</div>
+<p>Then from the sifting property of the Dirac delta function,</p>
+<div class="math notranslate nohighlight">
+\[
+c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
+\]</div>
+<p><em>This is the equation for the expansion coefficient of a wavefunction in an orthonormal basis.</em></p>
+</div>
+<div class="section" id="application-heisenberg-uncertainty-principle">
+<h2><span class="section-number">6.9. </span>Application: Heisenberg Uncertainty Principle<a class="headerlink" href="#application-heisenberg-uncertainty-principle" title="Permalink to this headline">¶</a></h2>
+<p>We have already alluded to the <a class="reference external" href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg Uncertainty Principle</a>, which states that some quantum-mechanical properties cannot be observed simultaneously. To provide a mathematical description of the Heisenberg Uncertainty Principle, we need to define what it means for operators to commute and anticommute.</p>
+<blockquote>
+<div><p>Two operators, <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span>, are said to <em>commute</em> if for any wavefunction <span class="math notranslate nohighlight">\(\Psi(x)\)</span>,</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+0 = \left(\hat{A} \hat{B} - \hat{B}\hat{A}\right) \Psi(x) = \left[\hat{A}, \hat{B} \right] \Psi(x)
+\]</div>
+<p>Similarly, two operators are said to <em>anticommute</em> if</p>
+<div class="math notranslate nohighlight">
+\[
+0 = \left(\hat{A} \hat{B} + \hat{B}\hat{A}\right) \Psi(x) = \left\{\hat{A}, \hat{B} \right\} \Psi(x)
+\]</div>
+<p>In the right-most equality, we have introduce the standard notation for commuting and anticommuting operators.</p>
+<p>In classical mechanics, observables are simply functions of the momenta and positions of the system’s particles, and the since the momenta and positions commute, observables commute. However, in quantum mechanics, the momentum operator, <span class="math notranslate nohighlight">\(\hat{p} = -i \hbar \tfrac{d}{dx}\)</span> is a differential operator, and does not commute with the position operator <span class="math notranslate nohighlight">\(x\)</span>. Because of this, measuring a particle’s position first, then its momentum is different from measuring its momentum first, then its position. Conceptually, then, it is not unreasonable that if you try to measure the position and the momentum simultaneously, the system is “confused” about how it should behave (as if momentum were measured first? or as if position were measured first?) and the answer is uncertain.</p>
+<blockquote>
+<div><p>If two operators, <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span>, commute, <span class="math notranslate nohighlight">\(\left[\hat{A}, \hat{B}, \right] = 0\)</span>. then one can simultaneously measure the corresponding properties <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are said to be <em>simultaneous observables</em>.</p>
+</div></blockquote>
+<blockquote>
+<div><p>If two operators, <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span>, do not commute, <span class="math notranslate nohighlight">\(\left[\hat{A}, \hat{B}, \right] \ne 0\)</span>. then one cannot simultaneously measure the corresponding properties <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. A Heisenberg Uncertainty Relation then holds:</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+\sigma_A^2 \sigma_B^2 \ge \tfrac{1}{4} \left| \langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
+\]</div>
+<p>where the variance in the expectation value of the operator is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_A^2 = \langle \Psi |\hat{A}^2| \Psi \rangle - \langle \Psi |\hat{A}| \Psi \rangle^2
+\]</div>
+<p>This expression can be made somewhat more precise by using the <a class="reference external" href="https://en.wikipedia.org/wiki/Uncertainty_principle#Robertson%E2%80%93Schr%C3%B6dinger_uncertainty_relations">Schrödinger Uncertainty Principle</a></p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_A^2 \sigma_B^2 \ge  \left| \tfrac{1}{2}\langle \Psi |\{\hat{A},\hat{B}\}| \Psi \rangle 
+- \langle \Psi |\hat{A}| \Psi \rangle \langle \Psi |\hat{B}| \Psi \rangle \right|^2 + \tfrac{1}{4} \left|\langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
+\]</div>
+<p>A detailed derivation of these uncertainty principles is provided as a <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Heisenberg.pdf?raw=true">pdf</a>.</p>
+</div>
+<div class="section" id="application-variational-principle">
+<h2><span class="section-number">6.10. </span>Application: Variational Principle<a class="headerlink" href="#application-variational-principle" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)"><strong>Quantum-Mechanical Variational Principle</strong></a>: Given a wavefunction <span class="math notranslate nohighlight">\(\Psi(x)\)</span> and a bounded Hermitian operator <span class="math notranslate nohighlight">\(\hat{Q}\)</span>, the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is no less than the lowest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> and no greater than the largest eigenvalue.</p>
+</div></blockquote>
+<p>To understand where this principle comes from, let’s focus on the lowest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>. We denote the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{Q} | \psi_k \rangle = q_k | \psi_k \rangle
+\]</div>
+<p>and choose to list the eigenvalues are listed in increasing order, <span class="math notranslate nohighlight">\(q_0 &lt; q_1 &lt; \cdots \)</span>. Expand the wavefunction in the eigenvectors of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+| Psi \rangle = \sum_{k=0}^{\infty} c_k | \psi_k \rangle
+\]</div>
+<p>The expectation value of <span class="math notranslate nohighlight">\(\Psi\)</span>, which we assume to be normalized, is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\langle \Psi |\hat{Q}|\Psi \rangle &amp;= \langle \sum_{j=0}^{\infty} c_j \psi_j  |\hat{Q}|\sum_{k=0}^{\infty} c_k \psi_k \rangle \\
+&amp;= \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} c_j c_k \langle  \psi_j  |\hat{Q}|\psi_k \rangle \\
+&amp;= \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} c_j c_k \langle  \psi_j  |\hat{Q}\psi_k \rangle \\
+&amp;= \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} c_j c_k \langle  \psi_j  |q_k\psi_k \rangle \\
+&amp;= \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} c_j c_k q_k \langle  \psi_j  |\psi_k \rangle \\
+&amp;= \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} c_j c_k q_k \delta_{jk} \\
+&amp;= \sum_{j=0}^{\infty} |c_j|^2 q_j 
+\end{align}
+\end{split}\]</div>
+<p>In the last line we used the sifting property of the Kronecker delta function. To complete the demonstration, recall that because the eigenvalues are listed in nondecreasing order, <span class="math notranslate nohighlight">\(q_j - q_0 \ge 0\)</span> for all <span class="math notranslate nohighlight">\(j\)</span>. So:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\langle \Psi |\hat{Q}|\Psi \rangle &amp;= \sum_{j=0}^{\infty} |c_j|^2 q_j \\
+ &amp;= \sum_{j=0}^{\infty} |c_j|^2 \left(q_0 + (q_j - q_0)\right) \\
+ &amp;= \sum_{j=0}^{\infty} |c_j|^2 q_0 + \sum_{j=0}^{\infty} |c_j|^2 (q_j - q_0) \\
+ &amp;= q_0 \sum_{j=0}^{\infty} |c_j|^2 + \sum_{j=0}^{\infty} |c_j|^2 (q_j - q_0) \\
+ &amp;= q_0  + \sum_{j=0}^{\infty} |c_j|^2 (q_j - q_0) \\
+ &amp;\ge q_0  
+\end{align}
+\end{split}\]</div>
+<p>In the next to last line the normalization of the wavefunction, which implies that <span class="math notranslate nohighlight">\(\sum |c_j|^2 = 1\)</span>, was used. In the last line a nonnegative term was eliminated from the expression, resulting in the desired inequality.</p>
+<p>This principle is especially useful for the energy, because it means that an approximate wavefunction will always have an energy greater than or equal to the true ground state energy. Therefore, if one is given two wavefunctions <span class="math notranslate nohighlight">\(\Psi(x)\)</span> and <span class="math notranslate nohighlight">\(\Phi(x)\)</span>, the “better” ground-state wavefunction would be the one that has the lower energy. Similarly, given a normalized wavefunction that depends on a parameter, <span class="math notranslate nohighlight">\(\kappa\)</span>, the “best” wavefunction and the “best” energy can be obtained by minimizing the expectation value of the energy with respect to <span class="math notranslate nohighlight">\(\kappa\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\min_\kappa \langle \Psi(\kappa) |\hat{H} | \Psi(\kappa) \rangle
+\]</div>
+<p>The variational principle is one of the most important ways we approximate the energy and wavefunction of quantum systems.</p>
+<div class="section" id="exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
+<h3><span class="section-number">6.10.1. </span>📝 Exercise: Show why the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is always a lower bound on the largest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>.<a class="headerlink" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">6.11. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Based on the preceding, the key postulates of quantum mechanics are</p>
+<ul class="simple">
+<li><p>the Schrödinger equation determines the wavefunction</p></li>
+<li><p>the wavefunction determines all observable properties of a quantum system</p></li>
+<li><p>observable properties of a quantum system, and their observable values, correspond to Hermitian operators
+You should be able to apply, and expand upon, these principles at length.</p></li>
+</ul>
+</div>
+<div class="section" id="self-reflection">
+<h2><span class="section-number">6.12. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Try to come up with your own version of a Schrödinger’s cat paradox. Have <a class="reference external" href="https://www.straightdope.com/21341296/the-story-of-schroedinger-s-cat-an-epic-poem">fun with it</a>.</p></li>
+<li><p>What is an example of a classical observable that is not a quantum-mechanical observable?</p></li>
+<li><p>Give an example of two quantum-mechanical operators that commute. What about two operators that don’t commute?</p></li>
+</ul>
+</div>
+<div class="section" id="thought-provoking-questions">
+<h2><span class="section-number">6.13. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Can you imagine a case where the Hermitian nature of the Hamiltonian operator would be useful?</p></li>
+<li><p>Can you imagine a way to use the variational principle in practice?</p></li>
+<li><p>The variational principle allows one to choose a wavefunction that gives the lowest energy, which provides the best wavefunction in an energetic sense. This isn’t the same as finding the closest wavefunction to the ground-state wavefunction (see below) but if your energy is close enough to the ground-state energy, you can be assured that the wavefunction is also very close to the ground-state wavefunction. Explain why. Assume, for simplicity, that the ground state is nondegenerate.
+$<span class="math notranslate nohighlight">\(
+\min_\Psi \langle \Psi - \psi_0 | \Psi - \psi_0 \rangle
+\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="recapitulation">
+<h2><span class="section-number">6.14. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What are the postulates of quantum mechanics?</p></li>
+<li><p>Why is it important that quantum-mechanical observables correspond to Hermitian operators?</p></li>
+<li><p>What is the Heisenberg Uncertainty principle?</p></li>
+<li><p>What is the variational principle?</p></li>
+<li><p>List all the Hermitian operators you know.</p></li>
+<li><p>What do the Dirac and Kronecker delta notations mean?</p></li>
+</ul>
+</div>
+<div class="section" id="next-up">
+<h2><span class="section-number">6.15. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Multielectron systems</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">6.16. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>My favorite sources for this material are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
+<li><p>D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)</p></li>
+<li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/PinBox.pdf?raw=true">Mathematical Features of Quantum Mechanics</a> (my notes, starting page 6).</p></li>
+</ul>
+<p>There are also some excellent wikipedia articles:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics#Postulates_of_quantum_mechanics">Postulates of Quantum Mechanics</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_theory#Spectral_theorem_and_Rayleigh_quotient">Variational Principle</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="ParticleInMultiD.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>Multi-dimensional Particle-in-a-Box</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="OneElectronAtoms.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>One-Electron Atoms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
