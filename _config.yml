@@ -49,7 +49,7 @@ repository:
 
 #add launching buttons
 launch_buttons:
-  colab_url: https://drive.google.com/drive/folders/15f1FtY32MQJ3Cx_Uk2NxJ0x6Hw32fwFJ?usp=sharing # The URL for your BinderHub (e.g., https://mybinder.org)
+  colab_url: https://colab.research.google.com/drive/1cbFLao_CTgxl1QpREotpcDzvudIsb5mb # The URL for your BinderHub (e.g., https://mybinder.org)
   thebe: true
 
 # Add GitHub buttons to your book
