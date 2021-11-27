@@ -41,6 +41,11 @@ parse:
 bibtex_bibfiles:
   - references.bib
 
+#add launching buttons
+launch_buttons:
+  colab_url: https://mybinder.org/v2/gh/RichRick1/IntroQM2022/HEAD  # The URL for your BinderHub (e.g., https://mybinder.org)
+  thebe: true
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/executablebooks/jupyter-book  # Online location of your book
