@@ -43,7 +43,7 @@ bibtex_bibfiles:
 
 #add launching buttons
 launch_buttons:
-  colab_url: https://mybinder.org/v2/gh/RichRick1/IntroQM2022/HEAD  # The URL for your BinderHub (e.g., https://mybinder.org)
+  colab_url: https://hub.gke2.mybinder.org/user/richrick1-introqm2022-3exbzhdo/lab  # The URL for your BinderHub (e.g., https://mybinder.org)
   thebe: true
 
 # Information about where the book exists on the web
