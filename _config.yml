@@ -49,7 +49,7 @@ repository:
 
 #add launching buttons
 launch_buttons:
-  binder_url: https://hub.gke2.mybinder.org/user/richrick1-introqm2022-3exbzhdo/lab  # The URL for your BinderHub (e.g., https://mybinder.org)
+  binder_url: https://mybinder.org/v2/gh/RichRick1/IntroQM2022/8465208d82a475e6e0431a6f7fed239d5b5c8586?urlpath=lab%2Ftree%2Fipynb  # The URL for your BinderHub (e.g., https://mybinder.org)
   thebe: true
 
 # Add GitHub buttons to your book
