@@ -1,0 +1,1754 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. Approximate Methods for Solving One-Particle Schrödinger Equations &#8212; My sample book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Many-Electron Systems" href="ManyElSystems.html" />
+    <link rel="prev" title="7. One-Electron Atoms" href="OneElectronAtoms.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main_content.html">
+   Introduction to Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   1. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/Jupyter.html">
+     1.10. Introduction to Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/python.html">
+     1.11. Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/numpy.html">
+     1.12. Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/syzygy.html">
+     1.13. Computing Course Marks with Jupyter, Python, Numpy, and syzygy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="History.html">
+   2. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/IntroQM.html">
+     2.10. Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroQMkey.html">
+     2.11. Assignment Key including extra problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SchrodingerEq.html">
+   3. The Schrödinger Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleIn1DBox.html">
+   4. The Particle in a Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   5. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Postulates.html">
+   6. The Postulates of Quantum Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OneElectronAtoms.html">
+   7. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ManyElSystems.html">
+   9. Many-Electron Systems
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ipynb/ApproximateMethods.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fipynb/ApproximateMethods.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ipynb/ApproximateMethods.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expansion-in-a-basis">
+   8.1. Expansion in a Basis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-secular-equation">
+     8.1.1. Solving the Secular Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-for-the-particle-in-a-box">
+     8.1.2. Example for the Particle-in-a-Box
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particle-in-a-box-with-jacobi-polynomials">
+     8.1.3. Particle-in-a-Box with Jacobi polynomials
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction">
+       8.1.3.1. 🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials">
+       8.1.3.2. 🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler
+       <span class="math notranslate nohighlight">
+        \((1-x)(1+x)x^k\)
+       </span>
+       polynomials?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perturbation-theory">
+   8.2. Perturbation Theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-perturbed-hamiltonian">
+     8.2.1. The Perturbed Hamiltonian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hellmann-feynman-theorem">
+     8.2.2. Hellmann-Feynman Theorem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign">
+       8.2.2.1. Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory">
+       8.2.2.2. Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perturbed-wavefunctions">
+     8.2.3. Perturbed Wavefunctions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-law-of-diminishing-returns-and-accelerating-losses">
+     8.2.4. The Law of Diminishing Returns and Accelerating Losses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-particle-in-a-box-with-a-sloped-bottom">
+     8.2.5. Example: Particle in a Box with a Sloped Bottom
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hamiltonian-for-an-applied-uniform-electric-field">
+       8.2.5.1. The Hamiltonian for an Applied Uniform Electric Field
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field">
+       8.2.5.2. Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-first-order-energy-correction-is-always-zero">
+         8.2.5.2.1. The First-Order Energy Correction is Always Zero
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-first-order-correction-to-the-wavefunction">
+         8.2.5.2.2. The First-Order Correction to the Wavefunction
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-second-order-correction-to-the-energy">
+         8.2.5.2.3. The Second-Order Correction to the Energy
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field">
+       8.2.5.3. Variational Approach to the Particle-in-a-Box in a Uniform Electric Field
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field">
+       8.2.5.4. Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#demonstration">
+       8.2.5.5. Demonstration
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   8.3. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   8.4. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   8.5. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   8.6. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   8.7. 📚 References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Approximate-Methods-for-Solving-One-Particle-Schrödinger-Equations" data-toc-modified-id="Approximate-Methods-for-Solving-One-Particle-Schrödinger-Equations-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Approximate Methods for Solving One-Particle Schrödinger Equations</a></span><ul class="toc-item"><li><span><a href="#Expansion-in-a-Basis" data-toc-modified-id="Expansion-in-a-Basis-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Expansion in a Basis</a></span><ul class="toc-item"><li><span><a href="#Solving-the-Secular-Equation" data-toc-modified-id="Solving-the-Secular-Equation-7.1.1"><span class="toc-item-num">7.1.1&nbsp;&nbsp;</span>Solving the Secular Equation</a></span></li><li><span><a href="#Example-for-the-Particle-in-a-Box" data-toc-modified-id="Example-for-the-Particle-in-a-Box-7.1.2"><span class="toc-item-num">7.1.2&nbsp;&nbsp;</span>Example for the Particle-in-a-Box</a></span></li><li><span><a href="#Particle-in-a-Box-with-Jacobi-polynomials" data-toc-modified-id="Particle-in-a-Box-with-Jacobi-polynomials-7.1.3"><span class="toc-item-num">7.1.3&nbsp;&nbsp;</span>Particle-in-a-Box with Jacobi polynomials</a></span><ul class="toc-item"><li><span><a href="#🤔-Thought-Provoking-Question:-Why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction." data-toc-modified-id="🤔-Thought-Provoking-Question:-Why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction.-7.1.3.1"><span class="toc-item-num">7.1.3.1&nbsp;&nbsp;</span>🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.</a></span></li><li><span><a href="#🤔-Thought-Provoking-Question:-Why-does-one-get-exactly-the-same-results-for-the-Jacobi-polynomials-and-the-simpler-$(1-x)(1+x)x^k$-polynomials?" data-toc-modified-id="🤔-Thought-Provoking-Question:-Why-does-one-get-exactly-the-same-results-for-the-Jacobi-polynomials-and-the-simpler-$(1-x)(1+x)x^k$-polynomials?-7.1.3.2"><span class="toc-item-num">7.1.3.2&nbsp;&nbsp;</span>🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler $(1-x)(1+x)x^k$ polynomials?</a></span></li></ul></li></ul></li><li><span><a href="#Perturbation-Theory" data-toc-modified-id="Perturbation-Theory-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Perturbation Theory</a></span><ul class="toc-item"><li><span><a href="#The-Perturbed-Hamiltonian" data-toc-modified-id="The-Perturbed-Hamiltonian-7.2.1"><span class="toc-item-num">7.2.1&nbsp;&nbsp;</span>The Perturbed Hamiltonian</a></span></li><li><span><a href="#Hellmann-Feynman-Theorem" data-toc-modified-id="Hellmann-Feynman-Theorem-7.2.2"><span class="toc-item-num">7.2.2&nbsp;&nbsp;</span>Hellmann-Feynman Theorem</a></span><ul class="toc-item"><li><span><a href="#Derivation-of-the-Hellmann-Feynman-Theorem-by-Differentiation-Under-the-Integral-Sign" data-toc-modified-id="Derivation-of-the-Hellmann-Feynman-Theorem-by-Differentiation-Under-the-Integral-Sign-7.2.2.1"><span class="toc-item-num">7.2.2.1&nbsp;&nbsp;</span>Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign</a></span></li><li><span><a href="#Derivation-of-the-Hellmann-Feynman-Theorem-from-First-Order-Perturbation-Theory" data-toc-modified-id="Derivation-of-the-Hellmann-Feynman-Theorem-from-First-Order-Perturbation-Theory-7.2.2.2"><span class="toc-item-num">7.2.2.2&nbsp;&nbsp;</span>Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory</a></span></li></ul></li><li><span><a href="#Perturbed-Wavefunctions" data-toc-modified-id="Perturbed-Wavefunctions-7.2.3"><span class="toc-item-num">7.2.3&nbsp;&nbsp;</span>Perturbed Wavefunctions</a></span></li><li><span><a href="#The-Law-of-Diminishing-Returns-and-Accelerating-Losses" data-toc-modified-id="The-Law-of-Diminishing-Returns-and-Accelerating-Losses-7.2.4"><span class="toc-item-num">7.2.4&nbsp;&nbsp;</span>The Law of Diminishing Returns and Accelerating Losses</a></span></li><li><span><a href="#Example:-Particle-in-a-Box-with-a-Sloped-Bottom" data-toc-modified-id="Example:-Particle-in-a-Box-with-a-Sloped-Bottom-7.2.5"><span class="toc-item-num">7.2.5&nbsp;&nbsp;</span>Example: Particle in a Box with a Sloped Bottom</a></span><ul class="toc-item"><li><span><a href="#The-Hamiltonian-for-an-Applied-Uniform-Electric-Field" data-toc-modified-id="The-Hamiltonian-for-an-Applied-Uniform-Electric-Field-7.2.5.1"><span class="toc-item-num">7.2.5.1&nbsp;&nbsp;</span>The Hamiltonian for an Applied Uniform Electric Field</a></span></li><li><span><a href="#Perturbation-Theory-for-the-Particle-in-a-Box-in-a-Uniform-Electric-Field" data-toc-modified-id="Perturbation-Theory-for-the-Particle-in-a-Box-in-a-Uniform-Electric-Field-7.2.5.2"><span class="toc-item-num">7.2.5.2&nbsp;&nbsp;</span>Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field</a></span></li><li><span><a href="#Variational-Approach-to-the-Particle-in-a-Box-in-a-Uniform-Electric-Field" data-toc-modified-id="Variational-Approach-to-the-Particle-in-a-Box-in-a-Uniform-Electric-Field-7.2.5.3"><span class="toc-item-num">7.2.5.3&nbsp;&nbsp;</span>Variational Approach to the Particle-in-a-Box in a Uniform Electric Field</a></span></li><li><span><a href="#Basis-Set-Expansion-for-the-Particle-in-a-Box-in-a-Uniform-Electric-Field" data-toc-modified-id="Basis-Set-Expansion-for-the-Particle-in-a-Box-in-a-Uniform-Electric-Field-7.2.5.4"><span class="toc-item-num">7.2.5.4&nbsp;&nbsp;</span>Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field</a></span></li><li><span><a href="#Demonstration" data-toc-modified-id="Demonstration-7.2.5.5"><span class="toc-item-num">7.2.5.5&nbsp;&nbsp;</span>Demonstration</a></span></li></ul></li></ul></li><li><span><a href="#🪞-Self-Reflection" data-toc-modified-id="🪞-Self-Reflection-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>🪞 Self-Reflection</a></span></li><li><span><a href="#🤔-Thought-Provoking-Questions" data-toc-modified-id="🤔-Thought-Provoking-Questions-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>🤔 Thought-Provoking Questions</a></span></li><li><span><a href="#🔁-Recapitulation" data-toc-modified-id="🔁-Recapitulation-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>🔁 Recapitulation</a></span></li><li><span><a href="#🔮-Next-Up..." data-toc-modified-id="🔮-Next-Up...-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>🔮 Next Up...</a></span></li><li><span><a href="#📚-References" data-toc-modified-id="📚-References-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>📚 References</a></span></li></ul></li></ul></div><p><img alt="Train Wreck" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/TrainWreck.jpg?raw=true" /></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="approximate-methods-for-solving-one-particle-schrodinger-equations">
+<h1><span class="section-number">8. </span>Approximate Methods for Solving One-Particle Schrödinger Equations<a class="headerlink" href="#approximate-methods-for-solving-one-particle-schrodinger-equations" title="Permalink to this headline">¶</a></h1>
+<p>Up to this point, we’ve focused on systems for which we can solve the Schrödinger equation. Unfortunately, there are very few such systems, and their relevance for real chemical systems is very limited. This motivates the approximate methods for solving the Schrödinger equation. One must be careful, however, if one makes poor assumptions, the results of approximate methods can be very poor. Conversely, with appropriate insight, approximation techniques can be extremely useful.</p>
+<div class="section" id="expansion-in-a-basis">
+<h2><span class="section-number">8.1. </span>Expansion in a Basis<a class="headerlink" href="#expansion-in-a-basis" title="Permalink to this headline">¶</a></h2>
+<p>We have seen the eigenvectors of a Hermitian operator are a complete basis, and can be chosen to be orthonormal. We have also seen how a wavefunction can be expanded in a basis,</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x) = \sum_{k=0}^{\infty} c_k \phi_k(x)
+\]</div>
+<p>Note that there is no requirement that the basis set, <span class="math notranslate nohighlight">\(\{\phi_k(x) \}\)</span> be eigenvectors of a Hermitian operator: all that matters is that the basis set is complete. For real problems, of course, one can choose only a finite number of basis functions,</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x) \approx \sum_{k=0}^{N_{\text{basis}}} c_k \phi_k(x)
+\]</div>
+<p>but as the number of basis functions, <span class="math notranslate nohighlight">\(N_{\text{basis}}\)</span>, increases, results should become increasingly accurate.</p>
+<p>Substituting this expression for the wavefunction into the time-independent Schrödinger equation,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} \Psi(x) = \hat{H} \sum_{k=0}^{\infty} c_k \phi_k(x) = E \sum_{k=0}^{\infty} c_k \phi_k(x)
+\]</div>
+<p>Multiplying on the left by <span class="math notranslate nohighlight">\(\left(\phi_j(x) \right)^*\)</span> and integrating over all space,</p>
+<div class="math notranslate nohighlight">
+\[
+ \sum_{k=0}^{\infty} \left[\int \left(\phi_j(x) \right)^* \hat{H} \phi_k(x) dx \right] c_k 
+ = E \sum_{k=0}^{\infty}\left[ \int \left(\phi_j(x) \right)^* \phi_k(x) dx\right] c_k
+\]</div>
+<p>At this stage we usually define the Hamiltonian matrix, <span class="math notranslate nohighlight">\(\mathbf{H}\)</span>, as the matrix with elements</p>
+<div class="math notranslate nohighlight">
+\[
+h_{jk} = \int \left(\phi_j(x) \right)^* \hat{H} \phi_k(x) dx 
+\]</div>
+<p>and the overlap matrix, <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> as the matrix with elements</p>
+<div class="math notranslate nohighlight">
+\[
+s_{jk} = \int \left(\phi_j(x) \right)^* \phi_k(x) dx
+\]</div>
+<p>If the basis is orthonormal, then the overlap matrix is equal to the identity matrix, <span class="math notranslate nohighlight">\(\mathbf{S} = \mathbf{I}\)</span> and its elements are therefore given by the Kronecker delta, <span class="math notranslate nohighlight">\(s_{jk} = \delta_{jk}\)</span>.</p>
+<p>The Schrödinger equation therefore can be written as a <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix#Generalized_eigenvalue_problem">generalized matrix eigenvalue problem</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{Hc}=E\mathbf{Sc}
+\]</div>
+<p>or, in element-wise notation, as:</p>
+<div class="math notranslate nohighlight">
+\[
+ \sum_{k=0}^{\infty} h_{jk} c_k 
+ = E \sum_{k=0}^{\infty} s_{jk} c_k
+\]</div>
+<p>In the special case where the basis functions are orthogonormal, <span class="math notranslate nohighlight">\(\mathbf{S} = \mathbf{I}\)</span> and this is an ordinary <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors#Eigenvalues_and_eigenvectors_of_matrices">matrix eigenvalue problem</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{Hc}=E\mathbf{c}
+\]</div>
+<p>or, in element-wise notation, as:</p>
+<div class="math notranslate nohighlight">
+\[
+ \sum_{k=0}^{\infty} h_{jk} c_k 
+ = E c_j
+\]</div>
+<div class="section" id="solving-the-secular-equation">
+<h3><span class="section-number">8.1.1. </span>Solving the Secular Equation<a class="headerlink" href="#solving-the-secular-equation" title="Permalink to this headline">¶</a></h3>
+<p>In the context of quantum chemistry, the generalized eigenvalue problem</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{Hc}=E\mathbf{Sc}
+\]</div>
+<p>is called the <em>secular equation</em>. To solve the secular equation:</p>
+<ol class="simple">
+<li><p>Choose a basis, <span class="math notranslate nohighlight">\(\{|\phi_k\rangle \}\)</span> and a basis-set size, <span class="math notranslate nohighlight">\(N_{\text{basis}}\)</span></p></li>
+<li><p>Evaluate the matrix elements of the Hamiltonian and the overlap matrix</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+h_{jk} &amp;= \int \left(\phi_j(x) \right)^* \hat{H} \phi_k(x) dx  \qquad \qquad 0 \le j,k \le N_{\text{basis}} \\
+s_{jk} &amp;= \int \left(\phi_j(x) \right)^* \phi_k(x) dx 
+\end{align}
+\end{split}\]</div>
+<ol class="simple">
+<li><p>Solve the generalized eigenvalue problem</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+ \sum_{k=0}^{\infty} h_{jk} c_k 
+ = E \sum_{k=0}^{\infty} s_{jk} c_k
+\]</div>
+<p>Because of the variational principle, the lowest eigenvalue will always be greater than or equal to the true ground-state energy.</p>
+</div>
+<div class="section" id="example-for-the-particle-in-a-box">
+<h3><span class="section-number">8.1.2. </span>Example for the Particle-in-a-Box<a class="headerlink" href="#example-for-the-particle-in-a-box" title="Permalink to this headline">¶</a></h3>
+<p>As an example, consider an electron confined to a box with length 2 Bohr, stretching from <span class="math notranslate nohighlight">\(x=-1\)</span> to <span class="math notranslate nohighlight">\(x=1\)</span>. We know that the exact energy of this system is</p>
+<div class="math notranslate nohighlight">
+\[
+E=\tfrac{(\pi n)^2}{8}
+\]</div>
+<p>The exact wavefunctions are easily seen to be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\psi_n(x) = 
+\begin{cases}
+\cos\left(\tfrac{n \pi x}{2}\right) &amp; n=1,3,5,\ldots \\
+\sin\left(\tfrac{n \pi x}{2}\right) &amp; n=2,4,6,\ldots 
+\end{cases}
+\end{split}\]</div>
+<p>However, for pedagogical purposes, suppose we did not know these answers. We know that the wavefunction will be zero at <span class="math notranslate nohighlight">\(x= \pm1\)</span>, so we might hypothesize a basis like:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi_k(x) = (x-1)(x+1)x^k = x^{k+2} - x^{k} \qquad \qquad k=0,1,2,\ldots
+\]</div>
+<p>The overlap matrix elements are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+s_{jk} &amp;= \int_{-1}^{1} \left(\phi_j(x) \right)^* \phi_k(x) dx \\
+&amp;= \int_{-1}^{1} \left(x^{j+2}-x^{j}\right) \left(x^{k+2} - x^{k}\right) dx \\
+&amp;= \int_{-1}^{1} \left(x^{j+k+4}+x^{j+k} - 2 x^{j+k+2}\right) dx \\
+&amp;= \left[\frac{x^{k+j+5}}{k+j+5} + \frac{x^{k+j+1}}{k+j+1} 
+- 2\frac{x^{k+j+3}}{k+j+3} \right]_{-1}^{+1}
+\end{align}
+\end{split}\]</div>
+<p>This integral is zero when <span class="math notranslate nohighlight">\(k+j\)</span> is odd. Specifically,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+s_{jk} = 
+\begin{cases}
+    0 &amp; j+k \text{ is odd}\\
+    2\left(\frac{1}{k+j+5} - \frac{2}{k+j+3} + \frac{1}{k+j+1}  \right)       &amp; j+k \text{ is even}
+\end{cases}
+\end{split}\]</div>
+<p>and the Hamiltonian matrix elements are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+h_{jk} &amp;= \int_{-1}^{1} \left(\phi_j(x) \right)^* \hat{H} \phi_k(x) dx \\
+&amp;= \int_{-1}^{1} \left(x^{j+2}-x^{j}\right) \left(-\tfrac{1}{2}\tfrac{d^2}{dx^2}\right) \left(x^{k+2} - x^{k}\right) dx \\
+&amp;= -\tfrac{1}{2}\int_{-1}^{1} \left(x^{j+2}-x^{j}\right) \left((k+2)(k+1)x^{k} - (k)(k-1)x^{k-2}\right) dx \\
+&amp;= -\tfrac{1}{2}\int_{-1}^{1} \left((k+2)(k+1)x^{k+j+2} + (k)(k-1)x^{k+j-2} -\left[(k+2)(k+1) + k(k-1) \right]x^{k+j} \right) dx \\
+&amp;= -\tfrac{1}{2}\left[\left(\frac{(k+2)(k+1)}{k+j+3}x^{k+j+3} + \frac{(k)(k-1)}{k+j-1}x^{k+j-1} 
+- \frac{(k+2)(k+1) + k(k-1)}{k+j+1}x^{k+j+1} \right) \right]_{-1}^{+1}
+\end{align}
+\end{split}\]</div>
+<p>This integral is also zero when <span class="math notranslate nohighlight">\(k+j\)</span> is odd. Specifically,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_{jk} = 
+\begin{cases}
+    0 &amp; j+k \text{ is odd}\\
+    2\left(\frac{(k+2)(k+1)}{k+j+3} - \frac{(k+2)(k+1) + k(k-1)}{k+j+1} + \frac{(k)(k-1)}{k+j-1}  \right)       &amp; j+k \text{ is even}
+\end{cases}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">compute_energy_ground_state</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute ground state energy by solving the Secular equations.&quot;&quot;&quot;</span>
+    <span class="c1"># assign S &amp; H to zero matrices</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">))</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">))</span>
+
+    <span class="c1"># loop over upper-triangular elements &amp; compute S &amp; H elements</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(((</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span>  <span class="p">((</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c1"># solve Hc = ESc to get eigenvalues E</span>
+    <span class="n">e_vals</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">eigvals_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="c1"># plot basis set convergence of Secular equations</span>
+<span class="c1"># -----------------------------------------------</span>
+
+<span class="c1"># evaluate energy for a range of basis functions</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">e_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">compute_energy_ground_state</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+<span class="n">expected_energy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Basis Set Convergence of Secular Equations&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># plot approximate &amp; exact energy</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Approximate&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">expected_energy</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_values</span><span class="p">)),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># plot log of approximate energy error (skip the last two values because they are zero)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">e_values</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_energy</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log10 (Ground-State Energy Error [a.u.])&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ApproximateMethods_5_0.png" src="../_images/ApproximateMethods_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="particle-in-a-box-with-jacobi-polynomials">
+<h3><span class="section-number">8.1.3. </span>Particle-in-a-Box with Jacobi polynomials<a class="headerlink" href="#particle-in-a-box-with-jacobi-polynomials" title="Permalink to this headline">¶</a></h3>
+<p>Similar results can be obtained with different basis functions. It is often convenient to use an orthonormal basis, where <span class="math notranslate nohighlight">\(s_{jk} = \delta_{jk}\)</span>. For the particle-in-a-box with <span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span>, one such set of basis functions can be constructed from the (normalized) <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobi_polynomials">Jacobi polynomials</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+\phi_j(x) = N_j(1-x)(1+x)P_j^{(2,2)}(x)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_j\)</span> is the normalization constant</p>
+<div class="math notranslate nohighlight">
+\[
+N_j = \sqrt{\frac{(2j+5)(j+4)(j+3)}{32(j+2)(j+1)}}
+\]</div>
+<p>To evaluate the Hamiltonian it is useful to know that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{d^2\phi_j(x)}{dx^2} &amp;= N_j
+\left(-2 P_j^{(2,2)}(x) - 4x \frac{d P_j^{(2,2)}(x)}{dx} + (1-x)(1+x)\frac{d^2 P_j^{(2,2)}(x)}{dx^2} \right) \\
+&amp;= N_j
+\left(-2 P_j^{(2,2)}(x) - 4x \frac{j+5}{2} P_{j-1}^{(3,3)}(x) + (1-x^2)\frac{(j+5)(j+6)}{4}P_{j-2}^{(4,4)}(x) \right) 
+\end{align}
+\end{split}\]</div>
+<p>The Hamiltonian matrix elements could be evaluated analytically, but the expression is pretty complicated. It’s easier to merely evaluate them numerically as:</p>
+<div class="math notranslate nohighlight">
+\[
+h_{jk} = -\frac{1}{2}N_j N_k \int_{-1}^1 (1-x)(1+x) P_k^{(2, 2)}(x) \left(-2 P_j^{(2,2)}(x) - 4x \frac{j+5}{2} P_{j-1}^{(3,3)}(x) + (1-x^2)\frac{(j+5)(j+6)}{4}P_{j-2}^{(4,4)}(x) \right) dx 
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">eval_jacobi</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">compute_energy_ground_state</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute ground state energy for a particle-in-a-Box with Jacobi basis.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">normalization</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+    
+    <span class="k">def</span> <span class="nf">phi_squared</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">normalization</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">eval_jacobi</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="k">def</span> <span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="n">term</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">eval_jacobi</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">term</span> <span class="o">-=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">eval_jacobi</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">term</span> <span class="o">+=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">eval_jacobi</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">eval_jacobi</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">term</span>
+    
+    <span class="c1"># assign H to a zero matrix</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">))</span>
+
+    <span class="c1"># compute H elements</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+            <span class="n">integral</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">normalization</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">normalization</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">integral</span>
+
+    <span class="c1"># solve Hc = Ec to get eigenvalues E</span>
+    <span class="n">e_vals</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">eigvals_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="c1"># plot basis set convergence of particle-in-a-Box with Jacobi basis</span>
+<span class="c1"># -----------------------------------------------------------------</span>
+
+<span class="c1"># evaluate energy for a range of basis functions</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">e_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">compute_energy_ground_state</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+<span class="n">expected_energy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Basis Set Convergence of Particle-in-a-Box with Jacobi Basis&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># plot approximate &amp; exact energy</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Approximate&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">expected_energy</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_values</span><span class="p">)),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># plot log of approximate energy error (skip the last two values because they are zero)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">e_values</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_energy</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log10 (Ground-State Energy Error [a.u.])&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ApproximateMethods_7_0.png" src="../_images/ApproximateMethods_7_0.png" />
+</div>
+</div>
+<div class="section" id="thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction">
+<h4><span class="section-number">8.1.3.1. </span>🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.<a class="headerlink" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction" title="Permalink to this headline">¶</a></h4>
+<p>Hint: The ground state wavefunction is an even function.
+A function is said to be even if it is symmetric about the origin, <span class="math notranslate nohighlight">\(f(x) = f(-x)\)</span>. A function is said to be odd if it is antisymmetric around the origin, <span class="math notranslate nohighlight">\(f(x) = - f(-x)\)</span>. Even-degree polynomials (e.g., <span class="math notranslate nohighlight">\(1, x^2, x^4, \ldots\)</span>) are even functions; odd-degree polynomials (e.g.; <span class="math notranslate nohighlight">\(x, x^3, x^5, \ldots\)</span>) are odd functions. <span class="math notranslate nohighlight">\(\cos(ax)\)</span> is an even function and <span class="math notranslate nohighlight">\(\sin(ax)\)</span> is an odd function. <span class="math notranslate nohighlight">\(\cosh(ax)\)</span> is an even function and <span class="math notranslate nohighlight">\(\sinh(ax)\)</span> is an odd function. In addition,</p>
+<ul class="simple">
+<li><p>A linear combination of odd functions is also odd.</p></li>
+<li><p>A linear combination of even functions is also even.</p></li>
+<li><p>The product of two odd functions is even.</p></li>
+<li><p>The product of two even functions is even.</p></li>
+<li><p>The product of an odd and an even function is odd.</p></li>
+<li><p>The integral of an odd function from <span class="math notranslate nohighlight">\(-a\)</span> to <span class="math notranslate nohighlight">\(a\)</span> is always zero.</p></li>
+<li><p>The integral of an even function from <span class="math notranslate nohighlight">\(-a\)</span> to <span class="math notranslate nohighlight">\(a\)</span> is always twice the value of its integral from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(a\)</span>; it is also twice its integral from <span class="math notranslate nohighlight">\(-a\)</span> to <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>The first derivative of an even function is odd.</p></li>
+<li><p>The first derivative of an odd function is even.</p></li>
+<li><p>The k-th derivative of an even function is odd if k is odd, and even if k is even.</p></li>
+<li><p>The k-th derivative of an odd function is even if k is odd, and odd if k is even.</p></li>
+</ul>
+<p>These properties of odd and even functions are often very useful. In particular, the first and second properties indicate that if you know that the exact wavefunction you are looking for is odd (or even), it will be a linear combination of basis functions that are odd (or even). E.g., odd basis functions are useless for approximating even eigenfunctions.</p>
+</div>
+<div class="section" id="thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials">
+<h4><span class="section-number">8.1.3.2. </span>🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler <span class="math notranslate nohighlight">\((1-x)(1+x)x^k\)</span> polynomials?<a class="headerlink" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials" title="Permalink to this headline">¶</a></h4>
+<p>Hint: Can you rewrite one set of polynomials as a linear combination of the others?</p>
+<p><img alt="Balancing Rock" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Perturbation.jpg?raw=true" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="perturbation-theory">
+<h2><span class="section-number">8.2. </span>Perturbation Theory<a class="headerlink" href="#perturbation-theory" title="Permalink to this headline">¶</a></h2>
+<p>It is not uncommon that a Hamiltonian for which the Schrödinger equation is difficult to solve is “close” to another Hamiltonian that is easier to solve. In such cases, one can attempt to solve the easier problem, then <em>perturb</em> the system towards the actual, more difficult to solve, system of interest. The idea of leveraging easy problems to solve difficult problems is the essence of <a class="reference external" href="https://en.wikipedia.org/wiki/Perturbation_theory">perturbation theory</a>.</p>
+<div class="section" id="the-perturbed-hamiltonian">
+<h3><span class="section-number">8.2.1. </span>The Perturbed Hamiltonian<a class="headerlink" href="#the-perturbed-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that for some Hamiltonian, <span class="math notranslate nohighlight">\(\hat{H}\)</span>, we know the eigenfunctions and eigenvalues,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} |\psi_k \rangle = E_k |\psi_k \rangle
+\]</div>
+<p>However, we are not interested in this Hamiltonian, but a different Hamiltonian, <span class="math notranslate nohighlight">\(\tilde{H}\)</span>, which we can write as:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{H} = \hat{H} + \hat{V}
+\]</div>
+<p>where obviously</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{V} = \tilde{H} - \hat{H}
+\]</div>
+<p>Let us now define a family of perturbed Hamiltonians,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}(\lambda) = \hat{H} + \lambda \hat{V}
+\]</div>
+<p>where obviously:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H}(\lambda) = 
+\begin{cases}
+    \hat{H} &amp; \lambda = 0\\
+    \tilde{H} &amp; \lambda = 1
+\end{cases}
+\end{split}\]</div>
+<p>Writing the Schrödinger equation for <span class="math notranslate nohighlight">\(\hat{H}_\lambda\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}(\lambda) |\psi_k(\lambda) \rangle = E_k(\lambda) |\psi_k(\lambda) \rangle 
+\]</div>
+<p>This equation holds true for all values of <span class="math notranslate nohighlight">\(\lambda\)</span>. Since we know the answer for <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, and we <em>assume</em> that the perturbed system described by <span class="math notranslate nohighlight">\(\tilde{H}\)</span> is close enough to <span class="math notranslate nohighlight">\(\hat{H}\)</span> for the solution at <span class="math notranslate nohighlight">\(\lambda =0\)</span> to be useful, we will write the expand the energy and wavefunction as <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series">Taylor-MacLaurin series</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+E_k(\lambda) &amp;= E_k(\lambda=0) + \lambda \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0} 
++ \frac{\lambda^2}{2!} \left[\frac{d^2E_k}{d \lambda^2} \right]_{\lambda=0} 
++ \frac{\lambda^3}{3!} \left[\frac{d^3E_k}{d \lambda^3} \right]_{\lambda=0} + \cdots \\
+|\psi_k(\lambda) \rangle &amp;= |\psi_k(\lambda=0) \rangle + \lambda \left[\frac{d|\psi_k \rangle}{d \lambda} \right]_{\lambda=0} 
++ \frac{\lambda^2}{2!} \left[\frac{d^2|\psi_k \rangle}{d \lambda^2} \right]_{\lambda=0} 
++ \frac{\lambda^3}{3!} \left[\frac{d^3|\psi_k \rangle}{d \lambda^3} \right]_{\lambda=0} + \cdots 
+\end{align}
+\end{split}\]</div>
+<p>When we write this, we are implicitly assuming that the derivatives all exist, which is not true if the zeroth-order state is degenerate (unless the perturbation does not break the degeneracy).</p>
+<p>If we insert these expressions into the Schrödinger equation for <span class="math notranslate nohighlight">\(\hat{H}(\lambda)\)</span>, we obtain a polynomial of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+0=p(\lambda)= a_0 + a_1 \lambda + a_2 \lambda^2 + a_3 \lambda^3 + \cdots
+\]</div>
+<p>This equation can only be satisfied for <em>all</em> <span class="math notranslate nohighlight">\(\lambda\)</span> if all its terms are zero, so</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_0 = a_1 = a_2 = \cdots
+\]</div>
+<p>The key equations that need to be solved are listed below. First there is the zeroth-order equation, which is automatically satisfied:</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_0 = \left( \hat{H}(0) - E_k(0) \right) | \psi_k(0) \rangle 
+\]</div>
+<p>The first-order equation is:</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_1 = \left( \hat{H}(0) - E_k(0) \right) \left[\frac{d|\psi_k \rangle}{d \lambda} \right]_{\lambda=0} +\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)|\psi_k(\lambda=0) \rangle 
+\]</div>
+<p>The second-order equation is:</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_2 = \tfrac{1}{2} \left( \hat{H}(0) - E_k(0) \right) \left[\frac{d^2|\psi_k \rangle}{d \lambda^2} \right]_{\lambda=0} +\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)\left[\frac{d|\psi_k \rangle}{d \lambda} \right]_{\lambda=0}
+-\tfrac{1}{2} \left[\frac{d^2E_k}{d \lambda^2} \right]_{\lambda=0} |\psi_k(\lambda=0) \rangle 
+\]</div>
+<p>Higher-order equations are increasingly complicated, but still tractable in some cases. One usually applies perturbation theory only when the perturbation is relatively small, which usually suffices to ensure that the Taylor series expansion converges rapidly and higher-order terms are relatively insignificant.</p>
+</div>
+<div class="section" id="hellmann-feynman-theorem">
+<h3><span class="section-number">8.2.2. </span>Hellmann-Feynman Theorem<a class="headerlink" href="#hellmann-feynman-theorem" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hellmann%E2%80%93Feynman_theorem">Hellmann-Feynman theorem</a> has been discovered many times, most impressively by <a class="reference external" href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>, who included it in his undergraduate senior thesis. In simple terms:</p>
+<blockquote>
+<div><p><strong>Hellmann-Feynman Theorem</strong>: Suppose that the Hamiltonian, <span class="math notranslate nohighlight">\(\hat{H}(\lambda)\)</span> depends on a parameter. Then the first-order change in the energy with respect to the parameter is given by the equation,</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{dE}{d\lambda}\right]_{\lambda = \lambda_0} = \int \left( \psi(\lambda_0;x)\right)^* \left[\frac{d\hat{H}}{d \lambda} \right]_{\lambda = \lambda_0}\psi(\lambda_0;x) \; dx
+\]</div>
+<div class="section" id="derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign">
+<h4><span class="section-number">8.2.2.1. </span>Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign" title="Permalink to this headline">¶</a></h4>
+<p>The usual way to derive the Hellmann-Feynman theorem uses the technique of <a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_integral_rule">differentiation under the integral sign</a>. Therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dE}{d\lambda} = \frac{d}{d\lambda}\int \left( \psi(\lambda;x)\right)^* \hat{H}\psi(\lambda;x) \; dx = \int \frac{d\left( \psi(\lambda;x)\right)^* \hat{H}\psi(\lambda;x) }{d\lambda}\; dx
+\]</div>
+<p>While such an operation is not always mathematically permissible, it is usually permissible, as should be clear from the definition of the derivative as a limit of a difference,</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{dE}{d\lambda}\right]_{\lambda = \lambda_0} = \lim_{h\rightarrow0} \frac{E(\lambda_0 + h) - E(\lambda_0)}{h}
+\]</div>
+<p>and the fact that the integral of a sum is the sum of the integrals. Using the product rule for derivatives, one obtains:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{dE}{d\lambda} &amp;= \int \frac{d\left( \psi(\lambda;x)\right)^* \hat{H}\psi(\lambda;x) }{d\lambda}\; dx \\
+&amp;=\int 
+  \frac{\left(\psi(\lambda;x)\right)^*}{d\lambda} \hat{H} \psi(\lambda;x) 
++ \left( \psi(\lambda;x)\right)^* \frac{d\hat{H}}{d \lambda}\psi(\lambda;x) 
++ \left( \psi(\lambda;x)\right)^* \hat{H} \frac{d\psi(\lambda;x)}{d\lambda}
+\; dx \\
+&amp;=\int 
+  \frac{\left(\psi(\lambda;x)\right)^*}{d\lambda} E(\lambda) \psi(\lambda;x) 
++ \left( \psi(\lambda;x)\right)^* \frac{d\hat{H}}{d \lambda}\psi(\lambda;x) 
++ \left( \psi(\lambda;x)\right)^* E(\lambda) \frac{d\psi(\lambda;x)}{d\lambda}
+\; dx \\
+&amp;=E(\lambda) \int 
++  \frac{\left(\psi(\lambda;x)\right)^*}{d\lambda} \psi(\lambda;x) 
++ \left( \psi(\lambda;x)\right)^* \frac{d\psi(\lambda;x)}{d\lambda}
+\; dx
++\int  
+\left( \psi(\lambda;x)\right)^* \frac{d\hat{H}}{d \lambda}\psi(\lambda;x) 
+\; dx \\
+&amp;=\int  
+\left( \psi(\lambda;x)\right)^* \frac{d\hat{H}}{d \lambda}\psi(\lambda;x) 
+\; dx 
+\end{align}
+\end{split}\]</div>
+<p>In the third-from-last line we used the eigenvalue relation and the Hermitian property of the Hamiltonian; in the last step we have used the fact that the wavefunctions are normalized and the fact that the derivative of a constant is zero to infer that the terms involving the wavefunction derivatives vanish. Specifically, we used</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\int &amp;\left(\left[\frac{d\left( \psi(\lambda_0;x)\right)^*}{d \lambda}\right]_{\lambda = \lambda_0} \psi(\lambda_0;x) 
++ \left( \psi(\lambda_0;x)\right)^* \left[\frac{d \psi(\lambda_0;x)}{d \lambda}\right]_{\lambda = \lambda_0}\right) \; dx \\
+&amp;= \left[\frac{d}{d \lambda} \int \left( \psi(\lambda_0;x)\right)^* \psi(\lambda_0;x) \; dx \right]_{\lambda = \lambda_0}\\
+&amp;= \frac{d 1}{d\lambda} \\
+&amp;= 0
+\end{align}
+\end{split}\]</div>
+</div>
+<div class="section" id="derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory">
+<h4><span class="section-number">8.2.2.2. </span>Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory" title="Permalink to this headline">¶</a></h4>
+<p>Starting with the equation from first-order perturbation theory,</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_1 = \left( \hat{H}(0) - E_k(0) \right) \left[\frac{d|\psi_k \rangle}{d \lambda} \right]_{\lambda=0} +\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)|\psi_k(0) \rangle 
+\]</div>
+<p>multiply on the left-hand-side by <span class="math notranslate nohighlight">\(\langle \psi_k(0) |\)</span>. (I.e., multiply by <span class="math notranslate nohighlight">\(\psi_k(0;x)^*\)</span> and integrate.) Then:</p>
+<div class="math notranslate nohighlight">
+\[
+0 = \langle \psi_k(0) |\left( \hat{H}(0) - E_k(0) \right) \left[\frac{d|\psi_k \rangle}{d \lambda} \right]_{\lambda=0} +\langle \psi_k(0) |\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)|\psi_k(0) \rangle 
+\]</div>
+<p>Because the Hamiltonian is Hermitian, the first term is zero. The second term can be rearranged to give the Hellmann-Feynman theorem,</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{dE_k}{d \lambda} \right]_{\lambda=0} \langle \psi_k(0) |\psi_k(0) \rangle = \langle \psi_k(0) |\hat{V}|\psi_k(0) \rangle = \langle \psi_k(0) |\left[\frac{d\hat{H}}{d\lambda} \right]_{\lambda=0}|\psi_k(0) \rangle
+\]</div>
+</div>
+</div>
+<div class="section" id="perturbed-wavefunctions">
+<h3><span class="section-number">8.2.3. </span>Perturbed Wavefunctions<a class="headerlink" href="#perturbed-wavefunctions" title="Permalink to this headline">¶</a></h3>
+<p>To determine the change in the wavefunction,</p>
+<div class="math notranslate nohighlight">
+\[\psi_k'(\lambda) = \frac{d |\psi_k\rangle}{d\lambda}\]</div>
+<p>it is helpful to adopt the convention of intermediate normalization, whereby</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi_k(0) | \psi_k(\lambda) \rangle = 1
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\(\lambda\)</span>. Inserting the series expansion for <span class="math notranslate nohighlight">\(|\psi(\lambda) \rangle\)</span> one finds that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+1 &amp;= \langle \psi_k(0) | \psi_k(0) \rangle + \lambda \langle \psi_k(0) | \psi_k'(0) \rangle + \tfrac{\lambda^2}{2!} \langle \psi_k(0) | \psi_k''(0) \rangle + \cdots \\
+1 &amp;= 1 + \lambda \langle \psi_k(0) | \psi_k'(0) \rangle + \tfrac{\lambda^2}{2!} \langle \psi_k(0) | \psi_k''(0) \rangle + \cdots 
+\end{align} 
+\end{split}\]</div>
+<p>where in the second line we have used the normalization of the zeroth-order wavefunction, <span class="math notranslate nohighlight">\(\langle \psi_k(0) | \psi_k(0) \rangle = 1\)</span>. Since this equation holds for all <span class="math notranslate nohighlight">\(\lambda\)</span>, it must be that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+0=\langle \psi_k(0) | \psi_k'(0) \rangle\\
+0=\langle \psi_k(0) | \psi_k''(0) \rangle\\
+\vdots
+\end{split}\]</div>
+<p>Because the eigenfunctions of <span class="math notranslate nohighlight">\(\hat{H}(0)\)</span> are a complete basis, we can expand <span class="math notranslate nohighlight">\( | \psi_k'(0) \rangle\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+ | \psi_k'(0) \rangle = \sum_{j=0}^{\infty} c_j | \psi_j(0) \rangle
+\]</div>
+<p>but because <span class="math notranslate nohighlight">\(\langle \psi_k(0) | \psi_k'(0) \rangle=0\)</span>, it must be that <span class="math notranslate nohighlight">\(c_k = 0\)</span>. So:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ | \psi_k'(0) \rangle = \sum_{j=0\\
+ j \ne k}^{\infty} c_j | \psi_j(0) \rangle
+\end{split}\]</div>
+<p>We insert this expansion into the expression from first-order perturbation theory:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+0 = \left( \hat{H}(0) - E_k(0) \right) \sum_{j=0\\
+ j \ne k}^{\infty} c_j | \psi_j(0) \rangle +\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)|\psi_k(0) \rangle 
+\end{split}\]</div>
+<p>and multiply on the left by <span class="math notranslate nohighlight">\(\langle \psi_l(0) |\)</span>, with <span class="math notranslate nohighlight">\(l \ne k\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+0 &amp;= \langle \psi_l(0) |\left( \hat{H}(0) - E_k(0) \right) \sum_{j=0\\
+ j \ne k}^{\infty} c_j | \psi_j(0) \rangle +\langle \psi_l(0) |\left(\hat{V} -  \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\right)|\psi_k(0) \rangle \\
+&amp;= \sum_{j=0\\ j \ne k}^{\infty} c_j\langle \psi_l(0) |\left( E_l(0) - E_k(0) \right)  | \psi_j(0) \rangle +\langle \psi_l(0) |\hat{V} |\psi_k(0) \rangle - \left[\frac{dE_k}{d \lambda} \right]_{\lambda=0}\langle \psi_l(0) |\psi_k(0) \rangle \\
+&amp;= \sum_{j=0\\ j \ne k}^{\infty} c_j \left( E_l(0) - E_k(0) \right) \delta_{lj} +\langle \psi_l(0) |\hat{V} |\psi_k(0) \rangle \\
+&amp;=c_l \left( E_l(0) - E_k(0) \right)+\langle \psi_l(0) |\hat{V} |\psi_k(0) \rangle 
+\end{align}
+\end{split}\]</div>
+<p>Assuming that the k-th state is nondegenerate (so that we can safely divide by <span class="math notranslate nohighlight">\( E_l(0) - E_k(0)\)</span>),</p>
+<div class="math notranslate nohighlight">
+\[
+c_l = \frac{\langle \psi_l(0) |\hat{V} |\psi_k(0) \rangle }{E_k(0) - E_l(0)}
+\]</div>
+<p>and so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ | \psi_k'(0) \rangle = \sum_{j=0\\
+ j \ne k}^{\infty} \frac{\langle \psi_j(0) |\hat{V} |\psi_k(0) \rangle }{E_k(0) - E_j(0)} | \psi_j(0) \rangle
+\end{split}\]</div>
+<p>Higher-order terms can be determined in a similar way, but we will only deduce the expression for the second-order energy change. Using the second-order terms from the perturbation expansion,</p>
+<div class="math notranslate nohighlight">
+\[
+0 = a_2 = \tfrac{1}{2} \left( \hat{H}(0) - E_k(0) \right) |\psi_k''(0) \rangle +\left(\hat{V} -  E_k'(0)\right)|\psi_k'(0) \rangle-\tfrac{1}{2} E_k''(0) |\psi_k(0) \rangle 
+\]</div>
+<p>Projecting this expression against <span class="math notranslate nohighlight">\(\langle \psi_k(0) |\)</span>, one has:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+0 &amp;= \tfrac{1}{2} \langle \psi_k(0) |\left( \hat{H}(0) - E_k(0) \right) |\psi_k''(0) \rangle +\langle \psi_k(0) |\left(\hat{V} -  E_k'(0)\right)|\psi_k'(0) \rangle-\tfrac{1}{2} \langle \psi_k(0) |E_k''(0) |\psi_k(0) \rangle \\
+ &amp;= \tfrac{1}{2} \langle \psi_k(0) |\left(E_k(0) - E_k(0) \right) |\psi_k''(0) \rangle 
++\langle \psi_k(0) |\hat{V} |\psi_k'(0) \rangle
+-E_k'(0)\langle \psi_k(0) |\psi_k'(0) \rangle
+-\tfrac{1}{2} E_k''(0) \\
+ &amp;= \langle \psi_k(0) |\hat{V} |\psi_k'(0) \rangle
+-\tfrac{1}{2} E_k''(0) 
+\end{align}
+\end{split}\]</div>
+<p>To obtain the last line we used the intermediate normalization of the perturbed wavefunction, <span class="math notranslate nohighlight">\(\langle \psi_k(0) | \psi_k'(0) \rangle = 0\)</span>. Rewriting the expression for the second-order change in the energy, and then inserting the expression for the first-order wavefunction, gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+ E_k''(0) &amp;= 2\langle \psi_k(0) |\hat{V} |\psi_k'(0) \rangle \\
+ &amp;= 2\langle \psi_k(0) |\hat{V} \sum_{j=0\\
+ j \ne k}^{\infty} \frac{\langle \psi_j(0) |\hat{V} |\psi_k(0) \rangle }{E_k(0) - E_j(0)} | \psi_j(0) \rangle \\
+ &amp;= 2 \sum_{j=0\\j \ne k}^{\infty}\frac{\langle \psi_j(0) |\hat{V} |\psi_k(0) \rangle \langle \psi_k(0) |\hat{V} | \psi_j(0) \rangle}{E_k(0) - E_j(0)}  \\
+ &amp;= 2 \sum_{j=0\\j \ne k}^{\infty}\frac{ \left|\langle \psi_j(0) |\hat{V} |\psi_k(0) \rangle \right|^2}{E_k(0) - E_j(0)} 
+\end{align}
+\end{split}\]</div>
+<p>Notice that for the ground state (<span class="math notranslate nohighlight">\(k=0\)</span>), where <span class="math notranslate nohighlight">\(E_0 - E_{j&gt;0} &lt; 0\)</span>, the second-order energy change is never positive, <span class="math notranslate nohighlight">\( E_0''(0) \le 0\)</span>.</p>
+</div>
+<div class="section" id="the-law-of-diminishing-returns-and-accelerating-losses">
+<h3><span class="section-number">8.2.4. </span>The Law of Diminishing Returns and Accelerating Losses<a class="headerlink" href="#the-law-of-diminishing-returns-and-accelerating-losses" title="Permalink to this headline">¶</a></h3>
+<p>Suppose one is given a Hamiltonian that is parameterized in the general form used in perturbation theory,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}(\lambda) = \hat{H}(0) + \lambda \hat{V}
+\]</div>
+<p>According to the Hellmann-Feynman theorem, I have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dE_0}{d\lambda} = E_0'(\lambda) = \langle \psi(\lambda) | \hat{V} |\psi(\lambda) \rangle
+\]</div>
+<p>Consider two distinct values for the perturbation parameter, <span class="math notranslate nohighlight">\(\lambda_1 &lt; \lambda_2\)</span>. According to the variational principle, if one evaluates the expectation value of <span class="math notranslate nohighlight">\(\hat{H}(\lambda_1)\)</span> with <span class="math notranslate nohighlight">\(\psi(\lambda_2)\)</span> one will obtain an energy above the true ground-state energy. I.e.,</p>
+<div class="math notranslate nohighlight">
+\[
+E_0(\lambda_1) = \langle \psi(\lambda_1) | \hat{H}(\lambda_1) |\psi(\lambda_1) \rangle &lt; \langle \psi(\lambda_2) | \hat{H}(\lambda_1) |\psi(\lambda_2) \rangle
+\]</div>
+<p>Or, more explicitly,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi(\lambda_1) | \hat{H}(0) +\lambda_1\hat{V} |\psi(\lambda_1) \rangle &lt; \langle \psi(\lambda_2) | \hat{H}(0) +\lambda_1\hat{V}  |\psi(\lambda_2) \rangle
+\]</div>
+<p>Similarly, the energy expectation value <span class="math notranslate nohighlight">\(\hat{H}(\lambda_2)\)</span> evaluated with <span class="math notranslate nohighlight">\(\psi(\lambda_1)\)</span> is above the true ground-state energy, so</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi(\lambda_2) | \hat{H}(0) +\lambda_2\hat{V} |\psi(\lambda_2) \rangle &lt; \langle \psi(\lambda_1) | \hat{H}(0) +\lambda_2\hat{V}  |\psi(\lambda_1) \rangle
+\]</div>
+<p>Adding these two inequalities and cancelling out the factors of <span class="math notranslate nohighlight">\(\langle \psi(\lambda_2) | \hat{H}(0) |\psi(\lambda_2) \rangle \)</span> that appear on both sides of the inequality, one finds that:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\lambda_2 - \lambda_1 \right) \left(\langle \psi(\lambda_2) | \hat{V} |\psi(\lambda_2) \rangle - \langle \psi(\lambda_1) | \hat{V}  |\psi(\lambda_1) \rangle \right) &lt; 0
+\]</div>
+<p>or, using the Hellmann-Feynman theorem (in reverse),</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\lambda_2 - \lambda_1 \right) \left( E_0'(\lambda_2) - E_0'(\lambda_1)\right) &lt; 0
+\]</div>
+<p>Recall that <span class="math notranslate nohighlight">\(\lambda_2 &gt; \lambda_1\)</span>. Thus <span class="math notranslate nohighlight">\(E_0'(\lambda_2) &lt; E_0'(\lambda_1)\)</span>. If the system is losing energy at <span class="math notranslate nohighlight">\(\lambda_1\)</span> (i.e., <span class="math notranslate nohighlight">\(E'(\lambda_1) &lt; 0\)</span>), then at <span class="math notranslate nohighlight">\(\lambda_2\)</span> the system is losing energy even faster (<span class="math notranslate nohighlight">\(E_0'(\lambda_2)\)</span> is more negative than <span class="math notranslate nohighlight">\(E_0'(\lambda_1)\)</span>. This is the law of accelerating losses. If the system is gaining energy a <span class="math notranslate nohighlight">\(\lambda_1\)</span> (i.e., <span class="math notranslate nohighlight">\(E_0'(\lambda_1) &gt; 0\)</span>), then at <span class="math notranslate nohighlight">\(\lambda_2\)</span> the system is gaining energy more slowly (or even losing energy) (<span class="math notranslate nohighlight">\(E_0'(\lambda_2)\)</span> is smaller than <span class="math notranslate nohighlight">\(E_0'(\lambda_1)\)</span>). This is the law of diminishing returns.</p>
+<p>If the energy is a twice-differentiable function of <span class="math notranslate nohighlight">\(\lambda\)</span>, then one can infer that the second derivative of the energy is always negative</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\lambda_2 \rightarrow \lambda_1} \frac{E_0'(\lambda_2) - E_0'(\lambda_1)}{\lambda_2 - \lambda_1} = \left[\frac{d^2E_0}{d\lambda^2}\right]_{\lambda = \lambda_1}= E_0''(\lambda_1)&lt; 0 
+\]</div>
+</div>
+<div class="section" id="example-particle-in-a-box-with-a-sloped-bottom">
+<h3><span class="section-number">8.2.5. </span>Example: Particle in a Box with a Sloped Bottom<a class="headerlink" href="#example-particle-in-a-box-with-a-sloped-bottom" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-hamiltonian-for-an-applied-uniform-electric-field">
+<h4><span class="section-number">8.2.5.1. </span>The Hamiltonian for an Applied Uniform Electric Field<a class="headerlink" href="#the-hamiltonian-for-an-applied-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<p>When a system cannot be solved exactly, one can solve it approximately using</p>
+<ul class="simple">
+<li><p>perturbation theory.</p></li>
+<li><p>variational methods using either an explicit wavefunction form or basis-set expansion.</p></li>
+</ul>
+<p>To exemplify these approaches, we will use the particle-in-a-box with a sloped bottom. This is obtained when an external electric field is applied to a charged particle in the box. The force on the charged particle due to the field is</p>
+<div class="math notranslate nohighlight">
+\[
+\text{force} = \text{charge} \cdot \text{electric field}                                                           \]</div>
+<p>so for an electron in a box on which an electric field of magnitude <span class="math notranslate nohighlight">\(F\)</span> is applied in the <span class="math notranslate nohighlight">\(+x\)</span> direction, the force is</p>
+<div class="math notranslate nohighlight">
+\[
+\text{force} = -e F
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(e\)</span> is the magnitude of the charge on the electron. The potential is</p>
+<div class="math notranslate nohighlight">
+\[
+\text{potential} = - \nabla \text{force}
+\]</div>
+<p>Assuming that the potential is zero at the origin for convenience, <span class="math notranslate nohighlight">\(V(0) = 0\)</span>, the potential is thus:</p>
+<div class="math notranslate nohighlight">
+\[
+V(x) = eFx
+\]</div>
+<p>The particle in a box with an applied field has the Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x) + eFx
+\]</div>
+<p>or, in atomic units,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = -\tfrac{1}{2} \tfrac{d^2}{dx^2} + V(x) + Fx
+\]</div>
+<p>For simplicity, we assume the case where the box has length 2 and is centered at the origin,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(x) =
+\begin{cases}
+\infty &amp; x \le -1 \\
+0 &amp; -1 &lt; x &lt; 1 \\
+\infty &amp; 1 \le x 
+\end{cases}
+\end{split}\]</div>
+<p>For small electric fields, we can envision solving this system by perturbation theory. We also expect that variational approaches can work well. We’ll explore how these strategies can work. It turns out, however, that this system can be <a class="reference external" href="https://www.utupub.fi/bitstream/handle/10024/117904/progradu-tuomas-riihim%C3%A4ki.pdf">solved exactly</a>, though the treatment is far beyond the scope of this course. There are a few useful equations, however: for a field strength of <span class="math notranslate nohighlight">\(F=\tfrac{1}{16}\)</span> the ground-state energy is 1.23356 a.u. and for a field strength of <span class="math notranslate nohighlight">\(F=\tfrac{25}{8}\)</span> the ground-state energy is 0.9063 a.u.; these can be compared to the unperturbed result of 1.23370 a.u.. Some approximate formulas for the higher eigenvalues are available:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+E\left(F=\tfrac{1}{16};n\right) 
+&amp;= \frac{10.3685}{8}  
+\left( 0.048 + 5.758 \cdot 10^{-5} n + 0.952 n^2 + 3.054 \cdot 10^{-7} n^3\right)  - \frac{1}{16} \\
+E\left(F=\tfrac{25}{8};n\right)
+&amp;= \frac{32.2505}{8}  
+\left( 0.688 + 0.045 n + 0.300 n^2 + 2.365 \cdot 10^{-4} n^3\right) - \frac{25}{8}
+\end{align}
+\end{split}\]</div>
+<blockquote>
+<div><p>Note, to obtain these numbers from the reference data in <a class="reference external" href="https://www.utupub.fi/bitstream/handle/10024/117904/progradu-tuomas-riihim%C3%A4ki.pdf">solved exactly</a>, you need to keep in mind that the reference data assumes the mass is <span class="math notranslate nohighlight">\(1/2\)</span> instead of <span class="math notranslate nohighlight">\(1\)</span>, and that the reference data is for a box from <span class="math notranslate nohighlight">\(0 \le x \le 1\)</span> instead of <span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span>. This requires dividing the reference field by 16, and shifting the energies by the field, and dividing the energy by 8 (because both the length of the box and the mass of the particle has doubled). In the end, <span class="math notranslate nohighlight">\(F = \tfrac{1}{16} F_{\text{ref}}\)</span> and <span class="math notranslate nohighlight">\(E = \tfrac{1}{8}E_{\text{ref}}-\tfrac{1}{16}F_{\text{ref}}= \tfrac{1}{8}E_{\text{ref}}-F\)</span>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field">
+<h4><span class="section-number">8.2.5.2. </span>Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="the-first-order-energy-correction-is-always-zero">
+<h5><span class="section-number">8.2.5.2.1. </span>The First-Order Energy Correction is Always Zero<a class="headerlink" href="#the-first-order-energy-correction-is-always-zero" title="Permalink to this headline">¶</a></h5>
+<p>The corrections due to the perturbation are all zero to first order. To see this, consider that, from the Hellmann-Feynman theorem,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\left[\frac{dE_n}{dF}\right]_{F=0} &amp;= \int_{-1}^{1} \psi_n(x) \left[ \frac{d \hat{H}}{dF} \right]_{F=0} \psi_n(x) dx \\
+&amp;= \int_{-1}^{1} x|\psi_n(x)|^2 dx  \\
+&amp;= \int_{-1}^{1} \text{(even function)} \text{(odd function) } dx \\
+&amp;= \int_{-1}^{1}\text{(odd function) } dx \\
+&amp;= 0
+\end{align}
+\end{split}\]</div>
+<p>This reflects the fact that this system has a vanishing dipole moment.</p>
+</div>
+<div class="section" id="the-first-order-correction-to-the-wavefunction">
+<h5><span class="section-number">8.2.5.2.2. </span>The First-Order Correction to the Wavefunction<a class="headerlink" href="#the-first-order-correction-to-the-wavefunction" title="Permalink to this headline">¶</a></h5>
+<p>To determine the first-order correction to the wavefunction, one needs to evaluate integrals that look like:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{mn} = \int_{-1}^{1} \psi_m(x) (x) \psi_n(x) dx 
+\]</div>
+<p>From the properties of odd and even functions, and the fact that <span class="math notranslate nohighlight">\(\psi_n(x)\)</span> is odd if <span class="math notranslate nohighlight">\(n\)</span> is even, and <em>vice versa</em>, it’s clear that <span class="math notranslate nohighlight">\(V_mn = 0\)</span> unless <span class="math notranslate nohighlight">\(m+n\)</span> is odd. (That is, either <span class="math notranslate nohighlight">\(m\)</span> or <span class="math notranslate nohighlight">\(n\)</span>, but not both, must be odd.) The integrals we need to evaluate all have the form</p>
+<div class="math notranslate nohighlight">
+\[
+V_{mn} = \int_{-1}^{1} x \sin \left(\frac{m \pi x}{2} \right)\cos \left(\frac{n \pi x}{2} \right) dx 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> is even and <span class="math notranslate nohighlight">\(n\)</span> is odd. Using the trigonometric identity</p>
+<div class="math notranslate nohighlight">
+\[
+\sin(ax) \cos(bx) = \tfrac{1}{2} \sin((a+b)x) + \tfrac{1}{2} \sin((a-b)x)
+\]</div>
+<p>we can deduce that the integral is</p>
+<div class="math notranslate nohighlight">
+\[
+V_{mn} = \left[2\frac{\sin\left( \frac{(m-n)\pi x}{2} \right)}{(m-n)^2 \pi^2} 
++ 2\frac{\sin\left( \frac{(m+n)\pi x}{2} \right)}{(m+n)^2 \pi^2} 
+-\frac{x\cos\left( \frac{(m-n)\pi x}{2} \right)}{(m-n) \pi} 
+-\frac{x\cos\left( \frac{(m+n)\pi x}{2} \right)}{(m+n)^2 \pi} \right]_{=1}^{1}
+\]</div>
+<p>As mentioned before, this integral is zero unless <span class="math notranslate nohighlight">\(m+n\)</span> is odd. The cosine terms therefore vanish. For odd <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\sin \tfrac{p \pi}{2} = -1^{(p-1)/2}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_{mn} = 
+\begin{cases}
+0  &amp; m+n \text{ is even} \\
+\dfrac{4}{\pi^2} \left( \dfrac{-1^{(m-n-1)/2} }{(m-n)^2} + \dfrac{-1^{(m+n-1)/2}}{(m+n)^2} \right) &amp; m+n \text{ is odd}
+\end{cases} 
+\end{split}\]</div>
+<p>The first-order corrections to the ground-state wavefunction is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \left[\frac{d\psi_n(x)}{dF} \right]_{F=0} = | \psi_m'(0) \rangle = \sum_{m=1\\
+ m \ne n}^{\infty} \frac{V_{mn}}{E_n(0) - E_m(0)} | \psi_m(0) \rangle
+\end{split}\]</div>
+</div>
+<div class="section" id="the-second-order-correction-to-the-energy">
+<h5><span class="section-number">8.2.5.2.3. </span>The Second-Order Correction to the Energy<a class="headerlink" href="#the-second-order-correction-to-the-energy" title="Permalink to this headline">¶</a></h5>
+<p>The second-order correction to the energy is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ E_n''(0) = 2 \sum_{m=1\\m \ne n}^{\infty}\frac{ V_{mn}^2}{E_m(0) - E_n(0)} 
+\end{split}\]</div>
+<p>This infinite sum is not trivial to evaluate, but we can investigate the first non-vanishing term for the ground state. (This is the so-called Unsold approximation.) Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+E_0''(0) = 2 \frac{V_{21}^2}{E_1(0) - E_2(0)} = 2 \frac{\left(\tfrac{4}{\pi^2}(1-\tfrac{1}{9})\right)^2}{\tfrac{\pi^2}{8} - \tfrac{4\pi^2}{8}} 
+= -\frac{16384 }{243 \pi^6} = -0.0701
+\]</div>
+<p>Using this, we can estimate the ground-state energy for different field strengths as</p>
+<div class="math notranslate nohighlight">
+\[
+E(F) \approx E(0) - \frac{1}{2!}\frac{16384 }{243 \pi^6} F^2
+\]</div>
+<p>For the field strengths for which we have exact results readily available, this gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+E(\tfrac{1}{16}) \approx 1.23356 \text{ a.u.} \\
+E(\tfrac{25}{8}) \approx 0.8913 \text{ a.u.} \\
+\end{split}\]</div>
+<p>These results are impressively accurate, especially considering all the effects we have neglected.</p>
+</div>
+</div>
+<div class="section" id="variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field">
+<h4><span class="section-number">8.2.5.3. </span>Variational Approach to the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<p>When the field is applied, it becomes more favorable for the electron to drift to the <span class="math notranslate nohighlight">\(x&lt;0\)</span> side of the box. To accomodate this, we can propose a wavefunction ansatz for the ground state,</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_c(x) = (1 - cx)\cos\left(\frac{\pi x}{2} \right)
+\]</div>
+<p>Clearly <span class="math notranslate nohighlight">\(c = 0\)</span> in the absence of a field, but <span class="math notranslate nohighlight">\(c &gt; 0\)</span> is to be expected when the field is applied. We can determine the optimal value of <span class="math notranslate nohighlight">\(c\)</span> using the variational principle. First we need to determine the energy as a function of <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+E(c) = \frac{\langle \psi_c | \hat{H} | \psi_c \rangle}{\langle \psi_c | \psi_c \rangle}
+\]</div>
+<p>The denominator of this expression is easily evaluated</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi_c | \psi_c \rangle = 1 + \gamma c^2 
+\]</div>
+<p>where we have defined the constant:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \int_{-1}^1 x^2 \cos^2\left(\frac{\pi x}{2}\right) dx = \tfrac{1}{3} - \tfrac{2}{\pi^2}
+\]</div>
+<p>The numerator is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi_c | \hat{H} | \psi_c \rangle = \frac{\pi^2}{8} 
++  c^2 \frac{\gamma \pi^2}{8} - 2cF\gamma + \tfrac{1}{2}c^2
+\]</div>
+<p>where we have used the integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-1}^1 x \cos\left(\frac{\pi x}{2}\right) \sin\left(\frac{\pi x}{2} \right) dx = \frac{1}{\pi}
+\]</div>
+<p>This equation can be solved analytically because it is a cubic equation, but it is more convenient to solve it numerically.</p>
+</div>
+<div class="section" id="basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field">
+<h4><span class="section-number">8.2.5.4. </span>Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<p>As a final approach to this problem, we can expand the wavefunction in a basis set. The eigenfunctions of the unperturbed particle-in-a-box are a sensible choice here, though we could use polynomials (as we did earlier in this worksheet) without issue if one wished to do so. The eigenfunctions of the unperturbed problem are orthonormal, so the overlap matrix is the identity matrix</p>
+<div class="math notranslate nohighlight">
+\[
+s_{mn} = \delta_{mn}
+\]</div>
+<p>The Hamiltonian matrix elements are:
+and the Hamiltonian matrix elements are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+h_{mn} &amp;= \int_{-1}^{1} \cos\left(\frac{m \pi x}{2} \right) \hat{H} \cos\left(\frac{n \pi x}{2} \right) dx \\
+&amp;= \int_{-1}^{1} \cos\left(\frac{m \pi x}{2} \right)\left[-\frac{1}{2}\frac{d^2}{dx^2} + Fx \right] \cos\left(\frac{n \pi x}{2} \right) dx \\
+&amp;= \frac{\pi^2 n^2}{2} \delta_{mn} + F V_{mn}
+\end{align}
+\end{split}\]</div>
+<p>Using the results we have already determined for the matrix elements, then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_{mn} = 
+\begin{cases}
+    0 &amp; m\ne n \text{ and }m+n \text{ is even}\\
+    \dfrac{\pi^2n^2}{8} &amp; m = n \\
+    \dfrac{4F}{\pi^2} \left( \dfrac{-1^{(m-n-1)/2} }{(m-n)^2} + \dfrac{-1^{(m+n-1)/2}}{(m+n)^2} \right) &amp; m+n \text{ is odd}
+\end{cases}
+\end{split}\]</div>
+</div>
+<div class="section" id="demonstration">
+<h4><span class="section-number">8.2.5.5. </span>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h4>
+<p>In the following code block, we’ll demonstrate how the energy converges as we increase the number of terms in our calculation. For the excited states, it seems the reference data is likely erroneous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize_scalar</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">compute_V</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute the matrix &lt;k|x|l&gt; for an electron in a box from -1 to 1 in a unit external field, in a.u.&quot;&quot;&quot;</span>
+    
+    <span class="c1"># initialize V to a zero matrix</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span><span class="n">n_basis</span><span class="p">))</span>
+    
+    <span class="c1"># Because Python is zero-indexed, our V matrix will be shifted by 1. I&#39;ll</span>
+    <span class="c1"># make this explicit by making the counters km1 and lm1 (k minus 1 and l minus 1)</span>
+    <span class="k">for</span> <span class="n">km1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">lm1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">km1</span> <span class="o">+</span> <span class="n">lm1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># The matrix element is zero unless (km1 + lm1) is odd, which means that (km1 + lm1) mod 2 = 1.</span>
+                <span class="c1"># Either km1 is even or km1 is odd. If km1 is odd, then the km1 corresponds to a sine and</span>
+                <span class="c1"># lm1 is even, and corresponds to a cosine. If km1 is even and lm1 is odd, then the roles of the</span>
+                <span class="c1"># sine and cosine are reversed, and one needs to multiply the first term below by -1. The</span>
+                <span class="c1"># factor -1**lm1 achieves this switching.</span>
+                <span class="n">V</span><span class="p">[</span><span class="n">km1</span><span class="p">,</span><span class="n">lm1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">**</span><span class="p">((</span><span class="n">km1</span> <span class="o">-</span> <span class="n">lm1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">km1</span><span class="o">-</span><span class="n">lm1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="o">**</span><span class="p">(</span><span class="n">lm1</span><span class="p">)</span>
+                                   <span class="o">+</span> <span class="o">-</span><span class="mi">1</span><span class="o">**</span><span class="p">((</span><span class="n">km1</span> <span class="o">+</span> <span class="n">lm1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">km1</span><span class="o">+</span><span class="n">lm1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">V</span>
+
+<span class="k">def</span> <span class="nf">energy_pt2</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;kth excited state energy in a.u. for an electron in a box of length 2 in the field F estimated with 2nd-order PT.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    k : scalar, int </span>
+<span class="sd">        k = 0 is the ground state and k = 1 is the first excite state.</span>
+<span class="sd">    F : scalar</span>
+<span class="sd">        the external field strength</span>
+<span class="sd">    n_basis : scalar, int</span>
+<span class="sd">        the number of terms to include in the sum over states in the second order pert. th. correction.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    energy_pt2 : scalar</span>
+<span class="sd">         The estimated energy of the kth-excited state of the particle in a box of length 2 in field F.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># It makes no sense for n_basis to be less than k.</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">n_basis</span><span class="p">),</span> <span class="s2">&quot;The excitation level of interest should be smaller than n_basis&quot;</span> 
+    
+    <span class="c1"># Energy of the kth-excited state in a.u.</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">)])</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">compute_V</span><span class="p">(</span><span class="n">n_basis</span><span class="p">)</span>
+    
+    <span class="n">der2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">der2</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">energy</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">energy</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>  
+            
+    <span class="k">return</span> <span class="n">energy</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">der2</span> <span class="o">*</span> <span class="n">F</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">energy_variational</span><span class="p">(</span><span class="n">F</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ground state energy for a electron0in-a-Box in a box of length 2 in the field F estimated with the var. principle.</span>
+<span class="sd">    The variational wavefunction ansatz is psi(x) = (1+cx)cos(pi*x/2) where c is a variational parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">gamma</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">F</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">func</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span>
+
+
+<span class="k">def</span> <span class="nf">energy_basis</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Eigenenergies in a.u. of an electron in a box of length 2 in the field F estimated by basis-set expansion.</span>
+<span class="sd">    n_basis basis functions from the F=0 case are used.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    F : scalar</span>
+<span class="sd">        the external field strength</span>
+<span class="sd">    n_basis : scalar, int</span>
+<span class="sd">        the number of terms to include in the sum over states in the second order pert. th. correction.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    energy_basis_exp : array_like</span>
+<span class="sd">        list of n_basis eigenenergies</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">)])</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">compute_V</span><span class="p">(</span><span class="n">n_basis</span><span class="p">)</span>
+    
+    <span class="c1"># assign Hamiltonian to the potential matrix, times the field strength:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">V</span> 
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">energy</span><span class="p">)</span>
+    <span class="c1"># solve Hc = Ec to get eigenvalues E</span>
+    <span class="n">e_vals</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">eigvals_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e_vals</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of these models vs. reference values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the unperturbed ground state (field = 0):&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the ground state:&quot;</span><span class="p">,</span> <span class="mf">10.3685</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with the variational principle:&quot;</span><span class="p">,</span> <span class="n">energy_variational</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the ground state:&quot;</span><span class="p">,</span> <span class="mf">32.2505</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with the variational principle:&quot;</span><span class="p">,</span> <span class="n">energy_variational</span><span class="p">(</span><span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the ground state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the unperturbed first excited state (field = 0):&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the first excited state:&quot;</span><span class="p">,</span> <span class="mf">39.9787</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the first excited state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the first excited state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the first excited state:&quot;</span><span class="p">,</span> <span class="mf">65.177</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the first excited state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the first excited state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the unperturbed second excited state (field = 0):&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the second excited state:&quot;</span><span class="p">,</span> <span class="mf">89.3266</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the second excited state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the first excited state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Field value: &quot;</span><span class="p">,</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exact Energy of the ground state:&quot;</span><span class="p">,</span> <span class="mf">114.309</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mf">25.</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the second excited state estimated with 2nd-order perturbation theory:&quot;</span><span class="p">,</span> <span class="n">energy_pt2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy of the second excited state estimated with basis set expansion:&quot;</span><span class="p">,</span> <span class="n">energy_basis</span><span class="p">(</span><span class="mf">25.</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy of these models vs. reference values:
+Energy of the unperturbed ground state (field = 0): 1.2337005501361697
+ 
+Field value:  0.0625
+Exact Energy of the ground state: 1.2335625
+Energy of the ground state estimated with 2nd-order perturbation theory: 1.2335633924534153
+Energy of the ground state estimated with the variational principle: 1.2335671162852282
+Energy of the ground state estimated with basis set expansion: 1.2335633952295426
+ 
+Field value:  6.25
+Exact Energy of the ground state: 0.9063125000000003
+Energy of the ground state estimated with 2nd-order perturbation theory: 0.8908063432502749
+Energy of the ground state estimated with the variational principle: 0.9250111494073084
+Energy of the ground state estimated with basis set expansion: 0.9063121281470091
+ 
+ 
+Energy of the unperturbed first excited state (field = 0): 4.934802200544679
+ 
+Field value:  0.0625
+Exact Energy of the first excited state: 4.9348375
+Energy of the first excited state estimated with 2nd-order perturbation theory: 4.93484310142371
+Energy of the first excited state estimated with basis set expansion: 4.934843098735424
+ 
+Field value:  6.25
+Exact Energy of the first excited state: 5.022125000000001
+Energy of the first excited state estimated with 2nd-order perturbation theory: 5.343810990856903
+Energy of the first excited state estimated with basis set expansion: 5.161850795200679
+ 
+ 
+Energy of the unperturbed second excited state (field = 0): 11.103304951225528
+ 
+Field value:  0.0625
+Exact Energy of the second excited state: 11.103325
+Energy of the second excited state estimated with 2nd-order perturbation theory: 11.103329317896025
+Energy of the first excited state estimated with basis set expansion: 11.103329317809225
+ 
+Field value:  6.25
+Exact Energy of the ground state: 11.163625
+Energy of the second excited state estimated with 2nd-order perturbation theory: 11.34697165619853
+Energy of the second excited state estimated with basis set expansion: 11.336913933806196
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># user-specified parameters</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">25.0</span> <span class="o">/</span> <span class="mi">8</span>
+<span class="n">nbasis</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># plot basis set convergence of energy estimates at a given field</span>
+<span class="c1"># ---------------------------------------------------------------</span>
+
+<span class="c1"># evaluate energy for a range of basis functions at a given field</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">e_pt2_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_pt2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+<span class="n">e_var_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">energy_variational</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_values</span><span class="p">))</span>
+<span class="n">e_exp_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_basis</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+
+<span class="c1"># evaluate energy for a range of fields at a given basis</span>
+<span class="n">f_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">100.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">)</span>
+<span class="n">e_pt2_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_pt2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">nbasis</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_values</span><span class="p">])</span>
+<span class="n">e_var_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_variational</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_values</span><span class="p">])</span>
+<span class="n">e_exp_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_basis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nbasis</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_values</span><span class="p">])</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># fig.suptitle(&quot;Basis Set Convergence of Particle-in-a-Box with Jacobi Basis&quot;, fontsize=24, fontweight=&#39;bold&#39;)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># plot approximate energy at a fixed field</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_pt2_basis</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PT2&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_var_basis</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variational&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_exp_basis</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis Expansion&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Field Strength = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># plot approximate energy at a fixed basis</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_values</span><span class="p">,</span> <span class="n">e_pt2_field</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PT2&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_values</span><span class="p">,</span> <span class="n">e_var_field</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variational&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_values</span><span class="p">,</span> <span class="n">e_exp_field</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis Expansion&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Field Strength [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Basis = </span><span class="si">{</span><span class="n">nbasis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ApproximateMethods_25_0.png" src="../_images/ApproximateMethods_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># user-specified parameters</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">25.0</span> <span class="o">/</span> <span class="mi">8</span>
+<span class="n">nbasis</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># plot basis set convergence of 1st excited state energy at a given field</span>
+<span class="c1"># ---------------------------------------------------------------</span>
+
+<span class="c1"># evaluate energy for a range of basis functions at a given field</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">e_pt2_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_pt2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+<span class="n">e_exp_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_basis</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">n</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">])</span>
+
+<span class="c1"># evaluate energy for a range of fields at a given basis</span>
+<span class="n">f_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">100.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">)</span>
+<span class="n">e_pt2_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_pt2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">nbasis</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_values</span><span class="p">])</span>
+<span class="n">e_exp_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">energy_basis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">nbasis</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_values</span><span class="p">])</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># fig.suptitle(&quot;Basis Set Convergence of Particle-in-a-Box with Jacobi Basis&quot;, fontsize=24, fontweight=&#39;bold&#39;)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># plot approximate energy at a fixed field</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_pt2_basis</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PT2&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">e_exp_basis</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis Expansion&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Basis Functions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;1st Excited-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Field Strength = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># plot approximate energy at a fixed basis</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_values</span><span class="p">,</span> <span class="n">e_pt2_field</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PT2&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_values</span><span class="p">,</span> <span class="n">e_exp_field</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Basis Expansion&#39;</span><span class="p">)</span>
+        <span class="c1"># set axes labels</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Field Strength [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;1st Excited-State Energy [a.u.]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Basis = </span><span class="si">{</span><span class="n">nbasis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ApproximateMethods_26_0.png" src="../_images/ApproximateMethods_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="self-reflection">
+<h2><span class="section-number">8.3. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>When is a basis set appropriate? When is perturbation theory more appropriate?</p></li>
+<li><p>Consider the hydrogen molecule ion, <span class="math notranslate nohighlight">\(\text{H}_2^+\)</span>. Is it more sensible to use the secular equation (basis-set-expansion) or perturbation theory? What if the bond length is very small? What if the bond length is very large?</p></li>
+</ul>
+</div>
+<div class="section" id="thought-provoking-questions">
+<h2><span class="section-number">8.4. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Show that if you minimize the energy as a function of the basis-set coefficients using the variational principle, then you obtain the secular equation.</p></li>
+<li><p>If a uniform external electric field of magnitude <span class="math notranslate nohighlight">\(F\)</span> in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}} = [\hat{u}_x,\hat{u}_y,\hat{u}_z]^T\)</span> direction is applied to a particle with charge <span class="math notranslate nohighlight">\(q\)</span>, the potential <span class="math notranslate nohighlight">\(V(x,y,z) = -qF(u_x x + u_y y + u_z z)\)</span> is added to the Hamiltonian. (This follows from the fact that the force applied to the particles is proportional to the electric field, <span class="math notranslate nohighlight">\(\text{force} = q \vec{E} = q F \hat{\mathbf{u}}\)</span> and the force is <span class="math notranslate nohighlight">\(\text{force} = - \nabla V(x,y,z)\)</span>. If the field is weak, then perturbation theory can be used, and the energy can be written as a Taylor series. The coefficients of the Taylor series give the dipole moment (<span class="math notranslate nohighlight">\(\mu\)</span>), dipole polarizability (<span class="math notranslate nohighlight">\(\alpha\)</span>), first dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\beta\)</span>), second dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\gamma\)</span>) in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span> direction.</p>
+<ul>
+<li><p>The dipole moment, <span class="math notranslate nohighlight">\(\mu\)</span>, of any spherical system is zero. Explain why.</p></li>
+<li><p>The polarizability, <span class="math notranslate nohighlight">\(\alpha\)</span>, of any system is always positive. Explain why.</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0} 
++ \frac{F^2}{2!} \left[\frac{d^2E_k}{d F^2} \right]_{F=0} 
++ \frac{F^3}{3!} \left[\frac{d^3E_k}{d F^3} \right]_{F=0} 
++ \frac{F^4}{4!} \left[\frac{d^4E_k}{d F^4} \right]_{F=0} + \cdots \\
+&amp;= E_k(0) - F \mu_{F=0} 
+- \frac{F^2}{2!} \alpha_{F=0} 
+- \frac{F^3}{3!} \beta_{F=0} 
+- \frac{F^4}{4!} \gamma_{F=0} + \cdots \\
+\end{align}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>The Hellmann-Feynman theorem indicates that given the ground-state wavefunction for a molecule, the force on the nuclei can be obtained. Explain how.</p></li>
+<li><p>What does it mean that perturbation theory is inaccurate when the perturbation is large?</p></li>
+<li><p>Can you explain why the energy goes down when the electron-in-a-box is placed in an external field?</p></li>
+<li><p>For a sufficiently-highly excited state, the effect of an external electric field is negligible. Why is this true intuitively? Can you show it graphically? Can you explain it mathematically?</p></li>
+</ul>
+</div>
+<div class="section" id="recapitulation">
+<h2><span class="section-number">8.5. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What is the secular equation?</p></li>
+<li><p>What is the Hellmann-Feynman theorem?</p></li>
+<li><p>How is the Hellmann-Feynman theorem related to perturbation theory?</p></li>
+<li><p>What is perturbation theory? What is the expression for the first-order perturbed wavefunction?</p></li>
+</ul>
+</div>
+<div class="section" id="next-up">
+<h2><span class="section-number">8.6. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Multielectron systems</p></li>
+<li><p>Approximate methods for multielectron systems.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">8.7. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>My favorite sources for this material are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
+<li><p>D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)</p></li>
+</ul>
+<p>There are also some excellent wikipedia articles:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Perturbation_theory">Perturbation theory</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)">Variational method</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="OneElectronAtoms.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>One-Electron Atoms</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ManyElSystems.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">9. </span>Many-Electron Systems</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

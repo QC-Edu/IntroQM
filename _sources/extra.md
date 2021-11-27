@@ -1,0 +1,14 @@
+## Extra Credit
+
+Extra credit problems should be sent to the instructor in a private chat message via Microsoft Teams.
+
+1. [Basics of Jupyter, Python, and Programming](extracredit/programming.md).
+1. Problems from Randy Dumont's [book](documents/DumontBook.pdf) and his [course](extracredit/DumontProblems.pdf).
+1. Problem Sets from Jack Simons' and Jeff Nichols' [Quantum Mechanics in Chemistry](http://simons.hec.utah.edu/TheoryPage/BookPDF/TableofContents.html)
+1. [Problems](http://simons.hec.utah.edu/ITCSecondEdition/Problems.pdf) from Jack Simons' [An Introduction to Theoretical Chemistry, 2nd edition](http://simons.hec.utah.edu/ITCSecondEdition/TableofContents.html).
+1. Problems from many other quantum chemistry textbooks are also acceptable. These are not (to my knowledge) legally available free online, though you can try [Sci-Hub](https://en.wikipedia.org/wiki/Sci-Hub), and there are occasionally other links (of likewise questionable [legality](http://www.nanoer.net/d/img/Molecular%20Quantum%20Mechanics,%205th%20Edition.pdf) and [permanence](http://www.dll.cheminfinity.com/arks/wp-file/books/Ira-N.Levine-Quantum-Chemistry-Pearson-(2013)-cheminfinity.com.pdf)). Good examples are:
+    - [Quantum Chemistry](https://www.pearson.com/us/higher-education/program/Levine-Quantum-Chemistry-7th-Edition/PGM78512.html) by Ira Levine
+    - [Quantum Chemistry](http://www.mcquarriegeneralchemistry.com/mcqqc2.htm) by Donald McQuarrie
+    - [Molecular Quantum Mechanics](https://global.oup.com/academic/product/molecular-quantum-mechanics-9780199541423?cc=ca&lang=en&) by Peter Atkins and Ronald Friedman
+1. Relevant assignments and exams from [MIT](https://ocw.mit.edu/courses/chemistry/), especially the courses on quantum chemistry from [2005](https://ocw.mit.edu/courses/chemistry/5-73-introductory-quantum-mechanics-i-fall-2005/), [2007](https://ocw.mit.edu/courses/chemistry/5-61-physical-chemistry-fall-2007/), [2013](https://dspace.mit.edu/handle/1721.1/120336), [2017](https://ocw.mit.edu/courses/chemistry/5-61-physical-chemistry-fall-2017/), and [2018](https://ocw.mit.edu/courses/chemistry/5-73-quantum-mechanics-i-fall-2018/). Answer keys are sometimes, but not always, provided.
+1. Old [assignments](https://github.com/PaulWAyers/IntroQChem/tree/main/extracredit/assignments?raw=true), [quizzes](https://github.com/PaulWAyers/IntroQChem/tree/main/extracredit/quizzes?raw=true), [exams](https://github.com/PaulWAyers/IntroQChem/tree/main/extracredit/exams?raw=true), and [problems](https://github.com/PaulWAyers/IntroQChem/tree/main/extracredit/problems?raw=true) from previous iterations of this course and related courses at McMaster. Answer keys are often, but not always, provided (often after a blank version of the assignment/assessment that you can use to practice).
