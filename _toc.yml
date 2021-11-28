@@ -56,4 +56,30 @@ parts:
         title: The Born-Oppenheimer Approximation
       - file: documents/molecules.pdf
         title: Molecules
+  - caption: Assignments
+    chapters: 
+    - file: assignments.md
+
+  - caption: Exam
+    chapters:
+    - file: exam.md
+  - caption: Extra credentials
+    chapters:
+    - file: extra.md
+
+  - caption: Administrative Documents
+    chapters:
+    - file: adm_documets.md
+
+  - caption: Learning objectives
+    chapters:
+    - file: objectives.md
+
+  - caption: Additional resources
+    chapters:
+    - file: resources.md
+
+  - caption: License
+    chapters:
+    - file: license.md
  
