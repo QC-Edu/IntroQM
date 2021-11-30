@@ -2,22 +2,21 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: main_content
+root: main_content.md
 parts:
   - caption: Assignments
     chapters: 
     - file: assignments.md
+      title: list of tasks
 
   - caption: Exam
     chapters:
     - file: exam.md
+      title: Explanation
   - caption: Extra credentials
     chapters:
     - file: extra.md
-
-  - caption: Administrative Documents
-    chapters:
-    - file: adm_documets.md
+      title: list of problems
 
   - caption: Learning objectives
     chapters:
@@ -79,6 +78,10 @@ parts:
   - caption: Additional resources
     chapters:
     - file: resources.md
+
+  - caption: Administrative Documents
+    chapters:
+    - file: adm_documets.md
 
   - caption: License
     chapters:
