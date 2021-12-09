@@ -523,56 +523,14 @@
 # In[1]:
 
 
-
 from scipy import constants
 from scipy import special
 import ipywidgets as widgets
 import mpmath
 
 
-# In[4]:
+# In[2]:
 
-
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (princ. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Angular quantum number slider:
-l = widgets.IntSlider(
-    value=0,
-    min=-10,
-    max=10,
-    step=1,
-    description='l (ang. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
 
 # Define a function for the energy (in a.u.) of a particle in a circular disk
 # with length a, principle quantum number n, and angular quantum number l
@@ -589,10 +547,19 @@ def print_energy_disk(a, n, l):
     print(f'The energy of an electron confined to a disk with radius {a:.2f} a.u.,'
        f' principle quantum number {n}, and angular quantum number {l}'
        f' is {compute_energy_disk(n, l, a):.3f} a.u..')
+    
+    
+#Principle quantum number slider:
+n = 1
 
-out = widgets.interactive_output(print_energy_disk, {'a': a, 'n': n, 'l': l})
+#Angular quantum number slider:
+l = 0
 
-widgets.VBox([widgets.VBox([a, n, l]),out]) 
+#Box length slider:
+a = 1
+
+
+print_energy_disk(a, n, l)
 
 
 # ## Particle-in-a-Spherical Ball
@@ -853,47 +820,6 @@ widgets.VBox([widgets.VBox([a, n, l]),out])
 # In[3]:
 
 
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (princ. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Angular quantum number slider:
-l = widgets.IntSlider(
-    value=0,
-    min=-10,
-    max=10,
-    step=1,
-    description='l (ang. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
-
 # Define a function for the energy (in a.u.) of a particle in a spherical ball
 # with length a, principle quantum number n, and angular quantum number l
 # The length is input in Bohr (atomic units).
@@ -908,9 +834,18 @@ def print_energy_ball(a, n, l):
        f' principle quantum number {n}, and angular quantum number {l}'
        f' is {compute_energy_ball(n, l, a):5.2f} a.u..')
     
-out = widgets.interactive_output(print_energy_ball, {'a': a, 'n': n, 'l': l})
 
-widgets.VBox([widgets.VBox([a, n, l]),out]) 
+#Principle quantum number slider:
+n = 1
+
+#Angular quantum number slider:
+l = 0
+
+#Box length slider:
+a = 1
+
+
+print_energy_ball(a, n, l)
 
 
 # ## &#x1f4dd; Exercise: For the hydrogen atom, the 2s orbital ($n=2$, $l=0$) and 2p orbitals ($n=2$,$l=1$,$m_l=-1,0,1$) have the same energy. Is this true for the particle-in-a-ball?

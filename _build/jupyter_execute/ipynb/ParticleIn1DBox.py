@@ -213,34 +213,6 @@ import matplotlib.pyplot as plt
 # In[2]:
 
 
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (quant. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
-
 # Define a function for the wavefunction
 def compute_wavefunction(x, n, a):
     """Compute 1-dimensional particle-in-a-box wave-function value(s).
@@ -289,11 +261,16 @@ def check_normalization(a, n):
     #check the computed values of the moments against the analytic formula
     normalization,error = quad(compute_probability, 0, a, args=(n, a))
     print("Normalization of wavefunction = ", normalization)
+    
+    
+#Principle quantum number:
+n = 1
+
+#Box length:
+a = 1
 
 
-out = widgets.interactive_output(check_normalization, {'a': a, 'n': n})
-
-widgets.HBox([widgets.VBox([a, n]),out])  
+check_normalization(a, n)
 
 
 # ## The Energies of the Particle in a Box
@@ -382,34 +359,6 @@ widgets.HBox([widgets.VBox([a, n]),out])
 # In[3]:
 
 
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (quant. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
-
 # Define a function for the energy of a particle in a box
 # with length a and quantum number n [in atomic units!]
 # The length is input in Bohr (atomic units)
@@ -434,10 +383,14 @@ def print_energy(a, n):
        f'quantum number {n} is {compute_energy(n, a):.2f} a.u..')
     print(f'The energy of an electron in a box of length {a*a0:.2e} m with '
        f'quantum number {n} is {compute_energy_si(n, a*a0):.2e} Joules.')
+    
+#Principle quantum number:
+n = 1
 
-out = widgets.interactive_output(print_energy, {'a': a, 'n': n})
+#Box length:
+a = 0.1
 
-widgets.VBox([widgets.VBox([a, n]),out])  
+print_energy(a, n) 
 
 
 # ## Postulate: The wavefunction contains all the physically meaningful information about a system.
@@ -576,34 +529,6 @@ widgets.VBox([widgets.VBox([a, n]),out])
 # In[4]:
 
 
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (quant. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
-
 #Compute <x^power>, the expectation value of x^power
 def compute_moment(x, n, a, power):
     """Compute the x^power moment of the 1-dimensional particle-in-a-box.
@@ -622,9 +547,14 @@ def check_moments(a, n):
     print(f"<r^2> computed = {avg_r2:.5f}")
     print(f"<r^2> analytic = {a**2*(1/3 - 1./(2*n**2*np.pi**2)):.5f}")
 
-out = widgets.interactive_output(check_moments, {'a': a, 'n': n})
+    
+#Principle quantum number:
+n = 1
 
-widgets.HBox([widgets.VBox([a, n]),out])
+#Box length:
+a = 1
+
+check_moments(a, n)
 
 
 # ## Heisenberg Uncertainty Principle
@@ -667,34 +597,6 @@ widgets.HBox([widgets.VBox([a, n]),out])
 
 # In[5]:
 
-
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (quant. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
 
 #The next few lines just set up the sliders for setting parameters.
 #Principle quantum number slider:
@@ -746,10 +648,15 @@ def check_energy(a, n):
     energy = compute_energy(n, a)
     print(f"The energy computed by integrating the k.e. density is {ke:.5f}")
     print(f"The energy computed directly is {energy:.5f}")
+    
+    
+#Principle quantum number:
+n = 1
 
-out = widgets.interactive_output(check_energy, {'a': a, 'n': n})
+#Box length:
+a = 17
 
-widgets.VBox([widgets.VBox([a, n]),out])
+check_energy(a, n)
 
 
 # ## Visualizing the Particle-in-a-Box Wavefunctions, Probabilities, etc.
@@ -757,34 +664,6 @@ widgets.VBox([widgets.VBox([a, n]),out])
 
 # In[6]:
 
-
-#The next few lines just set up the sliders for setting parameters.
-#Principle quantum number slider:
-n = widgets.IntSlider(
-    value=1,
-    min=1,
-    max=10,
-    step=1,
-    description='n (quant. #):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
-
-#Box length slider:
-a = widgets.FloatSlider(
-    value=1,
-    min=.01,
-    max=10.0,
-    step=0.01,
-    description='a (length):',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='.2f',
-)
 
 #This next bit of code makes the plots and prints out the energy
 def make_plots(a, n):
@@ -851,12 +730,14 @@ def make_plots(a, n):
     plt.show()
     
     
-out = widgets.interactive_output(make_plots, {'a': a, 'n': n})
+#Principle quantum number slider:
+n = 1
 
-widgets.VBox([widgets.VBox([a, n]),out])
+#Box length slider:
+a = 1
 
 
-
+make_plots(a, n)
 
 
 # ## &#x1fa9e; Self-Reflection

@@ -533,19 +533,6 @@
 
 import ipywidgets as widgets
 import math
-
-# set up the slider for the size of the dye.
-k = widgets.IntSlider(
-    value=0,
-    min=-2,
-    max=10,
-    step=1,
-    description='k for dye:',
-    disabled=False,
-    continuous_update=True,
-    orientation='horizontal',
-    readout=True,
-    readout_format='d')
     
 # Define a function for the wavelength associated with the
 # lowest-frequency excitation of a cyanine dye with 
@@ -569,12 +556,14 @@ print("k = 1 (8 pi electrons):  416 nm")
 print("k = 2 (10 pi electrons): 519 nm")
 print("k = 3 (12 pi electrons): 625 nm")
 
+
+# set up the value k for the size of the dye.
+k = 12
+
 def print_wavelength(k):
     print(f'The experimental absorption wavelength for k={k} is {compute_wavelength(k):.0f} nm')
 
-out = widgets.interactive_output(print_wavelength, {'k': k})
-
-widgets.VBox([widgets.VBox([k]),out]) 
+print_wavelength(k)
 
 
 # ![Molecular Magnet](https://upload.wikimedia.org/wikipedia/commons/e/e7/Struktur_SMM-Mn12.png "Structure of the Mn12 molecular magnet, licensed CCSA3 by Orci")
