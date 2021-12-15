@@ -136,15 +136,15 @@ assert isinstance(number_of_quantum_nos,int), "Type error: The answer should be 
 # **Values**:
 # "eq1", "eq2", "eq3", "eq4", and "eq5", where
 # 
-# `eq1`:  $ \sum_{a=1}^{A-1} \sum_{b=a+1}^A \frac{Z_a Z_b}{\left| \mathbf{x}_a - \mathbf{x}_b \right|} $
+# `eq1`:  $ sum_{a=1}^{A-1} \sum_{b=a+1}^A \frac{Z_a Z_b}{\left| \mathbf{x}_a - \mathbf{x}_b \right|}$
 # 
-# `eq2`:  $\sum_{a=1}^A -\tfrac{1}{2m_a} \nabla^2_{\mathbf{x}_a} $
+# `eq2`:  $\sum_{a=1}^A -\tfrac{1}{2m_a} \nabla^2_{\mathbf{x}_a}$
 # 
-# `eq2`:  $ \sum_{i=1}^N \sum_{a=1}^A -\frac{Z_a}{\left| \mathbf{r}_i - \mathbf{x}_a \right|} $
+# `eq2`:  $\sum_{i=1}^N \sum_{a=1}^A -\frac{Z_a}{\left| \mathbf{r}_i - \mathbf{x}_a \right|}$
 # 
-# `eq4`:  $\sum_{i=1}^N -\tfrac{1}{2} \nabla^2_{\mathbf{r}_i} $
+# `eq4`:  $\sum_{i=1}^N -\tfrac{1}{2} \nabla^2_{\mathbf{r}_i}$
 # 
-# `eq5`:  $ \sum_{i=1}^{N-1} \sum_{j=i+1}^N \frac{1}{\left| \mathbf{r}_i - \mathbf{r}_j \right|} $
+# `eq5`:  $\sum_{i=1}^{N-1} \sum_{j=i+1}^N \frac{1}{\left| \mathbf{r}_i - \mathbf{r}_j \right|}$
 # 
 # 
 # For example, the following is an example of an *incorrect* answer with the correct format:
@@ -191,12 +191,11 @@ assert sorted(hamiltonian_terms.values()) == v, "At least one value does not mat
 # 
 # **Keys:**
 # 
-# `Ham1`:  $ -\frac{\hbar^2}{2m} \left(\frac{1}{r^2} \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2} \right) $
+# `Ham1`:  $ -\frac{\hbar^2}{2m} \left(\frac{1}{r^2} \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2}\right) $
 # 
-# `Ham2`:  $ - \hbar^2 \left[\frac{1}{\sin \theta}\frac{d}{d\theta}\sin\theta\frac{d}{d\theta} 
-# + \frac{1}{\sin^2 \theta} \frac{d^2}{d\phi^2}\right] $
+# `Ham2`:  $ - \hbar^2 \left[\frac{1}{\sin \theta}\frac{d}{d\theta}\sin\theta\frac{d}{d\theta} + \frac{1}{\sin^2 \theta} \frac{d^2}{d\phi^2}\right] $
 # 
-# `Ham3`:  $ -\frac{1}{2} \left( \frac{d^2}{dr^2} + \frac{2}{r} \frac{d}{dr}\right) + \frac{l(l+1)}{2r^2} - \frac{Z}{r} $
+# `Ham3`:  $ -\frac{1}{2} \left( \frac{d^2}{dr^2} + \frac{2}{r} \frac{d}{dr}\right) + \frac{l(l+1)}{2r^2} - \frac{Z}{r}$
 # 
 # `Ham4`:  $ \frac{d^2}{dx^2} $
 # 
@@ -336,46 +335,58 @@ assert(len(Jvalues_7F) >= 1)
 
 # ### &#x270d;&#xfe0f; Show that $\nabla^2$ is negative definite. 
 # That is, show that for *any* $\Psi(\mathbf{r})$, it is *always* true that 
+# 
 # $$
 # \langle \Psi | \nabla^2 | \Psi \rangle < 0
 # $$
+# 
 
 # YOUR ANSWER HERE
 
 # ## Expectation values of $r^k$ and related properties in Hydrogenic atoms.
 # The goal of this problem is to explore the radial distribution function and its expectation values for hydrogenic atoms. A key integral that will be useful is
+# 
 # $$
 # \int_0^{\infty} r^n e^{-\beta r} dr = \frac{n!}{\beta^{n+1}}
 # $$
 # 
 # It is also useful to know [Kramer's recursion relation](https://phlconnect.ched.gov.ph/admin/uploads/81dc9bdb52d04dc20036dbd8313ed055/53-hydrogen-4.pdf) for radial expectation values. If $\psi_{nlm}(r,\theta,\phi)$ denotes a normalized hydrogenic wavefunction, then Kramer's recursion states that:
+# 
 # $$
 # \langle \psi_{nlm} | r^k | \psi_{nlm} \rangle = a_{n}(k,Z) \langle \psi_{nlm} | r^{k-1} | \psi_{nlm} \rangle + b_{nl}(k,Z) \langle \psi_{nlm} | r^{k-2} | \psi_{nlm} \rangle
 # $$
+# 
 # where
 # 
+# $$
 # \begin{align}
 # a_{n}(k,Z) &=  \frac{n^2(2k+1)}{(k+1)Z}\\
 # b_{nl}(k,Z) &= \frac{n^2 k \left(k^2 - (2l+1)^2\right)}{4Z^2(k+1)}
 # \end{align}
+# $$
+# 
 # A detailed derivation of this relation can be found [here](http://www.blazartheory.com/files/notes/qmnotes/Kramers__Relation.pdf). You will not *need* to use this relation in this problem; it's a matter of preference whether you use this relation or perform integrals.
 # 
 # Throughout this problem you may use atomic units.
 
 # ### &#x270d;&#xfe0f; Expectation value of $r^{-1}$ for Hydrogenic Atoms.
 # What is the expectation value of $r^{-1}$ for a Hydrogenic atom. That is, what is the expectation value of 
+# 
 # $$
 # \langle \psi_{nlm} | r^{-1} | \psi_{nlm} \rangle
 # $$
+# 
 # for an electron bound to a nuclear of charge Z. *Report your answer as a float, in atomic units.*
 
 # YOUR ANSWER HERE
 
 # ### &#x1F5A9; Expectation value of $r^2$ for a 4f orbital in the hydrogen atom.
 # What is the expectation value of $r^2$ for the 4f orbital in the hydrogen atom (Z=1). That is, what is the expectation value of 
+# 
 # $$
 # \langle \psi_{43m} | r^2 | \psi_{43m} \rangle
 # $$
+# 
 # in the Hydrogen atom? *Report your answer as a float, in atomic units.*
 # 
 # If you wish, you can use the markdown cell at the end to explain your answer.
@@ -547,13 +558,17 @@ print(f'The wavelength associated with the lowest-energy excitation of the speci
 
 # ## &#x270d;&#xfe0f; What is the form of the eigenfunctions for the Kratzer-Fues Potential
 # The Kratzer-Fues potential is a reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). It has the form
+# 
 # $$
 # V_{\text{Kratzer-Fues}}(r) = \frac{a}{r^2} - \frac{b}{r} \qquad \qquad a>0 \text{ and } b>0
 # $$
+# 
 # and so the Schr&ouml;dinger equation has the form:
+# 
 # $$
 # \left(-\frac{\hbar^2}{2m}\nabla^2 +\frac{a}{r^2} - \frac{b}{r} \right) \psi(\mathbf{r}) = E\psi(\mathbf{r}) 
 # $$
+# 
 # Using separation of variables, write the *form* of the solutions for the Kratzer-Fues potential. What is the radial Schr&ouml;dinger equation for this system?
 
 # YOUR ANSWER HERE
