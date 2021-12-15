@@ -38,12 +38,6 @@
 # In[1]:
 
 
-Name = "First M. Last"
-email_user_name = "username"
-ID_number = 1234567
-
-# It's useful to import these libraries. 
-# You can import others or not even use these, though.
 import numpy as np
 import scipy
 from scipy import constants
@@ -69,23 +63,29 @@ from scipy import constants
 # In[2]:
 
 
-# Give your answers as Floats. I have initialized the variables to None.
-frequency = None         #Frequency in Hz.
-wavenumber = None        #Wavenumber, nu-bar, in cm^-1
-momentum = None          #Momentum in SI units.
-energy = None            #Energy in SI units.
+def p1():
+    # Give your answers as Floats. I have initialized the variables to None.
+    
+    ### START YOUR CODE HERE
+    frequency = None         #Frequency in Hz.
+    wavenumber = None        #Wavenumber, nu-bar, in cm^-1
+    momentum = None          #Momentum in SI units.
+    energy = None            #Energy in SI units.
+    ### END YOUR CODE HERE
+    
+    return frequency, wavenumber, momentum, energy
 
-# YOUR CODE HERE
-raise NotImplementedError()
 
 
-# In[ ]:
+# In[3]:
 
 
-print(f"The frequency of a photon with wavelength 486.1 nm is {frequency:.3e} Hz.")
-print(f"The wavenumber, nu-bar, of a photon with wavelength  486.1 nm is {wavenumber:.3e} cm^-1.")
-print(f"The momentum of a photon with wavelength  486.1 nm is {momentum:.3e} kg m/s.")
-print(f"The energy of a photon with wavelength  486.1 nm is {energy:.3e} Joules.")
+frequency, wavenumber, momentum, energy = p1()
+
+print(f"The frequency of a photon with wavelength 486.1 nm is {frequency} Hz.")
+print(f"The wavenumber, nu-bar, of a photon with wavelength  486.1 nm is {wavenumber} cm^-1.")
+print(f"The momentum of a photon with wavelength  486.1 nm is {momentum} kg m/s.")
+print(f"The energy of a photon with wavelength  486.1 nm is {energy} Joules.")
 
 assert(isinstance(frequency,float)), "Type Error: The frequency should be a float."
 assert(isinstance(wavenumber,float)), "Type Error: The wavenumber should be a float."
@@ -94,25 +94,33 @@ assert(isinstance(energy,float)), "Type Error: The energy should be a float."
 
 
 # ## &#x1f9ee; How many quantum numbers are needed to label the eigenstates of the following Hamiltonian:
+# 
 # $$
 # \hat{H} =  -\frac{\hbar^2}{2m}\frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m}\frac{d^2}{dy_1^2}
 # -\frac{\hbar^2}{2m}\frac{d^2}{dx_2^2}-\frac{\hbar^2}{2m}\frac{d^2}{dy_2^2}
 # + x_1^2 + y_1^2 + x_2^2 + y_2^2
 # + e^{-2\left(x_1^2 + y_1^2\right)} + e^{-2\left(x_2^2 + y_2^2\right)} 
 # $$
+# 
 
 # In[ ]:
 
 
-# Give your answer as an integer. I have initialized the variable to None
-number_of_quantum_nos = None
+def p2():
+    #Give your answer as an integer. I have initialized the variable to None
+    
+    ### START YOUR CODE HERE
+    number_of_quantum_nos = None
+    ### END YOUR CODE HERE
+    
+    return number_of_quantum_nos
 
-# YOUR CODE HERE
-raise NotImplementedError()
 
 
 # In[ ]:
 
+
+number_of_quantum_nos = p2()
 
 print(f'The states of this Hamiltonian are labelled with {number_of_quantum_nos} quantum numbers.')
 
@@ -147,21 +155,26 @@ assert isinstance(number_of_quantum_nos,int), "Type error: The answer should be 
 # In[ ]:
 
 
-# Enter your answer as a dictionary called hamiltonian_terms. 
-# The below dictionary has the keys typed in already for you; you need to type in the values eq1, eq2, eq3, eq4, eq5 
-#      instead of the place-holder values listed here.
-hamiltonian_terms = {'electronic kinetic energy':'eq#', 
-                     'nuclear kinetic energy':'eq#', 
-                     'electron-electron repulsion potential':'eq#', 
-                     'nucleus-nucleus repulsion potential':'eq#', 
-                     'electron-nuclear attraction potential':'eq#'}
-# YOUR CODE HERE
-raise NotImplementedError()
+def p3():
+    # Enter your answer as a dictionary called hamiltonian_terms. 
+    # The below dictionary has the keys typed in already for you; you need to type in the values eq1, eq2, eq3, eq4, eq5 
+    #      instead of the place-holder values listed here.
+    
+    
+    ### START YOUR CODE HERE
+    hamiltonian_terms = {'electronic kinetic energy':'eq#', 
+                         'nuclear kinetic energy':'eq#', 
+                         'electron-electron repulsion potential':'eq#', 
+                         'nucleus-nucleus repulsion potential':'eq#', 
+                         'electron-nuclear attraction potential':'eq#'}
+    ### END YOUR CODE HERE
+    return hamiltonian_terms
 
 
 # In[ ]:
 
 
+hamiltonian_terms = p3()
 print(hamiltonian_terms)
 
 assert len(hamiltonian_terms) == 5, "There should be 5 key:value pairs in the hamiltonian_terms dictionary!"
@@ -198,20 +211,25 @@ assert sorted(hamiltonian_terms.values()) == v, "At least one value does not mat
 # In[ ]:
 
 
-# Enter your answer as a dictionary called hamiltonian_terms. 
-# The below dictionary has the values typed in already for you; you need to type in the keys Ham1, Ham2, Ham3, Ham4 
-#      instead of the place-holder values listed here.
-eigenfunctions = {'Ham#':'associated Laguerre Polynomials', 
-                  'Ham#':'sines and cosines', 
-                  'Ham#':'spherical harmonics', 
-                  'Ham#':'Bessel functions'}
-# YOUR CODE HERE
-raise NotImplementedError()
+def p4():
+    # Enter your answer as a dictionary called hamiltonian_terms. 
+    # The below dictionary has the values typed in already for you; you need to type in the keys Ham1, Ham2, Ham3, Ham4 
+    #      instead of the place-holder values listed here.
+    
+    ### START YOUR CODE HERE
+    eigenfunctions = {'Ham#':'associated Laguerre Polynomials', 
+                      'Ham#':'sines and cosines', 
+                      'Ham#':'spherical harmonics', 
+                      'Ham#':'Bessel functions'}
+    ### END YOUR CODE HERE
+
+    return eigenfunctions
 
 
 # In[ ]:
 
 
+eigenfunctions = p4()
 print(eigenfunctions)
 
 assert len(eigenfunctions) == 4, "There should be 4 key:value pairs in the eigenfunctions dictionary!"
@@ -229,20 +247,24 @@ assert sorted(eigenfunctions.values()) == v, "At least one special function name
 # In[ ]:
 
 
-# You can use the code box as a calculator if you like; either way, report your answer as float(s). 
-# I've initialized the answers to None.
-zero_pt_E_au = None                  #Energy in Hartree (atomic units)
-zero_pt_E_kJperMol = None            #Energy in kJ/mol (SI units)
+def p5():
+    # You can use the code box as a calculator if you like; either way, report your answer as float(s). 
+    # I've initialized the answers to None.
+    
+    ### START YOUR CODE HERE
+    zero_pt_E_au = None                  #Energy in Hartree (atomic units)
+    zero_pt_E_kJperMol = None            #Energy in kJ/mol (SI units)
+    ### END YOUR CODE HERE
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return zero_pt_E_au, zero_pt_E_kJperMol
 
 
 # In[ ]:
 
 
-print(f'The zero-point energy of a electron confined to a disk of radius 4 Bohr is {zero_pt_E_au:.3f} Hartree.')
-print(f'The zero-point energy of a electron confined to a disk of radius 4 Bohr is {zero_pt_E_kJperMol:.3f} kJ/mol.')
+zero_pt_E_au, zero_pt_E_kJperMol = p5()
+print(f'The zero-point energy of a electron confined to a disk of radius 4 Bohr is {zero_pt_E_au} Hartree.')
+print(f'The zero-point energy of a electron confined to a disk of radius 4 Bohr is {zero_pt_E_kJperMol} kJ/mol.')
 
 # basic tests:
 assert(isinstance(zero_pt_E_au,float)), "The answer should be an float"
@@ -268,19 +290,22 @@ assert(isinstance(zero_pt_E_kJperMol,float)), "The answer should be an integer"
 # In[ ]:
 
 
-# Multiplicity of septuplet F state of Samarium (integer)
-multiplity_7F = None   
+def p6():
+    ### START YOUR CODE HERE
+    # Multiplicity of septuplet F state of Samarium (integer)
+    multiplity_7F = None   
 
-# J values associated with septuplet F state of Samarium (set or list of integers)
-Jvalues_7F = None
-
-# YOUR CODE HERE
-raise NotImplementedError()
+    # J values associated with septuplet F state of Samarium (set or list of integers)
+    Jvalues_7F = None
+    ###END YOUR CODE HERE
+    
+    return multiplity_7F, Jvalues_7F
 
 
 # In[ ]:
 
 
+multiplity_7F, Jvalues_7F = p6()
 print(f'A septuplet-F term is {multiplicity_7F}-fold degenerate and has J values {Jvalues_7F}.')
       
 assert(isinstance(multiplicity_7F,int)), "The multiplicity should be an integer"
@@ -358,18 +383,21 @@ assert(len(Jvalues_7F) >= 1)
 # In[ ]:
 
 
-# Expectation value of r^2 for a 4f orbital in the hydrogen atom (Z=1) in atomic units (Bohr^2). 
-# I have initialized the variable to None. Give your answer in atomic units (Bohr).
-avg_r2 = None    
+def p14():
+    # Expectation value of r^2 for a 4f orbital in the hydrogen atom (Z=1) in atomic units (Bohr^2). 
+    # I have initialized the variable to None. Give your answer in atomic units (Bohr).
+    
+    ### START YOUR CODE HERE
+    avg_r2 = None  
+    ### END YOUR CODE HERE
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return avg_r2
 
 
 # In[ ]:
 
 
-print(f'The expectation value of r^2 for an electron in the 4f orbital of the hydrogen atom is {avg_r2:.2f} Bohr^2.')
+print(f'The expectation value of r^2 for an electron in the 4f orbital of the hydrogen atom is {p14()} Bohr^2.')
 
 
 # YOUR ANSWER HERE
@@ -382,32 +410,39 @@ print(f'The expectation value of r^2 for an electron in the 4f orbital of the hy
 # In[ ]:
 
 
-# Most probable distance at which to observe an electron in the 4f orbital from the nucleus of the hydrogen atom.
-# I have initialized the variable to None. Give your answer in atomic units (Bohr).
-dist_mostprob = None    
+def p15():
+    # Most probable distance at which to observe an electron in the 4f orbital from the nucleus of the hydrogen atom.
+    # I have initialized the variable to None. Give your answer in atomic units (Bohr).
+    
+    ### START YOUR CODE HERE
+    dist_mostprob = None    
+    ### END YOUR CODE HERE
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return dist_mostprob
 
 
 # In[ ]:
 
 
-print(f'The most probable value of the distance from the nucleus for a 4f electron in Hydrogen is {dist_mostprob:.2f} Bohr.')
+print(f'The most probable value of the distance from the nucleus for a 4f electron in Hydrogen is {p15()} Bohr.')
 
 
 # YOUR ANSWER HERE
 
 # ### &#x1F5A9; Heisenberg Uncertainty Principle 
 # The Heisenberg Uncertainty Principle between momentum and position in 3 dimensions states that 
+# 
 # $$
 # \sigma_r^2 \sigma_p^2 \ge  \tfrac{3}{4} \hbar^2
 # $$
+# 
 # where
+# 
 # $$
 # \sigma_r^2 = \langle \psi_{n,n-1,m} | r^2 | \psi_{n,n-1,m} \rangle - \langle \psi_{n,n-1,m} | r | \psi_{n,n-1,m} \rangle^2 \\
 # \sigma_p^2 = \langle \psi_{n,n-1,m} | \hat{p}^2 | \psi_{n,n-1,m} \rangle - \langle \psi_{n,n-1,m} | \hat{p} | \psi_{n,n-1,m} \rangle^2
 # $$
+# 
 # To reassure yourself that this is true, compute $\sigma_r^2 \sigma_p^2$ for the 4f state of the hydrogen atom. *Report your answer as a float, in atomic units.*
 # 
 # 
@@ -416,18 +451,21 @@ print(f'The most probable value of the distance from the nucleus for a 4f electr
 # In[ ]:
 
 
-# Write the left-hand-side of the Heisenberg Uncertainty relation, which should be bigger than 3/2 hbar.
-# Give your answer in atomic units.
-test_Heisenberg = None    
+def p16():
+    # Write the left-hand-side of the Heisenberg Uncertainty relation, which should be bigger than 3/2 hbar.
+    # Give your answer in atomic units.
+    
+    ### START YOUR CODE HERE
+    test_Heisenberg = None  
+    ### END YOUR CODE HERE
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return test_Heisenberg
 
 
 # In[ ]:
 
 
-print(f'The product of the variance in position and momentum for an electron in the 4f orbital of Hydrogen is {test_Heisenberg:.2f} times hbar.')
+print(f'The product of the variance in position and momentum for an electron in the 4f orbital of Hydrogen is {p16()} times hbar.')
 assert(test_Heisenberg >= 0.75), "The Heisenberg Uncertainty Principle has been violated!"
 
 
@@ -439,24 +477,33 @@ assert(test_Heisenberg >= 0.75), "The Heisenberg Uncertainty Principle has been 
 
 # ## Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.
 # Modern displays often use quantum dot technology, where one (or more) electrons are confined to a region within a material. For an electron confined to a rectangular region in two dimensions, it is reasonable to approximate its motion perpendicular to the rectangle with harmonic confinement. The time-independent Schr&ouml;dinger equation, eigenfunctions, and eigenvalues for a harmonically confined electron are, in atomic units:
+# 
 # $$
 # \left(-\tfrac{1}{2}\tfrac{d^2}{dz^2} + \tfrac{1}{2}\kappa z^2\right) \psi_k(z) = E_k \psi_k(z)
 # $$
+# 
 # where the eigenenergies are
+# 
 # $$
 # E_k = \sqrt{\kappa}\left(k+\tfrac{1}{2}\right) \qquad \qquad k=0,1,2,\ldots
 # $$
+# 
 # and the eigenfunctions are given in terms of the [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials), $H_k(z)$, as:
+# 
 # $$
 # \psi_k^{(\text{harm. osc.})}(z) =\frac{1}{2^k k!}\sqrt[4]{\frac{\kappa}{\pi}}
 # e^{-\sqrt{\kappa}z^2/2}H_k\left(\sqrt[4]{\kappa}z\right)
 # $$
+# 
 # The Hamiltonian for an electron confined to a rectangular region, in atomic units, is then:
+# 
 # $$
 # \hat{H} = -\frac{1}{2} \frac{d^2}{dx^2} -\frac{1}{2} \frac{d^2}{dy^2} -\frac{1}{2} \frac{d^2}{dz^2} 
 #  + V_{a_x}(x) + V_{a_y}(y) + \frac{1}{2} \kappa z^2
 # $$
+# 
 # where
+# 
 # $$
 # V_a(x) = 
 # \begin{cases}
@@ -480,17 +527,20 @@ assert(test_Heisenberg >= 0.75), "The Heisenberg Uncertainty Principle has been 
 # In[ ]:
 
 
-# Report the wavelength of the lowest-energy excitation in nm. I have initialized the variable to None.
-wavelength_qdot_nm = None
-
-# YOUR CODE HERE
-raise NotImplementedError()
+def p20():
+    # Report the wavelength of the lowest-energy excitation in nm. I have initialized the variable to None.
+    
+    ### START YOUR CODE HERE
+    wavelength_qdot_nm = None
+    ### END YOUR CODE HERE
+    
+    return wavelength_qdot_nm
 
 
 # In[ ]:
 
 
-print(f'The wavelength associated with the lowest-energy excitation of the specified quantum dot is {wavelength_qdot_nm:.1f} nm.')
+print(f'The wavelength associated with the lowest-energy excitation of the specified quantum dot is {p20()} nm.')
 
 
 # YOUR ANSWER HERE

@@ -44,10 +44,6 @@
 # In[1]:
 
 
-Name = "First M. Last"
-email_user_name = "username"
-ID_number = 1234567
-
 # It's useful to import these libraries. 
 # You can import others or not even use these, though.
 import numpy as np
@@ -61,69 +57,95 @@ from scipy import constants
 # ## The 1-dimensional Harmonic Oscillator
 # ### Motivation: Nuclear Schr&ouml;dinger Equation for a Diatomic Molecule
 # The nuclear Schr&ouml;dinger equation for a diatomic molecule is
+# 
 # $$
 # \left(-\frac{\hbar^2}{2M_1}\nabla^2_1 -\frac{\hbar^2}{2M_2}\nabla^2_2 + E_{\text{electronic}}(\mathbf{R}_1,\mathbf{R}_2)\right) \chi(\mathbf{R}_1,\mathbf{R}_2) = E_{\text{total}}\chi(\mathbf{R}_1,\mathbf{R}_2)
 # $$
+# 
 # The potential energy surface on which the nuclei move, $E_{\text{electronic}}\left(\mathbf{R}_1,\mathbf{R}_2\right)$, depends only on the separation between the molecules, 
+# 
 # $$
 # E_{\text{electronic}}\left(\mathbf{R}_1,\mathbf{R}_2\right) = V\left( \left|\mathbf{R}_1 - \mathbf{R}_2 \right| \right)
 # $$
+# 
 # This suggests changing coordinates using the [center of mass](https://en.wikipedia.org/wiki/Center_of_mass). Specifically, we define a coordinate that describes the position of the center of mass
+# 
 # $$
 # \mathbf{R} = \frac{M_1 \mathbf{R}_1 + M_2\mathbf{R}_2}{M_1 + M_2}
 # $$
+# 
 # and a coordinate that describes the internuclear position
+# 
 # $$
 # \mathbf{u} = \mathbf{R}_2 - \mathbf{R}_1
 # $$
 # 
 # To rewrite the Hamiltonian in this new coordinate system, we need to rewrite the kinetic energy in the new coordinates. To do this, notice that differentiation with respect to the old (Cartesian) coordinates of the nuclei can be re-expressed in the new coordinates as:
 # 
+# $$
 # \begin{align}
 # \frac{df}{dX_1} &= \frac{df}{du_x}\frac{du_x}{dX_1} + \frac{df}{dR_x}\frac{dR_x}{dX_1} \\
 # &= -\frac{df}{du_x} + \frac{M_1}{M_1+M_2}\frac{df}{dR_x} \\
 # \frac{df}{dX_2} &= \frac{df}{du_x}\frac{du_x}{dX_2} + \frac{df}{dR_x}\frac{dR_x}{dX_2} \\
 # &= \frac{df}{du_x} + \frac{M_2}{M_1+M_2}\frac{df}{dR_x}
 # \end{align}
+# $$
 # 
 # So the momentum operators for the nuclei can be written as:
+# 
 # $$
 # \hat{\mathbf{p}}_1 = -\hat{\mathbf{p}}_u + \frac{M_1}{M_1+M_2}\hat{\mathbf{p}}_R \\
 # \hat{\mathbf{p}}_2 = \hat{\mathbf{p}}_u + \frac{M_2}{M_1+M_2}\hat{\mathbf{p}}_R
 # $$
+# 
 # and the kinetic energy operators are
+# 
 # $$
 # \frac{\hat{\mathbf{p}}_1^2}{2M_1} = \frac{\hat{\mathbf{p}}_u^2}{2M_1} + \frac{M_1\hat{\mathbf{p}}_R^2}{2(M_1+M_2)^2} \\
 # \frac{\hat{\mathbf{p}}_2^2}{2M_1} = \frac{\hat{\mathbf{p}}_u^2}{2M_2} + \frac{M_2\hat{\mathbf{p}}_R^2}{2(M_1+M_2)^2}
 # $$
+# 
 # Adding together these expressions gives the Schr&ouml;dinger equation in the new coordinate system,
+# 
 # $$
 # \left(-\frac{\hbar^2}{2} \left(\frac{1}{M_1} + \frac{1}{M_2} \right) \nabla^2_u 
 #       -\frac{\hbar^2}{2} \left(\frac{1}{M_1 + M_2} \right)\nabla^2_R 
 #       + V(u) \right) \chi(\mathbf{R},\mathbf{u}) = E_{\text{total}}\chi(\mathbf{R},\mathbf{u})
 # $$
+# 
 # or, introducing the reduced mass 
+# 
 # $$
 # \mu = \frac{M_1 M_2}{M_1 + M_2} = \left(\frac{1}{M_1} + \frac{1}{M_2} \right)^{-1} \\
 # $$
+# 
 # and total mass
+# 
 # $$
 # M = M_1 + M_2
 # $$
+# 
+# 
 # $$
 # \left(-\frac{\hbar^2}{2 \mu}-\frac{\hbar^2}{2M}\nabla^2_R + V(u) \right) \chi(\mathbf{R},\mathbf{u}) = E_{\text{total}}\chi(\mathbf{R},\mathbf{u})
 # $$
+# 
 # This Schr&ouml;dinger equation can be solved by separation of variables. The Schr&ouml;dinger equation for the center of mass represents the translational motion of the molecule; in the absence of a potential confining the molecule, this is just the Schr&ouml;dinger equation for a free particle,
+# 
 # $$
 # -\frac{\hbar^2}{2M}\nabla^2_R \eta(\mathbf{R}) = E \eta(\mathbf{R}) 
 # $$
+# 
 # This contributes nothing to the energy if we assume the molecule is not moving (so that it's kinetic energy is zero). If the molecule were confined, that confining potential would be inserted here. 
 # 
 # The Schr&ouml;dinger equation for the internuclear coordinate represents the rotations and vibrations of the molecule:
+# 
 # $$
 # \left(-\frac{\hbar^2}{2 \mu} + V(u) \right) \varphi(\mathbf{u}) = E_{\text{rovib}}\varphi(\mathbf{u})
 # $$
+# 
 # The Hamiltonian in this equation is typically called the rovibrational Hamiltonian; its energy is the rovibrational energy. Because the potential energy depends only on the internuclear distance, the system is spherically symmetric. Separating out the angular dependence in the usual way,
+# 
 # $$
 # \left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}
 # + \frac{2}{u} \frac{d}{du}\right) 
@@ -131,22 +153,30 @@ from scipy import constants
 #       \varphi_{k,J,M_J}(u,\theta_u,\phi_u) 
 # = E_{k,J,M_J}\varphi_{k,J,M_J}(u,\theta_u,\phi_u)
 # $$
+# 
 # Recall that $\hat{L}^2$ is the angular momentum squared, and its eigenfunctions are the spherical harmonics, which we have chosen to denote with a different quantum number to avoid confusion with the electronic problem,
 # 
+# 
+# $$
 # \begin{align}
 # \hat{L}^2 Y_J^{M_J}(\theta_u,\phi_u) = \hbar^2 J(J+1) Y_J^{M_J}(\theta_u,\phi_u) \qquad \qquad J&=0,1,2,\ldots \\ M_J &= 0,\pm 1,\ldots\,\pm J
 # \end{align}
+# $$
 # The exact wavefunction is therefore the product of a radial wavefunction and a spherical harmonic, 
+# 
 # $$
 # \varphi_{k,J,M_J}(u,\theta_u,\phi_u) = R_k(u)  Y_J^{M_J}(\theta_u,\phi_u)
 # $$
+# 
 # where the radial wavefunction and the rovibrational energy are obtained by solving
+# 
 # $$
 # \left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}
 # + \frac{2}{u} \frac{d}{du}\right) 
 #       + \frac{\hbar^2 J(J+1)}{2\mu u^2} + V(u) \right)
 #       R_{k}(u) = E_{k,J}R_{k}(u)
 # $$
+# 
 
 # ### Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation
 # The potential energy of a diatomic molecule goes to infinity at short internuclear separation ($u \rightarrow 0$) because of the nuclear-nuclear repulsion and approaches a constant (which we typically define to be zero) at infinite internuclear distance. In between these limits, there is typically a minimum at $r_e$, which represents the equilibrium bond length for the molecule (in the absence of quantum effects). If we assume that the atomic nuclei, which are much more massive than electrons, have relatively small De Broglie wavelength and do not deviate far from $u = r_e$, it is reasonable to expand the potential energy in a Taylor series about that point,

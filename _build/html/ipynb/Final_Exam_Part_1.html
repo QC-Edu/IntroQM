@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -238,10 +236,17 @@
    8. Approximate Methods
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ManyElSystems.html">
-   9. Many-Electron Systems
+   9. Many-electron systems: Structure and Spectroscopy
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
 </ul>
 <p class="caption" role="heading">
@@ -625,13 +630,7 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;First M. Last&quot;</span>
-<span class="n">email_user_name</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
-<span class="n">ID_number</span> <span class="o">=</span> <span class="mi">1234567</span>
-
-<span class="c1"># It&#39;s useful to import these libraries. </span>
-<span class="c1"># You can import others or not even use these, though.</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
 </pre></div>
@@ -659,41 +658,54 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Give your answers as Floats. I have initialized the variables to None.</span>
-<span class="n">frequency</span> <span class="o">=</span> <span class="kc">None</span>         <span class="c1">#Frequency in Hz.</span>
-<span class="n">wavenumber</span> <span class="o">=</span> <span class="kc">None</span>        <span class="c1">#Wavenumber, nu-bar, in cm^-1</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="kc">None</span>          <span class="c1">#Momentum in SI units.</span>
-<span class="n">energy</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1">#Energy in SI units.</span>
-
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">28</span><span class="n">ae9ed73110</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># YOUR CODE HERE</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-
-<span class="ne">NotImplementedError</span>: 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p1</span><span class="p">():</span>
+    <span class="c1"># Give your answers as Floats. I have initialized the variables to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="kc">None</span>         <span class="c1">#Frequency in Hz.</span>
+    <span class="n">wavenumber</span> <span class="o">=</span> <span class="kc">None</span>        <span class="c1">#Wavenumber, nu-bar, in cm^-1</span>
+    <span class="n">momentum</span> <span class="o">=</span> <span class="kc">None</span>          <span class="c1">#Momentum in SI units.</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1">#Energy in SI units.</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">momentum</span><span class="p">,</span> <span class="n">energy</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The frequency of a photon with wavelength 486.1 nm is </span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> Hz.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The wavenumber, nu-bar, of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">wavenumber</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> cm^-1.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The momentum of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">momentum</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> kg m/s.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The energy of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">energy</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> Joules.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">momentum</span><span class="p">,</span> <span class="n">energy</span> <span class="o">=</span> <span class="n">p1</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The frequency of a photon with wavelength 486.1 nm is </span><span class="si">{</span><span class="n">frequency</span><span class="si">}</span><span class="s2"> Hz.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The wavenumber, nu-bar, of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">wavenumber</span><span class="si">}</span><span class="s2"> cm^-1.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The momentum of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">momentum</span><span class="si">}</span><span class="s2"> kg m/s.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The energy of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s2"> Joules.&quot;</span><span class="p">)</span>
 
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The frequency should be a float.&quot;</span>
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">wavenumber</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The wavenumber should be a float.&quot;</span>
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">momentum</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The momentum should be a float.&quot;</span>
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The energy should be a float.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The frequency of a photon with wavelength 486.1 nm is None Hz.
+The wavenumber, nu-bar, of a photon with wavelength  486.1 nm is None cm^-1.
+The momentum of a photon with wavelength  486.1 nm is None kg m/s.
+The energy of a photon with wavelength  486.1 nm is None Joules.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">30089505871</span><span class="n">a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The energy of a photon with wavelength  486.1 nm is </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s2"> Joules.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The frequency should be a float.&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">wavenumber</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The wavenumber should be a float.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">momentum</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;Type Error: The momentum should be a float.&quot;</span>
+
+<span class="ne">AssertionError</span>: Type Error: The frequency should be a float.
 </pre></div>
 </div>
 </div>
@@ -710,18 +722,23 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Give your answer as an integer. I have initialized the variable to None</span>
-<span class="n">number_of_quantum_nos</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p2</span><span class="p">():</span>
+    <span class="c1">#Give your answer as an integer. I have initialized the variable to None</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">number_of_quantum_nos</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">number_of_quantum_nos</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The states of this Hamiltonian are labelled with </span><span class="si">{</span><span class="n">number_of_quantum_nos</span><span class="si">}</span><span class="s1"> quantum numbers.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_quantum_nos</span> <span class="o">=</span> <span class="n">p2</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The states of this Hamiltonian are labelled with </span><span class="si">{</span><span class="n">number_of_quantum_nos</span><span class="si">}</span><span class="s1"> quantum numbers.&#39;</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number_of_quantum_nos</span><span class="p">,</span><span class="nb">int</span><span class="p">),</span> <span class="s2">&quot;Type error: The answer should be an integer.&quot;</span>
 </pre></div>
@@ -747,23 +764,28 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your answer as a dictionary called hamiltonian_terms. </span>
-<span class="c1"># The below dictionary has the keys typed in already for you; you need to type in the values eq1, eq2, eq3, eq4, eq5 </span>
-<span class="c1">#      instead of the place-holder values listed here.</span>
-<span class="n">hamiltonian_terms</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;electronic kinetic energy&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
-                     <span class="s1">&#39;nuclear kinetic energy&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
-                     <span class="s1">&#39;electron-electron repulsion potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
-                     <span class="s1">&#39;nucleus-nucleus repulsion potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
-                     <span class="s1">&#39;electron-nuclear attraction potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">}</span>
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p3</span><span class="p">():</span>
+    <span class="c1"># Enter your answer as a dictionary called hamiltonian_terms. </span>
+    <span class="c1"># The below dictionary has the keys typed in already for you; you need to type in the values eq1, eq2, eq3, eq4, eq5 </span>
+    <span class="c1">#      instead of the place-holder values listed here.</span>
+    
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">hamiltonian_terms</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;electronic kinetic energy&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;nuclear kinetic energy&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;electron-electron repulsion potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;nucleus-nucleus repulsion potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;electron-nuclear attraction potential&#39;</span><span class="p">:</span><span class="s1">&#39;eq#&#39;</span><span class="p">}</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    <span class="k">return</span> <span class="n">hamiltonian_terms</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hamiltonian_terms</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hamiltonian_terms</span> <span class="o">=</span> <span class="n">p3</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hamiltonian_terms</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">hamiltonian_terms</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;There should be 5 key:value pairs in the hamiltonian_terms dictionary!&quot;</span>
 
@@ -796,22 +818,27 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your answer as a dictionary called hamiltonian_terms. </span>
-<span class="c1"># The below dictionary has the values typed in already for you; you need to type in the keys Ham1, Ham2, Ham3, Ham4 </span>
-<span class="c1">#      instead of the place-holder values listed here.</span>
-<span class="n">eigenfunctions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;associated Laguerre Polynomials&#39;</span><span class="p">,</span> 
-                  <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;sines and cosines&#39;</span><span class="p">,</span> 
-                  <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;spherical harmonics&#39;</span><span class="p">,</span> 
-                  <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;Bessel functions&#39;</span><span class="p">}</span>
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p4</span><span class="p">():</span>
+    <span class="c1"># Enter your answer as a dictionary called hamiltonian_terms. </span>
+    <span class="c1"># The below dictionary has the values typed in already for you; you need to type in the keys Ham1, Ham2, Ham3, Ham4 </span>
+    <span class="c1">#      instead of the place-holder values listed here.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">eigenfunctions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;associated Laguerre Polynomials&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;sines and cosines&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;spherical harmonics&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Ham#&#39;</span><span class="p">:</span><span class="s1">&#39;Bessel functions&#39;</span><span class="p">}</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">eigenfunctions</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">eigenfunctions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenfunctions</span> <span class="o">=</span> <span class="n">p4</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenfunctions</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">eigenfunctions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;There should be 4 key:value pairs in the eigenfunctions dictionary!&quot;</span>
 
@@ -832,21 +859,25 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can use the code box as a calculator if you like; either way, report your answer as float(s). </span>
-<span class="c1"># I&#39;ve initialized the answers to None.</span>
-<span class="n">zero_pt_E_au</span> <span class="o">=</span> <span class="kc">None</span>                  <span class="c1">#Energy in Hartree (atomic units)</span>
-<span class="n">zero_pt_E_kJperMol</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1">#Energy in kJ/mol (SI units)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p5</span><span class="p">():</span>
+    <span class="c1"># You can use the code box as a calculator if you like; either way, report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answers to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">zero_pt_E_au</span> <span class="o">=</span> <span class="kc">None</span>                  <span class="c1">#Energy in Hartree (atomic units)</span>
+    <span class="n">zero_pt_E_kJperMol</span> <span class="o">=</span> <span class="kc">None</span>            <span class="c1">#Energy in kJ/mol (SI units)</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">zero_pt_E_au</span><span class="p">,</span> <span class="n">zero_pt_E_kJperMol</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of a electron confined to a disk of radius 4 Bohr is </span><span class="si">{</span><span class="n">zero_pt_E_au</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> Hartree.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of a electron confined to a disk of radius 4 Bohr is </span><span class="si">{</span><span class="n">zero_pt_E_kJperMol</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> kJ/mol.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zero_pt_E_au</span><span class="p">,</span> <span class="n">zero_pt_E_kJperMol</span> <span class="o">=</span> <span class="n">p5</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of a electron confined to a disk of radius 4 Bohr is </span><span class="si">{</span><span class="n">zero_pt_E_au</span><span class="si">}</span><span class="s1"> Hartree.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The zero-point energy of a electron confined to a disk of radius 4 Bohr is </span><span class="si">{</span><span class="n">zero_pt_E_kJperMol</span><span class="si">}</span><span class="s1"> kJ/mol.&#39;</span><span class="p">)</span>
 
 <span class="c1"># basic tests:</span>
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">zero_pt_E_au</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;The answer should be an float&quot;</span>
@@ -875,21 +906,24 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplicity of septuplet F state of Samarium (integer)</span>
-<span class="n">multiplity_7F</span> <span class="o">=</span> <span class="kc">None</span>   
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p6</span><span class="p">():</span>
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="c1"># Multiplicity of septuplet F state of Samarium (integer)</span>
+    <span class="n">multiplity_7F</span> <span class="o">=</span> <span class="kc">None</span>   
 
-<span class="c1"># J values associated with septuplet F state of Samarium (set or list of integers)</span>
-<span class="n">Jvalues_7F</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="c1"># J values associated with septuplet F state of Samarium (set or list of integers)</span>
+    <span class="n">Jvalues_7F</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">###END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">multiplity_7F</span><span class="p">,</span> <span class="n">Jvalues_7F</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A septuplet-F term is </span><span class="si">{</span><span class="n">multiplicity_7F</span><span class="si">}</span><span class="s1">-fold degenerate and has J values </span><span class="si">{</span><span class="n">Jvalues_7F</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiplity_7F</span><span class="p">,</span> <span class="n">Jvalues_7F</span> <span class="o">=</span> <span class="n">p6</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A septuplet-F term is </span><span class="si">{</span><span class="n">multiplicity_7F</span><span class="si">}</span><span class="s1">-fold degenerate and has J values </span><span class="si">{</span><span class="n">Jvalues_7F</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
       
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">multiplicity_7F</span><span class="p">,</span><span class="nb">int</span><span class="p">)),</span> <span class="s2">&quot;The multiplicity should be an integer&quot;</span>
 <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">Jvalues_7F</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">Jvalues_7F</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">Jvalues_7F</span><span class="p">,</span><span class="nb">tuple</span><span class="p">)),</span> <span class="s2">&quot;The list of J values should be a list of integers.&quot;</span>
@@ -964,19 +998,22 @@ in the Hydrogen atom? <em>Report your answer as a float, in atomic units.</em></
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Expectation value of r^2 for a 4f orbital in the hydrogen atom (Z=1) in atomic units (Bohr^2). </span>
-<span class="c1"># I have initialized the variable to None. Give your answer in atomic units (Bohr).</span>
-<span class="n">avg_r2</span> <span class="o">=</span> <span class="kc">None</span>    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p14</span><span class="p">():</span>
+    <span class="c1"># Expectation value of r^2 for a 4f orbital in the hydrogen atom (Z=1) in atomic units (Bohr^2). </span>
+    <span class="c1"># I have initialized the variable to None. Give your answer in atomic units (Bohr).</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">avg_r2</span> <span class="o">=</span> <span class="kc">None</span>  
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">avg_r2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The expectation value of r^2 for an electron in the 4f orbital of the hydrogen atom is </span><span class="si">{</span><span class="n">avg_r2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Bohr^2.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The expectation value of r^2 for an electron in the 4f orbital of the hydrogen atom is </span><span class="si">{</span><span class="n">p14</span><span class="p">()</span><span class="si">}</span><span class="s1"> Bohr^2.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -989,19 +1026,22 @@ in the Hydrogen atom? <em>Report your answer as a float, in atomic units.</em></
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Most probable distance at which to observe an electron in the 4f orbital from the nucleus of the hydrogen atom.</span>
-<span class="c1"># I have initialized the variable to None. Give your answer in atomic units (Bohr).</span>
-<span class="n">dist_mostprob</span> <span class="o">=</span> <span class="kc">None</span>    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p15</span><span class="p">():</span>
+    <span class="c1"># Most probable distance at which to observe an electron in the 4f orbital from the nucleus of the hydrogen atom.</span>
+    <span class="c1"># I have initialized the variable to None. Give your answer in atomic units (Bohr).</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">dist_mostprob</span> <span class="o">=</span> <span class="kc">None</span>    
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dist_mostprob</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The most probable value of the distance from the nucleus for a 4f electron in Hydrogen is </span><span class="si">{</span><span class="n">dist_mostprob</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Bohr.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The most probable value of the distance from the nucleus for a 4f electron in Hydrogen is </span><span class="si">{</span><span class="n">p15</span><span class="p">()</span><span class="si">}</span><span class="s1"> Bohr.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1010,32 +1050,37 @@ in the Hydrogen atom? <em>Report your answer as a float, in atomic units.</em></
 </div>
 <div class="section" id="heisenberg-uncertainty-principle">
 <h3>🖩 Heisenberg Uncertainty Principle<a class="headerlink" href="#heisenberg-uncertainty-principle" title="Permalink to this headline">¶</a></h3>
-<p>The Heisenberg Uncertainty Principle between momentum and position in 3 dimensions states that
-$<span class="math notranslate nohighlight">\(
+<p>The Heisenberg Uncertainty Principle between momentum and position in 3 dimensions states that</p>
+<div class="math notranslate nohighlight">
+\[
 \sigma_r^2 \sigma_p^2 \ge  \tfrac{3}{4} \hbar^2
-\)</span><span class="math notranslate nohighlight">\(
-where
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \sigma_r^2 = \langle \psi_{n,n-1,m} | r^2 | \psi_{n,n-1,m} \rangle - \langle \psi_{n,n-1,m} | r | \psi_{n,n-1,m} \rangle^2 \\
 \sigma_p^2 = \langle \psi_{n,n-1,m} | \hat{p}^2 | \psi_{n,n-1,m} \rangle - \langle \psi_{n,n-1,m} | \hat{p} | \psi_{n,n-1,m} \rangle^2
-\)</span><span class="math notranslate nohighlight">\(
-To reassure yourself that this is true, compute \)</span>\sigma_r^2 \sigma_p^2$ for the 4f state of the hydrogen atom. <em>Report your answer as a float, in atomic units.</em></p>
+\end{split}\]</div>
+<p>To reassure yourself that this is true, compute <span class="math notranslate nohighlight">\(\sigma_r^2 \sigma_p^2\)</span> for the 4f state of the hydrogen atom. <em>Report your answer as a float, in atomic units.</em></p>
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the left-hand-side of the Heisenberg Uncertainty relation, which should be bigger than 3/2 hbar.</span>
-<span class="c1"># Give your answer in atomic units.</span>
-<span class="n">test_Heisenberg</span> <span class="o">=</span> <span class="kc">None</span>    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p16</span><span class="p">():</span>
+    <span class="c1"># Write the left-hand-side of the Heisenberg Uncertainty relation, which should be bigger than 3/2 hbar.</span>
+    <span class="c1"># Give your answer in atomic units.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">test_Heisenberg</span> <span class="o">=</span> <span class="kc">None</span>  
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">test_Heisenberg</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The product of the variance in position and momentum for an electron in the 4f orbital of Hydrogen is </span><span class="si">{</span><span class="n">test_Heisenberg</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> times hbar.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The product of the variance in position and momentum for an electron in the 4f orbital of Hydrogen is </span><span class="si">{</span><span class="n">p16</span><span class="p">()</span><span class="si">}</span><span class="s1"> times hbar.&#39;</span><span class="p">)</span>
 <span class="k">assert</span><span class="p">(</span><span class="n">test_Heisenberg</span> <span class="o">&gt;=</span> <span class="mf">0.75</span><span class="p">),</span> <span class="s2">&quot;The Heisenberg Uncertainty Principle has been violated!&quot;</span>
 </pre></div>
 </div>
@@ -1050,35 +1095,38 @@ To reassure yourself that this is true, compute \)</span>\sigma_r^2 \sigma_p^2$ 
 </div>
 <div class="section" id="eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot">
 <h2>Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.<a class="headerlink" href="#eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot" title="Permalink to this headline">¶</a></h2>
-<p>Modern displays often use quantum dot technology, where one (or more) electrons are confined to a region within a material. For an electron confined to a rectangular region in two dimensions, it is reasonable to approximate its motion perpendicular to the rectangle with harmonic confinement. The time-independent Schrödinger equation, eigenfunctions, and eigenvalues for a harmonically confined electron are, in atomic units:
-$<span class="math notranslate nohighlight">\(
+<p>Modern displays often use quantum dot technology, where one (or more) electrons are confined to a region within a material. For an electron confined to a rectangular region in two dimensions, it is reasonable to approximate its motion perpendicular to the rectangle with harmonic confinement. The time-independent Schrödinger equation, eigenfunctions, and eigenvalues for a harmonically confined electron are, in atomic units:</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\tfrac{1}{2}\tfrac{d^2}{dz^2} + \tfrac{1}{2}\kappa z^2\right) \psi_k(z) = E_k \psi_k(z)
-\)</span><span class="math notranslate nohighlight">\(
-where the eigenenergies are
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>where the eigenenergies are</p>
+<div class="math notranslate nohighlight">
+\[
 E_k = \sqrt{\kappa}\left(k+\tfrac{1}{2}\right) \qquad \qquad k=0,1,2,\ldots
-\)</span><span class="math notranslate nohighlight">\(
-and the eigenfunctions are given in terms of the [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials), \)</span>H_k(z)<span class="math notranslate nohighlight">\(, as:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and the eigenfunctions are given in terms of the <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials</a>, <span class="math notranslate nohighlight">\(H_k(z)\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_k^{(\text{harm. osc.})}(z) =\frac{1}{2^k k!}\sqrt[4]{\frac{\kappa}{\pi}}
 e^{-\sqrt{\kappa}z^2/2}H_k\left(\sqrt[4]{\kappa}z\right)
-\)</span><span class="math notranslate nohighlight">\(
-The Hamiltonian for an electron confined to a rectangular region, in atomic units, is then:
-\)</span>$
-\hat{H} = -\frac{1}{2} \frac{d^2}{dx^2} -\frac{1}{2} \frac{d^2}{dy^2} -\frac{1}{2} \frac{d^2}{dz^2}</p>
-<ul class="simple">
-<li><p>V_{a_x}(x) + V_{a_y}(y) + \frac{1}{2} \kappa z^2
-$<span class="math notranslate nohighlight">\(
-where
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>The Hamiltonian for an electron confined to a rectangular region, in atomic units, is then:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = -\frac{1}{2} \frac{d^2}{dx^2} -\frac{1}{2} \frac{d^2}{dy^2} -\frac{1}{2} \frac{d^2}{dz^2} 
+ + V_{a_x}(x) + V_{a_y}(y) + \frac{1}{2} \kappa z^2
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 V_a(x) = 
 \begin{cases}
- +\infty &amp; x\leq 0\\
- 0       &amp; 0\lt x \lt a\\
- +\infty &amp; a \leq x
+    +\infty &amp; x\leq 0\\
+    0       &amp; 0\lt x \lt a\\
+    +\infty &amp; a \leq x
 \end{cases}
-\)</span>$</p></li>
-</ul>
+\end{split}\]</div>
 <div class="section" id="write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system">
 <h3>✍️ Write expressions for the eigenvalues and eigenfunctions of this system.<a class="headerlink" href="#write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system" title="Permalink to this headline">¶</a></h3>
 <p>YOUR ANSWER HERE</p>
@@ -1089,18 +1137,21 @@ V_a(x) =
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report the wavelength of the lowest-energy excitation in nm. I have initialized the variable to None.</span>
-<span class="n">wavelength_qdot_nm</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p20</span><span class="p">():</span>
+    <span class="c1"># Report the wavelength of the lowest-energy excitation in nm. I have initialized the variable to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">wavelength_qdot_nm</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">wavelength_qdot_nm</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The wavelength associated with the lowest-energy excitation of the specified quantum dot is </span><span class="si">{</span><span class="n">wavelength_qdot_nm</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> nm.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The wavelength associated with the lowest-energy excitation of the specified quantum dot is </span><span class="si">{</span><span class="n">p20</span><span class="p">()</span><span class="si">}</span><span class="s1"> nm.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

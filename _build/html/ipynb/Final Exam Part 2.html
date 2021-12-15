@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -238,10 +236,17 @@
    8. Approximate Methods
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ManyElSystems.html">
-   9. Many-Electron Systems
+   9. Many-electron systems: Structure and Spectroscopy
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
 </ul>
 <p class="caption" role="heading">
@@ -540,11 +545,7 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 <p>Submit your exam online as a Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;First M. Last&quot;</span>
-<span class="n">email_user_name</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
-<span class="n">ID_number</span> <span class="o">=</span> <span class="mi">1234567</span>
-
-<span class="c1"># It&#39;s useful to import these libraries. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It&#39;s useful to import these libraries. </span>
 <span class="c1"># You can import others or not even use these, though.</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
@@ -558,92 +559,109 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 <h2>The 1-dimensional Harmonic Oscillator<a class="headerlink" href="#the-1-dimensional-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
 <h3>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule<a class="headerlink" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule" title="Permalink to this headline">¶</a></h3>
-<p>The nuclear Schrödinger equation for a diatomic molecule is
-$<span class="math notranslate nohighlight">\(
+<p>The nuclear Schrödinger equation for a diatomic molecule is</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2M_1}\nabla^2_1 -\frac{\hbar^2}{2M_2}\nabla^2_2 + E_{\text{electronic}}(\mathbf{R}_1,\mathbf{R}_2)\right) \chi(\mathbf{R}_1,\mathbf{R}_2) = E_{\text{total}}\chi(\mathbf{R}_1,\mathbf{R}_2)
-\)</span><span class="math notranslate nohighlight">\(
-The potential energy surface on which the nuclei move, \)</span>E_{\text{electronic}}\left(\mathbf{R}_1,\mathbf{R}_2\right)<span class="math notranslate nohighlight">\(, depends only on the separation between the molecules, 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>The potential energy surface on which the nuclei move, <span class="math notranslate nohighlight">\(E_{\text{electronic}}\left(\mathbf{R}_1,\mathbf{R}_2\right)\)</span>, depends only on the separation between the molecules,</p>
+<div class="math notranslate nohighlight">
+\[
 E_{\text{electronic}}\left(\mathbf{R}_1,\mathbf{R}_2\right) = V\left( \left|\mathbf{R}_1 - \mathbf{R}_2 \right| \right)
-\)</span><span class="math notranslate nohighlight">\(
-This suggests changing coordinates using the [center of mass](https://en.wikipedia.org/wiki/Center_of_mass). Specifically, we define a coordinate that describes the position of the center of mass
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>This suggests changing coordinates using the <a class="reference external" href="https://en.wikipedia.org/wiki/Center_of_mass">center of mass</a>. Specifically, we define a coordinate that describes the position of the center of mass</p>
+<div class="math notranslate nohighlight">
+\[
 \mathbf{R} = \frac{M_1 \mathbf{R}_1 + M_2\mathbf{R}_2}{M_1 + M_2}
-\)</span><span class="math notranslate nohighlight">\(
-and a coordinate that describes the internuclear position
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and a coordinate that describes the internuclear position</p>
+<div class="math notranslate nohighlight">
+\[
 \mathbf{u} = \mathbf{R}_2 - \mathbf{R}_1
-\)</span>$</p>
+\]</div>
 <p>To rewrite the Hamiltonian in this new coordinate system, we need to rewrite the kinetic energy in the new coordinates. To do this, notice that differentiation with respect to the old (Cartesian) coordinates of the nuclei can be re-expressed in the new coordinates as:</p>
-<p>\begin{align}
-\frac{df}{dX_1} &amp;= \frac{df}{du_x}\frac{du_x}{dX_1} + \frac{df}{dR_x}\frac{dR_x}{dX_1} \
-&amp;= -\frac{df}{du_x} + \frac{M_1}{M_1+M_2}\frac{df}{dR_x} \
-\frac{df}{dX_2} &amp;= \frac{df}{du_x}\frac{du_x}{dX_2} + \frac{df}{dR_x}\frac{dR_x}{dX_2} \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{df}{dX_1} &amp;= \frac{df}{du_x}\frac{du_x}{dX_1} + \frac{df}{dR_x}\frac{dR_x}{dX_1} \\
+&amp;= -\frac{df}{du_x} + \frac{M_1}{M_1+M_2}\frac{df}{dR_x} \\
+\frac{df}{dX_2} &amp;= \frac{df}{du_x}\frac{du_x}{dX_2} + \frac{df}{dR_x}\frac{dR_x}{dX_2} \\
 &amp;= \frac{df}{du_x} + \frac{M_2}{M_1+M_2}\frac{df}{dR_x}
-\end{align}</p>
-<p>So the momentum operators for the nuclei can be written as:
-$<span class="math notranslate nohighlight">\(
+\end{align}
+\end{split}\]</div>
+<p>So the momentum operators for the nuclei can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \hat{\mathbf{p}}_1 = -\hat{\mathbf{p}}_u + \frac{M_1}{M_1+M_2}\hat{\mathbf{p}}_R \\
 \hat{\mathbf{p}}_2 = \hat{\mathbf{p}}_u + \frac{M_2}{M_1+M_2}\hat{\mathbf{p}}_R
-\)</span><span class="math notranslate nohighlight">\(
-and the kinetic energy operators are
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>and the kinetic energy operators are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \frac{\hat{\mathbf{p}}_1^2}{2M_1} = \frac{\hat{\mathbf{p}}_u^2}{2M_1} + \frac{M_1\hat{\mathbf{p}}_R^2}{2(M_1+M_2)^2} \\
 \frac{\hat{\mathbf{p}}_2^2}{2M_1} = \frac{\hat{\mathbf{p}}_u^2}{2M_2} + \frac{M_2\hat{\mathbf{p}}_R^2}{2(M_1+M_2)^2}
-\)</span><span class="math notranslate nohighlight">\(
-Adding together these expressions gives the Schr&amp;ouml;dinger equation in the new coordinate system,
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Adding together these expressions gives the Schrödinger equation in the new coordinate system,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2} \left(\frac{1}{M_1} + \frac{1}{M_2} \right) \nabla^2_u 
       -\frac{\hbar^2}{2} \left(\frac{1}{M_1 + M_2} \right)\nabla^2_R 
       + V(u) \right) \chi(\mathbf{R},\mathbf{u}) = E_{\text{total}}\chi(\mathbf{R},\mathbf{u})
-\)</span><span class="math notranslate nohighlight">\(
-or, introducing the reduced mass 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>or, introducing the reduced mass</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \mu = \frac{M_1 M_2}{M_1 + M_2} = \left(\frac{1}{M_1} + \frac{1}{M_2} \right)^{-1} \\
-\)</span><span class="math notranslate nohighlight">\(
-and total mass
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>and total mass</p>
+<div class="math notranslate nohighlight">
+\[
 M = M_1 + M_2
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2 \mu}-\frac{\hbar^2}{2M}\nabla^2_R + V(u) \right) \chi(\mathbf{R},\mathbf{u}) = E_{\text{total}}\chi(\mathbf{R},\mathbf{u})
-\)</span><span class="math notranslate nohighlight">\(
-This Schr&amp;ouml;dinger equation can be solved by separation of variables. The Schr&amp;ouml;dinger equation for the center of mass represents the translational motion of the molecule; in the absence of a potential confining the molecule, this is just the Schr&amp;ouml;dinger equation for a free particle,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>This Schrödinger equation can be solved by separation of variables. The Schrödinger equation for the center of mass represents the translational motion of the molecule; in the absence of a potential confining the molecule, this is just the Schrödinger equation for a free particle,</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2M}\nabla^2_R \eta(\mathbf{R}) = E \eta(\mathbf{R}) 
-\)</span>$
-This contributes nothing to the energy if we assume the molecule is not moving (so that it’s kinetic energy is zero). If the molecule were confined, that confining potential would be inserted here.</p>
-<p>The Schrödinger equation for the internuclear coordinate represents the rotations and vibrations of the molecule:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>This contributes nothing to the energy if we assume the molecule is not moving (so that it’s kinetic energy is zero). If the molecule were confined, that confining potential would be inserted here.</p>
+<p>The Schrödinger equation for the internuclear coordinate represents the rotations and vibrations of the molecule:</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2 \mu} + V(u) \right) \varphi(\mathbf{u}) = E_{\text{rovib}}\varphi(\mathbf{u})
-\)</span><span class="math notranslate nohighlight">\(
-The Hamiltonian in this equation is typically called the rovibrational Hamiltonian; its energy is the rovibrational energy. Because the potential energy depends only on the internuclear distance, the system is spherically symmetric. Separating out the angular dependence in the usual way,
-\)</span>$
-\left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}</p>
-<ul class="simple">
-<li><p>\frac{2}{u} \frac{d}{du}\right)
-+ \frac{\hat{L}^2(\theta_u,\phi_u)}{2\mu u^2} + V(u) \right)
-\varphi_{k,J,M_J}(u,\theta_u,\phi_u)
+\]</div>
+<p>The Hamiltonian in this equation is typically called the rovibrational Hamiltonian; its energy is the rovibrational energy. Because the potential energy depends only on the internuclear distance, the system is spherically symmetric. Separating out the angular dependence in the usual way,</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}
++ \frac{2}{u} \frac{d}{du}\right) 
+      + \frac{\hat{L}^2(\theta_u,\phi_u)}{2\mu u^2} + V(u) \right)
+      \varphi_{k,J,M_J}(u,\theta_u,\phi_u) 
 = E_{k,J,M_J}\varphi_{k,J,M_J}(u,\theta_u,\phi_u)
-$<span class="math notranslate nohighlight">\(
-Recall that \)</span>\hat{L}^2$ is the angular momentum squared, and its eigenfunctions are the spherical harmonics, which we have chosen to denote with a different quantum number to avoid confusion with the electronic problem,</p></li>
-</ul>
-<p>\begin{align}
-\hat{L}^2 Y_J^{M_J}(\theta_u,\phi_u) = \hbar^2 J(J+1) Y_J^{M_J}(\theta_u,\phi_u) \qquad \qquad J&amp;=0,1,2,\ldots \ M_J &amp;= 0,\pm 1,\ldots,\pm J
+\]</div>
+<p>Recall that <span class="math notranslate nohighlight">\(\hat{L}^2\)</span> is the angular momentum squared, and its eigenfunctions are the spherical harmonics, which we have chosen to denote with a different quantum number to avoid confusion with the electronic problem,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\hat{L}^2 Y_J^{M_J}(\theta_u,\phi_u) = \hbar^2 J(J+1) Y_J^{M_J}(\theta_u,\phi_u) \qquad \qquad J&amp;=0,1,2,\ldots \\ M_J &amp;= 0,\pm 1,\ldots\,\pm J
 \end{align}
-The exact wavefunction is therefore the product of a radial wavefunction and a spherical harmonic,
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>The exact wavefunction is therefore the product of a radial wavefunction and a spherical harmonic,</p>
+<div class="math notranslate nohighlight">
+\[
 \varphi_{k,J,M_J}(u,\theta_u,\phi_u) = R_k(u)  Y_J^{M_J}(\theta_u,\phi_u)
-\)</span><span class="math notranslate nohighlight">\(
-where the radial wavefunction and the rovibrational energy are obtained by solving
-\)</span>$
-\left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}</p>
-<ul class="simple">
-<li><p>\frac{2}{u} \frac{d}{du}\right)
-+ \frac{\hbar^2 J(J+1)}{2\mu u^2} + V(u) \right)
-R_{k}(u) = E_{k,J}R_{k}(u)
-$$</p></li>
-</ul>
+\]</div>
+<p>where the radial wavefunction and the rovibrational energy are obtained by solving</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{\hbar^2}{2\mu} \left( \frac{d^2}{du^2}
++ \frac{2}{u} \frac{d}{du}\right) 
+      + \frac{\hbar^2 J(J+1)}{2\mu u^2} + V(u) \right)
+      R_{k}(u) = E_{k,J}R_{k}(u)
+\]</div>
 </div>
 <div class="section" id="quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
 <h3>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation<a class="headerlink" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation" title="Permalink to this headline">¶</a></h3>
