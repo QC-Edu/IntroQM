@@ -136,7 +136,7 @@ assert isinstance(number_of_quantum_nos,int), "Type error: The answer should be 
 # **Values**:
 # "eq1", "eq2", "eq3", "eq4", and "eq5", where
 # 
-# `eq1`:  $ sum_{a=1}^{A-1} \sum_{b=a+1}^A \frac{Z_a Z_b}{\left| \mathbf{x}_a - \mathbf{x}_b \right|}$
+# `eq1`:  $\sum_{a=1}^{A-1} \sum_{b=a+1}^A \frac{Z_a Z_b}{\left| \mathbf{x}_a - \mathbf{x}_b \right|}$
 # 
 # `eq2`:  $\sum_{a=1}^A -\tfrac{1}{2m_a} \nabla^2_{\mathbf{x}_a}$
 # 
