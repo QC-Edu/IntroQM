@@ -180,11 +180,6 @@
      1.12. Introduction to Numpy
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../problems/syzygy.html">
-     1.13. Computing Course Marks with Jupyter, Python, Numpy, and syzygy
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -422,16 +417,7 @@
 <div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).</p>
-<p>Make sure you fill in any place that says YOUR CODE HERE or “YOUR ANSWER HERE”, as well as your name, username (the prefix to your &#64;university.ext e-mail), and student ID number in the cell below</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;First M. Last&quot;</span>
-<span class="n">email_user_name</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
-<span class="n">ID_number</span> <span class="o">=</span> <span class="mi">1234567</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Make sure you fill in any place that says YOUR CODE HERE or “YOUR ANSWER HERE”. Don’t forget to delete <code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">NotImplementedError()</span></code></p>
 </div>
 <div class="section" id="problem-statement">
 <h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
@@ -495,13 +481,13 @@ Grading Scheme:</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_43381</span><span class="o">/</span><span class="mf">3833639827.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1352</span><span class="o">/</span><span class="mf">3833639827.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># It&#39;s good to always test to make sure your code is right.</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">80</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1200</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="nn">/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_43381/2652184445.py</span> in <span class="ni">total_mark_xc</span><span class="nt">(assignments, exam, extra_credit_pages)</span>
+<span class="nn">/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_1352/2652184445.py</span> in <span class="ni">total_mark_xc</span><span class="nt">(assignments, exam, extra_credit_pages)</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> 
 <span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="c1"># YOUR CODE HERE</span>
 <span class="ne">---&gt; </span><span class="mi">23</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>

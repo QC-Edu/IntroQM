@@ -37,12 +37,6 @@ ID_number = 1234567
 # In[2]:
 
 
-get_ipython().run_line_magic('load_ext', 'nb_black')
-
-
-# In[1]:
-
-
 import numpy as np
 
 
@@ -88,7 +82,7 @@ print("the final mark for the student in CHEM 3PA3: ", total_mark_xc(assignments
 ### END SOLUTION
 
 
-# In[2]:
+# In[3]:
 
 
 # It's good to always test to make sure your code is right.
@@ -110,7 +104,7 @@ np.testing.assert_almost_equal(total_mark_xc(assignments, 50, 700), 70.030303030
 # 
 # 
 
-# In[5]:
+# In[4]:
 
 
 import numpy as np
@@ -191,7 +185,7 @@ print("the final mark for the student in CHEM 3PA3: ", total_mark_xc_mult_for(as
 ### END SOLUTION
 
 
-# In[6]:
+# In[5]:
 
 
 assignments = np.array([[100, 100, 100, 100], [0, 0, 0, 0], [0, 0, 0, 0]])

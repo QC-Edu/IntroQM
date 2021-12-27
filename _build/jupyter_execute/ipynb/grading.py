@@ -7,15 +7,7 @@
 # ## Instructions
 # Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).
 # 
-# Make sure you fill in any place that says YOUR CODE HERE or "YOUR ANSWER HERE", as well as your name, username (the prefix to your @university.ext e-mail), and student ID number in the cell below
-
-# In[1]:
-
-
-Name = "First M. Last"
-email_user_name = "username"
-ID_number = 1234567
-
+# Make sure you fill in any place that says YOUR CODE HERE or "YOUR ANSWER HERE". Don't forget to delete `raise NotImplementedError()`
 
 # ## Problem Statement
 # Write a Python function to compute the final mark for a student in this class. 
@@ -34,7 +26,7 @@ ID_number = 1234567
 # \text{percent extra credit} = \frac{\text{number of pages of extra credit}}{1200} \cdot 40
 # $$
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -62,7 +54,7 @@ def total_mark_xc(assignments, exam, extra_credit_pages=0):
     raise NotImplementedError()
 
 
-# In[3]:
+# In[2]:
 
 
 # It's good to always test to make sure your code is right.
