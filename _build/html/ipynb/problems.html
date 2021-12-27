@@ -1,0 +1,1164 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Quantum Mechanics &#8212; CHEM 3PA3</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CHEM 3PA3</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../main_content.html">
+   Introduction to Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_1.html">
+   Tutorial 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments.html">
+   list of tasks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exam
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exam.html">
+   Explanation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Extra credentials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extra.html">
+   list of problems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Learning objectives
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   1. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/Jupyter.html">
+     1.10. Introduction to Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/python.html">
+     1.11. Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/numpy.html">
+     1.12. Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/syzygy.html">
+     1.13. Computing Course Marks with Jupyter, Python, Numpy, and syzygy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="History.html">
+   2. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/IntroQM.html">
+     2.10. Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroQMkey.html">
+     2.11. Assignment Key including extra problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SchrodingerEq.html">
+   3. The Schrödinger Equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleIn1DBox.html">
+   4. The Particle in a Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   5. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Postulates.html">
+   6. The Postulates of Quantum Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OneElectronAtoms.html">
+   7. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApproximateMethods.html">
+   8. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ManyElSystems.html">
+   9. Many-electron systems: Structure and Spectroscopy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Additional resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources.html">
+   Other resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  License
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ipynb/problems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/RichRick1/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fipynb/problems.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RichRick1/IntroQM2022/master?urlpath=tree/docs/ipynb/problems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   🎯 Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions">
+   📜 Instructions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wave-particle-duality">
+   Wave-Particle Duality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particle-like-features-of-light">
+     🎲 Particle-like features of light.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-photons">
+     🖩 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     🪙 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     🪙 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     🖩 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     🎲 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#momentum-from-a-green-laser-pointer">
+     🖩 Momentum from a green laser pointer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavelength-emitted-by-a-radiopharmaceutical">
+     🖩 Wavelength emitted by a radiopharmaceutical
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#davisson-germer-experiment">
+     🪙 Davisson-Germer experiment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     🎲 Davisson-Germer experiment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     🖩 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rydberg-s-law">
+     🖩 Rydberg’s Law
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wave-properties-of-particles">
+     🎲 Wave properties of particles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particle-properties-of-waves">
+     🎲 Particle properties of waves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     🖩 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-broglie-wavelength-of-a-baseball">
+     🖩 De Broglie wavelength of a baseball
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-schrodinger-equation">
+   The Schrödinger Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-dependent-schrodinger-equation">
+     ✍️ Time-Dependent Schrödinger Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hamiltonian-operator">
+     🎲 Hamiltonian operator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematics">
+   Mathematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-properties-of-the-wavefunction">
+     🪙 Mathematical Properties of the wavefunction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex-conjugation">
+     🎲 Complex Conjugation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     ✍️ Complex Conjugation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenfunctions-of-the-kinetic-energy-operator">
+     🪙 Eigenfunctions of the kinetic-energy operator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-quantum-mechanics">
+<h1>Introduction to Quantum Mechanics<a class="headerlink" href="#introduction-to-quantum-mechanics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>🎯 Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>To review basic aspects of quantum mechanics.</p>
+</div>
+<div class="section" id="instructions">
+<h2>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you fill in any place that says YOUR CODE HERE or “YOUR ANSWER HERE”, as well as your name, username (the prefix to your &#64;university.ext e-mail), and student ID number in the cell below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wave-particle-duality">
+<h2>Wave-Particle Duality<a class="headerlink" href="#wave-particle-duality" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="particle-like-features-of-light">
+<h3>🎲 Particle-like features of light.<a class="headerlink" href="#particle-like-features-of-light" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following phenomena are strongly associated with the particle-like nature of light. <br>
+<strong>A</strong>. Blackbody radiation <br>
+<strong>B</strong>. Compton Scattering  <br>
+<strong>C</strong>. Electron Diffraction <br>
+<strong>D</strong>. Stern-Gerlach Experiment <br>
+<strong>E</strong>. Photoelectric effect</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p1</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad1 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    <span class="k">return</span> <span class="n">ad1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the particle-like nature of light: []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="properties-of-photons">
+<h3>🖩 Properties of photons<a class="headerlink" href="#properties-of-photons" title="Permalink to this headline">¶</a></h3>
+<p>What is the frequency of light in Hz (<span class="math notranslate nohighlight">\(s^{-1}\)</span>) of light with wavelength 500 nm?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p2</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># ansDuality2 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad2</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ad2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>🪙 Properties of photons<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Doubling the wavelength of radiation doubles its frequency. (True/False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p3</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so freq_double = True or freq_double = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">freq_double</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">freq_double</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">(),</span> <span class="s2">&quot;that when the wavelength of radiation doubles its frequency does also.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that when the wavelength of radiation doubles its frequency does also.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>🪙 Properties of photons<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Doubling the wavelength of radiation halves its speed. (True/False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p4</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so speed_halves = True or speed_halves = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">speed_halves</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">speed_halves</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p4</span><span class="p">(),</span> <span class="s2">&quot;that when the wavelength of radiation doubles its speed halves.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that when the wavelength of radiation doubles its speed halves.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>🖩 Properties of photons<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>A helium-neon laser emits light at 632.8 nm.  What is the energy of the photons generated by this laser, in Joules?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p5</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># E_HeNe = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">E_HeNe</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">E_HeNe</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>🎲 Properties of photons<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following changes would double the energy of a photon: <br>
+<strong>A</strong>. Doubling its frequency <br>
+<strong>B</strong>. Doubling its wavelength <br>
+<strong>C</strong>. Doubling its momentum <br>
+<strong>D</strong>. Doubling its speed <br>
+<strong>E</strong>. Doubling its effective (relativistic) mass <br>
+<strong>F</strong>. Doubling its wavenumber.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p6</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then e_doubles = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">e_doubles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">e_doubles</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ways you can double the energy of a photon include&quot;</span><span class="p">,</span> <span class="n">p6</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ways you can double the energy of a photon include []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="momentum-from-a-green-laser-pointer">
+<h3>🖩 Momentum from a green laser pointer<a class="headerlink" href="#momentum-from-a-green-laser-pointer" title="Permalink to this headline">¶</a></h3>
+<p>I have a high-powered green laser pointer (532 nm wavelength, 100 mW power) that I use for astronomical starspotting. If I shine this laser pointer on you, how much momentum, per second, will be transferred to you? Report your answer in SI units of kg m/s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p7</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># p_greenlaser = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">p_greenlaser</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">p_greenlaser</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the momentum transfered per second is </span><span class="si">{</span><span class="n">p7</span><span class="p">()</span><span class="si">}</span><span class="s2"> kg m/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the momentum transfered per second is None kg m/s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wavelength-emitted-by-a-radiopharmaceutical">
+<h3>🖩 Wavelength emitted by a radiopharmaceutical<a class="headerlink" href="#wavelength-emitted-by-a-radiopharmaceutical" title="Permalink to this headline">¶</a></h3>
+<p>The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is 1.29 x 10^11 J/mol. What is the wavelength of the emitted <span class="math notranslate nohighlight">\(\gamma\)</span> rays?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p8</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># wlength_Co60 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">wlength_Co60</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">wlength_Co60</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="davisson-germer-experiment">
+<h3>🪙 Davisson-Germer experiment<a class="headerlink" href="#davisson-germer-experiment" title="Permalink to this headline">¶</a></h3>
+<p>The Davisson-Germer experiment was among the first explicit verifications of the wave-like nature of electrons, and was foundational for modern electron diffraction methods. (True/False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p9</span><span class="p">():</span>   
+    <span class="c1"># Report your answer as a Boolean, so ad3 = True or ad3 = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad3</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">ad3</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">p9</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is: None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>🎲 Davisson-Germer experiment<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>The Davisson-Germer experiment demonstrated that if you shine a beam of electrons on a metal crystal, the result is <br>
+<strong>A</strong>. the electrons are absorbed at “critical energies” similar to the optical (light) absorption spectrum. <br>
+<strong>B</strong>. the electrons scatter according to the Bragg law for X-ray scattering. <br>
+<strong>C</strong>. the electrons go right through the metal. <br>
+<strong>D</strong>. the metal gets very hot and becomes a dull red color (stimulated blackbody emission of radiation). <br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p10</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad3b = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad3b</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">ad3b</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In the Davisson-Germer experiment&quot;</span><span class="p">,</span> <span class="n">p10</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the Davisson-Germer experiment []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>🖩 Properties of photons<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>What is the momentum of a <span class="math notranslate nohighlight">\(\gamma\)</span>-ray photon with a wavelength of <span class="math notranslate nohighlight">\(10^{-13}\)</span> m in SI units of <span class="math notranslate nohighlight">\({\frac{\text{m} \cdot \text{kg}}{\text{s}}}\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p11</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># ad4 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad4</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    <span class="k">return</span> <span class="n">ad4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rydberg-s-law">
+<h3>🖩 Rydberg’s Law<a class="headerlink" href="#rydberg-s-law" title="Permalink to this headline">¶</a></h3>
+<p>Rydberg’s law says that the wavenumber for the absorptions for a one-electron atom/ion with atomic number Z is given by the expression
+$<span class="math notranslate nohighlight">\( \tilde{\nu} = \left( 1.0974 \cdot 10^7 m^{-1}\right) Z^2 
+\left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right) \)</span><span class="math notranslate nohighlight">\(
+where \)</span>1 &lt; n_1 &lt; n_2 &lt; \inf<span class="math notranslate nohighlight">\(. Suppose you are given the Hydrogen atom in its ground state, \)</span>n_1=1$. What is the lowest absorption frequency?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p12</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># ad5 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad5</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">ad5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wave-properties-of-particles">
+<h3>🎲 Wave properties of particles<a class="headerlink" href="#wave-properties-of-particles" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following experimental results are often cited as examples of the wave-likeness of particles like electrons?<br />
+<strong>A</strong>. blackbody radiation<br />
+<strong>B</strong>. discrete emission lines in the hydrogen spectrum<br />
+<strong>C</strong>. photoelectric effect<br />
+<strong>D</strong>. Compton scattering of light by a particle<br />
+<strong>E</strong>. Electron scattering from a crystal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p13</span><span class="p">():</span>
+    <span class="c1">#Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad6 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad6</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ad6</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the wave-like nature of electrons:&quot;</span><span class="p">,</span> <span class="n">p12</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the wave-like nature of electrons: None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="particle-properties-of-waves">
+<h3>🎲 Particle properties of waves<a class="headerlink" href="#particle-properties-of-waves" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following experimental results are often cited as examples of the particle-likeness of radiation (light)?<br />
+<strong>A</strong>. blackbody radiation <br>
+<strong>B</strong>. discrete emission lines in the hydrogen spectrum <br>
+<strong>C</strong>. photoelectric effect <br>
+<strong>D</strong>. Compton scattering of light by a particle <br>
+<strong>E</strong>. Electron scattering from a crystal <br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p14</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad7 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad7</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ad7</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">p13</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the particle-like nature of light: []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>🖩 Properties of photons<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>What is the momentum and energy of a photon with angular wavenumber <span class="math notranslate nohighlight">\(k=10^7 \text{m}^{-1}\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p15</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answers to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">p_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#momentum of the photon</span>
+    <span class="n">E_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#Energy of the photon</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">p_from_k</span><span class="p">,</span> <span class="n">E_from_k</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose you are given a photon with an energy of 2 eV. What is its momentum in
+<span class="math notranslate nohighlight">\(\frac{\text{m} \cdot \text{kg}}{\text{s}}\)</span>? What is its frequency in Hz?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p16</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answers to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">momentum_d9</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">frequency_d9</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">momentum_d9</span><span class="p">,</span> <span class="n">frequency_d9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="de-broglie-wavelength-of-a-baseball">
+<h3>🖩 De Broglie wavelength of a baseball<a class="headerlink" href="#de-broglie-wavelength-of-a-baseball" title="Permalink to this headline">¶</a></h3>
+<p>During departmental baseball games, your instructor insists that the only reason he strikes out is because of the De Broglie wavelength of the baseball means that even though he swings in the correct location, he still misses. Suppose that the opposing major-league-quality hurler throws the baseball (mass = 145 g) at 100 miles-per-hour (45 m/s). What is the De Broglie wavelength of the baseball?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p17</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">wl_baseball</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#wavelength of the baseball.</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">wl_baseball</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-schrodinger-equation">
+<h2>The Schrödinger Equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-dependent-schrodinger-equation">
+<h3>✍️ Time-Dependent Schrödinger Equation<a class="headerlink" href="#time-dependent-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
+<p>What is the time-dependent Schrödinger equation for the complex conjugate of the wavefunction, <span class="math notranslate nohighlight">\(\Psi^*\)</span>?
+Put your answer in the markdown cell below. You can drag and drop an attachment (of most types) to this cell also.</p>
+</div>
+<div class="section" id="hamiltonian-operator">
+<h3>🎲 Hamiltonian operator<a class="headerlink" href="#hamiltonian-operator" title="Permalink to this headline">¶</a></h3>
+<p>The Hamiltonian operator corresponds to which observable property of a quantum system? <br>
+<strong>A</strong>. Action <br>
+<strong>B</strong>. Momentum <br>
+<strong>C</strong>. Kinetic Energy <br>
+<strong>D</strong>. De Broglie Wavelength <br>
+<strong>E</strong>. Total Energy <br>
+<strong>F</strong>. Angular Momentum <br>
+<strong>G</strong>. Entropy<br />
+<strong>H</strong>. Planck Mass</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p18</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ansSE2 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ansSE2</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ansSE2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Hamiltonian is the quantum-mechanical operator for:&quot;</span><span class="p">,</span> <span class="n">p18</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Hamiltonian is the quantum-mechanical operator for: []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mathematics">
+<h2>Mathematics<a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mathematical-properties-of-the-wavefunction">
+<h3>🪙 Mathematical Properties of the wavefunction<a class="headerlink" href="#mathematical-properties-of-the-wavefunction" title="Permalink to this headline">¶</a></h3>
+<p>A probability density can never be negative. (True/False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p19</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so prob_canbe_negative = True or = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">prob_canbe_negative</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">prob_canbe_negative</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p19</span><span class="p">(),</span> <span class="s2">&quot;that a probability density can be negative.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that a probability density can be negative.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="complex-conjugation">
+<h3>🎲 Complex Conjugation<a class="headerlink" href="#complex-conjugation" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(z\)</span> be a complex number. If <span class="math notranslate nohighlight">\(w\)</span> is the product of <span class="math notranslate nohighlight">\(z\)</span> and its complex
+conjugate, <span class="math notranslate nohighlight">\(w = z z^*\)</span>, which of the following is <strong>always</strong> true about <span class="math notranslate nohighlight">\(w\)</span>: <br>
+<strong>A</strong>. w is an imaginary number. <br>
+<strong>B</strong>. w is a complex number. <br>
+<strong>C</strong>. w is nonzero real number. <br>
+<strong>D</strong>. w is a nonnegative real number. <br>
+<strong>E</strong>. w is a nonzero complex number. <br>
+<strong>F</strong>. None of the above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p20</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then zzstar = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">zzstar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
+    <span class="k">return</span> <span class="n">zzstar</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The product of a number and its complex conjugate is always&quot;</span><span class="p">,</span> <span class="n">p20</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The product of a number and its complex conjugate is always []
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>✍️ Complex Conjugation<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>What is the complex conjugate of
+$<span class="math notranslate nohighlight">\( \Psi(x,t) = A e^{(a+bi)(kx - \omega t)} \)</span>$</p>
+</div>
+<div class="section" id="eigenfunctions-of-the-kinetic-energy-operator">
+<h3>🪙 Eigenfunctions of the kinetic-energy operator<a class="headerlink" href="#eigenfunctions-of-the-kinetic-energy-operator" title="Permalink to this headline">¶</a></h3>
+<p><em>Every</em> eigenfunction of the momentum operator is also an eigenfunction of the kinetic-energy operator, and vice versa. (True/False)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p21</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so is_also_eigenfunction = True or = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">is_also_eigenfunction</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">is_also_eigenfunction</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">p21</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is: True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "RichRick1/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ipynb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -16,10 +16,6 @@
 # In[1]:
 
 
-Name = "First M. Last"
-email_user_name = "username"
-ID_number = 1234567
-
 # It's useful to import these libraries. 
 # You can import others or not even use these, though.
 import numpy as np
@@ -40,16 +36,18 @@ from scipy import constants
 # In[2]:
 
 
-# Report your answer as a list, tuple, or set containing the correct answers. 
-# For example, if the answers are A and C, then ad1 = ["A", "C"]. 
-# I've initialized the answer to the empty list.
-ad1 = []
+def p1():
+    # Report your answer as a list, tuple, or set containing the correct answers. 
+    # For example, if the answers are A and C, then ad1 = ["A", "C"]. 
+    # I've initialized the answer to the empty list.
+    ad1 = []
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return ad1
+
+ad1 = p1()
 
 
-# In[ ]:
+# In[3]:
 
 
 print("The following phenomena are associated with the particle-like nature of light:", ad1)
@@ -62,15 +60,17 @@ assert(len(ad1) > 0)
 # ### &#x1F5A9; Properties of photons
 # What is the frequency of light in Hz ($s^{-1}$) of light with wavelength 500 nm?
 
-# In[ ]:
+# In[4]:
 
 
-# Use the code box as a calculator, but report your answer as a float. 
-# ansDuality2 = float. I've initialized the answer to None.
-ad2 = None
+def p2():
+    # Use the code box as a calculator, but report your answer as a float. 
+    # ansDuality2 = float. I've initialized the answer to None.
+    ad2 = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return ad2
+
+ad2 = p2()
 
 
 # In[ ]:
@@ -89,11 +89,13 @@ assert(isinstance(ad2,float))
 # In[ ]:
 
 
-# Report your answer as a Boolean, so freq_double = True or freq_double = False
-freq_double = None
+def p3():
+    # Report your answer as a Boolean, so freq_double = True or freq_double = False
+    freq_double = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return freq_double
+
+freq_double = p3()
 
 
 # In[ ]:
@@ -110,11 +112,13 @@ print("It is", freq_double, "that when the wavelength of radiation doubles its f
 # In[ ]:
 
 
-# Report your answer as a Boolean, so speed_halves = True or speed_halves = False
-speed_halves = None
+def p4():
+    # Report your answer as a Boolean, so speed_halves = True or speed_halves = False
+    speed_halves = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return speed_halves
+
+speed_halves = p4()
 
 
 # In[ ]:
@@ -130,12 +134,14 @@ print("It is", speed_halves, "that when the wavelength of radiation doubles its 
 # In[ ]:
 
 
-# Use the code box as a calculator, but report your answer as a float. 
-# E_HeNe = float. I've initialized the answer to None.
-E_HeNe = None
+def p5():
+    # Use the code box as a calculator, but report your answer as a float. 
+    # E_HeNe = float. I've initialized the answer to None.
+    E_HeNe = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return E_HeNe
+
+E_HeNe = p5()
 
 
 # In[ ]:
@@ -157,13 +163,15 @@ assert(isinstance(E_HeNe,float))
 # In[ ]:
 
 
-# Report your answer as a list, tuple, or set containing the correct answers. 
-# For example, if the answers are A and C, then e_doubles = ["A", "C"]. 
-# I've initialized the answer to the empty list.
-e_doubles = []
+def p6():
+    # Report your answer as a list, tuple, or set containing the correct answers. 
+    # For example, if the answers are A and C, then e_doubles = ["A", "C"]. 
+    # I've initialized the answer to the empty list.
+    e_doubles = []
+    
+    return e_doubles
 
-# YOUR CODE HERE
-raise NotImplementedError()
+e_doubles = p6()
 
 
 # In[ ]:
@@ -180,12 +188,14 @@ assert(len(e_doubles) > 0)
 # In[ ]:
 
 
-# Use the code box as a calculator, but report your answer as a float. 
-# p_greenlaser = float. I've initialized the answer to None.
-p_greenlaser = None
+def p7():
+    # Use the code box as a calculator, but report your answer as a float. 
+    # p_greenlaser = float. I've initialized the answer to None.
+    p_greenlaser = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return p_greenlaser
+
+p_greenlaser = p7()
 
 
 # In[ ]:
@@ -196,17 +206,19 @@ print("the momentum transfered per second is {0:.3e} kg m/s".format(p_greenlaser
 
 
 # ### &#x1F5A9; Wavelength emitted by a radiopharmaceutical
-# The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is 1.29 x 10^11 J/mol. What is the wavelength of the emitted $\gamma$ rays?
+# The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is $1.29 \cdot 10^{11} \frac{J}{mol}$. What is the wavelength of the emitted $\gamma$ rays?
 
 # In[ ]:
 
 
-# Use the code box as a calculator, but report your answer as a float. 
-# wlength_Co60 = float. I've initialized the answer to None.
-wlength_Co60 = None
+def p8():
+    # Use the code box as a calculator, but report your answer as a float. 
+    # wlength_Co60 = float. I've initialized the answer to None.
+    wlength_Co60 = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return wlength_Co60
+
+wlength_Co60 = p8()
 
 
 # In[ ]:
@@ -221,11 +233,13 @@ assert(isinstance(wlength_C60,float))
 # In[ ]:
 
 
-# Report your answer as a Boolean, so ad3 = True or ad3 = False
-ad3 = None
+def p9():
+    # Report your answer as a Boolean, so ad3 = True or ad3 = False
+    ad3 = None
 
-# YOUR CODE HERE
-raise NotImplementedError()
+    return ad3
+
+ad3 = p9()
 
 
 # In[ ]:
@@ -234,8 +248,6 @@ raise NotImplementedError()
 assert(isinstance(ad3,bool))
 print("The answer is:", ad3)
 
-
-# 
 
 # ### &#x1f3b2; Davisson-Germer experiment
 # The Davisson-Germer experiment demonstrated that if you shine a beam of electrons on a metal crystal, the result is <br>
@@ -247,10 +259,13 @@ print("The answer is:", ad3)
 # In[ ]:
 
 
-# Report your answer as a list, tuple, or set containing the correct answers. 
-# For example, if the answers are A and C, then ad3b = ["A", "C"]. 
-# I've initialized the answer to the empty list.
-ad3b = []
+def p10():
+    # Report your answer as a list, tuple, or set containing the correct answers. 
+    # For example, if the answers are A and C, then ad3b = ["A", "C"]. 
+    # I've initialized the answer to the empty list.
+    ad3b = []
+    
+    return ad3b
 
 # YOUR CODE HERE
 raise NotImplementedError()
