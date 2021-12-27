@@ -26,13 +26,13 @@ np.testing.assert_almost_equal(total_mark_xc([0, 0], 0, 1200), 40)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNotImplementedError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_43381/3833639827.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_1352/3833639827.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m# It's good to always test to make sure your code is right.[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mnp[0m[0;34m.[0m[0mtesting[0m[0;34m.[0m[0massert_almost_equal[0m[0;34m([0m[0mtotal_mark_xc[0m[0;34m([0m[0;34m[[0m[0;36m100[0m[0;34m,[0m [0;36m100[0m[0;34m,[0m [0;36m100[0m[0;34m,[0m [0;36m100[0m[0;34m][0m[0;34m,[0m [0;36m0[0m[0;34m)[0m[0;34m,[0m [0;36m80[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mnp[0m[0;34m.[0m[0mtesting[0m[0;34m.[0m[0massert_almost_equal[0m[0;34m([0m[0mtotal_mark_xc[0m[0;34m([0m[0;34m[[0m[0;36m0[0m[0;34m,[0m [0;36m0[0m[0;34m][0m[0;34m,[0m [0;36m100[0m[0;34m,[0m [0;36m0[0m[0;34m)[0m[0;34m,[0m [0;36m100[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0mnp[0m[0;34m.[0m[0mtesting[0m[0;34m.[0m[0massert_almost_equal[0m[0;34m([0m[0mtotal_mark_xc[0m[0;34m([0m[0;34m[[0m[0;36m0[0m[0;34m,[0m [0;36m0[0m[0;34m][0m[0;34m,[0m [0;36m0[0m[0;34m,[0m [0;36m1200[0m[0;34m)[0m[0;34m,[0m [0;36m40[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_43381/2652184445.py[0m in [0;36mtotal_mark_xc[0;34m(assignments, exam, extra_credit_pages)[0m
+[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_1352/2652184445.py[0m in [0;36mtotal_mark_xc[0;34m(assignments, exam, extra_credit_pages)[0m
 [1;32m     21[0m [0;34m[0m[0m
 [1;32m     22[0m     [0;31m# YOUR CODE HERE[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 23[0;31m     [0;32mraise[0m [0mNotImplementedError[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
