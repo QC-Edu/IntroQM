@@ -316,7 +316,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ipynb/IntroQM2021.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/ipynb/problems.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -336,7 +336,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fipynb/IntroQM2021.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fipynb/problems.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -357,7 +357,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RichRick1/IntroQM2022/master?urlpath=tree/docs/ipynb/IntroQM2021.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RichRick1/IntroQM2022/master?urlpath=tree/docs/ipynb/problems.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -384,7 +384,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objective">
-   🎯 Objective¶
+   🎯 Objective
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -448,6 +448,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     🖩 Properties of photons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rydberg-s-law">
      🖩 Rydberg’s Law
     </a>
@@ -463,7 +468,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      🖩 Properties of photons
     </a>
    </li>
@@ -507,7 +512,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id8">
      ✍️ Complex Conjugation
     </a>
    </li>
@@ -532,21 +537,15 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-quantum-mechanics">
 <h1>Introduction to Quantum Mechanics<a class="headerlink" href="#introduction-to-quantum-mechanics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="objective">
-<h2>🎯 Objective¶<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<h2>🎯 Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
 <p>To review basic aspects of quantum mechanics.</p>
 </div>
 <div class="section" id="instructions">
 <h2>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
-<p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).</p>
 <p>Make sure you fill in any place that says YOUR CODE HERE or “YOUR ANSWER HERE”, as well as your name, username (the prefix to your &#64;university.ext e-mail), and student ID number in the cell below</p>
-<blockquote>
-<div><p><strong>Note</strong>: You should remove “not implemented errors” after you complete your work on the solutions.</p>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It&#39;s useful to import these libraries. </span>
-<span class="c1"># You can import others or not even use these, though.</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
 </pre></div>
@@ -570,35 +569,18 @@
     <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
     <span class="c1"># For example, if the answers are A and C, then ad1 = [&quot;A&quot;, &quot;C&quot;]. </span>
     <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">ad1</span> <span class="o">=</span> <span class="p">[]</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
     <span class="k">return</span> <span class="n">ad1</span>
 
-<span class="n">ad1</span> <span class="o">=</span> <span class="n">p1</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">ad1</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ad1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the particle-like nature of light: []
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_43328</span><span class="o">/</span><span class="mf">427735409.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">ad1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad1</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ad1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">AssertionError</span>: 
 </pre></div>
 </div>
 </div>
@@ -612,18 +594,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p2</span><span class="p">():</span>
     <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
     <span class="c1"># ansDuality2 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">ad2</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">ad2</span>
-
-<span class="n">ad2</span> <span class="o">=</span> <span class="n">p2</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad2</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -636,19 +612,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p3</span><span class="p">():</span>
     <span class="c1"># Report your answer as a Boolean, so freq_double = True or freq_double = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">freq_double</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">freq_double</span>
 
-<span class="n">freq_double</span> <span class="o">=</span> <span class="n">p3</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">(),</span> <span class="s2">&quot;that when the wavelength of radiation doubles its frequency does also.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">freq_double</span><span class="p">,</span><span class="nb">bool</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">freq_double</span><span class="p">,</span> <span class="s2">&quot;that when the wavelength of radiation doubles its frequency does also.&quot;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that when the wavelength of radiation doubles its frequency does also.
 </pre></div>
 </div>
 </div>
@@ -661,19 +638,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p4</span><span class="p">():</span>
     <span class="c1"># Report your answer as a Boolean, so speed_halves = True or speed_halves = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">speed_halves</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">speed_halves</span>
 
-<span class="n">speed_halves</span> <span class="o">=</span> <span class="n">p4</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p4</span><span class="p">(),</span> <span class="s2">&quot;that when the wavelength of radiation doubles its speed halves.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">speed_halves</span><span class="p">,</span><span class="nb">bool</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">speed_halves</span><span class="p">,</span> <span class="s2">&quot;that when the wavelength of radiation doubles its speed halves.&quot;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that when the wavelength of radiation doubles its speed halves.
 </pre></div>
 </div>
 </div>
@@ -687,18 +665,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p5</span><span class="p">():</span>
     <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
     <span class="c1"># E_HeNe = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">E_HeNe</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">E_HeNe</span>
-
-<span class="n">E_HeNe</span> <span class="o">=</span> <span class="n">p5</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">E_HeNe</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -719,20 +691,19 @@
     <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
     <span class="c1"># For example, if the answers are A and C, then e_doubles = [&quot;A&quot;, &quot;C&quot;]. </span>
     <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">e_doubles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
     
     <span class="k">return</span> <span class="n">e_doubles</span>
 
-<span class="n">e_doubles</span> <span class="o">=</span> <span class="n">p6</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ways you can double the energy of a photon include&quot;</span><span class="p">,</span> <span class="n">p6</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ways you can double the energy of a photon include&quot;</span><span class="p">,</span> <span class="n">e_doubles</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">e_doubles</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e_doubles</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e_doubles</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e_doubles</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ways you can double the energy of a photon include []
 </pre></div>
 </div>
 </div>
@@ -746,19 +717,19 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p7</span><span class="p">():</span>
     <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
     <span class="c1"># p_greenlaser = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">p_greenlaser</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">p_greenlaser</span>
 
-<span class="n">p_greenlaser</span> <span class="o">=</span> <span class="n">p7</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the momentum transfered per second is </span><span class="si">{</span><span class="n">p7</span><span class="p">()</span><span class="si">}</span><span class="s2"> kg m/s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p_greenlaser</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the momentum transfered per second is </span><span class="si">{0:.3e}</span><span class="s2"> kg m/s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p_greenlaser</span><span class="p">))</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the momentum transfered per second is None kg m/s
 </pre></div>
 </div>
 </div>
@@ -766,24 +737,18 @@
 </div>
 <div class="section" id="wavelength-emitted-by-a-radiopharmaceutical">
 <h3>🖩 Wavelength emitted by a radiopharmaceutical<a class="headerlink" href="#wavelength-emitted-by-a-radiopharmaceutical" title="Permalink to this headline">¶</a></h3>
-<p>The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is <span class="math notranslate nohighlight">\(1.29 \cdot 10^{11} \frac{J}{mol}\)</span>. What is the wavelength of the emitted <span class="math notranslate nohighlight">\(\gamma\)</span> rays?</p>
+<p>The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is 1.29 x 10^11 J/mol. What is the wavelength of the emitted <span class="math notranslate nohighlight">\(\gamma\)</span> rays?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p8</span><span class="p">():</span>
     <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
     <span class="c1"># wlength_Co60 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">wlength_Co60</span> <span class="o">=</span> <span class="kc">None</span>
-
+    <span class="c1">### END YOUR CODE HERE</span>
+    
     <span class="k">return</span> <span class="n">wlength_Co60</span>
-
-<span class="n">wlength_Co60</span> <span class="o">=</span> <span class="n">p8</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">wlength_C60</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -794,21 +759,21 @@
 <p>The Davisson-Germer experiment was among the first explicit verifications of the wave-like nature of electrons, and was foundational for modern electron diffraction methods. (True/False)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p9</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p9</span><span class="p">():</span>   
     <span class="c1"># Report your answer as a Boolean, so ad3 = True or ad3 = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
     <span class="n">ad3</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
     <span class="k">return</span> <span class="n">ad3</span>
-
-<span class="n">ad3</span> <span class="o">=</span> <span class="n">p9</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">p9</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad3</span><span class="p">,</span><span class="nb">bool</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">ad3</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is: None
 </pre></div>
 </div>
 </div>
@@ -827,21 +792,38 @@
     <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
     <span class="c1"># For example, if the answers are A and C, then ad3b = [&quot;A&quot;, &quot;C&quot;]. </span>
     <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
-    <span class="n">ad3b</span> <span class="o">=</span> <span class="p">[]</span>
     
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad3b</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+
     <span class="k">return</span> <span class="n">ad3b</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In the Davisson-Germer experiment&quot;</span><span class="p">,</span> <span class="n">p10</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the Davisson-Germer experiment []
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id6">
+<h3>🖩 Properties of photons<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>What is the momentum of a <span class="math notranslate nohighlight">\(\gamma\)</span>-ray photon with a wavelength of <span class="math notranslate nohighlight">\(10^{-13}\)</span> m in SI units of <span class="math notranslate nohighlight">\({\frac{\text{m} \cdot \text{kg}}{\text{s}}}\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In the Davisson-Germer experiment&quot;</span><span class="p">,</span> <span class="n">ad3b</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad3b</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad3b</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad3b</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ad3b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p11</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># ad4 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad4</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    <span class="k">return</span> <span class="n">ad4</span>
 </pre></div>
 </div>
 </div>
@@ -855,19 +837,15 @@ $<span class="math notranslate nohighlight">\( \tilde{\nu} = \left( 1.0974 \cdot
 where \)</span>1 &lt; n_1 &lt; n_2 &lt; \inf<span class="math notranslate nohighlight">\(. Suppose you are given the Hydrogen atom in its ground state, \)</span>n_1=1$. What is the lowest absorption frequency?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
-<span class="c1"># ad5 = float. I&#39;ve initialized the answer to None.</span>
-<span class="n">ad5</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p12</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as a float. </span>
+    <span class="c1"># ad5 = float. I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad5</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad5</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ad5</span>
 </pre></div>
 </div>
 </div>
@@ -883,22 +861,24 @@ where \)</span>1 &lt; n_1 &lt; n_2 &lt; \inf<span class="math notranslate nohigh
 <strong>E</strong>. Electron scattering from a crystal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
-<span class="c1"># For example, if the answers are A and C, then ad6 = [&quot;A&quot;, &quot;C&quot;]. </span>
-<span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
-<span class="n">ad6</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p13</span><span class="p">():</span>
+    <span class="c1">#Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad6 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad6</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ad6</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the wave-like nature of electrons:&quot;</span><span class="p">,</span> <span class="n">p12</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the wave-like nature of electrons:&quot;</span><span class="p">,</span> <span class="n">ad6</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad6</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad6</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad6</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ad6</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the wave-like nature of electrons: None
 </pre></div>
 </div>
 </div>
@@ -914,79 +894,82 @@ where \)</span>1 &lt; n_1 &lt; n_2 &lt; \inf<span class="math notranslate nohigh
 <strong>E</strong>. Electron scattering from a crystal <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
-<span class="c1"># For example, if the answers are A and C, then ad7 = [&quot;A&quot;, &quot;C&quot;]. </span>
-<span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
-<span class="n">ad7</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p14</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ad7 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ad7</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ad7</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">p13</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following phenomena are associated with the particle-like nature of light:&quot;</span><span class="p">,</span> <span class="n">ad7</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ad7</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad7</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ad7</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ad7</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">momentum_d9</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">frequency_d9</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following phenomena are associated with the particle-like nature of light: []
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>🖩 Properties of photons<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>🖩 Properties of photons<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>What is the momentum and energy of a photon with angular wavenumber <span class="math notranslate nohighlight">\(k=10^7 \text{m}^{-1}\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
-<span class="c1"># I&#39;ve initialized the answers to None.</span>
-<span class="n">p_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#momentum of the photon</span>
-<span class="n">E_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#Energy of the photon</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p15</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answers to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">p_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#momentum of the photon</span>
+    <span class="n">E_from_k</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#Energy of the photon</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">p_from_k</span><span class="p">,</span> <span class="n">E_from_k</span>
+    
+    
 </pre></div>
 </div>
 </div>
 </div>
+<p>Suppose you are given a photon with an energy of 2 eV. What is its momentum in
+<span class="math notranslate nohighlight">\(\frac{\text{m} \cdot \text{kg}}{\text{s}}\)</span>? What is its frequency in Hz?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p_from_k</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">E_from_k</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p16</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answers to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">momentum_d9</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">frequency_d9</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">momentum_d9</span><span class="p">,</span> <span class="n">frequency_d9</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>YOUR ANSWER HERE</p>
 </div>
 <div class="section" id="de-broglie-wavelength-of-a-baseball">
 <h3>🖩 De Broglie wavelength of a baseball<a class="headerlink" href="#de-broglie-wavelength-of-a-baseball" title="Permalink to this headline">¶</a></h3>
 <p>During departmental baseball games, your instructor insists that the only reason he strikes out is because of the De Broglie wavelength of the baseball means that even though he swings in the correct location, he still misses. Suppose that the opposing major-league-quality hurler throws the baseball (mass = 145 g) at 100 miles-per-hour (45 m/s). What is the De Broglie wavelength of the baseball?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
-<span class="c1"># I&#39;ve initialized the answer to None.</span>
-<span class="n">wl_baseball</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#wavelength of the baseball.</span>
-
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">wl_baseball</span><span class="p">,</span><span class="nb">float</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p17</span><span class="p">():</span>
+    <span class="c1"># Use the code box as a calculator, but report your answer as float(s). </span>
+    <span class="c1"># I&#39;ve initialized the answer to None.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">wl_baseball</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#wavelength of the baseball.</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">wl_baseball</span>
 </pre></div>
 </div>
 </div>
@@ -999,7 +982,6 @@ where \)</span>1 &lt; n_1 &lt; n_2 &lt; \inf<span class="math notranslate nohigh
 <h3>✍️ Time-Dependent Schrödinger Equation<a class="headerlink" href="#time-dependent-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
 <p>What is the time-dependent Schrödinger equation for the complex conjugate of the wavefunction, <span class="math notranslate nohighlight">\(\Psi^*\)</span>?
 Put your answer in the markdown cell below. You can drag and drop an attachment (of most types) to this cell also.</p>
-<p>YOUR ANSWER HERE</p>
 </div>
 <div class="section" id="hamiltonian-operator">
 <h3>🎲 Hamiltonian operator<a class="headerlink" href="#hamiltonian-operator" title="Permalink to this headline">¶</a></h3>
@@ -1014,22 +996,23 @@ Put your answer in the markdown cell below. You can drag and drop an attachment 
 <strong>H</strong>. Planck Mass</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
-<span class="c1"># For example, if the answers are A and C, then ansSE2 = [&quot;A&quot;, &quot;C&quot;]. </span>
-<span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
-<span class="n">ansSE2</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p18</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then ansSE2 = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">ansSE2</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">ansSE2</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Hamiltonian is the quantum-mechanical operator for:&quot;</span><span class="p">,</span> <span class="n">p18</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Hamiltonian is the quantum-mechanical operator for:&quot;</span><span class="p">,</span> <span class="n">ansSE2</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ansSE2</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ansSE2</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ansSE2</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ansSE2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Hamiltonian is the quantum-mechanical operator for: []
 </pre></div>
 </div>
 </div>
@@ -1043,19 +1026,21 @@ Put your answer in the markdown cell below. You can drag and drop an attachment 
 <p>A probability density can never be negative. (True/False)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a Boolean, so prob_canbe_negative = True or = False</span>
-<span class="n">prob_canbe_negative</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p19</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so prob_canbe_negative = True or = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">prob_canbe_negative</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">prob_canbe_negative</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">p19</span><span class="p">(),</span> <span class="s2">&quot;that a probability density can be negative.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">prob_canbe_negative</span><span class="p">,</span><span class="nb">bool</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">prob_canbe_negative</span><span class="p">,</span> <span class="s2">&quot;that a probability density can be negative.&quot;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is None that a probability density can be negative.
 </pre></div>
 </div>
 </div>
@@ -1073,51 +1058,53 @@ conjugate, <span class="math notranslate nohighlight">\(w = z z^*\)</span>, whic
 <strong>F</strong>. None of the above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
-<span class="c1"># For example, if the answers are A and C, then zzstar = [&quot;A&quot;, &quot;C&quot;]. </span>
-<span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
-<span class="n">zzstar</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p20</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a list, tuple, or set containing the correct answers. </span>
+    <span class="c1"># For example, if the answers are A and C, then zzstar = [&quot;A&quot;, &quot;C&quot;]. </span>
+    <span class="c1"># I&#39;ve initialized the answer to the empty list.</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">zzstar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">### END YOUR CODE HERE</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">zzstar</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The product of a number and its complex conjugate is always&quot;</span><span class="p">,</span> <span class="n">p20</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The product of a number and its complex conjugate is always []
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The product of a number and its complex conjugate is always&quot;</span><span class="p">,</span> <span class="n">zzstar</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">zzstar</span><span class="p">,</span><span class="nb">set</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zzstar</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zzstar</span><span class="p">,</span><span class="nb">tuple</span><span class="p">))</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zzstar</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id7">
-<h3>✍️ Complex Conjugation<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>✍️ Complex Conjugation<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>What is the complex conjugate of
 $<span class="math notranslate nohighlight">\( \Psi(x,t) = A e^{(a+bi)(kx - \omega t)} \)</span>$</p>
-<p>YOUR ANSWER HERE</p>
 </div>
 <div class="section" id="eigenfunctions-of-the-kinetic-energy-operator">
 <h3>🪙 Eigenfunctions of the kinetic-energy operator<a class="headerlink" href="#eigenfunctions-of-the-kinetic-energy-operator" title="Permalink to this headline">¶</a></h3>
 <p><em>Every</em> eigenfunction of the momentum operator is also an eigenfunction of the kinetic-energy operator, and vice versa. (True/False)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report your answer as a Boolean, so is_also_eigenfunction = True or = False</span>
-<span class="n">is_also_eigenfunction</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p21</span><span class="p">():</span>
+    <span class="c1"># Report your answer as a Boolean, so is_also_eigenfunction = True or = False</span>
+    
+    <span class="c1">### START YOUR CODE HERE</span>
+    <span class="n">is_also_eigenfunction</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1">### END YOUR CODE HERE</span>
+    
+    <span class="k">return</span> <span class="n">is_also_eigenfunction</span>
 
-<span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">p21</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">is_also_eigenfunction</span><span class="p">,</span><span class="nb">bool</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is:&quot;</span><span class="p">,</span> <span class="n">is_also_eigenfunction</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is: True
 </pre></div>
 </div>
 </div>
