@@ -45,7 +45,7 @@
 
 # ## Submitting an assignment
 # 
-# Submiting assignment is breeze!
+# Submitting the assignment is breeze!
 # When you downloaded the final version of the file just go to your repo and click `Add file` $\rightarrow$ `Upload files` and upload newly created file ![p10](pics/11.png)
 # Now commit your changes and click `Commit changes` ![p11](pics/12.png)
 
