@@ -5,6 +5,6 @@ Your first assignment is to use a *Python* *Jupyter* notebook which demos the gr
 1. Log into [GitHub](https://github.com).
 2. Accept an assignment by clicking the [link](https://classroom.github.com/a/u56HtLCY).
 3. Complete the assignment as explained in the instructions.
-4. Submit your notebook as explained at .
+4. Submit your notebook as explained at [Tutorial 1](../ipynb/tutorial_1.ipynb).
 
 Please refer to the assignments on Python, Jupyter, and Numpy for further training. Some of you will need to complete these assignments before you can complete this one.
