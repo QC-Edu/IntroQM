@@ -4,21 +4,7 @@
 format: jb-book
 root: main_content.md
 parts:
-  - caption: Assignments
-    chapters: 
-    - file: ipynb/Tutorial_0.ipynb
-      title: Tutorial 101
-    - file: assignments.md
-      title: list of tasks
 
-  - caption: Exam
-    chapters:
-    - file: exam.md
-      title: Explanation
-  - caption: Extra credentials
-    chapters:
-    - file: extra.md
-      title: list of problems
 
   - caption: Learning objectives
     chapters:
@@ -77,6 +63,22 @@ parts:
       - file: documents/molecules.pdf
         title: Molecules
   
+  - caption: Assignments
+    chapters: 
+    - file: ipynb/Tutorial_0.ipynb
+      title: Tutorial 101
+    - file: assignments.md
+      title: list of tasks
+
+  - caption: Exam
+    chapters:
+    - file: exam.md
+      title: Explanation
+  - caption: Extra credit
+    chapters:
+    - file: extra.md
+      title: list of problems
+
   - caption: Additional resources
     chapters:
     - file: resources.md
