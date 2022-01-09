@@ -4,7 +4,7 @@
 # # GitHub classroom
 
 # All assignments will be uploaded and checked via GitHub classroom 
-# You need to register on [GitHub](https://github.com/) in order to follow this tutorial. Registration process is described [here](https://www.wikihow.com/Create-an-Account-on-GitHub)
+# You need to register on [GitHub](https://github.com/) in order to follow this tutorial. The registration process is described [here](https://www.wikihow.com/Create-an-Account-on-GitHub). Please use a GitHub name that allows us to readily identify which student corresponds to which GitHub account.
 # 
 # When you set up your account use [this link](https://classroom.github.com/a/iZKwWPGv) to connect to github classroom
 # Ones you folow the link you'll see ![p1](pics/2.png)
