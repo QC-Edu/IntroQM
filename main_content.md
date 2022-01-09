@@ -1,10 +1,6 @@
-# Introduction to Quantum Chemistry
+# Quantum Chemistry
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PaulWAyers/IntroQChem/HEAD)
-
-The notebooks in ipynb directory can be run via mybinder.org by clicking on the badge above.
-
-> **CHEM 3PA3** *Quantum Mechanics and Spectroscopy.* An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale.
+> **CHEM 3PA3** *Quantum Mechanics and Spectroscopy.* An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale. 
 
 ## Assignments
 
@@ -51,7 +47,7 @@ Extra credit problems should be sent to the instructor in a private chat message
 1. Time-dependent Schrödinger equation.
 2. Time-independent Schrödinger equation
 3. Fermi’s golden rule
-4. Time-correlation formulation for spectral broadening
+4. Time-correlation formulation for spectral broadening (advanced)
 
 ### Understand key concepts/notation:
 1. Bra-ket notation.
@@ -59,7 +55,7 @@ Extra credit problems should be sent to the instructor in a private chat message
 3. Eigenfunctions/eigenvalues
 4. Expansion in a complete orthonormal set
 5. Dirac delta function
-6. Commutators/Simulataneously observable operators
+6. Commutators/Simultaneous observables
 7. Heisenberg Uncertainty Principle
 8. De Broglie wavelength
 9. Planck’s law
@@ -84,6 +80,7 @@ Extra credit problems should be sent to the instructor in a private chat message
 5. Term Symbols
 6. Hund’s Rules
 7. Born-Oppenheimer Approximation
+8. Spectroscopy and Selection Rules
 
 ### Computational methods/approaches.
 1. Perturbation Theory
@@ -92,12 +89,13 @@ Extra credit problems should be sent to the instructor in a private chat message
 4. “Fundamental experiments” of quantum mechanics like blackbody radiation and the
 photoelectric effect.
 5. Hartree-Fock
+6. Electron correlation and Correlated Electronic Structure Methods (advanced)
 
 
 ## Other resources
 
-Keys to assignments are not always available. But where available, instructors can join the (private) GitHub with the answer keys by e-mailing Paul Ayers, <ayers@mcmaster.ca>, from your official e-mail account. Where possible, `nbgrader` can be used to mark assignments. New contributions to the problem bank are most welcome too!
+You can see the materials related to a previous version of the course at [qchem1.qcdevs.org](qchem1.qcdevs.org)
 
 ## License
 
-This public repository contains course materials for CHEM 3PA3, an introduction to quantum chemistry. The main course content is conveyed through, and assessed by, Jupyter notebooks and is made available via the Creative Commons Zero [CC0 version 1.0](LICENSE) license. However, where I have reposted/adapted content from other sources, those sources retain their copyright/license.
+This public repository contains course materials for CHEM 3PA3, an introduction to quantum chemistry taught at McMaster University. The main course content is conveyed through, and assessed by, Jupyter notebooks and is made available via the Creative Commons Zero [CC0 version 1.0](LICENSE) license. However, where I have reposted/adapted content from other sources, those sources retain their copyright/license.
