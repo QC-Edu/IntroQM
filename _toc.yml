@@ -6,7 +6,7 @@ root: main_content.md
 parts:
   - caption: Assignments
     chapters: 
-    - file: ipynb/tutorial_0.ipynb
+    - file: ipynb/Tutorial_0.ipynb
       title: Tutorial 101
     - file: assignments.md
       title: list of tasks
