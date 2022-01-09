@@ -1,14 +1,14 @@
 ## Topics
 
-1. [Basics of Jupyter, Python, and Programming](notes/jupyter.md)
+<!-- 1. [Basics of Jupyter, Python, and Programming](notes/jupyter.md)
     - Notes [html](notes/html/jupyter.html)
     - Assignments (see below)
       - [Introduction to Jupyter](problems/Jupyter.md).
       - [Basic Python](problems/python.md).
       - [Introduction to Numpy](problems/numpy.md).
-      - [Computing Course Marks with Jupyter, Python, Numpy, and syzygy](problems/syzygy.md). [Answer Key](ipynb/gradingkey.ipynb)
-      - Demonstration of Jupyter, Numpy, Python, and Syzygy (computing course marks) [Jupyter](ipynb/GradingDemo.ipynb), [html](ipynb/GradingDemo.html), [video](https://www.macvideo.ca/media/1_5jdntum9), [mp4](linkedFiles/gradesdemo.mp4).
-2. From Newton to Schrödinger
+      - Demonstration of Jupyter, Numpy, Python, and Syzygy (computing course marks) [Jupyter](ipynb/GradingDemo.ipynb), [html](ipynb/GradingDemo.html), [video](https://www.macvideo.ca/media/1_5jdntum9), [mp4](linkedFiles/gradesdemo.mp4). -->
+      
+1. From Newton to Schrödinger
     - Notes [Jupyter](ipynb/History.ipynb), [html](notes/html/History.html)
     - [Assignment](problems/IntroQM.md) 
     - [Assignment Key including extra problems](ipynb/IntroQMkey.ipynb)

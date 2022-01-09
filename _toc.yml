@@ -6,8 +6,8 @@ root: main_content.md
 parts:
   - caption: Assignments
     chapters: 
-    - file: ipynb/tutorial_1.ipynb
-      title: Tutorial 1
+    - file: ipynb/tutorial_0.ipynb
+      title: Tutorial 101
     - file: assignments.md
       title: list of tasks
 
@@ -88,4 +88,3 @@ parts:
   - caption: License
     chapters:
     - file: license.md
- 

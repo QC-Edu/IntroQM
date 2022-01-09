@@ -10,12 +10,12 @@ The notebooks in ipynb directory can be run via mybinder.org by clicking on the 
 
 Your assignments will be turned in using Github Classroom. For instructions on how to turn in an assignment with Github Classroom, see the [webpage](ipynb/tutorial_1.ipynb).
 
-1. [Tutorial 1](ipynb/tutorial_1.ipynb)
 1. [Introduction to Jupyter](problems/Jupyter.md).
 2. [Basic Python](problems/python.md).
 3. [Introduction to Numpy](problems/numpy.md).
-4. [Computing Course Marks with Jupyter, Python, Numpy, and GitHub Classroom](problems/ghclassroom.md).
-5. [Introduction to QM and the Schr&ouml;dinger equation](problems/IntroQM.md) 
+4. [GitHub fundamentals](ipynb/ghfundamentals.ipynb)
+5. [Computing Course Marks with Jupyter, Python, Numpy, and GitHub Classroom](problems/ghclassroom.md).
+6. [Introduction to QM and the Schr&ouml;dinger equation](problems/IntroQM.md)
 
 ## Exam
 Your exam has 3 parts. The first two parts are worth 40%. The last part is worth 20%. An overview and simple download links are below. Here are more [detailed instructions](problems/ExamInstructions.md).
