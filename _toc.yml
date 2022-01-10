@@ -65,10 +65,10 @@ parts:
     - file: problems/JupyterPythonNumpy.md
       title: Intro to Python, Jupyter, Numpy
     - file: ipynb/Tutorial_0.ipynb
-      title: Intro to Google Colab
+      title: Schrodinger's Cat Colab
 
-    - file: ipynb/Tutorial_2.ipynb
-      title: Wavefunction Normalization
+#    - file: ipynb/Tutorial_2.ipynb
+#      title: Wavefunction Normalization
 
   - caption: Extra credit
     chapters:
@@ -80,13 +80,11 @@ parts:
     - file: documents/refs.md
       title: Other Reference Material
 
-  - caption: Contributing
+  - caption: Contributing and Using
     chapters:
     - file: code-of-conduct.md
       title: Code of Conduct
     - file: contributing.md
       title: How to Contribute
-
-  - caption: License
-    chapters:
     - file: license.md
+      title: License
