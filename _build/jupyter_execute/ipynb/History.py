@@ -290,6 +290,7 @@
 # - R. Eisberg and R. Resnick, Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles (Wiley, New York, 1974)
 # - R. Dumont, [An Emergent Reality, Part 2: Quantum Mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true) (Chapters 1 and 2).
 # - Also see my (pdf) class [notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf?raw=true).
+# - The introductory material in [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book course is very good. Roughly [chapters 1 and 2](https://dpotoyan.github.io/Chem324/intro.html) are especially relevant here.
 # 
 # There are also some excellent wikipedia articles:
 # - On General Quantum Mechanics
@@ -324,3 +325,5 @@
 #   - [Schr&ouml;dinger Equation](http://en.wikipedia.org/wiki/Schrodinger_equation)
 #   - [Theoretical Justification of S.E.](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation). See [also](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SchrodingerHJeq.pdf?raw=true).
 #   - [Momentum Operator](http://en.wikipedia.org/wiki/Momentum_operator)
+
+# 
