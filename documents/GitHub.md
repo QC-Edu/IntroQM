@@ -1,5 +1,6 @@
-# Version Control with Git via GitHub
+![Version Control](../linkedFiles/versioncontrol.png "Copyright Jorge Cham; https://phdcomics.com/comics/archive.php?comicid=1531")
 
+# Version Control with Git via GitHub
 As you write a computer program or any other document, it is important to be able to save your work. This includes
 
 - saving your work at intermediate stages
