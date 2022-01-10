@@ -5,8 +5,8 @@
 ## Overview
 
 - [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true)
-- **Course Introduction** [video]() and [slides]().
-- [**Marking Scheme**]()
+- **Course Introduction** [video]() and [slides](presentations/intro.pdf?raw=true).
+- [**Marking Scheme**](presentations/introQM?raw=true)
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
   - Understand and apply the key concepts of quantum chemistry.
