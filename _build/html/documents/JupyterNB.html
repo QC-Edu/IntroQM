@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learning Objectives &#8212; Quantum Chemistry</title>
+    <title>Using Jupyter Notebooks &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Jupyter and Computer Programming" href="../ipynb/jupyter.html" />
-    <link rel="prev" title="Quantum Chemistry" href="../main_content.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,9 +99,9 @@
   Learning objectives
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectives.html">
    Detailed Objectives
   </a>
  </li>
@@ -299,7 +297,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/documents/objectives.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/documents/JupyterNB.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -319,7 +317,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fdocuments/objectives.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fdocuments/JupyterNB.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -340,39 +338,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-use-key-equations">
-   Know, understand, and Use Key Equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understand-and-apply-key-concepts-and-notation">
-   Understand and Apply Key Concepts and Notation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems">
-   Know the Ground-state Wavefunctions, Eigenenergies, Quantum Numbers, and Selection Rules for Important Exactly-Solvable Models, and Use Them to Model Real Atomic and Molecular Systems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-apply-quantum-concepts-for-atoms-molecules">
-   Know, Understand, and Apply Quantum Concepts for Atoms &amp; Molecules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods">
-   Know, Understand, and Apply Approximate Computational Strategies and Associated Practical Computational Methods
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -381,72 +346,16 @@
         
               <div>
                 
-  <div class="section" id="learning-objectives">
-<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="know-understand-and-use-key-equations">
-<h2>Know, understand, and Use Key Equations<a class="headerlink" href="#know-understand-and-use-key-equations" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="using-jupyter-notebooks">
+<h1>Using Jupyter Notebooks<a class="headerlink" href="#using-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>There are several ways to edit a Jupyter notebook (an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file).</p>
 <ol class="simple">
-<li><p>Time-dependent Schrödinger equation.</p></li>
-<li><p>Time-independent Schrödinger equation</p></li>
-<li><p>Fermi’s golden rule</p></li>
-<li><p>Time-correlation formulation for spectral broadening (advanced)</p></li>
+<li><p>Using <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. <strong>Recommended!</strong></p></li>
+<li><p>Using <a class="reference external" href="https://mybinder.org/">Binder</a>.</p></li>
+<li><p>You can, in general, use any online Jupyter Hub (e.g. <a class="reference external" href="https://mcmaster.syzygy.ca/">syzygy</a>). However, it can be difficult to ensure that the dependencies you need are installed. There are <a class="reference external" href="https://jupyter4edu.github.io/jupyter-edu-book/getting-going.html#running-jupyter-in-the-cloud">lots of other ways to run Jupyter in the cloud</a>.</p></li>
+<li><p>You can edit Jupyter Notebooks locally. It is relatively easy to use <a class="reference external" href="https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/jupyter/index.html">jupyter</a> through <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>. One can also use <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> to edit <a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">notebooks</a>.</p></li>
 </ol>
-</div>
-<div class="section" id="understand-and-apply-key-concepts-and-notation">
-<h2>Understand and Apply Key Concepts and Notation<a class="headerlink" href="#understand-and-apply-key-concepts-and-notation" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Bra-ket notation.</p></li>
-<li><p>Hermitian operators</p></li>
-<li><p>Eigenfunctions/eigenvalues</p></li>
-<li><p>Expansion in a complete orthonormal set</p></li>
-<li><p>Dirac delta function</p></li>
-<li><p>Commutators/Simultaneous observables</p></li>
-<li><p>Heisenberg Uncertainty Principle</p></li>
-<li><p>De Broglie wavelength</p></li>
-<li><p>Planck’s law</p></li>
-<li><p>“Fundamental experiments” of quantum mechanics like blackbody radiation and the
-photoelectric effect.</p></li>
-<li><p>Expectation values and how to evaluate them</p></li>
-<li><p>Probabilistic interpretation of the wavefunction</p></li>
-<li><p>Spatial and Spin Orbitals</p></li>
-<li><p>Slater determinants</p></li>
-<li><p>Allowable and non-allowable wavefunctions.</p></li>
-<li><p>Allowable and non-allowable operators.</p></li>
-</ol>
-</div>
-<div class="section" id="know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems">
-<h2>Know the Ground-state Wavefunctions, Eigenenergies, Quantum Numbers, and Selection Rules for Important Exactly-Solvable Models, and Use Them to Model Real Atomic and Molecular Systems<a class="headerlink" href="#know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Particle-in-a-box.</p></li>
-<li><p>Harmonic Oscillator</p></li>
-<li><p>Rigid Rotor</p></li>
-<li><p>One-electron atom</p></li>
-<li><p>Angular momentum (L, S, J, etc.)</p></li>
-</ol>
-</div>
-<div class="section" id="know-understand-and-apply-quantum-concepts-for-atoms-molecules">
-<h2>Know, Understand, and Apply Quantum Concepts for Atoms &amp; Molecules<a class="headerlink" href="#know-understand-and-apply-quantum-concepts-for-atoms-molecules" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Concept of effective nuclear charge.</p></li>
-<li><p>Hartree-Fock</p></li>
-<li><p>Molecular orbital theory; linear combination of atomic orbitals</p></li>
-<li><p>Valence bond theory.</p></li>
-<li><p>Term Symbols</p></li>
-<li><p>Hund’s Rules</p></li>
-<li><p>Born-Oppenheimer Approximation</p></li>
-<li><p>Spectroscopy and Selection Rules</p></li>
-</ol>
-</div>
-<div class="section" id="know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods">
-<h2>Know, Understand, and Apply Approximate Computational Strategies and Associated Practical Computational Methods<a class="headerlink" href="#know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Perturbation Theory</p></li>
-<li><p>Variational Principle</p></li>
-<li><p>Evaluating expectation values approximately</p></li>
-<li><p>Slater Determinants and Hartree-Fock</p></li>
-<li><p>Electron correlation and Correlated Electronic Structure Methods (advanced)</p></li>
-</ol>
-</div>
+<p>We will ensure that assignments work with Google colab. We’ll try to help people using other platforms too, but make no promises.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -473,21 +382,7 @@ photoelectric effect.</p></li>
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../main_content.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quantum Chemistry</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../ipynb/jupyter.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Jupyter and Computer Programming</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
         
         </div>
