@@ -4,7 +4,7 @@
 
 ## Administrative Documents
 
-- [Syllabus](documents/syllabus.pdf?raw=true)
+- [Syllabus]()
 - Course Introduction [video](), [transcript](), and [slides]().
 
 ## [Learning Objectives](documents/objectives.md)

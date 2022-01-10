@@ -58,7 +58,7 @@ parts:
         title: Molecules
   
   - caption: Assignments
-
+    numbered: true
     chapters: 
     - file: ipynb/ghfundamentals.ipynb
       title: Intro to GitHub (Classroom)
