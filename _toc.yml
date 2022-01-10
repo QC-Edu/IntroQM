@@ -18,7 +18,7 @@ parts:
   - caption: Topics
     numbered: True
     chapters:
-    - file: ipynb/GitHub.ipynb
+    - file: documents/GitHub.md
       title: GitHub
 
     - file: ipynb/jupyter.ipynb

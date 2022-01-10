@@ -4,26 +4,26 @@ You can complete additional courses on LinkedIn Learning or other venues for add
 
 ## [Codecademy Python 2](https://www.codecademy.com/learn/learn-python)
 
-- This is Python 2, but Python 3 isn't very different, and the Python 3 course requires a (paid) subscription to Codecademy, while the Python 2 course does not. To do this assignment, sign up for Codecademy (free) and work through the 12 topical modules by reading about Python syntax and solving the interactive web-based exercises on your own. If you get stuck, you'll be provided with instructive hints. This [course](https://www.codecademy.com/learn/learn-python) will take *much* less than the time they estimate, because you can skip projects and quizzes that are accessible only through a (paid) PRO account. 
-
-  - Instructions: Take a screenshot of the certificate of completion add it to the list of certificates in your `Course-Certificates` repository. See image below.
+- This is Python 2, but Python 3 isn't very different, and the Python 3 course requires a (paid) subscription to Codecademy, while the Python 2 course does not. To do this assignment, sign up for Codecademy (free) and work through the 12 topical modules by reading about Python syntax and solving the interactive web-based exercises on your own. If you get stuck, you'll be provided with instructive hints. This [course](https://www.codecademy.com/learn/learn-python) will take *much* less than the time they estimate, because you can skip projects and quizzes that are accessible only through a (paid) PRO account. When you're finished, take a screenshot of the certificate of completion add it to the list of certificates in your `Course-Certificates` repository. See image below.
 
 ![image](../linkedFiles/codecademy.png)
 
 ## Linkedin Learning
 
-You can complete relevant LinkedIn Learning courses to earn extra points. For example, you can choose to complete some of the courses you've already (partly) seen in the course material.
+You can complete relevant LinkedIn Learning courses to earn extra points. For example, you can choose to complete some of the courses you've already (partly) seen in the course material. Simply add the LinkedIn Learning certificate of completion to the list in your `Course-Certificates` repository.
 
 - [Programming Foundations: Fundamentals](https://www.linkedin.com/learning/programming-foundations-fundamentals-3/the-fundamentals-of-programming?u=56982905)
+- [Programming Foundations: Version Control with Git](
+   https://www.linkedin.com/learning/programming-foundations-version-control-with-git)
+- [Learning GitHub](https://www.linkedin.com/learning/learning-github)
+- [GitHub Essential Training](https://www.linkedin.com/learning/github-essential-training)
 - [Python Data Analysis](https://www.linkedin.com/learning/python-data-analysis-2/get-started-in-data-analysis-with-python?u=56982905)
 - [Julia Power like Python, Speed like C](https://www.linkedin.com/learning/learning-julia/julia-power-like-python-speed-like-c)
 
-  - Instructions: Add the LinkedIn Learning certificate of completion to the list in your `Course-Certificates` repository.
 
 ## GitHub Learning Lab
 
-The [GitHub Learning Lab](https://lab.github.com/) has a lot of great courses. You can complete them for extra points. The certificates-of-completion from these courses can be uploaded to your `Course-Certificates` repository.
-Among the most relevant are:
+The [GitHub Learning Lab](https://lab.github.com/) has a lot of great courses. You can complete them for extra points. The certificates-of-completion from these courses can be uploaded to your `Course-Certificates` repository. Among the most relevant courses are:
 - [First Week on GitHub](https://lab.github.com/githubtraining/first-week-on-github)
 - [Introduction to Python](https://lab.github.com/everydeveloper/introduction-to-python)
 - [Intermediate Python](https://lab.github.com/everydeveloper/intermediate-python)
