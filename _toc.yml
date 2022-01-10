@@ -16,7 +16,7 @@ parts:
       title: Syllabus
 
   - caption: Topics
-    numbered: True
+    numbered: true
     chapters:
     - file: documents/GitHub.md
       title: GitHub
@@ -58,17 +58,14 @@ parts:
         title: Molecules
   
   - caption: Assignments
-    numbered: True
+
     chapters: 
     - file: ipynb/ghfundamentals.ipynb
       title: Intro to GitHub (Classroom)
     - file: problems/JupyterPythonNumpy.md
       title: Intro to Python, Jupyter, Numpy
     - file: ipynb/Tutorial_0.ipynb
-      title: Schrodinger's Cat Colab
-
-#    - file: ipynb/Tutorial_2.ipynb
-#      title: Wavefunction Normalization
+      title: "Schrodinger's Cat Colab"
 
   - caption: Extra credit
     chapters:
