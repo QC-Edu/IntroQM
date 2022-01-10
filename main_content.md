@@ -4,7 +4,7 @@
 
 ## Overview
 
-- [**Syllabus**]()
+- [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true)
 - **Course Introduction** [video]() and [slides]().
 - [**Marking Scheme**]()
 - [**Learning Objectives:**](documents/objectives.md)
