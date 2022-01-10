@@ -78,7 +78,7 @@ parts:
   - caption: Additional resources
     chapters:
     - file: documents/refs.md
-      title: Other Reference Material
+      title: Reference Materials
 
   - caption: Contributing and Using
     chapters:
