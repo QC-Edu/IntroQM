@@ -16,7 +16,7 @@
 - Know, understand, and apply approximate computational strategies and their associated practical computational methods
 
 ## Assessment
-Your assignments will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/tutorial_1.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). Your exam will have the same format as the assignments.
+Your assignments will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/Tutorial_0.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). Your exam will have the same format as the assignments.
 
 ## Extra Credit
 
@@ -24,11 +24,13 @@ Extra points may be earned by making pull requests to [this repository](https://
 
 ## Other resources
 
-From the vast amount of other material available on the internet, I've curated a [selection](documents/refs.md). Materials from a previous version of the course are available at [qchem1.qcdevs.org](https://qchem1.qcdevs.org/). 
+From the vast amount of other material available on the internet, We've curated a [selection](documents/refs.md). Materials from a previous version of the course are available at [qchem1.qcdevs.org](https://qchem1.qcdevs.org/). 
 
 ## [Code of Conduct](https://qcdevs.org/guidelines/QCDevsCodeOfConduct/)
 
 Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
+
+## [Contributing](contributing.md)
 
 ## License
 

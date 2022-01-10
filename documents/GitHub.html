@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Programming &#8212; Quantum Chemistry</title>
+    <title>1. Version Control with Git via GitHub &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,6 +52,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Jupyter and Computer Programming" href="../ipynb/jupyter.html" />
+    <link rel="prev" title="Learning Objectives" href="objectives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,7 +104,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../documents/objectives.html">
+  <a class="reference internal" href="objectives.html">
    Detailed Learning Objectives
   </a>
  </li>
@@ -112,9 +114,9 @@
   Topics
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../documents/GitHub.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    1. GitHub
   </a>
  </li>
@@ -183,7 +185,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="JupyterPythonNumpy.html">
+  <a class="reference internal" href="../problems/JupyterPythonNumpy.html">
    12. Intro to Python, Jupyter, Numpy
   </a>
  </li>
@@ -200,7 +202,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../documents/refs.html">
+  <a class="reference internal" href="refs.html">
    Other Reference Material
   </a>
  </li>
@@ -267,7 +269,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/problems/python.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/documents/GitHub.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -287,7 +289,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/python.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fdocuments/GitHub.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -316,10 +318,46 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-programming">
-<h1>Python Programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h1>
-<p>Go through the content of the LinkedIn Learning <a class="reference external" href="https://www.linkedin.com/learning/python-quick-start/">Python Quick Start</a> course step-by-step and take the time to practice the material covered in a Jupyter notebook. Upon completing this course, add your certificate of completion to your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> GitHub repository and reference it in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
-<p><img alt="Python Certificate" src="../_images/python.png" /></p>
+  <p><img alt="Version Control" src="../_images/versioncontrol.png" /></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="version-control-with-git-via-github">
+<h1><span class="section-number">1. </span>Version Control with Git via GitHub<a class="headerlink" href="#version-control-with-git-via-github" title="Permalink to this headline">¶</a></h1>
+<p>As you write a computer program or any other document, it is important to be able to save your work. This includes</p>
+<ul class="simple">
+<li><p>saving your work at intermediate stages</p></li>
+<li><p>creating multiple versions], so that you can select the option that balances the goals of being elegant (easy-to-understand), approachable (easy-to-use), and efficient (requiring less resources).</p></li>
+<li><p>editing files and groups of files collaboratively in a way that minimizes
+conflicts/inconsistencies and maximizes teamwork/accountability.</p></li>
+</ul>
+<p>Version control allows you to save your work, maintain multiple versions of the same document/program in repositories, and easily go back to old versions of the document/program (if you accidentally break it or decide that you made a bad decision). It is most effective when you save (i.e., commit) your work early and often with an informative comment about the changes you made. (That makes it easy to find exactly the version you want!) Version control is essential when multiple people work on a file (or group of files) at the same time: it keeps track of who made what changes to each file, and in cases where multiple people changed the same file at the same time in mutually incompatible ways, it flags these inconsistencies so that an informed choice can be made.</p>
+<p><a class="reference external" href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Click here</a> to learn more about various types of version control.</p>
+<p>In this course, we use web-based version control (specifically Git and GitHub) to share material. The goal is to make it easy to share material, revise and test assignments, and discuss course content. Specifically, the course will use:</p>
+<ul class="simple">
+<li><p><strong>Git</strong> for version control.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=2ReR1YJrNOM">What is Git? Explained in 2 Minutes!</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8JJ101D3knE">Git Tutorial for Beginners: Learn Git in 1 Hour</a></p></li>
+</ul>
+</li>
+<li><p><strong>GitHub</strong> as a tool to manage our Git repositories online.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=w3jLJU7DT5E">What is GitHub?</a></p></li>
+<li><p><a class="reference external" href="https://github.com/education/github-starter-course">The Basics of GitHub from GitHub Education</a></p></li>
+<li><p>Consider uploading a <a class="reference external" href="https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#changing-your-profile-picture">profile picture</a> or linking to a <a class="reference external" href="https://en.gravatar.com/">gravatar</a>. This isn’t essential for using GitHub, but it is really useful to be able to have some memorable and distinguishing image for you rather than just the <a class="reference external" href="https://github.blog/2013-08-14-identicons/">identicon</a>. Don’t be scared to have fun with this! You can always change this later.</p></li>
+</ul>
+</li>
+<li><p><strong>GitHub Classroom</strong> as a way to disseminate, test, give feedback on, revise, and mark assignments.</p>
+<ul>
+<li><p><a class="reference external" href="https://githubuniverse.com/content-library/github-classroom-101/">GitHub Classroom 101</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ObaFRGp_Eko">GitHub Classroom for Students</a></p></li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<blockquote>
+<div><blockquote>
+<div><p><strong>Hat Tip:</strong> Farnaz Heidar-Zadeh of Queen’s University. This is adapted from her orientation notes in the QC-Edu Boot Camp.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 
     <script type="text/x-thebe-config">
@@ -335,7 +373,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./problems"
+            path: "./documents"
         },
         predefinedOutput: true
     }
@@ -346,7 +384,21 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="objectives.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Learning Objectives</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ipynb/jupyter.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Jupyter and Computer Programming</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
