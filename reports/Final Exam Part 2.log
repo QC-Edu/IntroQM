@@ -27,7 +27,7 @@ raise NotImplementedError()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNotImplementedError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_8344/1387574716.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_9526/1387574716.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      4[0m [0;34m[0m[0m
 [1;32m      5[0m [0;31m# YOUR CODE HERE[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 6[0;31m [0;32mraise[0m [0mNotImplementedError[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
