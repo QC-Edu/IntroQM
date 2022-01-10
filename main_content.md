@@ -24,11 +24,13 @@ Extra points may be earned by making pull requests to [this repository](https://
 
 ## Other resources
 
-From the vast amount of other material available on the internet, I've curated a [selection](documents/refs.md). Materials from a previous version of the course are available at [qchem1.qcdevs.org](https://qchem1.qcdevs.org/). 
+From the vast amount of other material available on the internet, We've curated a [selection](documents/refs.md). Materials from a previous version of the course are available at [qchem1.qcdevs.org](https://qchem1.qcdevs.org/). 
 
 ## [Code of Conduct](https://qcdevs.org/guidelines/QCDevsCodeOfConduct/)
 
 Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
+
+## [Contributing](contributing.md)
 
 ## License
 
