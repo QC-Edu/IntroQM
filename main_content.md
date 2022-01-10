@@ -4,16 +4,16 @@
 
 ## Overview
 
-- [Syllabus]()
-- Course Introduction [video](), [transcript](), and [slides]().
-
-## [Learning Objectives](documents/objectives.md)
-- Know, understand, and use the key equations of quantum mechanics for chemical applications
-- Understand and apply the key concepts of quantum chemistry.
-- Read, write, and use common quantum chemical notation.
-- Know the ground-state wavefunctions, eigenenergies, quantum numbers, and selection rules for important exactly-solvable Hamiltonians. Be able to use these systems to (approximately) model real atomic and molecular systems.
-- Know, understand, and apply quantum concepts to atoms & molecules.
-- Know, understand, and apply approximate computational strategies and their associated practical computational methods
+- [**Syllabus**]()
+- **Course Introduction** [video]() and [slides]().
+- [**Marking Scheme**]()
+- [**Learning Objectives:**](documents/objectives.md)
+  - Know, understand, and use the key equations of quantum mechanics for chemical applications
+  - Understand and apply the key concepts of quantum chemistry.
+  - Read, write, and use common quantum chemical notation.
+  - Know the ground-state wavefunctions, eigenenergies, quantum numbers, and selection rules for important exactly-solvable Hamiltonians. Be able to use these systems to (approximately) model real atomic and molecular systems.
+  - Know, understand, and apply quantum concepts to atoms & molecules.
+  - Know, understand, and apply approximate computational strategies and their associated practical computational methods
 
 ## Assessment
 - **Assignments** will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/Tutorial_0.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). *Your exam will have the same format as the assignments.*
