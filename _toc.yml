@@ -60,10 +60,13 @@ parts:
   - caption: Assignments
     numbered: True
     chapters: 
-    - file: ipynb/Tutorial_0.ipynb
-      title: Intro to GitHub
-    - file: ipynb/Tutorial_1.ipynb
+    - file: ipynb/ghfundamentals.ipynb
+      title: Intro to GitHub (Classroom)
+    - file: problems/JupyterPythonNumpy.md
       title: Intro to Python, Jupyter, Numpy
+    - file: ipynb/Tutorial_0.ipynb
+      title: Intro to Google Colab
+
     - file: ipynb/Tutorial_2.ipynb
       title: Wavefunction Normalization
 
