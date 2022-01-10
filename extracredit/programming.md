@@ -20,6 +20,14 @@ You can complete relevant LinkedIn Learning courses to earn extra points. For ex
 
   - Instructions: Add the LinkedIn Learning certificate of completion to the list in your `Course-Certificates` repository.
 
+## GitHub Learning Lab
+
+The [GitHub Learning Lab](https://lab.github.com/) has a lot of great courses. You can complete them for extra points. The certificates-of-completion from these courses can be uploaded to your `Course-Certificates` repository.
+Among the most relevant are:
+- [First Week on GitHub](https://lab.github.com/githubtraining/first-week-on-github)
+- [Introduction to Python](https://lab.github.com/everydeveloper/introduction-to-python)
+- [Intermediate Python](https://lab.github.com/everydeveloper/intermediate-python)
+
 ## Online Python Tests
 
 - [**Python Exercises from W3Schools**](https://www.w3schools.com/python/exercise.asp) 95 simple interactive questions grouped by topic. 
