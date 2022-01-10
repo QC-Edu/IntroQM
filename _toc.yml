@@ -8,7 +8,12 @@ parts:
 
   - caption: Learning objectives
     chapters:
-    - file: objectives.md
+    - file: documents/philosophy
+      title: Course Philosophy
+    - file: documents/objectives.md
+      title: Detailed Objectives
+    - file: documents/syllabus.pdf
+      title: Syllabus
 
   - caption: Topics
     numbered: True
@@ -64,28 +69,31 @@ parts:
         title: Molecules
   
   - caption: Assignments
+    numbered: True
     chapters: 
     - file: ipynb/Tutorial_0.ipynb
-      title: Tutorial 101
-    - file: assignments.md
-      title: list of tasks
+      title: Intro to GitHub
+    - file: ipynb/Tutorial_1.ipynb
+      title: Intro to Python, Jupyter, Numpy
+    - file: ipynb/Tutorial_2.ipynb
+      title: Wavefunction Normalization
 
-  - caption: Exam
-    chapters:
-    - file: exam.md
-      title: Explanation
   - caption: Extra credit
     chapters:
-    - file: extra.md
-      title: list of problems
+    - file: extracredit/summary.md
+      title: List
 
   - caption: Additional resources
     chapters:
-    - file: resources.md
+    - file: documents/refs.md
+      title: Other Reference Material
 
-  - caption: Administrative Documents
+  - caption: Contributing
     chapters:
-    - file: adm_documets.md
+    - file: code-of-conduct.md
+      title: Code of Conduct
+    - file: contributing.md
+      title: How to Contribute
 
   - caption: License
     chapters:
