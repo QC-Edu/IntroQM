@@ -69,7 +69,7 @@ parts:
 
   - caption: Extra credit
     chapters:
-    - file: extracredit/summary.md
+    - file: extracredit/overview.md
       title: List
 
   - caption: Additional resources
@@ -79,7 +79,7 @@ parts:
 
   - caption: Contributing and Using
     chapters:
-    - file: code-of-conduct.md
+    - file: code_of_conduct.md
       title: Code of Conduct
     - file: contributing.md
       title: How to Contribute

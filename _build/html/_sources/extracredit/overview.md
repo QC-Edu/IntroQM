@@ -1,3 +1,5 @@
+# Overview
+
 In general, extra points will be earned from pull requests to [this repository](https://github.com/QC-Edu/IntroQM2022), which contains the key course content. The purpose of this strategy is to encourage you to write and refine the course content, and especially the reservoir of problems/solutions/tutorials, in a way that benefits future students. While all contributions to the repository are encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. 
 
 Problems/solutions/tutorials should be submitted as Jupyter Notebooks, markdown documents, or markedly structured text documents. *They should be exemplary in quality and clear in exposition, as would be expected for S+ work*. Once a pull request is accepted, points will be granted at the discretion of the instructor. *The guiding criterion is that 1.0 points is indicative of the effort that would be required to complete an additional assignment in the course at the S+ level.*
