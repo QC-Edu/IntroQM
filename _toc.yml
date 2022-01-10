@@ -6,12 +6,12 @@ root: main_content.md
 parts:
 
 
-  - caption: Learning objectives
+  - caption: Overview
     chapters:
     - file: documents/philosophy
       title: Course Philosophy
     - file: documents/objectives.md
-      title: Detailed Objectives
+      title: Detailed Learning Objectives
     - file: documents/syllabus.pdf
       title: Syllabus
 
