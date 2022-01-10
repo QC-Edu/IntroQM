@@ -16,7 +16,7 @@
 - Know, understand, and apply approximate computational strategies and their associated practical computational methods
 
 ## Assessment
-Your assignments will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/tutorial_1.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). Your exam will have the same format as the assignments.
+Your assignments will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/Tutorial_0.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). Your exam will have the same format as the assignments.
 
 ## Extra Credit
 
