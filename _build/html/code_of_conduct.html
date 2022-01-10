@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quantum Chemistry &#8212; Quantum Chemistry</title>
+    <title>Synopsis: &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,7 +52,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Learning Objectives" href="documents/objectives.html" />
+    <link rel="next" title="Contributing to this Jupyter Book Course on Quantum Chemistry" href="contributing.html" />
+    <link rel="prev" title="Reference Materials" href="documents/refs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,8 +91,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_content.html">
    Quantum Chemistry
   </a>
  </li>
@@ -223,9 +224,9 @@
   Contributing and Using
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="code_of_conduct.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Code of Conduct
   </a>
  </li>
@@ -280,7 +281,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/main_content.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/code_of_conduct.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -300,7 +301,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fmain_content.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fcode_of_conduct.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -327,23 +328,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
+  <a class="reference internal nav-link" href="#statement-of-principles">
+   Statement of Principles:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assessment">
-   Assessment
+  <a class="reference internal nav-link" href="#detailed-code-of-conduct">
+   Detailed Code of Conduct:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-resources">
-   Other resources
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-and-contributing">
-   Using and Contributing
+  <a class="reference internal nav-link" href="#enforcement">
+   Enforcement:
   </a>
  </li>
 </ul>
@@ -357,62 +353,75 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-chemistry">
-<h1>Quantum Chemistry<a class="headerlink" href="#quantum-chemistry" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p><strong>CHEM 3PA3</strong> <em>Quantum Mechanics and Spectroscopy.</em> An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale. The main course content is conveyed through, and assessed by, Jupyter notebooks, and uses the JupyterBook toolbox. GitHub Classroom is used for assessments.</p>
-</div></blockquote>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="synopsis">
+<h1>Synopsis:<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true"><strong>Syllabus</strong></a></p></li>
-<li><p><strong>Course Introduction</strong> <span class="xref myst">video</span> and <span class="xref myst">slides</span>.</p></li>
-<li><p><span class="xref myst"><strong>Marking Scheme</strong></span></p></li>
-<li><p><a class="reference internal" href="documents/objectives.html"><span class="doc std std-doc"><strong>Learning Objectives:</strong></span></a></p>
-<ul>
-<li><p>Know, understand, and use the key equations of quantum mechanics for chemical applications</p></li>
-<li><p>Understand and apply the key concepts of quantum chemistry.</p></li>
-<li><p>Read, write, and use common quantum chemical notation.</p></li>
-<li><p>Know the ground-state wavefunctions, eigenenergies, quantum numbers, and selection rules for important exactly-solvable Hamiltonians. Be able to use these systems to (approximately) model real atomic and molecular systems.</p></li>
-<li><p>Know, understand, and apply quantum concepts to atoms &amp; molecules.</p></li>
-<li><p>Know, understand, and apply approximate computational strategies and their associated practical computational methods</p></li>
+<li><p>Treat everyone with respect, kindness, and empathy. Assume they’re doing the same.</p></li>
+<li><p>Communication is a two-party activity. If you’re not sure what someone means, then ask them; don’t assume.</p></li>
+<li><p>If someone asks you to stop, then stop.</p></li>
+<li><p>When critiquing the work of others, focus on ways to improve that work and keep in mind that your perspective is unique: what is obvious to you may not be obvious to others.</p></li>
+<li><p>If a dispute can’t be resolved directly, contact the qc.devs administrators (<a class="reference external" href="mailto:qc&#46;devs&#37;&#52;&#48;gmail&#46;com">qc<span>&#46;</span>devs<span>&#64;</span>gmail<span>&#46;</span>com</a>). If you do not feel comfortable contacting the qc.devs administrators directly, you can contact any of the individual administrators (<a class="reference external" href="mailto:ayers&#37;&#52;&#48;mcmaster&#46;ca">ayers<span>&#64;</span>mcmaster<span>&#46;</span>ca</a>, <a class="reference external" href="mailto:farnaz&#46;heidarzadeh&#37;&#52;&#48;queensu&#46;ca">farnaz<span>&#46;</span>heidarzadeh<span>&#64;</span>queensu<span>&#46;</span>ca</a>, <a class="reference external" href="mailto:toon&#46;verstraelen&#37;&#52;&#48;ugent&#46;be">toon<span>&#46;</span>verstraelen<span>&#64;</span>ugent<span>&#46;</span>be</a>, or <a class="reference external" href="mailto:evohringer&#37;&#52;&#48;udec&#46;cl">evohringer<span>&#64;</span>udec<span>&#46;</span>cl</a>).</p></li>
 </ul>
-</li>
-</ul>
+<div class="section" id="statement-of-principles">
+<h2>Statement of Principles:<a class="headerlink" href="#statement-of-principles" title="Permalink to this headline">¶</a></h2>
+<p>The QCDevs team embraces the diversity of its past, current, and future members, recognizing that the diversity of our backgrounds, preferences, personalities, ambitions, priorities, knowledge, and skills provide unique and useful perspectives that enrich our collaboration and enhance the quality of the software we build together and helps us grow, together and separately, as developers and as people. This certainly includes diversity of ethnicity, race, body shape, personal appearance, age, gender identity and expression, sexual identity and orientation, culture, religion, political affiliation, socioeconomic status, physical and mental capabilities, and national origin, but also diversity of perspectives, skills, knowledge, educational background, and priorities. It is expected that members of QCDevs are not only open-minded towards diverse backgrounds and perspectives, but actively encourage the participation of others. We, both individually and collectively, have zero tolerance for disrespectful or inconsiderate behavior of any kind.</p>
+<p>The following code borrows heavily from the previous codes of conduct in QCDevs projects and the freeBSD, Python, and Open-Source Contributor codes of conduct. The QCDevs team revisits this code whenever a major release is made.</p>
 </div>
-<div class="section" id="assessment">
-<h2>Assessment<a class="headerlink" href="#assessment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="detailed-code-of-conduct">
+<h2>Detailed Code of Conduct:<a class="headerlink" href="#detailed-code-of-conduct" title="Permalink to this headline">¶</a></h2>
+<p>The QCDevs team strives to be welcoming and respectful, and we want to ensure that our inclusive environment is not only maintained, but improved, as the team grows and evolves. To this end, we ask that people endeavor to always:</p>
 <ul class="simple">
-<li><p><strong>Assignments</strong> will be turned in using <a class="reference external" href="https://classroom.github.com/">Github Classroom</a>. To learn more about Github Classroom, see our <a class="reference internal" href="ipynb/Tutorial_0.html"><span class="doc std std-doc">tutorial</span></a> and GitHub’s <a class="reference external" href="https://githubuniverse.com/content-library/github-classroom-101/">video</a>. Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). <em>Your exam will have the same format as the assignments.</em></p></li>
-<li><p><strong>Extra Points</strong> may be earned by <a class="reference internal" href="contributing.html"><span class="doc std std-doc">making pull requests</span></a> to <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022">this repository</a>. The aim is to encourage you to contribute/refine content that benefits other students. While all contributions are encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. <a class="reference internal" href="extracredit/overview.html"><span class="doc std std-doc">More information is available here.</span></a></p></li>
+<li><p>be friendly and patient,</p></li>
+<li><p>be welcoming,</p></li>
+<li><p>be positive,</p></li>
+<li><p>be considerate,</p></li>
+<li><p>be respectful,</p></li>
+<li><p>be empathetic,</p></li>
+<li><p>be careful in the words that you choose and be kind to others,</p></li>
+<li><p>be supportive,</p></li>
+<li><p>be open to new ideas and approaches,</p></li>
+<li><p>accept responsibility for their actions and the effects they have on others, sincerely, apologize without hesitation, and learn from their mistakes to become better,</p></li>
+<li><p>communicate clearly, constructively, and politely during disagreements and, after any tense discussions are resolved, revisit them for lessons on how future interactions can be improved,</p></li>
+<li><p>give others’ intentions the benefit of the doubt. Assume that others are trying to be constructive and helpful, because they probably are.</p></li>
+<li><p>think about the long term. Just as you are building on others’ contributions, they will build on your contributions. Try to make it easier for them; think about the implications of your actions and decisions.</p></li>
+<li><p>steadfastly strive to become a better colleague and developer,</p></li>
 </ul>
-</div>
-<div class="section" id="other-resources">
-<h2>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h2>
+<p>Similarly, the following activities are always unacceptable:</p>
 <ul class="simple">
-<li><p>A <a class="reference internal" href="documents/refs.html"><span class="doc std std-doc">curated selection</span></a> gleaned from the vast amount of relevant material on the internet</p></li>
-<li><p>Material from the 2021 course is available at  <a class="reference external" href="https://qchem1.qcdevs.org/">qchem1.qcdevs.org</a>.</p></li>
+<li><p>sexualized language or imagery, and sexual attention or advances of any kind</p></li>
+<li><p>trolling, insulting or derogatory comments, and personal or political attacks</p></li>
+<li><p>public or private harassment</p></li>
+<li><p>publishing others’ private information, such as a their physical or email address, without their explicit permission (doxing)</p></li>
+<li><p>any conduct which could reasonably be considered inappropriate in a professional setting</p></li>
+<li><p>any conduct that weakens the group, is destructive, or which contravenes the precepts of collegiality presented in the previous list.</p></li>
 </ul>
+<p>This isn’t an exhaustive list of things that you can and cannot do. Rather, take it in the spirit in which it’s intended - a guide to make it easier to communicate and participate in QCDevs. As a single overarching rule: do not focus on what is best for you, but focus on what is best for the QCDevs team as a whole. This does not mean that your personal success does not matter! It means that everyone’s success matters equally, because our team is strong only when all of us are thriving personally and professionally.</p>
 </div>
-<div class="section" id="using-and-contributing">
-<h2>Using and Contributing<a class="headerlink" href="#using-and-contributing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enforcement">
+<h2>Enforcement:<a class="headerlink" href="#enforcement" title="Permalink to this headline">¶</a></h2>
+<p>If you believe someone is violating the code of conduct we ask that you report it to the QCDevs administrative team at <a class="reference external" href="mailto:qc&#46;devs&#37;&#52;&#48;gmail&#46;com">qc<span>&#46;</span>devs<span>&#64;</span>gmail<span>&#46;</span>com</a>. However, if you believe anyone is in physical danger, please notify appropriate law enforcement first. If you do not feel comfortable contacting the QCDevs administrators collectively, you can contact any of the individual administrators (<a class="reference external" href="mailto:ayers&#37;&#52;&#48;mcmaster&#46;ca">ayers<span>&#64;</span>mcmaster<span>&#46;</span>ca</a>, <a class="reference external" href="mailto:farnaz&#46;heidarzadeh&#37;&#52;&#48;queensu&#46;ca">farnaz<span>&#46;</span>heidarzadeh<span>&#64;</span>queensu<span>&#46;</span>ca</a>, <a class="reference external" href="mailto:toon&#46;verstraelen&#37;&#52;&#48;ugent&#46;be">toon<span>&#46;</span>verstraelen<span>&#64;</span>ugent<span>&#46;</span>be</a>, or <a class="reference external" href="mailto:evohringer&#37;&#52;&#48;udec&#46;cl">evohringer<span>&#64;</span>udec<span>&#46;</span>cl</a>).</p>
+<p>All reports will be kept confidential whenever possible. The QCDevs Administrators will strive to protect the identity and safety of reporters. In some cases we may need to make a public statement of some form, in which case we will use the minimum details and identifying information necessary to protect our community. In rare cases, we may need to identify some of the people involved to comply with the law or protect other potential victims. In these cases, we will consult with the reporter to find out what their wishes are and take them into account. In all cases, we aim not to directly or indirectly identify reporters without their consent.</p>
+<p>In your report please include</p>
 <ul class="simple">
-<li><p><span class="xref myst"><strong>QC-Devs Code of Conduct:</strong></span> Treat others with respect, kindness, and empathy; assume they’re doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.</p></li>
-<li><p><a class="reference internal" href="contributing.html"><span class="doc std std-doc"><strong>How to Contribute:</strong></span></a> Contributions are accepted and encouraged!</p></li>
-<li><p><span class="xref myst"><strong>CC0 version 1.0</strong></span> license. However, where we have reposted/adapted content from other sources, those sources retain their copyright/license.</p></li>
+<li><p>your name and contact information,</p></li>
+<li><p>names (real, nicknames, and/or pseudonyms) of any individuals involved. If there were other witnesses besides you, please try to include them as well.</p></li>
+<li><p>when and where the incident occurred. Please be as specific as possible.</p></li>
+<li><p>your account of what occurred. If there is a publicly available record please include a link and/or screen shots.</p></li>
+<li><p>any extra context you believe relevant for the incident.</p></li>
+<li><p>if you believe this incident is ongoing.</p></li>
+<li><p>any other information you believe we should have.</p></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+<p>As quickly as possible, the QCDevs administrators will review the incident and determine whether an investigation is needed, including interviewing additional parties or witnesses. After we have determined what has happened, we’ll determine whether the behaviour contravenes the code of conduct. Actions taken may include one or more of the following:</p>
+<ul class="simple">
+<li><p>nothing (for example, if we determine that no violation occurred).</p></li>
+<li><p>a private reprimand to the individual(s) involved, explaining why the conduct was inappropriate. This is appropriate when the behavior is minor, potentially accidental, and there is no damage to the QCDevs team as a whole, nor to its principles.</p></li>
+<li><p>a public reprimand. This is appropriate when the action compromises the cohesiveness and integrity of the QCDevs team as a whole.</p></li>
+<li><p>a request for a private or public apology.</p></li>
+<li><p>a request to compose an accountability plan or to engage in mediation.</p></li>
+<li><p>a temporary or permanent suspension from QCDevs.</p></li>
+</ul>
+<p>Once the QCDevs administrators have determined our final action, we will contact the original reporter to let them know what action (if any) we will be taking. We welcome feedback from the reporter on the appropriateness of our response, and we may (or may not) modulate our response based on that feedback.</p>
+<p><strong>Credits:</strong> This document was written by Wil Adams, Paul Ayers, Fanwang Meng, Lian Pharoah, and Michael Richer based on previous codes of conduct in QCDevs projects (primarily from Farnaz Heidar-Zadeh and Toon Verstraelen) and the freeBSD code of conduct, the Python code of conduct, the Open-Source Contributor Code of Conduct, and resources provided by the Office of Equity and Inclusion at McMaster University. The current version of the code of conduct was edited, then approved, by the QCDevs administrators.</p>
 </div>
 </div>
 
@@ -440,11 +449,18 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="documents/objectives.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="documents/refs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Reference Materials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="contributing.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learning Objectives</p>
+        <p class="prev-next-title">Contributing to this Jupyter Book Course on Quantum Chemistry</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

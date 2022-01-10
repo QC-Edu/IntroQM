@@ -33,7 +33,7 @@ assert(isinstance(energy,float)), "Type Error: The energy should be a float."
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAssertionError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_8334/865377954.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_9517/865377954.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      6[0m [0mprint[0m[0;34m([0m[0;34mf"The energy of a photon with wavelength  486.1 nm is {energy} Joules."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      7[0m [0;34m[0m[0m
 [0;32m----> 8[0;31m [0;32massert[0m[0;34m([0m[0misinstance[0m[0;34m([0m[0mfrequency[0m[0;34m,[0m[0mfloat[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0;34m"Type Error: The frequency should be a float."[0m[0;34m[0m[0;34m[0m[0m

@@ -1,15 +1,11 @@
-<!-- #region -->
-
 # Synopsis:
-
-
 - Treat everyone with respect, kindness, and empathy. Assume they're doing the same.
 - Communication is a two-party activity. If you’re not sure what someone means, then ask them; don’t assume.
 - If someone asks you to stop, then stop.
 - When critiquing the work of others, focus on ways to improve that work and keep in mind that your perspective is unique: what is obvious to you may not be obvious to others.
 - If a dispute can’t be resolved directly, contact the qc.devs administrators (qc.devs@gmail.com). If you do not feel comfortable contacting the qc.devs administrators directly, you can contact any of the individual administrators (ayers@mcmaster.ca, farnaz.heidarzadeh@queensu.ca, toon.verstraelen@ugent.be, or evohringer@udec.cl). 
 
-# Statement of Principles:
+## Statement of Principles:
 The QCDevs team embraces the diversity of its past, current, and future members, recognizing that the diversity of our backgrounds, preferences, personalities, ambitions, priorities, knowledge, and skills provide unique and useful perspectives that enrich our collaboration and enhance the quality of the software we build together and helps us grow, together and separately, as developers and as people. This certainly includes diversity of ethnicity, race, body shape, personal appearance, age, gender identity and expression, sexual identity and orientation, culture, religion, political affiliation, socioeconomic status, physical and mental capabilities, and national origin, but also diversity of perspectives, skills, knowledge, educational background, and priorities. It is expected that members of QCDevs are not only open-minded towards diverse backgrounds and perspectives, but actively encourage the participation of others. We, both individually and collectively, have zero tolerance for disrespectful or inconsiderate behavior of any kind.
 
 The following code borrows heavily from the previous codes of conduct in QCDevs projects and the freeBSD, Python, and Open-Source Contributor codes of conduct. The QCDevs team revisits this code whenever a major release is made.
@@ -66,4 +62,3 @@ As quickly as possible, the QCDevs administrators will review the incident and d
 Once the QCDevs administrators have determined our final action, we will contact the original reporter to let them know what action (if any) we will be taking. We welcome feedback from the reporter on the appropriateness of our response, and we may (or may not) modulate our response based on that feedback.
 
 **Credits:** This document was written by Wil Adams, Paul Ayers, Fanwang Meng, Lian Pharoah, and Michael Richer based on previous codes of conduct in QCDevs projects (primarily from Farnaz Heidar-Zadeh and Toon Verstraelen) and the freeBSD code of conduct, the Python code of conduct, the Open-Source Contributor Code of Conduct, and resources provided by the Office of Equity and Inclusion at McMaster University. The current version of the code of conduct was edited, then approved, by the QCDevs administrators. 
-<!-- #endregion -->
