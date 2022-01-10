@@ -20,15 +20,6 @@ parts:
     chapters:
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
-      sections:
-      - file: problems/Jupyter.md
-        title: Introduction to Jupyter
-      - file: problems/python.md
-        title: Basic Python
-      - file: problems/numpy.md
-        title: Introduction to Numpy
-      - file: problems/syzygy.md
-        title: Computing Course Marks with Jupyter, Python, Numpy, and syzygy
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
