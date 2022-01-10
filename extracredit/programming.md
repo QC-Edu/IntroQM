@@ -46,3 +46,5 @@ Among the most relevant are:
 
 - [**Exercism**](http://exercism.io/) Free mentor-based learning pathways for [Python](https://exercism.io/tracks/python), [Julia](https://exercism.io/tracks/julia), and much more.
   - Instructions: If you use Exercism, you can submit work you create therein for extra points. Simply add the work directly to your GitHub account.
+
+- [**JetBrains Academy**](https://hyperskill.org/tracks) has several courses. Some courses you have to pay for, but most are available with a free trial. Their [Python courses](https://hyperskill.org/tracks?category=1) are rumored to be excellent.

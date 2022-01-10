@@ -18,16 +18,14 @@ parts:
   - caption: Topics
     numbered: True
     chapters:
+    - file: ipynb/GitHub.ipynb
+      title: GitHub
+
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
-      sections:
-      - file: problems/IntroQM.md
-        title: Assignment
-      - file: ipynb/IntroQMkey.ipynb
-        title: Assignment Key including extra problems
 
     - file: ipynb/SchrodingerEq.ipynb
       title: The Schrödinger Equation
