@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Jupyter and Computer Programming
 # 
+# ![Jupyter, Python, Numpy](../linkedFiles/JupyterPythonNumpy.png "Logos of Jupyter, Python, and Numpy")
+# 
+# # Jupyter and Computer Programming
 # Throughout this course, we will use *Jupyter* notebooks to explore the material. Assignments will provide you with basic background in *Jupyter*, *Python*, and *Numpy*. (I had been hoping to use *Julia*, which is arguably easier, but at present *Python* is more popular and better-supported.)
 # 
 # ## &#x1f945; Learning Objectives
@@ -80,7 +82,13 @@
 # ## LinkedIn Learning Courses
 # 
 # To learn more about Jupyter, programming concepts, Python programming, and Numpy, you'll complete several LinkedIn Learning courses. Upon completing each course, download your certificate of completion and upload it as your assignment. You can also add the certificate to your LinkedIn profile.
-# > Before you get started, it's helpful to [log into LinkedIn Learning](https://lnkd.in/gj-9Xgg). (However, the links provided should automatically prompt you to log in if you are not already.) If you already have a LinkedIn account associated with a different e-mail, you can link your accounts.  
+# > Before you get started, it's helpful to [log into LinkedIn Learning](https://lnkd.in/gj-9Xgg). (However, the links provided should automatically prompt you to log in if you are not already.) If you already have a LinkedIn account associated with a different e-mail, you can link your accounts. 
+# 
+# ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
+# - You will learn more about Jupyter, Python, Numpy, and GitHub through the [assignment](../problems/JupyterPythonNumpy.md).
+# - You will learn more about how to use GitHub Classroom and Google Colaboratory through the [assignment](Tutorial_0.ipynb). (This assignment is really more of a tutorial.)
+# 
+# 
 # 
 # ## &#x1f4da; Additional Learning Resources
 # 

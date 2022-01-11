@@ -4,8 +4,8 @@
 
 ## Overview
 
+- **Course Introduction** [video]() and [slides](https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/intro.pdf?raw=true).
 - [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true)
-- **Course Introduction** [video]() and [slides]().
 - [**Marking Scheme**]()
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
@@ -25,6 +25,6 @@
 - Material from the 2021 course is available at  [qchem1.qcdevs.org](https://qchem1.qcdevs.org/). 
 
 ## Using and Contributing
-- [**QC-Devs Code of Conduct:**]((https://qcdevs.org/guidelines/QCDevsCodeOfConduct/)) Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
+- [**QC-Devs Code of Conduct:**](https://qcdevs.org/guidelines/QCDevsCodeOfConduct/) Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
 - [**How to Contribute:**](contributing.md) Contributions are accepted and encouraged!
-- [**CC0 version 1.0**](LICENSE) license. However, where we have reposted/adapted content from other sources, those sources retain their copyright/license.
+- [**CC0 version 1.0**](license.md) license. But where we have reposted/adapted/linked content from other sources, they retain their own copyright/license.
