@@ -7,11 +7,11 @@
 - **Course Introduction** [video](https://www.macvideo.ca/media/Welcome+to+CHEM+3PA3/1_5uetc04h) and [slides](https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/intro.pdf?raw=true).
 - [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true)
 - [**Marking Scheme**]()
-- Meeting times: (Online components are hosted on MSTeams)
-  - online/HH305 1430-1730
-  - online/HH305 1430-1530
-  - online/ABB-266A/ABB-264 1530-1630 (office hours)
-  - online/ABB-266A/ABB-264 17:30-18:30 (office hours)
+- **Meeting times** (online components are hosted on MSTeams)
+  - online &rarr; HH305 1430-1730
+  - online &rarr; HH305 1430-1530
+  - online &rarr; ABB-266A/ABB-264 1530-1630 (office hours)
+  - online &rarr; ABB-266A/ABB-264 17:30-18:30 (office hours)
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
   - Understand and apply the key concepts of quantum chemistry.
