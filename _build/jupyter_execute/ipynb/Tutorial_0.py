@@ -3,9 +3,11 @@
 
 # # Assignment: Google Colab
 # 
+# ##  &#x1f3af; Objective¶
 # Hello Folks! In this tutorial we are going to cover basics steps of __editing__, __submitting__ and __analyzing__ our results using GitHub, along with some basic python skills. Before attempting this assignment you should be familiar with the course content on [GitHub](../documents/GitHub.md), [Jupyter, Python, and Numpy](jupyter.ipynb).
 
-# ## Receive the Assignment
+# 
+# ## &#x1f4dc; Instructions: How to receive the assignment
 # 
 # This mock assignment is available via the [link](https://classroom.github.com/a/xBTR2JqC). Accept the assignment, as described [previously](https://qc-edu.github.io/IntroQM2022/ipynb/ghfundamentals.html)
 # ![p1](pics_t0/1.png)
@@ -35,6 +37,7 @@
 # If you use a browser like Google Chrome or Microsoft Edge, then you can use the [Open in Colab](https://chrome.google.com/webstore/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo) browser extension. Then, 
 # 1. View the target Jupyter Notebook on Github
 # 2. Click  the extension to open the notebook in Colab.
+# 3. When you do this, you may need to grant Google/Microsoft (Colab/GitHub) permission to interchange information.
 
 # ## Understanding the assignment
 # There is an instruction written in the notebook. All you need to do is to fill the code between 
