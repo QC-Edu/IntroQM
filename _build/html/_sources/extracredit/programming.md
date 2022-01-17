@@ -17,6 +17,7 @@ You can complete relevant LinkedIn Learning courses to earn extra points. For ex
    https://www.linkedin.com/learning/programming-foundations-version-control-with-git)
 - [Learning GitHub](https://www.linkedin.com/learning/learning-github)
 - [GitHub Essential Training](https://www.linkedin.com/learning/github-essential-training)
+- [Python for Engineers and Scientists](https://www.linkedin.com/learning/python-for-engineers-and-scientists)
 - [Python Data Analysis](https://www.linkedin.com/learning/python-data-analysis-2/get-started-in-data-analysis-with-python?u=56982905)
 - [Julia Power like Python, Speed like C](https://www.linkedin.com/learning/learning-julia/julia-power-like-python-speed-like-c)
 
