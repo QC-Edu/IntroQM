@@ -4,13 +4,8 @@
 2. Clone the repo using git clone (for now the name of repository is IntroQM2022) using this link: https://github.com/QC-Edu/IntroQM2022.git
 
 Once the repo is cloned, you need to do two things:
-1. Create a new branch by issuing the command: 
-
-`git checkout -b new_branch`
-
-2. Create a new remote for the upstream repo with the command: 
-
-`git remote add upstream https://github.com/QC-Edu/IntroQM2022`
+1. Create a new branch by issuing the command: `git checkout -b new_branch`
+2. Create a new remote for the upstream repo with the command: `git remote add upstream https://github.com/QC-Edu/IntroQM2022`
 
 In this case, "upstream repo" refers to the original repo you created your fork from. Also you can take a look at  "Workflow summary" section [here](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote)
 
