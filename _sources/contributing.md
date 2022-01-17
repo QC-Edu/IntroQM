@@ -1,4 +1,5 @@
-## Contributing to this Jupyter Book Course on Quantum Chemistry
+
+# Contributing to this Jupyter Book Course on Quantum Chemistry
 
 1. Fork the repo by click on the `Fork` button in the top-right corner. This creates a new copy of this repo under your GitHub user account.
 2. Clone the repo using git clone (for now the name of repository is IntroQM2022) using this link: https://github.com/QC-Edu/IntroQM2022.git
