@@ -16,12 +16,25 @@ parts:
     chapters:
     - file: documents/GitHub.md
       title: GitHub
+      sections:
+      - file: ipynb/ghfundamentals.ipynb
+      title: Assignment on GitHub (Classroom)
 
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
+      sections: 
+    - file: problems/JupyterPythonNumpy.md
+      title: Assignment on Python, Jupyter, Numpy
+    - file: ipynb/Tutorial_0.ipynb
+      title: Assignment on Google Colab
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
+      sections:
+      - url: https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683
+        title: Intro to QM video
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf?raw=true
+        title: Intro to QM slides+notes
 
     - file: ipynb/SchrodingerEq.ipynb
       title: The Schrödinger Equation
@@ -44,13 +57,13 @@ parts:
     - file: ipynb/ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
       sections:
-      - file: documents/2elatom.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf?raw=true
         title: 2-electron atoms
-      - file: documents/atomsshort.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf?raw=true
         title: Many-electron atoms
-      - file: documents/PES.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf?raw=true
         title: The Born-Oppenheimer Approximation
-      - file: documents/molecules.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf?raw=true
         title: Molecules
   
   - caption: Assignments
@@ -72,6 +85,8 @@ parts:
     chapters:
     - file: documents/refs.md
       title: Reference Materials
+    - url: https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683
+      title: Videos
 
   - caption: Contributing and Using
     chapters:
