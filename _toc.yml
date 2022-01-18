@@ -23,11 +23,11 @@ parts:
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-      - file: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
+      - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
         title: Assignment; Python, Jupyter, Numpy
-      - file: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
+      - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
         title: Assignment; Google Colab
-      - file: https://qchem.qc-edu.org/ipynb/tutorial_1.html
+      - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: Assignment; Wavefunction Normalization
 
     - file: ipynb/History.ipynb
