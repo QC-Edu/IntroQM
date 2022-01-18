@@ -17,17 +17,17 @@ parts:
     - file: documents/GitHub.md
       title: GitHub
       sections:
-      - file: ipynb/ghfundamentals.ipynb
-      title: Assignment; GitHub (Classroom)
+      - url: https://qchem.qc-edu.org/ipynb/ghfundamentals.html
+        title: Assignment; GitHub (Classroom)
 
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-      - file: problems/JupyterPythonNumpy.md
+      - file: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
         title: Assignment; Python, Jupyter, Numpy
-      - file: ipynb/Tutorial_0.ipynb
+      - file: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
         title: Assignment; Google Colab
-      - file: ipynb/tutorial_1.ipynb
+      - file: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: Assignment; Wavefunction Normalization
 
     - file: ipynb/History.ipynb
