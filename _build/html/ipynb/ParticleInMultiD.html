@@ -117,20 +117,56 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../documents/GitHub.html">
    1. GitHub
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
+     Assignment; GitHub (Classroom)
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="jupyter.html">
    2. Basics of Jupyter, Python, and Programming
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="History.html">
    3. From Newton to Schrödinger
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">
+     Intro to QM video
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf?raw=true">
+     Intro to QM slides+notes
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SchrodingerEq.html">
@@ -166,12 +202,32 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf?raw=true">
+     2-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf?raw=true">
+     Many-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf?raw=true">
+     The Born-Oppenheimer Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf?raw=true">
+     Molecules
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -196,6 +252,11 @@
    3. Schrodinger's Cat Colab
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_1.html">
+   4. Wavefunction normalization Colab
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -205,7 +266,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../extracredit/overview.html">
-   List
+   Overview
   </a>
  </li>
 </ul>
@@ -220,6 +281,11 @@
    Reference Materials
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">
+   Videos
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -228,8 +294,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../code-of-conduct.html">
-   Synopsis:
+  <a class="reference internal" href="../code_of_conduct.html">
+   Code of Conduct
   </a>
  </li>
  <li class="toctree-l1">
@@ -907,7 +973,7 @@ E r^2 +\frac{\hbar^2}{2m}\frac{r^2}{R(r)} \left(\frac{d^2 R(r)}{dr^2} + \frac{1}
 <p>which can be rearranged into the radial Schrödinger equation,</p>
 <div class="math notranslate nohighlight">
 \[
--\frac{\hbar^2}{2m} \left(\frac{1}{r^2} \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2} \right)R_{n,l}(r) + V(r) R_{n,l}(r) = E_{n,l} R_{n,l}(r)
+-\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2} \right)R_{n,l}(r) + V(r) R_{n,l}(r) = E_{n,l} R_{n,l}(r)
 \]</div>
 <p>Notice that the radial eigenfunctions, <span class="math notranslate nohighlight">\(R_{n,l}(r)\)</span>, and the energy eigenvalues, <span class="math notranslate nohighlight">\(E_{n,l}\)</span>, depend on the angular motion of the particle, as quantized by <span class="math notranslate nohighlight">\(l\)</span>. The term <span class="math notranslate nohighlight">\(\frac{\hbar^2 l^2}{2mr^2}\)</span> is exactly the centrifugal potential, indicating that it takes energy to hold a rotating particle in an orbit with radius <span class="math notranslate nohighlight">\(r\)</span>, and that the potential energy that is required grows with <span class="math notranslate nohighlight">\(r^{-2}\)</span>. Notice also that no assumptions have been made about the nature of the circular potential, <span class="math notranslate nohighlight">\(V(r)\)</span>. The preceding analysis holds for <em>any</em> circular-symmetric potential.</p>
 </div>
