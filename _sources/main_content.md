@@ -4,9 +4,10 @@
 
 ## Overview
 
-- **Course Introduction** [video](https://www.macvideo.ca/media/Welcome+to+CHEM+3PA3/1_5uetc04h) and [slides](https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/intro.pdf?raw=true).
+- **Course Introduction** [video](https://www.macvideo.ca/media/Welcome+to+CHEM+3PA3/1_5uetc04h) and [slides](https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/0_IntroVideo.pdf?raw=true).
 - [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf?raw=true)
 - [**Marking Scheme**](documents/markingscheme.md)
+- [**Videos**](https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683)
 - **Meeting times** (online components are hosted on MSTeams)
   - online &rarr; HH305 1430-1730
   - online &rarr; HH305 1430-1530
