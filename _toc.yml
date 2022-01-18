@@ -18,15 +18,17 @@ parts:
       title: GitHub
       sections:
       - file: ipynb/ghfundamentals.ipynb
-      title: Assignment on GitHub (Classroom)
+      title: Assignment; GitHub (Classroom)
 
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-    - file: problems/JupyterPythonNumpy.md
-      title: Assignment on Python, Jupyter, Numpy
-    - file: ipynb/Tutorial_0.ipynb
-      title: Assignment on Google Colab
+      - file: problems/JupyterPythonNumpy.md
+        title: Assignment; Python, Jupyter, Numpy
+      - file: ipynb/Tutorial_0.ipynb
+        title: Assignment; Google Colab
+      - file: ipynb/tutorial_1.ipynb
+        title: Assignment; Wavefunction Normalization
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
@@ -75,6 +77,8 @@ parts:
       title: Intro to Python, Jupyter, Numpy
     - file: ipynb/Tutorial_0.ipynb
       title: "Schrodinger's Cat Colab"
+    - file: ipynb/tutorial_1.ipynb
+      title: "Wavefunction normalization Colab"
 
   - caption: Extra credit
     chapters:
