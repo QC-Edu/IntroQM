@@ -7,7 +7,7 @@
 # To practice Jupyter and Colab.
 # 
 # ## &#x1f4dc; Instructions
-# 1. Presuming you already have a GitHub account, [connect to GitHub Classroom](https://classroom.github.com/a/iZKwWPGv). You'll see ![p1](pics/2.png)
+# 1. Presuming you already have a GitHub account, [connect to GitHub Classroom](https://classroom.github.com/a/1DZ_qS9k). You'll see ![p1](pics/2.png)
 # 1. Click `Accept the assignment` and then update the page ![p2](pics/3.png). You will see a new repository with the task ![p3](pics/4.png)
 # 1. To complete the assignment you need to complete the Jupyter notebook **`Normalizing_eigenfunctions.ipynb`**.
 
@@ -53,7 +53,7 @@
 
 # ## Check the result
 # 
-# In order to check whether your code passed tests all you need to do is go to `Actions`$\rightarrow$ `Your commit` $\rightarrow$ `Test with pytest`. ![p12](pics/13.png) ![p13](pics/14.png) In most cases the tests will run automatically, and you do not need to explicitly invoke the Pytest.
+# In order to check whether your code passed tests all you need to do is go to `Actions`$\rightarrow$ `Your commit` $\rightarrow$ `Test with pytest`. ![p12](pics/13.png) ![p13](pics/14.png) In most cases the tests will run automatically, and you do not need to explicitly invoke Pytest.
 # 
 # If you see a green check mark: ***CONGRATULATIONS!*** you passed the assignment 
 # 
@@ -64,6 +64,6 @@
 # ![p16](pics/17.png) ![p17](pics/18.png)
 
 # ## Grading Scheme
-# Completing the assignment earns you an **S**. To earn an **S+**, explore whether there are other choices for the normalizaton constant that also pass the tests. Can you find a (correct) choice for the normalization constant that nonetheless fails the tests? How is this possible!
+# Completing the assignment earns you an **S**. To earn an **S+**, explore whether there are other choices for the normalization constant that also pass the tests. Can you find a (correct) choice for the normalization constant that nonetheless fails the tests? How is this possible!
 
 # 

@@ -292,6 +292,11 @@
 # - Also see my (pdf) class [notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf?raw=true).
 # - The introductory material in [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book course is very good. Roughly [chapters 1 and 2](https://dpotoyan.github.io/Chem324/intro.html) are especially relevant here.
 # 
+# Some videos:
+# - [My video introduction](https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b)
+# - [History of Black-body radiation](https://www.youtube.com/watch?v=uMUi3o78qgQ&t=8s)
+# - [History of the Photoelectric effect](https://www.youtube.com/watch?v=BiPEY99w8Lo)
+# 
 # There are also some excellent wikipedia articles:
 # - On General Quantum Mechanics
 #   - [Introduction to Quantum Mechanics](http://en.wikipedia.org/wiki/Introduction_to_quantum_mechanics)

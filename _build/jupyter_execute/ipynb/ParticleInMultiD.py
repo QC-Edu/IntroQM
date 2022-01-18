@@ -406,7 +406,7 @@
 # which can be rearranged into the radial Schr&ouml;dinger equation,
 # 
 # $$
-# -\frac{\hbar^2}{2m} \left(\frac{1}{r^2} \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2} \right)R_{n,l}(r) + V(r) R_{n,l}(r) = E_{n,l} R_{n,l}(r)
+# -\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2} + \frac{1}{r} \frac{d}{dr} - \frac{l^2}{r^2} \right)R_{n,l}(r) + V(r) R_{n,l}(r) = E_{n,l} R_{n,l}(r)
 # $$
 # 
 # Notice that the radial eigenfunctions, $R_{n,l}(r)$, and the energy eigenvalues, $E_{n,l}$, depend on the angular motion of the particle, as quantized by $l$. The term $\frac{\hbar^2 l^2}{2mr^2}$ is exactly the centrifugal potential, indicating that it takes energy to hold a rotating particle in an orbit with radius $r$, and that the potential energy that is required grows with $r^{-2}$. Notice also that no assumptions have been made about the nature of the circular potential, $V(r)$. The preceding analysis holds for *any* circular-symmetric potential.
