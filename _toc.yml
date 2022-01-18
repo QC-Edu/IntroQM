@@ -35,7 +35,7 @@ parts:
       sections:
       - url: https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683
         title: Intro to QM video
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf?raw=true
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
 
     - file: ipynb/SchrodingerEq.ipynb
@@ -59,13 +59,13 @@ parts:
     - file: ipynb/ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
       sections:
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf?raw=true
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf
         title: 2-electron atoms
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf?raw=true
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf
         title: Many-electron atoms
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf?raw=true
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf
         title: The Born-Oppenheimer Approximation
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf?raw=true
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf
         title: Molecules
   
   - caption: Assignments
