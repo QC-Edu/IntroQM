@@ -59,7 +59,7 @@ parts:
     - file: ipynb/ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
       sections:
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf?raw=true
         title: 2-electron atoms
       - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf?raw=true
         title: Many-electron atoms
