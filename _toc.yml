@@ -29,6 +29,8 @@ parts:
         title: Assignment; Google Colab
       - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: Assignment; Wavefunction Normalization
+      #- url: 
+      #  title: Computing Student Marks (< 2022)
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
@@ -84,6 +86,10 @@ parts:
     chapters:
     - file: extracredit/overview.md
       title: Overview
+    - file: extracredit/programming.md
+      title: Jupyter/Python/GitHub
+    #- file: extracredit/grading.md
+    #  title: More Python practice
 
   - caption: Additional resources
     chapters:
