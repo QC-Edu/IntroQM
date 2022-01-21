@@ -18,19 +18,19 @@ parts:
       title: GitHub
       sections:
       - url: https://qchem.qc-edu.org/ipynb/ghfundamentals.html
-        title: Assignment; GitHub (Classroom)
+        title: Practice GitHub (Classroom)
 
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
       - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
-        title: Assignment; Python, Jupyter, Numpy
+        title: Practice Python, Jupyter, Numpy
       - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
-        title: Assignment; Google Colab
+        title: Practice Google Colab
       - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
-        title: Assignment; Wavefunction Normalization
+        title: Practice; Wavefunction Normalization
       - url: https://classroom.github.com/a/cSk8HkZq
-        title: Computing Student Marks (< 2022)
+        title: Extra practice; Computing Student Marks (< 2022)
 
     - file: ipynb/History.ipynb
       title: From Newton to Schrödinger
@@ -89,7 +89,7 @@ parts:
     - file: extracredit/programming.md
       title: Jupyter/Python/GitHub exercises
     - url: https://classroom.github.com/a/cSk8HkZq
-      title: More Python practice
+      title: Python/Numpy practice
 
   - caption: Additional resources
     chapters:
