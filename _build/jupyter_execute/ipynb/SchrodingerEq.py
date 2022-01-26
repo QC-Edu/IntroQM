@@ -254,6 +254,7 @@
 # - R. Eisberg and R. Resnick, Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles (Wiley, New York, 1974)
 # - R. Dumont, [An Emergent Reality, Part 2: Quantum Mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true) (Chapters 1 and 2).
 # - Also see my (pdf) class [notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf?raw=true).
+# - [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book course "derives" the Schrodinger equation in a somewhat different way. [Chapter 3](https://dpotoyan.github.io/Chem324/Lec3-0.html) is especially relevant here.
 # 
 # There are also some excellent wikipedia articles:
 # - [Plane Wave](https://en.wikipedia.org/wiki/Sinusoidal_plane_wave)
@@ -262,3 +263,5 @@
 #   - [Schr&ouml;dinger Equation](http://en.wikipedia.org/wiki/Schrodinger_equation)
 #   - [Theoretical Justification of S.E.](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation).
 #   - [Momentum Operator](http://en.wikipedia.org/wiki/Momentum_operator)
+
+# 

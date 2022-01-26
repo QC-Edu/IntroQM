@@ -447,6 +447,7 @@
 # - [Randy's book](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true)
 # - D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)
 # - [Mathematical Features of Quantum Mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/PinBox.pdf?raw=true) (my notes, starting page 6).
+# - [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book course discusses the posultates in [Chapter 3.2](https://dpotoyan.github.io/Chem324/Lec3-2.html).
 # 
 # There are also some excellent wikipedia articles:
 # - [Postulates of Quantum Mechanics](https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics#Postulates_of_quantum_mechanics)
