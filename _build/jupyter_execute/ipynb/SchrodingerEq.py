@@ -132,13 +132,13 @@
 # 
 # The Schr&ouml;dinger equation is usually written in the form:
 # 
-# $$ \color{blue}{ \left( -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x,t)\right)}\Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} $$
+# $$ {\color{blue}\left( -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x,t)\right)} \Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} $$
 # 
 # The term in <span style="color:blue">blue</span> is the [Hamiltonian](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)) operator, $\hat{H}(x,t)$; it is the operator for the energy in quantum mechanics. In classical mechanics, the [Hamiltonian](https://en.wikipedia.org/wiki/Hamiltonian_mechanics) is exactly the equation that we started with when we wrote a (classical) expression for the energy of matter, $H(x,t) = \tfrac{p^2}{2m} + V(x,t)$. 
 # 
 # Using the Hamiltonian, we can then write the TDSE in a compact form,  
 # 
-# $$ \color{blue}{\hat{H}(x,t)}\Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} $$
+# $$ {\color{blue}\hat{H}(x,t)}\Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} $$
 # 
 # As in classical mechanics, the Hamiltonian is the operator for the energy. In quantum mechanics, every observable quantity corresponds to an operator. For example, the kinetic energy operator is
 # 
