@@ -425,7 +425,8 @@
 # ## &#x1f914; Thought-Provoking Questions
 # - Can you imagine a case where the Hermitian nature of the Hamiltonian operator would be useful? 
 # - Can you imagine a way to use the variational principle in practice?
-# - The variational principle allows one to choose a wavefunction that gives the lowest energy, which provides the best wavefunction in an energetic sense. This isn't the same as finding the closest wavefunction to the ground-state wavefunction (see below) but if your energy is close enough to the ground-state energy, you can be assured that the wavefunction is also very close to the ground-state wavefunction. Explain why. Assume, for simplicity, that the ground state is nondegenerate.
+# - The variational principle allows one to choose a wavefunction that gives the lowest energy, which provides the best wavefunction in an energetic sense. This isn't the same as finding the closest wavefunction to the ground-state wavefunction (see below) but if your energy is close enough to the ground-state energy, you can be assured that the wavefunction is also very close to the ground-state wavefunction. Explain why. (Assume, for simplicity, that the ground state is nondegenerate.)
+# 
 # $$
 # \min_\Psi \langle \Psi - \psi_0 | \Psi - \psi_0 \rangle
 # $$
@@ -452,3 +453,5 @@
 # There are also some excellent wikipedia articles:
 # - [Postulates of Quantum Mechanics](https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics#Postulates_of_quantum_mechanics)
 # - [Variational Principle](https://en.wikipedia.org/wiki/Spectral_theory#Spectral_theorem_and_Rayleigh_quotient)
+
+# 

@@ -1,8 +1,9 @@
 ## Reference Materials
-- Materials from McMaster (especially my [course](https://qchem1.qcdevs.org/) and Randy Dumont's [book](documents/DumontBook.pdf)) are likely to be especially helpful. 
+- Materials from McMaster (especially my [course](https://qchem1.qcdevs.org/) and Randy Dumont's [book](../documents/DumontBook.pdf)) are likely to be especially helpful. 
 - The Python [tutorial examples](https://liu-group.github.io/) from [Prof. Fang Liu](https://flgroup.emorychem.science/) at Emory University and [from](https://github.com/raghurama123/NumQM_Basic) [Prof. Raghu Ramakrishnan](https://moldis-group.github.io/) at the Tata Institute for Fundamental Research have a similar flavor to this course. 
 - The [introductory](http://simons.hec.utah.edu/ITCSecondEdition/TableofContents.html) and [more advanced](http://simons.hec.utah.edu/TheoryPage/BookPDF/TableofContents.html) textbooks from [Jack Simons](http://simons.hec.utah.edu/) are likewise excellent. 
 - The (free) [Coursera course from John Daily](https://www.coursera.org/learn/quantum-mechanics#syllabus) mirrors the content of this course, albeit with less depth.
+- Supplemental materials for learning about GitHub, Python, Jupyter, and NumPy are [listed separately](../extracredit/programming.md). 
 
 1. Randy Dumont's book, [An Emergent Reality Part 2. Quantum Mechanics](documents/DumontBook.pdf) (courtesy of [Randy Dumont](https://chemistry.mcmaster.ca/component/comprofiler/userprofile/dumontr.html))
 1. [Prof. Fang Liu's](https://flgroup.emorychem.science/) python-based quantum [tutorial examples](https://liu-group.github.io/).
