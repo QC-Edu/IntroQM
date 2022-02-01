@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Contributing to this JupyterBook course on quantum chemistry &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -127,7 +128,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Assignment; GitHub (Classroom)
+     Practice GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -144,17 +145,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Assignment; Python, Jupyter, Numpy
+     Practice Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Assignment; Google Colab
+     Practice Google Colab
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Assignment; Wavefunction Normalization
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+     Extra practice: Computing Student Marks (&lt; 2022)
     </a>
    </li>
   </ul>
@@ -280,6 +286,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="extracredit/overview.html">
    Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+   Python/Numpy practice
   </a>
  </li>
 </ul>
@@ -434,9 +450,9 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="contributing-to-this-jupyterbook-course-on-quantum-chemistry">
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-this-jupyterbook-course-on-quantum-chemistry">
 <h1>Contributing to this JupyterBook course on quantum chemistry<a class="headerlink" href="#contributing-to-this-jupyterbook-course-on-quantum-chemistry" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="create-a-working-repository-and-branch">
+<section id="create-a-working-repository-and-branch">
 <h2>Create a working repository and branch<a class="headerlink" href="#create-a-working-repository-and-branch" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Fork the repository by clicking on the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button in the top-right corner. This creates a new copy of this repo under your GitHub user account.</p></li>
@@ -449,22 +465,22 @@
 </ol>
 <p>In this case, “upstream repo” refers to the original repo you created your fork from. Also you can take a look at  “Workflow summary” section <a class="reference external" href="https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote">here</a></p>
 <p>Now, you can make changes to the file(s) you want to change.</p>
-</div>
-<div class="section" id="make-a-pull-request">
+</section>
+<section id="make-a-pull-request">
 <h2>Make a pull request<a class="headerlink" href="#make-a-pull-request" title="Permalink to this headline">¶</a></h2>
 <p>When you’ve finished your changes, add, commit and push them using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">new_branch</span></code> commands respectively.</p>
 <p>Once you push the changes to your repo, find and click <code class="docutils literal notranslate"><span class="pre">Compare</span> <span class="pre">&amp;</span> <span class="pre">pull</span> <span class="pre">request</span></code> button at your GitHub repo.</p>
 <p>Open a pull request by clicking the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">pull</span> <span class="pre">request</span> <span class="pre">button</span></code>. This allows us to review your contribution.</p>
-</div>
-<div class="section" id="build-the-book">
+</section>
+<section id="build-the-book">
 <h2>Build the book<a class="headerlink" href="#build-the-book" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Outside of the main folder run <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">IntroQM2022</span></code></p></li>
 <li><p>Go to the main folder and than add, commit and push changes using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> respectively</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
