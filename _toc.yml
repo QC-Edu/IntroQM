@@ -29,7 +29,7 @@ parts:
         title: Practice Google Colab
       - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
-      - url: https://classroom.github.com/a/cSk8HkZq
+      - url: https://classroom.github.com/a/2IRoHSuh
         title: "Extra practice: Computing Student Marks (< 2022)"
 
     - file: ipynb/History.ipynb
@@ -88,7 +88,7 @@ parts:
       title: Overview
     - file: extracredit/programming.md
       title: Jupyter/Python/GitHub exercises
-    - url: https://classroom.github.com/a/cSk8HkZq
+    - url: https://classroom.github.com/a/2IRoHSuh
       title: Python/Numpy practice
 
   - caption: Additional resources
