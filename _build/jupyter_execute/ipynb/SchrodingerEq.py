@@ -183,7 +183,7 @@
 # 
 # is 
 # 
-# $$\Psi(x,y) = \Psi_x(x) + \Psi_y(y) $$
+# $$\Psi(x,y) = \Psi_x(x) \cdot \Psi_y(y) $$
 # 
 # $$ a = a_x + a_y $$
 # 
