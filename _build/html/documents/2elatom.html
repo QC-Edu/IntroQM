@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Approximate Energies for the 2-electron A tom &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -127,7 +128,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Assignment; GitHub (Classroom)
+     Practice GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -144,17 +145,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Assignment; Python, Jupyter, Numpy
+     Practice Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Assignment; Google Colab
+     Practice Google Colab
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Assignment; Wavefunction Normalization
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+     Extra practice: Computing Student Marks (&lt; 2022)
     </a>
    </li>
   </ul>
@@ -280,6 +286,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../extracredit/overview.html">
    Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+   Python/Numpy practice
   </a>
  </li>
 </ul>
@@ -438,7 +454,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="approximate-energies-for-the-2-electron-a-tom">
+  <section class="tex2jax_ignore mathjax_ignore" id="approximate-energies-for-the-2-electron-a-tom">
 <h1>Approximate Energies for the 2-electron A tom<a class="headerlink" href="#approximate-energies-for-the-2-electron-a-tom" title="Permalink to this headline">¶</a></h1>
 <p>This is a set of notes on determining the energy of a 2-electron atom in various approximations. In atomic units, the molecular Hamiltonian is:</p>
 <div class="math notranslate nohighlight">
@@ -467,8 +483,8 @@
 \end{gathered}
 \end{split}\]</div>
 <p>This energy must be below the true energy because one has neglected a positive term (the electronelectron repulsion) in the Hamiltonian.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="underline-1-text-st-order-perturbation-theory-correction">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="underline-1-text-st-order-perturbation-theory-correction">
 <h1><span class="math notranslate nohighlight">\(\underline{1^{\text {st-order perturbation theory correction: }}}\)</span><a class="headerlink" href="#underline-1-text-st-order-perturbation-theory-correction" title="Permalink to this headline">¶</a></h1>
 <p>Now, to estimate the effect of the electron-electron repulsion using perturbation theory, we add a parameter to the Hamiltonian, writing</p>
 <div class="math notranslate nohighlight">
@@ -506,8 +522,8 @@ E(1)=E_{1 \text {-orderpT }}=E(0)+\left.\frac{d E}{d \lambda}\right|_{\lambda=0}
 \mathrm{E}_{1 \text {-orderPT }}=\iint \Psi_{\lambda=0}^{*}\left(\mathbf{r}_{1}, \mathbf{r}_{2}\right) \hat{H} \Psi_{\lambda=0}\left(\mathbf{r}_{1}, \mathbf{r}_{2}\right) \mathrm{d} \mathbf{r}_{1} \mathrm{~d} \mathbf{r}_{2}&gt;\mathrm{E}_{\text {g.s. }} \text { (true) }
 \]</div>
 <p>based on the variational principle.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="underline-text-variational-refinement">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="underline-text-variational-refinement">
 <h1><span class="math notranslate nohighlight">\(\underline{\text { Variational Refinement: }}\)</span><a class="headerlink" href="#underline-text-variational-refinement" title="Permalink to this headline">¶</a></h1>
 <p>Now we can imagine trying to refine the wavefunction using an effective nuclear charge.</p>
 <p>The new wavefunction we consider is</p>
@@ -583,7 +599,7 @@ E(1)=E_{1 \text {-orderpT }}=E(0)+\left.\frac{d E}{d \lambda}\right|_{\lambda=0}
 &amp;=-\left(\mathrm{Z}-\frac{5}{16}\right)^{2}
 \end{aligned}
 \end{split}\]</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
