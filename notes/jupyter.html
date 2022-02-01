@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jupyter and Computer Programming &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -125,7 +126,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Assignment; GitHub (Classroom)
+     Practice GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -142,17 +143,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Assignment; Python, Jupyter, Numpy
+     Practice Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Assignment; Google Colab
+     Practice Google Colab
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Assignment; Wavefunction Normalization
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+     Extra practice: Computing Student Marks (&lt; 2022)
     </a>
    </li>
   </ul>
@@ -278,6 +284,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../extracredit/overview.html">
    Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+   Python/Numpy practice
   </a>
  </li>
 </ul>
@@ -478,10 +494,10 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-and-computer-programming">
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-and-computer-programming">
 <h1>Jupyter and Computer Programming<a class="headerlink" href="#jupyter-and-computer-programming" title="Permalink to this headline">¶</a></h1>
 <p>Throughout this course, we will use <em>Jupyter</em> notebooks to explore the material. Early assignments will provide you with some basic background in <em>Jupyter</em>, <em>Python</em>, and <em>Numpy</em>. (I had been hoping to use <em>Julia</em>, which is arguably easier, but <em>Python</em> is more popular and better supported, for now.)</p>
-<div class="section" id="learning-objectives">
+<section id="learning-objectives">
 <h2>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Fundamental programming concepts</p></li>
@@ -490,37 +506,37 @@
 <li><p>How to use Jupyter</p></li>
 <li><p>How to use Numpy</p></li>
 </ul>
-</div>
-<div class="section" id="overview-of-programming">
+</section>
+<section id="overview-of-programming">
 <h2>Overview of Programming<a class="headerlink" href="#overview-of-programming" title="Permalink to this headline">¶</a></h2>
 <p>In this course, we will primarily use the <a class="reference external" href="https://www.python.org/">Python</a> programming language. The best way to learn a programming language is to practice it on your own and learn through trial and error. Making mistakes helps you improve, so if at any point you get stuck, don’t get discouraged, seek help, and keep coding! There are many great resources online for learning about programming, so the course content for this topic is mostly based on external sources, especially <a class="reference external" href="https://lnkd.in/gj-9Xgg">LinkedIn Learning</a>.</p>
-</div>
-<div class="section" id="what-is-programming">
+</section>
+<section id="what-is-programming">
 <h2>What is Programming?<a class="headerlink" href="#what-is-programming" title="Permalink to this headline">¶</a></h2>
 <p>Programming is the process of writing a set of instructions (like a step-by-step recipe) that tells a computer how to perform a certain task. This recipe is written in a code called programming language. Similar to human languages, programming languages have syntax (the rule for writing instructions) and semantics (the meaning of the instructions). Also like human languages, there are lots of programming languages to choose from, each of these languages has its own history, features, and applications, but they all share the same fundamental ideas. You will learn more about programming languages by watching this 3-minute YouTube video <a class="reference external" href="https://www.youtube.com/watch?v=EGQh5SZctaE">here</a>.</p>
 <p>The most popular programming languages are either interpreted or compiled. For example, Python is an interpreted language. The Python interpreter reads a set of code instructions written in Python and translates it into a set of instructions for the computer to follow, and these instructions are then executed. This is analogous to the way a human language interpreter translates the spoken word from one language to another, on the fly. In compiled languages like C++ or Fortran, an entire computer program (or a large section thereof) is translated into instructions for the computer to follow, which are subsequently executed. This is analogous to the way a human translator might translate a book: the book is translated one chapter at a time, and perhaps content is rearranged to make it more idiomatic for the new language; then the book is read. Some other languages (e.g., Julia) are just-in-time translated, which is like translating a book chapter only after you are sure someone will read it, and potentially catering your translation to the particular person reading the book. Obviously compiled languages can be more efficient computationally, but they are also more complicated to use because the modules of the computer program must be translated from the human-readable computer language to machine-readable instructions(“compiled”), then combined together (“linked”), before they are finally executed. In this course we will use mainly Python, which is an interpreted language.</p>
 <p>Computers always do <em>exactly</em> what they are told to do, so when you write a program, it is important to be clear, precise, and explicit about what you want the computer to do.  It is therefore <em><strong>extremely important</strong></em> to learn the syntax and semantics of the language you use.</p>
-</div>
-<div class="section" id="why-learn-to-program">
+</section>
+<section id="why-learn-to-program">
 <h2>Why Learn to Program?<a class="headerlink" href="#why-learn-to-program" title="Permalink to this headline">¶</a></h2>
 <p>While computers always do <em>exactly</em> what you tell them to do, so in some sense they cannot do anything you could not do yourself. However, they allow you to perform those actions more efficiently. As Steve Jobs said, <a class="reference external" href="https://www.youtube.com/watch?v=ob_GX50Za6c">a computer is a bicycle for the mind</a>. And thus learning to program a computer is like learning to ride a bicycle.</p>
-</div>
-<div class="section" id="why-learn-python">
+</section>
+<section id="why-learn-python">
 <h2>Why Learn <a class="reference external" href="https://docs.python.org/3/">Python</a>?<a class="headerlink" href="#why-learn-python" title="Permalink to this headline">¶</a></h2>
 <p>There are many programming languages out there, and each language has its unique advantages and disadvantages. Once you learn the basics of programming in one language, you can generally apply the same concepts to other languages. Python is one of the fastest-growing programming languages (Dropbox, Instagram, Netflix, and Google use Python extensively) and it is increasing popular in chemistry too. For more about the advantages of Python, watch the 2-minute <a class="reference external" href="https://www.linkedin.com/learning/programming-foundations-fundamentals-3/why-python">video segment</a>.</p>
 <p>Compared to most other languages, Python is easier to read and write. It’s syntax is relatively simple, yet its flexibility—its ability to perform tasks from web development to scientific computing—is nearly unsurpassed. Importantly, there are a large number of plug-and-play Python libraries, which allow one to extend the basic features of the Python language with additional features. We will, for example, find the <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">Scipy</span></code> libraries especially helpful.</p>
-</div>
-<div class="section" id="what-is-jupyter">
+</section>
+<section id="what-is-jupyter">
 <h2>What is <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/index.html">Jupyter</a>?<a class="headerlink" href="#what-is-jupyter" title="Permalink to this headline">¶</a></h2>
 <p>To write and execute your code, you need to have access to the appropriate intepreters/compilers either through a web brower or locally on your computer. In this course, we will be using online Jupyter notebooks. <a class="reference external" href="https://jupyter.org/">Jupyter</a> notebooks provides an interactive computing environment, originally focussed on <a class="reference external" href="https://julialang.org/"><strong>Ju</strong>lia</a>, <a class="reference external" href="https://www.python.org/"><strong>Py</strong>thon</a>, and <a class="reference external" href="https://www.r-project.org/"><strong>R</strong></a>, though other languages are supported now.</p>
-<div class="section" id="getting-started-with-jupyter">
+<section id="getting-started-with-jupyter">
 <h3>Getting Started with Jupyter<a class="headerlink" href="#getting-started-with-jupyter" title="Permalink to this headline">¶</a></h3>
 <p>In order to interact with the material in this course and complete the assignments/assessments, you will need to view, execute, create, test, and share Jupyter notebooks. Jupyter notebooks can be read, edited, and saved using either online (cloud) resources, local computing (e.g., your laptop), or external servers. We will predominately use cloud resources in this class.</p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h3><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="syzygy">
+</section>
+<section id="syzygy">
 <h3>Syzygy<a class="headerlink" href="#syzygy" title="Permalink to this headline">¶</a></h3>
 <p>Previously in this course we used a <em>JupyterHub</em> that is provided free to most Canadian university students called <a class="reference external" href="https://mcmaster.syzygy.ca/">syzygy.ca</a>. If you wish to use this tool, you need to:</p>
 <ol class="simple">
@@ -529,20 +545,20 @@
 <li><p>Look, for example, at the <a class="reference internal" href="../ipynb/GradingDemo.html"><span class="doc std std-doc">simple notebook</span></a> that shows how grades were computed in the Winter-2021 version of this course. You can access this notebook directly in syzygy via the <a class="reference external" href="https://mcmaster.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FPaulWAyers%2FIntroQChemProblems&amp;urlpath=tree%2FIntroQChemProblems%2Fipynb%2FGradingDemo.ipynb&amp;branch=main">link</a>. (This link will only work if you are at McMaster. If you are elsewhere, try the <a class="reference external" href="https://pims.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FPaulWAyers%2FIntroQChemProblems&amp;urlpath=tree%2FIntroQChemProblems%2Fipynb%2FGradingDemo.ipynb&amp;branch=main">link</a>)</p></li>
 <li><p>A video demo using Syzygy to host a Jupyter notebook to compute the course marks can be found <a class="reference external" href="https://www.macvideo.ca/media/1_5jdntum9">online</a>. Or you can <span class="xref myst">download the mp4</span>.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="what-is-numpy">
+</section>
+</section>
+<section id="what-is-numpy">
 <h2>What is <a class="reference external" href="https://numpy.org/">Numpy</a>?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">¶</a></h2>
 <p>Numpy is a Python library that provides methods for manipulating vectors and matrices in Python. For example, Numpy can be used to determine the eigenvalues and eigenvectors of a matrix, or to solve a system of linear equations. Numpy undergirds many of the most useful scientific software packages, and provides most of the key mathematical tools that are needed in this course.</p>
-</div>
-<div class="section" id="linkedin-learning-courses">
+</section>
+<section id="linkedin-learning-courses">
 <h2>LinkedIn Learning Courses<a class="headerlink" href="#linkedin-learning-courses" title="Permalink to this headline">¶</a></h2>
 <p>To learn more about Jupyter, programming concepts, Python programming, and Numpy, some of your first assignments will be <a class="reference external" href="https://www.linkedin.com/learning">LinkedIn Learning courses</a>. Upon completing each course, you will need to download your certificate of completion and upload it as your assignment. You can also add the certificate to your LinkedIn profile.</p>
 <blockquote>
 <div><p>Before you get started, it’s helpful to <a class="reference external" href="https://lnkd.in/gj-9Xgg">log into LinkedIn Learning</a>. (However, the links provided in the assignments should automatically prompt you to log in if you are not already.) If you already have a LinkedIn account associated with a different e-mail, you can link your accounts.</p>
 </div></blockquote>
-</div>
-<div class="section" id="additional-learning-resources">
+</section>
+<section id="additional-learning-resources">
 <h2>📚 Additional Learning Resources<a class="headerlink" href="#additional-learning-resources" title="Permalink to this headline">¶</a></h2>
 <p>There are <em>many</em> free and paid resources available for deepening your knowledge of Python including videos, tutorials, courses, and books. The following are recommended. For tutorial-based courses, if you can somehow document your completion of the tutorial, then you can submit the proof of your completion for extra points.</p>
 <ol class="simple">
@@ -570,8 +586,8 @@
 <div><p>Hat-tip: Farnaz Heidar-Zadeh at Queen’s University, who curated much of this material.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

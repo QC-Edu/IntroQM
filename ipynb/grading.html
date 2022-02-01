@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Using Python, Numpy, Jupyter, and Syzygy &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -127,7 +128,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Assignment; GitHub (Classroom)
+     Practice GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -144,17 +145,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Assignment; Python, Jupyter, Numpy
+     Practice Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Assignment; Google Colab
+     Practice Google Colab
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Assignment; Wavefunction Normalization
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+     Extra practice: Computing Student Marks (&lt; 2022)
     </a>
    </li>
   </ul>
@@ -280,6 +286,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../extracredit/overview.html">
    Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+   Python/Numpy practice
   </a>
  </li>
 </ul>
@@ -459,18 +475,18 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="using-python-numpy-jupyter-and-syzygy">
+  <section class="tex2jax_ignore mathjax_ignore" id="using-python-numpy-jupyter-and-syzygy">
 <h1>Using Python, Numpy, Jupyter, and Syzygy<a class="headerlink" href="#using-python-numpy-jupyter-and-syzygy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="objective">
+<section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
 <p>To practice using key tools that we’ll need to use during this course.</p>
-</div>
-<div class="section" id="instructions">
+</section>
+<section id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <p>Before you turn this problem in, make sure everything runs as expected. First, restart the kernel (in the menubar, select Kernel → Restart) and then run all cells (in the menubar, select Cell → Run All).</p>
 <p>Make sure you fill in any place that says YOUR CODE HERE or “YOUR ANSWER HERE”. Don’t forget to delete <code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">NotImplementedError()</span></code></p>
-</div>
-<div class="section" id="problem-statement">
+</section>
+<section id="problem-statement">
 <h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
 <p>Write a Python function to compute the final mark for a student in this class.</p>
 <ul class="simple">
@@ -532,13 +548,13 @@ Grading Scheme:</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_54142</span><span class="o">/</span><span class="mf">3833639827.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_18625</span><span class="o">/</span><span class="mf">3833639827.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># It&#39;s good to always test to make sure your code is right.</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">80</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">total_mark_xc</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1200</span><span class="p">),</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="nn">/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_54142/2652184445.py</span> in <span class="ni">total_mark_xc</span><span class="nt">(assignments, exam, extra_credit_pages)</span>
+<span class="nn">/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_18625/2652184445.py</span> in <span class="ni">total_mark_xc</span><span class="nt">(assignments, exam, extra_credit_pages)</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> 
 <span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="c1"># YOUR CODE HERE</span>
 <span class="ne">---&gt; </span><span class="mi">23</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
@@ -548,8 +564,8 @@ Grading Scheme:</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="extend-to-multiple-students">
+</section>
+<section id="extend-to-multiple-students">
 <h2>Extend to Multiple students<a class="headerlink" href="#extend-to-multiple-students" title="Permalink to this headline">¶</a></h2>
 <p>It is easy to use Numpy to extend this analysis to multiple students. Suppose that you had assignments, finals, and extra credit for more than one student. Rewrite your function so it works for that case too. This extra credit problem is worth 15 “points”, so you can make a 115 on this assignment.</p>
 <div class="cell docutils container">
@@ -593,8 +609,8 @@ Grading Scheme:</p></li>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
