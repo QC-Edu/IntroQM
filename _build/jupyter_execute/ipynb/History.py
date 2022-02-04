@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# ![Newton and Schrodinger](https://i.redd.it/rba5bp0m3zbz.jpg "All rights reserved; https://piecomic.tumblr.com/post/163421291347") 
+# 
 # # From Newton to Schr&ouml;dinger
 # 
 # ## &#x1f945; Learning Objectives
@@ -48,21 +50,22 @@
 #   
 # Planck proposed the quantization of radiation as a mathematical trick to provide a model for blackbody radiation.  In 1905, Einstein interpreted this trick in the most literal possible way, proposing the quantization of light.  This interpretation led to an interpretation of the photoelectric effect, which eventually earned Einstein the Nobel Prize in Physics.  Planck also won the Nobel Prize in physics.  
 
+# ![Black-body radiation](https://upload.wikimedia.org/wikipedia/commons/1/19/Black_body.svg "The radiation of black body shifts from predominately in the infrared to lower wavelength--red-hot and white-hot, glowing in the visible--as the temperature increases. Classical theory predicts is accurate only at high wavelengths, erroneously predicting an ultraviolet catastrophe with intense radiation emitted at very short frequencies.")  
+# 
 # ## How was Quantum Mechanics Discovered?
 # It is impossible to fully explain the historical foundations of quantum mechanics in a course like this one.  Instead, I will try to give you a very brief overview of some key experiments that changed physics.
 # 
-# 
+# ![Color temperature](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/colortemp.jpg?raw=true "Light bulbs are rated based on the temperature of a black body that would have a similar spectrum; image from inlineelectric.com/color_temperature")
 # 
 # ### [Black-body Radiation](https://en.wikipedia.org/wiki/Black-body_radiation)
-# ![Color temperature](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/colortemp.jpg?raw=true "Light bulbs are rated based on the temperature of a black body that would have a similar spectrum; image from inlineelectric.com/color_temperature")
-# ![Black-body radiation](https://upload.wikimedia.org/wikipedia/commons/1/19/Black_body.svg "The radiation of black body shifts from predominately in the infrared to lower wavelength--red-hot and white-hot, glowing in the visible--as the temperature increases. Classical theory predicts is accurate only at high wavelengths, erroneously predicting an ultraviolet catastrophe with intense radiation emitted at very short frequencies.")  
 # 
 # An inflammable object that absorbs all incident light, but does not transmit or reflect light, is called a black body. Because it is totally opaque and absorbs all light that falls upon it, a black body at zero Kelvin is the very definition of black. However, when you heat a blackbody, it glows. A good (but not perfect) example of a black body is a red-hot poker. An even better example is the sun.  Blackbody radiation has been observed by humans for millennia (or even longer): lava flows, molten glass, molten metal, and many other materials can be considered blackbodies. So it was extremely embarrassing to 19th-century physicists that they could not predict the spectrum—that is, which wavelengths of light occur with what intensity—of a blackbody. 
 #   
 # In principle the spectrum of a black body should be easy to describe with classical statistical mechanics. However, classical statistical mechanics predicted that most of the light emitted would have a very short wavelength, the so-called "ultraviolet catastrophe." Planck suggested that the vibrations of atoms in a black body, and ergo the light emitted therefrom, was quantized into chunks. Planck understood that his result was significant, but he still thought of it as a mathematical trick. 
 # 
-# ### [Photoelectric Effect](https://en.wikipedia.org/wiki/Photoelectric_effect)
 # ![Photoelectric Effect](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/photoelectric.png?raw=true "In the photoelectric effect, light with enough energy to ionize electrons from a metal causes the electrons to emit, with maximum kinetic energy proportional to the excess energy of the photon beyond the work function of the metal. Image from hyperphysics.")
+# 
+# ### [Photoelectric Effect](https://en.wikipedia.org/wiki/Photoelectric_effect)
 # 
 # When one shines light on a metal surface, one observes that if the light has a low enough frequency (long enough wavelength), then no electrons escape from the surface. This holds (to an excellent approximation) no matter how intense the light is. However, with a sufficiently high frequency (short enough wavelength), electrons will start to escape from the surface. Importantly, the maximum kinetic energy of the electrons escaping from the surface grows as the frequency of the light increases, and the number of electrons escaping from the surface grows as the intensity of the light increases. But increasing the intensity of the light does not increase the maximum kinetic energy of the emitted electrons, nor does increasing the frequency of the light increase the number of electrons emitted.
 # 
@@ -76,8 +79,9 @@
 
 # As the light becomes more intense, the number of photons increases and the number of electrons emitted increases but, unless the light is very, very, very intense, the maximum kinetic energy of the electrons is left unaltered.
 # 
-# ### [Compton Effect](https://en.wikipedia.org/wiki/Compton_scattering)
 # ![Compton Scattering](https://upload.wikimedia.org/wikipedia/commons/e/e3/Compton-scattering.svg "Shows how photons can inelastically scatter with electrons consistent with conservation of energy and momentum, licensed by Jabberwok under CC-SA 3")
+# 
+# ### [Compton Effect](https://en.wikipedia.org/wiki/Compton_scattering)
 # 
 # When you shine light on an (isolated) electron sitting at rest, sometimes the light scatters inelastically&mdash;that is the emitted light has a lower frequency than the incident light. The change in energy between the incident and emitted light is manifest in the kinetic energy of the electron. However, it's observed that the electron does not move in an arbitrary direction, but instead moves in the direction that would be expected if a photon were a classical particle moving at the speed of light with effective mass $m_{ph,\text{eff}} = \tfrac{h \nu}{c^2}$. Note that the photon does not actually have mass. However, the photon does have momentum, which explains the inelastic scattering result. The formula is derived by *assuming* that one can set the rest-mass-energy expression, $E = m c^2$, to the Planck relation for the energy of a photon. Then 
 
@@ -102,13 +106,15 @@
 
 # This is called the [De Broglie relation](https://en.wikipedia.org/wiki/Matter_wave). One of the key results of quantum mechanics is that the De Broglie relation holds for both waves (photons) and particles.
 # 
-# ### [Davisson-Germer Experiment](https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment)
 # ![Electron Double Slit Experiment](https://upload.wikimedia.org/wikipedia/commons/6/69/Interference_electrons_double-slit_at_10cm.png "Double slit experiment with electrons showing constructive and deconstructive interference. Licensed by Alexandre Gondran under CC-SA 4")
+# 
+# ### [Davisson-Germer Experiment](https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment)
 # 
 # Based on the results of Compton and De Broglie, one should expect that a beam of electrons should diffract, with patterns of constructive and deconstructive interference, according to their wavelength. The Davisson-Germer experiment confirmed this, showing that electrons (particles) can constructively and deconstructively interfere like waves.
 # 
-# ### [Rydberg Formula](https://en.wikipedia.org/wiki/Rydberg_formula)
 # ![Rydberg Formula](https://upload.wikimedia.org/wikipedia/commons/2/21/Visible_spectrum_of_hydrogen.jpg "The Rydberg formula describes the observed emission/absorption wavelengths for any 1-electron atom. Here is the visible spectrum of the Hydrogen atom, licensed Jan Homan under CC-SA 3")
+# 
+# ### [Rydberg Formula](https://en.wikipedia.org/wiki/Rydberg_formula)
 # 
 # By the late 1800s, it was known that when an dilute atomic gas was heated, it did not emit as a black body, but only at certain characteristic wavelengths. Rydberg managed to describe the specific wavelengths of the emission by the empirical formula
 # 
@@ -133,48 +139,51 @@
 # 
 # The previous experiments, among many others, established that particles like electrons have wave-like properties, that electromagnetic radiation is composed of discrete photons with particle-like momentum and energy. The fact particles possess wave-like properties and waves provide particle-like properties is called [wave-particle duality](https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality): there is only one type of "stuff" in the universe and that stuff is "chunky" (like particles) and can constructively and deconstructively interfere (like waves). Moreover, the energies of atoms and molecules are quantized, having only specific discrete values.
 
-# ## The Schr&ouml;dinger Equation
 # 
 # ![Schrodinger Equation](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/GraveSchrodinger.png?raw=true "The grave of Schrodinger, with his equation. Image from Victor Blacus licensed under Creative Commons SA 3")
+# 
+# ## The Schr&ouml;dinger Equation
 # 
 # It seems that, in physics, the more we learn, the simpler things become. We used to believe that there were two types of things, "particles" (matter) and "waves" (radiation). Now we understand that there is really only one type of entity, perhaps call it a *wavicle* if you must give it a name. Electromagnetic radiation comes in discrete chunks (photons) just like particles (e.g., electrons). Photons and particles have position(ish), momentum(ish), and energy(ish), just like classical particles of matter; both also can manifest constructive and deconstructive interference, just like classical waves. The difference between matter and radiation is merley one of perspective.
 # 
 # In 1925-26, Heisenberg and Schr&ouml;dinger, working independently, built mathematical frameworks to describe the wave-particle duality of quantum particles. Nowadays we usually (except sometimes in spectroscopy) prefer Schr&ouml;dinger's formulation. We will discuss the Schr&ouml;dinger equation in more detail in the next unit, but for now it is worth merely comparing it to other equations from classical mechanics and classical electromagnetism, just to intuitively show how it encapsulates wave-particle duality. Of course, a [more rigorous justification for the Schr&ouml;dinger equation](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation) is beyond the scope of this course.
 #   
 # For simplicity, we will only consider systems in one dimension.
-# > [**Wave Equation**](https://en.wikipedia.org/wiki/Wave_equation) (classical electromagnetism)
-# > 
-# $$
+# > [**Wave Equation**](https://en.wikipedia.org/wiki/Wave_equation) (classical electromagnetism) 
+# >$$
 # \frac{d^2u(x,t)}{dt^2} = c^2 \frac{d^2u(x,t)}{dx^2}
 # $$
 # 
+# <br>
 #   
 # > [**Hamilton-Jacobi Equation**](https://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi_equation) (classical mechanics)
-# > 
-# $$
+# >$$
 # -\frac{dS(x,t)}{dt} = H 
 # $$
-# 
 # > where $H = T + V$ is the sum of the kinetic energy, $T$, and the potential energy, $V$, written a function of $S$, $x$, and $t$. In the simplest case, one has: 
-# > 
-# $$
+# >$$
 # -\frac{dS(x,t)}{dt} = \left( \frac{1}{2m} \frac{dS(x,t)}{dx} \cdot \frac{dS(x,t)}{dx} + V(x,t) \right)
 # $$
-# 
 # > because the momentum can be identified as $p(x,t) = \tfrac{dS(x,t)}{dx} $.
+# 
+# <br>
 # 
 # > [**Schr&ouml;dinger Equation**](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation) (quantum mechanics)
 # > 
-# $$ \frac{i h}{2 \pi} \frac{d \Psi(x,t)}{dt} =  \left( -\frac{h^2}{2m (2 \pi)^2 } \frac{d^2 \Psi(x,t)}{dx^2} + V(x,t)\Psi(x,t) \right) $$
+# >$$ \frac{i h}{2 \pi} \frac{d \Psi(x,t)}{dt} =  \left( -\frac{h^2}{2m (2 \pi)^2 } \frac{d^2 \Psi(x,t)}{dx^2} + V(x,t)\Psi(x,t) \right) $$
+# >The solution, $\Psi(x,t)$ to the Schr&ouml;dinger equation is called the [*wavefunction*](https://en.wikipedia.org/wiki/Wave_function). A key postulate of quantum mechanics is that the wavefunction contains all the information needed to fully specify the observable properties of a quantum system. 
 # 
-# The solution, $\Psi(x,t)$ to the Schr&ouml;dinger equation is called the [*wavefunction*](https://en.wikipedia.org/wiki/Wave_function). A key postulate of quantum mechanics is that the wavefunction contains all the information needed to fully specify the observable properties of a quantum system. 
+# <br>
 # 
 # All three equations have strong resemblance. But, in particular, the Schr&ouml;dinger equation and the Hamilton-Jacobi equation are consistent with each other. Suppose one uses the wavefunction ansatz,
 # 
 # $$ \Psi(x,t) = \psi_0(x,t) e^{\frac{2 \pi i S(x,t)}{h}} $$
 # 
 # where $\psi_0(x,t)$ and $S(x,t)$ are, without loss of generality, assumed to be real-valued functions. We will insert this expression into the Schr&ouml;dinger equation, but first it is useful to define the quantity 
-# $$ \hbar = \tfrac{h}{2 \pi} $$
+# 
+# $$ 
+# \hbar = \tfrac{h}{2 \pi} 
+# $$
 # 
 # One then can rewrite the wavefunction and the Schr&ouml;dinger equation without the pesky factors of $2 \pi$, respectively,
 # 
@@ -288,8 +297,8 @@
 # ## &#x1f4da; References
 # My favorite sources for this material are:
 # - R. Eisberg and R. Resnick, Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles (Wiley, New York, 1974)
-# - R. Dumont, [An Emergent Reality, Part 2: Quantum Mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true) (Chapters 1 and 2).
-# - Also see my (pdf) class [notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf?raw=true).
+# - R. Dumont, [An Emergent Reality, Part 2: Quantum Mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf) (Chapters 1 and 2).
+# - Also see my (pdf) class [notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf).
 # - The introductory material in [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book course is very good. Roughly [chapters 1 and 2](https://dpotoyan.github.io/Chem324/intro.html) are especially relevant here.
 # 
 # Some videos:
@@ -302,7 +311,7 @@
 #   - [Introduction to Quantum Mechanics](http://en.wikipedia.org/wiki/Introduction_to_quantum_mechanics)
 #   - [Quantum Mechanics](http://en.wikipedia.org/wiki/Quantum_mechanics)
 #   - [Mathematical Formulation of Quantum Mechanics](http://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics)
-#   - [Basic Concepts of Quantum Mechanics](http://en.wikipedia.org/wiki/Basic_concepts_of_quantum_mechanics). See [also].(https://github.com/PaulWAyers/IntroQChem/blob/main/documents/quantum_summary.pdf?raw=true)
+#   - [Basic Concepts of Quantum Mechanics](http://en.wikipedia.org/wiki/Basic_concepts_of_quantum_mechanics). See [also](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/quantum_summary.pdf)
 #   - [Planck's Constant](http://en.wikipedia.org/wiki/Planck_constant)
 #   - [Wave-particle Duality](http://en.wikipedia.org/wiki/Wave-particle_duality)
 # - Black-Body Radiation
@@ -328,7 +337,7 @@
 #   - [Atomic Spectral Lines](http://en.wikipedia.org/wiki/Atomic_spectral_line)
 # - Schr&ouml;dinger Equation
 #   - [Schr&ouml;dinger Equation](http://en.wikipedia.org/wiki/Schrodinger_equation)
-#   - [Theoretical Justification of S.E.](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation). See [also](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SchrodingerHJeq.pdf?raw=true).
+#   - [Theoretical Justification of S.E.](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation). See [also](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SchrodingerHJeq.pdf).
 #   - [Momentum Operator](http://en.wikipedia.org/wiki/Momentum_operator)
 
 # 

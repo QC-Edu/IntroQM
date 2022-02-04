@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The One-Dimensional Particle in a Box
 # ![Cyanine Dyes](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/cyanine.jfif?raw=true "The absorption spectrum of cyanine dyes can be qualitatively described by a particle-in-a-box model. Image from Jeff Canaria, University of Rhode Island")
+# 
+# # The One-Dimensional Particle in a Box
 # 
 # ## &#x1f945; Learning Objectives
 # - Determine the energies and eigenfunctions of the particle-in-a-box.
@@ -12,6 +13,7 @@
 
 # ## Cyanine Dyes
 # ![Cyanine Dyes](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true? "Resonance structures of two different types of cyanine dye")
+# 
 # Cyanine dye molecules are often modelled as one-dimension particles in a box. To understand why, start by thinking classically.  You learn in organic chemistry that electrons can more “freely” along alternating double bonds.  If this is true, then you can imagine that the electrons can more from one Nitrogen to the other, almost without resistance.  On the other hand, there are sp<sup>3</sup>-hybridized functional groups attached to the Nitrogen atom, so once the electron gets to Nitrogen atom, it has to turn around and go back whence it came.   A very, very, very simple model would be to imagine that the electron is totally free between the Nitrogen atoms, and totally forbidden from going much beyond the Nitrogen atoms.  This suggests modeling these systems a potential energy function like:
 # 
 # $$
@@ -163,7 +165,7 @@
 # In general, any [square root of unity](https://en.wikipedia.org/wiki/Root_of_unity) can be used, 
 # 
 # $$
-# A_n = \left( k \pm i \sqrt{1-k^2} \right) \sqrt{\tfrac{2}{a}}
+# A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 # $$
 # 
 # where $k$ is any real number. The arbitrariness of the *phase* of the wavefunction is an important feature. Because the wavefunction can be imaginary (e.g., if you choose $A_n = i \sqrt{\tfrac{2}{a}}$), it is obvious that the wavefunction is not an observable property of a system. **The wavefunction is only a mathematical tool for quantum mechanics; it is not a physical object.**
@@ -764,16 +766,16 @@ make_plots(a, n)
 # 
 # ## &#x1f4da; References
 # My favorite sources for this material are:
-# - [Randy's book](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true) has an excellent treatment of the particle-in-a-box model, including several extensions to the material covered here. (Chapter 3)
+# - [Randy's book](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf) has an excellent treatment of the particle-in-a-box model, including several extensions to the material covered here. (Chapter 3)
 # - Also see my (pdf) class [notes]
 # (https://github.com/PaulWAyers/IntroQChem/blob/main/documents/PinBox.pdf?raw=true).
-# - Also see my notes on the [mathematical structure of quantum mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf?raw=true).
+# - Also see my notes on the [mathematical structure of quantum mechanics](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf).
+# - [Davit Potoyan's](https://www.chem.iastate.edu/people/davit-potoyan) Jupyter-book covers the particle-in-a-box in [chapter 4](https://dpotoyan.github.io/Chem324/intro.html) are especially relevant here.
 # - D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)
 # - [An excellent explanation of the link to the spectrum of cyanine dyes](https://pubs.acs.org/doi/10.1021/ed084p1840)
 # - Chemistry Libre Text: [one dimensional](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Map%3A_Physical_Chemistry_for_the_Biosciences_(Chang)/11%3A_Quantum_Mechanics_and_Atomic_Structure/11.08%3A_Particle_in_a_One-Dimensional_Box)
 # and [multi-dimensional](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Quantum_Mechanics/05.5%3A_Particle_in_Boxes/Particle_in_a_3-Dimensional_box)
 # - [McQuarrie and Simon summary](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Map%3A_Physical_Chemistry_(McQuarrie_and_Simon)/03%3A_The_Schrodinger_Equation_and_a_Particle_in_a_Box)
-# - [Mathematical Features of Quantum Mechanics]() (my notes).
 # 
 # There are also some excellent wikipedia articles:
 # - [Particle in a Box](https://en.wikipedia.org/wiki/Particle_in_a_box)

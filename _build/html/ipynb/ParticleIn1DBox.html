@@ -161,7 +161,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+    <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
      Extra practice: Computing Student Marks (&lt; 2022)
     </a>
    </li>
@@ -296,7 +296,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/cSk8HkZq">
+  <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
    Python/Numpy practice
   </a>
  </li>
@@ -396,11 +396,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/RichRick1/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/QC-Edu/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RichRick1/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fipynb/ParticleIn1DBox.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fipynb/ParticleIn1DBox.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -421,13 +421,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RichRick1/IntroQM2022/master?urlpath=tree/docs/ipynb/ParticleIn1DBox.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/QC-Edu/IntroQM2022/master?urlpath=tree/_build/html/_sources/ipynb/ParticleIn1DBox.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/_build/html/_sources/ipynb/ParticleIn1DBox.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
@@ -562,9 +567,9 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-one-dimensional-particle-in-a-box">
+  <p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/cyanine.jfif?raw=true" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="the-one-dimensional-particle-in-a-box">
 <h1><span class="section-number">5. </span>The One-Dimensional Particle in a Box<a class="headerlink" href="#the-one-dimensional-particle-in-a-box" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/cyanine.jfif?raw=true" /></p>
 <section id="learning-objectives">
 <h2><span class="section-number">5.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -576,8 +581,8 @@
 </section>
 <section id="cyanine-dyes">
 <h2><span class="section-number">5.2. </span>Cyanine Dyes<a class="headerlink" href="#cyanine-dyes" title="Permalink to this headline">¶</a></h2>
-<p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true?" />
-Cyanine dye molecules are often modelled as one-dimension particles in a box. To understand why, start by thinking classically.  You learn in organic chemistry that electrons can more “freely” along alternating double bonds.  If this is true, then you can imagine that the electrons can more from one Nitrogen to the other, almost without resistance.  On the other hand, there are sp<sup>3</sup>-hybridized functional groups attached to the Nitrogen atom, so once the electron gets to Nitrogen atom, it has to turn around and go back whence it came.   A very, very, very simple model would be to imagine that the electron is totally free between the Nitrogen atoms, and totally forbidden from going much beyond the Nitrogen atoms.  This suggests modeling these systems a potential energy function like:</p>
+<p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true?" /></p>
+<p>Cyanine dye molecules are often modelled as one-dimension particles in a box. To understand why, start by thinking classically.  You learn in organic chemistry that electrons can more “freely” along alternating double bonds.  If this is true, then you can imagine that the electrons can more from one Nitrogen to the other, almost without resistance.  On the other hand, there are sp<sup>3</sup>-hybridized functional groups attached to the Nitrogen atom, so once the electron gets to Nitrogen atom, it has to turn around and go back whence it came.   A very, very, very simple model would be to imagine that the electron is totally free between the Nitrogen atoms, and totally forbidden from going much beyond the Nitrogen atoms.  This suggests modeling these systems a potential energy function like:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 V(x) = 
@@ -717,7 +722,7 @@ A_n = \sqrt{\tfrac{2}{a}}
 <p>In general, any <a class="reference external" href="https://en.wikipedia.org/wiki/Root_of_unity">square root of unity</a> can be used,</p>
 <div class="math notranslate nohighlight">
 \[
-A_n = \left( k \pm i \sqrt{1-k^2} \right) \sqrt{\tfrac{2}{a}}
+A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is any real number. The arbitrariness of the <em>phase</em> of the wavefunction is an important feature. Because the wavefunction can be imaginary (e.g., if you choose <span class="math notranslate nohighlight">\(A_n = i \sqrt{\tfrac{2}{a}}\)</span>), it is obvious that the wavefunction is not an observable property of a system. <strong>The wavefunction is only a mathematical tool for quantum mechanics; it is not a physical object.</strong></p>
 <p>Summarizing, the (normalized) wavefunction for a particle with mass <span class="math notranslate nohighlight">\(m\)</span> confined to a one-dimensional box with length <span class="math notranslate nohighlight">\(a\)</span> can be written as:</p>
@@ -1348,16 +1353,16 @@ The energy computed directly is 0.01708
 <h2><span class="section-number">5.21. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a> has an excellent treatment of the particle-in-a-box model, including several extensions to the material covered here. (Chapter 3)</p></li>
+<li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf">Randy’s book</a> has an excellent treatment of the particle-in-a-box model, including several extensions to the material covered here. (Chapter 3)</p></li>
 <li><p>Also see my (pdf) class [notes]
 (<a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/PinBox.pdf?raw=true">https://github.com/PaulWAyers/IntroQChem/blob/main/documents/PinBox.pdf?raw=true</a>).</p></li>
-<li><p>Also see my notes on the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf?raw=true">mathematical structure of quantum mechanics</a>.</p></li>
+<li><p>Also see my notes on the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf">mathematical structure of quantum mechanics</a>.</p></li>
+<li><p><a class="reference external" href="https://www.chem.iastate.edu/people/davit-potoyan">Davit Potoyan’s</a> Jupyter-book covers the particle-in-a-box in <a class="reference external" href="https://dpotoyan.github.io/Chem324/intro.html">chapter 4</a> are especially relevant here.</p></li>
 <li><p>D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)</p></li>
 <li><p><a class="reference external" href="https://pubs.acs.org/doi/10.1021/ed084p1840">An excellent explanation of the link to the spectrum of cyanine dyes</a></p></li>
 <li><p>Chemistry Libre Text: <a class="reference external" href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Map%3A_Physical_Chemistry_for_the_Biosciences_(Chang)/11%3A_Quantum_Mechanics_and_Atomic_Structure/11.08%3A_Particle_in_a_One-Dimensional_Box">one dimensional</a>
 and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Quantum_Mechanics/05.5%3A_Particle_in_Boxes/Particle_in_a_3-Dimensional_box">multi-dimensional</a></p></li>
 <li><p><a class="reference external" href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Map%3A_Physical_Chemistry_(McQuarrie_and_Simon)/03%3A_The_Schrodinger_Equation_and_a_Particle_in_a_Box">McQuarrie and Simon summary</a></p></li>
-<li><p><span class="xref myst">Mathematical Features of Quantum Mechanics</span> (my notes).</p></li>
 </ul>
 <p>There are also some excellent wikipedia articles:</p>
 <ul class="simple">
@@ -1372,7 +1377,7 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
     {
         requestKernel: true,
         binderOptions: {
-            repo: "RichRick1/IntroQM2022",
+            repo: "QC-Edu/IntroQM2022",
             ref: "master",
         },
         codeMirrorConfig: {

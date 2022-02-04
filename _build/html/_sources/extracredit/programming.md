@@ -8,6 +8,9 @@ You can complete additional courses on LinkedIn Learning or other venues for add
 
 ![image](../linkedFiles/codecademy.png)
 
+## [The Coder's Apprentice](https://dodona.ugent.be/en/courses/296/)
+- This seems like a great course introducing Python 3, with lots of hands-on exercises! It's quite substantial. When you register, you should have access to the online score sheet, which you can submit for extra credit.
+
 ## Linkedin Learning
 
 You can complete relevant LinkedIn Learning courses to earn extra points. For example, you can choose to complete some of the courses you've already (partly) seen in the course material. Simply add the LinkedIn Learning certificate of completion to the list in your `Course-Certificates` repository.
