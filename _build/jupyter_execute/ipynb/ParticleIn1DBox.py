@@ -747,10 +747,12 @@ make_plots(a, n)
 # - Can you think of another property density, besides the kinetic energy density, that cannot be uniquely defined in quantum mechanics?
 # 
 # ## &#x1f914; Thought-Provoking Questions
-# - How would the wavefunction and ground-state energy change if you made a small change in the particle-in a box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side? 
+# - How would the wavefunction and ground-state energy change if you made a small change in the particle-in-a-box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side? 
 # - Any system with a zero-point energy of zero is classical. Why? 
 # - How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons? If it contained 8 electrons? The probability of observing an electron at the center of a box with 3 electrons is sometimes *lower* than the probability of observing an electron at the center of a box with 2 electrons. Why? 
 # - Demonstrate that the kinetic energy operator is linear and Hermitian.
+# - What is the lowest-energy excitation energy for the particle-in-a-box?
+# - Suppose you wanted to design a one-dimensional box containing a single electron that absorbed blue light? How long would the box be?
 # 
 # ## &#x1f501; Recapitulation
 # - Write the Hamiltonian, time-independent Schr&ouml;dinger equation, eigenfunctions, and eigenvalues for the one-dimensional particle in a box.

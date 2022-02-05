@@ -224,13 +224,13 @@
 # is the operator that defines the gradient vector. The 3-dimensional momentum operator is 
 # 
 # $$
-# \hat{\mathbf{p}} = i \hbar \nabla
+# \hat{\mathbf{p}} = -i \hbar \nabla
 # $$
 # 
 # which explains why the kinetic energy is given by
 # 
 # $$
-# \hat{T} = \frac{\hat{\mathbf{p}} \cdot \hat{\mathbf{p}}}{2m} = \frac{\hbar^2}{2m} \nabla^2
+# \hat{T} = \frac{\hat{\mathbf{p}} \cdot \hat{\mathbf{p}}}{2m} = -\frac{\hbar^2}{2m} \nabla^2
 # $$
 # 
 # As with the 2-dimensional particle-in-a-rectangle, the 3-dimensional particle-in-a-cuboid can be solved by separation of variables. Rewriting the Schr&ouml;dinger equation as:
@@ -666,7 +666,7 @@ print_energy_disk(a, n, l)
 # ### The Angular Wavefunction in Spherical Coordinates
 # ![Spherical Harmonics](https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Spherical_Harmonics.png/1024px-Spherical_Harmonics.png "Representation of the real spherical harmonics, licensed CC-SA3 by Inigo.quilez")
 # 
-# The Schr&ouml;dinger equation for a spherically-symmetric system can be solved by separation of variables. If one compares to the result in polar coordinates, it is already clear that the angular wavefunction has the form $\Theta{\theta,\phi} = P(\theta)e^{im_l\phi}$. From this starting point we could deduce the eigenfunctions of $\hat{L}^2$, but instead we will just present the eigenfunctions and eigenvalues,
+# The Schr&ouml;dinger equation for a spherically-symmetric system can be solved by separation of variables. If one compares to the result in polar coordinates, it is already clear that the angular wavefunction has the form $\Theta(\theta,\phi) = P(\theta)e^{im_l\phi}$. From this starting point we could deduce the eigenfunctions of $\hat{L}^2$, but instead we will just present the eigenfunctions and eigenvalues,
 # 
 # $$
 # \hat{L}^2 Y_l^{m_l} (\theta, \phi) = \hbar^2 l(l+1)Y_l^{m_l} (\theta, \phi) \qquad l=0,1,2,\ldots m_l=0, \pm 1, \ldots, \pm l
