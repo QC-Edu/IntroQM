@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.22. Computing the expectation value of \(\langle x^4 \rangle\) &#8212; Quantum Chemistry</title>
+    <title>5.22. Computing the expectation value of \(\langle x^4 \rangle\) for 1 dimensional particle in the box &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -464,29 +464,22 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-1-dimensional-particle-in-the-box">
-   5.22.1. for 1 dimensional particle in the box
+  <a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box">
+   5.22.1. Here is an example of calculating
+   <span class="math notranslate nohighlight">
+    \(\langle x \rangle\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\langle x^2 \rangle\)
+   </span>
+   for the one 1 dimenstional particle in the box.
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box">
-     5.22.1.1. Here is an example of calculating
-     <span class="math notranslate nohighlight">
-      \(\langle x \rangle\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(\langle x^2 \rangle\)
-     </span>
-     for the one 1 dimenstional particle in the box.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#task">
-     5.22.1.2. Task:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task">
+   5.22.2. Task:
+  </a>
  </li>
 </ul>
 
@@ -499,12 +492,10 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="computing-the-expectation-value-of-langle-x-4-rangle">
-<h1><span class="section-number">5.22. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span><a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle" title="Permalink to this headline">¶</a></h1>
-<section id="for-1-dimensional-particle-in-the-box">
-<h2><span class="section-number">5.22.1. </span>for 1 dimensional particle in the box<a class="headerlink" href="#for-1-dimensional-particle-in-the-box" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-the-expectation-value-of-langle-x-4-rangle-for-1-dimensional-particle-in-the-box">
+<h1><span class="section-number">5.22. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for 1 dimensional particle in the box<a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle-for-1-dimensional-particle-in-the-box" title="Permalink to this headline">¶</a></h1>
 <section id="here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box">
-<h3><span class="section-number">5.22.1.1. </span>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the one 1 dimenstional particle in the box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">5.22.1. </span>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the one 1 dimenstional particle in the box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box" title="Permalink to this headline">¶</a></h2>
 <p>The average position is expected to be</p>
 <div class="math notranslate nohighlight">
 \[
@@ -543,7 +534,7 @@
 \end{split}\]</div>
 </section>
 <section id="task">
-<h3><span class="section-number">5.22.1.2. </span>Task:<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">5.22.2. </span>Task:<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <p>Use the above example to calculate <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span>. You can follow next steps:</p>
 <ol class="simple">
 <li><p>Complete the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function by coding the expression for calculating wavefunction. Don’t forget the normalization constant. Also, take into account that x values could be negative and greater than a as well as be presented as <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
@@ -669,7 +660,6 @@
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
