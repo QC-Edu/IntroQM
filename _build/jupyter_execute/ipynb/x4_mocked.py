@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computing the expectation value of $\langle x^4 \rangle$ 
-# ## for 1 dimensional particle in the box
+# # Computing the expectation value of $\langle x^4 \rangle$ for 1 dimensional particle in the box
 
 # ### Here is an example of calculating $\langle x \rangle$  and $\langle x^2 \rangle$ for the one 1 dimenstional particle in the box.
 # 
