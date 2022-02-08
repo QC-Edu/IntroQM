@@ -843,12 +843,12 @@ V(x,y,z) =
 <p>is the operator that defines the gradient vector. The 3-dimensional momentum operator is</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{\mathbf{p}} = i \hbar \nabla
+\hat{\mathbf{p}} = -i \hbar \nabla
 \]</div>
 <p>which explains why the kinetic energy is given by</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{T} = \frac{\hat{\mathbf{p}} \cdot \hat{\mathbf{p}}}{2m} = \frac{\hbar^2}{2m} \nabla^2
+\hat{T} = \frac{\hat{\mathbf{p}} \cdot \hat{\mathbf{p}}}{2m} = -\frac{\hbar^2}{2m} \nabla^2
 \]</div>
 <p>As with the 2-dimensional particle-in-a-rectangle, the 3-dimensional particle-in-a-cuboid can be solved by separation of variables. Rewriting the Schrödinger equation as:</p>
 <div class="math notranslate nohighlight">
@@ -1252,7 +1252,7 @@ T = \sum_{i=1}^{N_{\text{particles}}} \frac{p_{r;i}^2}{2m_i} + \frac{\mathbf{L}_
 <section id="the-angular-wavefunction-in-spherical-coordinates">
 <h3><span class="section-number">6.11.3. </span>The Angular Wavefunction in Spherical Coordinates<a class="headerlink" href="#the-angular-wavefunction-in-spherical-coordinates" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Spherical Harmonics" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Spherical_Harmonics.png/1024px-Spherical_Harmonics.png" /></p>
-<p>The Schrödinger equation for a spherically-symmetric system can be solved by separation of variables. If one compares to the result in polar coordinates, it is already clear that the angular wavefunction has the form <span class="math notranslate nohighlight">\(\Theta{\theta,\phi} = P(\theta)e^{im_l\phi}\)</span>. From this starting point we could deduce the eigenfunctions of <span class="math notranslate nohighlight">\(\hat{L}^2\)</span>, but instead we will just present the eigenfunctions and eigenvalues,</p>
+<p>The Schrödinger equation for a spherically-symmetric system can be solved by separation of variables. If one compares to the result in polar coordinates, it is already clear that the angular wavefunction has the form <span class="math notranslate nohighlight">\(\Theta(\theta,\phi) = P(\theta)e^{im_l\phi}\)</span>. From this starting point we could deduce the eigenfunctions of <span class="math notranslate nohighlight">\(\hat{L}^2\)</span>, but instead we will just present the eigenfunctions and eigenvalues,</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{L}^2 Y_l^{m_l} (\theta, \phi) = \hbar^2 l(l+1)Y_l^{m_l} (\theta, \phi) \qquad l=0,1,2,\ldots m_l=0, \pm 1, \ldots, \pm l
