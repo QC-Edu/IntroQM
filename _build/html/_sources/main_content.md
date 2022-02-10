@@ -9,10 +9,11 @@
 - [**Marking Scheme**](documents/markingscheme.md)
 - [**Videos**](https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683)
 - **Meeting times** (online components are hosted on MSTeams)
-  - online &rarr; HH305 1430-1730
-  - online &rarr; HH305 1430-1530
-  - online &rarr; ABB-266A/ABB-264 1530-1630 (office hours)
-  - online &rarr; ABB-266A/ABB-264 1730-1830 (office hours)
+  - Monday, 1430-1730; HH305 (last name starts A-K) (discussion)
+  - Monday, 1430-1730; ABB-A404 (last name starts L-Z) (discussion)
+  - Tuesday, 1430-1530; HH305 (lecture/tutorial)
+  - Tuesday, 1530-1630; ABB-264/266A (office hours)
+  - Friday, 1730-1830; online (by default) ABB-264 (by request) (office hours)
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
   - Understand and apply the key concepts of quantum chemistry.

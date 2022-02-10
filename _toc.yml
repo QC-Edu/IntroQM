@@ -45,6 +45,9 @@ parts:
 
     - file: ipynb/ParticleIn1DBox.ipynb
       title: The Particle in a Box
+      sections:
+      - file: ipynb/x4_mocked.ipynb
+        title: Example notebook
 
     - file: ipynb/ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
