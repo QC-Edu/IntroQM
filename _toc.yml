@@ -48,6 +48,8 @@ parts:
       sections:
       - file: ipynb/x4_mocked.ipynb
         title: Example notebook
+      - url: https://classroom.github.com/a/9yzWI5Vt
+        title: "Practice: Moments of the P-in-Box"
 
     - file: ipynb/ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
@@ -84,6 +86,8 @@ parts:
       title: "Schrodinger's Cat Colab"
     - file: ipynb/tutorial_1.ipynb
       title: "Wavefunction normalization Colab"
+    - url: https://classroom.github.com/a/9yzWI5Vt
+      title: "Moments of the Particle-in-a-Box"
 
   - caption: Extra credit
     chapters:
