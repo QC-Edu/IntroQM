@@ -50,7 +50,9 @@ parts:
         title: Example notebook
       - url: https://classroom.github.com/a/9yzWI5Vt
         title: "Practice: Moments of the P-in-Box"
-
+      - url: https://classroom.github.com/a/yBzABlb-
+        title: "Practice: The Sudden Approximation"
+        
     - file: ipynb/ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
 
@@ -88,6 +90,9 @@ parts:
       title: "Wavefunction normalization Colab"
     - url: https://classroom.github.com/a/9yzWI5Vt
       title: "Moments of the Particle-in-a-Box"
+    - url: https://classroom.github.com/a/yBzABlb-
+      title: "Sudden Changes in Box Length"
+
 
   - caption: Extra credit
     chapters:
