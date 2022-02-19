@@ -194,10 +194,32 @@
    4. The Schrödinger Equation
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ParticleIn1DBox.html">
    5. The Particle in a Box
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ParticleInMultiD.html">
@@ -223,8 +245,8 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -276,6 +298,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   Sudden Changes in Box Length
   </a>
  </li>
 </ul>
@@ -710,15 +742,15 @@ E \Psi(x,t) &amp;= \frac{p^2}{2m} \Psi(x,t) + V(x,t)\Psi(x,t)
 \[\begin{split}
 \begin{align}
 -i\hbar \frac{\partial}{\partial t} \phi(t) &amp;= -E\phi(t) \\
-\frac{1}{\phi} d\phi &amp;= \frac{i}{\hbar}E dt \\ 
-\int \frac{1}{\phi} d\phi = \int \frac{i}{\hbar}E dt \\
-\ln \phi(t) &amp;= \frac{iEt}{\hbar} + \text{constant of integration}\\
-\phi(t)  &amp;\propto e^{\frac{iEt}{\hbar}}
+\frac{1}{\phi} d\phi &amp;= -\frac{i}{\hbar}E dt \\ 
+\int \frac{1}{\phi} d\phi = \int \frac{-i}{\hbar}E dt \\
+\ln \phi(t) &amp;= \frac{-iEt}{\hbar} + \text{constant of integration}\\
+\phi(t)  &amp;\propto e^{\frac{-iEt}{\hbar}}
 \end{align}
 \end{split}\]</div>
 <p>Therefore,</p>
 <div class="math notranslate nohighlight">
-\[ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{iEt}{\hbar}} \]</div>
+\[ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{-iEt}{\hbar}} \]</div>
 <p>The constant of proportionality is not important here, because the time-dependent and time-independent Schrödinger equations are satisfied even if <span class="math notranslate nohighlight">\(\Psi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(t)\)</span> are multiplied by constants.</p>
 </section>
 </section>

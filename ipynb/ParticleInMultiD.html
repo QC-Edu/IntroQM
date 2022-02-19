@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Postulates of Quantum Mechanics" href="Postulates.html" />
-    <link rel="prev" title="5. The One-Dimensional Particle in a Box" href="ParticleIn1DBox.html" />
+    <link rel="prev" title="5.23. Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box" href="x4_mocked.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -194,10 +194,32 @@
    4. The Schrödinger Equation
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ParticleIn1DBox.html">
    5. The Particle in a Box
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -223,8 +245,8 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -276,6 +298,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   Sudden Changes in Box Length
   </a>
  </li>
 </ul>
@@ -882,7 +914,7 @@ V_z(z) =
 <p>By the same logic as we used for the 1-dimensional particle in a box, we can deduce that the ground-state wavefunction for an electron in a cuboid is:</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{n_x n_y n_z}(x,y,z) = \frac{2\sqrt{2}}{\sqrt{a_x a_y z_z}} \
+\psi_{n_x n_y n_z}(x,y,z) = \frac{2\sqrt{2}}{\sqrt{a_x a_y a_z}} \
 \sin\left(\tfrac{n_x \pi x}{a_x}\right) \sin\left(\tfrac{n_y \pi y}{a_y}\right)\sin\left(\tfrac{n_z \pi z}{a_z}\right) \qquad \qquad n_x=1,2,3,\ldots;n_y=1,2,3,\ldots;n_z=1,2,3,\ldots
 \]</div>
 <p>The corresponding energy is thus:</p>
@@ -1514,11 +1546,11 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ParticleIn1DBox.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="x4_mocked.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>The One-Dimensional Particle in a Box</p>
+            <p class="prev-next-title"><span class="section-number">5.23. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Postulates.html" title="next page">
