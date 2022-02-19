@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Postulates of Quantum Mechanics
 # ![Solvay Conference](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SolvayBerny.jfif?raw=true "The 1927 Solvay Conference on PHOTONS AND ELECTRONS featured debates on quantum mechanics and, of course, Bernie's mittens. It is mused that this pictures has the highest-average-IQ and most-boring-ever-fashion of any picture ever taken. Your political persuasion and personal style will affect your opinion of how the Bernie-meme-ization of the photo affects the IQ, but his timeless mittens unquestionably improves its fashionability.")
+# 
+# # Postulates of Quantum Mechanics
 
 # ## &#x1f945; Learning Objectives
 # - List and Discuss the Postulates of Quantum Mechanics.
@@ -44,7 +45,7 @@
 # ## Schr&ouml;dinger Postulate
 # The wavefunction (or density matrix) is the central object in quantum mechanics. It is found by solving the Schr&ouml;dinger equation in its time-independent or time-dependent form. For relativisitic particles, one needs to instead consider the [Dirac equation](https://en.wikipedia.org/wiki/Dirac_equation), and for relativisitic particles interacting with light, one needs to consider [quantum electrodynamics](https://en.wikipedia.org/wiki/Quantum_electrodynamics). If one needs to go beyond this (e.g., to include $\beta$ decay of nuclei), then one needs to extend even further, eventually all the way to the [standard model](https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model).
 # 
-# For the purposes of this course, the Schr&ouml;dinger equation is adequate. [Relativisitic effects](https://en.wikipedia.org/wiki/Relativistic_quantum_chemistry#Periodic-table_deviations) are [important](https://www.annualreviews.org/doi/10.1146/annurev-physchem-032511-143755) in [chemistry](https://aip.scitation.org/doi/10.1063/1.3702628): it is not uncommon to consider that corrections to the nonrelativistic Schr&ouml;dinger equation become important for molecules containing elements heavier than Zinc (Z=30) or Krypton (Z=36). However, actinide compounds can, [by mathematical trickery](https://en.wikipedia.org/wiki/Foldy%E2%80%93Wouthuysen_transformation), be treated by embellishing the Schr&ouml;dinger equation in most cases. This means that for the purposes of understanding the structures of molecules and materials, their stability and thermodynamic properties, and the structural and chemical transformations between materials, the (relativistically-corrected) Schr&ouml;dinger equation is used. 
+# For the purposes of this course, the Schr&ouml;dinger equation is adequate. [Relativisitic effects](https://en.wikipedia.org/wiki/Relativistic_quantum_chemistry#Periodic-table_deviations) are [important](https://www.annualreviews.org/doi/10.1146/annurev-physchem-032511-143755) in [chemistry](https://aip.scitation.org/doi/10.1063/1.3702628): it is not uncommon to consider that corrections to the nonrelativistic Schr&ouml;dinger equation become important for molecules containing elements heavier than Zinc (Z=30) or Krypton (Z=36). However, even actinide compounds can, [by mathematical trickery](https://en.wikipedia.org/wiki/Foldy%E2%80%93Wouthuysen_transformation), be treated by embellishing the Schr&ouml;dinger equation in most cases. This means that for the purposes of understanding the structures of molecules and materials, their stability and thermodynamic properties, and the structural and chemical transformations between materials, the (relativistically-corrected) Schr&ouml;dinger equation is used. 
 
 # ## Born Postulate
 # Colloquially, the Born postulate states that *the wavefunction is the square root of reality*. The wavefunction is a mathematical artifice, and is not directly observable. It's complex square is observable ($|\Psi(x,t)|^2$ indicates the probability of finding the quantum system at the location $x$ at time $t$) and the overlap (interference patterns) between two wavefunctions (e.g., the system's wavefunction and [light](https://www.nature.com/articles/ncomms5156) or another [electron](https://www.nature.com/articles/nature03183)) can also be observed. 
@@ -59,7 +60,7 @@
 # \hat{p} = -i \hbar \tfrac{d}{dx}
 # $$
 # 
-# There are some caveats associated with this. Some classical observables do not have unique representations in quantum mechanics. For example, in classical mechanics it is sensible to define, and measure, a *local kinetic energy*, that is, the kinetic energy at of a particle at a given point in space. Because one cannot specify the momentum (or its square) and position of a particle simultaneously, however, one cannot specify the kinetic energy at a point in space in quantum mechanics. So the local kinetic energy is not well-defined in quantum mechanics.
+# There are some caveats associated with this. Some classical observables do not have unique representations in quantum mechanics. For example, in classical mechanics it is sensible to define, and measure, a *local kinetic energy*, that is, the kinetic energy at of a particle at a given point in space. Because one cannot specify the momentum (or its square) and position of a particle simultaneously, however, one cannot specify the kinetic energy at a point in space in quantum mechanics. [So the local kinetic energy is not well-defined in quantum mechanics](https://doi.org/10.1021/jp1029745).
 # 
 # In classical mechanics, all classical observables can be computed from the positions and momenta of the particles in the system. That is, classical observables of an $N$-particle system functions of particles' positions ,$\{\mathbf{r}_k\}$,  and momenta, $\{\mathbf{p}_k\}$:
 # 
@@ -67,7 +68,7 @@
 # f(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N;\mathbf{p}_1,\mathbf{p}_2,\dots,\mathbf{p}_N)
 # $$
 # 
-# In quantum mechanics, operators that depend *either* on the particle's positions or their momenta are clearly defined, but simultaneous observation of both is not. There can be multiple mathematical representations for the quantum-mechanical analogue of a single classical observable, therefore. In practice, such ambiguities do not matter much since the most important observables are those that can be clearly defined. Sometimes, however, chemists like to discuss quantities (like the energy of a single atom or functional group in a molecule, or the interaction energy between two subsystems in a intermolecular complex) which are *not* defined in quantum mechanics. Such discussions can be useful in practice, but they are contrary to the spirit of quantum mechanics (even though they are deeply entangled with the language of chemistry). 
+# In quantum mechanics, operators that depend *either* on the particle's positions or their momenta are clearly defined, but simultaneous observation of both is not. [There can be multiple mathematical representations for the quantum-mechanical analogue of a single classical observable](https://en.wikipedia.org/wiki/Quasiprobability_distribution). In practice, such ambiguities do not matter much since the most important observables are those that can be clearly defined. Sometimes, however, chemists like to discuss quantities (like the energy of a single atom or functional group in a molecule, or the interaction energy between two subsystems in a intermolecular complex) which are *not* defined in quantum mechanics. Such [discussions](https://doi.org/10.1016/j.comptc.2014.09.028) can be [useful](https://doi.org/10.1002/anie.201208206) in [practice]( https://doi.org/10.1002/jcc.26003), but they are contrary to the spirit of quantum mechanics (even though they are deeply entangled with the language of chemistry). Finding rigorous and systematic ways to capture chemical concepts from quantum-mechanical models is an [open problem](https://doi.org/10.1016/j.comptc.2018.09.006). 
 # 
 # There are also entities that emerge in molecular quantum mechanics that have no classical analogue whatsoever: concepts like electronegativity, oxidation state, and bond order. One should not expect for such quantities, which are intrinsically tied to the properties of electrons and have no classical analogue, to correspond to quantum-mechanical observable or Hermitian operators.
 # 
@@ -189,7 +190,7 @@
 # \Psi_{cat} = \tfrac{1}{\sqrt{2}}|\text{alive} \rangle + \tfrac{1}{\sqrt{2}}|\text{dead} \rangle
 # $$
 # 
-# and you opened the box and observed that the cat was dead (so after you open the box, $\Psi_{cat} =  |\text{dead} \rangle$), then *you* killed Schr&ouml;dinger's cat. To mildly exaggerate, some physicists would have you believe that every dead animal was slaughtered by the person who first observes its corpse. (To diminish culpability, it must be said that it the cat in this example was only technically half-dead, so the observer was a halfway-cat-assassin.) Most modern [interpretations of quantum mechanics](https://en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics) tend to [deny such culpability](https://plato.stanford.edu/entries/qt-issues/). The physicists alibi is to assert that assert that while the system was described, mathematically, by $\Psi(x)$ prior to the measurement, this does not that the system existed in the state $\Psi(x)$. Similarly, after the measurement the system is in a state mathematically described by $\psi_k(x)$. While it would be weird for observing a system to be able to change its state, it is not weird for an observation to change our mathematical description of a system. For example, before you observe [Lake Wobegon](https://en.wikipedia.org/wiki/Lake_Wobegon), it is reasonable to assume that all the women are strong, all the men are good-looking, and all the children are above average. But were you to visit Lake Wobegon, then based on your observation you might have to change your model. 
+# and you opened the box and observed that the cat was dead (so after you open the box, $\Psi_{cat} =  |\text{dead} \rangle$), then *you* killed Schr&ouml;dinger's cat. To mildly exaggerate, some physicists would have you believe that every dead animal was slaughtered by the person who first observes its corpse. (To diminish culpability, it must be said that it the cat in this example was only technically half-dead, so the observer was merely a halfway-cat-assassin.) Most modern [interpretations of quantum mechanics](https://en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics) tend to [deny such culpability](https://plato.stanford.edu/entries/qt-issues/). The physicists alibi is to assert that assert that while the system was described, mathematically, by $\Psi(x)$ prior to the measurement, this does not that the system existed in the state $\Psi(x)$. Similarly, after the measurement the system is in a state mathematically described by $\psi_k(x)$. While it would be weird for observing a system to be able to change its state, it is not weird for an observation to change our mathematical description of a system. For example, before you observe [Lake Wobegon](https://en.wikipedia.org/wiki/Lake_Wobegon), it is reasonable to assume that all the women are strong, all the men are good-looking, and all the children are above average. But were you to visit Lake Wobegon, then based on your observation you might have to change your model. 
 # 
 # That said, you may find the aforementioned "Copenhagen interpretation" convenient. Before my mother visits my home, I always clean it thoroughly. Nonetheless, my thorough cleaning is not up to my mother's standards, and she's always scandalized to find dust-bunnies under the sofa. (Who moves the sofa to vacuum under it, just to put the sofa back the same place and obscure the now-clean carpet?) I always tell my mom that the dust-bunnies were not there until she observed them. Unfortunately, my mom taught quantum mechanics herself, and she tells me that the wavefunction was:
 # 
@@ -199,13 +200,12 @@
 # 
 # I guess my home is only .01% clean (up to my mother's standards, at least). 
 # 
-# The sudden change in the wavefunction upon observation is called wavefunction collapse. While the reality of wavefunction collapse in a physical sense is irresolvable, it is the mathematical description of what happens in a quantum system, and gives rise to strange quantum effects. If you find such things interesting, you may be interested to know that the aphorism that "a watched pot never boils" is [justifiable](https://en.wikipedia.org/wiki/Quantum_Zeno_effect), quantum-mechanically.
+# The sudden change in the wavefunction upon observation is called [wavefunction collapse](https://en.wikipedia.org/wiki/Wave_function_collapse). While the reality of wavefunction collapse in a physical sense is irresolvable, it is the mathematical description of what happens in a quantum system, and gives rise to strange quantum effects. If you find such things interesting, you may be interested to know that the aphorism that "a watched pot never boils" is [justifiable](https://en.wikipedia.org/wiki/Quantum_Zeno_effect), quantum-mechanically.
 
 # ### The Born Postulate, revisited
 # While the Born postulate is usually presented separately, it is in fact a corollary of the fact that physical observables are represented by Hermitian operators. The Hermitian operator that represents a particle at position $x_0$ is $\delta(x-x_0)$, where the [Dirac delta function](https://en.wikipedia.org/wiki/Dirac_delta_function) is effectively defined by its so-called *sifting property*.
 # > **Sifting property of the Dirac Delta function:** Let $f(x)$ be a bounded function. Then 
-# 
-# $$
+# >$$
 # \int_{-\infty}^{+\infty} f(x) \delta(x-x_0) dx = f(x_0)
 # $$
 # 
@@ -218,15 +218,14 @@
 # which is the Born postulate. 
 # 
 # > **Note**: The Kronecker delta function has a sifting property similar to the Dirac delta function,
-# 
-# $$
+# >$$
 # \sum_j f_j \delta_{jk} = f_k
 # $$
 # 
 # This can be deduced directly from the definition, since $\delta_{jk}$ is one when $j=k$, and zero otherwise.
 
-# ## Bra- Ket- Notation and the Analogy to Linear Algebra
-# At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for [Dirac bra-ket notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation). A rather thorough explanation of this notation is available in my [pdf notes](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/LinAlgAnalogy.pdf?raw=true), so I am only presenting the elements here. The basic idea is that a wavefunction is written as a *ket*, 
+# ## Bra-Ket Notation and the Analogy to Linear Algebra
+# At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for [Dirac bra-ket notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation). A rather thorough explanation of this notation is available in my [pdf notes](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/LinAlgAnalogy.pdf), so I am only presenting the elements here. The basic idea is that a wavefunction is written as a *ket*, 
 # 
 # $$
 # | \Psi \rangle = \Psi(x)
@@ -315,6 +314,11 @@
 # 
 # *This is the equation for the expansion coefficient of a wavefunction in an orthonormal basis.*
 
+# #### &#x1f4dd; Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:
+# $$
+# \sum_{k=0}^{\infty} c_k \int \left( \phi_j(x) \right)^* \phi_k(x) \, dx  = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
+# $$
+
 # ## Application: Heisenberg Uncertainty Principle
 # We have already alluded to the [Heisenberg Uncertainty Principle](https://en.wikipedia.org/wiki/Uncertainty_principle), which states that some quantum-mechanical properties cannot be observed simultaneously. To provide a mathematical description of the Heisenberg Uncertainty Principle, we need to define what it means for operators to commute and anticommute.
 # > Two operators, $\hat{A}$ and $\hat{B}$, are said to *commute* if for any wavefunction $\Psi(x)$,
@@ -329,13 +333,13 @@
 # 0 = \left(\hat{A} \hat{B} + \hat{B}\hat{A}\right) \Psi(x) = \left\{\hat{A}, \hat{B} \right\} \Psi(x)
 # $$
 # 
-# In the right-most equality, we have introduce the standard notation for commuting and anticommuting operators.
+# In the rightmost equality, we have introduced the standard notation for commuting and anticommuting operators.
 # 
 # In classical mechanics, observables are simply functions of the momenta and positions of the system's particles, and the since the momenta and positions commute, observables commute. However, in quantum mechanics, the momentum operator, $\hat{p} = -i \hbar \tfrac{d}{dx}$ is a differential operator, and does not commute with the position operator $x$. Because of this, measuring a particle's position first, then its momentum is different from measuring its momentum first, then its position. Conceptually, then, it is not unreasonable that if you try to measure the position and the momentum simultaneously, the system is "confused" about how it should behave (as if momentum were measured first? or as if position were measured first?) and the answer is uncertain. 
 # 
 # > If two operators, $\hat{A}$ and $\hat{B}$, commute, $\left[\hat{A}, \hat{B}, \right] = 0$. then one can simultaneously measure the corresponding properties $A$ and $B$. $A$ and $B$ are said to be *simultaneous observables*. 
 # 
-# > If two operators, $\hat{A}$ and $\hat{B}$, do not commute, $\left[\hat{A}, \hat{B}, \right] \ne 0$. then one cannot simultaneously measure the corresponding properties $A$ and $B$. A Heisenberg Uncertainty Relation then holds: 
+# > If two operators, $\hat{A}$ and $\hat{B}$, do not commute, $\left[\hat{A}, \hat{B}, \right] \ne 0$. then one cannot simultaneously measure the corresponding properties $A$ and $B$. (The order of measurement matters.) A Heisenberg Uncertainty Relation then holds: 
 # 
 # $$
 # \sigma_A^2 \sigma_B^2 \ge \tfrac{1}{4} \left| \langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
@@ -354,7 +358,7 @@
 # - \langle \Psi |\hat{A}| \Psi \rangle \langle \Psi |\hat{B}| \Psi \rangle \right|^2 + \tfrac{1}{4} \left|\langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
 # $$
 # 
-# A detailed derivation of these uncertainty principles is provided as a [pdf](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Heisenberg.pdf?raw=true).
+# A detailed derivation of these uncertainty principles is provided as a [pdf](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Heisenberg.pdf).
 
 # ## Application: Variational Principle
 # > [**Quantum-Mechanical Variational Principle**](https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)): Given a wavefunction $\Psi(x)$ and a bounded Hermitian operator $\hat{Q}$, the expectation value of $Q$ is no less than the lowest eigenvalue of $\hat{Q}$ and no greater than the largest eigenvalue.
@@ -368,7 +372,7 @@
 # and choose to list the eigenvalues are listed in increasing order, $q_0 < q_1 < \cdots $. Expand the wavefunction in the eigenvectors of $\hat{Q}$,
 # 
 # $$
-# | Psi \rangle = \sum_{k=0}^{\infty} c_k | \psi_k \rangle
+# | \Psi \rangle = \sum_{k=0}^{\infty} c_k | \psi_k \rangle
 # $$
 # 
 # The expectation value of $\Psi$, which we assume to be normalized, is:
@@ -409,6 +413,8 @@
 # The variational principle is one of the most important ways we approximate the energy and wavefunction of quantum systems.
 
 # ### &#x1f4dd; Exercise: Show why the expectation value of $Q$ is always a lower bound on the largest eigenvalue of $\hat{Q}$.
+# 
+# ### &#x1f4dd; Exercise: Demonstrate that the variational principle for $\hat{Q}$ holds even if the wavefunction is not normalized.
 
 # ## Summary
 # Based on the preceding, the key postulates of quantum mechanics are 

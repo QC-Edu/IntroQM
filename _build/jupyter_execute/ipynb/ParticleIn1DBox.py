@@ -135,7 +135,7 @@
 # \end{align}
 # $$
 # 
-# To evaluate this integral, it is useful to remember some [trigonometric identities](https://en.wikipedia.org/wiki/List_of_trigonometric_identities). (You can learn more about how I remember trigonometric identities [here](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/TrigIdentities.md).) The specific identity we need here is $\sin^2 x = \tfrac{1}{2}(1-\cos 2x)$:
+# To evaluate this integral, it is useful to remember some [trigonometric identities](https://en.wikipedia.org/wiki/List_of_trigonometric_identities). (You can learn more about how I remember trigonometric identities [here](../linkedFiles/TrigIdentities.md).) The specific identity we need here is $\sin^2 x = \tfrac{1}{2}(1-\cos 2x)$:
 # 
 # $$
 # \begin{align}
@@ -394,6 +394,8 @@ a = 0.1
 
 print_energy(a, n) 
 
+
+# #### &#x1f4dd; Exercise: Write a function that returns the length, $a$, of a box for which the lowest-energy-excitation of the ground state, $n = 1 \rightarrow n=2$, corresponds to the system absorbing light with a given wavelength, $\lambda$. The input is $\lambda$; the output is $a$. 
 
 # ## Postulate: The wavefunction contains all the physically meaningful information about a system.
 # While the wavefunction is not itself observable, all observable properties of a system can be determined from the wavefunction. However, just because the wavefunction encapsulates all the *observable* properties of a system does not mean that it contains *all information* about a system. In quantum mechanics, some things are not observable. Consider that for the ground ($n=1$) state of the particle in a box, the root-mean-square average momentum,
@@ -754,11 +756,15 @@ make_plots(a, n)
 # - What is the lowest-energy excitation energy for the particle-in-a-box?
 # - Suppose you wanted to design a one-dimensional box containing a single electron that absorbed blue light? How long would the box be?
 # 
+# ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignments
+# - Compute and understand expectation values by computing moments of the particle-in-a-box [assignment](https://github.com/McMasterQM/PinBox-Moments/blob/main/moments.ipynb). [Github classroom link]https://classroom.github.com/a/9yzWI5Vt.
+# - This [assignment](https://github.com/McMasterQM/Sudden-Approximation/blob/main/SuddenPinBox.ipynb) on the sudden approximation provides an introduction to time-dependent phenomena. [Github classroom link](https://classroom.github.com/a/yBzABlb-).
+# 
 # ## &#x1f501; Recapitulation
 # - Write the Hamiltonian, time-independent Schr&ouml;dinger equation, eigenfunctions, and eigenvalues for the one-dimensional particle in a box.
 # - Play around with the eigenfunctions and eigenenergies of the particle-in-a-box to build intuition for them.
 # - How would you compute the uncertainty in $x^4$?
-# - Practice your calculus by explicitly computing, using integration by parts, $\langle x \rangle$ and $\langle x^2 \rangle$.
+# - Practice your calculus by explicitly computing, using integration by parts, $\langle x \rangle$ and $\langle x^2 \rangle$. This can be implemented in a [Jupyter notebook](x4_mocked.ipynb).
 # 
 # ## &#x1f52e; Next Up...
 # - Postulates of Quantum Mechanics

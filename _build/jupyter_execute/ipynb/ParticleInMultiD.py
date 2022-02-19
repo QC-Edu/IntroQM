@@ -267,7 +267,7 @@
 # By the same logic as we used for the 1-dimensional particle in a box, we can deduce that the ground-state wavefunction for an electron in a cuboid is:
 # 
 # $$
-# \psi_{n_x n_y n_z}(x,y,z) = \frac{2\sqrt{2}}{\sqrt{a_x a_y z_z}} \
+# \psi_{n_x n_y n_z}(x,y,z) = \frac{2\sqrt{2}}{\sqrt{a_x a_y a_z}} \
 # \sin\left(\tfrac{n_x \pi x}{a_x}\right) \sin\left(\tfrac{n_y \pi y}{a_y}\right)\sin\left(\tfrac{n_z \pi z}{a_z}\right) \qquad \qquad n_x=1,2,3,\ldots;n_y=1,2,3,\ldots;n_z=1,2,3,\ldots
 # $$
 # 
