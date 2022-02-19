@@ -18,15 +18,15 @@ parts:
       title: GitHub
       sections:
       - url: https://qchem.qc-edu.org/ipynb/ghfundamentals.html
-        title: Practice GitHub (Classroom)
+        title: "Practice: GitHub (Classroom)"
 
     - file: ipynb/jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
       - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
-        title: Practice Python, Jupyter, Numpy
+        title: "Practice: Python, Jupyter, Numpy"
       - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
-        title: Practice Google Colab
+        title: "Practice: Google Colab"
       - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/2IRoHSuh
@@ -47,7 +47,7 @@ parts:
       title: The Particle in a Box
       sections:
       - file: ipynb/x4_mocked.ipynb
-        title: Example notebook
+        title: Example notebook for Moments
       - url: https://classroom.github.com/a/9yzWI5Vt
         title: "Practice: Moments of the P-in-Box"
       - url: https://classroom.github.com/a/yBzABlb-
