@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.22. Computing the expectation value of \(\langle x^4 \rangle\) for 1 dimensional particle in the box &#8212; Quantum Chemistry</title>
+    <title>5.23. Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -206,7 +206,17 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.22. Example notebook
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
     </a>
    </li>
   </ul>
@@ -288,6 +298,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   Sudden Changes in Box Length
   </a>
  </li>
 </ul>
@@ -464,8 +484,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box">
-   5.22.1. Here is an example of calculating
+  <a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">
+   5.23.1. Here is an example of calculating
    <span class="math notranslate nohighlight">
     \(\langle x \rangle\)
    </span>
@@ -473,12 +493,12 @@
    <span class="math notranslate nohighlight">
     \(\langle x^2 \rangle\)
    </span>
-   for the one 1 dimenstional particle in the box.
+   for the 1-dimensional particle-in-a-box.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#task">
-   5.22.2. Task:
+   5.23.2. Task:
   </a>
  </li>
 </ul>
@@ -492,10 +512,10 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="computing-the-expectation-value-of-langle-x-4-rangle-for-1-dimensional-particle-in-the-box">
-<h1><span class="section-number">5.22. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for 1 dimensional particle in the box<a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle-for-1-dimensional-particle-in-the-box" title="Permalink to this headline">¶</a></h1>
-<section id="here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box">
-<h2><span class="section-number">5.22.1. </span>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the one 1 dimenstional particle in the box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-one-1-dimenstional-particle-in-the-box" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-the-expectation-value-of-langle-x-4-rangle-for-the-1-dimensional-particle-in-a-box">
+<h1><span class="section-number">5.23. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box<a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this headline">¶</a></h1>
+<section id="here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">
+<h2><span class="section-number">5.23.1. </span>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this headline">¶</a></h2>
 <p>The average position is expected to be</p>
 <div class="math notranslate nohighlight">
 \[
@@ -534,16 +554,16 @@
 \end{split}\]</div>
 </section>
 <section id="task">
-<h2><span class="section-number">5.22.2. </span>Task:<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.23.2. </span>Task:<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <p>Use the above example to calculate <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span>. You can follow next steps:</p>
 <ol class="simple">
-<li><p>Complete the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function by coding the expression for calculating wavefunction. Don’t forget the normalization constant. Also, take into account that x values could be negative and greater than a as well as be presented as <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function complete the <code class="docutils literal notranslate"><span class="pre">compute_probability</span></code> function</p></li>
-<li><p>Fill the gaps in <code class="docutils literal notranslate"><span class="pre">compute_momentum</span></code>  function, where you can use  the <code class="docutils literal notranslate"><span class="pre">compute_probability</span></code> function.</p></li>
-<li><p>Complete the function <code class="docutils literal notranslate"><span class="pre">check_momentum</span></code> by calculating the integrand experssion.</p></li>
-<li><p>Now you are ready to calculate the average. Use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html">quad</a> function for numerical integration and complete the <code class="docutils literal notranslate"><span class="pre">calc_average</span></code> function. Compare you results with</p></li>
-<li><p>At the last step you can use your functions to calculate  the <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> and compare it with the analytic value. We encourage you to play with different values of n, a</p></li>
-<li><p>Submit your notebook as discribed at the <a class="reference internal" href="Tutorial_0.html"><span class="doc std std-doc">first tutorial</span></a> and enjoy your work!</p></li>
+<li><p>Complete the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function by coding the expression for calculating the wavefunction. Don’t forget the normalization constant. Also, take into account that <span class="math notranslate nohighlight">\(x\)</span> values could be negative and greater than <span class="math notranslate nohighlight">\(a\)</span>, and that <span class="math notranslate nohighlight">\(x\)</span> values could be a simple real number (a <code class="docutils literal notranslate"><span class="pre">float</span></code>) or a list of numbers (a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>).</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function, complete the <code class="docutils literal notranslate"><span class="pre">compute_probability</span></code> function.</p></li>
+<li><p>Fill the gaps in <code class="docutils literal notranslate"><span class="pre">compute_moments</span></code> function; this is especially easy if you use the <code class="docutils literal notranslate"><span class="pre">compute_probability</span></code> function.</p></li>
+<li><p>Complete the function <code class="docutils literal notranslate"><span class="pre">check_moment</span></code>.</p></li>
+<li><p>Now you are ready to calculate the average. Use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html">quad</a> function for numerical integration and complete the <code class="docutils literal notranslate"><span class="pre">calc_average</span></code> function.</p></li>
+<li><p>Use your functions to calculate  the <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> and compare it with the analytic value. We encourage you to play with different values of <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+<li><p>Submit your notebook as described at the <a class="reference internal" href="Tutorial_0.html"><span class="doc std std-doc">first tutorial</span></a>.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

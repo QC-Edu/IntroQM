@@ -205,16 +205,16 @@
 # $$
 # \begin{align}
 # -i\hbar \frac{\partial}{\partial t} \phi(t) &= -E\phi(t) \\
-# \frac{1}{\phi} d\phi &= \frac{i}{\hbar}E dt \\ 
-# \int \frac{1}{\phi} d\phi = \int \frac{i}{\hbar}E dt \\
-# \ln \phi(t) &= \frac{iEt}{\hbar} + \text{constant of integration}\\
-# \phi(t)  &\propto e^{\frac{iEt}{\hbar}}
+# \frac{1}{\phi} d\phi &= -\frac{i}{\hbar}E dt \\ 
+# \int \frac{1}{\phi} d\phi = \int \frac{-i}{\hbar}E dt \\
+# \ln \phi(t) &= \frac{-iEt}{\hbar} + \text{constant of integration}\\
+# \phi(t)  &\propto e^{\frac{-iEt}{\hbar}}
 # \end{align}
 # $$
 # 
 # Therefore,
 # 
-# $$ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{iEt}{\hbar}} $$
+# $$ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{-iEt}{\hbar}} $$
 # 
 # The constant of proportionality is not important here, because the time-dependent and time-independent Schr&ouml;dinger equations are satisfied even if $\Psi(x)$ and $\phi(t)$ are multiplied by constants.
 # 

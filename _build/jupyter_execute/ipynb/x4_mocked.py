@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Computing the expectation value of $\langle x^4 \rangle$ for 1 dimensional particle in the box
+# # Computing the expectation value of $\langle x^4 \rangle$ for the 1-dimensional particle-in-a-box
 
-# ### Here is an example of calculating $\langle x \rangle$  and $\langle x^2 \rangle$ for the one 1 dimenstional particle in the box.
+# ### Here is an example of calculating $\langle x \rangle$  and $\langle x^2 \rangle$ for the 1-dimensional particle-in-a-box.
 # 
 # The average position is expected to be 
 # 
@@ -46,13 +46,13 @@
 # 
 # ### Task:
 # Use the above example to calculate $\langle x^4 \rangle$. You can follow next steps:
-# 1. Complete the `compute_wavefunction` function by coding the expression for calculating wavefunction. Don't forget the normalization constant. Also, take into account that x values could be negative and greater than a as well as be presented as `numpy.ndarray` or `float`.
-# 2. Using the `compute_wavefunction` function complete the `compute_probability` function
-# 3. Fill the gaps in `compute_momentum`  function, where you can use  the `compute_probability` function.
-# 4. Complete the function `check_momentum` by calculating the integrand experssion.
-# 5. Now you are ready to calculate the average. Use the [quad](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html) function for numerical integration and complete the `calc_average` function. Compare you results with 
-# 6. At the last step you can use your functions to calculate  the $\langle x^2 \rangle$ and compare it with the analytic value. We encourage you to play with different values of n, a
-# 7. Submit your notebook as discribed at the [first tutorial](Tutorial_0.ipynb) and enjoy your work!
+# 1. Complete the `compute_wavefunction` function by coding the expression for calculating the wavefunction. Don't forget the normalization constant. Also, take into account that $x$ values could be negative and greater than $a$, and that $x$ values could be a simple real number (a `float`) or a list of numbers (a `numpy.ndarray`).
+# 2. Using the `compute_wavefunction` function, complete the `compute_probability` function.
+# 3. Fill the gaps in `compute_moments` function; this is especially easy if you use the `compute_probability` function.
+# 4. Complete the function `check_moment`.
+# 5. Now you are ready to calculate the average. Use the [quad](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html) function for numerical integration and complete the `calc_average` function. 
+# 6. Use your functions to calculate  the $\langle x^2 \rangle$ and compare it with the analytic value. We encourage you to play with different values of $n$ and $a$.
+# 7. Submit your notebook as described at the [first tutorial](Tutorial_0.ipynb).
 
 # In[1]:
 
