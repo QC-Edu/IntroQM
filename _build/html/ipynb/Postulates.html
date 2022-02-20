@@ -130,7 +130,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Practice GitHub (Classroom)
+     Practice: GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -147,12 +147,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice Python, Jupyter, Numpy
+     Practice: Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice Google Colab
+     Practice: Google Colab
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,12 +302,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
-   Moments of the Particle-in-a-Box
+   5. Moments of the Particle-in-a-Box
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
-   Sudden Changes in Box Length
+   6. Sudden Changes in Box Length
   </a>
  </li>
 </ul>
@@ -623,11 +623,21 @@
        7.6.5.1. 📝 Exercise: Show that the equality in the last equation is true
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
+       7.6.5.2. 📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wavefunction-collapse">
+     7.6.6. Wavefunction “Collapse”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-born-postulate-revisited">
-     7.6.6. The Born Postulate, revisited
+     7.6.7. The Born Postulate, revisited
     </a>
    </li>
   </ul>
@@ -645,6 +655,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">
      7.8.1. 📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
+     7.8.2. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.
     </a>
    </li>
   </ul>
@@ -931,6 +946,21 @@ In an experimental measurement of a quantum-mechanical observable, the measured 
 <blockquote>
 <div><p>Hint: expand the wavefunction in the eigenbasis, use the eigenvalue relation and the orthonormality of the eigenvectors.</p>
 </div></blockquote>
+</section>
+<section id="exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
+<h4><span class="section-number">7.6.5.2. </span>📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.<a class="headerlink" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>It is OK (but not essential) to assume that you are interested in the Laplacian operator in 1 dimension, <span class="math notranslate nohighlight">\(\nabla^2 = \frac{d^2}{dx^2}\)</span>. When we say that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is negative definite, we mean that for <em>any</em> <span class="math notranslate nohighlight">\(\Psi\)</span>, it is <em>always</em> true that
+$<span class="math notranslate nohighlight">\(
+\langle \Psi | \nabla^2 | \Psi \rangle &lt; 0
+\)</span>$
+Note: You may assume that the wavefunction, and its first first and second derivatives, vanish at the ends of the region of integration. However, there are also ways to answer these questions without explicitly invoking those assumptions.
+<a class="reference internal" href="../documents/LaplacianProperties.html"><span class="doc std std-doc">Solution.</span></a></p>
+</div></blockquote>
+</section>
+</section>
+<section id="wavefunction-collapse">
+<h3><span class="section-number">7.6.6. </span>Wavefunction “Collapse”<a class="headerlink" href="#wavefunction-collapse" title="Permalink to this headline">¶</a></h3>
 <p>Immediately after performing a measurement of <span class="math notranslate nohighlight">\(Q\)</span> for the system defined by <span class="math notranslate nohighlight">\(\Psi(x)\)</span>, one knows definitively that the state of the system is described by <span class="math notranslate nohighlight">\(\Psi(x) = \psi_k(x)\)</span>, with eigenvalue <span class="math notranslate nohighlight">\(q_k\)</span>. This seems weird, as the wavefunction seems to have changed abruptly from <span class="math notranslate nohighlight">\(\Psi(x)\)</span> to <span class="math notranslate nohighlight">\(\psi_k(x)\)</span> <em>because</em> of the measurement. This would somehow imply that if the wavefunction for Schrödinger’s cat were:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -945,9 +975,8 @@ In an experimental measurement of a quantum-mechanical observable, the measured 
 <p>I guess my home is only .01% clean (up to my mother’s standards, at least).</p>
 <p>The sudden change in the wavefunction upon observation is called <a class="reference external" href="https://en.wikipedia.org/wiki/Wave_function_collapse">wavefunction collapse</a>. While the reality of wavefunction collapse in a physical sense is irresolvable, it is the mathematical description of what happens in a quantum system, and gives rise to strange quantum effects. If you find such things interesting, you may be interested to know that the aphorism that “a watched pot never boils” is <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_Zeno_effect">justifiable</a>, quantum-mechanically.</p>
 </section>
-</section>
 <section id="the-born-postulate-revisited">
-<h3><span class="section-number">7.6.6. </span>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.7. </span>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Permalink to this headline">¶</a></h3>
 <p>While the Born postulate is usually presented separately, it is in fact a corollary of the fact that physical observables are represented by Hermitian operators. The Hermitian operator that represents a particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is <span class="math notranslate nohighlight">\(\delta(x-x_0)\)</span>, where the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</a> is effectively defined by its so-called <em>sifting property</em>.</p>
 <blockquote>
 <div><p><strong>Sifting property of the Dirac Delta function:</strong> Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a bounded function. Then
@@ -1053,6 +1082,12 @@ c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx
 \[
 \sum_{k=0}^{\infty} c_k \int \left( \phi_j(x) \right)^* \phi_k(x) \, dx  = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
 \]</div>
+</section>
+<section id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
+<h3><span class="section-number">7.8.2. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Hint: Assume the eigenvectors associated with a given eigenvalue are orthogonal; show that you do not have to choose them to be orthogonal. Then, for the (more difficult) converse, assume the eigenvectors associated with a given eigenvalue are not orthogonal, and construct a linear transformation of them that is orthogonal.</p>
+</div></blockquote>
 </section>
 </section>
 <section id="application-heisenberg-uncertainty-principle">

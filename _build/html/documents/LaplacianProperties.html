@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Version Control with Git via GitHub &#8212; Quantum Chemistry</title>
+    <title>Properties of the Laplacian &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -43,6 +43,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Jupyter and Computer Programming" href="../ipynb/jupyter.html" />
-    <link rel="prev" title="Learning Objectives" href="objectives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,12 +115,12 @@
   Topics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="GitHub.html">
    1. GitHub
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -410,7 +410,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/documents/GitHub.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/documents/LaplacianProperties.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -430,7 +430,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fdocuments/GitHub.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fdocuments/LaplacianProperties.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -457,23 +457,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   1.1. 🥅 Learning Objectives
+  <a class="reference internal nav-link" href="#show-that-the-laplacian-is-a-linear-hermitian-operator">
+   Show that the Laplacian is a linear, Hermitian, operator.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#version-control-git-github-and-github-classroom">
-   1.2. Version Control: Git, GitHub, and GitHub Classroom
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   1.3. 👩🏽‍💻 Assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   1.4. 📚 References
+  <a class="reference internal nav-link" href="#show-that-the-laplacian-is-negative-definite">
+   Show that the Laplacian is negative definite.
   </a>
  </li>
 </ul>
@@ -487,74 +477,54 @@
         
               <div>
                 
-  <p><img alt="Version Control" src="../_images/versioncontrol.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="version-control-with-git-via-github">
-<h1><span class="section-number">1. </span>Version Control with Git via GitHub<a class="headerlink" href="#version-control-with-git-via-github" title="Permalink to this headline">¶</a></h1>
-<p>As you write a computer program or any other document, it is important to be able to save your work. This includes</p>
-<ul class="simple">
-<li><p>saving your work at intermediate stages</p></li>
-<li><p>creating multiple versions], so that you can select the option that balances the goals of being elegant (easy-to-understand), approachable (easy-to-use), and efficient (requiring less resources).</p></li>
-<li><p>editing files and groups of files collaboratively in a way that minimizes conflicts/inconsistencies and maximizes teamwork/accountability.</p></li>
-</ul>
-<section id="learning-objectives">
-<h2><span class="section-number">1.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Understand what version control is and why it is useful.</p></li>
-<li><p>Understand what Git is and how to use Git via GitHub.</p></li>
-<li><p>Know what a repository (repo) is, and how to use a repository for version control.</p></li>
-<li><p>Understand the basics of GitHub Classroom.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="properties-of-the-laplacian">
+<h1>Properties of the Laplacian<a class="headerlink" href="#properties-of-the-laplacian" title="Permalink to this headline">¶</a></h1>
+<section id="show-that-the-laplacian-is-a-linear-hermitian-operator">
+<h2>Show that the Laplacian is a linear, Hermitian, operator.<a class="headerlink" href="#show-that-the-laplacian-is-a-linear-hermitian-operator" title="Permalink to this headline">¶</a></h2>
+<p>To show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is linear, we need only recall that it is the second derivative operator. We know that differentiation is a linear operator. I.e., differentiation of a constant times a function is equal to a constant, times the value obtained by differentiating the function. Similarly, differentiation of a sum of functions is equal to summing the derivatives of the functions. Mathematically,
+$<span class="math notranslate nohighlight">\(
+\frac{d^k}{dx^k} \text{constant} \cdot f(x) = \text{constant} \cdot\frac{d^kf}{dx^k} 
+\)</span><span class="math notranslate nohighlight">\(
+and
+\)</span><span class="math notranslate nohighlight">\(
+\frac{d^k\left(f(x) + g(x) \right)}{dx^k} = \frac{d^kf(x)}{dx^k} + \frac{d^kg(x)}{dx^k}
+\)</span><span class="math notranslate nohighlight">\(
+So \)</span>\nabla^2<span class="math notranslate nohighlight">\( (corresponding to \)</span>k=2$) is linear.</p>
+<p>One can show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is Hermitian using integration by parts, similar to how we did in the course notes. You can also recognize that the Hermitian property follows directly from <a class="reference external" href="https://en.wikipedia.org/wiki/Green%27s_identities#Green%27s_second_identity">Green’s second identity</a> . (In both cases you use the fact that the wavefunction and its derivatives vanish at the end of the interval of integration.)</p>
+<p>However, we also know that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is closely related to the momentum operator.
+$<span class="math notranslate nohighlight">\(
+\hat{p}^2 = -i \hbar \nabla \cdot -i \hbar \nabla = - \hbar^2 \nabla^2
+\)</span><span class="math notranslate nohighlight">\(
+In atomic units, then, \)</span>\nabla^2 = - \hat{p}^2$. The following math uses the fact that the momentum operator is Hermitian.</p>
+<p>We need to show that
+$<span class="math notranslate nohighlight">\(
+\int \Phi(x)^* \nabla^2 \Psi(x) dx = \int \left( \nabla^2 \Phi(x) \right)^* \Psi(x) dx 
+\)</span><span class="math notranslate nohighlight">\(
+To this end, we start with the relationship between the Laplacian and the momentum operator, then (repeatedly) invoke the fact the momentum operator is Hermitian. So:
+\)</span><span class="math notranslate nohighlight">\(
+\begin{align}
+\int \Phi(x)^* \nabla^2 \Psi(x) dx &amp;=\int \Phi(x)^* \left(-\hat{p}^2\right) \Psi(x) dx \\
+&amp;=-\int \Phi(x)^* \left(\hat{p}\hat{p} \right) \Psi(x) dx \\
+&amp;=-\int \left(\hat{p}\Phi(x)\right)^* \hat{p} \Psi(x) dx \\
+&amp;=-\int \left(\hat{p}\hat{p}\Phi(x)\right)^* \Psi(x) dx \\
+&amp;=\int \left(-\hat{p}^2\Phi(x)\right)^* \Psi(x) dx \\
+&amp;=\int \left(\nabla^2\Phi(x)\right)^* \Psi(x) dx
+\end{align}
+\)</span>$</p>
 </section>
-<section id="version-control-git-github-and-github-classroom">
-<h2><span class="section-number">1.2. </span>Version Control: Git, GitHub, and GitHub Classroom<a class="headerlink" href="#version-control-git-github-and-github-classroom" title="Permalink to this headline">¶</a></h2>
-<p>Version control allows you to save your work, maintain multiple versions of the same document/program in repositories, and easily go back to old versions of the document/program (if you accidentally break it or decide that you made a bad decision). It is most effective when you save (i.e., commit) your work early and often with an informative comment about the changes you made. (That makes it easy to find exactly the version you want!) Version control is essential when multiple people work on a file (or group of files) at the same time: it keeps track of who made what changes to each file, and in cases where multiple people changed the same file at the same time in mutually incompatible ways, it flags these inconsistencies so that an informed choice can be made.</p>
-<p><a class="reference external" href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Click here</a> to learn more about various types of version control.</p>
-<p>In this course, we use web-based version control (specifically Git and GitHub) to share material. The goal is to make it easy to share material, revise and test assignments, and discuss course content. Specifically, the course will use:</p>
-<ul class="simple">
-<li><p><strong>Git</strong> for version control.</p>
-<ul>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=2ReR1YJrNOM">What is Git? Explained in 2 Minutes!</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8JJ101D3knE">Git Tutorial for Beginners: Learn Git in 1 Hour</a></p></li>
-</ul>
-</li>
-<li><p><strong>GitHub</strong> as a tool to manage our Git repositories online.</p>
-<ul>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=w3jLJU7DT5E">What is GitHub?</a></p></li>
-<li><p><a class="reference external" href="https://github.com/education/github-starter-course">The Basics of GitHub from GitHub Education</a></p></li>
-<li><p>Consider uploading a <a class="reference external" href="https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#changing-your-profile-picture">profile picture</a> or linking to a <a class="reference external" href="https://en.gravatar.com/">gravatar</a>. This isn’t essential for using GitHub, but it is really useful to be able to have some memorable and distinguishing image for you rather than just the <a class="reference external" href="https://github.blog/2013-08-14-identicons/">identicon</a>. Don’t be scared to have fun with this! You can always change this later.</p></li>
-</ul>
-</li>
-<li><p><strong>GitHub Classroom</strong> as a way to disseminate, test, give feedback on, revise, and mark assignments.</p>
-<ul>
-<li><p><a class="reference external" href="https://githubuniverse.com/content-library/github-classroom-101/">GitHub Classroom 101</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ObaFRGp_Eko">GitHub Classroom for Students</a></p></li>
-</ul>
-</li>
-</ul>
+<section id="show-that-the-laplacian-is-negative-definite">
+<h2>Show that the Laplacian is negative definite.<a class="headerlink" href="#show-that-the-laplacian-is-negative-definite" title="Permalink to this headline">¶</a></h2>
+<p>One can show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is negative-definite using <a class="reference external" href="https://en.wikipedia.org/wiki/Green%27s_identities#Green%27s_first_identity">Green’s first identity</a> or integration by parts. However, as with the first part of this problem, one can also directly invoke the connection to the momentum operator, <span class="math notranslate nohighlight">\(\nabla^2 = - \hat{p}^2\)</span>. Since the square of an operator is positive definite, it’s clear that the negative of the square of an operator is negative definite. However, more explicitly:
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\int \Psi(x)^* \nabla^2 \Psi(x) dx &amp;=\int \Psi(x)^* \left( -\hat{p}^2 \right) \Psi(x) dx \\
+&amp;=-\int \Psi(x)^* \hat{p}\hat{p} \Psi(x) dx \\
+&amp;=-\int \left(\hat{p}\Psi(x)\right)^* \hat{p} \Psi(x) dx \\
+&amp;=-\int \left|\hat{p}\Psi(x)\right|^2 dx \\
+&amp;&lt;0
+\end{align}
+\)</span>$</p>
 </section>
-<section id="assignment">
-<h2><span class="section-number">1.3. </span>👩🏽‍💻 Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>You will learn more about GitHub through the <a class="reference internal" href="../ipynb/ghfundamentals.html"><span class="doc std std-doc">assignment</span></a>.</p></li>
-</ul>
-</section>
-<section id="references">
-<h2><span class="section-number">1.4. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p>You can learn more about Git and GitHub via LinkedIn Learning Courses.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.linkedin.com/learning/programming-foundations-version-control-with-git">Programming Foundations: Version Control with Git</a></p></li>
-<li><p><a class="reference external" href="https://www.linkedin.com/learning/learning-github">Learning GitHub</a></p></li>
-<li><p><a class="reference external" href="https://www.linkedin.com/learning/github-essential-training">GitHub Essential Training</a></p></li>
-</ul>
-<p><br><br></p>
-<blockquote>
-<div><blockquote>
-<div><p><strong>Hat Tip:</strong> Farnaz Heidar-Zadeh of Queen’s University. This is adapted from her orientation notes in the QC-Edu Boot Camp.</p>
-</div></blockquote>
-</div></blockquote>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -581,21 +551,7 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="objectives.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Learning Objectives</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../ipynb/jupyter.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Jupyter and Computer Programming</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
         
         </div>

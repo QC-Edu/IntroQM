@@ -218,7 +218,7 @@ assert(set(map(str.casefold,e_doubles)) == {"a","c","e","f"})
 ### END HIDDEN TESTS
 
 
-# ### &#x1F5A9; Momentum from a green laser pointer
+# ### &#x1F5A9; xxMomentum from a green laser pointer
 # I have a high-powered green laser pointer (532 nm wavelength, 100 mW power) that I use for astronomical starspotting. If I shine this laser pointer on you, how much momentum, per second, will be transferred to you? Report your answer in SI units of kg m/s.
 
 # In[14]:
@@ -250,7 +250,7 @@ assert(np.isclose(p_greenlaser,3.336e-10,rtol=1e-3))
 ### END HIDDEN TESTS
 
 
-# ### &#x1F5A9; Wavelength emitted by a radiopharmaceutical
+# ### &#x1F5A9; xxWavelength emitted by a radiopharmaceutical
 # The radioactive isotope Cobalt-60 is used in nuclear medicine to treat cancer. The energy emitted by Cobalt-60 is 1.29 x 10^11 J/mol. What is the wavelength of the emitted $\gamma$ rays?
 
 # In[16]:
@@ -279,7 +279,7 @@ assert(np.isclose(wlength_C60,9.273e-13,rtol=1e-3))
 ### END HIDDEN TESTS
 
 
-# ### &#x1fa99; Davisson-Germer experiment
+# ### &#x1fa99; xxDavisson-Germer experiment
 # The Davisson-Germer experiment was among the first explicit verifications of the wave-like nature of electrons, and was foundational for modern electron diffraction methods. (True/False)
 
 # In[18]:
@@ -309,7 +309,7 @@ assert(ad3 == True)
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1f3b2; Davisson-Germer experiment
+# ### &#x1f3b2; xxxDavisson-Germer experiment
 # The Davisson-Germer experiment demonstrated that if you shine a beam of electrons on a metal crystal, the result is <br>
 # **A**. the electrons are absorbed at “critical energies” similar to the optical (light) absorption spectrum. <br>
 # **B**. the electrons scatter according to the Bragg law for X-ray scattering. <br>
@@ -340,7 +340,7 @@ assert(set(map(str.casefold,ad3b)) == {"b"})
 ### END HIDDEN TESTS
 
 
-# ### &#x1F5A9; Properties of photons
+# ### &#x1F5A9; xxxProperties of photons
 # What is the momentum of a $\gamma$-ray photon with a wavelength of $10^{-13}$ m in SI units of ${\frac{\text{m} \cdot \text{kg}}{\text{s}}}$?
 
 # In[22]:
@@ -374,7 +374,7 @@ assert(np.isclose(ad4,constants.h/1e-13,rtol=1e-3))
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1F5A9; Rydberg's Law
+# ### &#x1F5A9; xxxRydberg's Law
 # Rydberg's law says that the wavenumber for the absorptions for a one-electron atom/ion with atomic number Z is given by the expression
 # 
 # $$ \tilde{\nu} = \left( 1.0974 \cdot 10^7 m^{-1}\right) Z^2 
@@ -419,7 +419,7 @@ assert(np.isclose(ad5,2.467e15,rtol=1e-3))
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1f3b2; Wave properties of particles
+# ### &#x1f3b2; xxxWave properties of particles
 # Which of the following experimental results are often cited as examples of the wave-likeness of particles like electrons?  
 # **A**. blackbody radiation  
 # **B**. discrete emission lines in the hydrogen spectrum  
@@ -453,7 +453,7 @@ assert(set(map(str.casefold,ad6)) == {"e"} or set(map(str.casefold,ad6)) == {"b"
 # E (electron scattering).
 
 
-# ###  &#x1f3b2; Particle properties of waves
+# ###  &#x1f3b2; xxxParticle properties of waves
 # Which of the following experimental results are often cited as examples of the particle-likeness of radiation (light)?   
 # **A**. blackbody radiation <br>
 # **B**. discrete emission lines in the hydrogen spectrum <br>
@@ -485,7 +485,7 @@ assert(set(map(str.casefold,ad7)) == {"a","c","d"})
 ### END HIDDEN TESTS
 
 
-# ### &#x1F5A9; Properties of photons
+# ### &#x1F5A9; xxxProperties of photons
 # Suppose you are given a photon with an energy of 2 eV. What is its momentum in 
 # $\frac{\text{m} \cdot \text{kg}}{\text{s}}$? What is its frequency in Hz?
 
@@ -538,7 +538,7 @@ assert(np.isclose(frequency_d9,4.836e+14,rtol=1e-3))
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1F5A9; Properties of photons
+# ### &#x1F5A9; xxxProperties of photons
 # What is the momentum and energy of a photon with angular wavenumber $k=10^7 \text{m}^{-1}$?
 
 # In[32]:
@@ -586,7 +586,7 @@ assert(np.isclose(E_from_k,3.162e-19,rtol=1e-3))
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1F5A9; De Broglie wavelength of a baseball
+# ### &#x1F5A9; xxxDe Broglie wavelength of a baseball
 # During departmental baseball games, your instructor insists that the only reason he strikes out is because of the De Broglie wavelength of the baseball means that even though he swings in the correct location, he still misses. Suppose that the opposing major-league-quality hurler throws the baseball (mass = 145 g) at 100 miles-per-hour (45 m/s). What is the De Broglie wavelength of the baseball?
 
 # In[34]:
@@ -616,7 +616,7 @@ assert(np.isclose(wl_baseball,1.e-34,rtol=1e-2))
 
 # ## The Schr&ouml;dinger Equation
 
-# ### &#x270d;&#xfe0f; Time-Dependent Schr&ouml;dinger Equation
+# ### &#x270d;&#xfe0f; xxxTime-Dependent Schr&ouml;dinger Equation
 # What is the time-dependent Schr&ouml;dinger equation for the complex conjugate of the wavefunction, $\Psi^*$?
 # Put your answer in the markdown cell below. You can drag and drop an attachment (of most types) to this cell also. 
 
@@ -628,7 +628,7 @@ assert(np.isclose(wl_baseball,1.e-34,rtol=1e-2))
 # 
 # === END MARK SCHEME ===
 
-# ### &#x1f3b2; Hamiltonian operator
+# ### &#x1f3b2; xxxHamiltonian operator
 # The Hamiltonian operator corresponds to which observable property of a quantum system? <br>
 # **A**. Action <br>
 # **B**. Momentum <br>
@@ -665,7 +665,7 @@ assert(set(map(str.casefold,ansSE2)) == {"e"})
 
 # ## Mathematics
 
-# ###  &#x1fa99; Mathematical Properties of the wavefunction
+# ###  &#x1fa99; xxxMathematical Properties of the wavefunction
 # A probability density can be negative. (True/False)
 
 # In[38]:
@@ -688,7 +688,7 @@ assert(prob_canbe_negative == False)
 ### END HIDDEN TESTS
 
 
-# ### &#x1f3b2; Complex Conjugation
+# ### &#x1f3b2; xxxComplex Conjugation
 # Let $z$ be a complex number. If $w$ is the product of $z$ and its complex 
 # conjugate, $w = z z^*$, which of the following is **always** true about $w$: <br>
 # **A**. w is an imaginary number. <br>

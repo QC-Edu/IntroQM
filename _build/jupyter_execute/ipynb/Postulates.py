@@ -184,6 +184,16 @@
 # #### &#x1f4dd; Exercise: Show that the equality in the last equation is true
 # > Hint: expand the wavefunction in the eigenbasis, use the eigenvalue relation and the orthonormality of the eigenvectors.
 
+# #### &#x1f4dd; Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator. 
+# >It is OK (but not essential) to assume that you are interested in the Laplacian operator in 1 dimension, $\nabla^2 = \frac{d^2}{dx^2}$. When we say that $\nabla^2$ is negative definite, we mean that for *any* $\Psi$, it is *always* true that 
+# >$$
+# \langle \Psi | \nabla^2 | \Psi \rangle < 0
+# >$$
+# >Note: You may assume that the wavefunction, and its first first and second derivatives, vanish at the ends of the region of integration. However, there are also ways to answer these questions without explicitly invoking those assumptions.
+# >[Solution.](../documents/LaplacianProperties.md)
+
+# ### Wavefunction "Collapse"
+# 
 # Immediately after performing a measurement of $Q$ for the system defined by $\Psi(x)$, one knows definitively that the state of the system is described by $\Psi(x) = \psi_k(x)$, with eigenvalue $q_k$. This seems weird, as the wavefunction seems to have changed abruptly from $\Psi(x)$ to $\psi_k(x)$ *because* of the measurement. This would somehow imply that if the wavefunction for Schr&ouml;dinger's cat were:
 # 
 # $$
@@ -318,6 +328,9 @@
 # $$
 # \sum_{k=0}^{\infty} c_k \int \left( \phi_j(x) \right)^* \phi_k(x) \, dx  = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
 # $$
+
+# #### &#x1f4dd; Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.
+# > Hint: Assume the eigenvectors associated with a given eigenvalue are orthogonal; show that you do not have to choose them to be orthogonal. Then, for the (more difficult) converse, assume the eigenvectors associated with a given eigenvalue are not orthogonal, and construct a linear transformation of them that is orthogonal.
 
 # ## Application: Heisenberg Uncertainty Principle
 # We have already alluded to the [Heisenberg Uncertainty Principle](https://en.wikipedia.org/wiki/Uncertainty_principle), which states that some quantum-mechanical properties cannot be observed simultaneously. To provide a mathematical description of the Heisenberg Uncertainty Principle, we need to define what it means for operators to commute and anticommute.

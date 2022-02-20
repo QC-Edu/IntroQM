@@ -150,6 +150,7 @@
 #   
 # For simplicity, we will only consider systems in one dimension.
 # > [**Wave Equation**](https://en.wikipedia.org/wiki/Wave_equation) (classical electromagnetism) 
+# >
 # >$$
 # \frac{d^2u(x,t)}{dt^2} = c^2 \frac{d^2u(x,t)}{dx^2}
 # $$
@@ -157,6 +158,7 @@
 # <br>
 #   
 # > [**Hamilton-Jacobi Equation**](https://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi_equation) (classical mechanics)
+# >
 # >$$
 # -\frac{dS(x,t)}{dt} = H 
 # $$
