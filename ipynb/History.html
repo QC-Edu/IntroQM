@@ -130,7 +130,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Practice GitHub (Classroom)
+     Practice: GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -147,12 +147,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice Python, Jupyter, Numpy
+     Practice: Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice Google Colab
+     Practice: Google Colab
     </a>
    </li>
    <li class="toctree-l2">
@@ -194,10 +194,32 @@
    4. The Schrödinger Equation
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ParticleIn1DBox.html">
    5. The Particle in a Box
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ParticleInMultiD.html">
@@ -223,8 +245,8 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -276,6 +298,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
   </a>
  </li>
 </ul>
@@ -665,19 +697,21 @@ h \nu \propto \frac{1}{n^2} - \frac{1}{m^2}
 <p>In 1925-26, Heisenberg and Schrödinger, working independently, built mathematical frameworks to describe the wave-particle duality of quantum particles. Nowadays we usually (except sometimes in spectroscopy) prefer Schrödinger’s formulation. We will discuss the Schrödinger equation in more detail in the next unit, but for now it is worth merely comparing it to other equations from classical mechanics and classical electromagnetism, just to intuitively show how it encapsulates wave-particle duality. Of course, a <a class="reference external" href="http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation">more rigorous justification for the Schrödinger equation</a> is beyond the scope of this course.</p>
 <p>For simplicity, we will only consider systems in one dimension.</p>
 <blockquote>
-<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Wave_equation"><strong>Wave Equation</strong></a> (classical electromagnetism)
-$<span class="math notranslate nohighlight">\(
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Wave_equation"><strong>Wave Equation</strong></a> (classical electromagnetism)</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{d^2u(x,t)}{dt^2} = c^2 \frac{d^2u(x,t)}{dx^2}
-\)</span>$</p>
+\]</div>
 </div></blockquote>
 <br>
 <blockquote>
-<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi_equation"><strong>Hamilton-Jacobi Equation</strong></a> (classical mechanics)
-$<span class="math notranslate nohighlight">\(
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi_equation"><strong>Hamilton-Jacobi Equation</strong></a> (classical mechanics)</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{dS(x,t)}{dt} = H 
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>H = T + V<span class="math notranslate nohighlight">\( is the sum of the kinetic energy, \)</span>T<span class="math notranslate nohighlight">\(, and the potential energy, \)</span>V<span class="math notranslate nohighlight">\(, written a function of \)</span>S<span class="math notranslate nohighlight">\(, \)</span>x<span class="math notranslate nohighlight">\(, and \)</span>t<span class="math notranslate nohighlight">\(. In the simplest case, one has: 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(H = T + V\)</span> is the sum of the kinetic energy, <span class="math notranslate nohighlight">\(T\)</span>, and the potential energy, <span class="math notranslate nohighlight">\(V\)</span>, written a function of <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(t\)</span>. In the simplest case, one has:
+$<span class="math notranslate nohighlight">\(
 -\frac{dS(x,t)}{dt} = \left( \frac{1}{2m} \frac{dS(x,t)}{dx} \cdot \frac{dS(x,t)}{dx} + V(x,t) \right)
 \)</span><span class="math notranslate nohighlight">\(
 because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} $.</p>

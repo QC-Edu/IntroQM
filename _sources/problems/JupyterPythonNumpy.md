@@ -4,7 +4,7 @@ This assignment consists of LinkedIn Learning courses that that cover Jupyter, p
 
 1. Go through the course's [introduction to computer programming and computer programming tools](../ipynb/jupyter.ipynb).
 1. Go to your user dashboard on GitHub and create a new repository called `Course-Certificates`. Experiment with the features within that repository to familiarize yourself with them. 
-2. In the `README.md` file in the repository, explain that the purpose of this repository is to store your LinkedIn Learning Certificates. Make a numbered list of certificates, with the name of the course as the title, linked to the file containing the certificate. [See the example repository.](https://github.com/PaulWAyers/Course-Certificates) You can look at the sequence of revisions in the example repository to learn more about how to construct the `README.md` file.
+2. In the `README.md` file in the repository, explain that the purpose of this repository is to store your LinkedIn Learning Certificates. Make a numbered list of certificates, with the name of the course as the title, linked to the file containing the certificate. [See the example repository.](https://github.com/McMasterQM/Course-Certificates) You can look at the sequence of revisions in the example repository to learn more about how to construct the `README.md` file.
 3. Upload the certificates for [using Jupyter notebooks](../problems/Jupyter.md), [Python programming](../problems/python.md), and [using Numpy](../problems/numpy.md).
 4. Invite Rik [(username: `RichRick1`)](https://github.com/RichRick1) and Paul [(username: `PaulWAyers`)](https://github.com/PaulWAyers) as external collaborators with "write" permission to this repository. 
 
