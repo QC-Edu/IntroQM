@@ -89,9 +89,9 @@ parts:
     - file: ipynb/tutorial_1.ipynb
       title: "Wavefunction normalization Colab"
     - url: https://classroom.github.com/a/9yzWI5Vt
-      title: "Moments of the Particle-in-a-Box"
+      title: "5. Moments of the Particle-in-a-Box"
     - url: https://classroom.github.com/a/yBzABlb-
-      title: "Sudden Changes in Box Length"
+      title: "6. Sudden Changes in Box Length"
 
 
   - caption: Extra credit
