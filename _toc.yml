@@ -39,6 +39,10 @@ parts:
         title: Intro to QM video
       - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
+      - file: ipynb/IntroTestExample.ipynb
+        title: "Quiz: Demonstration"
+      - url: https://classroom.github.com/a/d3E1lA4j
+        title: "Quiz: Demo w/ GH Classroom"
 
     - file: ipynb/SchrodingerEq.ipynb
       title: The Schrödinger Equation
