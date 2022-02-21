@@ -1,0 +1,84 @@
+NOTE: Mind the isotope superscripts.
+NOTE: See the attached images.
+
+The diatomic 12C16O has an average bond length <x> = 112.8 pm.  Its infrared spectrum consists of a sharp line at $2143 cm^{-1}$. Using the quantum harmonic oscillator approximation, what is the root mean square deviance ($\langle x^2 \rangle^{1/2}$) of 12C16O from its average bond length? The answers are expressed as a percentage of the average bond length (i.e., $100~\times ~ \langle x^2 \rangle^{1/2} / \langle x \rangle$).
+ANS: 3.00% (percent)
+
+The far infrared spectrum of 1H79Br shows a series of lines separated by $16.72 cm^{-1}$. Using the rigid rotor approximation, what is the internuclear separation in 1H79Br?
+ANS: 142 pm
+122 pm
+134 pm
+155 pm
+146 pm
+
+Which of the following answers is the correct expression for dE/dħ in a quantum harmonic oscillator?
+ANS: $\frac{2}{\hbar}\langle\hat{T}\rangle$
+$\frac{2}{\hbar}\langle \hat{V} \rangle$
+$0$
+$\hbar m \omega^2$
+$\frac{2m\omega^2}{\hbar}$
+
+Which of the following answers is the correct expression for dE/dω in a quantum harmonic oscillator?
+ANS: $\frac{2}{\omega}\langle\hat{V}\rangle$
+$\frac{2}{\omega}$
+$0$
+$\frac{\hbar m \omega}{2}$
+$\frac{2}{\omega}\langle\hat{T}\rangle$
+
+Which of the following answers is the correct expression for dE/dm (reduced mass) in a quantum harmonic oscillator?
+ANS: $0$
+$\frac{2}{\hbar}\langle\hat{T}\rangle$
+$\frac{2}{\hbar}\langle\hat{V}\rangle$
+$\hbar m \omega^2$
+$\frac{2m\omega^2}{\hbar}$
+
+This diagram shows the rotational energy levels for which type of symmetric rotor?  NOTE: attach SPECTRUM1
+ANS: Oblate
+Prolate
+Spherical
+
+This diagram shows the rotational energy levels for which type of symmetric rotor?  NOTE: attach SPECTRUM2
+ANS: Prolate
+Oblate
+Spherical
+
+Let $A^{+}$ and $A^{-}$ be the raising and lowering operators for the one-dimensional quantum harmonic oscillator. Let H be the Hamiltonian operator for the one-dimensional quantum harmonic oscillator.
+$\hat{A^\pm} = \frac{1}{\sqrt{2m}} \left(\hat{p_x} \pm 2\pi i \nu m\hat{x} \right)$
+$\hat{H} = \frac{\hat{p_x}^2}{2m} + 2\pi^2\nu^2m\hat{x}^2$
+Which of the following options is the correct expression for $[H, A^{+}]$?
+ANS: $hvA^{+}$
+$-hvA^{+}$
+$hvA^{-}$
+$-hvA^{-}$
+$hv$
+$-hv$
+
+Let $A^{+}$ and $A^{-}$ be the raising and lowering operators for the one-dimensional quantum harmonic oscillator. Let H be the Hamiltonian operator for the one-dimensional quantum harmonic oscillator.
+$\hat{A^\pm} = \frac{1}{\sqrt{2m}} \left(\hat{p_x} \pm 2\pi i \nu m\hat{x} \right)$
+$\hat{H} = \frac{\hat{p_x}^2}{2m} + 2\pi^2\nu^2m\hat{x}^2$
+Which of the following options is the correct expression for $[A^{+}, A^{-}]$?
+ANS: $-hv$
+$hvA^{+}$
+$-hvA^{+}$
+$hvA^{-}$
+$-hvA^{-}$
+$hv$
+
+The moment of inertia about an axis perpendicular to the principal axis for $NH_3$ is $2.82×10^{-47} kg·m^2$.  What is the moment of inertia about the principal axis, and is $NH_3$ a prolate or oblate symmetric rotor?
+mH = $1.6735×10^{-27} kg$
+N-H bond length = $1.014×10^{-10} m$
+H-N-H bond angle (from principal axis) = 106.78°
+ANS: $4.435×10^{-47} kg·m^2$, oblate
+$4.435×10^{-47} kg·m^2$, prolate
+$3.375×10^{-47} kg·m^2$, oblate
+$3.375×10^{-47} kg·m^2$, prolate
+$2.365×10^{-47} kg·m^2$, oblate
+$2.365×10^{-47} kg·m^2$, prolate
+
+The molecule $CClF_3$ is a prolate symmetric rotor with $A̅ = 0.1908 cm^{-1}$ and $B̅ = 0.1111 cm^{-1}$.  What is the energy of the state corresponding to J = 2 and K = ±1? Use the following formulas:
+$E_{J,K} = \overline{B}J\left(J+1\right)+\left(\overline{A}-\overline{B}\right)K^2$
+$\text{where }\ \overline{B}=\frac{h}{8\pi^2c I_B}\ \text{and }\ \overline{A}=\frac{h}{8\pi^2c I_A}\ \text{for a prolate symmetric top.}$
+ANS: $1.48×10^{-23} J$
+$4.94×10^{-23} J$
+$2.22×10^{-23} J$
+$7.82×10^{-24} J$

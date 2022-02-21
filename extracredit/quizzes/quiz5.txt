@@ -1,0 +1,58 @@
+$\text{What is the expression for the commutator: }\ \left[\hat{x}, \hat{p_x} \right]\ ?$
+ANS: $i\hbar$
+$i\hbar\frac{\partial}{\partial x}$
+$0$
+$\frac{\hbar}{i}$
+
+$\text{What is the expression for the commutator: }\ \left[\hat{x}, {\hat{p_x}}^2 \right]\ ?$
+ANS: $2\hbar^2 \frac{\partial}{\partial x}$
+$-\hbar^2 \frac{\partial}{\partial x}$
+$0$
+$-i\hbar\frac{\partial}{\partial x}$
+
+For a diatomic harmonic oscillator, as the vibrational level v increases, the separation between the energies also increases.
+False
+
+The infrared spectrum of 1H79Br consists of an intense line at $2648.97 cm^{-1}$.  What is the force constant of 1H79Br?
+NOTE: Paul, note the isotope super/subscripts I couldn't denote here. Fix these. Sorry :(
+ANS: 415.5 N/m
+514.5 N/m
+451.5 N/m
+545.1 N/m
+
+The infrared spectrum of a sample of HCl, composed only of one particular isotope of hydrogen and chlorine, consists of an intense line at $2075.14 cm^{-1}$.  The force constant of HCl is 480N/m.  Assuming the validity of the diatomic harmonic oscillator approximation, which isotopes of hydrogen and chlorine are in the sample?
+NOTE: Paul, note the super/subscripts I couldn't denote here. Fix these.  Sorry :(
+ANS: 2H, 35Cl
+1H, 35Cl
+1H, 37Cl
+2H, 37Cl
+
+Can't make isotopes in plaintext....
+
+The dissociation energy for 79Br81Br in its ground state is experimentally observed at $15896 cm^{-1}$.  The infrared spectrum of 79Br81Br consists of an intense line at $319 cm^{-1}$.  Using the diatomic harmonic oscillator approximation, what is the energy difference between the minimum of the potential well and the dissociation limit?
+NOTE: Again the isotopes need super/subscripts.
+ANS: 1.991 eV
+1.971 eV
+2.011 eV
+1.951 eV
+
+The Hermite polynomials, $H_{v}(ξ)$, are even if $v$ is even, and odd if $v$ is odd.
+True
+
+Which of these harmonic oscillator wavefunctions is NOT normalized? Note: use $\alpha = {(k/\mu)^{1/2}}/h$
+ANS: $\psi_1\left(x\right)= \left(\frac{\alpha^3}{2\pi}\right)^{1/4} x e^{-\alpha x^2 / 2}$
+$\psi_0\left(x\right)= \left(\frac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2 / 2}$
+$\psi_2\left(x\right)= \left(\frac{\alpha}{4\pi}\right)^{1/4} \left(2\alpha x^2 - 1\right) e^{-\alpha x^2 / 2}$
+$\psi_3\left(x\right)= \left(\frac{\alpha^3}{9\pi}\right)^{1/4} \left( 2\alpha x^3 - 3x \right) e^{-\alpha x^2 / 2}$
+
+What is <T> for the ground state of a diatomic harmonic oscillator?  Note: for this one, use $α = 2πνμ/h$
+ANS: hv/4
+hv/2
+2πhv
+hv/2π
+
+What is <V> for the ground state of a diatomic harmonic oscillator?  Note: for this one, use $α = 2πνμ/h$
+ANS: hv/4
+hv/2
+2πhv
+hv/2π

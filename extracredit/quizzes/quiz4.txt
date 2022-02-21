@@ -1,0 +1,47 @@
+Which of these is the correct expression for the action of the total energy (Hamiltonian) operator, H, on an eigenstate of the one-dimensional, one-particle quantum harmonic oscillator?
+ANS: $\hat{H}\psi_n\left(x\right)=\left(n+\frac{1}{2}\right)\hbar\omega\psi_n\left(x\right)$
+$\hat{H}\psi_n\left(x\right)=\frac{1}{2}\hbar\omega\psi_n\left(x\right)$
+$\hat{H}\psi_n\left(x\right)=n\hbar\omega\psi_n\left(x\right)$
+$\hat{H}\psi_n\left(x\right)=\frac{1}{4}\hbar\omega\psi_n\left(x\right)$
+$\hat{H}\psi_n\left(x\right)=\frac{1}{2n}\hbar\omega\psi_n\left(x\right)$
+$\hat{H}\psi_n\left(x\right)=\frac{-\hbar^2}{2m}n\omega\psi_n\left(x\right)$
+
+Which of these is the correct expression for the action of the kinetic energy operator, T, on an eigenstate of the one-dimensional, one-particle quantum harmonic oscillator?
+ANS: $\hat{T}\psi_n\left(x\right)=\frac{1}{2}\hbar\omega\psi_n\left(x\right)$
+$\hat{T}\psi_n\left(x\right)=n\hbar\omega\psi_n\left(x\right)$
+$\hat{T}\psi_n\left(x\right)=\frac{1}{4}\hbar\omega\psi_n\left(x\right)$
+$\hat{T}\psi_n\left(x\right)=\frac{1}{2n}\hbar\omega\psi_n\left(x\right)$
+$\hat{T}\psi_n\left(x\right)=\frac{-\hbar^2}{2m}n\omega\psi_n\left(x\right)$
+$\hat{T}\psi_n\left(x\right)=\left(n+\frac{1}{2}\right)\hbar\omega\psi_n\left(x\right)$
+
+Which of these is the correct expression for the action of the potential energy operator, V, on an eigenstate of the one-dimensional, one-particle quantum harmonic oscillator?
+ANS: $\hat{V}\psi_n\left(x\right)=n\hbar\omega\psi_n\left(x\right)$
+$\hat{V}\psi_n\left(x\right)=\frac{1}{2}\hbar\omega\psi_n\left(x\right)$
+$\hat{V}\psi_n\left(x\right)=\frac{1}{4}\hbar\omega\psi_n\left(x\right)$
+$\hat{V}\psi_n\left(x\right)=\frac{1}{2n}\hbar\omega\psi_n\left(x\right)$
+$\hat{V}\psi_n\left(x\right)=\frac{-\hbar^2}{2m}n\omega\psi_n\left(x\right)$
+$\hat{V}\psi_n\left(x\right)=\left(n+\frac{1}{2}\right)\hbar\omega\psi_n\left(x\right)$
+
+An electron is moving in a one-dimensional system in the following potential:
+$V\left(x\right)=\infty,\ \ |x| > a$
+$V\left(x\right)=V_0 \cos\left(\pi x / 2a \right),\ \ |x| \leq a$
+Identify an appropriate unperturbed system and perturbation term, and derive the first-order perturbation theory correction to the system's ground state energy.
+The correction is:
+ANS: $\Delta E_1 = \frac{8V_0}{3\pi}$
+$\Delta E_1 = \frac{4V_0}{\pi}$
+$\Delta E_1 = \frac{32V_0}{15\pi}$
+$\Delta E_1 = \frac{V_0}{a}$
+$\Delta E_1 = \frac{2V_0}{\pi a}$
+$\Delta E_1 = \frac{V_0}{2\pi a}$
+
+An electron is moving in a one-dimensional system in the following potential:
+$V\left(x\right)=\infty,\ \ |x| > a$
+$V\left(x\right)=V_0 \cos\left(\pi x / 2a \right),\ \ |x| \leq a$
+Identify an appropriate unperturbed system and perturbation term, and derive the first-order perturbation theory correction to the system's first excited-state energy.
+The correction is:
+ANS: $\Delta E_1 = \frac{32V_0}{15\pi}$
+$\Delta E_1 = \frac{8V_0}{3\pi}$
+$\Delta E_1 = \frac{4V_0}{\pi}$
+$\Delta E_1 = \frac{V_0}{a}$
+$\Delta E_1 = \frac{2V_0}{\pi a}$
+$\Delta E_1 = \frac{V_0}{2\pi a}$

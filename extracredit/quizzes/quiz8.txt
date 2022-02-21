@@ -1,0 +1,25 @@
+Question 1 is a matching question.  Like, there are two columns and you match the operators for the corresponding formula.  Don't know how to transcribe this.
+
+Calculate the wavelength for the spectral line that arises from an n = 6 to n = 3 transition in the hydrogen atom.
+ANS: 1094.12 nm
+872.94 nm
+744.43 nm
+438.89 nm
+273.50 nm
+
+For the hydrogen atom ground state, what is the probability of finding the electron in the classically forbidden region (i.e., where E < V)?
+ANS: 0.2381
+0.1191
+0.1587
+0.07937
+0.2976
+
+The positron has charge +e and mass equal to the electron mass.  What is the ground-state energy of a positronium -- an "atom" consisting of a positron and an electron?
+ANS: -6.8 eV
+-13.6 eV
+-3.4 eV
+9.6 eV
+
+What is the radius of the sphere defining the 1s hydrogen orbital?  The radius is defined here as the radius inside which the electron has a 95% probability of being found.
+ANS: 1.67 Angstroms
+NOTE: this will not be multiple choice, they will use a solver for this.

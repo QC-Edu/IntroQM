@@ -1,0 +1,62 @@
+A particle of mass m in a one-dimensional box of length a is in its ground state.  If you double the size of the box, the zero-point energy of the box will:
+ANS: decrease by a factor of 1/4
+double
+quadruple
+halve
+none of the above
+
+A particle of mass m in a one-dimensional box of length a is in its ground state.  If you double the mass of the particle, the zero-point energy of the box will:
+ANS: halve
+double
+quadruple
+decrease by a factor of 1/4
+none of the above
+
+How large would Planck's constant have to be in order for the first excitation energy of a ball bearing (m = 0.01 g) in a 1.0 cm box to be observable to the naked eye?  Use 500 nm as the wavelength of visible light.
+ANS: 1.6x10^{6} J \cdot s
+1.6x10^{-3} J \cdot s
+1.2x10^{6} J \cdot s
+1.2x10^{-3} J \cdot s
+6.0x10^{6} J \cdot s
+6.0x10^{-3} J \cdot s
+
+$z = x + 2iy$.  What is $z \cdot z^{*}$ ?
+ANS: x^2 + 4y^2
+x^2 - 4y^2
+x^2 + 4iy^2
+x^2 - 4iy^2
+
+For an electron in a one-dimensional box of length a, what is $\langle x^2 \rangle$?
+ANS: \frac{a^2}{3} - \frac{a^2}{2n^2\pi^2}
+\frac{2}{a} - \frac{a^2}{4n^2\pi^2}
+\frac{a^2}{4}
+\frac{2}{a} - \frac{a^2}{2n^2\pi^2}
+\frac{a^2}{2n^2\pi^2} - \frac{a^2}{3}
+\frac{a^2}{2n^2\pi^2} - \frac{2}{a}
+\frac{a}{2}
+
+For an electron in a one-dimensional box of length a, what is $\langle p^2 \rangle$?
+ANS: \frac{n^2\pi^2\hbar^2}{a^2}
+\frac{n\pi\hbar}{a}
+0
+\frac{n\pi\hbar}{2a}
+\frac{n^2\pi^2\hbar^2}{4a^2}
+\frac{a}{2}
+
+$\hat{A}~f\left(x\right) = f^{*}\left(x\right)$. $\hat{A}$ is a linear operator.
+False
+
+
+$\hat{A}~f\left(x\right) = \ln{f\left(x\right)}$. $\hat{A}$ is a linear operator.
+False
+
+$\hat{A}~f\left(x\right) = f\left(0\right)$. $\hat{A}$ is a linear operator.
+True
+
+For a particle in a one-dimensional box of length a, what is $\sigma_p$? $\hat{p} = -i\hbar \frac{d}{dx}$, and $\sigma_\hat{p}= \left( \langle p^2 \rangle - {\langle p \rangle}^2 \right)^{1/2}$.
+ANS: \frac{nh}{2a}
+\frac{n^2h^2}{4a^2}
+\sqrt{\frac{nh}{2a}}
+0
+\sqrt{\frac{2a}{nh}}
+\frac{2a}{nh}
