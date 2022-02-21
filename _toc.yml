@@ -78,21 +78,24 @@ parts:
         title: Molecules
   
   - caption: Assignments
-    numbered: true
     chapters: 
     - file: ipynb/ghfundamentals.ipynb
-      title: Intro to GitHub (Classroom)
+      title: "1. Intro to GitHub (Classroom)"
     - file: problems/JupyterPythonNumpy.md
-      title: Intro to Python, Jupyter, Numpy
+      title: "2. Intro to Python, Jupyter, Numpy"
     - file: ipynb/Tutorial_0.ipynb
-      title: "Schrodinger's Cat Colab"
+      title: "3. Schrodinger's Cat Colab"
     - file: ipynb/tutorial_1.ipynb
-      title: "Wavefunction normalization Colab"
+      title: "4. Wavefunction normalization Colab"
     - url: https://classroom.github.com/a/9yzWI5Vt
       title: "5. Moments of the Particle-in-a-Box"
     - url: https://classroom.github.com/a/yBzABlb-
       title: "6. Sudden Changes in Box Length"
 
+  - caption: Knowledge Tests 
+    chapters: 
+    - url: https://classroom.github.com/a/d3E1lA4j
+      title: "1. Demo Q&A"
 
   - caption: Extra credit
     chapters:
