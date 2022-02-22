@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Assignment: Normalizing Wavefunctions with Jupyter and Colab &#8212; Quantum Chemistry</title>
+    <title>Assignment: Normalizing Wavefunctions with Jupyter and Colab &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Overview" href="../extracredit/overview.html" />
-    <link rel="prev" title="3. Assignment: Google Colab" href="Tutorial_0.html" />
+    <link rel="prev" title="Assignment: Google Colab" href="Tutorial_0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -130,7 +130,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Practice GitHub (Classroom)
+     Practice: GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -147,12 +147,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice Python, Jupyter, Numpy
+     Practice: Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice Google Colab
+     Practice: Google Colab
     </a>
    </li>
    <li class="toctree-l2">
@@ -187,6 +187,16 @@
      Intro to QM slides+notes
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroTestExample.html">
+     3.11. Quiz: Demonstration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+     Quiz: Demo w/ GH Classroom
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -194,10 +204,32 @@
    4. The Schrödinger Equation
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ParticleIn1DBox.html">
    5. The Particle in a Box
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ParticleInMultiD.html">
@@ -223,8 +255,8 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -276,6 +308,28 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Knowledge Tests
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+   1. Demo Q&amp;A
   </a>
  </li>
 </ul>
@@ -453,49 +507,49 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objective">
-   4.1. 🎯 Objective¶
+   🎯 Objective¶
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#instructions">
-   4.2. 📜 Instructions
+   📜 Instructions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#editing-a-jupyter-notebook-from-github">
-   4.3. Editing a Jupyter Notebook from GitHub
+   Editing a Jupyter Notebook from GitHub
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-google-colab-direct-download-and-upload">
-     4.3.1. Using Google Colab (direct download and upload)
+     Using Google Colab (direct download and upload)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extension-for-chromium-browsers">
-     4.3.2. Extension for Chromium Browsers.
+     Extension for Chromium Browsers.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#understanding-the-assignment">
-     4.3.3. Understanding the assignment
+     Understanding the assignment
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#submitting-an-assignment">
-   4.4. Submitting an assignment
+   Submitting an assignment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-the-result">
-   4.5. Check the result
+   Check the result
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grading-scheme">
-   4.6. Grading Scheme
+   Grading Scheme
   </a>
  </li>
 </ul>
@@ -510,13 +564,13 @@
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-normalizing-wavefunctions-with-jupyter-and-colab">
-<h1><span class="section-number">4. </span>Assignment: Normalizing Wavefunctions with Jupyter and Colab<a class="headerlink" href="#assignment-normalizing-wavefunctions-with-jupyter-and-colab" title="Permalink to this headline">¶</a></h1>
+<h1>Assignment: Normalizing Wavefunctions with Jupyter and Colab<a class="headerlink" href="#assignment-normalizing-wavefunctions-with-jupyter-and-colab" title="Permalink to this headline">¶</a></h1>
 <section id="objective">
-<h2><span class="section-number">4.1. </span>🎯 Objective¶<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<h2>🎯 Objective¶<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
 <p>To practice Jupyter and Colab.</p>
 </section>
 <section id="instructions">
-<h2><span class="section-number">4.2. </span>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<h2>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Presuming you already have a GitHub account, <a class="reference external" href="https://classroom.github.com/a/1DZ_qS9k">connect to GitHub Classroom</a>. You’ll see <img alt="p1" src="../_images/22.png" /></p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">the</span> <span class="pre">assignment</span></code> and then update the page <img alt="p2" src="../_images/32.png" />. You will see a new repository with the task <img alt="p3" src="../_images/42.png" /></p></li>
@@ -524,10 +578,10 @@
 </ol>
 </section>
 <section id="editing-a-jupyter-notebook-from-github">
-<h2><span class="section-number">4.3. </span>Editing a Jupyter Notebook from GitHub<a class="headerlink" href="#editing-a-jupyter-notebook-from-github" title="Permalink to this headline">¶</a></h2>
+<h2>Editing a Jupyter Notebook from GitHub<a class="headerlink" href="#editing-a-jupyter-notebook-from-github" title="Permalink to this headline">¶</a></h2>
 <p>As described in the <a class="reference external" href="https://qchem.qc-edu.org/ipynb/jupyter.html#what-is-jupyter">notes</a>, there are several ways to edit <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
 <section id="using-google-colab-direct-download-and-upload">
-<h3><span class="section-number">4.3.1. </span>Using Google Colab (direct download and upload)<a class="headerlink" href="#using-google-colab-direct-download-and-upload" title="Permalink to this headline">¶</a></h3>
+<h3>Using Google Colab (direct download and upload)<a class="headerlink" href="#using-google-colab-direct-download-and-upload" title="Permalink to this headline">¶</a></h3>
 <p>In this tutorial we will show how to work with Jupyter notebooks through Google Colab.</p>
 <ol class="simple">
 <li><p>Download the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> archive of the GitHub repo. In order to download it click <code class="docutils literal notranslate"><span class="pre">code</span></code> and <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Zip</span></code> <img alt="p4" src="../_images/51.png" /></p></li>
@@ -538,7 +592,7 @@ You will see this window <img alt="p6" src="../_images/71.png" /></p></li>
 <p>Voila! <img alt="p7" src="../_images/8.png" /></p>
 </section>
 <section id="extension-for-chromium-browsers">
-<h3><span class="section-number">4.3.2. </span>Extension for Chromium Browsers.<a class="headerlink" href="#extension-for-chromium-browsers" title="Permalink to this headline">¶</a></h3>
+<h3>Extension for Chromium Browsers.<a class="headerlink" href="#extension-for-chromium-browsers" title="Permalink to this headline">¶</a></h3>
 <p>If you use a browser like Google Chrome or Microsoft Edge, then you can use the <a class="reference external" href="https://chrome.google.com/webstore/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo">Open in Colab</a> browser extension. Then,</p>
 <ol class="simple">
 <li><p>View the target Jupyter Notebook on Github</p></li>
@@ -547,7 +601,7 @@ You will see this window <img alt="p6" src="../_images/71.png" /></p></li>
 </ol>
 </section>
 <section id="understanding-the-assignment">
-<h3><span class="section-number">4.3.3. </span>Understanding the assignment<a class="headerlink" href="#understanding-the-assignment" title="Permalink to this headline">¶</a></h3>
+<h3>Understanding the assignment<a class="headerlink" href="#understanding-the-assignment" title="Permalink to this headline">¶</a></h3>
 <p>There is an instruction written in the notebook. All you need to do is to fill the code between</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### START YOUR CODE HERE</span>
 <span class="o">...</span>
@@ -562,13 +616,13 @@ When you are satisfied with a code just click <code class="docutils literal notr
 </section>
 </section>
 <section id="submitting-an-assignment">
-<h2><span class="section-number">4.4. </span>Submitting an assignment<a class="headerlink" href="#submitting-an-assignment" title="Permalink to this headline">¶</a></h2>
+<h2>Submitting an assignment<a class="headerlink" href="#submitting-an-assignment" title="Permalink to this headline">¶</a></h2>
 <p>Submitting the assignment is breeze!
 When you downloaded the final version of the file just go to your repo and click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">files</span></code>; then upload your newly created file <img alt="p10" src="../_images/111.png" />
 Now commit your changes and click <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> <img alt="p11" src="../_images/121.png" /></p>
 </section>
 <section id="check-the-result">
-<h2><span class="section-number">4.5. </span>Check the result<a class="headerlink" href="#check-the-result" title="Permalink to this headline">¶</a></h2>
+<h2>Check the result<a class="headerlink" href="#check-the-result" title="Permalink to this headline">¶</a></h2>
 <p>In order to check whether your code passed tests all you need to do is go to <code class="docutils literal notranslate"><span class="pre">Actions</span></code><span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">commit</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">with</span> <span class="pre">pytest</span></code>. <img alt="p12" src="../_images/13.png" /> <img alt="p13" src="../_images/141.png" /> In most cases the tests will run automatically, and you do not need to explicitly invoke Pytest.</p>
 <p>If you see a green check mark: <em><strong>CONGRATULATIONS!</strong></em> you passed the assignment</p>
 <p>If there is a bug, then the following may occur:
@@ -577,7 +631,7 @@ Now commit your changes and click <code class="docutils literal notranslate"><sp
 <img alt="p16" src="../_images/17.png" /> <img alt="p17" src="../_images/18.png" /></p>
 </section>
 <section id="grading-scheme">
-<h2><span class="section-number">4.6. </span>Grading Scheme<a class="headerlink" href="#grading-scheme" title="Permalink to this headline">¶</a></h2>
+<h2>Grading Scheme<a class="headerlink" href="#grading-scheme" title="Permalink to this headline">¶</a></h2>
 <p>Completing the assignment earns you an <strong>S</strong>. To earn an <strong>S+</strong>, explore whether there are other choices for the normalization constant that also pass the tests. Can you find a (correct) choice for the normalization constant that nonetheless fails the tests? How is this possible!</p>
 </section>
 </section>
@@ -611,7 +665,7 @@ Now commit your changes and click <code class="docutils literal notranslate"><sp
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>Assignment: Google Colab</p>
+            <p class="prev-next-title">Assignment: Google Colab</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../extracredit/overview.html" title="next page">
