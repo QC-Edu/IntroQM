@@ -5,7 +5,7 @@
 # ![5f+1 orbital](https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hydrogen_eigenstate_n5_l3_m1.png/1024px-Hydrogen_eigenstate_n5_l3_m1.png "A 5f orbital with +1 angular momentum around the z axis, m=1. CC-SA3 license by Geek3")
 # 
 # # One-Electron Atoms
-# Just as the touchstone of chemistry is the periodic table, the touchstone of quantum chemistry is the atomic wavefunction. As we shall see, our intuition about many-electron atoms is built up from our knowledge of 1-electron atoms, mainly because many-electron atoms are mathematically intractable, while 1-electron atoms are not appreciably more complicated than an electron confined to a spherical ball. A detailed mathematical exposition on 1-electron atoms--which are often called hydrogenic atoms--is provided as a [pdf](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Hatom.pdf?raw=true). This is only a brief summary.
+# Just as the touchstone of chemistry is the periodic table, the touchstone of quantum chemistry is the atomic wavefunction. As we shall see, our intuition about many-electron atoms is built up from our knowledge of 1-electron atoms, mainly because many-electron atoms are mathematically intractable, while 1-electron atoms are not appreciably more complicated than an electron confined to a spherical ball. A detailed mathematical exposition on 1-electron atoms--which are often called hydrogenic atoms--is provided as a [pdf](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Hatom.pdf). This is only a brief summary.
 
 # ## Schr&ouml;dinger Equation for One-Electron Atoms
 # Denoting the mass of the electron as $m_e$, the charge of the electron as $=e$, and the [permittivity of free space](https://en.wikipedia.org/wiki/Vacuum_permittivity) as $\epsilon_0$, the Hamiltonian for the attraction of an electron to a atomic nucleus with atomic number $Z$ (and charge $+Ze$) at the origin, $(x,y,z) = (0,0,0)$, is:
@@ -160,6 +160,7 @@
 # - [Randy's book](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true)
 # - D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)
 # - [One-electron atoms](https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Hatom.pdf?raw=true) (my notes).
+# - [Davit Potoyan's Jupyterbook course](https://dpotoyan.github.io/Chem324/Lec5-0.html). 
 # 
 # There are also some excellent wikipedia articles:
 # - [Hydrogen-like atoms](https://en.wikipedia.org/wiki/Hydrogen-like_atom)

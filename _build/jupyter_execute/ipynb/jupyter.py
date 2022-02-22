@@ -90,6 +90,17 @@
 # - As a first (very basic) application to quantum mechanics, you'll [normalize the wavefunction](tutorial_1.ipynb). (This assignment is also basically a tutorial.)
 # - A more advanced exercise including Numpy operations is to [compute student grades using a complicated grading scheme.](https://github.com/McMasterQM/grading/blob/main/grading.ipynb). [Github Classroom Link](https://classroom.github.com/a/2IRoHSuh).
 # 
+# ## &#x1fa9e; Self-Reflection
+# - What is the difference between interpreted and compiled languages? What type of language is Python? Can you explain why we need two different types of languages?
+# - Have you done assignments and other tasks in the past that would have been easier using Jupyter/Python/Numpy? 
+# - Sometimes it is helpful to write a Python function; other times it is better to just use a Jupyter notebook as a calculator. How do you tell the difference?
+# 
+# ## &#x1f914; Thought-Provoking Questions
+# - What’s the relationship of a class and the instance of a class? 
+# - Why do we need classes? 
+# - Why do we need functions? What is a recursive function?
+# - What cell formats are supported in a Jupyter Notebook? What are magic commands and why are they useful? 
+# 
 # ## &#x1f4da; Additional Learning Resources
 # 
 # There are *many* free and paid resources available for deepening your knowledge of Python including videos, tutorials, courses, and books. The following are recommended. For tutorial-based courses, if you can somehow document your completion of the tutorial, then you can submit the proof of your completion for extra credit.

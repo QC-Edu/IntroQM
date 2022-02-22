@@ -363,12 +363,12 @@
 # 
 # ### &#x1f4dd; Exercise: Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration $\text{1s}^2 \text{2s}^1 \text{2p}_0^1 \text{2p}_{+1}^1 \text{2p}_{-1}^1$. Assume all unpaired electrons have $\alpha$ spin.
 
-# ![Cyanine Dyes](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true? "Resonance structures of two different types of cyanine dye")
+# ![Cyanine Dyes](https://github.com/QC-Edu/IntroQM2022/blob/master/linkedFiles/CyanineDyes.svg?raw=true? "Resonance structures of two different types of cyanine dye")
 # ## Example: Many electrons in a Box
 # The Hamiltonian for $N$ electrons confined to a box is, in atomic units,
 # 
 # $$
-# \hat{H}_{\text{N el. in 1 dim.}} = \sum_{n=1}^{N} \left(-\frac{1}{2}\frac{d^2}{dx_n^2} + V(x_n)\right)  \sum_{m=1}^{N-1}\sum_{n=m+1}^{N} \frac{1}{|x_m - x_n|}
+# \hat{H}_{\text{N el. in 1 dim.}} = \sum_{n=1}^{N} \left(-\frac{1}{2}\frac{d^2}{dx_n^2} + V(x_n)\right) + \sum_{m=1}^{N-1}\sum_{n=m+1}^{N} \frac{1}{|x_m - x_n|}
 # $$
 # 
 # where, as usual,

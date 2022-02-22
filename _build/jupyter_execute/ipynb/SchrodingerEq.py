@@ -48,8 +48,19 @@
 # 
 # $$ c = \tfrac{\omega}{k} $$
 
-# ### The Wavefunction
+# #### &#x1f4dd; Exercise: The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its
+# - **frequency in Hz**
+# - **angular frequency in Hz**
+# - **wavenumber, $\bar{\nu}$, in $\text{cm}^{-1}$.**
+# - **angular wavenumber, $k$, in $\text{m}^{-1}$.**
+# - **period in s.**
+# - **momentum in m kg/s.**
+# - **energy in Joules.**
+# [Answer](SchrodingerExercise1.ipynb)
+
 # ![1D Plane Wave](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/planewave1D.gif?raw=true? "Visualization of a the real part of a 1-dimensional travelling plane wave, from Szilágyi, András (2019): EMANIM: Interactive visualization of electromagnetic waves. Web application available at URL https://emanim.szialab.org")
+
+# ### The Wavefunction
 # 
 # The use of angular frequency and wave number is especially useful when dealing with waves, because the need to explicitly include factors of $2 \pi$ to describe the periodic oscillations is removed. A one-dimensional plane wave, moving in the $x$ direction, with amplitude $A$, wavelength $\lambda = \tfrac{2 \pi}{k}$, and frequency $\nu = \tfrac{\omega}{2 \pi}$ is described by
 # 
@@ -116,6 +127,17 @@
 # 
 # The biggest limitations of the Schrödinger equation is that it was derived using the nonrelativistic expression for the kinetic energy of a particle, $T = \tfrac{p^2}{2m}$. For this reason, the Schrödinger equation is not valid for particles that are moving at a substantial fraction of the speed of light (where relativistic effects are important) or for light itself. Quantum mechanics can be extended to such cases, and relativistic quantum mechanics is quite important for the heavier atoms in the periodic table. (Typically relativity is neglected for atoms up to Zinc (Z=30) or Krypton (Z=36), and the included past that. However there are a few molecules containing lighter elements&mdash;e.g., the Sulfur dimer&mdash;where there are chemically (or at least spectroscopically) interesting relativistic effects.) The full relativistic treatment of quantum mechanics leads to “quantum electrodynamics,” which is a rich and interesting subject that we, alas, will not have time to cover.  
 
+# #### &#x1f4dd; Exercise: Show that the time-dependent Schr&ouml;dinger equation for the complex conjugate of the wavefunction, $\Psi^*$, is:
+# $$ 
+# -i \hbar \frac{d \Psi^*(x,t)}{dt} = - \frac{\hbar}{2m} \frac{d^2 \Psi^*(x,t)}{dx^2} + V(x,t)\Psi^*(x,t) 
+# $$
+# 
+# #### &#x1f4dd; Exercise: What is the complex conjugate of 
+# $$ 
+# \Psi(x,t) = A e^{(a+bi)(kx - \omega t)} 
+# $$
+# [Answer](SchrodingerExercise2.ipynb)
+
 # ### The Hamiltonian
 # An equation like Schr&ouml;dinger’s may seem mysterious to us now, but at the time it was derived it seemed very natural. A top-rate physicist like Schr&ouml;dinger had a rich background in classical physics, and he would have understood that there were many results, from classical physics, that suggested that the equations for radiation and for matter could be combined.  One of the strongest such suggestions came from two principles: “Fermat’s principle of least time” and the “Hamilton-Lagrange principle of least action.” Fermat’s principle says that a ray of light goes from point A to point B in the fastest possible way, and can be used to derive all of classical optics. The Hamilton-Lagrange principle says that a particle goes from point A to point B in a way that makes minimizes its action (the product of its momentum and its change in position) along the path. Schr&ouml;dinger would have noticed that Planck’s constant had units of action, and then quickly ascertained that laws of quantum mechanics might be governed by an equation similar to the Hamilton-Jacobi equation for the action, 
 # 
@@ -155,6 +177,26 @@
 # This equation is called the [time-independent Schr&ouml;dinger equation](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation#Time-independent_equation) (TISE).
 # 
 # My father, an organic chemist, always says he knew that quantum mechanics would be problematic the first time he saw the Schr&ouml;dinger equation. He still refers to $\Psi$ as "Satan's pitchfork" and $\hat{H}$ as the "hell operator." Most people, however, call $\hat{H}$ the Hamiltonian and $\Psi$ the wavefunction.
+
+# #### &#x1f4dd; Exercise: Ground-State Energy of the Morse Potential
+# The Morse potential is often used as an approximate model for the vibrations of diatomic molecules. In convenient units where $\frac{\hslash ^{2}}{2m}=1$, the time-independent Schr&ouml;dinger equation for a Morse oscillator can be written as:
+# 
+# $$
+# \left(-\frac{d^{2}}{dx^{2}}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)\psi _{n}\left(x\right)=E_{n}\psi _{n}\left(x\right)
+# $$
+# 
+# 
+# The first two eigenfunctions of the Morse oscillator are given by the following expressions (which are not normalized)
+# $$
+# \begin{align}
+# \psi _{0}\left(x\right)&=\exp \left(-\left(\lambda -\tfrac{1}{2}\right)x-\lambda e^{-x}\right)\\
+# \psi _{1}\left(x\right)&=\exp \left(-\left(\lambda -\tfrac{3}{2}\right)x-\lambda e^{-x}\right)\left(2\lambda -2-2\lambda e^{-x}\right)
+# \end{align}
+# $$  
+# 
+# **What is the expression for the ground-state energy for the Morse oscillator?**
+# 
+# [Answer](SchrodingerExercise3.md)
 
 # ### The Time-Independent Schr&ouml;dinger Equation (TISE)
 # In much of chemistry, the Hamiltonian operator is not time-dependent.  For examples, the electrons in a molecule feel a fixed (time-independent) attraction to the nuclei in the molecule and, to a first approximation, the (very small) motion of the nuclei can be neglected.  Similarly, in the absence of a time-varying external field, a molecule as a whole (containing both electrons and nuclei) does not feel a time-varying potential. 
@@ -235,6 +277,9 @@
 # ## &#x1f914; Thought-Provoking Questions
 # - Once upon a time, one of the professors at McMaster was asked "why is the quantum-mechanical momentum operator associated with the derivative" and, unable to answer the student, sent the student to me for clarification. Can you justify why the quantum mechanical momentum operator is $\hat{p} = -i \hbar \nabla$?
 # - Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was "the negative of something squared", namely, $\hat{T} = \tfrac{-1}{2m}\nabla^2$. How would you answer this question?
+# - What are the eigenfunctions of the momentum operator?
+# - What are the eigenfunctions of the kinetic-energy operator?
+# - Is every eigenfunction of the momentum operator also an eigenfunction of the kinetic-energy operator? Is the [converse](https://en.wikipedia.org/wiki/Converse_(logic)) also true? 
 # - Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, $x=0$, increases proportionally to its distance, $F = -kx$. What would the Hamiltonian be?
 # - What are the eigenfunctions of the kinetic-energy operator?
 # - What are the eigenfunctions of the momentum operator?
@@ -263,5 +308,3 @@
 #   - [Schr&ouml;dinger Equation](http://en.wikipedia.org/wiki/Schrodinger_equation)
 #   - [Theoretical Justification of S.E.](http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation).
 #   - [Momentum Operator](http://en.wikipedia.org/wiki/Momentum_operator)
-
-# 
