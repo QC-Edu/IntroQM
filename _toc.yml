@@ -12,7 +12,7 @@ parts:
       title: Detailed Learning Objectives
 
   - caption: Topics
-    numbered: true
+    numbered: True
     chapters:
     - file: documents/GitHub.md
       title: GitHub
@@ -39,13 +39,16 @@ parts:
         title: Intro to QM video
       - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
-      - file: ipynb/IntroTestExample.ipynb
-        title: "Quiz: Demonstration"
       - url: https://classroom.github.com/a/d3E1lA4j
         title: "Quiz: Demo w/ GH Classroom"
+      - url: https://classroom.github.com/a/DMg3v70o
+        title: "Quiz: QM Intro"
 
     - file: ipynb/SchrodingerEq.ipynb
       title: The Schrödinger Equation
+      sections:
+      - url: https://classroom.github.com/a/yXuh6NJt
+        title: "Quiz: The Schrodinger Eq."
 
     - file: ipynb/ParticleIn1DBox.ipynb
       title: The Particle in a Box
@@ -56,12 +59,16 @@ parts:
         title: "Practice: Moments of the P-in-Box"
       - url: https://classroom.github.com/a/yBzABlb-
         title: "Practice: The Sudden Approximation"
+      - url: https://classroom.github.com/a/1Y48deKP
+        title: "Quiz: 1D P-in-Box"
         
     - file: ipynb/ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
 
     - file: ipynb/Postulates.ipynb
       title: The Postulates of Quantum Mechanics
+      - url: https://classroom.github.com/a/UeStyjxT
+        title: "Quiz: Applying the Postulates"
 
     - file: ipynb/OneElectronAtoms.ipynb
       title: 1-electron atoms
@@ -100,6 +107,15 @@ parts:
     chapters: 
     - url: https://classroom.github.com/a/d3E1lA4j
       title: "1. Demo Q&A"
+    - url: https://classroom.github.com/a/DMg3v70o
+      title: "2. QM Intro"
+    - url: https://classroom.github.com/a/yXuh6NJt
+      title: "3. The Schrodinger Eq."
+    - url: https://classroom.github.com/a/1Y48deKP
+      title: "4. 1D P-in-Box"
+    - url: https://classroom.github.com/a/UeStyjxT
+      title: "5. Applying the Postulates"
+
 
   - caption: Extra credit
     chapters:
