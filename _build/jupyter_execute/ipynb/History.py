@@ -139,6 +139,12 @@
 # 
 # The previous experiments, among many others, established that particles like electrons have wave-like properties, that electromagnetic radiation is composed of discrete photons with particle-like momentum and energy. The fact particles possess wave-like properties and waves provide particle-like properties is called [wave-particle duality](https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality): there is only one type of "stuff" in the universe and that stuff is "chunky" (like particles) and can constructively and deconstructively interfere (like waves). Moreover, the energies of atoms and molecules are quantized, having only specific discrete values.
 
+# #### &#x1f4dd; Exercise: Suppose you are given a photon with an energy of 2 eV. What is its momentum in $\frac{\text{m} \cdot \text{kg}}{\text{s}}$? What is its frequency in Hz? 
+# [Answer](IntroExercise1.ipynb)
+# 
+# #### &#x1f4dd; Exercise: What is the momentum and energy of a photon with angular wavenumber $k=\frac{2\pi}{\lambda} = 10^7 \text{m}^{-1}$? Give your answer in SI units. 
+# [Answer](IntroExercise2.ipynb)
+
 # 
 # ![Schrodinger Equation](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/GraveSchrodinger.png?raw=true "The grave of Schrodinger, with his equation. Image from Victor Blacus licensed under Creative Commons SA 3")
 # 
@@ -271,6 +277,10 @@
 # Imagine you were assigned to describe Quantum Mechanics to a room full of irrascible tweens. 
 # - How would you motivate them to be interested in quantum mechanics? 
 # - How would you describe wave-particle duality in a way they could understand? 
+
+# ## &#x2753; Knowledge Test
+# - This [set of questions](IntroTestExample.ipynb) demonstrates the different types of knowledge-test questions that appear in the course, and how to solve them. [GitHub Classroom Link](https://classroom.github.com/a/d3E1lA4j)
+# - More [questions](IntroTest1.ipynb), mostly about wave-particle duality. [GitHub Classroom Link]()
 
 # ## &#x1f914; Thought-Provoking Questions
 # - Is it possible for the wavelength of the scattered photon in Compton Scattering to be infinite? (I.e., could the photon be entirely absorbed?)

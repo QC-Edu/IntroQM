@@ -130,7 +130,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Practice GitHub (Classroom)
+     Practice: GitHub (Classroom)
     </a>
    </li>
   </ul>
@@ -147,12 +147,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice Python, Jupyter, Numpy
+     Practice: Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice Google Colab
+     Practice: Google Colab
     </a>
    </li>
    <li class="toctree-l2">
@@ -187,6 +187,16 @@
      Intro to QM slides+notes
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IntroTestExample.html">
+     3.11. Quiz: Demonstration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+     Quiz: Demo w/ GH Classroom
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -194,10 +204,32 @@
    4. The Schrödinger Equation
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="ParticleIn1DBox.html">
    5. The Particle in a Box
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.23. Example notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ParticleInMultiD.html">
@@ -223,8 +255,8 @@
   <a class="reference internal" href="ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -276,6 +308,28 @@
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Knowledge Tests
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+   1. Demo Q&amp;A
   </a>
  </li>
 </ul>
@@ -520,7 +574,7 @@
   <p><img alt="5f+1 orbital" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hydrogen_eigenstate_n5_l3_m1.png/1024px-Hydrogen_eigenstate_n5_l3_m1.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="one-electron-atoms">
 <h1><span class="section-number">8. </span>One-Electron Atoms<a class="headerlink" href="#one-electron-atoms" title="Permalink to this headline">¶</a></h1>
-<p>Just as the touchstone of chemistry is the periodic table, the touchstone of quantum chemistry is the atomic wavefunction. As we shall see, our intuition about many-electron atoms is built up from our knowledge of 1-electron atoms, mainly because many-electron atoms are mathematically intractable, while 1-electron atoms are not appreciably more complicated than an electron confined to a spherical ball. A detailed mathematical exposition on 1-electron atoms–which are often called hydrogenic atoms–is provided as a <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Hatom.pdf?raw=true">pdf</a>. This is only a brief summary.</p>
+<p>Just as the touchstone of chemistry is the periodic table, the touchstone of quantum chemistry is the atomic wavefunction. As we shall see, our intuition about many-electron atoms is built up from our knowledge of 1-electron atoms, mainly because many-electron atoms are mathematically intractable, while 1-electron atoms are not appreciably more complicated than an electron confined to a spherical ball. A detailed mathematical exposition on 1-electron atoms–which are often called hydrogenic atoms–is provided as a <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Hatom.pdf">pdf</a>. This is only a brief summary.</p>
 <section id="schrodinger-equation-for-one-electron-atoms">
 <h2><span class="section-number">8.1. </span>Schrödinger Equation for One-Electron Atoms<a class="headerlink" href="#schrodinger-equation-for-one-electron-atoms" title="Permalink to this headline">¶</a></h2>
 <p>Denoting the mass of the electron as <span class="math notranslate nohighlight">\(m_e\)</span>, the charge of the electron as <span class="math notranslate nohighlight">\(=e\)</span>, and the <a class="reference external" href="https://en.wikipedia.org/wiki/Vacuum_permittivity">permittivity of free space</a> as <span class="math notranslate nohighlight">\(\epsilon_0\)</span>, the Hamiltonian for the attraction of an electron to a atomic nucleus with atomic number <span class="math notranslate nohighlight">\(Z\)</span> (and charge <span class="math notranslate nohighlight">\(+Ze\)</span>) at the origin, <span class="math notranslate nohighlight">\((x,y,z) = (0,0,0)\)</span>, is:</p>
@@ -671,6 +725,7 @@ S_l^{m&lt;0}(\theta,\phi) &amp;= \frac{i}{\sqrt{2}} \left(Y_l^{-m} (\theta, \phi
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
 <li><p>D. A. MacQuarrie, Quantum Chemistry (University Science Books, Mill Valley California, 1983)</p></li>
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Hatom.pdf?raw=true">One-electron atoms</a> (my notes).</p></li>
+<li><p><a class="reference external" href="https://dpotoyan.github.io/Chem324/Lec5-0.html">Davit Potoyan’s Jupyterbook course</a>.</p></li>
 </ul>
 <p>There are also some excellent wikipedia articles:</p>
 <ul class="simple">

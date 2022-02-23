@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Multi-dimensional Particle-in-a-Box
 # ![Particles in 2D confinement](https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/MVZL4.jpg?raw=true "Particles in various types of 2-dimensional confinement")
+# 
+# # Multi-dimensional Particle-in-a-Box
 # 
 # ## 🥅 Learning Objectives
 # - Hamiltonian for a two-dimensional particle-in-a-box
@@ -149,7 +150,10 @@
 # 
 # It is reassuring that the separation-of-independent-variables solution to the $D$-dimensional Schr&ouml;dinger equation reproduces this intuitive conclusion.
 
-# ## &#x1f4dd; Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.
+# #### &#x1f4dd; Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.
+
+# #### &#x1f4dd; Exercise: Write the Time-Dependent Schr&ouml;dinger equation for one particle, in three dimensions, confined by the time-dependent potential $V(x,y,z,t)$.
+# [Answer](MultiDExercise1.md)
 
 # ## Degenerate States
 # When two quantum states have the same energy, they are said to be degenerate. For example, for a square box, where $a_x = a_y = a$, the states with $n_x=1; n_y=2$ and $n_x=2;n_y=1$ are degenerate because:

@@ -86,7 +86,10 @@ from scipy import constants
 # ## &#x1F5A9; Compute properties of a photon with wavelength 486.1 nm.
 # The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its
 # - frequency in Hz
+# - angular frequency in Hz
 # - wavenumber, $\bar{\nu}$, in $\text{cm}^{-1}$.
+# - angular wavenumber, $k$, in $\text{m}^{-1}$.
+# - period in s.
 # - momentum in m kg/s
 # - energy in Joules.
 
