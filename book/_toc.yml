@@ -1,0 +1,144 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: main_content.md
+parts:
+
+
+  - caption: Overview
+    chapters:
+    - file: documents/objectives.md
+      title: Detailed Learning Objectives
+
+  - caption: Topics
+    numbered: True
+    chapters:
+    - file: documents/GitHub.md
+      title: GitHub
+      sections:
+      - url: https://qchem.qc-edu.org/ipynb/ghfundamentals.html
+        title: "Practice: GitHub (Classroom)"
+
+    - file: jupyter.ipynb
+      title: Basics of Jupyter, Python, and Programming
+      sections: 
+      - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
+        title: "Practice: Python, Jupyter, Numpy"
+      - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
+        title: "Practice: Google Colab"
+      - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
+        title: "Practice: Wavefunction Normalization"
+      - url: https://classroom.github.com/a/2IRoHSuh
+        title: "Extra practice: Computing Student Marks (< 2022)"
+
+    - file: History.ipynb
+      title: From Newton to Schrödinger
+      sections:
+      - url: https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683
+        title: Intro to QM video
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf
+        title: Intro to QM slides+notes
+      - url: https://classroom.github.com/a/d3E1lA4j
+        title: "Quiz: Demo w/ GH Classroom"
+      - url: https://classroom.github.com/a/DMg3v70o
+        title: "Quiz: QM Intro"
+
+    - file: SchrodingerEq.ipynb
+      title: The Schrödinger Equation
+      sections:
+      - url: https://classroom.github.com/a/yXuh6NJt
+        title: "Quiz: The Schrodinger Eq."
+
+    - file: ParticleIn1DBox.ipynb
+      title: The Particle in a Box
+      sections:
+      - file: x4_mocked.ipynb
+        title: Example notebook for Moments
+      - url: https://classroom.github.com/a/9yzWI5Vt
+        title: "Practice: Moments of the P-in-Box"
+      - url: https://classroom.github.com/a/yBzABlb-
+        title: "Practice: The Sudden Approximation"
+      - url: https://classroom.github.com/a/1Y48deKP
+        title: "Quiz: 1D P-in-Box"
+        
+    - file: ParticleInMultiD.ipynb
+      title: Particles confined in two and three dimensions
+
+    - file: Postulates.ipynb
+      title: The Postulates of Quantum Mechanics
+      sections:
+      - url: https://classroom.github.com/a/UeStyjxT
+        title: "Quiz: Applying the Postulates"
+
+    - file: OneElectronAtoms.ipynb
+      title: 1-electron atoms
+
+    - file: ApproximateMethods.ipynb
+      title: Approximate Methods
+    
+    - file: ManyElSystems.ipynb
+      title:  "Many-electron systems: Structure and Spectroscopy"
+      sections:
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf
+        title: 2-electron atoms
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf
+        title: Many-electron atoms
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf
+        title: The Born-Oppenheimer Approximation
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf
+        title: Molecules
+  
+  - caption: Assignments
+    chapters: 
+    - file: ghfundamentals.ipynb
+      title: "1. Intro to GitHub (Classroom)"
+    - file: problems/JupyterPythonNumpy.md
+      title: "2. Intro to Python, Jupyter, Numpy"
+    - file: Tutorial_0.ipynb
+      title: "3. Schrodinger's Cat Colab"
+    - file: tutorial_1.ipynb
+      title: "4. Wavefunction normalization Colab"
+    - url: https://classroom.github.com/a/9yzWI5Vt
+      title: "5. Moments of the Particle-in-a-Box"
+    - url: https://classroom.github.com/a/yBzABlb-
+      title: "6. Sudden Changes in Box Length"
+
+  - caption: Knowledge Tests 
+    chapters: 
+    - url: https://classroom.github.com/a/d3E1lA4j
+      title: "1. Demo Q&A"
+    - url: https://classroom.github.com/a/DMg3v70o
+      title: "2. QM Intro"
+    - url: https://classroom.github.com/a/yXuh6NJt
+      title: "3. The Schrodinger Eq."
+    - url: https://classroom.github.com/a/1Y48deKP
+      title: "4. 1D P-in-Box"
+    - url: https://classroom.github.com/a/UeStyjxT
+      title: "5. Applying the Postulates"
+
+
+  - caption: Extra credit
+    chapters:
+    - file: extracredit/overview.md
+      title: Overview
+    - file: extracredit/programming.md
+      title: Jupyter/Python/GitHub exercises
+    - url: https://classroom.github.com/a/2IRoHSuh
+      title: Python/Numpy practice
+
+  - caption: Additional resources
+    chapters:
+    - file: documents/refs.md
+      title: Reference Materials
+    - url: https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683
+      title: Videos
+
+  - caption: Contributing and Using
+    chapters:
+    - file: code_of_conduct.md
+      title: Code of Conduct
+    - file: contributing.md
+      title: How to Contribute
+    - file: license.md
+      title: License
