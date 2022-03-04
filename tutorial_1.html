@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment: Normalizing Wavefunctions with Jupyter and Colab &#8212; Quantum Chemistry</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="extracredit/overview.html" />
+    <link rel="prev" title="Assignment: Google Colab" href="Tutorial_0.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantum Chemistry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_content.html">
+   Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="documents/objectives.html">
+   Detailed Learning Objectives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="documents/GitHub.html">
+   1. GitHub
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
+     Practice: GitHub (Classroom)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   2. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
+     Practice: Python, Jupyter, Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
+     Practice: Google Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
+     Extra practice: Computing Student Marks (&lt; 2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="History.html">
+   3. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">
+     Intro to QM video
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">
+     Intro to QM slides+notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+     Quiz: Demo w/ GH Classroom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+     Quiz: QM Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="SchrodingerEq.html">
+   4. The Schrödinger Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+     Quiz: The Schrodinger Eq.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ParticleIn1DBox.html">
+   5. The Particle in a Box
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.24. Example notebook for Moments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+     Quiz: 1D P-in-Box
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   6. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Postulates.html">
+   7. The Postulates of Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+     Quiz: Applying the Postulates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OneElectronAtoms.html">
+   8. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApproximateMethods.html">
+   9. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ManyElSystems.html">
+   10. Many-electron systems: Structure and Spectroscopy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf">
+     2-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf">
+     Many-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf">
+     The Born-Oppenheimer Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf">
+     Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ghfundamentals.html">
+   1. Intro to GitHub (Classroom)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="problems/JupyterPythonNumpy.html">
+   2. Intro to Python, Jupyter, Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial_0.html">
+   3. Schrodinger's Cat Colab
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Knowledge Tests
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+   1. Demo Q&amp;A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+   2. QM Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+   3. The Schrodinger Eq.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+   4. 1D P-in-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+   5. Applying the Postulates
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Extra credit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracredit/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
+   Python/Numpy practice
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Additional resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="documents/refs.html">
+   Reference Materials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">
+   Videos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing and Using
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_of_conduct.html">
+   Code of Conduct
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   How to Contribute
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/tutorial_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/QC-Edu/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Ftutorial_1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/QC-Edu/IntroQM2022/master?urlpath=tree/_build/html/_sources/tutorial_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/_build/html/_sources/tutorial_1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   🎯 Objective¶
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions">
+   📜 Instructions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editing-a-jupyter-notebook-from-github">
+   Editing a Jupyter Notebook from GitHub
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-google-colab-direct-download-and-upload">
+     Using Google Colab (direct download and upload)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-for-chromium-browsers">
+     Extension for Chromium Browsers.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understanding-the-assignment">
+     Understanding the assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submitting-an-assignment">
+   Submitting an assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-result">
+   Check the result
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-scheme">
+   Grading Scheme
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Assignment: Normalizing Wavefunctions with Jupyter and Colab</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   🎯 Objective¶
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions">
+   📜 Instructions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editing-a-jupyter-notebook-from-github">
+   Editing a Jupyter Notebook from GitHub
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-google-colab-direct-download-and-upload">
+     Using Google Colab (direct download and upload)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-for-chromium-browsers">
+     Extension for Chromium Browsers.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understanding-the-assignment">
+     Understanding the assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submitting-an-assignment">
+   Submitting an assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-result">
+   Check the result
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-scheme">
+   Grading Scheme
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-normalizing-wavefunctions-with-jupyter-and-colab">
+<h1>Assignment: Normalizing Wavefunctions with Jupyter and Colab<a class="headerlink" href="#assignment-normalizing-wavefunctions-with-jupyter-and-colab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>🎯 Objective¶<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>To practice Jupyter and Colab.</p>
+</div>
+<div class="section" id="instructions">
+<h2>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Presuming you already have a GitHub account, <a class="reference external" href="https://classroom.github.com/a/1DZ_qS9k">connect to GitHub Classroom</a>. You’ll see <img alt="p1" src="_images/22.png" /></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">the</span> <span class="pre">assignment</span></code> and then update the page <img alt="p2" src="_images/32.png" />. You will see a new repository with the task <img alt="p3" src="_images/42.png" /></p></li>
+<li><p>To complete the assignment you need to complete the Jupyter notebook <strong><code class="docutils literal notranslate"><span class="pre">Normalizing_eigenfunctions.ipynb</span></code></strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="editing-a-jupyter-notebook-from-github">
+<h2>Editing a Jupyter Notebook from GitHub<a class="headerlink" href="#editing-a-jupyter-notebook-from-github" title="Permalink to this headline">¶</a></h2>
+<p>As described in the <a class="reference external" href="https://qchem.qc-edu.org/ipynb/jupyter.html#what-is-jupyter">notes</a>, there are several ways to edit <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
+<div class="section" id="using-google-colab-direct-download-and-upload">
+<h3>Using Google Colab (direct download and upload)<a class="headerlink" href="#using-google-colab-direct-download-and-upload" title="Permalink to this headline">¶</a></h3>
+<p>In this tutorial we will show how to work with Jupyter notebooks through Google Colab.</p>
+<ol class="simple">
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> archive of the GitHub repo. In order to download it click <code class="docutils literal notranslate"><span class="pre">code</span></code> and <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Zip</span></code> <img alt="p4" src="_images/51.png" /></p></li>
+<li><p>When the repo is downloaded, go to <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> and add the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file from the repo: <code class="docutils literal notranslate"><span class="pre">File</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">notebook</span></code> <img alt="p5" src="_images/61.png" />
+You will see this window <img alt="p6" src="_images/71.png" /></p></li>
+<li><p>Upload the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file</p></li>
+</ol>
+<p>Voila! <img alt="p7" src="_images/8.png" /></p>
+</div>
+<div class="section" id="extension-for-chromium-browsers">
+<h3>Extension for Chromium Browsers.<a class="headerlink" href="#extension-for-chromium-browsers" title="Permalink to this headline">¶</a></h3>
+<p>If you use a browser like Google Chrome or Microsoft Edge, then you can use the <a class="reference external" href="https://chrome.google.com/webstore/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo">Open in Colab</a> browser extension. Then,</p>
+<ol class="simple">
+<li><p>View the target Jupyter Notebook on Github</p></li>
+<li><p>Click the extension to open the notebook in Colab.</p></li>
+<li><p>When you do this, you may need to grant Google/Microsoft (Colab/GitHub) permission to interchange information.</p></li>
+</ol>
+</div>
+<div class="section" id="understanding-the-assignment">
+<h3>Understanding the assignment<a class="headerlink" href="#understanding-the-assignment" title="Permalink to this headline">¶</a></h3>
+<p>There is an instruction written in the notebook. All you need to do is to fill the code between</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### START YOUR CODE HERE</span>
+<span class="o">...</span>
+<span class="c1">### END YOUR CODE HERE</span>
+</pre></div>
+</div>
+<p><img alt="p8" src="_images/91.png" /></p>
+<p>The purpose of this assignment is to compute the normalization constant for the particle-in-a-box. The particle-in-a-box is perhaps the simplest (bound) quantum system. You do not need to know much about the particle-in-a-box to complete this assignment however: referring to the relevant section of the <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ParticleIn1DBox.html#normalization-of-wavefunctions">notes</a>, one sees that one can choose <span class="math notranslate nohighlight">\(A_n = \sqrt{\frac{2}{a}}\)</span>.</p>
+<p>Once the code is completed, you can click the play button to evaluate the cell.
+When you are satisfied with a code just click <code class="docutils literal notranslate"><span class="pre">File</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Save</span></code> and then <code class="docutils literal notranslate"><span class="pre">Download</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">.ipynb</span></code>
+<img alt="p9" src="_images/101.png" /></p>
+</div>
+</div>
+<div class="section" id="submitting-an-assignment">
+<h2>Submitting an assignment<a class="headerlink" href="#submitting-an-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Submitting the assignment is breeze!
+When you downloaded the final version of the file just go to your repo and click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">files</span></code>; then upload your newly created file <img alt="p10" src="_images/111.png" />
+Now commit your changes and click <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> <img alt="p11" src="_images/121.png" /></p>
+</div>
+<div class="section" id="check-the-result">
+<h2>Check the result<a class="headerlink" href="#check-the-result" title="Permalink to this headline">¶</a></h2>
+<p>In order to check whether your code passed tests all you need to do is go to <code class="docutils literal notranslate"><span class="pre">Actions</span></code><span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">commit</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">with</span> <span class="pre">pytest</span></code>. <img alt="p12" src="_images/13.png" /> <img alt="p13" src="_images/141.png" /> In most cases the tests will run automatically, and you do not need to explicitly invoke Pytest.</p>
+<p>If you see a green check mark: <em><strong>CONGRATULATIONS!</strong></em> you passed the assignment</p>
+<p>If there is a bug, then the following may occur:
+<img alt="p14" src="_images/151.png" /> <img alt="p15" src="_images/161.png" /></p>
+<p>Try to find your mistake but if you get stuck, contact me <code class="docutils literal notranslate"><span class="pre">&#64;RichRick1</span></code>
+<img alt="p16" src="_images/17.png" /> <img alt="p17" src="_images/18.png" /></p>
+</div>
+<div class="section" id="grading-scheme">
+<h2>Grading Scheme<a class="headerlink" href="#grading-scheme" title="Permalink to this headline">¶</a></h2>
+<p>Completing the assignment earns you an <strong>S</strong>. To earn an <strong>S+</strong>, explore whether there are other choices for the normalization constant that also pass the tests. Can you find a (correct) choice for the normalization constant that nonetheless fails the tests? How is this possible!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Tutorial_0.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment: Google Colab</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="extracredit/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

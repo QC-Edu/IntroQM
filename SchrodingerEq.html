@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. The Schrödinger Equation &#8212; Quantum Chemistry</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. The One-Dimensional Particle in a Box" href="ParticleIn1DBox.html" />
+    <link rel="prev" title="3. From Newton to Schrödinger" href="History.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantum Chemistry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_content.html">
+   Quantum Chemistry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="documents/objectives.html">
+   Detailed Learning Objectives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="documents/GitHub.html">
+   1. GitHub
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
+     Practice: GitHub (Classroom)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   2. Basics of Jupyter, Python, and Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
+     Practice: Python, Jupyter, Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
+     Practice: Google Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
+     Practice: Wavefunction Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
+     Extra practice: Computing Student Marks (&lt; 2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="History.html">
+   3. From Newton to Schrödinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">
+     Intro to QM video
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">
+     Intro to QM slides+notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+     Quiz: Demo w/ GH Classroom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+     Quiz: QM Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   4. The Schrödinger Equation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+     Quiz: The Schrodinger Eq.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ParticleIn1DBox.html">
+   5. The Particle in a Box
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="x4_mocked.html">
+     5.24. Example notebook for Moments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+     Quiz: 1D P-in-Box
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   6. Particles confined in two and three dimensions
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Postulates.html">
+   7. The Postulates of Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+     Quiz: Applying the Postulates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OneElectronAtoms.html">
+   8. 1-electron atoms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApproximateMethods.html">
+   9. Approximate Methods
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ManyElSystems.html">
+   10. Many-electron systems: Structure and Spectroscopy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf">
+     2-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf">
+     Many-electron atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf">
+     The Born-Oppenheimer Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf">
+     Molecules
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ghfundamentals.html">
+   1. Intro to GitHub (Classroom)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="problems/JupyterPythonNumpy.html">
+   2. Intro to Python, Jupyter, Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial_0.html">
+   3. Schrodinger's Cat Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_1.html">
+   4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Knowledge Tests
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+   1. Demo Q&amp;A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+   2. QM Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+   3. The Schrodinger Eq.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+   4. 1D P-in-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+   5. Applying the Postulates
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Extra credit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracredit/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracredit/programming.html">
+   Jupyter/Python/GitHub exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
+   Python/Numpy practice
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Additional resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="documents/refs.html">
+   Reference Materials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">
+   Videos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing and Using
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_of_conduct.html">
+   Code of Conduct
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   How to Contribute
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/SchrodingerEq.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/QC-Edu/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FSchrodingerEq.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/QC-Edu/IntroQM2022/master?urlpath=tree/_build/html/_sources/SchrodingerEq.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/_build/html/_sources/SchrodingerEq.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   4.1. 🥅 Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-for-the-schrodinger-equation">
+   4.2. Motivation for the Schrödinger Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#angular-frequency-and-wavenumber">
+     4.2.1. Angular Frequency and Wavenumber
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-the-photon-emitted-when-a-4p-electron-in-the-hydrogen-atom-deexcites-into-a-2s-orbital-has-wavelength-486-1-nm-compute-its">
+       4.2.1.1. 📝 Exercise: The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-wavefunction">
+     4.2.2. The Wavefunction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expression-for-the-total-energy">
+     4.2.3. Expression for the Total Energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-time-dependent-schrodinger-equation-tdse">
+     4.2.4. The Time-Dependent Schrödinger Equation (TDSE)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-time-dependent-schrodinger-equation-for-the-complex-conjugate-of-the-wavefunction-psi-is">
+       4.2.4.1. 📝 Exercise: Show that the time-dependent Schrödinger equation for the complex conjugate of the wavefunction,
+       <span class="math notranslate nohighlight">
+        \(\Psi^*\)
+       </span>
+       , is:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-what-is-the-complex-conjugate-of">
+       4.2.4.2. 📝 Exercise: What is the complex conjugate of
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-hamiltonian">
+     4.2.5. The Hamiltonian
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-ground-state-energy-of-the-morse-potential">
+       4.2.5.1. 📝 Exercise: Ground-State Energy of the Morse Potential
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-time-independent-schrodinger-equation-tise">
+     4.2.6. The Time-Independent Schrödinger Equation (TISE)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   4.3. Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   4.4. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knowledge-tests">
+   4.5. ❓ Knowledge Tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   4.6. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   4.7. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   4.8. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   4.9. 📚 References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Schrödinger Equation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   4.1. 🥅 Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-for-the-schrodinger-equation">
+   4.2. Motivation for the Schrödinger Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#angular-frequency-and-wavenumber">
+     4.2.1. Angular Frequency and Wavenumber
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-the-photon-emitted-when-a-4p-electron-in-the-hydrogen-atom-deexcites-into-a-2s-orbital-has-wavelength-486-1-nm-compute-its">
+       4.2.1.1. 📝 Exercise: The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-wavefunction">
+     4.2.2. The Wavefunction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expression-for-the-total-energy">
+     4.2.3. Expression for the Total Energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-time-dependent-schrodinger-equation-tdse">
+     4.2.4. The Time-Dependent Schrödinger Equation (TDSE)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-show-that-the-time-dependent-schrodinger-equation-for-the-complex-conjugate-of-the-wavefunction-psi-is">
+       4.2.4.1. 📝 Exercise: Show that the time-dependent Schrödinger equation for the complex conjugate of the wavefunction,
+       <span class="math notranslate nohighlight">
+        \(\Psi^*\)
+       </span>
+       , is:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-what-is-the-complex-conjugate-of">
+       4.2.4.2. 📝 Exercise: What is the complex conjugate of
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-hamiltonian">
+     4.2.5. The Hamiltonian
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-ground-state-energy-of-the-morse-potential">
+       4.2.5.1. 📝 Exercise: Ground-State Energy of the Morse Potential
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-time-independent-schrodinger-equation-tise">
+     4.2.6. The Time-Independent Schrödinger Equation (TISE)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   4.3. Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   4.4. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knowledge-tests">
+   4.5. ❓ Knowledge Tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   4.6. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   4.7. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   4.8. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   4.9. 📚 References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><img alt="Bring Schrodinger out of the woodwork" src="../linkedFiles/HpsiEpsiCarlos.jpg" /></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-schrodinger-equation">
+<h1><span class="section-number">4. </span>The Schrödinger Equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>The underlying physical laws necessary for the mathematical theory of a large part of physics and the whole of chemistry are thus completely known, and the difficulty is only that the exact application of these laws leads to equations much too complicated to be soluble. It therefore becomes desirable that approximate practical methods of applying quantum mechanics should be developed, which can lead to an explanation of the main features of complex atomic systems without too much computation.
+- Paul A. M. Dirac (1929)</p>
+</div></blockquote>
+<div class="section" id="learning-objectives">
+<h2><span class="section-number">4.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Review of Plane Wave(functions)</p></li>
+<li><p>“Derivation” of the Time-Dependent Schrödinger Equation (TDSE)</p></li>
+<li><p>The Hamiltonian</p></li>
+<li><p>The Time-Independent Schrödinger Equation (TISE)</p></li>
+<li><p>Separation of Variables Method</p></li>
+</ul>
+</div>
+<div class="section" id="motivation-for-the-schrodinger-equation">
+<h2><span class="section-number">4.2. </span>Motivation for the Schrödinger Equation<a class="headerlink" href="#motivation-for-the-schrodinger-equation" title="Permalink to this headline">¶</a></h2>
+<p>Just like Newton’s equations or Maxwell’s equations, the Schrödinger equation is a law of nature:  it cannot be “derived.”  Instead, it must be postulated, and then tested by experiment.  However, just as Newton’s equations can be justified insofar as they encapsulate the “laws of motion” formulated by Galileo and Newton, and Maxwell’s equations can be justified insofar as they encapsulate the “laws of electromagnetism” formulated by Gauss, Faraday, Coulomb, etc., Schrödinger’s equation can be justified by observing that it encapsulates the “laws” of Planck and De Broglie, namely that</p>
+<div class="math notranslate nohighlight">
+\[ E = h \nu = \hbar \omega \]</div>
+<div class="math notranslate nohighlight">
+\[ p = \tfrac{h}{\lambda} = \tfrac{h \nu}{c} = \hbar k = h \tilde{\nu} \]</div>
+<div class="section" id="angular-frequency-and-wavenumber">
+<h3><span class="section-number">4.2.1. </span>Angular Frequency and Wavenumber<a class="headerlink" href="#angular-frequency-and-wavenumber" title="Permalink to this headline">¶</a></h3>
+<p>In these equations I have introduced several new symbols, mostly related to the fact it is often convenient to use angular frequency,</p>
+<div class="math notranslate nohighlight">
+\[ \omega = 2 \pi \nu \]</div>
+<p>which naturally pairs with</p>
+<div class="math notranslate nohighlight">
+\[ \hbar = \tfrac{h}{2 \pi} \]</div>
+<p>Similarly, it is often convenient, especially in spectroscopic studies, to use wavenumber,</p>
+<div class="math notranslate nohighlight">
+\[ \tilde{\nu} = \tfrac{1}{\lambda} = \lambda^{-1} \]</div>
+<p>or its angular analogue</p>
+<div class="math notranslate nohighlight">
+\[ k = \tfrac{2 \pi}{\lambda} = 2 \pi \tilde{nu} \]</div>
+<p>Sometimes it is also useful to consider the period of the wave,</p>
+<div class="math notranslate nohighlight">
+\[ \text{T}  = \nu^{-1} \]</div>
+<p>Recall that the wavelength, frequency, period, and wavenumber of a wave can be related to the speed of light by relations like:</p>
+<div class="math notranslate nohighlight">
+\[ c = \lambda \nu = \tfrac{\lambda}{\text{T}} = \tilde{\nu} \nu \]</div>
+<div class="math notranslate nohighlight">
+\[ c = \tfrac{\omega}{k} \]</div>
+<div class="section" id="exercise-the-photon-emitted-when-a-4p-electron-in-the-hydrogen-atom-deexcites-into-a-2s-orbital-has-wavelength-486-1-nm-compute-its">
+<h4><span class="section-number">4.2.1.1. </span>📝 Exercise: The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its<a class="headerlink" href="#exercise-the-photon-emitted-when-a-4p-electron-in-the-hydrogen-atom-deexcites-into-a-2s-orbital-has-wavelength-486-1-nm-compute-its" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>frequency in Hz</strong></p></li>
+<li><p><strong>angular frequency in Hz</strong></p></li>
+<li><p><strong>wavenumber, <span class="math notranslate nohighlight">\(\bar{\nu}\)</span>, in <span class="math notranslate nohighlight">\(\text{cm}^{-1}\)</span>.</strong></p></li>
+<li><p><strong>angular wavenumber, <span class="math notranslate nohighlight">\(k\)</span>, in <span class="math notranslate nohighlight">\(\text{m}^{-1}\)</span>.</strong></p></li>
+<li><p><strong>period in s.</strong></p></li>
+<li><p><strong>momentum in m kg/s.</strong></p></li>
+<li><p><strong>energy in Joules.</strong>
+<a class="reference internal" href="SchrodingerExercise1.html"><span class="doc std std-doc">Answer</span></a></p></li>
+</ul>
+<p><img alt="1D Plane Wave" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/planewave1D.gif?raw=true?" /></p>
+</div>
+</div>
+<div class="section" id="the-wavefunction">
+<h3><span class="section-number">4.2.2. </span>The Wavefunction<a class="headerlink" href="#the-wavefunction" title="Permalink to this headline">¶</a></h3>
+<p>The use of angular frequency and wave number is especially useful when dealing with waves, because the need to explicitly include factors of <span class="math notranslate nohighlight">\(2 \pi\)</span> to describe the periodic oscillations is removed. A one-dimensional plane wave, moving in the <span class="math notranslate nohighlight">\(x\)</span> direction, with amplitude <span class="math notranslate nohighlight">\(A\)</span>, wavelength <span class="math notranslate nohighlight">\(\lambda = \tfrac{2 \pi}{k}\)</span>, and frequency <span class="math notranslate nohighlight">\(\nu = \tfrac{\omega}{2 \pi}\)</span> is described by</p>
+<div class="math notranslate nohighlight">
+\[ \Psi(x,t) = A e^{i (kx - \omega t)} = A\left(\cos(kx-\omega t) + i \sin(kx - \omega t) \right) \]</div>
+<p>Since <span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> is the function that describes a wave, we call it a “wavefunction.”</p>
+</div>
+<div class="section" id="expression-for-the-total-energy">
+<h3><span class="section-number">4.2.3. </span>Expression for the Total Energy<a class="headerlink" href="#expression-for-the-total-energy" title="Permalink to this headline">¶</a></h3>
+<p>Based on electromagnetism, we believe this equation should give us the essential insight we need to describe the “waviness of particles.” We need, however, a second equation that will allow us to describe the “particulateness of waves.” Since the energy of a wave is proportional to <span class="math notranslate nohighlight">\(\omega\)</span> (Planck-Einstein relation) and the momentum of a wave is proportional to <span class="math notranslate nohighlight">\(k\)</span> (De Broglie relation), an equation that relates the energy to the momentum is an obvious candidate. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{energy} &amp;= \text{kinetic energy} + \text{potential energy}\\
+E &amp;= T + V(x,t)\\
+E &amp;= \frac{p^2}{2m} + V(x,t) 
+\end{align}
+\end{split}\]</div>
+</div>
+<div class="section" id="the-time-dependent-schrodinger-equation-tdse">
+<h3><span class="section-number">4.2.4. </span>The Time-Dependent Schrödinger Equation (TDSE)<a class="headerlink" href="#the-time-dependent-schrodinger-equation-tdse" title="Permalink to this headline">¶</a></h3>
+<p>We need to find a way to combine the key equations from the previous two sections. To do this, note that</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \Psi(x,t)}{\partial t} = (-i \omega) A e^{i (kx - \omega t)} = (-i \omega) \Psi(x,t) \]</div>
+<p>We can link this to Planck’s equation for the energy of a photon by multiplying both sides by <span class="math notranslate nohighlight">\(i \hbar\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+i \hbar \frac{\partial \Psi(x,t)}{\partial t} &amp;= (i \hbar) (-i \omega) \Psi(x,t)  = \hbar \omega \Psi(x,t) \\
+&amp;= E \Psi(x,t) 
+\end{align}
+\end{split}\]</div>
+<p>Similarly, differentiating with respect to position,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial \Psi(x,t)}{\partial x} &amp;= (i k) A e^{i (kx - \omega t)} \\
+\frac{\partial^2 \Psi(x,t)}{\partial x^2} &amp;= (i k)^2 A e^{i (kx - \omega t)} = -k^2 \Psi(x,t) 
+\end{align}
+\end{split}\]</div>
+<p>Multiplying both sides by <span class="math notranslate nohighlight">\(-\hbar^2\)</span> provides a link to the De Broglie relation,</p>
+<div class="math notranslate nohighlight">
+\[
+-\hbar^2 \frac{\partial^2 \Psi(x,t)}{\partial x^2} = (\hbar k)^2 \Psi(x,t) = p^2 \Psi(x,t)
+\]</div>
+<p>Now, let’s consider our expression for the energy,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+E &amp;= \frac{p^2}{2m} + V(x,t) \\
+E \Psi(x,t) &amp;= \frac{p^2}{2m} \Psi(x,t) + V(x,t)\Psi(x,t)
+\end{align}
+\end{split}\]</div>
+<p>Substituting in the equations for the energy and the momentum-squared in terms of wavefunction derivatives, we have:</p>
+<div class="math notranslate nohighlight">
+\[ i \hbar \frac{\partial \Psi(x,t)}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \Psi(x,t)}{\partial x^2} + V(x,t)\Psi(x,t) \]</div>
+<p>This is the <a class="reference external" href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation#Time-dependent_equation"><em>time-dependent Schrödinger equation</em></a>, which we often abbreviate as the TDSE.</p>
+<p>The biggest limitations of the Schrödinger equation is that it was derived using the nonrelativistic expression for the kinetic energy of a particle, <span class="math notranslate nohighlight">\(T = \tfrac{p^2}{2m}\)</span>. For this reason, the Schrödinger equation is not valid for particles that are moving at a substantial fraction of the speed of light (where relativistic effects are important) or for light itself. Quantum mechanics can be extended to such cases, and relativistic quantum mechanics is quite important for the heavier atoms in the periodic table. (Typically relativity is neglected for atoms up to Zinc (Z=30) or Krypton (Z=36), and the included past that. However there are a few molecules containing lighter elements—e.g., the Sulfur dimer—where there are chemically (or at least spectroscopically) interesting relativistic effects.) The full relativistic treatment of quantum mechanics leads to “quantum electrodynamics,” which is a rich and interesting subject that we, alas, will not have time to cover.</p>
+<div class="section" id="exercise-show-that-the-time-dependent-schrodinger-equation-for-the-complex-conjugate-of-the-wavefunction-psi-is">
+<h4><span class="section-number">4.2.4.1. </span>📝 Exercise: Show that the time-dependent Schrödinger equation for the complex conjugate of the wavefunction, <span class="math notranslate nohighlight">\(\Psi^*\)</span>, is:<a class="headerlink" href="#exercise-show-that-the-time-dependent-schrodinger-equation-for-the-complex-conjugate-of-the-wavefunction-psi-is" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[ 
+-i \hbar \frac{d \Psi^*(x,t)}{dt} = - \frac{\hbar}{2m} \frac{d^2 \Psi^*(x,t)}{dx^2} + V(x,t)\Psi^*(x,t) 
+\]</div>
+</div>
+<div class="section" id="exercise-what-is-the-complex-conjugate-of">
+<h4><span class="section-number">4.2.4.2. </span>📝 Exercise: What is the complex conjugate of<a class="headerlink" href="#exercise-what-is-the-complex-conjugate-of" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[ 
+\Psi(x,t) = A e^{(a+bi)(kx - \omega t)} 
+\]</div>
+<p><a class="reference internal" href="SchrodingerExercise2.html"><span class="doc std std-doc">Answer</span></a></p>
+</div>
+</div>
+<div class="section" id="the-hamiltonian">
+<h3><span class="section-number">4.2.5. </span>The Hamiltonian<a class="headerlink" href="#the-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<p>An equation like Schrödinger’s may seem mysterious to us now, but at the time it was derived it seemed very natural. A top-rate physicist like Schrödinger had a rich background in classical physics, and he would have understood that there were many results, from classical physics, that suggested that the equations for radiation and for matter could be combined.  One of the strongest such suggestions came from two principles: “Fermat’s principle of least time” and the “Hamilton-Lagrange principle of least action.” Fermat’s principle says that a ray of light goes from point A to point B in the fastest possible way, and can be used to derive all of classical optics. The Hamilton-Lagrange principle says that a particle goes from point A to point B in a way that makes minimizes its action (the product of its momentum and its change in position) along the path. Schrödinger would have noticed that Planck’s constant had units of action, and then quickly ascertained that laws of quantum mechanics might be governed by an equation similar to the Hamilton-Jacobi equation for the action,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2m}\left(\frac{\partial S}{\partial x}\right)^2 + V(x,t) = \frac{\partial S}{\partial t} \]</div>
+<p>or, equivalently,</p>
+<div class="math notranslate nohighlight">
+\[ S \left(-\frac{1}{2m} \frac{\partial^2S}{\partial x^2} + V(x,t) \right) = \frac{\partial S}{\partial t} - \frac{1}{2m}\frac{\partial^2S^2}{\partial x^2}\]</div>
+<p>The second term on the right-hand-side of this equation ordinarily integrates to zero (owing to the divergence theorem).</p>
+<p>Similarly, as hinted at in the previous set of notes, the Schrödinger equation can be deduced from the (quantum-mechanical) principle of least (really stationary) action. Indeed, the stationary-action principle is more fundamental than the Schrödinger equation, and is the basis for quantum electrodynamics, which is the relativistic theory for matter and electromagnetic radiation that undergirds classical mechanics and classical electromagnetism (in the <span class="math notranslate nohighlight">\(\hbar \rightarrow 0\)</span> limit) and the Schrödinger equation (for nonrelativistic matter, without concern for how matter and radiation interact). Feynman and Schwinger won the Nobel Prize for quantum electrodynamics, but its origins go back to Schrödinger’s and Dirac’s observations about the links between the (least) action principle and the Schrödinger equation.</p>
+<p>The Schrödinger equation is usually written in the form:</p>
+<div class="math notranslate nohighlight">
+\[ {\color{blue}\left( -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x,t)\right)} \Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} \]</div>
+<p>The term in <span style="color:blue">blue</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)">Hamiltonian</a> operator, <span class="math notranslate nohighlight">\(\hat{H}(x,t)\)</span>; it is the operator for the energy in quantum mechanics. In classical mechanics, the <a class="reference external" href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Hamiltonian</a> is exactly the equation that we started with when we wrote a (classical) expression for the energy of matter, <span class="math notranslate nohighlight">\(H(x,t) = \tfrac{p^2}{2m} + V(x,t)\)</span>.</p>
+<p>Using the Hamiltonian, we can then write the TDSE in a compact form,</p>
+<div class="math notranslate nohighlight">
+\[ {\color{blue}\hat{H}(x,t)}\Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} \]</div>
+<p>As in classical mechanics, the Hamiltonian is the operator for the energy. In quantum mechanics, every observable quantity corresponds to an operator. For example, the kinetic energy operator is</p>
+<div class="math notranslate nohighlight">
+\[ \hat{T} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \]</div>
+<p>Moreover, the values of the properties of any quantum-mechanical operator correspond to its eigenvalues,</p>
+<div class="math notranslate nohighlight">
+\[ (\text{operator}) \Psi = (\text{eigenvalue}) \Psi \]</div>
+<p>This suggests that there should be another equation with the form</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}\Psi = E \Psi \]</div>
+<p>This equation is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation#Time-independent_equation">time-independent Schrödinger equation</a> (TISE).</p>
+<p>My father, an organic chemist, always says he knew that quantum mechanics would be problematic the first time he saw the Schrödinger equation. He still refers to <span class="math notranslate nohighlight">\(\Psi\)</span> as “Satan’s pitchfork” and <span class="math notranslate nohighlight">\(\hat{H}\)</span> as the “hell operator.” Most people, however, call <span class="math notranslate nohighlight">\(\hat{H}\)</span> the Hamiltonian and <span class="math notranslate nohighlight">\(\Psi\)</span> the wavefunction.</p>
+<div class="section" id="exercise-ground-state-energy-of-the-morse-potential">
+<h4><span class="section-number">4.2.5.1. </span>📝 Exercise: Ground-State Energy of the Morse Potential<a class="headerlink" href="#exercise-ground-state-energy-of-the-morse-potential" title="Permalink to this headline">¶</a></h4>
+<p>The Morse potential is often used as an approximate model for the vibrations of diatomic molecules. In convenient units where <span class="math notranslate nohighlight">\(\frac{\hslash ^{2}}{2m}=1\)</span>, the time-independent Schrödinger equation for a Morse oscillator can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{d^{2}}{dx^{2}}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)\psi _{n}\left(x\right)=E_{n}\psi _{n}\left(x\right)
+\]</div>
+<p>The first two eigenfunctions of the Morse oscillator are given by the following expressions (which are not normalized)
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\psi _{0}\left(x\right)&amp;=\exp \left(-\left(\lambda -\tfrac{1}{2}\right)x-\lambda e^{-x}\right)\\
+\psi _{1}\left(x\right)&amp;=\exp \left(-\left(\lambda -\tfrac{3}{2}\right)x-\lambda e^{-x}\right)\left(2\lambda -2-2\lambda e^{-x}\right)
+\end{align}
+\)</span>$</p>
+<p><strong>What is the expression for the ground-state energy for the Morse oscillator?</strong></p>
+<p><a class="reference internal" href="SchrodingerExercise3.html"><span class="doc std std-doc">Answer</span></a></p>
+</div>
+</div>
+<div class="section" id="the-time-independent-schrodinger-equation-tise">
+<h3><span class="section-number">4.2.6. </span>The Time-Independent Schrödinger Equation (TISE)<a class="headerlink" href="#the-time-independent-schrodinger-equation-tise" title="Permalink to this headline">¶</a></h3>
+<p>In much of chemistry, the Hamiltonian operator is not time-dependent.  For examples, the electrons in a molecule feel a fixed (time-independent) attraction to the nuclei in the molecule and, to a first approximation, the (very small) motion of the nuclei can be neglected.  Similarly, in the absence of a time-varying external field, a molecule as a whole (containing both electrons and nuclei) does not feel a time-varying potential.</p>
+<p>To derive the time-independent Schrödinger equation, we insert the time-independent Hamiltonian,</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}(x) = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} +V(x)\]</div>
+<p>into the time-dependent Schrödinger equation,</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}(x)\Psi(x,t) = i \hbar \frac{\partial \Psi(x,t)}{\partial t} \]</div>
+<p>and then rearrange the equation into the form</p>
+<div class="math notranslate nohighlight">
+\[ \left( \hat{H}(x) - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) = 0 \]</div>
+<p>This is a differential equation that can be solved by the general technique of <a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_variables">separation of variables</a>. Specifically,</p>
+<blockquote>
+<div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_variables#Partial_differential_equations"><strong>Separation of Variables</strong></a> Given an operator that is a sum of two operators that depend on different (sets of) variables,</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[ \hat{A}(x,y) = \hat{A}_x(x) + \hat{A}_y(y) \]</div>
+<p>The solution to the eigenvalue equation</p>
+<div class="math notranslate nohighlight">
+\[ \hat{A}(x,y) \Psi(x,y) = a \Psi(x,y) \]</div>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[\Psi(x,y) = \Psi_x(x) \cdot \Psi_y(y) \]</div>
+<div class="math notranslate nohighlight">
+\[ a = a_x + a_y \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\hat{A}_x(x) \Psi_x(x) = a_x \Psi_x(x) \]</div>
+<div class="math notranslate nohighlight">
+\[\hat{A}_y(y) \Psi_y(y) = a_y \Psi_y(y) \]</div>
+<p>This tells us that for a time-independent Hamiltonian, the wavefunction has the form <span class="math notranslate nohighlight">\(\Psi(x,t) = \psi(x) \phi(t)\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}(x) \psi(x) = E \psi(x) \]</div>
+<div class="math notranslate nohighlight">
+\[- i\hbar \frac{\partial}{\partial t} \phi(t) = -E\phi(t) \]</div>
+<p>In the first equation, we have chosen the eigenvalue of the TDSE to be the energy since we know that the Hamiltonian is the quantum-mechanical operator for the energy. The second equation is a separable differential equation, which can be solved as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+-i\hbar \frac{\partial}{\partial t} \phi(t) &amp;= -E\phi(t) \\
+\frac{1}{\phi} d\phi &amp;= -\frac{i}{\hbar}E dt \\ 
+\int \frac{1}{\phi} d\phi = \int \frac{-i}{\hbar}E dt \\
+\ln \phi(t) &amp;= \frac{-iEt}{\hbar} + \text{constant of integration}\\
+\phi(t)  &amp;\propto e^{\frac{-iEt}{\hbar}}
+\end{align}
+\end{split}\]</div>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{-iEt}{\hbar}} \]</div>
+<p>The constant of proportionality is not important here, because the time-dependent and time-independent Schrödinger equations are satisfied even if <span class="math notranslate nohighlight">\(\Psi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(t)\)</span> are multiplied by constants.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">4.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>When solving the time-independent Schrödinger equation, we need to find all the possible values of E that solve this equation. There are almost always very many different values of E that work and, for this reason, we usually label the solutions to the equation, which are the eigenfunctions (eigenvectors) and eigenvalues of the Hamiltonian operator, accordingly:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}(x)\psi_k(x) = E_k \psi_k(x) \]</div>
+<p>This course is largely about the “art” of solving the TISE</p>
+<p>Sometimes in chemistry we cannot use the time-independent Schrödinger equation, and need to use the time-dependent Schrödinger equation instead. This is particular important in spectroscopy, where we want to understand how a molecule responds to a time-dependent external electromagnetic field.</p>
+</div>
+<div class="section" id="self-reflection">
+<h2><span class="section-number">4.4. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
+<p>The Hamiltonian operator enters the Schrödinger equation in a special way, and in this sense is a “more important” operator than other quantum-mechanical operators. Why do you think this is the case?</p>
+</div>
+<div class="section" id="knowledge-tests">
+<h2><span class="section-number">4.5. </span>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Questions about the Schrodinger Equation. <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">GitHub Classroom Link</a></p></li>
+</ul>
+</div>
+<div class="section" id="thought-provoking-questions">
+<h2><span class="section-number">4.6. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Once upon a time, one of the professors at McMaster was asked “why is the quantum-mechanical momentum operator associated with the derivative” and, unable to answer the student, sent the student to me for clarification. Can you justify why the quantum mechanical momentum operator is <span class="math notranslate nohighlight">\(\hat{p} = -i \hbar \nabla\)</span>?</p></li>
+<li><p>Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was “the negative of something squared”, namely, <span class="math notranslate nohighlight">\(\hat{T} = \tfrac{-1}{2m}\nabla^2\)</span>. How would you answer this question?</p></li>
+<li><p>What are the eigenfunctions of the momentum operator?</p></li>
+<li><p>What are the eigenfunctions of the kinetic-energy operator?</p></li>
+<li><p>Is every eigenfunction of the momentum operator also an eigenfunction of the kinetic-energy operator? Is the <a class="reference external" href="https://en.wikipedia.org/wiki/Converse_(logic)">converse</a> also true?</p></li>
+<li><p>Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, <span class="math notranslate nohighlight">\(x=0\)</span>, increases proportionally to its distance, <span class="math notranslate nohighlight">\(F = -kx\)</span>. What would the Hamiltonian be?</p></li>
+<li><p>What are the eigenfunctions of the kinetic-energy operator?</p></li>
+<li><p>What are the eigenfunctions of the momentum operator?</p></li>
+<li><p>Show, mathematically, that the eigenvectors and eigenvalues of a separable operator, <span class="math notranslate nohighlight">\(\hat{A}(x,y) = \hat{A}(x) + \hat{A}(y)\)</span> are given by the above expressions.</p></li>
+</ul>
+</div>
+<div class="section" id="recapitulation">
+<h2><span class="section-number">4.7. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Write the quantum-mechanical operator for the energy, kinetic-energy, potential energy, and momentum.</p></li>
+<li><p>Write the time-independent and time-dependent Schrödinger equations.</p></li>
+<li><p>What is the form of the time-dependent wavefunction that solves the TDSE when the Hamiltonian is time-independent.</p></li>
+</ul>
+</div>
+<div class="section" id="next-up">
+<h2><span class="section-number">4.8. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Study a particle confined to a box with infinite sides.</p></li>
+<li><p>Explore the postulates of quantum mechanics.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">4.9. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>My favorite sources for this material are:</p>
+<ul class="simple">
+<li><p>R. Eisberg and R. Resnick, Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles (Wiley, New York, 1974)</p></li>
+<li><p>R. Dumont, <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">An Emergent Reality, Part 2: Quantum Mechanics</a> (Chapters 1 and 2).</p></li>
+<li><p>Also see my (pdf) class <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/IntroQM.pdf?raw=true">notes</a>.</p></li>
+<li><p><a class="reference external" href="https://www.chem.iastate.edu/people/davit-potoyan">Davit Potoyan’s</a> Jupyter-book course “derives” the Schrodinger equation in a somewhat different way. <a class="reference external" href="https://dpotoyan.github.io/Chem324/Lec3-0.html">Chapter 3</a> is especially relevant here.</p></li>
+</ul>
+<p>There are also some excellent wikipedia articles:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Sinusoidal_plane_wave">Plane Wave</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Wavelength">Wavelength-Frequency Relation</a></p></li>
+<li><p>Schrödinger Equation</p>
+<ul>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Schrodinger_equation">Schrödinger Equation</a></p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation">Theoretical Justification of S.E.</a>.</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Momentum_operator">Momentum Operator</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="History.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>From Newton to Schrödinger</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ParticleIn1DBox.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>The One-Dimensional Particle in a Box</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

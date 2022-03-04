@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marking Scheme &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -38,20 +37,22 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -128,13 +129,13 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/ghfundamentals.html">
-     Practice GitHub (Classroom)
+     Practice: GitHub (Classroom)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/jupyter.html">
+  <a class="reference internal" href="../jupyter.html">
    2. Basics of Jupyter, Python, and Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -145,12 +146,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice Python, Jupyter, Numpy
+     Practice: Python, Jupyter, Numpy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice Google Colab
+     Practice: Google Colab
     </a>
    </li>
    <li class="toctree-l2">
@@ -166,7 +167,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/History.html">
+  <a class="reference internal" href="../History.html">
    3. From Newton to Schrödinger
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -185,44 +186,105 @@
      Intro to QM slides+notes
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+     Quiz: Demo w/ GH Classroom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+     Quiz: QM Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../SchrodingerEq.html">
+   4. The Schrödinger Equation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+     Quiz: The Schrodinger Eq.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ParticleIn1DBox.html">
+   5. The Particle in a Box
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../x4_mocked.html">
+     5.24. Example notebook for Moments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+     Practice: Moments of the P-in-Box
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+     Practice: The Sudden Approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+     Quiz: 1D P-in-Box
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/SchrodingerEq.html">
-   4. The Schrödinger Equation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ParticleIn1DBox.html">
-   5. The Particle in a Box
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ParticleInMultiD.html">
+  <a class="reference internal" href="../ParticleInMultiD.html">
    6. Particles confined in two and three dimensions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/Postulates.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Postulates.html">
    7. The Postulates of Quantum Mechanics
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+     Quiz: Applying the Postulates
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/OneElectronAtoms.html">
+  <a class="reference internal" href="../OneElectronAtoms.html">
    8. 1-electron atoms
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ApproximateMethods.html">
+  <a class="reference internal" href="../ApproximateMethods.html">
    9. Approximate Methods
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/ManyElSystems.html">
+  <a class="reference internal" href="../ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -257,7 +319,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ghfundamentals.html">
+  <a class="reference internal" href="../ghfundamentals.html">
    1. Intro to GitHub (Classroom)
   </a>
  </li>
@@ -267,13 +329,55 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/Tutorial_0.html">
+  <a class="reference internal" href="../Tutorial_0.html">
    3. Schrodinger's Cat Colab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/tutorial_1.html">
+  <a class="reference internal" href="../tutorial_1.html">
    4. Wavefunction normalization Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
+   5. Moments of the Particle-in-a-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
+   6. Sudden Changes in Box Length
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Knowledge Tests
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
+   1. Demo Q&amp;A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+   2. QM Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+   3. The Schrodinger Eq.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+   4. 1D P-in-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+   5. Applying the Postulates
   </a>
  </li>
 </ul>
@@ -383,7 +487,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -417,7 +521,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -447,13 +551,46 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Marking Scheme</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignments">
+   Assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-points">
+   Extra Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-mark">
+   Final Mark
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="marking-scheme">
+  <div class="tex2jax_ignore mathjax_ignore section" id="marking-scheme">
 <h1>Marking Scheme<a class="headerlink" href="#marking-scheme" title="Permalink to this headline">¶</a></h1>
 <p>This course will be graded unconventionally, motivated by an instructional philosophy called <a class="reference external" href="https://en.wikipedia.org/wiki/Mastery_learning">Mastery Learning.</a> The basic idea is that you will be assessed based on whether you learn a topic and the depth with which you learn it. This is a flavor of <a class="reference external" href="https://cen.acs.org/education/undergraduate-education/alternative-grading-system-improving-student/99/i15">specifications grading</a> that is adapted for a system, like McMaster, where I am required to give you a letter grade, and not merely a pass/fail mark. The basic intention is that your mark will reflect how far you have managed to ascend <a class="reference external" href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy">Bloom’s Taxonomy of Learning</a> as <a class="reference external" href="https://tophat.com/blog/blooms-taxonomy/">it</a> relates to Quantum Chemistry.</p>
-<section id="assignments">
+<div class="section" id="assignments">
 <h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
 <p>Your course mark will consist entirely of assignments. There will be a final three (maybe just two) assignments that will be due, and defended, during the final exam period. Assignments will be submitted, and marked for <em>correctness</em> (often automatically) using <a class="reference external" href="https://classroom.github.com/">GitHub Classroom</a>. Assignments will be marked for <em>mastery</em> via in-person (or one-on-one virtual) interviews (~20 minutes). The interview will also assess knowledge/understanding/masteryof the course material.</p>
 <p><strong>By default, all assignments are due at 11:59pm on Sunday.</strong></p>
@@ -466,15 +603,15 @@
 :   <strong>Successful.</strong> The assignment was submitted on time and fulfilled the objectives. The quality of the assignment was high (beyond merely marginal). The student not only understands the thought processes required to complete the assignment but demonstrates appropriate engagement with the assignment. The student not only demonstrates knowledge of the course material, but understands its larger context and importance, and how it could be applied/extended.</p>
 <p><strong>S+</strong>
 :   <strong>Excellent.</strong> The assignment was submitted on time and exceeded the objectives. The quality of the assignment was exemplary, to the extent that it could be used as a model for others. The student demonstrates mastery of the thought processes required to complete the assignment, and understands how the assignment could be improved or extended. The student demonstrates knowledge of the course material, understands its larger context and importance, and can apply the material. Moreover, the student has engaged with the topic independently, and evinces a nuanced understanding of the material. (Gain one extra point.)</p>
-</section>
-<section id="extra-points">
+</div>
+<div class="section" id="extra-points">
 <h2>Extra Points<a class="headerlink" href="#extra-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>You <strong>lose</strong> extra points by receiving an S- on an assignment (minus one point), asking for a one-week extension on an assignment (minus one point), or redoing an assignment (minus two points). To accommodate your busy schedules, when you make your GitHub account and send me your username by a private message in MSTeams, you will get 4 extra points.</p></li>
 <li><p>You <strong>gain</strong> extra points by receiving an S+ on an assignment (plus one point). You can also gain extra points by working example problems. These example problems should be written beautifully, at an exemplary S+ level, as Jupyter Notebooks or as Markdown or Markedly Structure Text documents, and submitted as pull requests to the GitHub repository for course content. That way you can help future students with the course material. For each page (~50 lines, but it differs based on difficulty and relevance), you will receive 0.05 extra points. In addition, when you notice typographical errors in the course material, you can correct them and submit a pull request, and will usually receive some extra marks for this. Please consult with me about what sorts of extra credit problems/assignments/examples are most helpful. In general, any contribution you make that improves the course for future generations of students will be rewarded commensurate with the size, and excellence, of the contribution.</p></li>
 </ul>
-</section>
-<section id="final-mark">
+</div>
+<div class="section" id="final-mark">
 <h2>Final Mark<a class="headerlink" href="#final-mark" title="Permalink to this headline">¶</a></h2>
 <p>The final mark is assigned based on the fraction of the assignments you completed successfully and based on the number of “extra points” you have earned. [To receive an A or a B, you must complete all assignments successfully]{.underline}. To receive an A, you must accumulate at least half of the available “extra points”. Because S+ grades are intended to be rare rewards for exceptional performance, earning an A (let alone an A+) will usually require doing some extra credit work.</p>
 <table class="colwidths-auto table">
@@ -539,8 +676,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -564,23 +701,21 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

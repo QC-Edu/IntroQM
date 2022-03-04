@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment: GitHub, Jupyter, Python, Numpy &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -38,23 +37,25 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment: Google Colab" href="../ipynb/Tutorial_0.html" />
-    <link rel="prev" title="Assignment: Introduction to GitHub and GitHub Classroom" href="../ipynb/ghfundamentals.html" />
+    <link rel="next" title="Assignment: Google Colab" href="../Tutorial_0.html" />
+    <link rel="prev" title="Assignment: Introduction to GitHub and GitHub Classroom" href="../ghfundamentals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -134,7 +135,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/jupyter.html">
+  <a class="reference internal" href="../jupyter.html">
    2. Basics of Jupyter, Python, and Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -166,7 +167,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/History.html">
+  <a class="reference internal" href="../History.html">
    3. From Newton to Schrödinger
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -186,25 +187,20 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ipynb/IntroTestExample.html">
-     3.11. Quiz: Demonstration
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
      Quiz: Demo w/ GH Classroom
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+     Quiz: QM Intro
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/SchrodingerEq.html">
-   4. The Schrödinger Equation
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/ParticleIn1DBox.html">
-   5. The Particle in a Box
+  <a class="reference internal" href="../SchrodingerEq.html">
+   4. The Schrödinger Equation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -213,8 +209,25 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ipynb/x4_mocked.html">
-     5.23. Example notebook
+    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+     Quiz: The Schrodinger Eq.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ParticleIn1DBox.html">
+   5. The Particle in a Box
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../x4_mocked.html">
+     5.24. Example notebook for Moments
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,34 +240,51 @@
      Practice: The Sudden Approximation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+     Quiz: 1D P-in-Box
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ParticleInMultiD.html">
+  <a class="reference internal" href="../ParticleInMultiD.html">
    6. Particles confined in two and three dimensions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/Postulates.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Postulates.html">
    7. The Postulates of Quantum Mechanics
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+     Quiz: Applying the Postulates
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/OneElectronAtoms.html">
+  <a class="reference internal" href="../OneElectronAtoms.html">
    8. 1-electron atoms
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ApproximateMethods.html">
+  <a class="reference internal" href="../ApproximateMethods.html">
    9. Approximate Methods
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ipynb/ManyElSystems.html">
+  <a class="reference internal" href="../ManyElSystems.html">
    10. Many-electron systems: Structure and Spectroscopy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -289,7 +319,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/ghfundamentals.html">
+  <a class="reference internal" href="../ghfundamentals.html">
    1. Intro to GitHub (Classroom)
   </a>
  </li>
@@ -299,12 +329,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/Tutorial_0.html">
+  <a class="reference internal" href="../Tutorial_0.html">
    3. Schrodinger's Cat Colab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ipynb/tutorial_1.html">
+  <a class="reference internal" href="../tutorial_1.html">
    4. Wavefunction normalization Colab
   </a>
  </li>
@@ -328,6 +358,26 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
    1. Demo Q&amp;A
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
+   2. QM Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
+   3. The Schrodinger Eq.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
+   4. 1D P-in-Box
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
+   5. Applying the Postulates
   </a>
  </li>
 </ul>
@@ -437,7 +487,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -471,24 +521,34 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Assignment: GitHub, Jupyter, Python, Numpy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-github-jupyter-python-numpy">
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-github-jupyter-python-numpy">
 <h1>Assignment: GitHub, Jupyter, Python, Numpy<a class="headerlink" href="#assignment-github-jupyter-python-numpy" title="Permalink to this headline">¶</a></h1>
 <p>This assignment consists of LinkedIn Learning courses that that cover Jupyter, programming concepts, Python programming, and Numpy. Upon completing each course, you will need to download your certificate of completion and upload it as your assignment. You can also add the certificate to your LinkedIn profile.</p>
 <blockquote>
 <div><p>Before you get started, it’s helpful to <a class="reference external" href="https://lnkd.in/gj-9Xgg">log into LinkedIn Learning</a>. (However, the links provided should automatically prompt you to log in if you are not already.) If you already have a LinkedIn account associated with a different e-mail, you can link your accounts.</p>
 </div></blockquote>
 <ol class="simple">
-<li><p>Go through the course’s <a class="reference internal" href="../ipynb/jupyter.html"><span class="doc std std-doc">introduction to computer programming and computer programming tools</span></a>.</p></li>
+<li><p>Go through the course’s <span class="xref myst">introduction to computer programming and computer programming tools</span>.</p></li>
 <li><p>Go to your user dashboard on GitHub and create a new repository called <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code>. Experiment with the features within that repository to familiarize yourself with them.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in the repository, explain that the purpose of this repository is to store your LinkedIn Learning Certificates. Make a numbered list of certificates, with the name of the course as the title, linked to the file containing the certificate. <a class="reference external" href="https://github.com/McMasterQM/Course-Certificates">See the example repository.</a> You can look at the sequence of revisions in the example repository to learn more about how to construct the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p></li>
 <li><p>Upload the certificates for <a class="reference internal" href="Jupyter.html"><span class="doc std std-doc">using Jupyter notebooks</span></a>, <a class="reference internal" href="python.html"><span class="doc std std-doc">Python programming</span></a>, and <a class="reference internal" href="numpy.html"><span class="doc std std-doc">using Numpy</span></a>.</p></li>
@@ -497,7 +557,7 @@
 <blockquote>
 <div><p>Completing these four items suffices for an <strong>S-</strong> grade. For an <strong>S</strong> grade, complete one <a class="reference internal" href="../extracredit/programming.html"><span class="doc std std-doc">additional activity</span></a>. For an <strong>S+</strong> grade, complete a total of at least three <a class="reference internal" href="../extracredit/programming.html"><span class="doc std std-doc">additional activities</span></a>. The certificates and/or proofs-of-completion for these activities should be added to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> repository. Further activities can be added to this repository over the course of the term for (even more) additional points.</p>
 </div></blockquote>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -521,17 +581,17 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../ipynb/ghfundamentals.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../ghfundamentals.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Assignment: Introduction to GitHub and GitHub Classroom</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../ipynb/Tutorial_0.html" title="next page">
+    <a class='right-next' id="next-link" href="../Tutorial_0.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment: Google Colab</p>
@@ -539,19 +599,17 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

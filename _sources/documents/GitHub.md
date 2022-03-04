@@ -34,7 +34,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
   - [GitHub Classroom for Students](https://www.youtube.com/watch?v=ObaFRGp_Eko)
 
 ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
-- You will learn more about GitHub through the [assignment](../ipynb/ghfundamentals.ipynb).
+- You will learn more about GitHub through the [assignment](../ghfundamentals.ipynb).
 
 ## &#x1f4da; References
 You can learn more about Git and GitHub via LinkedIn Learning Courses.

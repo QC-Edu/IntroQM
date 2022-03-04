@@ -1,6 +1,6 @@
 # Quantum Chemistry
 
-> **CHEM 3PA3** *Quantum Mechanics and Spectroscopy.* An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale. The main course content is conveyed through, and assessed by, Jupyter notebooks, and uses the JupyterBook toolbox. GitHub Classroom is used for assessments.
+> **CHEM 3PA3** *Quantum Mechanics and Spectroscopy.* An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale. The main course content is conveyed through, and assessed by, Jupyter notebooks, and uses the JupyterBook toolbox. GitHub Classroom is used for assessment.
 
 ## Overview
 
@@ -23,8 +23,9 @@
   - Know, understand, and apply approximate computational strategies and their associated practical computational methods
 
 ## Assessment
-- **Assignments** will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](ipynb/Tutorial_0.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). *Your exam will have the same format as the assignments.*
-- **Extra Points** may be earned by [making pull requests](contributing.md) to [this repository](https://github.com/QC-Edu/IntroQM2022). The aim is to encourage you to contribute/refine content that benefits other students. While all contributions ar   e encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. [More information is available here.](extracredit/overview.md)  
+- **Assignments** will be turned in using [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](Tutorial_0.ipynb) and GitHub's [video](https://githubuniverse.com/content-library/github-classroom-101/). Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). *Your exam will have the same format as the assignments.*
+- **Extra Points** may be earned by [making pull requests](contributing.md) to [this repository](https://github.com/QC-Edu/IntroQM2022). The aim is to encourage you to contribute/refine content that benefits other students. While all contributions ar   e encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. [More information is available here.](extracredit/overview.md) 
+- **Auditing** the course is allowed. This course was designed to help self-motivated independent learners. GitHub classroom assignments should be accessible, and auto-graded, without issue. Personal support is, unfortunately but necessarily, much more limited.
 
 ## Other resources
 
