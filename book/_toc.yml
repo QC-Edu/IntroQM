@@ -17,17 +17,17 @@ parts:
     - file: documents/GitHub.md
       title: GitHub
       sections:
-      - url: https://qchem.qc-edu.org/ipynb/ghfundamentals.html
+      - url: https://qchem.qc-edu.org/book/ipynb/ghfundamentals.html
         title: "Practice: GitHub (Classroom)"
 
     - file: jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-      - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
+      - url: https://qchem.qc-edu.org/book/problems/JupyterPythonNumpy.html
         title: "Practice: Python, Jupyter, Numpy"
-      - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
+      - url: https://qchem.qc-edu.org/book/ipynb/Tutorial_0.html
         title: "Practice: Google Colab"
-      - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
+      - url: https://qchem.qc-edu.org/book/ipynb/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/2IRoHSuh
         title: "Extra practice: Computing Student Marks (< 2022)"
@@ -80,13 +80,13 @@ parts:
     - file: ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
       sections:
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/2elatom.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/2elatom.pdf
         title: 2-electron atoms
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/atomsshort.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/atomsshort.pdf
         title: Many-electron atoms
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/PES.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/PES.pdf
         title: The Born-Oppenheimer Approximation
-      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/documents/molecules.pdf
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf
         title: Molecules
   
   - caption: Assignments
