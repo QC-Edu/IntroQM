@@ -88,6 +88,8 @@ parts:
         title: The Born-Oppenheimer Approximation
       - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf
         title: Molecules
+      - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf
+        title: Spectroscopy
   
   - caption: Assignments
     chapters: 
