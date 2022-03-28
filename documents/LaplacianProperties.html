@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Properties of the Laplacian &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -37,22 +38,20 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -492,7 +491,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -526,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -551,40 +550,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Properties of the Laplacian</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#show-that-the-laplacian-is-a-linear-hermitian-operator">
-   Show that the Laplacian is a linear, Hermitian, operator.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#show-that-the-laplacian-is-negative-definite">
-   Show that the Laplacian is negative definite.
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="properties-of-the-laplacian">
+  <section class="tex2jax_ignore mathjax_ignore" id="properties-of-the-laplacian">
 <h1>Properties of the Laplacian<a class="headerlink" href="#properties-of-the-laplacian" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="show-that-the-laplacian-is-a-linear-hermitian-operator">
+<section id="show-that-the-laplacian-is-a-linear-hermitian-operator">
 <h2>Show that the Laplacian is a linear, Hermitian, operator.<a class="headerlink" href="#show-that-the-laplacian-is-a-linear-hermitian-operator" title="Permalink to this headline">¶</a></h2>
 <p>To show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is linear, we need only recall that it is the second derivative operator. We know that differentiation is a linear operator. I.e., differentiation of a constant times a function is equal to a constant, times the value obtained by differentiating the function. Similarly, differentiation of a sum of functions is equal to summing the derivatives of the functions. Mathematically,
 $<span class="math notranslate nohighlight">\(
@@ -616,8 +587,8 @@ To this end, we start with the relationship between the Laplacian and the moment
 &amp;=\int \left(\nabla^2\Phi(x)\right)^* \Psi(x) dx
 \end{align}
 \)</span>$</p>
-</div>
-<div class="section" id="show-that-the-laplacian-is-negative-definite">
+</section>
+<section id="show-that-the-laplacian-is-negative-definite">
 <h2>Show that the Laplacian is negative definite.<a class="headerlink" href="#show-that-the-laplacian-is-negative-definite" title="Permalink to this headline">¶</a></h2>
 <p>One can show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is negative-definite using <a class="reference external" href="https://en.wikipedia.org/wiki/Green%27s_identities#Green%27s_first_identity">Green’s first identity</a> or integration by parts. However, as with the first part of this problem, one can also directly invoke the connection to the momentum operator, <span class="math notranslate nohighlight">\(\nabla^2 = - \hat{p}^2\)</span>. Since the square of an operator is positive definite, it’s clear that the negative of the square of an operator is negative definite. However, more explicitly:
 $<span class="math notranslate nohighlight">\(
@@ -629,8 +600,8 @@ $<span class="math notranslate nohighlight">\(
 &amp;&lt;0
 \end{align}
 \)</span>$</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -654,21 +625,23 @@ $<span class="math notranslate nohighlight">\(
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

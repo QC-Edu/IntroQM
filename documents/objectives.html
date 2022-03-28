@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Learning Objectives &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -37,19 +38,17 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -492,7 +491,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -526,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -566,55 +565,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Learning Objectives</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-use-key-equations">
-   Know, understand, and Use Key Equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understand-and-apply-key-concepts-and-notation">
-   Understand and Apply Key Concepts and Notation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems">
-   Know the Ground-state Wavefunctions, Eigenenergies, Quantum Numbers, and Selection Rules for Important Exactly-Solvable Models, and Use Them to Model Real Atomic and Molecular Systems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-apply-quantum-concepts-for-atoms-molecules">
-   Know, Understand, and Apply Quantum Concepts for Atoms &amp; Molecules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods">
-   Know, Understand, and Apply Approximate Computational Strategies and Associated Practical Computational Methods
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
-  <div class="section" id="learning-objectives">
+  <section id="learning-objectives">
 <h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="know-understand-and-use-key-equations">
+<section id="know-understand-and-use-key-equations">
 <h2>Know, understand, and Use Key Equations<a class="headerlink" href="#know-understand-and-use-key-equations" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Time-dependent Schrödinger equation.</p></li>
@@ -622,8 +578,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Fermi’s golden rule</p></li>
 <li><p>Time-correlation formulation for spectral broadening (advanced)</p></li>
 </ol>
-</div>
-<div class="section" id="understand-and-apply-key-concepts-and-notation">
+</section>
+<section id="understand-and-apply-key-concepts-and-notation">
 <h2>Understand and Apply Key Concepts and Notation<a class="headerlink" href="#understand-and-apply-key-concepts-and-notation" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Bra-ket notation.</p></li>
@@ -644,8 +600,8 @@ photoelectric effect.</p></li>
 <li><p>Allowable and non-allowable wavefunctions.</p></li>
 <li><p>Allowable and non-allowable operators.</p></li>
 </ol>
-</div>
-<div class="section" id="know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems">
+</section>
+<section id="know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems">
 <h2>Know the Ground-state Wavefunctions, Eigenenergies, Quantum Numbers, and Selection Rules for Important Exactly-Solvable Models, and Use Them to Model Real Atomic and Molecular Systems<a class="headerlink" href="#know-the-ground-state-wavefunctions-eigenenergies-quantum-numbers-and-selection-rules-for-important-exactly-solvable-models-and-use-them-to-model-real-atomic-and-molecular-systems" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Particle-in-a-box.</p></li>
@@ -654,8 +610,8 @@ photoelectric effect.</p></li>
 <li><p>One-electron atom</p></li>
 <li><p>Angular momentum (L, S, J, etc.)</p></li>
 </ol>
-</div>
-<div class="section" id="know-understand-and-apply-quantum-concepts-for-atoms-molecules">
+</section>
+<section id="know-understand-and-apply-quantum-concepts-for-atoms-molecules">
 <h2>Know, Understand, and Apply Quantum Concepts for Atoms &amp; Molecules<a class="headerlink" href="#know-understand-and-apply-quantum-concepts-for-atoms-molecules" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Concept of effective nuclear charge.</p></li>
@@ -667,8 +623,8 @@ photoelectric effect.</p></li>
 <li><p>Born-Oppenheimer Approximation</p></li>
 <li><p>Spectroscopy and Selection Rules</p></li>
 </ol>
-</div>
-<div class="section" id="know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods">
+</section>
+<section id="know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods">
 <h2>Know, Understand, and Apply Approximate Computational Strategies and Associated Practical Computational Methods<a class="headerlink" href="#know-understand-and-apply-approximate-computational-strategies-and-associated-practical-computational-methods" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Perturbation Theory</p></li>
@@ -677,8 +633,8 @@ photoelectric effect.</p></li>
 <li><p>Slater Determinants and Hartree-Fock</p></li>
 <li><p>Electron correlation and Correlated Electronic Structure Methods (advanced)</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -702,8 +658,8 @@ photoelectric effect.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../main_content.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -720,17 +676,19 @@ photoelectric effect.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

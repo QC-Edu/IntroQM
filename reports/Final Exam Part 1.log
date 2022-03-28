@@ -1,19 +1,19 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
     return loop.run_until_complete(coro)
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
     return future.result()
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
     await self.async_execute_cell(
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -33,12 +33,12 @@ assert(isinstance(energy,float)), "Type Error: The energy should be a float."
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAssertionError[0m                            Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 8>[0;34m()[0m
-[1;32m      5[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe momentum of a photon with wavelength  486.1 nm is [39m[38;5;132;01m{[39;00mmomentum[38;5;132;01m}[39;00m[38;5;124m kg m/s.[39m[38;5;124m"[39m)
-[1;32m      6[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe energy of a photon with wavelength  486.1 nm is [39m[38;5;132;01m{[39;00menergy[38;5;132;01m}[39;00m[38;5;124m Joules.[39m[38;5;124m"[39m)
-[0;32m----> 8[0m [38;5;28;01massert[39;00m([38;5;28misinstance[39m(frequency,[38;5;28mfloat[39m)), [38;5;124m"[39m[38;5;124mType Error: The frequency should be a float.[39m[38;5;124m"[39m
-[1;32m      9[0m [38;5;28;01massert[39;00m([38;5;28misinstance[39m(wavenumber,[38;5;28mfloat[39m)), [38;5;124m"[39m[38;5;124mType Error: The wavenumber should be a float.[39m[38;5;124m"[39m
-[1;32m     10[0m [38;5;28;01massert[39;00m([38;5;28misinstance[39m(momentum,[38;5;28mfloat[39m)), [38;5;124m"[39m[38;5;124mType Error: The momentum should be a float.[39m[38;5;124m"[39m
+[0;32m/var/folders/gf/7vfqp7nn2972hrcz727tkjkh0000gn/T/ipykernel_93556/865377954.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      6[0m [0mprint[0m[0;34m([0m[0;34mf"The energy of a photon with wavelength  486.1 nm is {energy} Joules."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m [0;34m[0m[0m
+[0;32m----> 8[0;31m [0;32massert[0m[0;34m([0m[0misinstance[0m[0;34m([0m[0mfrequency[0m[0;34m,[0m[0mfloat[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0;34m"Type Error: The frequency should be a float."[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      9[0m [0;32massert[0m[0;34m([0m[0misinstance[0m[0;34m([0m[0mwavenumber[0m[0;34m,[0m[0mfloat[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0;34m"Type Error: The wavenumber should be a float."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m [0;32massert[0m[0;34m([0m[0misinstance[0m[0;34m([0m[0mmomentum[0m[0;34m,[0m[0mfloat[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m [0;34m"Type Error: The momentum should be a float."[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mAssertionError[0m: Type Error: The frequency should be a float.
 AssertionError: Type Error: The frequency should be a float.

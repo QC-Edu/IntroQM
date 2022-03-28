@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Assignment: Normalizing Wavefunctions with Jupyter and Colab &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -37,22 +38,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -494,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -553,7 +552,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -615,92 +614,27 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment: Normalizing Wavefunctions with Jupyter and Colab</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objective">
-   🎯 Objective¶
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instructions">
-   📜 Instructions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#editing-a-jupyter-notebook-from-github">
-   Editing a Jupyter Notebook from GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-google-colab-direct-download-and-upload">
-     Using Google Colab (direct download and upload)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extension-for-chromium-browsers">
-     Extension for Chromium Browsers.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#understanding-the-assignment">
-     Understanding the assignment
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submitting-an-assignment">
-   Submitting an assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-the-result">
-   Check the result
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grading-scheme">
-   Grading Scheme
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-normalizing-wavefunctions-with-jupyter-and-colab">
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-normalizing-wavefunctions-with-jupyter-and-colab">
 <h1>Assignment: Normalizing Wavefunctions with Jupyter and Colab<a class="headerlink" href="#assignment-normalizing-wavefunctions-with-jupyter-and-colab" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="objective">
+<section id="objective">
 <h2>🎯 Objective¶<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
 <p>To practice Jupyter and Colab.</p>
-</div>
-<div class="section" id="instructions">
+</section>
+<section id="instructions">
 <h2>📜 Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Presuming you already have a GitHub account, <a class="reference external" href="https://classroom.github.com/a/1DZ_qS9k">connect to GitHub Classroom</a>. You’ll see <img alt="p1" src="_images/22.png" /></p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">the</span> <span class="pre">assignment</span></code> and then update the page <img alt="p2" src="_images/32.png" />. You will see a new repository with the task <img alt="p3" src="_images/42.png" /></p></li>
 <li><p>To complete the assignment you need to complete the Jupyter notebook <strong><code class="docutils literal notranslate"><span class="pre">Normalizing_eigenfunctions.ipynb</span></code></strong>.</p></li>
 </ol>
-</div>
-<div class="section" id="editing-a-jupyter-notebook-from-github">
+</section>
+<section id="editing-a-jupyter-notebook-from-github">
 <h2>Editing a Jupyter Notebook from GitHub<a class="headerlink" href="#editing-a-jupyter-notebook-from-github" title="Permalink to this headline">¶</a></h2>
 <p>As described in the <a class="reference external" href="https://qchem.qc-edu.org/ipynb/jupyter.html#what-is-jupyter">notes</a>, there are several ways to edit <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
-<div class="section" id="using-google-colab-direct-download-and-upload">
+<section id="using-google-colab-direct-download-and-upload">
 <h3>Using Google Colab (direct download and upload)<a class="headerlink" href="#using-google-colab-direct-download-and-upload" title="Permalink to this headline">¶</a></h3>
 <p>In this tutorial we will show how to work with Jupyter notebooks through Google Colab.</p>
 <ol class="simple">
@@ -710,8 +644,8 @@ You will see this window <img alt="p6" src="_images/71.png" /></p></li>
 <li><p>Upload the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file</p></li>
 </ol>
 <p>Voila! <img alt="p7" src="_images/8.png" /></p>
-</div>
-<div class="section" id="extension-for-chromium-browsers">
+</section>
+<section id="extension-for-chromium-browsers">
 <h3>Extension for Chromium Browsers.<a class="headerlink" href="#extension-for-chromium-browsers" title="Permalink to this headline">¶</a></h3>
 <p>If you use a browser like Google Chrome or Microsoft Edge, then you can use the <a class="reference external" href="https://chrome.google.com/webstore/detail/open-in-colab/iogfkhleblhcpcekbiedikdehleodpjo">Open in Colab</a> browser extension. Then,</p>
 <ol class="simple">
@@ -719,8 +653,8 @@ You will see this window <img alt="p6" src="_images/71.png" /></p></li>
 <li><p>Click the extension to open the notebook in Colab.</p></li>
 <li><p>When you do this, you may need to grant Google/Microsoft (Colab/GitHub) permission to interchange information.</p></li>
 </ol>
-</div>
-<div class="section" id="understanding-the-assignment">
+</section>
+<section id="understanding-the-assignment">
 <h3>Understanding the assignment<a class="headerlink" href="#understanding-the-assignment" title="Permalink to this headline">¶</a></h3>
 <p>There is an instruction written in the notebook. All you need to do is to fill the code between</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### START YOUR CODE HERE</span>
@@ -733,15 +667,15 @@ You will see this window <img alt="p6" src="_images/71.png" /></p></li>
 <p>Once the code is completed, you can click the play button to evaluate the cell.
 When you are satisfied with a code just click <code class="docutils literal notranslate"><span class="pre">File</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Save</span></code> and then <code class="docutils literal notranslate"><span class="pre">Download</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">.ipynb</span></code>
 <img alt="p9" src="_images/101.png" /></p>
-</div>
-</div>
-<div class="section" id="submitting-an-assignment">
+</section>
+</section>
+<section id="submitting-an-assignment">
 <h2>Submitting an assignment<a class="headerlink" href="#submitting-an-assignment" title="Permalink to this headline">¶</a></h2>
 <p>Submitting the assignment is breeze!
 When you downloaded the final version of the file just go to your repo and click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">files</span></code>; then upload your newly created file <img alt="p10" src="_images/111.png" />
 Now commit your changes and click <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> <img alt="p11" src="_images/121.png" /></p>
-</div>
-<div class="section" id="check-the-result">
+</section>
+<section id="check-the-result">
 <h2>Check the result<a class="headerlink" href="#check-the-result" title="Permalink to this headline">¶</a></h2>
 <p>In order to check whether your code passed tests all you need to do is go to <code class="docutils literal notranslate"><span class="pre">Actions</span></code><span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">commit</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">with</span> <span class="pre">pytest</span></code>. <img alt="p12" src="_images/13.png" /> <img alt="p13" src="_images/141.png" /> In most cases the tests will run automatically, and you do not need to explicitly invoke Pytest.</p>
 <p>If you see a green check mark: <em><strong>CONGRATULATIONS!</strong></em> you passed the assignment</p>
@@ -749,12 +683,12 @@ Now commit your changes and click <code class="docutils literal notranslate"><sp
 <img alt="p14" src="_images/151.png" /> <img alt="p15" src="_images/161.png" /></p>
 <p>Try to find your mistake but if you get stuck, contact me <code class="docutils literal notranslate"><span class="pre">&#64;RichRick1</span></code>
 <img alt="p16" src="_images/17.png" /> <img alt="p17" src="_images/18.png" /></p>
-</div>
-<div class="section" id="grading-scheme">
+</section>
+<section id="grading-scheme">
 <h2>Grading Scheme<a class="headerlink" href="#grading-scheme" title="Permalink to this headline">¶</a></h2>
 <p>Completing the assignment earns you an <strong>S</strong>. To earn an <strong>S+</strong>, explore whether there are other choices for the normalization constant that also pass the tests. Can you find a (correct) choice for the normalization constant that nonetheless fails the tests? How is this possible!</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -778,8 +712,8 @@ Now commit your changes and click <code class="docutils literal notranslate"><sp
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Tutorial_0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -796,17 +730,19 @@ Now commit your changes and click <code class="docutils literal notranslate"><sp
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

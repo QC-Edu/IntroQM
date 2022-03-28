@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Part 1; Final Exam CHEM 3PA3; Winter 2021 &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -37,22 +38,20 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -492,7 +491,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -551,7 +550,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -771,234 +770,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Part 1; Final Exam CHEM 3PA3; Winter 2021</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">
-   ✍️ Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential
-   <span class="math notranslate nohighlight">
-    \(V(x,y,z,t)\)
-   </span>
-   .
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-the-time-independent-schrodinger-equation-for-a-one-electron-atom-with-atomic-number-z-in-atomic-units">
-   ✍️ Write the Time-Independent Schrödinger equation for a one-electron atom with atomic number
-   <span class="math notranslate nohighlight">
-    \(Z\)
-   </span>
-   in atomic units.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compute-properties-of-a-photon-with-wavelength-486-1-nm">
-   🖩 Compute properties of a photon with wavelength 486.1 nm.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-hamiltonian">
-   🧮 How many quantum numbers are needed to label the eigenstates of the following Hamiltonian:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#below-is-a-list-of-terms-in-the-molecular-hamiltonian-together-with-their-mathematical-expressions">
-   🔀Below is a list of terms in the molecular Hamiltonian, together with their mathematical expressions.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#below-are-lists-of-different-hamiltonians-we-considered-in-the-course-together-with-the-names-of-functions-that-are-related-to-their-solutions">
-   🔀Below are lists of different Hamiltonians we considered in the course, together with the names of functions that are related to their solutions.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-4-text-a-u">
-   🖩 What is the zero-point energy for an electron confined to a 2-dimensional circular disk of radius
-   <span class="math notranslate nohighlight">
-    \(4 \text{ a.u.}\)
-   </span>
-   :
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-a-slater-determinant-for-the-excited-state-1-text-s-2-2-text-s-1-3-text-s-1-configuration-of-the-beryllium-atom">
-   ✍️ Write a Slater determinant for the excited-state,
-   <span class="math notranslate nohighlight">
-    \(1\text{s}^2 2\text{s}^1 3\text{s}^1\)
-   </span>
-   configuration of the Beryllium atom.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compute-properties-of-a-7-text-f-state">
-   🧮 Compute properties of a
-   <span class="math notranslate nohighlight">
-    \({}^{7}\text{F}\)
-   </span>
-   state.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solve-the-schrodinger-equation-for-a-muon-mu-bound-to-neon-nucleus">
-   ✍️ Solve the Schrödinger equation for a muon,
-   <span class="math notranslate nohighlight">
-    \(\mu^-\)
-   </span>
-   , bound to Neon nucleus.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-an-expression-for-the-lowest-energy-molecular-orbital-of-text-h-3-2">
-   ✍️ Write an expression for the lowest-energy molecular orbital of
-   <span class="math notranslate nohighlight">
-    \(\text{H}_3^{+2}\)
-   </span>
-   .
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-next-two-questions-refer-to-the-laplacian-operator">
-   The next two questions refer to the Laplacian operator.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#show-that-nabla-2-is-a-linear-hermitian-operator">
-     ✍️ Show that
-     <span class="math notranslate nohighlight">
-      \(\nabla^2\)
-     </span>
-     is a linear, Hermitian operator.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#show-that-nabla-2-is-negative-definite">
-     ✍️ Show that
-     <span class="math notranslate nohighlight">
-      \(\nabla^2\)
-     </span>
-     is negative definite.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expectation-values-of-r-k-and-related-properties-in-hydrogenic-atoms">
-   Expectation values of
-   <span class="math notranslate nohighlight">
-    \(r^k\)
-   </span>
-   and related properties in Hydrogenic atoms.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-value-of-r-1-for-hydrogenic-atoms">
-     ✍️ Expectation value of
-     <span class="math notranslate nohighlight">
-      \(r^{-1}\)
-     </span>
-     for Hydrogenic Atoms.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-value-of-r-2-for-a-4f-orbital-in-the-hydrogen-atom">
-     🖩 Expectation value of
-     <span class="math notranslate nohighlight">
-      \(r^2\)
-     </span>
-     for a 4f orbital in the hydrogen atom.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom">
-     🖩 What is the most probable distance to find an electron from the nucleus in the 4f orbital of a hydrogen atom?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heisenberg-uncertainty-principle">
-     🖩 Heisenberg Uncertainty Principle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bonus-derive-an-expression-for-sigma-r-2-sigma-p-2-for-any-state-of-a-hydrogenic-atom-with-l-n-1">
-     💰 Bonus: Derive an expression for
-     <span class="math notranslate nohighlight">
-      \(\sigma_r^2 \sigma_p^2\)
-     </span>
-     for
-     <em>
-      any
-     </em>
-     state of a Hydrogenic atom with
-     <span class="math notranslate nohighlight">
-      \(l=n-1\)
-     </span>
-     .
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot">
-   Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system">
-     ✍️ Write expressions for the eigenvalues and eigenfunctions of this system.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-a-x-16-a-y-9-and-k-z-4">
-     🖩 What is the wavelength that corresponds to the lowest-energy excitation when
-     <span class="math notranslate nohighlight">
-      \(a_x = 16\)
-     </span>
-     ,
-     <span class="math notranslate nohighlight">
-      \(a_y = 9\)
-     </span>
-     , and
-     <span class="math notranslate nohighlight">
-      \(k_z = 4\)
-     </span>
-     ?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-the-form-of-the-eigenfunctions-for-the-kratzer-fues-potential">
-   ✍️ What is the form of the eigenfunctions for the Kratzer-Fues Potential
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bonus-write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-kratzer-fues-potential-this-isn-t-100-trivial-but-try-to-see-how-far-you-can-get">
-     💰 Bonus: Write an expression for the energy eigenvalues and the radial eigenfunctions of the Kratzer-Fues potential. This isn’t 100% trivial, but try to see how far you can get.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <h1>Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Part-1;-Final-Exam-CHEM-3PA3;-Winter-2021" data-toc-modified-id="Part-1;-Final-Exam-CHEM-3PA3;-Winter-2021-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Part 1; Final Exam CHEM 3PA3; Winter 2021</a></span><ul class="toc-item"><li><span><a href="#✍️-Write-the-Time-Dependent-Schrödinger-equation-for-one-particle,-in-three-dimensions,-confined-by-the-time-dependent-potential-$V(x,y,z,t)$." data-toc-modified-id="✍️-Write-the-Time-Dependent-Schrödinger-equation-for-one-particle,-in-three-dimensions,-confined-by-the-time-dependent-potential-$V(x,y,z,t)$.-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>✍️ Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential $V(x,y,z,t)$.</a></span></li><li><span><a href="#✍️-Write-the-Time-Independent-Schrödinger-equation-for-a-one-electron-atom-with-atomic-number-$Z$-in-atomic-units." data-toc-modified-id="✍️-Write-the-Time-Independent-Schrödinger-equation-for-a-one-electron-atom-with-atomic-number-$Z$-in-atomic-units.-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>✍️ Write the Time-Independent Schrödinger equation for a one-electron atom with atomic number $Z$ in atomic units.</a></span></li><li><span><a href="#🖩-Compute-properties-of-a-photon-with-wavelength-486.1-nm." data-toc-modified-id="🖩-Compute-properties-of-a-photon-with-wavelength-486.1-nm.-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>🖩 Compute properties of a photon with wavelength 486.1 nm.</a></span></li><li><span><a href="#🧮-How-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-Hamiltonian:" data-toc-modified-id="🧮-How-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-Hamiltonian:-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>🧮 How many quantum numbers are needed to label the eigenstates of the following Hamiltonian:</a></span></li><li><span><a href="#🔀Below-is-a-list-of-terms-in-the-molecular-Hamiltonian,-together-with-their-mathematical-expressions." data-toc-modified-id="🔀Below-is-a-list-of-terms-in-the-molecular-Hamiltonian,-together-with-their-mathematical-expressions.-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>🔀Below is a list of terms in the molecular Hamiltonian, together with their mathematical expressions.</a></span></li><li><span><a href="#🔀Below-are-lists-of-different-Hamiltonians-we-considered-in-the-course,-together-with-the-names-of-functions-that-are-related-to-their-solutions." data-toc-modified-id="🔀Below-are-lists-of-different-Hamiltonians-we-considered-in-the-course,-together-with-the-names-of-functions-that-are-related-to-their-solutions.-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>🔀Below are lists of different Hamiltonians we considered in the course, together with the names of functions that are related to their solutions.</a></span></li><li><span><a href="#🖩-What-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-$4-\text{-a.u.}$:" data-toc-modified-id="🖩-What-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-$4-\text{-a.u.}$:-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>🖩 What is the zero-point energy for an electron confined to a 2-dimensional circular disk of radius $4 \text{ a.u.}$:</a></span></li><li><span><a href="#✍️-Write-a-Slater-determinant-for-the-excited-state,-$1\text{s}^2-2\text{s}^1-3\text{s}^1$-configuration-of-the-Beryllium-atom." data-toc-modified-id="✍️-Write-a-Slater-determinant-for-the-excited-state,-$1\text{s}^2-2\text{s}^1-3\text{s}^1$-configuration-of-the-Beryllium-atom.-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>✍️ Write a Slater determinant for the excited-state, $1\text{s}^2 2\text{s}^1 3\text{s}^1$ configuration of the Beryllium atom.</a></span></li><li><span><a href="#🧮-Compute-properties-of-a-${}^{7}\text{F}$-state." data-toc-modified-id="🧮-Compute-properties-of-a-${}^{7}\text{F}$-state.-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>🧮 Compute properties of a ${}^{7}\text{F}$ state.</a></span></li><li><span><a href="#✍️-Solve-the-Schrödinger-equation-for-a-muon,-$\mu^-$,-bound-to-Neon-nucleus." data-toc-modified-id="✍️-Solve-the-Schrödinger-equation-for-a-muon,-$\mu^-$,-bound-to-Neon-nucleus.-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>✍️ Solve the Schrödinger equation for a muon, $\mu^-$, bound to Neon nucleus.</a></span></li><li><span><a href="#✍️-Write-an-expression-for-the-lowest-energy-molecular-orbital-of-$\text{H}_3^{+2}$." data-toc-modified-id="✍️-Write-an-expression-for-the-lowest-energy-molecular-orbital-of-$\text{H}_3^{+2}$.-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>✍️ Write an expression for the lowest-energy molecular orbital of $\text{H}_3^{+2}$.</a></span></li><li><span><a href="#The-next-two-questions-refer-to-the-Laplacian-operator." data-toc-modified-id="The-next-two-questions-refer-to-the-Laplacian-operator.-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>The next two questions refer to the Laplacian operator.</a></span><ul class="toc-item"><li><span><a href="#✍️-Show-that-$\nabla^2$-is-a-linear,-Hermitian-operator." data-toc-modified-id="✍️-Show-that-$\nabla^2$-is-a-linear,-Hermitian-operator.-1.12.1"><span class="toc-item-num">1.12.1&nbsp;&nbsp;</span>✍️ Show that $\nabla^2$ is a linear, Hermitian operator.</a></span></li><li><span><a href="#✍️-Show-that-$\nabla^2$-is-negative-definite." data-toc-modified-id="✍️-Show-that-$\nabla^2$-is-negative-definite.-1.12.2"><span class="toc-item-num">1.12.2&nbsp;&nbsp;</span>✍️ Show that $\nabla^2$ is negative definite.</a></span></li></ul></li><li><span><a href="#Expectation-values-of-$r^k$-and-related-properties-in-Hydrogenic-atoms." data-toc-modified-id="Expectation-values-of-$r^k$-and-related-properties-in-Hydrogenic-atoms.-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>Expectation values of $r^k$ and related properties in Hydrogenic atoms.</a></span><ul class="toc-item"><li><span><a href="#✍️-Expectation-value-of-$r^{-1}$-for-Hydrogenic-Atoms." data-toc-modified-id="✍️-Expectation-value-of-$r^{-1}$-for-Hydrogenic-Atoms.-1.13.1"><span class="toc-item-num">1.13.1&nbsp;&nbsp;</span>✍️ Expectation value of $r^{-1}$ for Hydrogenic Atoms.</a></span></li><li><span><a href="#🖩-Expectation-value-of-$r^2$-for-a-4f-orbital-in-the-hydrogen-atom." data-toc-modified-id="🖩-Expectation-value-of-$r^2$-for-a-4f-orbital-in-the-hydrogen-atom.-1.13.2"><span class="toc-item-num">1.13.2&nbsp;&nbsp;</span>🖩 Expectation value of $r^2$ for a 4f orbital in the hydrogen atom.</a></span></li><li><span><a href="#🖩-What-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom?" data-toc-modified-id="🖩-What-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom?-1.13.3"><span class="toc-item-num">1.13.3&nbsp;&nbsp;</span>🖩 What is the most probable distance to find an electron from the nucleus in the 4f orbital of a hydrogen atom?</a></span></li><li><span><a href="#🖩-Heisenberg-Uncertainty-Principle" data-toc-modified-id="🖩-Heisenberg-Uncertainty-Principle-1.13.4"><span class="toc-item-num">1.13.4&nbsp;&nbsp;</span>🖩 Heisenberg Uncertainty Principle</a></span></li><li><span><a href="#💰-Bonus:-Derive-an-expression-for-$\sigma_r^2-\sigma_p^2$-for-any-state-of-a-Hydrogenic-atom-with-$l=n-1$." data-toc-modified-id="💰-Bonus:-Derive-an-expression-for-$\sigma_r^2-\sigma_p^2$-for-any-state-of-a-Hydrogenic-atom-with-$l=n-1$.-1.13.5"><span class="toc-item-num">1.13.5&nbsp;&nbsp;</span>💰 Bonus: Derive an expression for $\sigma_r^2 \sigma_p^2$ for <em>any</em> state of a Hydrogenic atom with $l=n-1$.</a></span></li></ul></li><li><span><a href="#Eigenfunctions-and-Eigenvalues-for-a-two-dimensional-Quantum-Dot." data-toc-modified-id="Eigenfunctions-and-Eigenvalues-for-a-two-dimensional-Quantum-Dot.-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.</a></span><ul class="toc-item"><li><span><a href="#✍️-Write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system." data-toc-modified-id="✍️-Write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system.-1.14.1"><span class="toc-item-num">1.14.1&nbsp;&nbsp;</span>✍️ Write expressions for the eigenvalues and eigenfunctions of this system.</a></span></li><li><span><a href="#🖩-What-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-$a_x-=-16$,-$a_y-=-9$,-and-$k_z-=-4$?" data-toc-modified-id="🖩-What-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-$a_x-=-16$,-$a_y-=-9$,-and-$k_z-=-4$?-1.14.2"><span class="toc-item-num">1.14.2&nbsp;&nbsp;</span>🖩 What is the wavelength that corresponds to the lowest-energy excitation when $a_x = 16$, $a_y = 9$, and $k_z = 4$?</a></span></li></ul></li><li><span><a href="#✍️-What-is-the-form-of-the-eigenfunctions-for-the-Kratzer-Fues-Potential" data-toc-modified-id="✍️-What-is-the-form-of-the-eigenfunctions-for-the-Kratzer-Fues-Potential-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>✍️ What is the form of the eigenfunctions for the Kratzer-Fues Potential</a></span><ul class="toc-item"><li><span><a href="#💰-Bonus:-Write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-Kratzer-Fues-potential.-This-isn't-100%-trivial,-but-try-to-see-how-far-you-can-get." data-toc-modified-id="💰-Bonus:-Write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-Kratzer-Fues-potential.-This-isn't-100%-trivial,-but-try-to-see-how-far-you-can-get.-1.15.1"><span class="toc-item-num">1.15.1&nbsp;&nbsp;</span>💰 Bonus: Write an expression for the energy eigenvalues and the radial eigenfunctions of the Kratzer-Fues potential. This isn't 100% trivial, but try to see how far you can get.</a></span></li></ul></li></ul></li></ul></div><div class="tex2jax_ignore mathjax_ignore section" id="part-1-final-exam-chem-3pa3-winter-2021">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Part-1;-Final-Exam-CHEM-3PA3;-Winter-2021" data-toc-modified-id="Part-1;-Final-Exam-CHEM-3PA3;-Winter-2021-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Part 1; Final Exam CHEM 3PA3; Winter 2021</a></span><ul class="toc-item"><li><span><a href="#✍️-Write-the-Time-Dependent-Schrödinger-equation-for-one-particle,-in-three-dimensions,-confined-by-the-time-dependent-potential-$V(x,y,z,t)$." data-toc-modified-id="✍️-Write-the-Time-Dependent-Schrödinger-equation-for-one-particle,-in-three-dimensions,-confined-by-the-time-dependent-potential-$V(x,y,z,t)$.-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>✍️ Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential $V(x,y,z,t)$.</a></span></li><li><span><a href="#✍️-Write-the-Time-Independent-Schrödinger-equation-for-a-one-electron-atom-with-atomic-number-$Z$-in-atomic-units." data-toc-modified-id="✍️-Write-the-Time-Independent-Schrödinger-equation-for-a-one-electron-atom-with-atomic-number-$Z$-in-atomic-units.-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>✍️ Write the Time-Independent Schrödinger equation for a one-electron atom with atomic number $Z$ in atomic units.</a></span></li><li><span><a href="#🖩-Compute-properties-of-a-photon-with-wavelength-486.1-nm." data-toc-modified-id="🖩-Compute-properties-of-a-photon-with-wavelength-486.1-nm.-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>🖩 Compute properties of a photon with wavelength 486.1 nm.</a></span></li><li><span><a href="#🧮-How-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-Hamiltonian:" data-toc-modified-id="🧮-How-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-Hamiltonian:-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>🧮 How many quantum numbers are needed to label the eigenstates of the following Hamiltonian:</a></span></li><li><span><a href="#🔀Below-is-a-list-of-terms-in-the-molecular-Hamiltonian,-together-with-their-mathematical-expressions." data-toc-modified-id="🔀Below-is-a-list-of-terms-in-the-molecular-Hamiltonian,-together-with-their-mathematical-expressions.-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>🔀Below is a list of terms in the molecular Hamiltonian, together with their mathematical expressions.</a></span></li><li><span><a href="#🔀Below-are-lists-of-different-Hamiltonians-we-considered-in-the-course,-together-with-the-names-of-functions-that-are-related-to-their-solutions." data-toc-modified-id="🔀Below-are-lists-of-different-Hamiltonians-we-considered-in-the-course,-together-with-the-names-of-functions-that-are-related-to-their-solutions.-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>🔀Below are lists of different Hamiltonians we considered in the course, together with the names of functions that are related to their solutions.</a></span></li><li><span><a href="#🖩-What-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-$4-\text{-a.u.}$:" data-toc-modified-id="🖩-What-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-$4-\text{-a.u.}$:-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>🖩 What is the zero-point energy for an electron confined to a 2-dimensional circular disk of radius $4 \text{ a.u.}$:</a></span></li><li><span><a href="#✍️-Write-a-Slater-determinant-for-the-excited-state,-$1\text{s}^2-2\text{s}^1-3\text{s}^1$-configuration-of-the-Beryllium-atom." data-toc-modified-id="✍️-Write-a-Slater-determinant-for-the-excited-state,-$1\text{s}^2-2\text{s}^1-3\text{s}^1$-configuration-of-the-Beryllium-atom.-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>✍️ Write a Slater determinant for the excited-state, $1\text{s}^2 2\text{s}^1 3\text{s}^1$ configuration of the Beryllium atom.</a></span></li><li><span><a href="#🧮-Compute-properties-of-a-${}^{7}\text{F}$-state." data-toc-modified-id="🧮-Compute-properties-of-a-${}^{7}\text{F}$-state.-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>🧮 Compute properties of a ${}^{7}\text{F}$ state.</a></span></li><li><span><a href="#✍️-Solve-the-Schrödinger-equation-for-a-muon,-$\mu^-$,-bound-to-Neon-nucleus." data-toc-modified-id="✍️-Solve-the-Schrödinger-equation-for-a-muon,-$\mu^-$,-bound-to-Neon-nucleus.-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>✍️ Solve the Schrödinger equation for a muon, $\mu^-$, bound to Neon nucleus.</a></span></li><li><span><a href="#✍️-Write-an-expression-for-the-lowest-energy-molecular-orbital-of-$\text{H}_3^{+2}$." data-toc-modified-id="✍️-Write-an-expression-for-the-lowest-energy-molecular-orbital-of-$\text{H}_3^{+2}$.-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>✍️ Write an expression for the lowest-energy molecular orbital of $\text{H}_3^{+2}$.</a></span></li><li><span><a href="#The-next-two-questions-refer-to-the-Laplacian-operator." data-toc-modified-id="The-next-two-questions-refer-to-the-Laplacian-operator.-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>The next two questions refer to the Laplacian operator.</a></span><ul class="toc-item"><li><span><a href="#✍️-Show-that-$\nabla^2$-is-a-linear,-Hermitian-operator." data-toc-modified-id="✍️-Show-that-$\nabla^2$-is-a-linear,-Hermitian-operator.-1.12.1"><span class="toc-item-num">1.12.1&nbsp;&nbsp;</span>✍️ Show that $\nabla^2$ is a linear, Hermitian operator.</a></span></li><li><span><a href="#✍️-Show-that-$\nabla^2$-is-negative-definite." data-toc-modified-id="✍️-Show-that-$\nabla^2$-is-negative-definite.-1.12.2"><span class="toc-item-num">1.12.2&nbsp;&nbsp;</span>✍️ Show that $\nabla^2$ is negative definite.</a></span></li></ul></li><li><span><a href="#Expectation-values-of-$r^k$-and-related-properties-in-Hydrogenic-atoms." data-toc-modified-id="Expectation-values-of-$r^k$-and-related-properties-in-Hydrogenic-atoms.-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>Expectation values of $r^k$ and related properties in Hydrogenic atoms.</a></span><ul class="toc-item"><li><span><a href="#✍️-Expectation-value-of-$r^{-1}$-for-Hydrogenic-Atoms." data-toc-modified-id="✍️-Expectation-value-of-$r^{-1}$-for-Hydrogenic-Atoms.-1.13.1"><span class="toc-item-num">1.13.1&nbsp;&nbsp;</span>✍️ Expectation value of $r^{-1}$ for Hydrogenic Atoms.</a></span></li><li><span><a href="#🖩-Expectation-value-of-$r^2$-for-a-4f-orbital-in-the-hydrogen-atom." data-toc-modified-id="🖩-Expectation-value-of-$r^2$-for-a-4f-orbital-in-the-hydrogen-atom.-1.13.2"><span class="toc-item-num">1.13.2&nbsp;&nbsp;</span>🖩 Expectation value of $r^2$ for a 4f orbital in the hydrogen atom.</a></span></li><li><span><a href="#🖩-What-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom?" data-toc-modified-id="🖩-What-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom?-1.13.3"><span class="toc-item-num">1.13.3&nbsp;&nbsp;</span>🖩 What is the most probable distance to find an electron from the nucleus in the 4f orbital of a hydrogen atom?</a></span></li><li><span><a href="#🖩-Heisenberg-Uncertainty-Principle" data-toc-modified-id="🖩-Heisenberg-Uncertainty-Principle-1.13.4"><span class="toc-item-num">1.13.4&nbsp;&nbsp;</span>🖩 Heisenberg Uncertainty Principle</a></span></li><li><span><a href="#💰-Bonus:-Derive-an-expression-for-$\sigma_r^2-\sigma_p^2$-for-any-state-of-a-Hydrogenic-atom-with-$l=n-1$." data-toc-modified-id="💰-Bonus:-Derive-an-expression-for-$\sigma_r^2-\sigma_p^2$-for-any-state-of-a-Hydrogenic-atom-with-$l=n-1$.-1.13.5"><span class="toc-item-num">1.13.5&nbsp;&nbsp;</span>💰 Bonus: Derive an expression for $\sigma_r^2 \sigma_p^2$ for <em>any</em> state of a Hydrogenic atom with $l=n-1$.</a></span></li></ul></li><li><span><a href="#Eigenfunctions-and-Eigenvalues-for-a-two-dimensional-Quantum-Dot." data-toc-modified-id="Eigenfunctions-and-Eigenvalues-for-a-two-dimensional-Quantum-Dot.-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.</a></span><ul class="toc-item"><li><span><a href="#✍️-Write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system." data-toc-modified-id="✍️-Write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system.-1.14.1"><span class="toc-item-num">1.14.1&nbsp;&nbsp;</span>✍️ Write expressions for the eigenvalues and eigenfunctions of this system.</a></span></li><li><span><a href="#🖩-What-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-$a_x-=-16$,-$a_y-=-9$,-and-$k_z-=-4$?" data-toc-modified-id="🖩-What-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-$a_x-=-16$,-$a_y-=-9$,-and-$k_z-=-4$?-1.14.2"><span class="toc-item-num">1.14.2&nbsp;&nbsp;</span>🖩 What is the wavelength that corresponds to the lowest-energy excitation when $a_x = 16$, $a_y = 9$, and $k_z = 4$?</a></span></li></ul></li><li><span><a href="#✍️-What-is-the-form-of-the-eigenfunctions-for-the-Kratzer-Fues-Potential" data-toc-modified-id="✍️-What-is-the-form-of-the-eigenfunctions-for-the-Kratzer-Fues-Potential-1.15"><span class="toc-item-num">1.15&nbsp;&nbsp;</span>✍️ What is the form of the eigenfunctions for the Kratzer-Fues Potential</a></span><ul class="toc-item"><li><span><a href="#💰-Bonus:-Write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-Kratzer-Fues-potential.-This-isn't-100%-trivial,-but-try-to-see-how-far-you-can-get." data-toc-modified-id="💰-Bonus:-Write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-Kratzer-Fues-potential.-This-isn't-100%-trivial,-but-try-to-see-how-far-you-can-get.-1.15.1"><span class="toc-item-num">1.15.1&nbsp;&nbsp;</span>💰 Bonus: Write an expression for the energy eigenvalues and the radial eigenfunctions of the Kratzer-Fues potential. This isn't 100% trivial, but try to see how far you can get.</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="part-1-final-exam-chem-3pa3-winter-2021">
 <h1>Part 1; Final Exam CHEM 3PA3; Winter 2021<a class="headerlink" href="#part-1-final-exam-chem-3pa3-winter-2021" title="Permalink to this headline">¶</a></h1>
 <p>👨‍🏫 <strong>Overview:</strong>
 This is Part 1 of 3 Parts of your Final Exam/Project.</p>
@@ -1046,7 +822,7 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </div>
 </div>
 </div>
-<div class="section" id="write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">
+<section id="write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">
 <h2>✍️ Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.<a class="headerlink" href="#write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note:</strong> Write out the specific Hamiltonian; do not just write <span class="math notranslate nohighlight">\(\hat{H}\)</span>. Report your answer in the below markdown cell. You can drag-and-drop a photo/screenshot/image of your answer to the cell, but before submitting please confirm that the image is appropriately embedded.</p>
 <p>=== BEGIN MARK SCHEME ===</p>
@@ -1059,8 +835,8 @@ Substituting in the specific value of the Hamiltonian,
 \left(-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}-\frac{\hbar^2}{2m}\frac{d^2}{dy^2}-\frac{\hbar^2}{2m}\frac{d^2}{dz^2} + V(x,y,z,t) \right) \Psi(x,y,z,t) = i \hbar \frac{d \Psi(x,y,z,t)}{dt}
 \)</span>$</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="write-the-time-independent-schrodinger-equation-for-a-one-electron-atom-with-atomic-number-z-in-atomic-units">
+</section>
+<section id="write-the-time-independent-schrodinger-equation-for-a-one-electron-atom-with-atomic-number-z-in-atomic-units">
 <h2>✍️ Write the Time-Independent Schrödinger equation for a one-electron atom with atomic number <span class="math notranslate nohighlight">\(Z\)</span> in atomic units.<a class="headerlink" href="#write-the-time-independent-schrodinger-equation-for-a-one-electron-atom-with-atomic-number-z-in-atomic-units" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note:</strong> Report your answer in the below Markdown Cell.</p>
 <p>=== BEGIN MARK SCHEME ===</p>
@@ -1073,8 +849,8 @@ $<span class="math notranslate nohighlight">\(
 \left(-\frac{1}{2}\frac{d^2}{dx^2} -\frac{1}{2}\frac{d^2}{dy^2}-\frac{1}{2}\frac{d^2}{dz^2}- \frac{Z}{\sqrt{x^2+y^2+z^2}} \right) \Psi(x,y,z) = \Psi(x,y,z)
 \)</span>$</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="compute-properties-of-a-photon-with-wavelength-486-1-nm">
+</section>
+<section id="compute-properties-of-a-photon-with-wavelength-486-1-nm">
 <h2>🖩 Compute properties of a photon with wavelength 486.1 nm.<a class="headerlink" href="#compute-properties-of-a-photon-with-wavelength-486-1-nm" title="Permalink to this headline">¶</a></h2>
 <p>The photon emitted when a 4p electron in the Hydrogen atom deexcites into a 2s orbital has wavelength 486.1 nm. Compute its</p>
 <ul class="simple">
@@ -1146,8 +922,8 @@ The energy of a photon with wavelength  486.1 nm is 4.086e-19 Joules.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="how-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-hamiltonian">
+</section>
+<section id="how-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-hamiltonian">
 <h2>🧮 How many quantum numbers are needed to label the eigenstates of the following Hamiltonian:<a class="headerlink" href="#how-many-quantum-numbers-are-needed-to-label-the-eigenstates-of-the-following-hamiltonian" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[
@@ -1193,8 +969,8 @@ The energy of a photon with wavelength  486.1 nm is 4.086e-19 Joules.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="below-is-a-list-of-terms-in-the-molecular-hamiltonian-together-with-their-mathematical-expressions">
+</section>
+<section id="below-is-a-list-of-terms-in-the-molecular-hamiltonian-together-with-their-mathematical-expressions">
 <h2>🔀Below is a list of terms in the molecular Hamiltonian, together with their mathematical expressions.<a class="headerlink" href="#below-is-a-list-of-terms-in-the-molecular-hamiltonian-together-with-their-mathematical-expressions" title="Permalink to this headline">¶</a></h2>
 <p>Match the verbal description of the term to its mathematical expression; the mathematical expressions are written in atomic units. Report your answer as a dictionary. The keys and values are:</p>
 <p><strong>Keys:</strong>
@@ -1258,8 +1034,8 @@ The energy of a photon with wavelength  486.1 nm is 4.086e-19 Joules.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="below-are-lists-of-different-hamiltonians-we-considered-in-the-course-together-with-the-names-of-functions-that-are-related-to-their-solutions">
+</section>
+<section id="below-are-lists-of-different-hamiltonians-we-considered-in-the-course-together-with-the-names-of-functions-that-are-related-to-their-solutions">
 <h2>🔀Below are lists of different Hamiltonians we considered in the course, together with the names of functions that are related to their solutions.<a class="headerlink" href="#below-are-lists-of-different-hamiltonians-we-considered-in-the-course-together-with-the-names-of-functions-that-are-related-to-their-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Match each operator with the type of (special) functions that are its eigenfunctions. Report your answer as a dictionary. The keys and values are:</p>
 <p><strong>Keys:</strong></p>
@@ -1320,8 +1096,8 @@ The energy of a photon with wavelength  486.1 nm is 4.086e-19 Joules.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="what-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-4-text-a-u">
+</section>
+<section id="what-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-4-text-a-u">
 <h2>🖩 What is the zero-point energy for an electron confined to a 2-dimensional circular disk of radius <span class="math notranslate nohighlight">\(4 \text{ a.u.}\)</span>:<a class="headerlink" href="#what-is-the-zero-point-energy-for-an-electron-confined-to-a-2-dimensional-circular-disk-of-radius-4-text-a-u" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>in Hartree atomic units?</p></li>
@@ -1369,8 +1145,8 @@ The zero-point energy of a electron confined to a disk of radius 4 Bohr is 475.2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="write-a-slater-determinant-for-the-excited-state-1-text-s-2-2-text-s-1-3-text-s-1-configuration-of-the-beryllium-atom">
+</section>
+<section id="write-a-slater-determinant-for-the-excited-state-1-text-s-2-2-text-s-1-3-text-s-1-configuration-of-the-beryllium-atom">
 <h2>✍️ Write a Slater determinant for the excited-state, <span class="math notranslate nohighlight">\(1\text{s}^2 2\text{s}^1 3\text{s}^1\)</span> configuration of the Beryllium atom.<a class="headerlink" href="#write-a-slater-determinant-for-the-excited-state-1-text-s-2-2-text-s-1-3-text-s-1-configuration-of-the-beryllium-atom" title="Permalink to this headline">¶</a></h2>
 <p>Assume that the unpaired electrons have the same spin. You may denote the spatial orbitals as <span class="math notranslate nohighlight">\(\phi_{1s}(\mathbf{r})\)</span>, <span class="math notranslate nohighlight">\(\phi_{2s}(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\phi_{3s}(\mathbf{r})\)</span>.</p>
 <p>=== BEGIN MARK SCHEME ===</p>
@@ -1386,8 +1162,8 @@ The zero-point energy of a electron confined to a disk of radius 4 Bohr is 475.2
 \end{split}\]</div>
 <p>You could also choose the 2s and 3s electrons to have <span class="math notranslate nohighlight">\(\beta\)</span> spin.</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="compute-properties-of-a-7-text-f-state">
+</section>
+<section id="compute-properties-of-a-7-text-f-state">
 <h2>🧮 Compute properties of a <span class="math notranslate nohighlight">\({}^{7}\text{F}\)</span> state.<a class="headerlink" href="#compute-properties-of-a-7-text-f-state" title="Permalink to this headline">¶</a></h2>
 <p>The ground-state term symbol for Samarium (Sm, atomic number 62) is <span class="math notranslate nohighlight">\({}^{7}\text{F}_0\)</span>.</p>
 <ul class="simple">
@@ -1439,8 +1215,8 @@ The zero-point energy of a electron confined to a disk of radius 4 Bohr is 475.2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="solve-the-schrodinger-equation-for-a-muon-mu-bound-to-neon-nucleus">
+</section>
+<section id="solve-the-schrodinger-equation-for-a-muon-mu-bound-to-neon-nucleus">
 <h2>✍️ Solve the Schrödinger equation for a muon, <span class="math notranslate nohighlight">\(\mu^-\)</span>, bound to Neon nucleus.<a class="headerlink" href="#solve-the-schrodinger-equation-for-a-muon-mu-bound-to-neon-nucleus" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference external" href="https://en.wikipedia.org/wiki/Exotic_atom">muonic atoms</a>, a muon replaces an electron. The muon and the electron are both fermions, and they have the same charge. However, the mass of the muon is <span class="math notranslate nohighlight">\(207\)</span> times the mass of the electron, <span class="math notranslate nohighlight">\(m_\mu = 206.8 m_e\)</span>.</p>
 <p>Assuming the Born-Oppenheimer approximation is valid and that relativistic effects can be neglected, <strong>what are the energy eigenfunctions and eigenvalues for a system composed of one <span class="math notranslate nohighlight">\(\mu^-\)</span> bound to a Neon nucleus.</strong></p>
@@ -1471,8 +1247,8 @@ $<span class="math notranslate nohighlight">\(
 \psi_{nlm}(r,\theta,\phi) \propto \left(\frac{2Z m_\mu r}{n}\right)^l L_{n-1-l}^{2l+1}\left(\frac{2Z m_\mu r}{n}\right) e^{-{Z m_\mu r}/{n}}  Y_l^{m} (\theta, \phi)
 \)</span>$</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="write-an-expression-for-the-lowest-energy-molecular-orbital-of-text-h-3-2">
+</section>
+<section id="write-an-expression-for-the-lowest-energy-molecular-orbital-of-text-h-3-2">
 <h2>✍️ Write an expression for the lowest-energy molecular orbital of <span class="math notranslate nohighlight">\(\text{H}_3^{+2}\)</span>.<a class="headerlink" href="#write-an-expression-for-the-lowest-energy-molecular-orbital-of-text-h-3-2" title="Permalink to this headline">¶</a></h2>
 <p>You may assume that the system is well-described by the separated-atom limit, and that the Hydrogen atoms are arranged as an equilateral triangle (<span class="math notranslate nohighlight">\(\text{D}_{3h}\)</span> symmetry). You do not need to normalize the molecular orbital.</p>
 <p>=== BEGIN MARK SCHEME ===</p>
@@ -1492,12 +1268,12 @@ Because we are in the ground state, there are no nodes. That means that \)</span
 $$</p></li>
 </ul>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="the-next-two-questions-refer-to-the-laplacian-operator">
+</section>
+<section id="the-next-two-questions-refer-to-the-laplacian-operator">
 <h2>The next two questions refer to the Laplacian operator.<a class="headerlink" href="#the-next-two-questions-refer-to-the-laplacian-operator" title="Permalink to this headline">¶</a></h2>
 <p>In this question you will show, mathematically, that two properties of the Laplacian operator are true. It is OK (but not essential) to assume that you are interested in the Laplacian operator in 1 dimension, <span class="math notranslate nohighlight">\(\nabla^2 = \frac{d^2}{dx^2}\)</span>.
 Note: You may assume that the wavefunction, and its first first and second derivatives, vanish at the ends of the region of integration. However, there are also ways to answer these questions without explicitly invoking those assumptions.</p>
-<div class="section" id="show-that-nabla-2-is-a-linear-hermitian-operator">
+<section id="show-that-nabla-2-is-a-linear-hermitian-operator">
 <h3>✍️ Show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is a linear, Hermitian operator.<a class="headerlink" href="#show-that-nabla-2-is-a-linear-hermitian-operator" title="Permalink to this headline">¶</a></h3>
 <p>=== BEGIN MARK SCHEME ===</p>
 <p>Both parts of this question were taken from an old exam.</p>
@@ -1530,8 +1306,8 @@ To this end, we start with the relationship between the Laplacian and the moment
 &amp;=\int \left(\nabla^2\Phi(x)\right)^* \Psi(x) dx
 \end{align}
 === END MARK SCHEME ===</p>
-</div>
-<div class="section" id="show-that-nabla-2-is-negative-definite">
+</section>
+<section id="show-that-nabla-2-is-negative-definite">
 <h3>✍️ Show that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is negative definite.<a class="headerlink" href="#show-that-nabla-2-is-negative-definite" title="Permalink to this headline">¶</a></h3>
 <p>That is, show that for <em>any</em> <span class="math notranslate nohighlight">\(\Psi(\mathbf{r})\)</span>, it is <em>always</em> true that
 $<span class="math notranslate nohighlight">\(
@@ -1547,9 +1323,9 @@ $<span class="math notranslate nohighlight">\(
 &amp;&lt;0
 \end{align}</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-</div>
-<div class="section" id="expectation-values-of-r-k-and-related-properties-in-hydrogenic-atoms">
+</section>
+</section>
+<section id="expectation-values-of-r-k-and-related-properties-in-hydrogenic-atoms">
 <h2>Expectation values of <span class="math notranslate nohighlight">\(r^k\)</span> and related properties in Hydrogenic atoms.<a class="headerlink" href="#expectation-values-of-r-k-and-related-properties-in-hydrogenic-atoms" title="Permalink to this headline">¶</a></h2>
 <p>The goal of this problem is to explore the radial distribution function and its expectation values for hydrogenic atoms. A key integral that will be useful is
 $<span class="math notranslate nohighlight">\(
@@ -1566,7 +1342,7 @@ b_{nl}(k,Z) &amp;= \frac{n^2 k \left(k^2 - (2l+1)^2\right)}{4Z^2(k+1)}
 \end{align}
 A detailed derivation of this relation can be found <a class="reference external" href="http://www.blazartheory.com/files/notes/qmnotes/Kramers__Relation.pdf">here</a>. You will not <em>need</em> to use this relation in this problem; it’s a matter of preference whether you use this relation or perform integrals.</p>
 <p>Throughout this problem you may use atomic units.</p>
-<div class="section" id="expectation-value-of-r-1-for-hydrogenic-atoms">
+<section id="expectation-value-of-r-1-for-hydrogenic-atoms">
 <h3>✍️ Expectation value of <span class="math notranslate nohighlight">\(r^{-1}\)</span> for Hydrogenic Atoms.<a class="headerlink" href="#expectation-value-of-r-1-for-hydrogenic-atoms" title="Permalink to this headline">¶</a></h3>
 <p>What is the expectation value of <span class="math notranslate nohighlight">\(r^{-1}\)</span> for a Hydrogenic atom. That is, what is the expectation value of
 $<span class="math notranslate nohighlight">\(
@@ -1589,8 +1365,8 @@ So,
 \)</span>$
 In the next-to-last equality we used the Hellmann-Feynman theorem.</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="expectation-value-of-r-2-for-a-4f-orbital-in-the-hydrogen-atom">
+</section>
+<section id="expectation-value-of-r-2-for-a-4f-orbital-in-the-hydrogen-atom">
 <h3>🖩 Expectation value of <span class="math notranslate nohighlight">\(r^2\)</span> for a 4f orbital in the hydrogen atom.<a class="headerlink" href="#expectation-value-of-r-2-for-a-4f-orbital-in-the-hydrogen-atom" title="Permalink to this headline">¶</a></h3>
 <p>What is the expectation value of <span class="math notranslate nohighlight">\(r^2\)</span> for the 4f orbital in the hydrogen atom (Z=1). That is, what is the expectation value of
 $<span class="math notranslate nohighlight">\(
@@ -1662,8 +1438,8 @@ Therefore we have that
 \langle \psi_{4,3,m} | r^2 | \psi_{4,3,m} \rangle = 360 \text{ Bohr}^2
 \)</span>$</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="what-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom">
+</section>
+<section id="what-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom">
 <h3>🖩 What is the most probable distance to find an electron from the nucleus in the 4f orbital of a hydrogen atom?<a class="headerlink" href="#what-is-the-most-probable-distance-to-find-an-electron-from-the-nucleus-in-the-4f-orbital-of-a-hydrogen-atom" title="Permalink to this headline">¶</a></h3>
 <p>Report your answer in Bohr (atomic units).</p>
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
@@ -1721,8 +1497,8 @@ r_{\text{most probable}} = \frac{n^2}{Z}
 \)</span>$
 For the 4f (n=4) orbital of Hydrogen (Z=1), this is just 16.</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-<div class="section" id="heisenberg-uncertainty-principle">
+</section>
+<section id="heisenberg-uncertainty-principle">
 <h3>🖩 Heisenberg Uncertainty Principle<a class="headerlink" href="#heisenberg-uncertainty-principle" title="Permalink to this headline">¶</a></h3>
 <p>The Heisenberg Uncertainty Principle between momentum and position in 3 dimensions states that
 $<span class="math notranslate nohighlight">\(
@@ -1797,8 +1573,8 @@ So, for an electron in the 4f (n=4) orbital of Hydrogen (Z=1),
 \sigma_r^2 \sigma_p^2 = 36 \cdot \tfrac{1}{16} = \tfrac{9}{4} = 2.25 &gt; \frac{3}{4}
 \)</span>$</p>
 <p>=== END MARK SCHEME</p>
-</div>
-<div class="section" id="bonus-derive-an-expression-for-sigma-r-2-sigma-p-2-for-any-state-of-a-hydrogenic-atom-with-l-n-1">
+</section>
+<section id="bonus-derive-an-expression-for-sigma-r-2-sigma-p-2-for-any-state-of-a-hydrogenic-atom-with-l-n-1">
 <h3>💰 Bonus: Derive an expression for <span class="math notranslate nohighlight">\(\sigma_r^2 \sigma_p^2\)</span> for <em>any</em> state of a Hydrogenic atom with <span class="math notranslate nohighlight">\(l=n-1\)</span>.<a class="headerlink" href="#bonus-derive-an-expression-for-sigma-r-2-sigma-p-2-for-any-state-of-a-hydrogenic-atom-with-l-n-1" title="Permalink to this headline">¶</a></h3>
 <p>=== BEGIN MARK SCHEME ===</p>
 <p>Almost everything you need to do for this problem is already done. From three problems ago,
@@ -1824,9 +1600,9 @@ So
 \)</span><span class="math notranslate nohighlight">\(
 In the ground state (\)</span>n=1<span class="math notranslate nohighlight">\(), one is just at the threshhold of violating the uncertainty principle; as \)</span>n$ increases the mutual uncertainty in momentum and position increases.</p>
 <p>=== END MARK SCHEME ===</p>
-</div>
-</div>
-<div class="section" id="eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot">
+</section>
+</section>
+<section id="eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot">
 <h2>Eigenfunctions and Eigenvalues for a two-dimensional Quantum Dot.<a class="headerlink" href="#eigenfunctions-and-eigenvalues-for-a-two-dimensional-quantum-dot" title="Permalink to this headline">¶</a></h2>
 <p>Modern displays often use quantum dot technology, where one (or more) electrons are confined to a region within a material. For an electron confined to a rectangular region in two dimensions, it is reasonable to approximate its motion perpendicular to the rectangle with harmonic confinement. The time-independent Schrödinger equation, eigenfunctions, and eigenvalues for a harmonically confined electron are, in atomic units:
 $<span class="math notranslate nohighlight">\(
@@ -1857,7 +1633,7 @@ V_a(x) =
 \end{cases}
 \)</span>$</p></li>
 </ul>
-<div class="section" id="write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system">
+<section id="write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system">
 <h3>✍️ Write expressions for the eigenvalues and eigenfunctions of this system.<a class="headerlink" href="#write-expressions-for-the-eigenvalues-and-eigenfunctions-of-this-system" title="Permalink to this headline">¶</a></h3>
 <p>=== BEGIN MARK SCHEME</p>
 <p>This system is a sum of three Hamiltonians, two of which are 1-dimensional particles-in-a-box and one of which is a 1-dimensional Harmonic Oscillator.
@@ -1880,8 +1656,8 @@ and the eigenfunctions are the products of the individual components' eigenfunct
 e^{-\sqrt{\kappa}z^2/2}H_k\left(\sqrt[4]{\kappa}z\right)
 \)</span>$</p>
 <p>=== END MARK SCHEME</p>
-</div>
-<div class="section" id="what-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-a-x-16-a-y-9-and-k-z-4">
+</section>
+<section id="what-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-a-x-16-a-y-9-and-k-z-4">
 <h3>🖩 What is the wavelength that corresponds to the lowest-energy excitation when <span class="math notranslate nohighlight">\(a_x = 16\)</span>, <span class="math notranslate nohighlight">\(a_y = 9\)</span>, and <span class="math notranslate nohighlight">\(k_z = 4\)</span>?<a class="headerlink" href="#what-is-the-wavelength-that-corresponds-to-the-lowest-energy-excitation-when-a-x-16-a-y-9-and-k-z-4" title="Permalink to this headline">¶</a></h3>
 <p>Report your answer in nm.</p>
 <p>If you wish, you can use the markdown cell at the end to explain your answer.</p>
@@ -1940,9 +1716,9 @@ To convert this from Bohr to nanometers, we use the fact that 1 Bohr = 0.0529177
 \lambda = 787.9 nm
 \)</span>$</p>
 <p>=== END MARK SCHEME</p>
-</div>
-</div>
-<div class="section" id="what-is-the-form-of-the-eigenfunctions-for-the-kratzer-fues-potential">
+</section>
+</section>
+<section id="what-is-the-form-of-the-eigenfunctions-for-the-kratzer-fues-potential">
 <h2>✍️ What is the form of the eigenfunctions for the Kratzer-Fues Potential<a class="headerlink" href="#what-is-the-form-of-the-eigenfunctions-for-the-kratzer-fues-potential" title="Permalink to this headline">¶</a></h2>
 <p>The Kratzer-Fues potential is a reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). It has the form
 $<span class="math notranslate nohighlight">\(
@@ -1977,7 +1753,7 @@ R_{n,l}(r)
 $$</p></li>
 </ul>
 <p>=== END MARK SCHEME ===</p>
-<div class="section" id="bonus-write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-kratzer-fues-potential-this-isn-t-100-trivial-but-try-to-see-how-far-you-can-get">
+<section id="bonus-write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-kratzer-fues-potential-this-isn-t-100-trivial-but-try-to-see-how-far-you-can-get">
 <h3>💰 Bonus: Write an expression for the energy eigenvalues and the radial eigenfunctions of the Kratzer-Fues potential. This isn’t 100% trivial, but try to see how far you can get.<a class="headerlink" href="#bonus-write-an-expression-for-the-energy-eigenvalues-and-the-radial-eigenfunctions-of-the-kratzer-fues-potential-this-isn-t-100-trivial-but-try-to-see-how-far-you-can-get" title="Permalink to this headline">¶</a></h3>
 <p>=== BEGIN MARK SCHEME</p>
 <p>Notice that the radial Hamiltonian for the Kratzer-Fues potential looks <em>a lot</em> like the Hydrogenic atom, which has the Hamiltonian,
@@ -2016,9 +1792,9 @@ This treatment is a bit naive, insofar as there is no guarantee that l’ is an 
 <div><p>S. Flügge <em>Practical Quantum Mechanics</em> (Berlin:Springer, 1957)</p>
 </div></blockquote>
 <p>=== END MARK SCHEME</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2042,21 +1818,23 @@ This treatment is a bit naive, insofar as there is no guarantee that l’ is an 
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

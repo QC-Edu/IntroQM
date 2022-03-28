@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Extra Credit Problems for Jupyter, Python, Numpy, etc. &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -37,19 +38,17 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -492,7 +491,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -526,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -566,69 +565,26 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Extra Credit Problems for Jupyter, Python, Numpy, etc.</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#codecademy-python-2">
-   Codecademy Python 2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-coder-s-apprentice">
-   The Coder’s Apprentice
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linkedin-learning">
-   Linkedin Learning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-learning-lab">
-   GitHub Learning Lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#online-python-tests">
-   Online Python Tests
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="extra-credit-problems-for-jupyter-python-numpy-etc">
+  <section class="tex2jax_ignore mathjax_ignore" id="extra-credit-problems-for-jupyter-python-numpy-etc">
 <h1>Extra Credit Problems for Jupyter, Python, Numpy, etc.<a class="headerlink" href="#extra-credit-problems-for-jupyter-python-numpy-etc" title="Permalink to this headline">¶</a></h1>
 <p>You can complete additional courses on LinkedIn Learning or other venues for additional points. The below links are curated to be especially helpful and useful, but almost any online activity that you complete and can document the completion of is acceptable. To get credit, add to the list of courses you have completed in your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> GitHub repository.</p>
-<div class="section" id="codecademy-python-2">
+<section id="codecademy-python-2">
 <h2><a class="reference external" href="https://www.codecademy.com/learn/learn-python">Codecademy Python 2</a><a class="headerlink" href="#codecademy-python-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>This is Python 2, but Python 3 isn’t very different, and the Python 3 course requires a (paid) subscription to Codecademy, while the Python 2 course does not. To do this assignment, sign up for Codecademy (free) and work through the 12 topical modules by reading about Python syntax and solving the interactive web-based exercises on your own. If you get stuck, you’ll be provided with instructive hints. This <a class="reference external" href="https://www.codecademy.com/learn/learn-python">course</a> will take <em>much</em> less than the time they estimate, because you can skip projects and quizzes that are accessible only through a (paid) PRO account. When you’re finished, take a screenshot of the certificate of completion add it to the list of certificates in your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> repository. See image below.</p></li>
 </ul>
 <p><img alt="image" src="../_images/codecademy.png" /></p>
-</div>
-<div class="section" id="the-coder-s-apprentice">
+</section>
+<section id="the-coder-s-apprentice">
 <h2><a class="reference external" href="https://dodona.ugent.be/en/courses/296/">The Coder’s Apprentice</a><a class="headerlink" href="#the-coder-s-apprentice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>This seems like a great course introducing Python 3, with lots of hands-on exercises! It’s quite substantial. When you register, you should have access to the online score sheet, which you can submit for extra credit.</p></li>
 </ul>
-</div>
-<div class="section" id="linkedin-learning">
+</section>
+<section id="linkedin-learning">
 <h2>Linkedin Learning<a class="headerlink" href="#linkedin-learning" title="Permalink to this headline">¶</a></h2>
 <p>You can complete relevant LinkedIn Learning courses to earn extra points. For example, you can choose to complete some of the courses you’ve already (partly) seen in the course material. Simply add the LinkedIn Learning certificate of completion to the list in your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> repository.</p>
 <ul class="simple">
@@ -640,8 +596,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://www.linkedin.com/learning/python-data-analysis-2/get-started-in-data-analysis-with-python?u=56982905">Python Data Analysis</a></p></li>
 <li><p><a class="reference external" href="https://www.linkedin.com/learning/learning-julia/julia-power-like-python-speed-like-c">Julia Power like Python, Speed like C</a></p></li>
 </ul>
-</div>
-<div class="section" id="github-learning-lab">
+</section>
+<section id="github-learning-lab">
 <h2>GitHub Learning Lab<a class="headerlink" href="#github-learning-lab" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://lab.github.com/">GitHub Learning Lab</a> has a lot of great courses. You can complete them for extra points. The certificates-of-completion from these courses can be uploaded to your <code class="docutils literal notranslate"><span class="pre">Course-Certificates</span></code> repository. Among the most relevant courses are:</p>
 <ul class="simple">
@@ -649,8 +605,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://lab.github.com/everydeveloper/introduction-to-python">Introduction to Python</a></p></li>
 <li><p><a class="reference external" href="https://lab.github.com/everydeveloper/intermediate-python">Intermediate Python</a></p></li>
 </ul>
-</div>
-<div class="section" id="online-python-tests">
+</section>
+<section id="online-python-tests">
 <h2>Online Python Tests<a class="headerlink" href="#online-python-tests" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3schools.com/python/exercise.asp"><strong>Python Exercises from W3Schools</strong></a> 95 simple interactive questions grouped by topic.</p>
@@ -680,8 +636,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><a class="reference external" href="https://hyperskill.org/tracks"><strong>JetBrains Academy</strong></a> has several courses. Some courses you have to pay for, but most are available with a free trial. Their <a class="reference external" href="https://hyperskill.org/tracks?category=1">Python courses</a> are rumored to be excellent.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -705,8 +661,8 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -723,17 +679,19 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

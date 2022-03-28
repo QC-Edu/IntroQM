@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3. From Newton to Schrödinger &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -37,22 +38,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -494,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -553,7 +552,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -670,133 +669,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>From Newton to Schrödinger</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   3.1. 🥅 Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-quantum-mechanics">
-   3.2. What is Quantum Mechanics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-was-quantum-mechanics-discovered">
-   3.3. How was Quantum Mechanics Discovered?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#black-body-radiation">
-     3.3.1. Black-body Radiation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#photoelectric-effect">
-     3.3.2. Photoelectric Effect
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compton-effect">
-     3.3.3. Compton Effect
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#davisson-germer-experiment">
-     3.3.4. Davisson-Germer Experiment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rydberg-formula">
-     3.3.5. Rydberg Formula
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wave-particle-duality">
-     3.3.6. Wave-Particle Duality
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-suppose-you-are-given-a-photon-with-an-energy-of-2-ev-what-is-its-momentum-in-frac-text-m-cdot-text-kg-text-s-what-is-its-frequency-in-hz">
-       3.3.6.1. 📝 Exercise: Suppose you are given a photon with an energy of 2 eV. What is its momentum in
-       <span class="math notranslate nohighlight">
-        \(\frac{\text{m} \cdot \text{kg}}{\text{s}}\)
-       </span>
-       ? What is its frequency in Hz?
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-what-is-the-momentum-and-energy-of-a-photon-with-angular-wavenumber-k-frac-2-pi-lambda-10-7-text-m-1-give-your-answer-in-si-units">
-       3.3.6.2. 📝 Exercise: What is the momentum and energy of a photon with angular wavenumber
-       <span class="math notranslate nohighlight">
-        \(k=\frac{2\pi}{\lambda} = 10^7 \text{m}^{-1}\)
-       </span>
-       ? Give your answer in SI units.
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-schrodinger-equation">
-   3.4. The Schrödinger Equation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#self-reflection">
-   3.5. 🪞 Self-Reflection
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knowledge-test">
-   3.6. ❓ Knowledge Test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#thought-provoking-questions">
-   3.7. 🤔 Thought-Provoking Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recapitulation">
-   3.8. 🔁 Recapitulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-up">
-   3.9. 🔮 Next Up…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   3.10. 📚 References
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <p><img alt="Newton and Schrodinger" src="https://i.redd.it/rba5bp0m3zbz.jpg" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="from-newton-to-schrodinger">
+<section class="tex2jax_ignore mathjax_ignore" id="from-newton-to-schrodinger">
 <h1><span class="section-number">3. </span>From Newton to Schrödinger<a class="headerlink" href="#from-newton-to-schrodinger" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-objectives">
+<section id="learning-objectives">
 <h2><span class="section-number">3.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>To learn about the historical origins of quantum mechanics.</p></li>
@@ -809,8 +688,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>To introduce the Schrödinger equation and the probabilistic interpretation thereof.</p></li>
 </ul>
-</div>
-<div class="section" id="what-is-quantum-mechanics">
+</section>
+<section id="what-is-quantum-mechanics">
 <h2><span class="section-number">3.2. </span>What is Quantum Mechanics<a class="headerlink" href="#what-is-quantum-mechanics" title="Permalink to this headline">¶</a></h2>
 <p>Starting in the late 1800’s, experimental physicists began to make observations that challenged the “classical” equations of physics.  What emerged was quantum mechanics. Quantum mechanics unifies and supersedes the theories of classical Newtonian mechanics and classical Maxwellian electromagnetism.</p>
 <p>In classical physics, radiation and matter are inherently different:  radiation and matter are governed by different physical laws and modeled with different equations.  Quantum mechanics abolishes the inherent difference between radiation and matter.  Radiation—e.g., light—has properties (a well-defined energy and momentum) that are associated with matter.  Matter—e.g., an electron—has properties (a wavelength) that are associated with radiation.</p>
@@ -839,18 +718,18 @@ h &amp;= 6.626 \cdot 10^{-34} \; \text{J} \cdot \text{s} \\\\
 <p>Planck’s constant is very small, which explains why electromagnetic radiation does not seem to be “chunky” in everyday life. Similarly, the masses and charges of elementary particles are very small, which is why Newtonian mechanics is accurate enough to describe macroscopic phenomena. However, it is essential to include quantum effects when we deal with particles with very little mass (e.g., electrons).</p>
 <p>Planck proposed the quantization of radiation as a mathematical trick to provide a model for blackbody radiation.  In 1905, Einstein interpreted this trick in the most literal possible way, proposing the quantization of light.  This interpretation led to an interpretation of the photoelectric effect, which eventually earned Einstein the Nobel Prize in Physics.  Planck also won the Nobel Prize in physics.</p>
 <p><img alt="Black-body radiation" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Black_body.svg" /></p>
-</div>
-<div class="section" id="how-was-quantum-mechanics-discovered">
+</section>
+<section id="how-was-quantum-mechanics-discovered">
 <h2><span class="section-number">3.3. </span>How was Quantum Mechanics Discovered?<a class="headerlink" href="#how-was-quantum-mechanics-discovered" title="Permalink to this headline">¶</a></h2>
 <p>It is impossible to fully explain the historical foundations of quantum mechanics in a course like this one.  Instead, I will try to give you a very brief overview of some key experiments that changed physics.</p>
 <p><img alt="Color temperature" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/colortemp.jpg?raw=true" /></p>
-<div class="section" id="black-body-radiation">
+<section id="black-body-radiation">
 <h3><span class="section-number">3.3.1. </span><a class="reference external" href="https://en.wikipedia.org/wiki/Black-body_radiation">Black-body Radiation</a><a class="headerlink" href="#black-body-radiation" title="Permalink to this headline">¶</a></h3>
 <p>An inflammable object that absorbs all incident light, but does not transmit or reflect light, is called a black body. Because it is totally opaque and absorbs all light that falls upon it, a black body at zero Kelvin is the very definition of black. However, when you heat a blackbody, it glows. A good (but not perfect) example of a black body is a red-hot poker. An even better example is the sun.  Blackbody radiation has been observed by humans for millennia (or even longer): lava flows, molten glass, molten metal, and many other materials can be considered blackbodies. So it was extremely embarrassing to 19th-century physicists that they could not predict the spectrum—that is, which wavelengths of light occur with what intensity—of a blackbody.</p>
 <p>In principle the spectrum of a black body should be easy to describe with classical statistical mechanics. However, classical statistical mechanics predicted that most of the light emitted would have a very short wavelength, the so-called “ultraviolet catastrophe.” Planck suggested that the vibrations of atoms in a black body, and ergo the light emitted therefrom, was quantized into chunks. Planck understood that his result was significant, but he still thought of it as a mathematical trick.</p>
 <p><img alt="Photoelectric Effect" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/photoelectric.png?raw=true" /></p>
-</div>
-<div class="section" id="photoelectric-effect">
+</section>
+<section id="photoelectric-effect">
 <h3><span class="section-number">3.3.2. </span><a class="reference external" href="https://en.wikipedia.org/wiki/Photoelectric_effect">Photoelectric Effect</a><a class="headerlink" href="#photoelectric-effect" title="Permalink to this headline">¶</a></h3>
 <p>When one shines light on a metal surface, one observes that if the light has a low enough frequency (long enough wavelength), then no electrons escape from the surface. This holds (to an excellent approximation) no matter how intense the light is. However, with a sufficiently high frequency (short enough wavelength), electrons will start to escape from the surface. Importantly, the maximum kinetic energy of the electrons escaping from the surface grows as the frequency of the light increases, and the number of electrons escaping from the surface grows as the intensity of the light increases. But increasing the intensity of the light does not increase the maximum kinetic energy of the emitted electrons, nor does increasing the frequency of the light increase the number of electrons emitted.</p>
 <p>Einstein decided to take Planck’s mathematical expression at face value, and interpret light as coming in chunks called photons, with energy given by Planck’s expression:</p>
@@ -861,8 +740,8 @@ h &amp;= 6.626 \cdot 10^{-34} \; \text{J} \cdot \text{s} \\\\
 \[ \text{Kinetic Energy}_{\text{max}} = h \nu - W \]</div>
 <p>As the light becomes more intense, the number of photons increases and the number of electrons emitted increases but, unless the light is very, very, very intense, the maximum kinetic energy of the electrons is left unaltered.</p>
 <p><img alt="Compton Scattering" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Compton-scattering.svg" /></p>
-</div>
-<div class="section" id="compton-effect">
+</section>
+<section id="compton-effect">
 <h3><span class="section-number">3.3.3. </span><a class="reference external" href="https://en.wikipedia.org/wiki/Compton_scattering">Compton Effect</a><a class="headerlink" href="#compton-effect" title="Permalink to this headline">¶</a></h3>
 <p>When you shine light on an (isolated) electron sitting at rest, sometimes the light scatters inelastically—that is the emitted light has a lower frequency than the incident light. The change in energy between the incident and emitted light is manifest in the kinetic energy of the electron. However, it’s observed that the electron does not move in an arbitrary direction, but instead moves in the direction that would be expected if a photon were a classical particle moving at the speed of light with effective mass <span class="math notranslate nohighlight">\(m_{ph,\text{eff}} = \tfrac{h \nu}{c^2}\)</span>. Note that the photon does not actually have mass. However, the photon does have momentum, which explains the inelastic scattering result. The formula is derived by <em>assuming</em> that one can set the rest-mass-energy expression, <span class="math notranslate nohighlight">\(E = m c^2\)</span>, to the Planck relation for the energy of a photon. Then</p>
 <div class="math notranslate nohighlight">
@@ -883,13 +762,13 @@ m_{ph,\text{eff}} &amp;= \tfrac{h \nu}{c^2}
 \[ p_{ph} = \tfrac{h}{\lambda} \]</div>
 <p>This is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Matter_wave">De Broglie relation</a>. One of the key results of quantum mechanics is that the De Broglie relation holds for both waves (photons) and particles.</p>
 <p><img alt="Electron Double Slit Experiment" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Interference_electrons_double-slit_at_10cm.png" /></p>
-</div>
-<div class="section" id="davisson-germer-experiment">
+</section>
+<section id="davisson-germer-experiment">
 <h3><span class="section-number">3.3.4. </span><a class="reference external" href="https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment">Davisson-Germer Experiment</a><a class="headerlink" href="#davisson-germer-experiment" title="Permalink to this headline">¶</a></h3>
 <p>Based on the results of Compton and De Broglie, one should expect that a beam of electrons should diffract, with patterns of constructive and deconstructive interference, according to their wavelength. The Davisson-Germer experiment confirmed this, showing that electrons (particles) can constructively and deconstructively interfere like waves.</p>
 <p><img alt="Rydberg Formula" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Visible_spectrum_of_hydrogen.jpg" /></p>
-</div>
-<div class="section" id="rydberg-formula">
+</section>
+<section id="rydberg-formula">
 <h3><span class="section-number">3.3.5. </span><a class="reference external" href="https://en.wikipedia.org/wiki/Rydberg_formula">Rydberg Formula</a><a class="headerlink" href="#rydberg-formula" title="Permalink to this headline">¶</a></h3>
 <p>By the late 1800s, it was known that when an dilute atomic gas was heated, it did not emit as a black body, but only at certain characteristic wavelengths. Rydberg managed to describe the specific wavelengths of the emission by the empirical formula</p>
 <div class="math notranslate nohighlight">
@@ -902,26 +781,26 @@ m_{ph,\text{eff}} &amp;= \tfrac{h \nu}{c^2}
 h \nu \propto \frac{1}{n^2} - \frac{1}{m^2}
 \]</div>
 <p>This suggests that photons are associated with transitions between energy levels that are labelled by indices, suggesting that the electronic energy levels of atoms are not arbitrary, but only have certain, quantized, values. The Rydberg formula is accurate for all one-electron atoms (at least until relativistic effects become nonneglible). It is also valid for highly-excited states (so-called Rydberg excitations) of many-electron atoms, where a single highly-excited electron is much further from the nucleus than the other electrons.</p>
-</div>
-<div class="section" id="wave-particle-duality">
+</section>
+<section id="wave-particle-duality">
 <h3><span class="section-number">3.3.6. </span>Wave-Particle Duality<a class="headerlink" href="#wave-particle-duality" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>It seems as though we must use sometimes the one theory and sometimes the other, while at times we may use either. We are faced with a new kind of difficulty. We have two contradictory pictures of reality; separately neither of them fully explains the phenomena … but together they do.
 - Albert Einstein</p>
 </div></blockquote>
 <p>The previous experiments, among many others, established that particles like electrons have wave-like properties, that electromagnetic radiation is composed of discrete photons with particle-like momentum and energy. The fact particles possess wave-like properties and waves provide particle-like properties is called <a class="reference external" href="https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality">wave-particle duality</a>: there is only one type of “stuff” in the universe and that stuff is “chunky” (like particles) and can constructively and deconstructively interfere (like waves). Moreover, the energies of atoms and molecules are quantized, having only specific discrete values.</p>
-<div class="section" id="exercise-suppose-you-are-given-a-photon-with-an-energy-of-2-ev-what-is-its-momentum-in-frac-text-m-cdot-text-kg-text-s-what-is-its-frequency-in-hz">
+<section id="exercise-suppose-you-are-given-a-photon-with-an-energy-of-2-ev-what-is-its-momentum-in-frac-text-m-cdot-text-kg-text-s-what-is-its-frequency-in-hz">
 <h4><span class="section-number">3.3.6.1. </span>📝 Exercise: Suppose you are given a photon with an energy of 2 eV. What is its momentum in <span class="math notranslate nohighlight">\(\frac{\text{m} \cdot \text{kg}}{\text{s}}\)</span>? What is its frequency in Hz?<a class="headerlink" href="#exercise-suppose-you-are-given-a-photon-with-an-energy-of-2-ev-what-is-its-momentum-in-frac-text-m-cdot-text-kg-text-s-what-is-its-frequency-in-hz" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference internal" href="IntroExercise1.html"><span class="doc std std-doc">Answer</span></a></p>
-</div>
-<div class="section" id="exercise-what-is-the-momentum-and-energy-of-a-photon-with-angular-wavenumber-k-frac-2-pi-lambda-10-7-text-m-1-give-your-answer-in-si-units">
+</section>
+<section id="exercise-what-is-the-momentum-and-energy-of-a-photon-with-angular-wavenumber-k-frac-2-pi-lambda-10-7-text-m-1-give-your-answer-in-si-units">
 <h4><span class="section-number">3.3.6.2. </span>📝 Exercise: What is the momentum and energy of a photon with angular wavenumber <span class="math notranslate nohighlight">\(k=\frac{2\pi}{\lambda} = 10^7 \text{m}^{-1}\)</span>? Give your answer in SI units.<a class="headerlink" href="#exercise-what-is-the-momentum-and-energy-of-a-photon-with-angular-wavenumber-k-frac-2-pi-lambda-10-7-text-m-1-give-your-answer-in-si-units" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference internal" href="IntroExercise2.html"><span class="doc std std-doc">Answer</span></a></p>
 <p><img alt="Schrodinger Equation" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/GraveSchrodinger.png?raw=true" /></p>
-</div>
-</div>
-</div>
-<div class="section" id="the-schrodinger-equation">
+</section>
+</section>
+</section>
+<section id="the-schrodinger-equation">
 <h2><span class="section-number">3.4. </span>The Schrödinger Equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this headline">¶</a></h2>
 <p>It seems that, in physics, the more we learn, the simpler things become. We used to believe that there were two types of things, “particles” (matter) and “waves” (radiation). Now we understand that there is really only one type of entity, perhaps call it a <em>wavicle</em> if you must give it a name. Electromagnetic radiation comes in discrete chunks (photons) just like particles (e.g., electrons). Photons and particles have position(ish), momentum(ish), and energy(ish), just like classical particles of matter; both also can manifest constructive and deconstructive interference, just like classical waves. The difference between matter and radiation is merley one of perspective.</p>
 <p>In 1925-26, Heisenberg and Schrödinger, working independently, built mathematical frameworks to describe the wave-particle duality of quantum particles. Nowadays we usually (except sometimes in spectroscopy) prefer Schrödinger’s formulation. We will discuss the Schrödinger equation in more detail in the next unit, but for now it is worth merely comparing it to other equations from classical mechanics and classical electromagnetism, just to intuitively show how it encapsulates wave-particle duality. Of course, a <a class="reference external" href="http://en.wikipedia.org/wiki/Theoretical_and_experimental_justification_for_the_Schr%C3%B6dinger_equation">more rigorous justification for the Schrödinger equation</a> is beyond the scope of this course.</p>
@@ -1027,30 +906,30 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
 \end{align}
 \end{split}\]</div>
 <p>This indicates that the quantum-mechanical momentum operator is consistent with the classical expression for the momentum, to which it reduces in the classical limit where <span class="math notranslate nohighlight">\(\hbar \rightarrow 0\)</span>.</p>
-</div>
-<div class="section" id="self-reflection">
+</section>
+<section id="self-reflection">
 <h2><span class="section-number">3.5. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
 <p>Imagine you were assigned to describe Quantum Mechanics to a room full of irrascible tweens.</p>
 <ul class="simple">
 <li><p>How would you motivate them to be interested in quantum mechanics?</p></li>
 <li><p>How would you describe wave-particle duality in a way they could understand?</p></li>
 </ul>
-</div>
-<div class="section" id="knowledge-test">
+</section>
+<section id="knowledge-test">
 <h2><span class="section-number">3.6. </span>❓ Knowledge Test<a class="headerlink" href="#knowledge-test" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>This <a class="reference internal" href="IntroTestExample.html"><span class="doc std std-doc">set of questions</span></a> demonstrates the different types of knowledge-test questions that appear in the course, and how to solve them. <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">GitHub Classroom Link</a></p></li>
 <li><p>More questions, mostly about wave-particle duality. <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">GitHub Classroom Link</a></p></li>
 </ul>
-</div>
-<div class="section" id="thought-provoking-questions">
+</section>
+<section id="thought-provoking-questions">
 <h2><span class="section-number">3.7. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Is it possible for the wavelength of the scattered photon in Compton Scattering to be infinite? (I.e., could the photon be entirely absorbed?)</p></li>
 <li><p>What are the units of the wavefunction?</p></li>
 </ul>
-</div>
-<div class="section" id="recapitulation">
+</section>
+<section id="recapitulation">
 <h2><span class="section-number">3.8. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>What are the following phenomena/experiments/theories, and why were they important to the establishment of the quantum theory?</p>
@@ -1072,8 +951,8 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
 <li><p>What is the quantum mechanical operator for the momentum of a particle?</p></li>
 <li><p>List as many properties/characteristics of the wavefunction as you can.</p></li>
 </ul>
-</div>
-<div class="section" id="next-up">
+</section>
+<section id="next-up">
 <h2><span class="section-number">3.9. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Motivate the time-dependent Schrödinger equation</p></li>
@@ -1081,8 +960,8 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
 <li><p>Explore the quantum-mechanical operator for momentum</p></li>
 <li><p>Study simple one-dimensional Hamiltonians</p></li>
 </ul>
-</div>
-<div class="section" id="references">
+</section>
+<section id="references">
 <h2><span class="section-number">3.10. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
@@ -1147,10 +1026,10 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
 </ul>
 </li>
 </ul>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1174,8 +1053,8 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="jupyter.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1192,17 +1071,19 @@ because the momentum can be identified as \)</span>p(x,t) = \tfrac{dS(x,t)}{dx} 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 

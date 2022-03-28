@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5. The One-Dimensional Particle in a Box &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -37,22 +38,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -494,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -553,7 +552,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -710,173 +709,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The One-Dimensional Particle in a Box</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   5.1. 🥅 Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cyanine-dyes">
-   5.2. Cyanine Dyes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability">
-   5.3. Postulate: The squared magnitude of the wavefunction is proportional to probability
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-wavefunctions-of-the-particle-in-a-box-boundary-conditions">
-   5.4. The Wavefunctions of the Particle in a Box (boundary conditions)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation">
-   5.5. Postulate: The wavefunction of a system is determined by solving the Schrödinger equation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-wavefunctions-of-the-particle-in-a-box-solution">
-   5.6. The Wavefunctions of the Particle in a Box (solution)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normalization-of-wavefunctions">
-   5.7. Normalization of Wavefunctions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#normalization-check">
-   5.8. Normalization Check
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-energies-of-the-particle-in-a-box">
-   5.9. The Energies of the Particle in a Box
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zero-point-energy">
-   5.10. Zero-Point Energy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#atomic-units">
-   5.11. Atomic Units
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a">
-     5.11.1. 📝 Exercise: Write a function that returns the length,
-     <span class="math notranslate nohighlight">
-      \(a\)
-     </span>
-     , of a box for which the lowest-energy-excitation of the ground state,
-     <span class="math notranslate nohighlight">
-      \(n = 1 \rightarrow n=2\)
-     </span>
-     , corresponds to the system absorbing light with a given wavelength,
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     . The input is
-     <span class="math notranslate nohighlight">
-      \(\lambda\)
-     </span>
-     ; the output is
-     <span class="math notranslate nohighlight">
-      \(a\)
-     </span>
-     .
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system">
-   5.12. Postulate: The wavefunction contains all the physically meaningful information about a system.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#postulate-observable-quantities-correspond-to-linear-hermitian-operators">
-   5.13. Postulate: Observable Quantities Correspond to Linear, Hermitian Operators.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heisenberg-uncertainty-principle">
-   5.14. Heisenberg Uncertainty Principle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#double-checking-the-energy-of-a-particle-in-a-box">
-   5.15. Double-Checking the Energy of a Particle-in-a-Box
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc">
-   5.16. Visualizing the Particle-in-a-Box Wavefunctions, Probabilities, etc.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#self-reflection">
-   5.17. 🪞 Self-Reflection
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#thought-provoking-questions">
-   5.18. 🤔 Thought-Provoking Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knowledge-tests">
-   5.19. ❓ Knowledge Tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignments">
-   5.20. 👩🏽‍💻 Assignments
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recapitulation">
-   5.21. 🔁 Recapitulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-up">
-   5.22. 🔮 Next Up…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   5.23. 📚 References
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/cyanine.jfif?raw=true" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-one-dimensional-particle-in-a-box">
+<section class="tex2jax_ignore mathjax_ignore" id="the-one-dimensional-particle-in-a-box">
 <h1><span class="section-number">5. </span>The One-Dimensional Particle in a Box<a class="headerlink" href="#the-one-dimensional-particle-in-a-box" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-objectives">
+<section id="learning-objectives">
 <h2><span class="section-number">5.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Determine the energies and eigenfunctions of the particle-in-a-box.</p></li>
@@ -884,8 +723,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Learn how to compute expectation values for quantum-mechanical operators.</p></li>
 <li><p>Learn the postulates of quantum mechanics</p></li>
 </ul>
-</div>
-<div class="section" id="cyanine-dyes">
+</section>
+<section id="cyanine-dyes">
 <h2><span class="section-number">5.2. </span>Cyanine Dyes<a class="headerlink" href="#cyanine-dyes" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true?" /></p>
 <p>Cyanine dye molecules are often modelled as one-dimension particles in a box. To understand why, start by thinking classically.  You learn in organic chemistry that electrons can more “freely” along alternating double bonds.  If this is true, then you can imagine that the electrons can more from one Nitrogen to the other, almost without resistance.  On the other hand, there are sp<sup>3</sup>-hybridized functional groups attached to the Nitrogen atom, so once the electron gets to Nitrogen atom, it has to turn around and go back whence it came.   A very, very, very simple model would be to imagine that the electron is totally free between the Nitrogen atoms, and totally forbidden from going much beyond the Nitrogen atoms.  This suggests modeling these systems a potential energy function like:</p>
@@ -903,8 +742,8 @@ V(x) =
 \[
 a = \left(5.67 + 2.49 (k + 1)\right) \cdot 10^{-10} \text{ m}
 \]</div>
-</div>
-<div class="section" id="postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability">
+</section>
+<section id="postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability">
 <h2><span class="section-number">5.3. </span>Postulate: The squared magnitude of the wavefunction is proportional to probability<a class="headerlink" href="#postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability" title="Permalink to this headline">¶</a></h2>
 <p>What is the interpretation of the wavefunction? The Born postulate indicates that the squared magnitude of the wavefunction is proportional to the probability of observing the system at that location. E.g., if <span class="math notranslate nohighlight">\(\psi(x)\)</span> is the wavefunction for an electron as a function of <span class="math notranslate nohighlight">\(x\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -912,8 +751,8 @@ a = \left(5.67 + 2.49 (k + 1)\right) \cdot 10^{-10} \text{ m}
 p(x) = |\psi(x)|^2
 \]</div>
 <p>is the probability of observing an electron at the point <span class="math notranslate nohighlight">\(x\)</span>. This is called the Born Postulate.</p>
-</div>
-<div class="section" id="the-wavefunctions-of-the-particle-in-a-box-boundary-conditions">
+</section>
+<section id="the-wavefunctions-of-the-particle-in-a-box-boundary-conditions">
 <h2><span class="section-number">5.4. </span>The Wavefunctions of the Particle in a Box (boundary conditions)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <p><img alt="Particle in a Box Potential" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Infinite_potential_well-en.svg/308px-Infinite_potential_well-en.svg.png" /></p>
 <p>The nice thing about this “particle in a box” model is that it is easy to solve the time-independent Schrödinger equation in this case.  Because there is no chance that the particle could ever “escape” an infinite box like this (such an electron would have infinite potential energy!), <span class="math notranslate nohighlight">\(|\psi(x)|^2\)</span> must equal zero outside the box. Therefore the wavefunction can only be nonzero inside the box. In addition, the wavefunction should be zero at the edges of the box, because otherwise the wavefunction will not be continuous.  So we should have a wavefunction like</p>
@@ -926,13 +765,13 @@ p(x) = |\psi(x)|^2
     0 &amp; a \le x
 \end{cases}
 \end{split}\]</div>
-</div>
-<div class="section" id="postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation">
+</section>
+<section id="postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation">
 <h2><span class="section-number">5.5. </span>Postulate: The wavefunction of a system is determined by solving the Schrödinger equation<a class="headerlink" href="#postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation" title="Permalink to this headline">¶</a></h2>
 <p>How do we find the wavefunction for the particle-in-a-box or, for that matter, any other system? The wavefunction can be determined by solving the time-independent (when the potential is time-independent) or time-dependent (when the potential is time-dependent) Schrödinger equation.</p>
 <p><img alt="Wavefunction gif" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/InfiniteSquareWellAnimation.gif" /></p>
-</div>
-<div class="section" id="the-wavefunctions-of-the-particle-in-a-box-solution">
+</section>
+<section id="the-wavefunctions-of-the-particle-in-a-box-solution">
 <h2><span class="section-number">5.6. </span>The Wavefunctions of the Particle in a Box (solution)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-solution" title="Permalink to this headline">¶</a></h2>
 <p>To find the wavefunctions for a system, one solves the Schrödinger equation. For a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in a one-dimensional box, the (time-independent) Schrödinger equation is:</p>
 <div class="math notranslate nohighlight">
@@ -978,8 +817,8 @@ V(x) =
 \[
 \psi_n(x) = A_n \sin\left(\tfrac{n \pi x}{a}\right) \qquad \qquad n=1,2,3,\ldots
 \]</div>
-</div>
-<div class="section" id="normalization-of-wavefunctions">
+</section>
+<section id="normalization-of-wavefunctions">
 <h2><span class="section-number">5.7. </span>Normalization of Wavefunctions<a class="headerlink" href="#normalization-of-wavefunctions" title="Permalink to this headline">¶</a></h2>
 <p>As seen in the previous section, if a wavefunction solves the Schrödinger equation, any constant multiple of the wavefunction also solves the Schrödinger equation,</p>
 <div class="math notranslate nohighlight">
@@ -1038,8 +877,8 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 \]</div>
 <p>Note that in this case, the normalization condition is the same for all <span class="math notranslate nohighlight">\(n\)</span>; that is an unusual property of the particle-in-a-box wavefunction.</p>
 <p>While this normalization convention is used 99% of the time, there are some cases where it is more convenient to make a different choice for the amplitude of the wavefunctions. I say this to remind you that normalization the wavefunction is something we do for convenience; it is not required by physics!</p>
-</div>
-<div class="section" id="normalization-check">
+</section>
+<section id="normalization-check">
 <h2><span class="section-number">5.8. </span>Normalization Check<a class="headerlink" href="#normalization-check" title="Permalink to this headline">¶</a></h2>
 <p>One advantage of using Jupyter is that we can easily check our (symbolic) mathematics. Let’s confirm that the wavefunction is normalized by evaluating,</p>
 <div class="math notranslate nohighlight">
@@ -1135,13 +974,13 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalization of wavefunction =  1.0000000000000002
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normalization of wavefunction =  1.0
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-energies-of-the-particle-in-a-box">
+</section>
+<section id="the-energies-of-the-particle-in-a-box">
 <h2><span class="section-number">5.9. </span>The Energies of the Particle in a Box<a class="headerlink" href="#the-energies-of-the-particle-in-a-box" title="Permalink to this headline">¶</a></h2>
 <p>How do we compute the energy of a particle in a box? All we need to do is substitute the eigenfunctions of the Hamiltonian, <span class="math notranslate nohighlight">\(\psi_n(x)\)</span> back into the Schrödinger equation to determine the eigenenergies, <span class="math notranslate nohighlight">\(E_n\)</span>. That is, from</p>
 <div class="math notranslate nohighlight">
@@ -1171,8 +1010,8 @@ E_n &amp;= \frac{\hbar^2 n^2 \pi^2}{2ma^2} \qquad \qquad n=1,2,3,\ldots\\
 \end{align}
 \end{split}\]</div>
 <p>Notice that only certain energies are allowed. This is a fundamental principle of quantum mechanics, and it is related to the “waviness” of particles. Certain “frequencies” are resonant, and other “frequencies” cannot be observed. <em>The <strong>only</strong> energies that can be observed for a particle-in-a-box are the ones given by the above formula.</em></p>
-</div>
-<div class="section" id="zero-point-energy">
+</section>
+<section id="zero-point-energy">
 <h2><span class="section-number">5.10. </span>Zero-Point Energy<a class="headerlink" href="#zero-point-energy" title="Permalink to this headline">¶</a></h2>
 <p>Naïvely, you might expect that the lowest-energy state of a particle in a box has zero energy. (The potential in the box is zero, after all, so shouldn’t the lowest-energy state be the state with zero kinetic energy? And if the kinetic energy were zero and the potential energy were zero, then the total energy would be zero.)</p>
 <p>But this doesn’t happen. It turns out that you can never “stop” a quantum particle; it always has a zero-point motion, typically a resonant oscillation about the lowest-potential-energy location(s). Indeed, the more you try to confine a particle to stop it, the bigger its kinetic energy becomes. This is clear in the particle-in-a-box, which has only kinetic energy. There the (kinetic) energy increases rapidly, as <span class="math notranslate nohighlight">\(a^{-2}\)</span>, as the box becomes smaller:</p>
@@ -1198,8 +1037,8 @@ V_{\text{min}}= \min_x V(x)
 <blockquote>
 <div><p>Nuance: There is a tiny mathematical footnote here; there are some <span class="math notranslate nohighlight">\(V(x)\)</span> for which there are <em>no</em> bound states. In such cases, e.g., <span class="math notranslate nohighlight">\(V(x) = \text{constant}\)</span>, it is possible for <span class="math notranslate nohighlight">\(E = V_{\text{min}}\)</span>.)</p>
 </div></blockquote>
-</div>
-<div class="section" id="atomic-units">
+</section>
+<section id="atomic-units">
 <h2><span class="section-number">5.11. </span>Atomic Units<a class="headerlink" href="#atomic-units" title="Permalink to this headline">¶</a></h2>
 <p>Because Planck’s constant and the electron mass are tiny numbers, it is often useful to use <a class="reference external" href="https://en.wikipedia.org/wiki/Hartree_atomic_units">atomic units</a> when performing calculations. We’ll learn more about atomic units later but, for now, we only need to know that, in atomic units, <span class="math notranslate nohighlight">\(\hbar\)</span>, the mass of the electron, <span class="math notranslate nohighlight">\(m_e\)</span>, the charge of the electron, <span class="math notranslate nohighlight">\(e\)</span>, and the average (mean) distance of an electron from the nucleus in the Hydrogen atom, <span class="math notranslate nohighlight">\(a_0\)</span>, are all defined to be equal to 1.0 in atomic units.</p>
 <div class="math notranslate nohighlight">
@@ -1262,11 +1101,11 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 </div>
 </div>
 </div>
-<div class="section" id="exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a">
+<section id="exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a">
 <h3><span class="section-number">5.11.1. </span>📝 Exercise: Write a function that returns the length, <span class="math notranslate nohighlight">\(a\)</span>, of a box for which the lowest-energy-excitation of the ground state, <span class="math notranslate nohighlight">\(n = 1 \rightarrow n=2\)</span>, corresponds to the system absorbing light with a given wavelength, <span class="math notranslate nohighlight">\(\lambda\)</span>. The input is <span class="math notranslate nohighlight">\(\lambda\)</span>; the output is <span class="math notranslate nohighlight">\(a\)</span>.<a class="headerlink" href="#exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system">
+</section>
+</section>
+<section id="postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system">
 <h2><span class="section-number">5.12. </span>Postulate: The wavefunction contains all the physically meaningful information about a system.<a class="headerlink" href="#postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system" title="Permalink to this headline">¶</a></h2>
 <p>While the wavefunction is not itself observable, all observable properties of a system can be determined from the wavefunction. However, just because the wavefunction encapsulates all the <em>observable</em> properties of a system does not mean that it contains <em>all information</em> about a system. In quantum mechanics, some things are not observable. Consider that for the ground (<span class="math notranslate nohighlight">\(n=1\)</span>) state of the particle in a box, the root-mean-square average momentum,</p>
 <div class="math notranslate nohighlight">
@@ -1274,8 +1113,8 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 \bar{p}_{rms} = \sqrt{2m \cdot T} = \sqrt{(2m)\frac{h^2n^2}{8ma^2}} = \frac{hn}{2a}
 \]</div>
 <p>increases as you squeeze the box. That is, the more you try to constrain the particle in space, the faster it moves. You can’t “stop” the particle no matter how hard you squeeze it, so it’s impossible to exactly know where the particle is located. You can only determine its <em>average</em> position.</p>
-</div>
-<div class="section" id="postulate-observable-quantities-correspond-to-linear-hermitian-operators">
+</section>
+<section id="postulate-observable-quantities-correspond-to-linear-hermitian-operators">
 <h2><span class="section-number">5.13. </span>Postulate: Observable Quantities Correspond to Linear, Hermitian Operators.<a class="headerlink" href="#postulate-observable-quantities-correspond-to-linear-hermitian-operators" title="Permalink to this headline">¶</a></h2>
 <p>The <em>correspondence</em> principle says that for every classical observable there is a linear, Hermitian, operator that allows computation of the quantum-mechanical observable. An operator, <span class="math notranslate nohighlight">\(\hat{C}\)</span> is linear if for any complex numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and any wavefunctions <span class="math notranslate nohighlight">\(\psi_1(x)\)</span> and <span class="math notranslate nohighlight">\(\psi_2(x)\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1424,8 +1263,8 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="heisenberg-uncertainty-principle">
+</section>
+<section id="heisenberg-uncertainty-principle">
 <h2><span class="section-number">5.14. </span>Heisenberg Uncertainty Principle<a class="headerlink" href="#heisenberg-uncertainty-principle" title="Permalink to this headline">¶</a></h2>
 <p>The previous example gives a first example of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg Uncertainty Principle</a>. One specific manifestation of the Heisenberg Uncertaity Principle is that the variance of the position, <span class="math notranslate nohighlight">\(\sigma_x^2 = \langle x^2 \rangle - \langle x \rangle^2\)</span>, times the variance of the momentum. <span class="math notranslate nohighlight">\(\sigma_p^2 = \langle \hat{p}^2 \rangle - \langle \hat{p} \rangle^2\)</span> is greater than <span class="math notranslate nohighlight">\(\tfrac{\hbar^2}{4}\)</span>. We can verify this formula for the particle in a box.</p>
 <div class="math notranslate nohighlight">
@@ -1447,8 +1286,8 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 &amp;= 0.32247 \hbar^2
 \end{align}
 \end{split}\]</div>
-</div>
-<div class="section" id="double-checking-the-energy-of-a-particle-in-a-box">
+</section>
+<section id="double-checking-the-energy-of-a-particle-in-a-box">
 <h2><span class="section-number">5.15. </span>Double-Checking the Energy of a Particle-in-a-Box<a class="headerlink" href="#double-checking-the-energy-of-a-particle-in-a-box" title="Permalink to this headline">¶</a></h2>
 <p>To check the energy of the particle in a box, we can compute the kinetic energy density, then integrate it over all space. That is, we define:</p>
 <div class="math notranslate nohighlight">
@@ -1534,8 +1373,8 @@ The energy computed directly is 0.01708
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc">
+</section>
+<section id="visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc">
 <h2><span class="section-number">5.16. </span>Visualizing the Particle-in-a-Box Wavefunctions, Probabilities, etc.<a class="headerlink" href="#visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc" title="Permalink to this headline">¶</a></h2>
 <p>In the next code block, the wavefunction, probability density, derivative, second-derivative, and kinetic energy density for the particle-in-a-box are shown. Notice that the kinetic-energy-density is proportional to the probability density, and that the first and second derivatives are not zero at the edge of the box, but the wavefunction and probability density are. It’s useful to change the parameters in the below figures to build your intuition for the particle-in-a-box.</p>
 <div class="cell docutils container">
@@ -1623,15 +1462,15 @@ The energy computed directly is 0.01708
 <img alt="_images/ParticleIn1DBox_22_1.png" src="_images/ParticleIn1DBox_22_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="self-reflection">
+</section>
+<section id="self-reflection">
 <h2><span class="section-number">5.17. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Can you think of other physical or chemical systems where the particle-in-a-box Hamiltonian would be appropriate?</p></li>
 <li><p>Can you think of another property density, besides the kinetic energy density, that cannot be uniquely defined in quantum mechanics?</p></li>
 </ul>
-</div>
-<div class="section" id="thought-provoking-questions">
+</section>
+<section id="thought-provoking-questions">
 <h2><span class="section-number">5.18. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>How would the wavefunction and ground-state energy change if you made a small change in the particle-in-a-box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side?</p></li>
@@ -1641,21 +1480,21 @@ The energy computed directly is 0.01708
 <li><p>What is the lowest-energy excitation energy for the particle-in-a-box?</p></li>
 <li><p>Suppose you wanted to design a one-dimensional box containing a single electron that absorbed blue light? How long would the box be?</p></li>
 </ul>
-</div>
-<div class="section" id="knowledge-tests">
+</section>
+<section id="knowledge-tests">
 <h2><span class="section-number">5.19. </span>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Questions about the Particle-in-a-Box and related concepts. <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">GitHub Classroom Link</a></p></li>
 </ul>
-</div>
-<div class="section" id="assignments">
+</section>
+<section id="assignments">
 <h2><span class="section-number">5.20. </span>👩🏽‍💻 Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Compute and understand expectation values by computing moments of the particle-in-a-box <a class="reference external" href="https://github.com/McMasterQM/PinBox-Moments/blob/main/moments.ipynb">assignment</a>. [Github classroom link]<a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">https://classroom.github.com/a/9yzWI5Vt</a>.</p></li>
 <li><p>This <a class="reference external" href="https://github.com/McMasterQM/Sudden-Approximation/blob/main/SuddenPinBox.ipynb">assignment</a> on the sudden approximation provides an introduction to time-dependent phenomena. <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Github classroom link</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="recapitulation">
+</section>
+<section id="recapitulation">
 <h2><span class="section-number">5.21. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write the Hamiltonian, time-independent Schrödinger equation, eigenfunctions, and eigenvalues for the one-dimensional particle in a box.</p></li>
@@ -1663,8 +1502,8 @@ The energy computed directly is 0.01708
 <li><p>How would you compute the uncertainty in <span class="math notranslate nohighlight">\(x^4\)</span>?</p></li>
 <li><p>Practice your calculus by explicitly computing, using integration by parts, <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span>. This can be implemented in a <a class="reference internal" href="x4_mocked.html"><span class="doc std std-doc">Jupyter notebook</span></a>.</p></li>
 </ul>
-</div>
-<div class="section" id="next-up">
+</section>
+<section id="next-up">
 <h2><span class="section-number">5.22. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Postulates of Quantum Mechanics</p></li>
@@ -1672,8 +1511,8 @@ The energy computed directly is 0.01708
 <li><p>Multidimensional particle-in-a-box.</p></li>
 <li><p>Harmonic Oscillator</p></li>
 </ul>
-</div>
-<div class="section" id="references">
+</section>
+<section id="references">
 <h2><span class="section-number">5.23. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
@@ -1693,10 +1532,10 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Particle_in_a_ring">Particle on a Ring</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics#Postulates_of_quantum_mechanics">Postulates of Quantum Mechanics</a></p></li>
 </ul>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1720,8 +1559,8 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="SchrodingerEq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1738,17 +1577,19 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
