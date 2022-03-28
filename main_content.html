@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quantum Chemistry &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,17 +37,19 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -490,7 +491,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -524,7 +525,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -559,15 +560,53 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Quantum Chemistry</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessment">
+   Assessment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-resources">
+   Other resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-and-contributing">
+   Using and Contributing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="quantum-chemistry">
+  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-chemistry">
 <h1>Quantum Chemistry<a class="headerlink" href="#quantum-chemistry" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p><strong>CHEM 3PA3</strong> <em>Quantum Mechanics and Spectroscopy.</em> An introduction to quantum chemistry and its applications in spectroscopy and structure and unusual phenomena at the nanoscale. The main course content is conveyed through, and assessed by, Jupyter notebooks, and uses the JupyterBook toolbox. GitHub Classroom is used for assessment.</p>
 </div></blockquote>
-<section id="overview">
+<div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Course Introduction</strong> <a class="reference external" href="https://www.macvideo.ca/media/Welcome+to+CHEM+3PA3/1_5uetc04h">video</a> and <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/0_IntroVideo.pdf?raw=true">slides</a>.</p></li>
@@ -595,31 +634,29 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="assessment">
+</div>
+<div class="section" id="assessment">
 <h2>Assessment<a class="headerlink" href="#assessment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Assignments</strong> will be turned in using <a class="reference external" href="https://classroom.github.com/">Github Classroom</a>. To learn more about Github Classroom, see our <a class="reference internal" href="Tutorial_0.html"><span class="doc std std-doc">tutorial</span></a> and GitHub’s <a class="reference external" href="https://githubuniverse.com/content-library/github-classroom-101/">video</a>. Each assignment will be assessed both on GitHub (for correctness and quality) and through an interview (for depth of understanding). <em>Your exam will have the same format as the assignments.</em></p></li>
 <li><p><strong>Extra Points</strong> may be earned by <a class="reference internal" href="contributing.html"><span class="doc std std-doc">making pull requests</span></a> to <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022">this repository</a>. The aim is to encourage you to contribute/refine content that benefits other students. While all contributions ar   e encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. <a class="reference internal" href="extracredit/overview.html"><span class="doc std std-doc">More information is available here.</span></a></p></li>
 <li><p><strong>Auditing</strong> the course is allowed. This course was designed to help self-motivated independent learners. GitHub classroom assignments should be accessible, and auto-graded, without issue. Personal support is, unfortunately but necessarily, much more limited.</p></li>
 </ul>
-</section>
-<section id="other-resources">
+</div>
+<div class="section" id="other-resources">
 <h2>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>A <a class="reference internal" href="documents/refs.html"><span class="doc std std-doc">curated selection</span></a> gleaned from the vast amount of relevant material on the internet</p></li>
 <li><p>Material from the 2021 course is available at  <a class="reference external" href="https://qchem1.qcdevs.org/">qchem1.qcdevs.org</a>.</p></li>
 </ul>
-</section>
-<section id="using-and-contributing">
+</div>
+<div class="section" id="using-and-contributing">
 <h2>Using and Contributing<a class="headerlink" href="#using-and-contributing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qcdevs.org/guidelines/QCDevsCodeOfConduct/"><strong>QC-Devs Code of Conduct:</strong></a> Treat others with respect, kindness, and empathy; assume they’re doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.</p></li>
 <li><p><a class="reference internal" href="contributing.html"><span class="doc std std-doc"><strong>How to Contribute:</strong></span></a> Contributions are accepted and encouraged!</p></li>
 <li><p><a class="reference internal" href="license.html"><span class="doc std std-doc"><strong>CC0 version 1.0</strong></span></a> license. But where we have reposted/adapted/linked content from other sources, they retain their own copyright/license.</p></li>
 </ul>
-</section>
-<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -633,7 +670,9 @@
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -657,8 +696,8 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="documents/objectives.html" title="next page">
     <div class="prev-next-info">
@@ -668,19 +707,17 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

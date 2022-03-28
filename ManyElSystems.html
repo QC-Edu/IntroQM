@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10. Many-Electron Systems &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,20 +37,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -493,7 +494,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -552,7 +553,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -690,14 +691,155 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Many-Electron Systems</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-electrons-in-a-box">
+   10.1. Two Electrons in a Box
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electron-spin-and-the-pauli-principle">
+   10.2. Electron Spin and the Pauli Principle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-electrons-with-spin-in-a-box">
+     10.2.1. Two Electrons (with Spin) in a Box
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle">
+     10.2.2. 📝 Exercise: Confirm that the wavefunction we just defined
+     <span class="math notranslate nohighlight">
+      \(\psi_{n_1,m_{s,1},n_2,m_{s,2}}(x_1,\sigma_1;x_2,\sigma_2) \)
+     </span>
+     is normalized and satisfies the Pauli antisymmetry relation and the Pauli exclusion principle.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-electron-atoms">
+     10.2.3. Two-Electron Atoms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perturbative-treatment-of-the-2-electron-atom">
+       10.2.3.1. Perturbative Treatment of the 2-electron atom
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variational-treatment-of-the-2-electron-atom">
+       10.2.3.2. Variational Treatment of the 2-electron atom
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#many-electron-wavefunctions-the-slater-determinant">
+   10.3. Many-electron wavefunctions: the Slater Determinant
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization">
+     10.3.1. 📝 Exercise: By explicit evaluation, confirm that the
+     <span class="math notranslate nohighlight">
+      \(2 \times 2\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(3 \times 3\)
+     </span>
+     Slater determinants recover the result that would be obtained by explicit antisymmetrization.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin">
+     10.3.2. 📝 Exercise: Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration
+     <span class="math notranslate nohighlight">
+      \(\text{1s}^2 \text{2s}^1 \text{2p}_0^1 \text{2p}_{+1}^1 \text{2p}_{-1}^1\)
+     </span>
+     . Assume all unpaired electrons have
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+     spin.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-many-electrons-in-a-box">
+   10.4. Example: Many electrons in a Box
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons">
+     10.4.1. 📝 Exercise: Write the Slater determinant for, and an approximate energy expression for, the ground state and first excited state of 2 electrons in a 2-dimensional square box and 2 electrons in a 3-dimension square box. What changes when you repeat the exercise for 3 electrons?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-spectroscopy-of-cyanine-dyes">
+   10.5. Example: Spectroscopy of Cyanine Dyes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#many-electron-atoms-and-molecules">
+   10.6. Many-Electron Atoms and Molecules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   10.7. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   10.8. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   10.9. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   10.10. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   10.11. 📚 References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <p><img alt="Remdesivir" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Remdesivir.png?raw=true" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="many-electron-systems">
+<div class="tex2jax_ignore mathjax_ignore section" id="many-electron-systems">
 <h1><span class="section-number">10. </span>Many-Electron Systems<a class="headerlink" href="#many-electron-systems" title="Permalink to this headline">¶</a></h1>
 <p>In general, the Schrödinger equation for many-electron systems cannot be solved exactly. For atoms and molecules, even accurate approximations are difficult, and finding more accurate ways to solve many-electron systems, at low enough computational cost to allow interesting and important molecules and their chemical phenomena to be modeled, is an extremely active area of scientific research.</p>
-<section id="two-electrons-in-a-box">
+<div class="section" id="two-electrons-in-a-box">
 <h2><span class="section-number">10.1. </span>Two Electrons in a Box<a class="headerlink" href="#two-electrons-in-a-box" title="Permalink to this headline">¶</a></h2>
 <p>Arguably the simplest possible two-electron system is two electrons confined to a one-dimensional box of length <span class="math notranslate nohighlight">\(a\)</span>. The Hamiltonian contains terms for the kinetic energy of the two electrons, the potential that binds each electron, and the electron-electron repulsion between the electrons</p>
 <div class="math notranslate nohighlight">
@@ -739,8 +881,8 @@ V(x) =
 E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 \]</div>
 <p>This wavefunction is not quite right, however. Electrons are identical particles, so it is not allowable to label electron 1 with quantum number <span class="math notranslate nohighlight">\(n_1\)</span> and electron 2 with quantum number <span class="math notranslate nohighlight">\(n_2\)</span>. Solving this problem, however, requires a consideration of electron spin.</p>
-</section>
-<section id="electron-spin-and-the-pauli-principle">
+</div>
+<div class="section" id="electron-spin-and-the-pauli-principle">
 <h2><span class="section-number">10.2. </span>Electron Spin and the Pauli Principle<a class="headerlink" href="#electron-spin-and-the-pauli-principle" title="Permalink to this headline">¶</a></h2>
 <p>Consider a wavefunction for <span class="math notranslate nohighlight">\(N\)</span> identical particles, <span class="math notranslate nohighlight">\(\Psi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)\)</span>. We know that the particles are identical, so all observables cannot depend on the specific order in which the particle coordinates are listed. In particular, the probability of observing particles at specified positions cannot depend on <em>which</em> particle is at the specified positions. Ergo,</p>
 <div class="math notranslate nohighlight">
@@ -802,7 +944,7 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 \end{align}
 \end{split}\]</div>
 <p>In cases where no specific choice of spin is made, one usually uses the generic notation <span class="math notranslate nohighlight">\(\sigma \in \left\{\alpha,\beta \right\}\)</span></p>
-<section id="two-electrons-with-spin-in-a-box">
+<div class="section" id="two-electrons-with-spin-in-a-box">
 <h3><span class="section-number">10.2.1. </span>Two Electrons (with Spin) in a Box<a class="headerlink" href="#two-electrons-with-spin-in-a-box" title="Permalink to this headline">¶</a></h3>
 <p>In order to describe two-electron systems, we need to embellish the electronic positions with spin coordinates. Going back to the wavefunction of two noninteracting electrons in a box, we have:</p>
 <div class="math notranslate nohighlight">
@@ -816,11 +958,11 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 \psi_{n_1,m_{s,1},n_2,m_{s,2}}(x_1,\sigma_1;x_2,\sigma_2) = \tfrac{1}{\sqrt{2}} \left(\psi_{n_1}(x_1)\psi_{n_2}(x_2)|\sigma_1(1) \sigma_2(2) \rangle - \psi_{n_1}(x_2)\psi_{n_2}(x_1)|\sigma_1(2) \sigma_2(1) \rangle \right)
 \]</div>
 <p>The factor of <span class="math notranslate nohighlight">\(\tfrac{1}{\sqrt{2}}\)</span> is a normalization constant.</p>
-</section>
-<section id="exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle">
+</div>
+<div class="section" id="exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle">
 <h3><span class="section-number">10.2.2. </span>📝 Exercise: Confirm that the wavefunction we just defined <span class="math notranslate nohighlight">\(\psi_{n_1,m_{s,1},n_2,m_{s,2}}(x_1,\sigma_1;x_2,\sigma_2) \)</span> is normalized and satisfies the Pauli antisymmetry relation and the Pauli exclusion principle.<a class="headerlink" href="#exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle" title="Permalink to this headline">¶</a></h3>
-</section>
-<section id="two-electron-atoms">
+</div>
+<div class="section" id="two-electron-atoms">
 <h3><span class="section-number">10.2.3. </span>Two-Electron Atoms<a class="headerlink" href="#two-electron-atoms" title="Permalink to this headline">¶</a></h3>
 <p>In a two-electron atom, there are five times in the Hamiltonian: the kinetic energy of both electrons (2 terms), the potential of attraction between the electron and the nucleus (2 terms), and the electron-electron repulsion potential (1 term).</p>
 <div class="math notranslate nohighlight">
@@ -852,7 +994,7 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 \[
 E_{n_1,n_2} = -\frac{Z^2}{2n_1^2}-\frac{Z^2}{2n_2^2} = -\frac{Z^2}{2}\left(\frac{1}{n_1^2} + \frac{1}{n_2^2} \right)
 \]</div>
-<section id="perturbative-treatment-of-the-2-electron-atom">
+<div class="section" id="perturbative-treatment-of-the-2-electron-atom">
 <h4><span class="section-number">10.2.3.1. </span>Perturbative Treatment of the 2-electron atom<a class="headerlink" href="#perturbative-treatment-of-the-2-electron-atom" title="Permalink to this headline">¶</a></h4>
 <p>The energy and wavefunction obtained by totally neglecting the electron-electron repulsion are woefully inaccurate. (E.g., the ground-state energy of the Helium atom is too small by <span class="math notranslate nohighlight">\(\sim 3000 \text{kJ/mol}\)</span> if you neglect the electron-electron repulsion. We can attempt to account for the effects of electron-electron correlation with perturbation theory. The Hamiltonian of interest, in atomic units, is</p>
 <div class="math notranslate nohighlight">
@@ -878,8 +1020,8 @@ E_{\text{1st-order p.t.}} = -2.75 \text{ a.u.} \\
 E_{\text{accurate}} = -2.9037 \text{ a.u.}
 \end{split}\]</div>
 <p>A more detailed derivations of this result is included in the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/2elatom.pdf?raw=true">pdf</a>.</p>
-</section>
-<section id="variational-treatment-of-the-2-electron-atom">
+</div>
+<div class="section" id="variational-treatment-of-the-2-electron-atom">
 <h4><span class="section-number">10.2.3.2. </span>Variational Treatment of the 2-electron atom<a class="headerlink" href="#variational-treatment-of-the-2-electron-atom" title="Permalink to this headline">¶</a></h4>
 <p>The ground-state wavefunction for the 2-electron atom, with electron-electron repulsion excluded, is</p>
 <div class="math notranslate nohighlight">
@@ -932,10 +1074,10 @@ E_{\text{Hartree-Fock}} = -2.862 \text{ a.u.} \\
 E_{\text{accurate}} = -2.9037 \text{ a.u.}
 \end{split}\]</div>
 <p><img alt="2 electron Slater determinant" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Slater-Determinant.png" /></p>
-</section>
-</section>
-</section>
-<section id="many-electron-wavefunctions-the-slater-determinant">
+</div>
+</div>
+</div>
+<div class="section" id="many-electron-wavefunctions-the-slater-determinant">
 <h2><span class="section-number">10.3. </span>Many-electron wavefunctions: the Slater Determinant<a class="headerlink" href="#many-electron-wavefunctions-the-slater-determinant" title="Permalink to this headline">¶</a></h2>
 <p>For more than two electrons, explicitly antisymmetrizing the wavefunction becomes extremely tedious. For example, for a 3-electron system, with electrons in the spatial orbitals <span class="math notranslate nohighlight">\(\phi_1(\mathbf{r})\)</span>, <span class="math notranslate nohighlight">\(\phi_2(\mathbf{r})\)</span>, and <span class="math notranslate nohighlight">\(\phi_3(\mathbf{r})\)</span>, the antisymmetrized wavefunction is:</p>
 <div class="math notranslate nohighlight">
@@ -1007,15 +1149,15 @@ E_{\text{accurate}} = -2.9037 \text{ a.u.}
 \]</div>
 <p>The Slater determinant captures the Pauli antisymmetry relation because when you interchange two rows of a determinant (corresponding to interchanging the coordinates of two electrons) the determinant changes by a multiplicative factor of -1. Similarly, the Pauli exclusions principle is satisfied because when two electrons are at the same location, two rows of the determinant are equal, and the determinant is zero. In addition to the (spatial) Pauli principles, the Slater determinant indicates that you cannot put two electrons in the same spin-orbital (because the determinant is zero if two columns are the same). The ability to satisfy these key mathematical properties of fermions with a compact wavefunction form is why the Slater determinant is certral to practical quantum chemistry.</p>
 <p>Incidentally, <a class="reference external" href="https://en.wikipedia.org/wiki/Fock_space">for bosons the situation is similar</a>, but instead of a Slater determinant one has a Slater <a class="reference external" href="https://en.wikipedia.org/wiki/Permanent_(mathematics)">permanent</a>. A permanent is similar to a determinant, but when rows (or columns) are interchanged, the permanent of a matrix does not change. Unfortunately, permanents are much more difficult to evaluate, computationally, than determinants.</p>
-<section id="exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization">
+<div class="section" id="exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization">
 <h3><span class="section-number">10.3.1. </span>📝 Exercise: By explicit evaluation, confirm that the <span class="math notranslate nohighlight">\(2 \times 2\)</span> and <span class="math notranslate nohighlight">\(3 \times 3\)</span> Slater determinants recover the result that would be obtained by explicit antisymmetrization.<a class="headerlink" href="#exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization" title="Permalink to this headline">¶</a></h3>
-</section>
-<section id="exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin">
+</div>
+<div class="section" id="exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin">
 <h3><span class="section-number">10.3.2. </span>📝 Exercise: Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration <span class="math notranslate nohighlight">\(\text{1s}^2 \text{2s}^1 \text{2p}_0^1 \text{2p}_{+1}^1 \text{2p}_{-1}^1\)</span>. Assume all unpaired electrons have <span class="math notranslate nohighlight">\(\alpha\)</span> spin.<a class="headerlink" href="#exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Cyanine Dyes" src="https://github.com/QC-Edu/IntroQM2022/blob/master/linkedFiles/CyanineDyes.svg?raw=true?" /></p>
-</section>
-</section>
-<section id="example-many-electrons-in-a-box">
+</div>
+</div>
+<div class="section" id="example-many-electrons-in-a-box">
 <h2><span class="section-number">10.4. </span>Example: Many electrons in a Box<a class="headerlink" href="#example-many-electrons-in-a-box" title="Permalink to this headline">¶</a></h2>
 <p>The Hamiltonian for <span class="math notranslate nohighlight">\(N\)</span> electrons confined to a box is, in atomic units,</p>
 <div class="math notranslate nohighlight">
@@ -1117,12 +1259,12 @@ E_{\text{e.s.; no e-e repulsion}} = \sum_{n=1}^{N/2-1} 2\epsilon_n + \epsilon_{N
 \[
 E_{\text{no e-e repulsion}} = \sum_{k=1}^{\infty} n_k \epsilon_k 
 \]</div>
-<section id="exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons">
+<div class="section" id="exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons">
 <h3><span class="section-number">10.4.1. </span>📝 Exercise: Write the Slater determinant for, and an approximate energy expression for, the ground state and first excited state of 2 electrons in a 2-dimensional square box and 2 electrons in a 3-dimension square box. What changes when you repeat the exercise for 3 electrons?<a class="headerlink" href="#exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Spectroscopy" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Spectroscopy.jpg?raw=true" /></p>
-</section>
-</section>
-<section id="example-spectroscopy-of-cyanine-dyes">
+</div>
+</div>
+<div class="section" id="example-spectroscopy-of-cyanine-dyes">
 <h2><span class="section-number">10.5. </span>Example: Spectroscopy of Cyanine Dyes<a class="headerlink" href="#example-spectroscopy-of-cyanine-dyes" title="Permalink to this headline">¶</a></h2>
 <p>We are now, finally, in position to revisit the spectrum of the cynanine dyes we began our treatment of quantum mechanics with. Recall that for the cyanine dyes, we can approximate the length of the box with</p>
 <div class="math notranslate nohighlight">
@@ -1214,8 +1356,8 @@ The experimental absorption wavelength for k=12 is 1541 nm
 </div>
 </div>
 <p><img alt="Molecular Magnet" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Struktur_SMM-Mn12.png" /></p>
-</section>
-<section id="many-electron-atoms-and-molecules">
+</div>
+<div class="section" id="many-electron-atoms-and-molecules">
 <h2><span class="section-number">10.6. </span>Many-Electron Atoms and Molecules<a class="headerlink" href="#many-electron-atoms-and-molecules" title="Permalink to this headline">¶</a></h2>
 <p>Detailed notes on <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/atomsshort.pdf?raw=true">many-electron atoms</a> and <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/molecules.pdf?raw=true">molecules</a> are available as PDFs.</p>
 <p>For a molecule in the <a class="reference external" href="https://en.wikipedia.org/wiki/Born%E2%80%93Oppenheimer_approximation">Born-Oppenheimer approximation</a>, the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Chpt%201.pdf?raw=true">electronic Hamiltonian</a> for <span class="math notranslate nohighlight">\(N\)</span> electrons at positions <span class="math notranslate nohighlight">\(\mathbf{r}_1, \mathbf{r}_2, \ldots \mathbf{r}_N\)</span> and <span class="math notranslate nohighlight">\(P_{\text{atoms}}\)</span> nuclei at positions <span class="math notranslate nohighlight">\(\mathbf{R}_1, \mathbf{R}_2, \ldots \mathbf{R}_P\)</span> is, in atomic units,</p>
@@ -1273,16 +1415,16 @@ E_{\text{ind. el}} = \epsilon_1 + \epsilon_2 + \cdots + \epsilon_N
 </ul>
 <p>In practice, most quantum chemistry calculations start from a Slater determinant wavefunction, which was induced by a specific choice of <span class="math notranslate nohighlight">\(w(\mathbf{r})\)</span>, typically Hartree-Fock. Sometimes further corrections (using variational methods or perturbation theory) are added to the underlying approach.</p>
 <p><img alt="H2 orbitals" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/H2OrbitalsAnimation.gif?raw=true" /></p>
-</section>
-<section id="self-reflection">
+</div>
+<div class="section" id="self-reflection">
 <h2><span class="section-number">10.7. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>When will the orbital approximation be most accurate? Least accurate?</p></li>
 <li><p>Explain what the Hartree-Fock approximation has to do with the concept of effective nuclear charge.</p></li>
 <li><p>Can you think of a system where a single Slater determinant would be an extremely poor approximation?</p></li>
 </ul>
-</section>
-<section id="thought-provoking-questions">
+</div>
+<div class="section" id="thought-provoking-questions">
 <h2><span class="section-number">10.8. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>When will the orbital approximation be most accurate? Least accurate?</p></li>
@@ -1341,8 +1483,8 @@ V_{\text{Coulomb}} =
 (q_m q_n)\ln\left|\mathbf{r}_m - \mathbf{r}_n \right|  &amp; d = 2
 \end{cases}
 \end{split}\]</div>
-</section>
-<section id="recapitulation">
+</div>
+<div class="section" id="recapitulation">
 <h2><span class="section-number">10.9. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>What are bosons? What are fermions? How do the wavefunctions differ?</p></li>
@@ -1354,14 +1496,14 @@ V_{\text{Coulomb}} =
 <li><p>Why are Gaussian basis functions used in quantum chemistry?</p></li>
 <li><p>How does one compute an excitation energy?</p></li>
 </ul>
-</section>
-<section id="next-up">
+</div>
+<div class="section" id="next-up">
 <h2><span class="section-number">10.10. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Hückel Theory and Its Extensions</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2><span class="section-number">10.11. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
@@ -1373,10 +1515,10 @@ V_{\text{Coulomb}} =
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Slater_determinant">Slater determinant</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method">Hartree-Fock</a></p></li>
 </ul>
-</section>
+</div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1400,8 +1542,8 @@ V_{\text{Coulomb}} =
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ApproximateMethods.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1418,19 +1560,17 @@ V_{\text{Coulomb}} =
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

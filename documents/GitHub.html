@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Version Control with Git via GitHub &#8212; Quantum Chemistry</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -38,17 +37,19 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -491,7 +492,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -525,7 +526,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -560,11 +561,49 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Version Control with Git via GitHub</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   1.1. 🥅 Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#version-control-git-github-and-github-classroom">
+   1.2. Version Control: Git, GitHub, and GitHub Classroom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment">
+   1.3. 👩🏽‍💻 Assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   1.4. 📚 References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <p><img alt="Version Control" src="../_images/versioncontrol.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="version-control-with-git-via-github">
+<div class="tex2jax_ignore mathjax_ignore section" id="version-control-with-git-via-github">
 <h1><span class="section-number">1. </span>Version Control with Git via GitHub<a class="headerlink" href="#version-control-with-git-via-github" title="Permalink to this headline">¶</a></h1>
 <p>As you write a computer program or any other document, it is important to be able to save your work. This includes</p>
 <ul class="simple">
@@ -572,7 +611,7 @@
 <li><p>creating multiple versions], so that you can select the option that balances the goals of being elegant (easy-to-understand), approachable (easy-to-use), and efficient (requiring less resources).</p></li>
 <li><p>editing files and groups of files collaboratively in a way that minimizes conflicts/inconsistencies and maximizes teamwork/accountability.</p></li>
 </ul>
-<section id="learning-objectives">
+<div class="section" id="learning-objectives">
 <h2><span class="section-number">1.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Understand what version control is and why it is useful.</p></li>
@@ -580,8 +619,8 @@
 <li><p>Know what a repository (repo) is, and how to use a repository for version control.</p></li>
 <li><p>Understand the basics of GitHub Classroom.</p></li>
 </ul>
-</section>
-<section id="version-control-git-github-and-github-classroom">
+</div>
+<div class="section" id="version-control-git-github-and-github-classroom">
 <h2><span class="section-number">1.2. </span>Version Control: Git, GitHub, and GitHub Classroom<a class="headerlink" href="#version-control-git-github-and-github-classroom" title="Permalink to this headline">¶</a></h2>
 <p>Version control allows you to save your work, maintain multiple versions of the same document/program in repositories, and easily go back to old versions of the document/program (if you accidentally break it or decide that you made a bad decision). It is most effective when you save (i.e., commit) your work early and often with an informative comment about the changes you made. (That makes it easy to find exactly the version you want!) Version control is essential when multiple people work on a file (or group of files) at the same time: it keeps track of who made what changes to each file, and in cases where multiple people changed the same file at the same time in mutually incompatible ways, it flags these inconsistencies so that an informed choice can be made.</p>
 <p><a class="reference external" href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Click here</a> to learn more about various types of version control.</p>
@@ -607,14 +646,14 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="assignment">
+</div>
+<div class="section" id="assignment">
 <h2><span class="section-number">1.3. </span>👩🏽‍💻 Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>You will learn more about GitHub through the <a class="reference internal" href="../ghfundamentals.html"><span class="doc std std-doc">assignment</span></a>.</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2><span class="section-number">1.4. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>You can learn more about Git and GitHub via LinkedIn Learning Courses.</p>
 <ul class="simple">
@@ -628,10 +667,10 @@
 <div><p><strong>Hat Tip:</strong> Farnaz Heidar-Zadeh of Queen’s University. This is adapted from her orientation notes in the QC-Edu Boot Camp.</p>
 </div></blockquote>
 </div></blockquote>
-</section>
+</div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -655,8 +694,8 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="objectives.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -673,19 +712,17 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

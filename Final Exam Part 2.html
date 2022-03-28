@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Part 2: Final Exam 3PA3; Winter 2021: The Harmonic Oscillator &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,20 +37,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -491,7 +492,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -550,7 +551,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -683,11 +684,147 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Part 2: Final Exam 3PA3; Winter 2021: The Harmonic Oscillator</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-1-dimensional-harmonic-oscillator">
+   The 1-dimensional Harmonic Oscillator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
+     Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
+     Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-isotope-effects-in-rotational-spectroscopy-8-pts">
+     🖩 Exercise: Isotope Effects in Rotational Spectroscopy (8 pts.)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-harmonic-oscillator-hamiltonian">
+     The Harmonic Oscillator Hamiltonian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solutions-to-the-harmonic-oscillator-hamiltonian">
+     Solutions to the Harmonic Oscillator Hamiltonian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isotope-effects-in-vibrational-spectroscopy-8-pts">
+     🖩 Isotope Effects in Vibrational Spectroscopy (8 pts)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-morse-oscillator">
+   The Morse Oscillator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     Motivation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-the-morse-and-harmonic-oscillators-8-pts">
+     🖩 Compare the Morse and Harmonic Oscillators (8 pts)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vibrating-diatomic-molecules-in-an-external-field">
+   Vibrating Diatomic Molecules  in an External Field
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Motivation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
+     Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field">
+     The Harmonic Oscillator in a Uniform External Electric Field
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sketch-of-perturbative-approach">
+       Sketch of Perturbative Approach
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exact-solution-by-completing-the-square">
+       Exact Solution by Completing the Square
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation-8-pts">
+     🖩 Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation. (8 pts)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-morse-oscillator-in-an-external-electric-field">
+     The Morse Oscillator in an External Electric Field
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential-8-pts">
+     👩🏽‍💻 Model the HF molecule in a uniform electric field using the Morse potential.  (8 pts)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-use-the-other-approach-8-pts">
+     💰 Bonus. Use the other approach. (8 pts)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   📚 References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Part-2:-Final-Exam-3PA3;-Winter-2021:-The-Harmonic-Oscillator" data-toc-modified-id="Part-2:-Final-Exam-3PA3;-Winter-2021:-The-Harmonic-Oscillator-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Part 2: Final Exam 3PA3; Winter 2021: The Harmonic Oscillator</a></span><ul class="toc-item"><li><span><a href="#The-1-dimensional-Harmonic-Oscillator" data-toc-modified-id="The-1-dimensional-Harmonic-Oscillator-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>The 1-dimensional Harmonic Oscillator</a></span><ul class="toc-item"><li><span><a href="#Motivation:-Nuclear-Schrödinger-Equation-for-a-Diatomic-Molecule" data-toc-modified-id="Motivation:-Nuclear-Schrödinger-Equation-for-a-Diatomic-Molecule-2.1.1"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule</a></span></li><li><span><a href="#Quadratic-Approximation-to-the-Potential-Energy-Curve-and-the-Rigid-Rotor-Approximation" data-toc-modified-id="Quadratic-Approximation-to-the-Potential-Energy-Curve-and-the-Rigid-Rotor-Approximation-2.1.2"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation</a></span></li><li><span><a href="#🖩-Exercise:-Isotope-Effects-in-Rotational-Spectroscopy-(8-pts.)" data-toc-modified-id="🖩-Exercise:-Isotope-Effects-in-Rotational-Spectroscopy-(8-pts.)-2.1.3"><span class="toc-item-num">2.1.3&nbsp;&nbsp;</span>🖩 Exercise: Isotope Effects in Rotational Spectroscopy (8 pts.)</a></span></li><li><span><a href="#The-Harmonic-Oscillator-Hamiltonian" data-toc-modified-id="The-Harmonic-Oscillator-Hamiltonian-2.1.4"><span class="toc-item-num">2.1.4&nbsp;&nbsp;</span>The Harmonic Oscillator Hamiltonian</a></span></li><li><span><a href="#Solutions-to-the-Harmonic-Oscillator-Hamiltonian" data-toc-modified-id="Solutions-to-the-Harmonic-Oscillator-Hamiltonian-2.1.5"><span class="toc-item-num">2.1.5&nbsp;&nbsp;</span>Solutions to the Harmonic Oscillator Hamiltonian</a></span></li><li><span><a href="#🖩-Isotope-Effects-in-Vibrational-Spectroscopy-(8-pts)" data-toc-modified-id="🖩-Isotope-Effects-in-Vibrational-Spectroscopy-(8-pts)-2.1.6"><span class="toc-item-num">2.1.6&nbsp;&nbsp;</span>🖩 Isotope Effects in Vibrational Spectroscopy (8 pts)</a></span></li></ul></li><li><span><a href="#The-Morse-Oscillator" data-toc-modified-id="The-Morse-Oscillator-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>The Morse Oscillator</a></span><ul class="toc-item"><li><span><a href="#Motivation" data-toc-modified-id="Motivation-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>Motivation</a></span></li><li><span><a href="#Solution" data-toc-modified-id="Solution-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Solution</a></span></li><li><span><a href="#🖩-Compare-the-Morse-and-Harmonic-Oscillators-(8-pts)" data-toc-modified-id="🖩-Compare-the-Morse-and-Harmonic-Oscillators-(8-pts)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>🖩 Compare the Morse and Harmonic Oscillators (8 pts)</a></span></li></ul></li><li><span><a href="#Vibrating-Diatomic-Molecules--in-an-External-Field" data-toc-modified-id="Vibrating-Diatomic-Molecules--in-an-External-Field-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Vibrating Diatomic Molecules  in an External Field</a></span><ul class="toc-item"><li><span><a href="#Motivation" data-toc-modified-id="Motivation-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>Motivation</a></span></li><li><span><a href="#Hamiltonian-for-a-Polar-Diatomic-Molecule-in-an-External-Uniform-Electric-Field" data-toc-modified-id="Hamiltonian-for-a-Polar-Diatomic-Molecule-in-an-External-Uniform-Electric-Field-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field</a></span></li><li><span><a href="#The-Harmonic-Oscillator-in-a-Uniform-External-Electric-Field" data-toc-modified-id="The-Harmonic-Oscillator-in-a-Uniform-External-Electric-Field-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>The Harmonic Oscillator in a Uniform External Electric Field</a></span><ul class="toc-item"><li><span><a href="#Sketch-of-Perturbative-Approach" data-toc-modified-id="Sketch-of-Perturbative-Approach-2.3.3.1"><span class="toc-item-num">2.3.3.1&nbsp;&nbsp;</span>Sketch of Perturbative Approach</a></span></li><li><span><a href="#Exact-Solution-by-Completing-the-Square" data-toc-modified-id="Exact-Solution-by-Completing-the-Square-2.3.3.2"><span class="toc-item-num">2.3.3.2&nbsp;&nbsp;</span>Exact Solution by Completing the Square</a></span></li></ul></li><li><span><a href="#🖩-Model-the-HF-molecule-in-a-uniform-electric-field-in-the-Harmonic-Oscillator-Approximation.-(8-pts)" data-toc-modified-id="🖩-Model-the-HF-molecule-in-a-uniform-electric-field-in-the-Harmonic-Oscillator-Approximation.-(8-pts)-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>🖩 Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation. (8 pts)</a></span></li><li><span><a href="#The-Morse-Oscillator-in-an-External-Electric-Field" data-toc-modified-id="The-Morse-Oscillator-in-an-External-Electric-Field-2.3.5"><span class="toc-item-num">2.3.5&nbsp;&nbsp;</span>The Morse Oscillator in an External Electric Field</a></span></li><li><span><a href="#👩🏽‍💻-Model-the-HF-molecule-in-a-uniform-electric-field-using-the-Morse-potential.--(8-pts)" data-toc-modified-id="👩🏽‍💻-Model-the-HF-molecule-in-a-uniform-electric-field-using-the-Morse-potential.--(8-pts)-2.3.6"><span class="toc-item-num">2.3.6&nbsp;&nbsp;</span>👩🏽‍💻 Model the HF molecule in a uniform electric field using the Morse potential.  (8 pts)</a></span></li><li><span><a href="#💰-Bonus.-Use-the-other-approach.-(8-pts)" data-toc-modified-id="💰-Bonus.-Use-the-other-approach.-(8-pts)-2.3.7"><span class="toc-item-num">2.3.7&nbsp;&nbsp;</span>💰 Bonus. Use the other approach. (8 pts)</a></span></li></ul></li><li><span><a href="#📚-References" data-toc-modified-id="📚-References-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>📚 References</a></span></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="part-2-final-exam-3pa3-winter-2021-the-harmonic-oscillator">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Part-2:-Final-Exam-3PA3;-Winter-2021:-The-Harmonic-Oscillator" data-toc-modified-id="Part-2:-Final-Exam-3PA3;-Winter-2021:-The-Harmonic-Oscillator-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Part 2: Final Exam 3PA3; Winter 2021: The Harmonic Oscillator</a></span><ul class="toc-item"><li><span><a href="#The-1-dimensional-Harmonic-Oscillator" data-toc-modified-id="The-1-dimensional-Harmonic-Oscillator-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>The 1-dimensional Harmonic Oscillator</a></span><ul class="toc-item"><li><span><a href="#Motivation:-Nuclear-Schrödinger-Equation-for-a-Diatomic-Molecule" data-toc-modified-id="Motivation:-Nuclear-Schrödinger-Equation-for-a-Diatomic-Molecule-2.1.1"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule</a></span></li><li><span><a href="#Quadratic-Approximation-to-the-Potential-Energy-Curve-and-the-Rigid-Rotor-Approximation" data-toc-modified-id="Quadratic-Approximation-to-the-Potential-Energy-Curve-and-the-Rigid-Rotor-Approximation-2.1.2"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation</a></span></li><li><span><a href="#🖩-Exercise:-Isotope-Effects-in-Rotational-Spectroscopy-(8-pts.)" data-toc-modified-id="🖩-Exercise:-Isotope-Effects-in-Rotational-Spectroscopy-(8-pts.)-2.1.3"><span class="toc-item-num">2.1.3&nbsp;&nbsp;</span>🖩 Exercise: Isotope Effects in Rotational Spectroscopy (8 pts.)</a></span></li><li><span><a href="#The-Harmonic-Oscillator-Hamiltonian" data-toc-modified-id="The-Harmonic-Oscillator-Hamiltonian-2.1.4"><span class="toc-item-num">2.1.4&nbsp;&nbsp;</span>The Harmonic Oscillator Hamiltonian</a></span></li><li><span><a href="#Solutions-to-the-Harmonic-Oscillator-Hamiltonian" data-toc-modified-id="Solutions-to-the-Harmonic-Oscillator-Hamiltonian-2.1.5"><span class="toc-item-num">2.1.5&nbsp;&nbsp;</span>Solutions to the Harmonic Oscillator Hamiltonian</a></span></li><li><span><a href="#🖩-Isotope-Effects-in-Vibrational-Spectroscopy-(8-pts)" data-toc-modified-id="🖩-Isotope-Effects-in-Vibrational-Spectroscopy-(8-pts)-2.1.6"><span class="toc-item-num">2.1.6&nbsp;&nbsp;</span>🖩 Isotope Effects in Vibrational Spectroscopy (8 pts)</a></span></li></ul></li><li><span><a href="#The-Morse-Oscillator" data-toc-modified-id="The-Morse-Oscillator-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>The Morse Oscillator</a></span><ul class="toc-item"><li><span><a href="#Motivation" data-toc-modified-id="Motivation-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>Motivation</a></span></li><li><span><a href="#Solution" data-toc-modified-id="Solution-2.2.2"><span class="toc-item-num">2.2.2&nbsp;&nbsp;</span>Solution</a></span></li><li><span><a href="#🖩-Compare-the-Morse-and-Harmonic-Oscillators-(8-pts)" data-toc-modified-id="🖩-Compare-the-Morse-and-Harmonic-Oscillators-(8-pts)-2.2.3"><span class="toc-item-num">2.2.3&nbsp;&nbsp;</span>🖩 Compare the Morse and Harmonic Oscillators (8 pts)</a></span></li></ul></li><li><span><a href="#Vibrating-Diatomic-Molecules--in-an-External-Field" data-toc-modified-id="Vibrating-Diatomic-Molecules--in-an-External-Field-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Vibrating Diatomic Molecules  in an External Field</a></span><ul class="toc-item"><li><span><a href="#Motivation" data-toc-modified-id="Motivation-2.3.1"><span class="toc-item-num">2.3.1&nbsp;&nbsp;</span>Motivation</a></span></li><li><span><a href="#Hamiltonian-for-a-Polar-Diatomic-Molecule-in-an-External-Uniform-Electric-Field" data-toc-modified-id="Hamiltonian-for-a-Polar-Diatomic-Molecule-in-an-External-Uniform-Electric-Field-2.3.2"><span class="toc-item-num">2.3.2&nbsp;&nbsp;</span>Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field</a></span></li><li><span><a href="#The-Harmonic-Oscillator-in-a-Uniform-External-Electric-Field" data-toc-modified-id="The-Harmonic-Oscillator-in-a-Uniform-External-Electric-Field-2.3.3"><span class="toc-item-num">2.3.3&nbsp;&nbsp;</span>The Harmonic Oscillator in a Uniform External Electric Field</a></span><ul class="toc-item"><li><span><a href="#Sketch-of-Perturbative-Approach" data-toc-modified-id="Sketch-of-Perturbative-Approach-2.3.3.1"><span class="toc-item-num">2.3.3.1&nbsp;&nbsp;</span>Sketch of Perturbative Approach</a></span></li><li><span><a href="#Exact-Solution-by-Completing-the-Square" data-toc-modified-id="Exact-Solution-by-Completing-the-Square-2.3.3.2"><span class="toc-item-num">2.3.3.2&nbsp;&nbsp;</span>Exact Solution by Completing the Square</a></span></li></ul></li><li><span><a href="#🖩-Model-the-HF-molecule-in-a-uniform-electric-field-in-the-Harmonic-Oscillator-Approximation.-(8-pts)" data-toc-modified-id="🖩-Model-the-HF-molecule-in-a-uniform-electric-field-in-the-Harmonic-Oscillator-Approximation.-(8-pts)-2.3.4"><span class="toc-item-num">2.3.4&nbsp;&nbsp;</span>🖩 Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation. (8 pts)</a></span></li><li><span><a href="#The-Morse-Oscillator-in-an-External-Electric-Field" data-toc-modified-id="The-Morse-Oscillator-in-an-External-Electric-Field-2.3.5"><span class="toc-item-num">2.3.5&nbsp;&nbsp;</span>The Morse Oscillator in an External Electric Field</a></span></li><li><span><a href="#👩🏽‍💻-Model-the-HF-molecule-in-a-uniform-electric-field-using-the-Morse-potential.--(8-pts)" data-toc-modified-id="👩🏽‍💻-Model-the-HF-molecule-in-a-uniform-electric-field-using-the-Morse-potential.--(8-pts)-2.3.6"><span class="toc-item-num">2.3.6&nbsp;&nbsp;</span>👩🏽‍💻 Model the HF molecule in a uniform electric field using the Morse potential.  (8 pts)</a></span></li><li><span><a href="#💰-Bonus.-Use-the-other-approach.-(8-pts)" data-toc-modified-id="💰-Bonus.-Use-the-other-approach.-(8-pts)-2.3.7"><span class="toc-item-num">2.3.7&nbsp;&nbsp;</span>💰 Bonus. Use the other approach. (8 pts)</a></span></li></ul></li><li><span><a href="#📚-References" data-toc-modified-id="📚-References-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>📚 References</a></span></li></ul></li></ul></div><div class="tex2jax_ignore mathjax_ignore section" id="part-2-final-exam-3pa3-winter-2021-the-harmonic-oscillator">
 <h1>Part 2: Final Exam 3PA3; Winter 2021: The Harmonic Oscillator<a class="headerlink" href="#part-2-final-exam-3pa3-winter-2021-the-harmonic-oscillator" title="Permalink to this headline">¶</a></h1>
 <p>👨‍🏫 <strong>Overview:</strong>
 This is Part 2 of 3 Parts of your Final Exam/Project.</p>
@@ -733,9 +870,9 @@ Answer the following questions. These are worth 40% of your exam, and each quest
 </div>
 </div>
 <p><img alt="Harmonic Oscillator" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/QuantumHarmonicOscillatorAnimation.gif?raw=true" /></p>
-<section id="the-1-dimensional-harmonic-oscillator">
+<div class="section" id="the-1-dimensional-harmonic-oscillator">
 <h2>The 1-dimensional Harmonic Oscillator<a class="headerlink" href="#the-1-dimensional-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
-<section id="motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
+<div class="section" id="motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
 <h3>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule<a class="headerlink" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule" title="Permalink to this headline">¶</a></h3>
 <p>The nuclear Schrödinger equation for a diatomic molecule is</p>
 <div class="math notranslate nohighlight">
@@ -840,8 +977,8 @@ M = M_1 + M_2
       + \frac{\hbar^2 J(J+1)}{2\mu u^2} + V(u) \right)
       R_{k}(u) = E_{k,J}R_{k}(u)
 \]</div>
-</section>
-<section id="quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
+</div>
+<div class="section" id="quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
 <h3>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation<a class="headerlink" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation" title="Permalink to this headline">¶</a></h3>
 <p>The potential energy of a diatomic molecule goes to infinity at short internuclear separation (<span class="math notranslate nohighlight">\(u \rightarrow 0\)</span>) because of the nuclear-nuclear repulsion and approaches a constant (which we typically define to be zero) at infinite internuclear distance. In between these limits, there is typically a minimum at <span class="math notranslate nohighlight">\(r_e\)</span>, which represents the equilibrium bond length for the molecule (in the absence of quantum effects). If we assume that the atomic nuclei, which are much more massive than electrons, have relatively small De Broglie wavelength and do not deviate far from <span class="math notranslate nohighlight">\(u = r_e\)</span>, it is reasonable to expand the potential energy in a Taylor series about that point,
 $<span class="math notranslate nohighlight">\(
@@ -870,8 +1007,8 @@ and the vibrational Hamiltonian is then approximated as a [quantum mechanical ha
 R_{k}(u) = E_{k}R_{k}(u)
 $$</p></li>
 </ul>
-</section>
-<section id="exercise-isotope-effects-in-rotational-spectroscopy-8-pts">
+</div>
+<div class="section" id="exercise-isotope-effects-in-rotational-spectroscopy-8-pts">
 <h3>🖩 Exercise: Isotope Effects in Rotational Spectroscopy (8 pts.)<a class="headerlink" href="#exercise-isotope-effects-in-rotational-spectroscopy-8-pts" title="Permalink to this headline">¶</a></h3>
 <p>For a diatomic molecule that has a permanent dipole moment, allowed rotational transitions correspond to <span class="math notranslate nohighlight">\(\Delta J = \pm 1\)</span>.</p>
 <ul class="simple">
@@ -893,8 +1030,8 @@ $$</p></li>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">gf</span><span class="o">/</span><span class="mi">7</span><span class="n">vfqp7nn2972hrcz727tkjkh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_93562</span><span class="o">/</span><span class="mf">1387574716.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">wavenumber_T37Cl</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># YOUR CODE HERE</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 
@@ -912,8 +1049,8 @@ $$</p></li>
 </div>
 </div>
 <p>YOUR ANSWER HERE</p>
-</section>
-<section id="the-harmonic-oscillator-hamiltonian">
+</div>
+<div class="section" id="the-harmonic-oscillator-hamiltonian">
 <h3>The Harmonic Oscillator Hamiltonian<a class="headerlink" href="#the-harmonic-oscillator-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <p><img alt="harmonic oscillator wf" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/HarmOsziFunktionen.png" /></p>
 <p>It is convenient to change the coordinates in this problem, so that the dependence on <span class="math notranslate nohighlight">\(r_e\)</span> is not explicit. Defining
@@ -937,8 +1074,8 @@ and the reduced mass is defined as previously,
 \mu = \frac{M_1 M_2}{M_1 + M_2}
 \)</span>$</p></li>
 </ul>
-</section>
-<section id="solutions-to-the-harmonic-oscillator-hamiltonian">
+</div>
+<div class="section" id="solutions-to-the-harmonic-oscillator-hamiltonian">
 <h3>Solutions to the Harmonic Oscillator Hamiltonian<a class="headerlink" href="#solutions-to-the-harmonic-oscillator-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <p>We will not attempt to solve the harmonic oscillator Schrödinger equation. It suffices to note that the equation <em>is</em> exactly solvable using techniques similar to those we’ve used for other systems, and that the solution is written in terms of (yet another) type of special function, the <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials</a>:</p>
 <p>\begin{align}
@@ -956,8 +1093,8 @@ and the corresponding eigenvalues are
 \)</span><span class="math notranslate nohighlight">\(
 E_k = \hbar \omega \left( k+ \tfrac{1}{2} \right) = \hbar \sqrt{\frac{\kappa_e}{\mu}} \left( k+ \tfrac{1}{2} \right) \qquad \qquad k=0,1,2,\ldots
 \)</span>$</p>
-</section>
-<section id="isotope-effects-in-vibrational-spectroscopy-8-pts">
+</div>
+<div class="section" id="isotope-effects-in-vibrational-spectroscopy-8-pts">
 <h3>🖩 Isotope Effects in Vibrational Spectroscopy (8 pts)<a class="headerlink" href="#isotope-effects-in-vibrational-spectroscopy-8-pts" title="Permalink to this headline">¶</a></h3>
 <p>For a diatomic molecule that is well-described by a harmonic oscillator, allowed vibrational transitions correspond to <span class="math notranslate nohighlight">\(\Delta k = \pm 1\)</span>.</p>
 <ul class="simple">
@@ -987,11 +1124,11 @@ E_k = \hbar \omega \left( k+ \tfrac{1}{2} \right) = \hbar \sqrt{\frac{\kappa_e}{
 </div>
 <p>YOUR ANSWER HERE</p>
 <p><img alt="Morse Potential" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Morse-potential.png/650px-Morse-potential.png" /></p>
-</section>
-</section>
-<section id="the-morse-oscillator">
+</div>
+</div>
+<div class="section" id="the-morse-oscillator">
 <h2>The Morse Oscillator<a class="headerlink" href="#the-morse-oscillator" title="Permalink to this headline">¶</a></h2>
-<section id="motivation">
+<div class="section" id="motivation">
 <h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
 <p>The harmonic oscillator is not very realistic for two reasons</p>
 <ul class="simple">
@@ -1011,8 +1148,8 @@ Recall that
 \kappa_e = V''_{\text{Morse}}(r_e)
 \)</span>$</p>
 <p><img alt="Comparison" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/N2ground.png" /></p>
-</section>
-<section id="solution">
+</div>
+<div class="section" id="solution">
 <h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
 <p>The Schrödinger equation for the Morse potential,
 $$
@@ -1036,8 +1173,8 @@ k_{\max} = \left\lfloor \frac{2D_e}{\hbar \omega_0} - \frac{1}{2} \right\rfloor
 \)</span><span class="math notranslate nohighlight">\(
 Here \)</span>\lfloor x \rfloor<span class="math notranslate nohighlight">\( denotes the integer part of \)</span>x<span class="math notranslate nohighlight">\(. E.g., \)</span>\lfloor 20.3 \rfloor = 20<span class="math notranslate nohighlight">\(. The upshot of the equation for \)</span>k_{\max}<span class="math notranslate nohighlight">\( is that the Morse oscillator has about twice as many states with energy less than \)</span>D_e$ as the harmonic oscillator does, because the states of the Morse oscillator become closer and closer together as the molecule gets closer to dissociation. The ability to have only a finite number of bound vibrational states is one way in which the Morse oscillator is more like a real vibrating molecule than the harmonic oscillator.</p></li>
 </ul>
-</section>
-<section id="compare-the-morse-and-harmonic-oscillators-8-pts">
+</div>
+<div class="section" id="compare-the-morse-and-harmonic-oscillators-8-pts">
 <h3>🖩 Compare the Morse and Harmonic Oscillators (8 pts)<a class="headerlink" href="#compare-the-morse-and-harmonic-oscillators-8-pts" title="Permalink to this headline">¶</a></h3>
 <p>A measurement informs you that the fundamental vibrational transition associated with <span class="math notranslate nohighlight">\(k=0\)</span> to <span class="math notranslate nohighlight">\(k=1\)</span> in <span class="math notranslate nohighlight">\({}^7\text{Li}{}^{7}\text{Li}\)</span> (note the isotope labels) is characterized by <span class="math notranslate nohighlight">\(\omega_0 = 6.620\cdot 10^{-13} \text{Hz}\)</span>. Moreover, the dissociation energy is <span class="math notranslate nohighlight">\(1.6918\cdot 10^{-19} \text{ Joules}\)</span>.</p>
 <ul class="simple">
@@ -1075,11 +1212,11 @@ Here \)</span>\lfloor x \rfloor<span class="math notranslate nohighlight">\( den
 </div>
 </div>
 <p>YOUR ANSWER HERE</p>
-</section>
-</section>
-<section id="vibrating-diatomic-molecules-in-an-external-field">
+</div>
+</div>
+<div class="section" id="vibrating-diatomic-molecules-in-an-external-field">
 <h2>Vibrating Diatomic Molecules  in an External Field<a class="headerlink" href="#vibrating-diatomic-molecules-in-an-external-field" title="Permalink to this headline">¶</a></h2>
-<section id="id1">
+<div class="section" id="id1">
 <h3>Motivation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>For polar diatomic molecules, their dipole moment may be approximated as:
 $<span class="math notranslate nohighlight">\(
@@ -1100,8 +1237,8 @@ where \)</span>q<span class="math notranslate nohighlight">\( is the atomic char
 <li><p>a molecule’s electrons rearrange in response to the electric field. To a first approximation, this means that the atomic charges change in the presence of the field.</p></li>
 </ul>
 <p>Nonetheless, this model does capture some key features, notably the fact that in the presence of a uniform external field, the bond in a polar diatomic molecule tends to elongate.</p>
-</section>
-<section id="hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
+</div>
+<div class="section" id="hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
 <h3>Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field<a class="headerlink" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field" title="Permalink to this headline">¶</a></h3>
 <p>The Hamiltonian for a vibrating molecule in an electric field can then be approximated as
 $$
@@ -1146,8 +1283,8 @@ If one expands the vibrational polarization energy in a Taylor series,
 E_k^{(\text{polarization})}(F) = -\tfrac{1}{2} \alpha_{\text{vib}} F^2 - \tfrac{1}{3!} \beta_{\text{vib}} F^3 - \tfrac{1}{4!} \gamma_{\text{vib}} F^3 + \cdots
 \)</span><span class="math notranslate nohighlight">\(
 where \)</span>\alpha_{\text{vib}}<span class="math notranslate nohighlight">\( is the vibrational contribution to the dipole polarizability (subject to the approximations mentioned above) and the higher-order coefficients are the first-, \)</span>\beta$, and higher-order vibrational dipole hyperpolarizabilities.</p>
-</section>
-<section id="the-harmonic-oscillator-in-a-uniform-external-electric-field">
+</div>
+<div class="section" id="the-harmonic-oscillator-in-a-uniform-external-electric-field">
 <h3>The Harmonic Oscillator in a Uniform External Electric Field<a class="headerlink" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field" title="Permalink to this headline">¶</a></h3>
 <p>To model a diatomic molecule vibrating in a uniform electric field, we need to choose a practical model for the vibrational potential energy function, <span class="math notranslate nohighlight">\(V(u)\)</span>. The simplest possible model is to use a Harmonic Oscillator, which leads to the Hamiltonian:
 $$
@@ -1157,7 +1294,7 @@ $$
 R_{k}(u) = E_{k}^{\text{shifted}}(F) R_{k}(u)
 $$</p></li>
 </ul>
-<section id="sketch-of-perturbative-approach">
+<div class="section" id="sketch-of-perturbative-approach">
 <h4>Sketch of Perturbative Approach<a class="headerlink" href="#sketch-of-perturbative-approach" title="Permalink to this headline">¶</a></h4>
 <p>One could treat this Hamiltonian with perturbation theory. By construction, <span class="math notranslate nohighlight">\(E_k^{(\text{shifted})}\)</span> does not depend on the field to first order. Therefore, the leading-order term is the second-order contribution,
 $<span class="math notranslate nohighlight">\(
@@ -1177,8 +1314,8 @@ V_{kl} =
 0  &amp; \text{otherwise}
 \end{cases}
 \)</span>$</p>
-</section>
-<section id="exact-solution-by-completing-the-square">
+</div>
+<div class="section" id="exact-solution-by-completing-the-square">
 <h4>Exact Solution by Completing the Square<a class="headerlink" href="#exact-solution-by-completing-the-square" title="Permalink to this headline">¶</a></h4>
 <p>While a perturbative approach is possible, the harmonic oscillator in a uniform external electric field can be solved exactly. <a class="reference external" href="https://en.wikipedia.org/wiki/Completing_the_square">Completing the square</a> on the potential,
 $<span class="math notranslate nohighlight">\(
@@ -1204,9 +1341,9 @@ and the total vibrational energy of the diatomic molecule in the field
 \)</span><span class="math notranslate nohighlight">\(
 E_k(F) = \hbar \sqrt{\frac{\kappa_e}{\mu}}\left(k+\frac{1}{2}\right) - q r_e F- \frac{q^2}{2 \kappa_e}F^2
 \)</span>$</p>
-</section>
-</section>
-<section id="model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation-8-pts">
+</div>
+</div>
+<div class="section" id="model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation-8-pts">
 <h3>🖩 Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation. (8 pts)<a class="headerlink" href="#model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation-8-pts" title="Permalink to this headline">¶</a></h3>
 <p>For the <span class="math notranslate nohighlight">\({}^{1}\text{H}{}^{19}\text{F}\)</span> molecule, <span class="math notranslate nohighlight">\(\mu = 6.361 \cdot 10^{-25} \text{ kg}\)</span>, <span class="math notranslate nohighlight">\(\kappa_e = 920 \text{ N/m} \)</span>, and <span class="math notranslate nohighlight">\(r_e = 91.68 \text{ pm}\)</span>. The dipole moment of HF is 1.91 Debye, which corresponds to a semi-reasonable charge of 0.44 <span class="math notranslate nohighlight">\(e\)</span> on the hydrogen atom. Assume the electric field is 1,000,000 V/m.</p>
 <ul class="simple">
@@ -1236,8 +1373,8 @@ E_k(F) = \hbar \sqrt{\frac{\kappa_e}{\mu}}\left(k+\frac{1}{2}\right) - q r_e F- 
 </div>
 </div>
 <p>YOUR ANSWER HERE</p>
-</section>
-<section id="the-morse-oscillator-in-an-external-electric-field">
+</div>
+<div class="section" id="the-morse-oscillator-in-an-external-electric-field">
 <h3>The Morse Oscillator in an External Electric Field<a class="headerlink" href="#the-morse-oscillator-in-an-external-electric-field" title="Permalink to this headline">¶</a></h3>
 <p>Instead of using a harmonic oscillator to describe the vibrational motion of a polar diatomic molecule, one could use the Morse Oscillator. In this case, the Schrödinger equation is:</p>
 <p>\begin{align}
@@ -1295,8 +1432,8 @@ this simplifies to
 <blockquote>
 <div><p>Note. The choice of <span class="math notranslate nohighlight">\(u = |\mathbf{R}_1 - \mathbf{R}_2|\)</span> or <span class="math notranslate nohighlight">\(u = |\mathbf{R}_2 - \mathbf{R}_1|\)</span> is arbitrary. This means, in practice, that whether one chooses a field oriented in the <span class="math notranslate nohighlight">\(+u\)</span> or <span class="math notranslate nohighlight">\(-u\)</span> direction is arbitrary. One should compute both choices, and pick the one which stabilizes the molecule more. For a Morse oscillator, this corresponds to a field with a negative sign.</p>
 </div></blockquote>
-</section>
-<section id="model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential-8-pts">
+</div>
+<div class="section" id="model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential-8-pts">
 <h3>👩🏽‍💻 Model the HF molecule in a uniform electric field using the Morse potential.  (8 pts)<a class="headerlink" href="#model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential-8-pts" title="Permalink to this headline">¶</a></h3>
 <p>For the <span class="math notranslate nohighlight">\({}^{1}\text{H}{}^{19}\text{F}\)</span> molecule, <span class="math notranslate nohighlight">\(\mu = 6.361 \cdot 10^{-25} \text{ kg}\)</span>, <span class="math notranslate nohighlight">\(\kappa_e = 920 \text{ N/m} \)</span>, <span class="math notranslate nohighlight">\(D_e = 9.402 \cdot 10^{-19} J\)</span>, and <span class="math notranslate nohighlight">\(r_e = 91.68 \text{ pm}\)</span>. The dipole moment of HF is 1.91 Debye, which corresponds to a semi-reasonable charge of 0.44 <span class="math notranslate nohighlight">\(e\)</span> on the hydrogen atom. Assume the electric field is 1,000,000 V/m.</p>
 <p>Using the integrals provided below, compute the vibrational polarization energy, <span class="math notranslate nohighlight">\(E_{k}^{(\text{polarization})}(F)\)</span>, for the Morse Oscillator in a field using perturbation theory and/or basis-set expansion.</p>
@@ -1307,8 +1444,8 @@ this simplifies to
 <blockquote>
 <div><p>Given how complicated this is, it is possible that <em>my</em> code below has some mistakes. I’m looking to test whether your code works well <em>assuming</em> that my matrix elements <span class="math notranslate nohighlight">\(V_{mn}\)</span>, are coded correctly.</p>
 </div></blockquote>
-</section>
-<section id="bonus-use-the-other-approach-8-pts">
+</div>
+<div class="section" id="bonus-use-the-other-approach-8-pts">
 <h3>💰 Bonus. Use the other approach. (8 pts)<a class="headerlink" href="#bonus-use-the-other-approach-8-pts" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1492,9 +1629,9 @@ this simplifies to
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
@@ -1511,8 +1648,8 @@ this simplifies to
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Morse_potential">Morse Oscillator</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_quantum-mechanical_systems_with_analytical_solutions">Other exactly solvable models</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1536,23 +1673,21 @@ this simplifies to
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

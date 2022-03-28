@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8. One-Electron Atoms &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,20 +37,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -493,7 +494,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -552,7 +553,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -627,14 +628,92 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>One-Electron Atoms</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schrodinger-equation-for-one-electron-atoms">
+   8.1. Schrödinger Equation for One-Electron Atoms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-radial-equation-for-one-electron-atoms">
+   8.2. The Radial Equation for One-Electron Atoms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenenergies-and-wavefunctions-for-one-electron-atoms">
+   8.3. Eigenenergies and Wavefunctions for One-Electron Atoms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-expectation-value-of-r-k-for-the-l-n-1-orbital-of-a-hydrogenic-atom">
+     8.3.1. 📝 What is the expectation value of
+     <span class="math notranslate nohighlight">
+      \(r^k\)
+     </span>
+     for the
+     <span class="math notranslate nohighlight">
+      \(l=n-1\)
+     </span>
+     orbital of a hydrogenic atom.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#show-that-the-energy-of-the-hydrogen-atom-in-arbitrary-units-not-necessarily-atomic-units-can-be-written-as">
+     8.3.2. 📝 Show that the energy of the Hydrogen atom in arbitrary units (not necessarily atomic units) can be written as:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self-reflection">
+   8.4. 🪞 Self-Reflection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thought-provoking-questions">
+   8.5. 🤔 Thought-Provoking Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recapitulation">
+   8.6. 🔁 Recapitulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-up">
+   8.7. 🔮 Next Up…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   8.8. 📚 References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <p><img alt="5f+1 orbital" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Hydrogen_eigenstate_n5_l3_m1.png/1024px-Hydrogen_eigenstate_n5_l3_m1.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="one-electron-atoms">
+<div class="tex2jax_ignore mathjax_ignore section" id="one-electron-atoms">
 <h1><span class="section-number">8. </span>One-Electron Atoms<a class="headerlink" href="#one-electron-atoms" title="Permalink to this headline">¶</a></h1>
 <p>Just as the touchstone of chemistry is the periodic table, the touchstone of quantum chemistry is the atomic wavefunction. As we shall see, our intuition about many-electron atoms is built up from our knowledge of 1-electron atoms, mainly because many-electron atoms are mathematically intractable, while 1-electron atoms are not appreciably more complicated than an electron confined to a spherical ball. A detailed mathematical exposition on 1-electron atoms–which are often called hydrogenic atoms–is provided as a <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Hatom.pdf">pdf</a>. This is only a brief summary.</p>
-<section id="schrodinger-equation-for-one-electron-atoms">
+<div class="section" id="schrodinger-equation-for-one-electron-atoms">
 <h2><span class="section-number">8.1. </span>Schrödinger Equation for One-Electron Atoms<a class="headerlink" href="#schrodinger-equation-for-one-electron-atoms" title="Permalink to this headline">¶</a></h2>
 <p>Denoting the mass of the electron as <span class="math notranslate nohighlight">\(m_e\)</span>, the charge of the electron as <span class="math notranslate nohighlight">\(=e\)</span>, and the <a class="reference external" href="https://en.wikipedia.org/wiki/Vacuum_permittivity">permittivity of free space</a> as <span class="math notranslate nohighlight">\(\epsilon_0\)</span>, the Hamiltonian for the attraction of an electron to a atomic nucleus with atomic number <span class="math notranslate nohighlight">\(Z\)</span> (and charge <span class="math notranslate nohighlight">\(+Ze\)</span>) at the origin, <span class="math notranslate nohighlight">\((x,y,z) = (0,0,0)\)</span>, is:</p>
 <div class="math notranslate nohighlight">
@@ -674,8 +753,8 @@
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
 \]</div>
-</section>
-<section id="the-radial-equation-for-one-electron-atoms">
+</div>
+<div class="section" id="the-radial-equation-for-one-electron-atoms">
 <h2><span class="section-number">8.2. </span>The Radial Equation for One-Electron Atoms<a class="headerlink" href="#the-radial-equation-for-one-electron-atoms" title="Permalink to this headline">¶</a></h2>
 <p>To solve the radial Schrödinger equation, we rewrite it as a <a class="reference external" href="https://en.wikipedia.org/wiki/Homogeneous_differential_equation">homogeneous linear differential equation</a></p>
 <div class="math notranslate nohighlight">
@@ -703,8 +782,8 @@ l=0,1,\ldots,n-1 \\
 m = 0,\pm 1, \pm2, \ldots, \pm l
 \end{split}\]</div>
 <p><img alt="Hydrogenic orbitals" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Atomic_orbitals_n1234_m-eigenstates.png" /></p>
-</section>
-<section id="eigenenergies-and-wavefunctions-for-one-electron-atoms">
+</div>
+<div class="section" id="eigenenergies-and-wavefunctions-for-one-electron-atoms">
 <h2><span class="section-number">8.3. </span>Eigenenergies and Wavefunctions for One-Electron Atoms<a class="headerlink" href="#eigenenergies-and-wavefunctions-for-one-electron-atoms" title="Permalink to this headline">¶</a></h2>
 <p>The eigenenergies of the Hydrogenic wavefunctions do not depend on <span class="math notranslate nohighlight">\(m\)</span> or <span class="math notranslate nohighlight">\(l\)</span>. So there are <span class="math notranslate nohighlight">\((n+1)^2\)</span> degenerate eigenfunctions, with energies</p>
 <div class="math notranslate nohighlight">
@@ -740,18 +819,18 @@ S_l^{m&lt;0}(\theta,\phi) &amp;= \frac{i}{\sqrt{2}} \left(Y_l^{-m} (\theta, \phi
 \psi_{\text{1s}}(r) = \psi_{100}(r) = \sqrt{\frac{Z^3}{\pi}}e^{-Zr}  \\
 \psi_{n,n-1,m} \propto r^{n-1} e^{\tfrac{-Zr}{n}} Y_l^{m_l} (\theta,\phi)
 \end{split}\]</div>
-<section id="what-is-the-expectation-value-of-r-k-for-the-l-n-1-orbital-of-a-hydrogenic-atom">
+<div class="section" id="what-is-the-expectation-value-of-r-k-for-the-l-n-1-orbital-of-a-hydrogenic-atom">
 <h3><span class="section-number">8.3.1. </span>📝 What is the expectation value of <span class="math notranslate nohighlight">\(r^k\)</span> for the <span class="math notranslate nohighlight">\(l=n-1\)</span> orbital of a hydrogenic atom.<a class="headerlink" href="#what-is-the-expectation-value-of-r-k-for-the-l-n-1-orbital-of-a-hydrogenic-atom" title="Permalink to this headline">¶</a></h3>
-</section>
-<section id="show-that-the-energy-of-the-hydrogen-atom-in-arbitrary-units-not-necessarily-atomic-units-can-be-written-as">
+</div>
+<div class="section" id="show-that-the-energy-of-the-hydrogen-atom-in-arbitrary-units-not-necessarily-atomic-units-can-be-written-as">
 <h3><span class="section-number">8.3.2. </span>📝 Show that the energy of the Hydrogen atom in arbitrary units (not necessarily atomic units) can be written as:<a class="headerlink" href="#show-that-the-energy-of-the-hydrogen-atom-in-arbitrary-units-not-necessarily-atomic-units-can-be-written-as" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
 E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot \left( \frac{m_e}{\hbar^2}\right)
 \]</div>
-</section>
-</section>
-<section id="self-reflection">
+</div>
+</div>
+<div class="section" id="self-reflection">
 <h2><span class="section-number">8.4. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Using the conversion from atomic units to traditional chemical units of kJ/mol, what is the energy of the Hydrogen atom? How accurately, in atomic units, must one determine the energy of a one-electron atom in order to attain “chemical accuracy” of ~1 kJ/mol?</p></li>
@@ -759,8 +838,8 @@ E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot 
 <li><p>Test to confirm that the Heisenberg uncertainty principle for position and momentum holds for the ground state of a Hydrogenic atom.</p></li>
 <li><p>To what extent is the shape of the spherical harmonic intuitive, especially the doughnut shapes associated with an electron’s angular momentum around the z axis.</p></li>
 </ul>
-</section>
-<section id="thought-provoking-questions">
+</div>
+<div class="section" id="thought-provoking-questions">
 <h2><span class="section-number">8.5. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>In one-electron atoms, the eigenenergies depend only on the principle quantum number, <span class="math notranslate nohighlight">\(n\)</span>, and not the angular momentum quantum number, <span class="math notranslate nohighlight">\(l\)</span>. Why are <span class="math notranslate nohighlight">\(s\)</span> orbitals lower in energy than <span class="math notranslate nohighlight">\(p\)</span> orbitals in real multielectron atoms, but not one-electron atoms? It turns out this is <em>not</em> an accidental degeneracy, but a hidden symmetry of the Hydrogen atom.</p></li>
@@ -768,23 +847,23 @@ E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot 
 <li><p>Why do you think solving the Schrödinger equation for the one-electron molecule is more complicated than solving the Schrödinger equation for the one-electron atom?</p></li>
 <li><p>For what <span class="math notranslate nohighlight">\(Z\)</span> is the energy of a one-electron atom comparable to the rest-mass energy of an electron, <span class="math notranslate nohighlight">\(mc^2\)</span>? For atomic numbers close to this value, relativistic effects become extremely important.</p></li>
 </ul>
-</section>
-<section id="recapitulation">
+</div>
+<div class="section" id="recapitulation">
 <h2><span class="section-number">8.6. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>What are eigenfunctions for the <span class="math notranslate nohighlight">\(n=l+1\)</span> state of a one-electron atom?</p></li>
 <li><p>What are the energy eigenfunctions and eigenvalues for a one-electron atom?</p></li>
 <li><p>How does the energy increase as the atomic number increases?</p></li>
 </ul>
-</section>
-<section id="next-up">
+</div>
+<div class="section" id="next-up">
 <h2><span class="section-number">8.7. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Multielectron systems</p></li>
 <li><p>Approximate methods.</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2><span class="section-number">8.8. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
@@ -798,8 +877,8 @@ E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot 
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hydrogen-like_atom">Hydrogen-like atoms</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Atomic_orbital">Atomic orbitals</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -823,8 +902,8 @@ E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot 
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Postulates.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -841,19 +920,17 @@ E_n = -\frac{Z^2}{2n^2} \cdot \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \cdot 
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

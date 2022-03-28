@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Exam Part 3 &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -38,20 +37,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -491,7 +492,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -550,7 +551,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -585,11 +586,49 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Final Exam Part 3</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describe-the-following-effects-experiments-equations-and-explain-their-importance-to-the-origins-of-quantum-mechanics">
+   🔁 Describe the following effects/experiments/equations, and explain their importance to the origins of quantum mechanics.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explain-the-following-topics">
+   🔁 Explain the following topics.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians">
+   🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discuss-the-following-in-your-own-words">
+   🤔 Discuss the following in your own words.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Final-Exam-Part-3" data-toc-modified-id="Final-Exam-Part-3-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Final Exam Part 3</a></span><ul class="toc-item"><li><span><a href="#🔁-Describe-the-following-effects/experiments/equations,-and-explain-their-importance-to-the-origins-of-quantum-mechanics." data-toc-modified-id="🔁-Describe-the-following-effects/experiments/equations,-and-explain-their-importance-to-the-origins-of-quantum-mechanics.-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>🔁 Describe the following effects/experiments/equations, and explain their importance to the origins of quantum mechanics.</a></span></li><li><span><a href="#🔁-Explain-the-following-topics." data-toc-modified-id="🔁-Explain-the-following-topics.-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>🔁 Explain the following topics.</a></span></li><li><span><a href="#🔁-What-are-the-eigenfunctions-and-eigenvalues-for-the-following-Hamiltonians." data-toc-modified-id="🔁-What-are-the-eigenfunctions-and-eigenvalues-for-the-following-Hamiltonians.-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></span></li><li><span><a href="#🤔-Discuss-the-following-in-your-own-words." data-toc-modified-id="🤔-Discuss-the-following-in-your-own-words.-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>🤔 Discuss the following in your own words.</a></span></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="final-exam-part-3">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Final-Exam-Part-3" data-toc-modified-id="Final-Exam-Part-3-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Final Exam Part 3</a></span><ul class="toc-item"><li><span><a href="#🔁-Describe-the-following-effects/experiments/equations,-and-explain-their-importance-to-the-origins-of-quantum-mechanics." data-toc-modified-id="🔁-Describe-the-following-effects/experiments/equations,-and-explain-their-importance-to-the-origins-of-quantum-mechanics.-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>🔁 Describe the following effects/experiments/equations, and explain their importance to the origins of quantum mechanics.</a></span></li><li><span><a href="#🔁-Explain-the-following-topics." data-toc-modified-id="🔁-Explain-the-following-topics.-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>🔁 Explain the following topics.</a></span></li><li><span><a href="#🔁-What-are-the-eigenfunctions-and-eigenvalues-for-the-following-Hamiltonians." data-toc-modified-id="🔁-What-are-the-eigenfunctions-and-eigenvalues-for-the-following-Hamiltonians.-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></span></li><li><span><a href="#🤔-Discuss-the-following-in-your-own-words." data-toc-modified-id="🤔-Discuss-the-following-in-your-own-words.-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>🤔 Discuss the following in your own words.</a></span></li></ul></li></ul></div><div class="tex2jax_ignore mathjax_ignore section" id="final-exam-part-3">
 <h1>Final Exam Part 3<a class="headerlink" href="#final-exam-part-3" title="Permalink to this headline">¶</a></h1>
 <p>👨‍🏫 <strong>Overview:</strong>
 This is Part 3 of 3 Parts of your Final Exam/Project.</p>
@@ -610,7 +649,7 @@ When we discuss Parts 1 and 2 of the exam, your grade will be “plus”, “min
 </ul>
 <p>In addition to discussing your answers in Parts 1 and 2, we will discuss the following questions. Each question group has 6 questions in it. I will randomly select one question from each group; we will then discuss that question. Each question will be graded “plus” (5 points) “minus” (0 points) or “neutral” (3 points). You can score up to 20 points on this portion of the exam, and the “default” score would be about 12 points.</p>
 <p>📜 <strong>Instructions:</strong> Be prepared to discuss the following questions/topics. I will randomly select 1 question from each group.</p>
-<section id="describe-the-following-effects-experiments-equations-and-explain-their-importance-to-the-origins-of-quantum-mechanics">
+<div class="section" id="describe-the-following-effects-experiments-equations-and-explain-their-importance-to-the-origins-of-quantum-mechanics">
 <h2>🔁 Describe the following effects/experiments/equations, and explain their importance to the origins of quantum mechanics.<a class="headerlink" href="#describe-the-following-effects-experiments-equations-and-explain-their-importance-to-the-origins-of-quantum-mechanics" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Black-Body Radiation and the Ultraviolet Catastrophe.</p></li>
@@ -620,8 +659,8 @@ When we discuss Parts 1 and 2 of the exam, your grade will be “plus”, “min
 <li><p>The Rydberg Formula</p></li>
 <li><p>The Stern-Gerlach Experiment</p></li>
 </ol>
-</section>
-<section id="explain-the-following-topics">
+</div>
+<div class="section" id="explain-the-following-topics">
 <h2>🔁 Explain the following topics.<a class="headerlink" href="#explain-the-following-topics" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>What are the key postulates of quantum mechanics?</p></li>
@@ -632,8 +671,8 @@ When we discuss Parts 1 and 2 of the exam, your grade will be “plus”, “min
 <li><p>What is the Stern Gerlach experiment? Can you describe what is happening in the following diagram?
 <img alt="SG3" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SternGerlach3.jpg?raw=true" /></p></li>
 </ol>
-</section>
-<section id="what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians">
+</div>
+<div class="section" id="what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians">
 <h2>🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.<a class="headerlink" href="#what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians" title="Permalink to this headline">¶</a></h2>
 <p>You should be able to explain key characteristics of the systems and the general strategy for (possibly approximate) solving the associated time-independent Schrödinger equation.</p>
 <p>\begin{align}
@@ -656,8 +695,8 @@ V_a(x) =
 \end{cases}
 \)</span>$</p></li>
 </ul>
-</section>
-<section id="discuss-the-following-in-your-own-words">
+</div>
+<div class="section" id="discuss-the-following-in-your-own-words">
 <h2>🤔 Discuss the following in your own words.<a class="headerlink" href="#discuss-the-following-in-your-own-words" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>What is a Slater determinant? Why does one use a Slater determinant for a many-fermion system? When is the exact ground-state wavefunction for a many-fermion system a Slater determinant?</p></li>
@@ -667,8 +706,8 @@ V_a(x) =
 <li><p>What is the secular equation? How does it relate to the technique of expanding a wavefunction in a basis set?</p></li>
 <li><p>What is electron correlation? How can one approximate the effects of electron correlation?</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -692,23 +731,21 @@ V_a(x) =
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
