@@ -738,26 +738,28 @@ These questions are taken from the course notes, tutorial discussions, and previ
 <div class="section" id="what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians">
 <h2>🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.<a class="headerlink" href="#what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians" title="Permalink to this headline">¶</a></h2>
 <p>You should be able to explain key characteristics of the systems and the general strategy for (possibly approximate) solving the associated time-independent Schrödinger equation.</p>
-<p>\begin{align}
-\hat{H}<em>1 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} + V</em>{a_x}(x) + V_{a_y}(y) \
-\hat{H}<em>2(\lambda) &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m} \frac{d^2}{dx_2^2} + V</em>{a}(x_1) + V_{a}(x_2)</p>
-<ul class="simple">
-<li><p>\lambda |x_1 - x_2|\
-\hat{H}_3(\lambda) &amp;= -\tfrac{1}{2} \nabla_1^2 -\tfrac{1}{2} \nabla_2^2- \tfrac{Z}{r_1} - \tfrac{Z}{r_2} + \tfrac{\lambda}{|\mathbf{r}_1 - \mathbf{r}_2|}\
-\hat{H}<em>4 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V</em>{a}\left(\sqrt{x^2 + y^2 +z^2}\right) \
-\hat{H}_5(\mathbf{R}<em>B) &amp;=  -\tfrac{1}{2} \nabla</em>{\mathbf{r}}^2 - \tfrac{Z_A}{r} - \tfrac{Z_B}{|\mathbf{r} - \mathbf{R}<em>B|} \
-\hat{H}<em>6 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V</em>{a_z}(z) + V</em>{a_r}(\sqrt{x^2+y^2})
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\hat{H}_1 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} + V_{a_x}(x) + V_{a_y}(y) \\
+\hat{H}_2(\lambda) &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m} \frac{d^2}{dx_2^2} + V_{a}(x_1) + V_{a}(x_2) 
+- \lambda |x_1 - x_2|\\
+\hat{H}_3(\lambda) &amp;= -\tfrac{1}{2} \nabla_1^2 -\tfrac{1}{2} \nabla_2^2- \tfrac{Z}{r_1} - \tfrac{Z}{r_2} + \tfrac{\lambda}{|\mathbf{r}_1 - \mathbf{r}_2|}\\
+\hat{H}_4 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V_{a}\left(\sqrt{x^2 + y^2 +z^2}\right) \\
+\hat{H}_5(\mathbf{R}_B) &amp;=  -\tfrac{1}{2} \nabla_{\mathbf{r}}^2 - \tfrac{Z_A}{r} - \tfrac{Z_B}{|\mathbf{r} - \mathbf{R}_B|} \\
+\hat{H}_6 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V_{a_z}(z) + V_{a_r}(\sqrt{x^2+y^2})
 \end{align}
-where
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 V_a(x) = 
 \begin{cases}
-  +\infty &amp; x\leq 0\\
-  0       &amp; 0\lt x \lt a\\
-  +\infty &amp; a \leq x
+    +\infty &amp; x\leq 0\\
+    0       &amp; 0\lt x \lt a\\
+    +\infty &amp; a \leq x
 \end{cases}
-\)</span>$</p></li>
-</ul>
+\end{split}\]</div>
 </div>
 <div class="section" id="discuss-the-following-in-your-own-words">
 <h2>🤔 Discuss the following in your own words.<a class="headerlink" href="#discuss-the-following-in-your-own-words" title="Permalink to this headline">¶</a></h2>
