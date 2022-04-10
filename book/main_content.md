@@ -14,7 +14,7 @@
   - Tuesday, 1430-1530; HH305 (lecture/tutorial)
   - Tuesday, 1530-1630; ABB-264/266A (office hours)
   - Friday, 1730-1830; online (by default) ABB-264 (by request) (office hours)
-  - April 23, 1230-1530; final exam slot. See [questions](linkedFiles/Questions.ipynb)
+  - April 23. Final Exam. [See the detailed description.](Final.md) 
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
   - Understand and apply the key concepts of quantum chemistry.

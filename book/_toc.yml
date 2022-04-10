@@ -90,6 +90,9 @@ parts:
         title: Molecules
       - url: https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf
         title: Spectroscopy
+    
+    - file: HOandMorse.ipynb
+      title: "Diatomic Molecules' Nuclear Schrodinger Equation"
   
   - caption: Assignments
     chapters: 
