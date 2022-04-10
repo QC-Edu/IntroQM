@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Approximate Methods for Solving One-Particle Schrödinger Equations &#8212; Quantum Chemistry</title>
+    <title>9. Approximate Methods for Solving One-Particle Schrödinger Equations &#8212; Quantum Chemistry</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. Many-Electron Systems" href="ManyElSystems.html" />
-    <link rel="prev" title="7. One-Electron Atoms" href="OneElectronAtoms.html" />
+    <link rel="next" title="10. Many-Electron Systems" href="ManyElSystems.html" />
+    <link rel="prev" title="8. One-Electron Atoms" href="OneElectronAtoms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -249,9 +249,14 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ParticleInMultiD.html">
+   6. Particles confined in two and three dimensions
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Postulates.html">
-   6. The Postulates of Quantum Mechanics
+   7. The Postulates of Quantum Mechanics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -268,17 +273,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="OneElectronAtoms.html">
-   7. 1-electron atoms
+   8. 1-electron atoms
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Approximate Methods
+   9. Approximate Methods
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="ManyElSystems.html">
-   9. Many-electron systems: Structure and Spectroscopy
+   10. Many-electron systems: Structure and Spectroscopy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -315,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="HOandMorse.html">
-   10. Diatomic Molecules' Nuclear Schrodinger Equation
+   11. Diatomic Molecules' Nuclear Schrodinger Equation
   </a>
  </li>
 </ul>
@@ -562,32 +567,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#expansion-in-a-basis">
-   8.1. Expansion in a Basis
+   9.1. Expansion in a Basis
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solving-the-secular-equation">
-     8.1.1. Solving the Secular Equation
+     9.1.1. Solving the Secular Equation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-for-the-particle-in-a-box">
-     8.1.2. Example for the Particle-in-a-Box
+     9.1.2. Example for the Particle-in-a-Box
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#particle-in-a-box-with-jacobi-polynomials">
-     8.1.3. Particle-in-a-Box with Jacobi polynomials
+     9.1.3. Particle-in-a-Box with Jacobi polynomials
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction">
-       8.1.3.1. 🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.
+       9.1.3.1. 🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials">
-       8.1.3.2. 🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler
+       9.1.3.2. 🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler
        <span class="math notranslate nohighlight">
         \((1-x)(1+x)x^k\)
        </span>
@@ -600,86 +605,86 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#perturbation-theory">
-   8.2. Perturbation Theory
+   9.2. Perturbation Theory
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-perturbed-hamiltonian">
-     8.2.1. The Perturbed Hamiltonian
+     9.2.1. The Perturbed Hamiltonian
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hellmann-feynman-theorem">
-     8.2.2. Hellmann-Feynman Theorem
+     9.2.2. Hellmann-Feynman Theorem
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign">
-       8.2.2.1. Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign
+       9.2.2.1. Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory">
-       8.2.2.2. Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory
+       9.2.2.2. Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#perturbed-wavefunctions">
-     8.2.3. Perturbed Wavefunctions
+     9.2.3. Perturbed Wavefunctions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-law-of-diminishing-returns-and-accelerating-losses">
-     8.2.4. The Law of Diminishing Returns and Accelerating Losses
+     9.2.4. The Law of Diminishing Returns and Accelerating Losses
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-particle-in-a-box-with-a-sloped-bottom">
-     8.2.5. Example: Particle in a Box with a Sloped Bottom
+     9.2.5. Example: Particle in a Box with a Sloped Bottom
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-hamiltonian-for-an-applied-uniform-electric-field">
-       8.2.5.1. The Hamiltonian for an Applied Uniform Electric Field
+       9.2.5.1. The Hamiltonian for an Applied Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.2. Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.2. Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-first-order-energy-correction-is-always-zero">
-         8.2.5.2.1. The First-Order Energy Correction is Always Zero
+         9.2.5.2.1. The First-Order Energy Correction is Always Zero
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-first-order-correction-to-the-wavefunction">
-         8.2.5.2.2. The First-Order Correction to the Wavefunction
+         9.2.5.2.2. The First-Order Correction to the Wavefunction
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-second-order-correction-to-the-energy">
-         8.2.5.2.3. The Second-Order Correction to the Energy
+         9.2.5.2.3. The Second-Order Correction to the Energy
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.3. Variational Approach to the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.3. Variational Approach to the Particle-in-a-Box in a Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.4. Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.4. Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#demonstration">
-       8.2.5.5. Demonstration
+       9.2.5.5. Demonstration
       </a>
      </li>
     </ul>
@@ -688,27 +693,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#self-reflection">
-   8.3. 🪞 Self-Reflection
+   9.3. 🪞 Self-Reflection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#thought-provoking-questions">
-   8.4. 🤔 Thought-Provoking Questions
+   9.4. 🤔 Thought-Provoking Questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recapitulation">
-   8.5. 🔁 Recapitulation
+   9.5. 🔁 Recapitulation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-up">
-   8.6. 🔮 Next Up…
+   9.6. 🔮 Next Up…
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   8.7. 📚 References
+   9.7. 📚 References
   </a>
  </li>
 </ul>
@@ -733,32 +738,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#expansion-in-a-basis">
-   8.1. Expansion in a Basis
+   9.1. Expansion in a Basis
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solving-the-secular-equation">
-     8.1.1. Solving the Secular Equation
+     9.1.1. Solving the Secular Equation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-for-the-particle-in-a-box">
-     8.1.2. Example for the Particle-in-a-Box
+     9.1.2. Example for the Particle-in-a-Box
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#particle-in-a-box-with-jacobi-polynomials">
-     8.1.3. Particle-in-a-Box with Jacobi polynomials
+     9.1.3. Particle-in-a-Box with Jacobi polynomials
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction">
-       8.1.3.1. 🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.
+       9.1.3.1. 🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials">
-       8.1.3.2. 🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler
+       9.1.3.2. 🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler
        <span class="math notranslate nohighlight">
         \((1-x)(1+x)x^k\)
        </span>
@@ -771,86 +776,86 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#perturbation-theory">
-   8.2. Perturbation Theory
+   9.2. Perturbation Theory
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-perturbed-hamiltonian">
-     8.2.1. The Perturbed Hamiltonian
+     9.2.1. The Perturbed Hamiltonian
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hellmann-feynman-theorem">
-     8.2.2. Hellmann-Feynman Theorem
+     9.2.2. Hellmann-Feynman Theorem
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign">
-       8.2.2.1. Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign
+       9.2.2.1. Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory">
-       8.2.2.2. Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory
+       9.2.2.2. Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#perturbed-wavefunctions">
-     8.2.3. Perturbed Wavefunctions
+     9.2.3. Perturbed Wavefunctions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-law-of-diminishing-returns-and-accelerating-losses">
-     8.2.4. The Law of Diminishing Returns and Accelerating Losses
+     9.2.4. The Law of Diminishing Returns and Accelerating Losses
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-particle-in-a-box-with-a-sloped-bottom">
-     8.2.5. Example: Particle in a Box with a Sloped Bottom
+     9.2.5. Example: Particle in a Box with a Sloped Bottom
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-hamiltonian-for-an-applied-uniform-electric-field">
-       8.2.5.1. The Hamiltonian for an Applied Uniform Electric Field
+       9.2.5.1. The Hamiltonian for an Applied Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.2. Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.2. Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-first-order-energy-correction-is-always-zero">
-         8.2.5.2.1. The First-Order Energy Correction is Always Zero
+         9.2.5.2.1. The First-Order Energy Correction is Always Zero
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-first-order-correction-to-the-wavefunction">
-         8.2.5.2.2. The First-Order Correction to the Wavefunction
+         9.2.5.2.2. The First-Order Correction to the Wavefunction
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#the-second-order-correction-to-the-energy">
-         8.2.5.2.3. The Second-Order Correction to the Energy
+         9.2.5.2.3. The Second-Order Correction to the Energy
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.3. Variational Approach to the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.3. Variational Approach to the Particle-in-a-Box in a Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field">
-       8.2.5.4. Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field
+       9.2.5.4. Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#demonstration">
-       8.2.5.5. Demonstration
+       9.2.5.5. Demonstration
       </a>
      </li>
     </ul>
@@ -859,27 +864,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#self-reflection">
-   8.3. 🪞 Self-Reflection
+   9.3. 🪞 Self-Reflection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#thought-provoking-questions">
-   8.4. 🤔 Thought-Provoking Questions
+   9.4. 🤔 Thought-Provoking Questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recapitulation">
-   8.5. 🔁 Recapitulation
+   9.5. 🔁 Recapitulation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-up">
-   8.6. 🔮 Next Up…
+   9.6. 🔮 Next Up…
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   8.7. 📚 References
+   9.7. 📚 References
   </a>
  </li>
 </ul>
@@ -893,10 +898,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <p><img alt="Train Wreck" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/TrainWreck.jpg?raw=true" /></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="approximate-methods-for-solving-one-particle-schrodinger-equations">
-<h1><span class="section-number">8. </span>Approximate Methods for Solving One-Particle Schrödinger Equations<a class="headerlink" href="#approximate-methods-for-solving-one-particle-schrodinger-equations" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Approximate Methods for Solving One-Particle Schrödinger Equations<a class="headerlink" href="#approximate-methods-for-solving-one-particle-schrodinger-equations" title="Permalink to this headline">¶</a></h1>
 <p>Up to this point, we’ve focused on systems for which we can solve the Schrödinger equation. Unfortunately, there are very few such systems, and their relevance for real chemical systems is very limited. This motivates the approximate methods for solving the Schrödinger equation. One must be careful, however, if one makes poor assumptions, the results of approximate methods can be very poor. Conversely, with appropriate insight, approximation techniques can be extremely useful.</p>
 <div class="section" id="expansion-in-a-basis">
-<h2><span class="section-number">8.1. </span>Expansion in a Basis<a class="headerlink" href="#expansion-in-a-basis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Expansion in a Basis<a class="headerlink" href="#expansion-in-a-basis" title="Permalink to this headline">¶</a></h2>
 <p>We have seen the eigenvectors of a Hermitian operator are a complete basis, and can be chosen to be orthonormal. We have also seen how a wavefunction can be expanded in a basis,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -953,7 +958,7 @@ s_{jk} = \int \left(\phi_j(x) \right)^* \phi_k(x) dx
  = E c_j
 \]</div>
 <div class="section" id="solving-the-secular-equation">
-<h3><span class="section-number">8.1.1. </span>Solving the Secular Equation<a class="headerlink" href="#solving-the-secular-equation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.1.1. </span>Solving the Secular Equation<a class="headerlink" href="#solving-the-secular-equation" title="Permalink to this headline">¶</a></h3>
 <p>In the context of quantum chemistry, the generalized eigenvalue problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -982,7 +987,7 @@ s_{jk} &amp;= \int \left(\phi_j(x) \right)^* \phi_k(x) dx
 <p>Because of the variational principle, the lowest eigenvalue will always be greater than or equal to the true ground-state energy.</p>
 </div>
 <div class="section" id="example-for-the-particle-in-a-box">
-<h3><span class="section-number">8.1.2. </span>Example for the Particle-in-a-Box<a class="headerlink" href="#example-for-the-particle-in-a-box" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.1.2. </span>Example for the Particle-in-a-Box<a class="headerlink" href="#example-for-the-particle-in-a-box" title="Permalink to this headline">¶</a></h3>
 <p>As an example, consider an electron confined to a box with length 2 Bohr, stretching from <span class="math notranslate nohighlight">\(x=-1\)</span> to <span class="math notranslate nohighlight">\(x=1\)</span>. We know that the exact energy of this system is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1106,7 +1111,7 @@ h_{jk} =
 </div>
 </div>
 <div class="section" id="particle-in-a-box-with-jacobi-polynomials">
-<h3><span class="section-number">8.1.3. </span>Particle-in-a-Box with Jacobi polynomials<a class="headerlink" href="#particle-in-a-box-with-jacobi-polynomials" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.1.3. </span>Particle-in-a-Box with Jacobi polynomials<a class="headerlink" href="#particle-in-a-box-with-jacobi-polynomials" title="Permalink to this headline">¶</a></h3>
 <p>Similar results can be obtained with different basis functions. It is often convenient to use an orthonormal basis, where <span class="math notranslate nohighlight">\(s_{jk} = \delta_{jk}\)</span>. For the particle-in-a-box with <span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span>, one such set of basis functions can be constructed from the (normalized) <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobi_polynomials">Jacobi polynomials</a>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1209,7 +1214,7 @@ h_{jk} = -\frac{1}{2}N_j N_k \int_{-1}^1 (1-x)(1+x) P_k^{(2, 2)}(x) \left(-2 P_j
 </div>
 </div>
 <div class="section" id="thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction">
-<h4><span class="section-number">8.1.3.1. </span>🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.<a class="headerlink" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.1.3.1. </span>🤔 Thought-Provoking Question: Why does adding odd-order polynomials to the basis set not increase the accuracy for the ground state wavefunction.<a class="headerlink" href="#thought-provoking-question-why-does-adding-odd-order-polynomials-to-the-basis-set-not-increase-the-accuracy-for-the-ground-state-wavefunction" title="Permalink to this headline">¶</a></h4>
 <p>Hint: The ground state wavefunction is an even function.
 A function is said to be even if it is symmetric about the origin, <span class="math notranslate nohighlight">\(f(x) = f(-x)\)</span>. A function is said to be odd if it is antisymmetric around the origin, <span class="math notranslate nohighlight">\(f(x) = - f(-x)\)</span>. Even-degree polynomials (e.g., <span class="math notranslate nohighlight">\(1, x^2, x^4, \ldots\)</span>) are even functions; odd-degree polynomials (e.g.; <span class="math notranslate nohighlight">\(x, x^3, x^5, \ldots\)</span>) are odd functions. <span class="math notranslate nohighlight">\(\cos(ax)\)</span> is an even function and <span class="math notranslate nohighlight">\(\sin(ax)\)</span> is an odd function. <span class="math notranslate nohighlight">\(\cosh(ax)\)</span> is an even function and <span class="math notranslate nohighlight">\(\sinh(ax)\)</span> is an odd function. In addition,</p>
 <ul class="simple">
@@ -1228,17 +1233,17 @@ A function is said to be even if it is symmetric about the origin, <span class="
 <p>These properties of odd and even functions are often very useful. In particular, the first and second properties indicate that if you know that the exact wavefunction you are looking for is odd (or even), it will be a linear combination of basis functions that are odd (or even). E.g., odd basis functions are useless for approximating even eigenfunctions.</p>
 </div>
 <div class="section" id="thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials">
-<h4><span class="section-number">8.1.3.2. </span>🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler <span class="math notranslate nohighlight">\((1-x)(1+x)x^k\)</span> polynomials?<a class="headerlink" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.1.3.2. </span>🤔 Thought-Provoking Question: Why does one get exactly the same results for the Jacobi polynomials and the simpler <span class="math notranslate nohighlight">\((1-x)(1+x)x^k\)</span> polynomials?<a class="headerlink" href="#thought-provoking-question-why-does-one-get-exactly-the-same-results-for-the-jacobi-polynomials-and-the-simpler-1-x-1-x-x-k-polynomials" title="Permalink to this headline">¶</a></h4>
 <p>Hint: Can you rewrite one set of polynomials as a linear combination of the others?</p>
 <p><img alt="Balancing Rock" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Perturbation.jpg?raw=true" /></p>
 </div>
 </div>
 </div>
 <div class="section" id="perturbation-theory">
-<h2><span class="section-number">8.2. </span>Perturbation Theory<a class="headerlink" href="#perturbation-theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Perturbation Theory<a class="headerlink" href="#perturbation-theory" title="Permalink to this headline">¶</a></h2>
 <p>It is not uncommon that a Hamiltonian for which the Schrödinger equation is difficult to solve is “close” to another Hamiltonian that is easier to solve. In such cases, one can attempt to solve the easier problem, then <em>perturb</em> the system towards the actual, more difficult to solve, system of interest. The idea of leveraging easy problems to solve difficult problems is the essence of <a class="reference external" href="https://en.wikipedia.org/wiki/Perturbation_theory">perturbation theory</a>.</p>
 <div class="section" id="the-perturbed-hamiltonian">
-<h3><span class="section-number">8.2.1. </span>The Perturbed Hamiltonian<a class="headerlink" href="#the-perturbed-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.1. </span>The Perturbed Hamiltonian<a class="headerlink" href="#the-perturbed-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <p>Suppose that for some Hamiltonian, <span class="math notranslate nohighlight">\(\hat{H}\)</span>, we know the eigenfunctions and eigenvalues,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1315,7 +1320,7 @@ E_k(\lambda) &amp;= E_k(\lambda=0) + \lambda \left[\frac{dE_k}{d \lambda} \right
 <p>Higher-order equations are increasingly complicated, but still tractable in some cases. One usually applies perturbation theory only when the perturbation is relatively small, which usually suffices to ensure that the Taylor series expansion converges rapidly and higher-order terms are relatively insignificant.</p>
 </div>
 <div class="section" id="hellmann-feynman-theorem">
-<h3><span class="section-number">8.2.2. </span>Hellmann-Feynman Theorem<a class="headerlink" href="#hellmann-feynman-theorem" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.2. </span>Hellmann-Feynman Theorem<a class="headerlink" href="#hellmann-feynman-theorem" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Hellmann%E2%80%93Feynman_theorem">Hellmann-Feynman theorem</a> has been discovered many times, most impressively by <a class="reference external" href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>, who included it in his undergraduate senior thesis. In simple terms:</p>
 <blockquote>
 <div><p><strong>Hellmann-Feynman Theorem</strong>: Suppose that the Hamiltonian, <span class="math notranslate nohighlight">\(\hat{H}(\lambda)\)</span> depends on a parameter. Then the first-order change in the energy with respect to the parameter is given by the equation,</p>
@@ -1325,7 +1330,7 @@ E_k(\lambda) &amp;= E_k(\lambda=0) + \lambda \left[\frac{dE_k}{d \lambda} \right
 \left[\frac{dE}{d\lambda}\right]_{\lambda = \lambda_0} = \int \left( \psi(\lambda_0;x)\right)^* \left[\frac{d\hat{H}}{d \lambda} \right]_{\lambda = \lambda_0}\psi(\lambda_0;x) \; dx
 \]</div>
 <div class="section" id="derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign">
-<h4><span class="section-number">8.2.2.1. </span>Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.2.1. </span>Derivation of the Hellmann-Feynman Theorem by Differentiation Under the Integral Sign<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-by-differentiation-under-the-integral-sign" title="Permalink to this headline">¶</a></h4>
 <p>The usual way to derive the Hellmann-Feynman theorem uses the technique of <a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_integral_rule">differentiation under the integral sign</a>. Therefore,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1376,7 +1381,7 @@ E_k(\lambda) &amp;= E_k(\lambda=0) + \lambda \left[\frac{dE_k}{d \lambda} \right
 \end{split}\]</div>
 </div>
 <div class="section" id="derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory">
-<h4><span class="section-number">8.2.2.2. </span>Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.2.2. </span>Derivation of the Hellmann-Feynman Theorem from First-Order Perturbation Theory<a class="headerlink" href="#derivation-of-the-hellmann-feynman-theorem-from-first-order-perturbation-theory" title="Permalink to this headline">¶</a></h4>
 <p>Starting with the equation from first-order perturbation theory,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1395,7 +1400,7 @@ E_k(\lambda) &amp;= E_k(\lambda=0) + \lambda \left[\frac{dE_k}{d \lambda} \right
 </div>
 </div>
 <div class="section" id="perturbed-wavefunctions">
-<h3><span class="section-number">8.2.3. </span>Perturbed Wavefunctions<a class="headerlink" href="#perturbed-wavefunctions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.3. </span>Perturbed Wavefunctions<a class="headerlink" href="#perturbed-wavefunctions" title="Permalink to this headline">¶</a></h3>
 <p>To determine the change in the wavefunction,</p>
 <div class="math notranslate nohighlight">
 \[\psi_k'(\lambda) = \frac{d |\psi_k\rangle}{d\lambda}\]</div>
@@ -1490,7 +1495,7 @@ c_l = \frac{\langle \psi_l(0) |\hat{V} |\psi_k(0) \rangle }{E_k(0) - E_l(0)}
 <p>Notice that for the ground state (<span class="math notranslate nohighlight">\(k=0\)</span>), where <span class="math notranslate nohighlight">\(E_0 - E_{j&gt;0} &lt; 0\)</span>, the second-order energy change is never positive, <span class="math notranslate nohighlight">\( E_0''(0) \le 0\)</span>.</p>
 </div>
 <div class="section" id="the-law-of-diminishing-returns-and-accelerating-losses">
-<h3><span class="section-number">8.2.4. </span>The Law of Diminishing Returns and Accelerating Losses<a class="headerlink" href="#the-law-of-diminishing-returns-and-accelerating-losses" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.4. </span>The Law of Diminishing Returns and Accelerating Losses<a class="headerlink" href="#the-law-of-diminishing-returns-and-accelerating-losses" title="Permalink to this headline">¶</a></h3>
 <p>Suppose one is given a Hamiltonian that is parameterized in the general form used in perturbation theory,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1534,9 +1539,9 @@ E_0(\lambda_1) = \langle \psi(\lambda_1) | \hat{H}(\lambda_1) |\psi(\lambda_1) \
 \]</div>
 </div>
 <div class="section" id="example-particle-in-a-box-with-a-sloped-bottom">
-<h3><span class="section-number">8.2.5. </span>Example: Particle in a Box with a Sloped Bottom<a class="headerlink" href="#example-particle-in-a-box-with-a-sloped-bottom" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.5. </span>Example: Particle in a Box with a Sloped Bottom<a class="headerlink" href="#example-particle-in-a-box-with-a-sloped-bottom" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="the-hamiltonian-for-an-applied-uniform-electric-field">
-<h4><span class="section-number">8.2.5.1. </span>The Hamiltonian for an Applied Uniform Electric Field<a class="headerlink" href="#the-hamiltonian-for-an-applied-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.5.1. </span>The Hamiltonian for an Applied Uniform Electric Field<a class="headerlink" href="#the-hamiltonian-for-an-applied-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
 <p>When a system cannot be solved exactly, one can solve it approximately using</p>
 <ul class="simple">
 <li><p>perturbation theory.</p></li>
@@ -1598,9 +1603,9 @@ E\left(F=\tfrac{25}{8};n\right)
 </div></blockquote>
 </div>
 <div class="section" id="perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field">
-<h4><span class="section-number">8.2.5.2. </span>Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.5.2. </span>Perturbation Theory for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#perturbation-theory-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="the-first-order-energy-correction-is-always-zero">
-<h5><span class="section-number">8.2.5.2.1. </span>The First-Order Energy Correction is Always Zero<a class="headerlink" href="#the-first-order-energy-correction-is-always-zero" title="Permalink to this headline">¶</a></h5>
+<h5><span class="section-number">9.2.5.2.1. </span>The First-Order Energy Correction is Always Zero<a class="headerlink" href="#the-first-order-energy-correction-is-always-zero" title="Permalink to this headline">¶</a></h5>
 <p>The corrections due to the perturbation are all zero to first order. To see this, consider that, from the Hellmann-Feynman theorem,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1615,7 +1620,7 @@ E\left(F=\tfrac{25}{8};n\right)
 <p>This reflects the fact that this system has a vanishing dipole moment.</p>
 </div>
 <div class="section" id="the-first-order-correction-to-the-wavefunction">
-<h5><span class="section-number">8.2.5.2.2. </span>The First-Order Correction to the Wavefunction<a class="headerlink" href="#the-first-order-correction-to-the-wavefunction" title="Permalink to this headline">¶</a></h5>
+<h5><span class="section-number">9.2.5.2.2. </span>The First-Order Correction to the Wavefunction<a class="headerlink" href="#the-first-order-correction-to-the-wavefunction" title="Permalink to this headline">¶</a></h5>
 <p>To determine the first-order correction to the wavefunction, one needs to evaluate integrals that look like:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1656,7 +1661,7 @@ V_{mn} =
 \end{split}\]</div>
 </div>
 <div class="section" id="the-second-order-correction-to-the-energy">
-<h5><span class="section-number">8.2.5.2.3. </span>The Second-Order Correction to the Energy<a class="headerlink" href="#the-second-order-correction-to-the-energy" title="Permalink to this headline">¶</a></h5>
+<h5><span class="section-number">9.2.5.2.3. </span>The Second-Order Correction to the Energy<a class="headerlink" href="#the-second-order-correction-to-the-energy" title="Permalink to this headline">¶</a></h5>
 <p>The second-order correction to the energy is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1683,7 +1688,7 @@ E(\tfrac{25}{8}) \approx 0.8913 \text{ a.u.} \\
 </div>
 </div>
 <div class="section" id="variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field">
-<h4><span class="section-number">8.2.5.3. </span>Variational Approach to the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.5.3. </span>Variational Approach to the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#variational-approach-to-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
 <p>When the field is applied, it becomes more favorable for the electron to drift to the <span class="math notranslate nohighlight">\(x&lt;0\)</span> side of the box. To accomodate this, we can propose a wavefunction ansatz for the ground state,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1718,7 +1723,7 @@ E(c) = \frac{\langle \psi_c | \hat{H} | \psi_c \rangle}{\langle \psi_c | \psi_c 
 <p>This equation can be solved analytically because it is a cubic equation, but it is more convenient to solve it numerically.</p>
 </div>
 <div class="section" id="basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field">
-<h4><span class="section-number">8.2.5.4. </span>Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.5.4. </span>Basis-Set Expansion for the Particle-in-a-Box in a Uniform Electric Field<a class="headerlink" href="#basis-set-expansion-for-the-particle-in-a-box-in-a-uniform-electric-field" title="Permalink to this headline">¶</a></h4>
 <p>As a final approach to this problem, we can expand the wavefunction in a basis set. The eigenfunctions of the unperturbed particle-in-a-box are a sensible choice here, though we could use polynomials (as we did earlier in this worksheet) without issue if one wished to do so. The eigenfunctions of the unperturbed problem are orthonormal, so the overlap matrix is the identity matrix</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1746,7 +1751,7 @@ h_{mn} =
 \end{split}\]</div>
 </div>
 <div class="section" id="demonstration">
-<h4><span class="section-number">8.2.5.5. </span>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.5.5. </span>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h4>
 <p>In the following code block, we’ll demonstrate how the energy converges as we increase the number of terms in our calculation. For the excited states, it seems the reference data is likely erroneous.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2048,14 +2053,14 @@ Energy of the second excited state estimated with basis set expansion: 11.336913
 </div>
 </div>
 <div class="section" id="self-reflection">
-<h2><span class="section-number">8.3. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>When is a basis set appropriate? When is perturbation theory more appropriate?</p></li>
 <li><p>Consider the hydrogen molecule ion, <span class="math notranslate nohighlight">\(\text{H}_2^+\)</span>. Is it more sensible to use the secular equation (basis-set-expansion) or perturbation theory? What if the bond length is very small? What if the bond length is very large?</p></li>
 </ul>
 </div>
 <div class="section" id="thought-provoking-questions">
-<h2><span class="section-number">8.4. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Show that if you minimize the energy as a function of the basis-set coefficients using the variational principle, then you obtain the secular equation.</p></li>
 <li><p>If a uniform external electric field of magnitude <span class="math notranslate nohighlight">\(F\)</span> in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}} = [\hat{u}_x,\hat{u}_y,\hat{u}_z]^T\)</span> direction is applied to a particle with charge <span class="math notranslate nohighlight">\(q\)</span>, the potential <span class="math notranslate nohighlight">\(V(x,y,z) = -qF(u_x x + u_y y + u_z z)\)</span> is added to the Hamiltonian. (This follows from the fact that the force applied to the particles is proportional to the electric field, <span class="math notranslate nohighlight">\(\text{force} = q \vec{E} = q F \hat{\mathbf{u}}\)</span> and the force is <span class="math notranslate nohighlight">\(\text{force} = - \nabla V(x,y,z)\)</span>. If the field is weak, then perturbation theory can be used, and the energy can be written as a Taylor series. The coefficients of the Taylor series give the dipole moment (<span class="math notranslate nohighlight">\(\mu\)</span>), dipole polarizability (<span class="math notranslate nohighlight">\(\alpha\)</span>), first dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\beta\)</span>), second dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\gamma\)</span>) in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span> direction.</p>
@@ -2086,7 +2091,7 @@ E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
 </ul>
 </div>
 <div class="section" id="recapitulation">
-<h2><span class="section-number">8.5. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>What is the secular equation?</p></li>
 <li><p>What is the Hellmann-Feynman theorem?</p></li>
@@ -2095,14 +2100,14 @@ E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
 </ul>
 </div>
 <div class="section" id="next-up">
-<h2><span class="section-number">8.6. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.6. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Multielectron systems</p></li>
 <li><p>Approximate methods for multielectron systems.</p></li>
 </ul>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">8.7. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.7. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
@@ -2145,13 +2150,13 @@ E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">7. </span>One-Electron Atoms</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>One-Electron Atoms</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ManyElSystems.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Many-Electron Systems</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Many-Electron Systems</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
