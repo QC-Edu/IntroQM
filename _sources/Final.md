@@ -8,9 +8,14 @@ Your final exam has **three parts**. These contributions are added to the [overa
 
 ## Knowledge Tests (~5 minutes)
 There are three knowledge tests. They are graded Successful/Unsuccessful. We will discuss one question per test, and you must demonstrate understanding of your answer to be judged successful on this part of the exam. See the following GitHub Classroom Links.
+- coming soon
+- coming soon
+- coming soon
 
 ## Jupyter Notebooks (~5 minutes)
 There are three Jupyter notebooks. They are graded Successful/Unsuccessful. There are "extra points" available. We will discuss one segment of each notebook. 
+- coming soon
+- coming soon
 
 ## Discussion (~10 minutes)
 From the [list of questions from the tutorials](linkedFiles/Questions.ipynb), you will have three randomly selected questions, which are graded Successful/Unsuccessful, with +/- 1 depending on the quality of your answer. These will be graded somewhat more rigorously than during the course sessions, since *every* question has previously been disseminated and discussed.  
