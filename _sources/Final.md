@@ -2,6 +2,8 @@
 
 You are expected to complete the GitHub Classroom exercises, and then defend your exam, in person, in ABB-264. [Use my bookable schedule to sign up for a time slot](https://meet.boomerangapp.com/ayersp.gmail.com/meeting2). If no time slot works for you, let me know. Based on the poll, the exam is on April 23.
 
+**Your final exam notebooks must be submitted with GitHub Classroom by noon on April 22.** This will give Rick and me time to review it before we meet.
+
 Your final exam has **three parts**. These contributions are added to the [overall marking scheme](documents/markingscheme.md). 
 
 *You are allowed to "drop" one "unsuccessful" exam component.* I recommend saving that privilege in case one of the discussion questions is too challenging, but you can choose to not complete any one of the eight parts of the final exam. 
