@@ -1063,7 +1063,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 <span class="kn">from</span> <span class="nn">autograd</span> <span class="kn">import</span> <span class="n">elementwise_grad</span> <span class="k">as</span> <span class="n">egrad</span>
 
 <span class="c1"># import numpy as np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapezoid</span><span class="p">,</span> <span class="n">quad</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
 
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -1563,7 +1563,7 @@ The energy computed directly is 0.01708
 
     <span class="c1"># evaluate kinetic energy density</span>
     <span class="n">kin</span> <span class="o">=</span> <span class="n">compute_kinetic_energy_density</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-    <span class="c1">#print(&quot;Integrate KED = &quot;, trapezoid(kin, x))</span>
+    <span class="c1">#print(&quot;Integrate KED = &quot;, trapz(kin, x))</span>
 
 
     <span class="c1"># set the size of the plot</span>
