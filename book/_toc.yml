@@ -17,17 +17,17 @@ parts:
     - file: documents/GitHub.md
       title: GitHub
       sections:
-      - url: https://qchem.qc-edu.org/book/ipynb/ghfundamentals.html
+      - url: https://qchem.qc-edu.org/ghfundamentals.html
         title: "Practice: GitHub (Classroom)"
 
     - file: jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-      - file: problems/JupyterPythonNumpy.md
+      - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
         title: "Practice: Python, Jupyter, Numpy"
-      - file: ipynb/Tutorial_0.ipynb
+      - url: https://qchem.qc-edu.org/ipynb/Tutorial_0.html
         title: "Practice: Google Colab"
-      - file: ipynb/tutorial_1.ipynb
+      - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/2IRoHSuh
         title: "Extra practice: Computing Student Marks (< 2022)"
