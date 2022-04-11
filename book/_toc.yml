@@ -23,11 +23,11 @@ parts:
     - file: jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections: 
-      - url: https://qchem.qc-edu.org/book/problems/JupyterPythonNumpy.html
+      - file: problems/JupyterPythonNumpy.md
         title: "Practice: Python, Jupyter, Numpy"
-      - url: https://qchem.qc-edu.org/book/ipynb/Tutorial_0.html
+      - file: ipynb/Tutorial_0.ipynb
         title: "Practice: Google Colab"
-      - url: https://qchem.qc-edu.org/book/ipynb/tutorial_1.html
+      - file: ipynb/tutorial_1.ipynb
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/2IRoHSuh
         title: "Extra practice: Computing Student Marks (< 2022)"
