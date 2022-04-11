@@ -9,13 +9,13 @@ Your final exam has **three parts**. These contributions are added to the [overa
 *You are allowed to "drop" one "unsuccessful" exam component.* I recommend saving that privilege in case one of the discussion questions is too challenging, but you can choose to not complete any one of the eight parts of the final exam. 
 
 ## Knowledge Tests (~5 minutes)
-There are three knowledge tests. They are graded Successful/Unsuccessful. We will discuss one question per test, and you must demonstrate understanding of your answer to be judged successful on this part of the exam. See the following GitHub Classroom Links.
-- coming soon
-- coming soon
-- coming soon
+There are three knowledge tests. They are graded Successful/Unsuccessful. We will discuss one question per test, and you must demonstrate understanding of your answer to be judged successful on this part of the exam. See the following GitHub Classroom Links. The first one has a "bonus" for +1 point (because I accidentally made one extra question).
+- [https://classroom.github.com/a/YQ-4Sqtm](https://classroom.github.com/a/YQ-4Sqtm)
+- [https://classroom.github.com/a/2y9EdzhF](https://classroom.github.com/a/2y9EdzhF)
+- [https://classroom.github.com/a/EHIM2cSf](https://classroom.github.com/a/EHIM2cSf)
 
 ## Jupyter Notebooks (~5 minutes)
-There are three Jupyter notebooks. They are graded Successful/Unsuccessful. There are "extra points" available. We will discuss one segment of each notebook. 
+There are two Jupyter notebooks. They are graded Successful/Unsuccessful. There are "extra points" available. We will discuss one segment of each notebook. 
 - coming soon
 - coming soon
 
