@@ -1,6 +1,6 @@
 -----
 Problem 10 uses the following figure, which is not rendering for some people
-![image](../linkedFiles/butadiene.bmp)
+![image](../linkedFiles/butadiene.png)
 
 ----
 *Problem 11 uses the following detailed problem description.*
