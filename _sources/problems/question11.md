@@ -1,6 +1,5 @@
 # Questions 10 and 11
 Problem 10 uses the following figure, which is not rendering for some people
-
 ![image](../linkedFiles/butadiene.png)
 
 ----
