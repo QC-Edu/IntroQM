@@ -8,13 +8,14 @@
 - [**Syllabus**](https://github.com/QC-Edu/IntroQM2022/blob/master/documents/syllabus.pdf)
 - [**Marking Scheme**](documents/markingscheme.md)
 - [**Videos**](https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683)
+- [**Final Exam** April 23, ABB-264](Final.md) 
 - **Meeting times** (online components are hosted on MSTeams)
   - Monday, 1430-1730; HH305 (last name starts A-K) (discussion)
   - Monday, 1430-1730; ABB-A404 (last name starts L-Z) (discussion)
   - Tuesday, 1430-1530; HH305 (lecture/tutorial)
   - Tuesday, 1530-1630; ABB-264/266A (office hours)
   - Friday, 1730-1830; online (by default) ABB-264 (by request) (office hours)
-  - April 23. Final Exam. [See the details!](Final.md) 
+  - April 23. Final Exam. [**See the details!**](Final.md) 
 - [**Learning Objectives:**](documents/objectives.md)
   - Know, understand, and use the key equations of quantum mechanics for chemical applications
   - Understand and apply the key concepts of quantum chemistry.
