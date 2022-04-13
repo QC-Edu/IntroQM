@@ -17,7 +17,7 @@ There are three knowledge tests. They are graded Successful/Unsuccessful. We wil
 
 ## Jupyter Notebooks (~5 minutes)
 There are two Jupyter notebooks. They are graded Successful/Unsuccessful. There are "extra points" available. We will discuss one segment of each notebook. 
-- coming soon
+- https://classroom.github.com/a/OSyApCGa
 - coming soon
 
 ## Discussion (~10 minutes)
