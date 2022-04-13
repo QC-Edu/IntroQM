@@ -18,7 +18,7 @@ There are three knowledge tests. They are graded Successful/Unsuccessful. We wil
 ## Jupyter Notebooks (~5 minutes)
 There are two Jupyter notebooks. They are graded Successful/Unsuccessful. There are "extra points" available. We will discuss one segment of each notebook. 
 - https://classroom.github.com/a/OSyApCGa
-- coming soon
+- https://classroom.github.com/a/J37FZ41T
 
 ## Discussion (~10 minutes)
 From the [list of questions from the tutorials](linkedFiles/Questions.ipynb), you will have three randomly selected questions, which are graded Successful/Unsuccessful, with +/- 1 depending on the quality of your answer. These will be graded somewhat more rigorously than during the course sessions, since *every* question has previously been disseminated and discussed.  
