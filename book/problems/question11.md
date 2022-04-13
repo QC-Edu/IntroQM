@@ -1,10 +1,11 @@
-# Questions 10 and 11
-Problem 10 uses the following figure, which is not rendering for some people
+# Questions 10 and 11 (1st part)
+
+**Problem 10** uses the following figure, which is not rendering for some people
 
 ![image](../linkedFiles/butadiene.png)
 
 ----
-*Problem 11 uses the following detailed problem description.*
+***Problem 11*** *uses the following detailed problem description.*
 
 Modern displays often use quantum dot technology, where one (or more) electrons are confined to a region within a material. For an electron confined to a rectangular region in two dimensions, it is reasonable to approximate its motion perpendicular to the rectangle with harmonic confinement. The time-independent Schr&ouml;dinger equation, eigenfunctions, and eigenvalues for a harmonically confined electron are, in atomic units:
 
@@ -43,3 +44,8 @@ V_a(x) =
 $$
 
 **11.** &#x270d;&#xfe0f;&#x1F5A9; **What is the wavelength that corresponds to the lowest-energy excitation when $a_x = 16$, $a_y = 9$, and $k_z = 4$?** Report your answer in nm. *Hint: You may find it useful to recall that the speed of light is 137.036 in atomic units.*
+
+## Questions 4 and 5 (3rd part)
+The figure didn't render properly for everyone. Here is what you need.
+
+![figure](../linkedFiles/PinBoxDivided.png)
