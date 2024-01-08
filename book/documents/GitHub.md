@@ -18,23 +18,27 @@ Version control allows you to save your work, maintain multiple versions of the 
 
 [Click here](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) to learn more about various types of version control.
 
-In this course, we use web-based version control (specifically Git and GitHub) to share material. The goal is to make it easy to share material, revise and test assignments, and discuss course content. Specifically, the course will use: 
+In this course, we use web-based version control (specifically Git and GitHub) to share material. The goal is to make it easy to share material, revise and test assignments, and discuss course content. Specifically, the course will use:
 
 - **Git** for version control.
   - [What is Git? Explained in 2 Minutes!](https://www.youtube.com/watch?v=2ReR1YJrNOM)
   - [Git Tutorial for Beginners: Learn Git in 1 Hour](https://www.youtube.com/watch?v=8JJ101D3knE)
 
-- **GitHub** as a tool to manage our Git repositories online. 
+- **GitHub** as a tool to manage our Git repositories online.
   - [What is GitHub?](https://www.youtube.com/watch?v=w3jLJU7DT5E)
   - [The Basics of GitHub from GitHub Education](https://github.com/education/github-starter-course)
   - Consider uploading a [profile picture](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#changing-your-profile-picture) or linking to a [gravatar](https://en.gravatar.com/). This isn't essential for using GitHub, but it is really useful to be able to have some memorable and distinguishing image for you rather than just the [identicon](https://github.blog/2013-08-14-identicons/). Don't be scared to have fun with this! You can always change this later.
 
 - **GitHub Classroom** as a way to disseminate, test, give feedback on, revise, and mark assignments.
   - [GitHub Classroom 101](https://githubuniverse.com/content-library/github-classroom-101/)
+  - [Learning with GitHub Classroom](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom)
   - [GitHub Classroom for Students](https://www.youtube.com/watch?v=ObaFRGp_Eko)
 
 ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
 - You will learn more about GitHub through the [assignment](../ghfundamentals.ipynb).
+
+## Suggestion
+- Sign up for [GitHub Education](https://education.github.com/students) and especially the [Student Developer Pack](https://education.github.com/pack). This gives you access to a lot of free software and tools, plus a free domain name (and free web hosting of the domain for one year).
 
 ## &#x1f4da; References
 You can learn more about Git and GitHub via LinkedIn Learning Courses.
