@@ -46,6 +46,7 @@ You can learn more about Git and GitHub via LinkedIn Learning Courses.
    https://www.linkedin.com/learning/programming-foundations-version-control-with-git)
 - [Learning GitHub](https://www.linkedin.com/learning/learning-github)
 - [GitHub Essential Training](https://www.linkedin.com/learning/github-essential-training)
+- [GitHub and GitHub Clasroom for Students](https://github.com/rzn-example-classroom/git-and-github-intro)
 
 <br><br>
 >> **Hat Tip:** Farnaz Heidar-Zadeh of Queen's University. This is adapted from her orientation notes in the QC-Edu Boot Camp.
