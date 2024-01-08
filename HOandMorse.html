@@ -1,50 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>11. Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator &#8212; Quantum Chemistry</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,832 +64,502 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'HOandMorse';</script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Assignment: Introduction to GitHub and GitHub Classroom" href="ghfundamentals.html" />
     <link rel="prev" title="10. Many-Electron Systems" href="ManyElSystems.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="main_content.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quantum Chemistry</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="main_content.html">
-   Quantum Chemistry
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="documents/objectives.html">
-   Detailed Learning Objectives
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="documents/objectives.html">Detailed Learning Objectives</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Topics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="documents/GitHub.html">
-   1. GitHub
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ghfundamentals.html">
-     Practice: GitHub (Classroom)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="jupyter.html">
-   2. Basics of Jupyter, Python, and Programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice: Python, Jupyter, Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice: Google Colab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Practice: Wavefunction Normalization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
-     Extra practice: Computing Student Marks (&lt; 2022)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="History.html">
-   3. From Newton to Schrödinger
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">
-     Intro to QM video
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">
-     Intro to QM slides+notes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
-     Quiz: Demo w/ GH Classroom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
-     Quiz: QM Intro
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="SchrodingerEq.html">
-   4. The Schrödinger Equation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
-     Quiz: The Schrodinger Eq.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ParticleIn1DBox.html">
-   5. The Particle in a Box
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="x4_mocked.html">
-     5.24. Example notebook for Moments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
-     Practice: Moments of the P-in-Box
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
-     Practice: The Sudden Approximation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
-     Quiz: 1D P-in-Box
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ParticleInMultiD.html">
-   6. Particles confined in two and three dimensions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Postulates.html">
-   7. The Postulates of Quantum Mechanics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
-     Quiz: Applying the Postulates
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="OneElectronAtoms.html">
-   8. 1-electron atoms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ApproximateMethods.html">
-   9. Approximate Methods
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ManyElSystems.html">
-   10. Many-electron systems: Structure and Spectroscopy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/2elatom.pdf">
-     2-electron atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/atomsshort.pdf">
-     Many-electron atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/PES.pdf">
-     The Born-Oppenheimer Approximation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf">
-     Molecules
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf">
-     Spectroscopy
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   11. Diatomic Molecules' Nuclear Schrodinger Equation
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ghfundamentals.html">
-   1. Intro to GitHub (Classroom)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="problems/JupyterPythonNumpy.html">
-   2. Intro to Python, Jupyter, Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial_0.html">
-   3. Schrodinger's Cat Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial_1.html">
-   4. Wavefunction normalization Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
-   5. Moments of the Particle-in-a-Box
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
-   6. Sudden Changes in Box Length
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">Practice: Google Colab</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Knowledge Tests
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
-   1. Demo Q&amp;A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
-   2. QM Intro
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
-   3. The Schrodinger Eq.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
-   4. 1D P-in-Box
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
-   5. Applying the Postulates
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/DMg3v70o">Quiz: QM Intro</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Extra credit
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="extracredit/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extracredit/programming.html">
-   Jupyter/Python/GitHub exercises
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
-   Python/Numpy practice
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">Quiz: The Schrodinger Eq.</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Additional resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="documents/refs.html">
-   Reference Materials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">
-   Videos
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">5.24. Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/1Y48deKP">Quiz: 1D P-in-Box</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contributing and Using
- </span>
-</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates.html">7. The Postulates of Quantum Mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/UeStyjxT">Quiz: Applying the Postulates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="code_of_conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="contributing.html">
-   How to Contribute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="license.html">
-   License
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ghfundamentals.html">1. Intro to GitHub (Classroom)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/JupyterPythonNumpy.html">2. Intro to Python, Jupyter, Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial_0.html">3. Schrodinger's Cat Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">4. Wavefunction normalization Colab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">5. Moments of the Particle-in-a-Box</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">6. Sudden Changes in Box Length</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">1. Demo Q&amp;A</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/DMg3v70o">2. QM Intro</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">3. The Schrodinger Eq.</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/1Y48deKP">4. 1D P-in-Box</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/UeStyjxT">5. Applying the Postulates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra credit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="extracredit/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extracredit/programming.html">Jupyter/Python/GitHub exercises</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">Python/Numpy practice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/HOandMorse.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/QC-Edu/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FHOandMorse.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/HOandMorse.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/QC-Edu/IntroQM2022/master?urlpath=tree/book/HOandMorse.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/HOandMorse.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FHOandMorse.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/HOandMorse.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
-   11.1. Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
-     11.1.1. Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-isotope-effects-in-rotational-spectroscopy">
-       11.1.1.1. 🖩 Exercise: Isotope Effects in Rotational Spectroscopy
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#answer">
-       11.1.1.2. Answer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-harmonic-oscillator-hamiltonian">
-   11.2. The Harmonic Oscillator Hamiltonian
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solutions-to-the-harmonic-oscillator-hamiltonian">
-     11.2.1. Solutions to the Harmonic Oscillator Hamiltonian
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-isotope-effects-in-vibrational-spectroscopy">
-     11.2.2. 🖩 Exercise: Isotope Effects in Vibrational Spectroscopy
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution">
-       11.2.2.1. Solution:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-morse-oscillator">
-   11.3. The Morse Oscillator
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#motivation">
-     11.3.1. Motivation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     11.3.2. Solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-compare-the-morse-and-harmonic-oscillators">
-     11.3.3. 🖩 Exercise: Compare the Morse and Harmonic Oscillators
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       11.3.3.1. Answer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vibrating-diatomic-molecules-in-an-external-field">
-   11.4. Vibrating Diatomic Molecules  in an External Field
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     11.4.1. Motivation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
-     11.4.2. Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field">
-     11.4.3. The Harmonic Oscillator in a Uniform External Electric Field
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sketch-of-perturbative-approach">
-       11.4.3.1. Sketch of Perturbative Approach
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exact-solution-by-completing-the-square">
-       11.4.3.2. Exact Solution by Completing the Square
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">
-     11.4.4. 🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       11.4.4.1. Solution:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-morse-oscillator-in-an-external-electric-field">
-     11.4.5. The Morse Oscillator in an External Electric Field
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">
-       11.4.5.1. 👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   11.5. 📚 References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">11.1. Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">11.1.1. Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-isotope-effects-in-rotational-spectroscopy">11.1.1.1. 🖩 Exercise: Isotope Effects in Rotational Spectroscopy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">11.1.1.2. Answer:</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-harmonic-oscillator-hamiltonian">11.2. The Harmonic Oscillator Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-harmonic-oscillator-hamiltonian">11.2.1. Solutions to the Harmonic Oscillator Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-isotope-effects-in-vibrational-spectroscopy">11.2.2. 🖩 Exercise: Isotope Effects in Vibrational Spectroscopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">11.2.2.1. Solution:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-morse-oscillator">11.3. The Morse Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">11.3.1. Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.3.2. Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-compare-the-morse-and-harmonic-oscillators">11.3.3. 🖩 Exercise: Compare the Morse and Harmonic Oscillators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.3.3.1. Answer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrating-diatomic-molecules-in-an-external-field">11.4. Vibrating Diatomic Molecules  in an External Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.4.1. Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">11.4.2. Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field">11.4.3. The Harmonic Oscillator in a Uniform External Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-perturbative-approach">11.4.3.1. Sketch of Perturbative Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution-by-completing-the-square">11.4.3.2. Exact Solution by Completing the Square</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">11.4.4. 🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.4.4.1. Solution:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-morse-oscillator-in-an-external-electric-field">11.4.5. The Morse Oscillator in an External Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">11.4.5.1. 👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">11.5. 📚 References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
-   11.1. Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
-     11.1.1. Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-isotope-effects-in-rotational-spectroscopy">
-       11.1.1.1. 🖩 Exercise: Isotope Effects in Rotational Spectroscopy
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#answer">
-       11.1.1.2. Answer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-harmonic-oscillator-hamiltonian">
-   11.2. The Harmonic Oscillator Hamiltonian
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solutions-to-the-harmonic-oscillator-hamiltonian">
-     11.2.1. Solutions to the Harmonic Oscillator Hamiltonian
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-isotope-effects-in-vibrational-spectroscopy">
-     11.2.2. 🖩 Exercise: Isotope Effects in Vibrational Spectroscopy
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution">
-       11.2.2.1. Solution:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-morse-oscillator">
-   11.3. The Morse Oscillator
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#motivation">
-     11.3.1. Motivation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     11.3.2. Solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-compare-the-morse-and-harmonic-oscillators">
-     11.3.3. 🖩 Exercise: Compare the Morse and Harmonic Oscillators
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       11.3.3.1. Answer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vibrating-diatomic-molecules-in-an-external-field">
-   11.4. Vibrating Diatomic Molecules  in an External Field
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     11.4.1. Motivation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
-     11.4.2. Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field">
-     11.4.3. The Harmonic Oscillator in a Uniform External Electric Field
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sketch-of-perturbative-approach">
-       11.4.3.1. Sketch of Perturbative Approach
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exact-solution-by-completing-the-square">
-       11.4.3.2. Exact Solution by Completing the Square
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">
-     11.4.4. 🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       11.4.4.1. Solution:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-morse-oscillator-in-an-external-electric-field">
-     11.4.5. The Morse Oscillator in an External Electric Field
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">
-       11.4.5.1. 👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   11.5. 📚 References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Harmonic Oscillator" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/QuantumHarmonicOscillatorAnimation.gif?raw=true" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="vibrational-polarizability-the-harmonic-oscillator-and-the-morse-oscillator">
-<h1><span class="section-number">11. </span>Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator<a class="headerlink" href="#vibrational-polarizability-the-harmonic-oscillator-and-the-morse-oscillator" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
-<h2><span class="section-number">11.1. </span>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule<a class="headerlink" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule" title="Permalink to this headline">¶</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="vibrational-polarizability-the-harmonic-oscillator-and-the-morse-oscillator">
+<h1><span class="section-number">11. </span>Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator<a class="headerlink" href="#vibrational-polarizability-the-harmonic-oscillator-and-the-morse-oscillator" title="Permalink to this heading">#</a></h1>
+<section id="motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">
+<h2><span class="section-number">11.1. </span>Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule<a class="headerlink" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule" title="Permalink to this heading">#</a></h2>
 <p>The nuclear Schrödinger equation for a diatomic molecule is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -980,8 +661,8 @@ M = M_1 + M_2
       + \frac{\hbar^2 J(J+1)}{2\mu u^2} + V(u) \right)
       R_{k}(u) = E_{k,J}R_{k}(u)
 \]</div>
-<div class="section" id="quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
-<h3><span class="section-number">11.1.1. </span>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation<a class="headerlink" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation" title="Permalink to this headline">¶</a></h3>
+<section id="quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">
+<h3><span class="section-number">11.1.1. </span>Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation<a class="headerlink" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation" title="Permalink to this heading">#</a></h3>
 <p>The potential energy of a diatomic molecule goes to infinity at short internuclear separation (<span class="math notranslate nohighlight">\(u \rightarrow 0\)</span>) because of the nuclear-nuclear repulsion and approaches a constant (which we typically define to be zero) at infinite internuclear distance. In between these limits, there is typically a minimum at <span class="math notranslate nohighlight">\(r_e\)</span>, which represents the equilibrium bond length for the molecule (in the absence of quantum effects). If we assume that the atomic nuclei, which are much more massive than electrons, have relatively small De Broglie wavelength and do not deviate far from <span class="math notranslate nohighlight">\(u = r_e\)</span>, it is reasonable to expand the potential energy in a Taylor series about that point,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1021,16 +702,16 @@ V(u) = V(r_e) + V'(r_e)(u-r_e) + \tfrac{1}{2!}V''(r_e)(u - r_e)^2 + \cdots
 </div>
 </div>
 </div>
-<div class="section" id="exercise-isotope-effects-in-rotational-spectroscopy">
-<h4><span class="section-number">11.1.1.1. </span>🖩 Exercise: Isotope Effects in Rotational Spectroscopy<a class="headerlink" href="#exercise-isotope-effects-in-rotational-spectroscopy" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-isotope-effects-in-rotational-spectroscopy">
+<h4><span class="section-number">11.1.1.1. </span>🖩 Exercise: Isotope Effects in Rotational Spectroscopy<a class="headerlink" href="#exercise-isotope-effects-in-rotational-spectroscopy" title="Permalink to this heading">#</a></h4>
 <p>For a diatomic molecule that has a permanent dipole moment, allowed rotational transitions correspond to <span class="math notranslate nohighlight">\(\Delta J = \pm 1\)</span>.</p>
 <ul class="simple">
 <li><p>A measurement informs you that the transition associated with the <span class="math notranslate nohighlight">\(J=0\)</span> to <span class="math notranslate nohighlight">\(J=1\)</span> transition in <span class="math notranslate nohighlight">\({}^1\text{H}{}^{35}\text{Cl}\)</span> (note the isotope labels) is characterized by <span class="math notranslate nohighlight">\(\tilde{\nu} = \tfrac{1}{\lambda} = 20.9 \text{ cm}^{-1}\)</span>. <strong>What is the equilibrium bond length of HCl in picometers?</strong></p></li>
 <li><p>Assume that <span class="math notranslate nohighlight">\(\text{T}{}^{37}\text{Cl}\)</span> (i.e., <span class="math notranslate nohighlight">\({}^3\text{H}{}^{37}\text{Cl}\)</span>) molecule has the same bond length. <strong>What is the wavenumber of the <span class="math notranslate nohighlight">\(J=0\)</span> to <span class="math notranslate nohighlight">\(J=1\)</span> transition for <span class="math notranslate nohighlight">\(\text{T}{}^{37}\text{Cl}\)</span> in <span class="math notranslate nohighlight">\(\text{ cm}^{-1}\)</span>?</strong></p></li>
 </ul>
-</div>
-<div class="section" id="answer">
-<h4><span class="section-number">11.1.1.2. </span>Answer:<a class="headerlink" href="#answer" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="answer">
+<h4><span class="section-number">11.1.1.2. </span>Answer:<a class="headerlink" href="#answer" title="Permalink to this heading">#</a></h4>
 <p>Let’s start with the second question because it is easier.</p>
 <p>The excitation energy is given by the expression</p>
 <div class="math notranslate nohighlight">
@@ -1105,11 +786,11 @@ The wavenumber of the J=0 -&gt; 1 transition in TCl(37) 7.342 cm-1.
 </div>
 </div>
 <p><img alt="harmonic oscillator wf" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/HarmOsziFunktionen.png" /></p>
-</div>
-</div>
-</div>
-<div class="section" id="the-harmonic-oscillator-hamiltonian">
-<h2><span class="section-number">11.2. </span>The Harmonic Oscillator Hamiltonian<a class="headerlink" href="#the-harmonic-oscillator-hamiltonian" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="the-harmonic-oscillator-hamiltonian">
+<h2><span class="section-number">11.2. </span>The Harmonic Oscillator Hamiltonian<a class="headerlink" href="#the-harmonic-oscillator-hamiltonian" title="Permalink to this heading">#</a></h2>
 <p>It is convenient to change the coordinates in this problem, so that the dependence on <span class="math notranslate nohighlight">\(r_e\)</span> is not explicit. Defining</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1133,8 +814,8 @@ x = u - r_e \\
 \[
 \mu = \frac{M_1 M_2}{M_1 + M_2}
 \]</div>
-<div class="section" id="solutions-to-the-harmonic-oscillator-hamiltonian">
-<h3><span class="section-number">11.2.1. </span>Solutions to the Harmonic Oscillator Hamiltonian<a class="headerlink" href="#solutions-to-the-harmonic-oscillator-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<section id="solutions-to-the-harmonic-oscillator-hamiltonian">
+<h3><span class="section-number">11.2.1. </span>Solutions to the Harmonic Oscillator Hamiltonian<a class="headerlink" href="#solutions-to-the-harmonic-oscillator-hamiltonian" title="Permalink to this heading">#</a></h3>
 <p>We will not attempt to solve the harmonic oscillator Schrödinger equation. It suffices to note that the equation <em>is</em> exactly solvable using techniques similar to those we’ve used for other systems, and that the solution is written in terms of (yet another) type of special function, the <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1156,16 +837,16 @@ R_k(x) = \sqrt{\frac{1}{2^k k!}}\left(\frac{\mu \omega}{\pi \hbar} \right)^{\fra
 \[
 E_k = \hbar \omega \left( k+ \tfrac{1}{2} \right) = \hbar \sqrt{\frac{\kappa_e}{\mu}} \left( k+ \tfrac{1}{2} \right) \qquad \qquad k=0,1,2,\ldots
 \]</div>
-</div>
-<div class="section" id="exercise-isotope-effects-in-vibrational-spectroscopy">
-<h3><span class="section-number">11.2.2. </span>🖩 Exercise: Isotope Effects in Vibrational Spectroscopy<a class="headerlink" href="#exercise-isotope-effects-in-vibrational-spectroscopy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-isotope-effects-in-vibrational-spectroscopy">
+<h3><span class="section-number">11.2.2. </span>🖩 Exercise: Isotope Effects in Vibrational Spectroscopy<a class="headerlink" href="#exercise-isotope-effects-in-vibrational-spectroscopy" title="Permalink to this heading">#</a></h3>
 <p>For a diatomic molecule that is well-described by a harmonic oscillator, allowed vibrational transitions correspond to <span class="math notranslate nohighlight">\(\Delta k = \pm 1\)</span>.</p>
 <ul class="simple">
 <li><p>A measurement informs you that the fundamental vibrational transition associated with <span class="math notranslate nohighlight">\(k=0\)</span> to <span class="math notranslate nohighlight">\(k=1\)</span> in <span class="math notranslate nohighlight">\({}^7\text{Li}{}^{7}\text{Li}\)</span> (note the isotope labels) is characterized by <span class="math notranslate nohighlight">\(\tilde{\nu} = \tfrac{1}{\lambda} = 351.43 \text{ cm}^{-1}\)</span>. <strong>What is the force constant, <span class="math notranslate nohighlight">\(\kappa_e\)</span>, for the Lithium dimer in Newton/meter?</strong></p></li>
 <li><p>Assume that <span class="math notranslate nohighlight">\({}^6\text{Li}{}^{6}\text{Li}\)</span> molecule has the same force constant. <strong>What is the wavenumber of the <span class="math notranslate nohighlight">\(k=0\)</span> to <span class="math notranslate nohighlight">\(k=1\)</span> transition of <span class="math notranslate nohighlight">\({}^6\text{Li}{}^{6}\text{Li}\)</span> in <span class="math notranslate nohighlight">\(\text{cm}^{-1}\)</span>?</strong></p></li>
 </ul>
-<div class="section" id="solution">
-<h4><span class="section-number">11.2.2.1. </span>Solution:<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
+<section id="solution">
+<h4><span class="section-number">11.2.2.1. </span>Solution:<a class="headerlink" href="#solution" title="Permalink to this heading">#</a></h4>
 <p>The energy of the transition is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1228,13 +909,13 @@ The wavenumber of the k=0 -&gt; 1 transition in the Li-6 dimer is 379.5 cm-1.
 </div>
 </div>
 <p><img alt="Morse Potential" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Morse-potential.png/650px-Morse-potential.png" /></p>
-</div>
-</div>
-</div>
-<div class="section" id="the-morse-oscillator">
-<h2><span class="section-number">11.3. </span>The Morse Oscillator<a class="headerlink" href="#the-morse-oscillator" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="motivation">
-<h3><span class="section-number">11.3.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="the-morse-oscillator">
+<h2><span class="section-number">11.3. </span>The Morse Oscillator<a class="headerlink" href="#the-morse-oscillator" title="Permalink to this heading">#</a></h2>
+<section id="motivation">
+<h3><span class="section-number">11.3.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
 <p>The harmonic oscillator is not very realistic for two reasons</p>
 <ul class="simple">
 <li><p>it predicts that negative bond lengths would be possible, since the potential energy curve does not diverge to infinity as <span class="math notranslate nohighlight">\(u \rightarrow 0\)</span>.</p></li>
@@ -1256,9 +937,9 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 \kappa_e = V''_{\text{Morse}}(r_e)
 \]</div>
 <p><img alt="Comparison" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/N2ground.png" /></p>
-</div>
-<div class="section" id="id1">
-<h3><span class="section-number">11.3.2. </span>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3><span class="section-number">11.3.2. </span>Solution<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>The Schrödinger equation for the Morse potential,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1283,9 +964,9 @@ E_k = \hbar \omega_0 \left(k+\tfrac{1}{2}\right) - \frac{\left[ \hbar \omega_0 \
 k_{\max} = \left\lfloor \frac{2D_e}{\hbar \omega_0} - \frac{1}{2} \right\rfloor
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(\lfloor x \rfloor\)</span> denotes the integer part of <span class="math notranslate nohighlight">\(x\)</span>. E.g., <span class="math notranslate nohighlight">\(\lfloor 20.3 \rfloor = 20\)</span>. The upshot of the equation for <span class="math notranslate nohighlight">\(k_{\max}\)</span> is that the Morse oscillator has about twice as many states with energy less than <span class="math notranslate nohighlight">\(D_e\)</span> as the harmonic oscillator does, because the states of the Morse oscillator become closer and closer together as the molecule gets closer to dissociation. The ability to have only a finite number of bound vibrational states is one way in which the Morse oscillator is more like a real vibrating molecule than the harmonic oscillator.</p>
-</div>
-<div class="section" id="exercise-compare-the-morse-and-harmonic-oscillators">
-<h3><span class="section-number">11.3.3. </span>🖩 Exercise: Compare the Morse and Harmonic Oscillators<a class="headerlink" href="#exercise-compare-the-morse-and-harmonic-oscillators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-compare-the-morse-and-harmonic-oscillators">
+<h3><span class="section-number">11.3.3. </span>🖩 Exercise: Compare the Morse and Harmonic Oscillators<a class="headerlink" href="#exercise-compare-the-morse-and-harmonic-oscillators" title="Permalink to this heading">#</a></h3>
 <p>A measurement informs you that the fundamental vibrational transition associated with <span class="math notranslate nohighlight">\(k=0\)</span> to <span class="math notranslate nohighlight">\(k=1\)</span> in <span class="math notranslate nohighlight">\({}^7\text{Li}{}^{7}\text{Li}\)</span> (note the isotope labels) is characterized by <span class="math notranslate nohighlight">\(\omega_0 = 6.620\cdot 10^{13} \text{Hz}\)</span>. Moreover, the dissociation energy is <span class="math notranslate nohighlight">\(1.6918\cdot 10^{-19} \text{ Joules}\)</span>.</p>
 <ul class="simple">
 <li><p>How many bound states does <span class="math notranslate nohighlight">\({}^7\text{Li}_2\)</span> have in the Morse oscillator?</p></li>
@@ -1293,8 +974,8 @@ k_{\max} = \left\lfloor \frac{2D_e}{\hbar \omega_0} - \frac{1}{2} \right\rfloor
 <li><p>What is the zero-point energy of <span class="math notranslate nohighlight">\({}^6\text{Li}_2\)</span> in the harmonic oscillator in Joules?</p></li>
 <li><p>What is the zero-point energy of <span class="math notranslate nohighlight">\({}^6\text{Li}_2\)</span> in the Morse oscillator in Joules?</p></li>
 </ul>
-<div class="section" id="id2">
-<h4><span class="section-number">11.3.3.1. </span>Answer:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<section id="id2">
+<h4><span class="section-number">11.3.3.1. </span>Answer:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <p>This can be seen as a continuation of the previous problem (2.16). Moreover, we realize that the formula for <span class="math notranslate nohighlight">\(\omega_0\)</span> in the Morse oscillator is <em>exactly</em> the same as the formula for <span class="math notranslate nohighlight">\(\omega\)</span> in the harmonic oscillator.</p>
 <p>The <span class="math notranslate nohighlight">\(\omega_0\)</span> value for the Li-6 dimer is</p>
 <div class="math notranslate nohighlight">
@@ -1375,13 +1056,13 @@ The zero-point energy of the harmonic oscillator for the Li-6 dimer is 3.770e-21
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="vibrating-diatomic-molecules-in-an-external-field">
-<h2><span class="section-number">11.4. </span>Vibrating Diatomic Molecules  in an External Field<a class="headerlink" href="#vibrating-diatomic-molecules-in-an-external-field" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3><span class="section-number">11.4.1. </span>Motivation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="vibrating-diatomic-molecules-in-an-external-field">
+<h2><span class="section-number">11.4. </span>Vibrating Diatomic Molecules  in an External Field<a class="headerlink" href="#vibrating-diatomic-molecules-in-an-external-field" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3><span class="section-number">11.4.1. </span>Motivation<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>For polar diatomic molecules, their dipole moment may be approximated as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1404,9 +1085,9 @@ V_{\text{dipole}} = -|\mathbf{p}| |\mathbf{E}| = - q u F
 <li><p>a molecule’s electrons rearrange in response to the electric field. To a first approximation, this means that the atomic charges change in the presence of the field.</p></li>
 </ul>
 <p>Nonetheless, this model does capture some key features, notably the fact that in the presence of a uniform external field, the bond in a polar diatomic molecule tends to elongate.</p>
-</div>
-<div class="section" id="hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
-<h3><span class="section-number">11.4.2. </span>Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field<a class="headerlink" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">
+<h3><span class="section-number">11.4.2. </span>Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field<a class="headerlink" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field" title="Permalink to this heading">#</a></h3>
 <p>The Hamiltonian for a vibrating molecule in an electric field can then be approximated as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1455,9 +1136,9 @@ E_k(F) = E_k(0) - q_e r_e F + E_k^{(\text{polarization})}(F)
 E_k^{(\text{polarization})}(F) = -\tfrac{1}{2} \alpha_{\text{vib}} F^2 - \tfrac{1}{3!} \beta_{\text{vib}} F^3 - \tfrac{1}{4!} \gamma_{\text{vib}} F^3 + \cdots
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha_{\text{vib}}\)</span> is the vibrational contribution to the dipole polarizability (subject to the approximations mentioned above) and the higher-order coefficients are the first-, <span class="math notranslate nohighlight">\(\beta\)</span>, and higher-order vibrational dipole hyperpolarizabilities.</p>
-</div>
-<div class="section" id="the-harmonic-oscillator-in-a-uniform-external-electric-field">
-<h3><span class="section-number">11.4.3. </span>The Harmonic Oscillator in a Uniform External Electric Field<a class="headerlink" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-harmonic-oscillator-in-a-uniform-external-electric-field">
+<h3><span class="section-number">11.4.3. </span>The Harmonic Oscillator in a Uniform External Electric Field<a class="headerlink" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field" title="Permalink to this heading">#</a></h3>
 <p>To model a diatomic molecule vibrating in a uniform electric field, we need to choose a practical model for the vibrational potential energy function, <span class="math notranslate nohighlight">\(V(u)\)</span>. The simplest possible model is to use a Harmonic Oscillator, which leads to the Hamiltonian:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1465,8 +1146,8 @@ E_k^{(\text{polarization})}(F) = -\tfrac{1}{2} \alpha_{\text{vib}} F^2 - \tfrac{
 + \frac{2}{u} \frac{d}{du}\right) + \tfrac{1}{2}\kappa_e(u-r_e)^2 - q_e (u-r_e) F \right)
       R_{k}(u) = E_{k}^{\text{shifted}}(F) R_{k}(u)
 \]</div>
-<div class="section" id="sketch-of-perturbative-approach">
-<h4><span class="section-number">11.4.3.1. </span>Sketch of Perturbative Approach<a class="headerlink" href="#sketch-of-perturbative-approach" title="Permalink to this headline">¶</a></h4>
+<section id="sketch-of-perturbative-approach">
+<h4><span class="section-number">11.4.3.1. </span>Sketch of Perturbative Approach<a class="headerlink" href="#sketch-of-perturbative-approach" title="Permalink to this heading">#</a></h4>
 <p>One could treat this Hamiltonian with perturbation theory. By construction, <span class="math notranslate nohighlight">\(E_k^{(\text{shifted})}\)</span> does not depend on the field to first order. Therefore, the leading-order term is the second-order contribution,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1488,9 +1169,9 @@ V_{kl} =
 0  &amp; \text{otherwise}
 \end{cases}
 \end{split}\]</div>
-</div>
-<div class="section" id="exact-solution-by-completing-the-square">
-<h4><span class="section-number">11.4.3.2. </span>Exact Solution by Completing the Square<a class="headerlink" href="#exact-solution-by-completing-the-square" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="exact-solution-by-completing-the-square">
+<h4><span class="section-number">11.4.3.2. </span>Exact Solution by Completing the Square<a class="headerlink" href="#exact-solution-by-completing-the-square" title="Permalink to this heading">#</a></h4>
 <p>While a perturbative approach is possible, the harmonic oscillator in a uniform external electric field can be solved exactly. <a class="reference external" href="https://en.wikipedia.org/wiki/Completing_the_square">Completing the square</a> on the potential,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1521,18 +1202,18 @@ E_k^{\text{polarization}}(F) = - \frac{q^2}{2 \kappa_e}F^2
 \[
 E_k(F) = \hbar \sqrt{\frac{\kappa_e}{\mu}}\left(k+\frac{1}{2}\right) - q r_e F- \frac{q^2}{2 \kappa_e}F^2
 \]</div>
-</div>
-</div>
-<div class="section" id="exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">
-<h3><span class="section-number">11.4.4. </span>🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.<a class="headerlink" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">
+<h3><span class="section-number">11.4.4. </span>🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.<a class="headerlink" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation" title="Permalink to this heading">#</a></h3>
 <p>For the <span class="math notranslate nohighlight">\({}^{1}\text{H}{}^{19}\text{F}\)</span> molecule, <span class="math notranslate nohighlight">\(\mu = 6.361 \cdot 10^{-25} \text{ kg}\)</span>, <span class="math notranslate nohighlight">\(\kappa_e = 920 \text{ N/m} \)</span>, and <span class="math notranslate nohighlight">\(r_e = 91.68 \text{ pm}\)</span>. The dipole moment of HF is 1.91 Debye, which corresponds to a semi-reasonable charge of 0.44 <span class="math notranslate nohighlight">\(e\)</span> on the hydrogen atom. Assume the electric field is 1,000,000 V/m.</p>
 <ul class="simple">
 <li><p>How much does the bond elongate in the presence of the external electric field? Report your answer in picometers.</p></li>
 <li><p>What value would you obtain if you used second-order perturbation theory to estimate the vibrational polarization energy, <span class="math notranslate nohighlight">\(E_k^{(\text{polarization})}\)</span>. Report your answer in Joules.</p></li>
 </ul>
 <p><em>Hint:</em> Results from the previous block of the notebook may be helpful.</p>
-<div class="section" id="id4">
-<h4><span class="section-number">11.4.4.1. </span>Solution:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<section id="id4">
+<h4><span class="section-number">11.4.4.1. </span>Solution:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p>This is mostly a pretty straightforward “calculator” exercise. The only tricky part is the use of perturbation theory. However, note that the <em>exact</em> expression has only terms that are linear and quadratic in F. That means that second-order perturbation theory is <em>exact</em>. So you did not need to use perturbation theory. Even if you did, only <em>one</em> state would contribute, so the problem is pretty easy…..</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1563,10 +1244,10 @@ The zero-point energy HF changes by -2.625e-30 J in a field of 1,000,000 V/m.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="the-morse-oscillator-in-an-external-electric-field">
-<h3><span class="section-number">11.4.5. </span>The Morse Oscillator in an External Electric Field<a class="headerlink" href="#the-morse-oscillator-in-an-external-electric-field" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-morse-oscillator-in-an-external-electric-field">
+<h3><span class="section-number">11.4.5. </span>The Morse Oscillator in an External Electric Field<a class="headerlink" href="#the-morse-oscillator-in-an-external-electric-field" title="Permalink to this heading">#</a></h3>
 <p>Instead of using a harmonic oscillator to describe the vibrational motion of a polar diatomic molecule, one could use the Morse Oscillator. In this case, the Schrödinger equation is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1632,11 +1313,11 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <blockquote>
 <div><p>Note. The choice of <span class="math notranslate nohighlight">\(u = |\mathbf{R}_1 - \mathbf{R}_2|\)</span> or <span class="math notranslate nohighlight">\(u = |\mathbf{R}_2 - \mathbf{R}_1|\)</span> is arbitrary. This means, in practice, that whether one chooses a field oriented in the <span class="math notranslate nohighlight">\(+u\)</span> or <span class="math notranslate nohighlight">\(-u\)</span> direction is arbitrary. One should compute both choices, and pick the one which stabilizes the molecule more. For a Morse oscillator, this corresponds to a field with a negative sign.</p>
 </div></blockquote>
-<div class="section" id="exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">
-<h4><span class="section-number">11.4.5.1. </span>👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.<a class="headerlink" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">
+<h4><span class="section-number">11.4.5.1. </span>👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.<a class="headerlink" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential" title="Permalink to this heading">#</a></h4>
 <p>For the <span class="math notranslate nohighlight">\({}^{1}\text{H}{}^{19}\text{F}\)</span> molecule, <span class="math notranslate nohighlight">\(\mu = 6.361 \cdot 10^{-25} \text{ kg}\)</span>, <span class="math notranslate nohighlight">\(\kappa_e = 920 \text{ N/m} \)</span>, <span class="math notranslate nohighlight">\(D_e = 9.402 \cdot 10^{-19} J\)</span>, and <span class="math notranslate nohighlight">\(r_e = 91.68 \text{ pm}\)</span>. The dipole moment of HF is 1.91 Debye, which corresponds to a semi-reasonable charge of 0.44 <span class="math notranslate nohighlight">\(e\)</span> on the hydrogen atom. Assume the electric field is 1,000,000 V/m.</p>
 <p>Using the integrals provided below, compute the vibrational polarization energy, <span class="math notranslate nohighlight">\(E_{k}^{(\text{polarization})}(F)\)</span>, for the Morse Oscillator in a field using perturbation theory and/or basis-set expansion.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Compute both first and second-order corrections to the polarization energy if you use perturbation theory. Note that in this case, the first-order contribution to the polarization energy is not exactly zero.</p></li>
 <li><p>Summing over all bound states or using all bound states in the basis is not practical, but you should be sure to not use unbound states.</p></li>
 </ol>
@@ -1658,18 +1339,18 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">Ramanujan_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Computes (Gamma(2x-n)/Gamma(2x-m))^(1/2) using the Ramanujan approximation to the Gamma function&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes (Gamma(2x-n)/Gamma(2x-m))^(1/2) using the Ramanujan approximation to the Gamma function&quot;&quot;&quot;</span>
     <span class="n">ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> \
             <span class="o">*</span> <span class="p">(</span><span class="n">cubic_poly</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">cubic_poly</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>  \
             <span class="o">*</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="n">x</span>
     <span class="k">return</span> <span class="n">ratio</span>
 
 <span class="k">def</span> <span class="nf">cubic_poly</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The cubic polynomial that shows up in the Ramanujan formula&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The cubic polynomial that shows up in the Ramanujan formula&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">30</span>
 
 <span class="k">def</span> <span class="nf">Stirling_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Computes (Gamma(y)/Gamma(x))^(1/2) using the Stirling approximation to the Gamma function</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes (Gamma(y)/Gamma(x))^(1/2) using the Stirling approximation to the Gamma function</span>
 <span class="sd">    This works best when x and y are approximately equal, and implicitly it is assumed that y &lt; x.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Stirling_poly</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">Stirling_poly</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -1683,7 +1364,7 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
     <span class="k">return</span> <span class="n">p</span>
 
 <span class="k">def</span> <span class="nf">compute_V</span><span class="p">(</span><span class="n">De</span><span class="p">,</span> <span class="n">omega0</span><span class="p">,</span> <span class="n">kappa_e</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute the matrix &lt;m|x|n&gt; for a Morse oscillator</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the matrix &lt;m|x|n&gt; for a Morse oscillator</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1738,7 +1419,7 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
     <span class="k">return</span> <span class="n">V</span>
 
 <span class="k">def</span> <span class="nf">compute_E0</span><span class="p">(</span><span class="n">De</span><span class="p">,</span> <span class="n">omega0</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute the eigenenerties of the Morse oscillator in the absence of an electric field</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the eigenenerties of the Morse oscillator in the absence of an electric field</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1767,7 +1448,7 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
     <span class="k">return</span> <span class="n">E0</span>
 
 <span class="k">def</span> <span class="nf">compute_H</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute the Hamiltonian matrix &lt;m|H(field)|n&gt; for a Morse oscillator of a molecular dipole in a field.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the Hamiltonian matrix &lt;m|H(field)|n&gt; for a Morse oscillator of a molecular dipole in a field.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1804,11 +1485,11 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
     <span class="k">return</span> <span class="n">H</span>
 
 <span class="k">def</span> <span class="nf">n_boundst</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The last bound state; n_basis should be no greater than this number plus one&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The last bound state; n_basis should be no greater than this number plus one&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">De</span><span class="o">/</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">hbar</span><span class="o">*</span><span class="n">omega0</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">egs_pol_pt</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute the polarization energy of the ground state using 1st- and 2nd-order perturbation theory&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the polarization energy of the ground state using 1st- and 2nd-order perturbation theory&quot;&quot;&quot;</span>
     
     <span class="n">V</span> <span class="o">=</span> <span class="n">compute_V</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
     <span class="n">E0</span> <span class="o">=</span> <span class="n">compute_E0</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
@@ -1824,7 +1505,7 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
     <span class="k">return</span> <span class="n">egs_pol_der1</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">field</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">egs_pol_der2</span><span class="o">*</span><span class="n">field</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">egs_pol_basis</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Computes the polarization energy for the ground state of Morse Oscillator using basis-set expansion &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the polarization energy for the ground state of Morse Oscillator using basis-set expansion &quot;&quot;&quot;</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">compute_H</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
     
     <span class="c1">#compute energies by diagonalization</span>
@@ -1866,11 +1547,11 @@ Using basis-set expansion, the polarization energy for HF in a field of 1e6 V/m 
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="references">
-<h2><span class="section-number">11.5. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="references">
+<h2><span class="section-number">11.5. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a> (See Chapter 3)</p></li>
@@ -1886,8 +1567,8 @@ Using basis-set expansion, the polarization energy for HF in a field of 1e6 V/m 
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Morse_potential">Morse Oscillator</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_quantum-mechanical_systems_with_analytical_solutions">Other exactly solvable models</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1901,7 +1582,7 @@ Using basis-set expansion, the polarization energy for HF in a field of 1e6 V/m 
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1909,44 +1590,145 @@ Using basis-set expansion, the polarization energy for HF in a field of 1e6 V/m 
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ManyElSystems.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10. </span>Many-Electron Systems</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ManyElSystems.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Many-Electron Systems</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="ghfundamentals.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="ghfundamentals.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment: Introduction to GitHub and GitHub Classroom</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-nuclear-schrodinger-equation-for-a-diatomic-molecule">11.1. Motivation: Nuclear Schrödinger Equation for a Diatomic Molecule</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-approximation-to-the-potential-energy-curve-and-the-rigid-rotor-approximation">11.1.1. Quadratic Approximation to the Potential Energy Curve and the Rigid Rotor Approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-isotope-effects-in-rotational-spectroscopy">11.1.1.1. 🖩 Exercise: Isotope Effects in Rotational Spectroscopy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">11.1.1.2. Answer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-harmonic-oscillator-hamiltonian">11.2. The Harmonic Oscillator Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-harmonic-oscillator-hamiltonian">11.2.1. Solutions to the Harmonic Oscillator Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-isotope-effects-in-vibrational-spectroscopy">11.2.2. 🖩 Exercise: Isotope Effects in Vibrational Spectroscopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">11.2.2.1. Solution:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-morse-oscillator">11.3. The Morse Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">11.3.1. Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.3.2. Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-compare-the-morse-and-harmonic-oscillators">11.3.3. 🖩 Exercise: Compare the Morse and Harmonic Oscillators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.3.3.1. Answer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrating-diatomic-molecules-in-an-external-field">11.4. Vibrating Diatomic Molecules  in an External Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.4.1. Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-for-a-polar-diatomic-molecule-in-an-external-uniform-electric-field">11.4.2. Hamiltonian for a Polar Diatomic Molecule in an External Uniform Electric Field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-harmonic-oscillator-in-a-uniform-external-electric-field">11.4.3. The Harmonic Oscillator in a Uniform External Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-perturbative-approach">11.4.3.1. Sketch of Perturbative Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution-by-completing-the-square">11.4.3.2. Exact Solution by Completing the Square</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-in-the-harmonic-oscillator-approximation">11.4.4. 🖩 Exercise: Model the HF molecule in a uniform electric field in the Harmonic Oscillator Approximation.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.4.4.1. Solution:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-morse-oscillator-in-an-external-electric-field">11.4.5. The Morse Oscillator in an External Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-model-the-hf-molecule-in-a-uniform-electric-field-using-the-morse-potential">11.4.5.1. 👩🏽‍💻 Exercise: Model the HF molecule in a uniform electric field using the Morse potential.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">11.5. 📚 References</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

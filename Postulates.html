@@ -1,50 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>7. Postulates of Quantum Mechanics &#8212; Quantum Chemistry</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,1090 +64,550 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Postulates';</script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="8. One-Electron Atoms" href="OneElectronAtoms.html" />
     <link rel="prev" title="6. Multi-dimensional Particle-in-a-Box" href="ParticleInMultiD.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="main_content.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quantum Chemistry</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="main_content.html">
-   Quantum Chemistry
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="documents/objectives.html">
-   Detailed Learning Objectives
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="documents/objectives.html">Detailed Learning Objectives</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Topics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="documents/GitHub.html">
-   1. GitHub
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ghfundamentals.html">
-     Practice: GitHub (Classroom)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="jupyter.html">
-   2. Basics of Jupyter, Python, and Programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">
-     Practice: Python, Jupyter, Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">
-     Practice: Google Colab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">
-     Practice: Wavefunction Normalization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
-     Extra practice: Computing Student Marks (&lt; 2022)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="History.html">
-   3. From Newton to Schrödinger
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">
-     Intro to QM video
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">
-     Intro to QM slides+notes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
-     Quiz: Demo w/ GH Classroom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
-     Quiz: QM Intro
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="SchrodingerEq.html">
-   4. The Schrödinger Equation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
-     Quiz: The Schrodinger Eq.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ParticleIn1DBox.html">
-   5. The Particle in a Box
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="x4_mocked.html">
-     5.24. Example notebook for Moments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
-     Practice: Moments of the P-in-Box
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
-     Practice: The Sudden Approximation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
-     Quiz: 1D P-in-Box
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ParticleInMultiD.html">
-   6. Particles confined in two and three dimensions
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   7. The Postulates of Quantum Mechanics
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
-     Quiz: Applying the Postulates
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="OneElectronAtoms.html">
-   8. 1-electron atoms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ApproximateMethods.html">
-   9. Approximate Methods
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ManyElSystems.html">
-   10. Many-electron systems: Structure and Spectroscopy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/2elatom.pdf">
-     2-electron atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/atomsshort.pdf">
-     Many-electron atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/PES.pdf">
-     The Born-Oppenheimer Approximation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf">
-     Molecules
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf">
-     Spectroscopy
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="HOandMorse.html">
-   11. Diatomic Molecules' Nuclear Schrodinger Equation
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ghfundamentals.html">
-   1. Intro to GitHub (Classroom)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="problems/JupyterPythonNumpy.html">
-   2. Intro to Python, Jupyter, Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tutorial_0.html">
-   3. Schrodinger's Cat Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial_1.html">
-   4. Wavefunction normalization Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">
-   5. Moments of the Particle-in-a-Box
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">
-   6. Sudden Changes in Box Length
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ipynb/Tutorial_0.html">Practice: Google Colab</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/ipynb/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Knowledge Tests
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">
-   1. Demo Q&amp;A
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/DMg3v70o">
-   2. QM Intro
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">
-   3. The Schrodinger Eq.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">
-   4. 1D P-in-Box
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">
-   5. Applying the Postulates
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/DMg3v70o">Quiz: QM Intro</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Extra credit
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="extracredit/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extracredit/programming.html">
-   Jupyter/Python/GitHub exercises
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">
-   Python/Numpy practice
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">Quiz: The Schrodinger Eq.</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Additional resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="documents/refs.html">
-   Reference Materials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">
-   Videos
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">5.24. Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/1Y48deKP">Quiz: 1D P-in-Box</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contributing and Using
- </span>
-</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">7. The Postulates of Quantum Mechanics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/UeStyjxT">Quiz: Applying the Postulates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="code_of_conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="contributing.html">
-   How to Contribute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="license.html">
-   License
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ghfundamentals.html">1. Intro to GitHub (Classroom)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/JupyterPythonNumpy.html">2. Intro to Python, Jupyter, Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial_0.html">3. Schrodinger's Cat Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_1.html">4. Wavefunction normalization Colab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">5. Moments of the Particle-in-a-Box</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">6. Sudden Changes in Box Length</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/d3E1lA4j">1. Demo Q&amp;A</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/DMg3v70o">2. QM Intro</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/yXuh6NJt">3. The Schrodinger Eq.</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/1Y48deKP">4. 1D P-in-Box</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/UeStyjxT">5. Applying the Postulates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra credit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="extracredit/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extracredit/programming.html">Jupyter/Python/GitHub exercises</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/2IRoHSuh">Python/Numpy practice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Postulates.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/QC-Edu/IntroQM2022"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FPostulates.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/Postulates.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/QC-Edu/IntroQM2022/master?urlpath=tree/book/Postulates.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/Postulates.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FPostulates.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Postulates.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Postulates of Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   7.1. 🥅 Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   7.2. Postulates of Quantum Mechanics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
-     7.2.1.
-     <strong>
-      Completeness
-     </strong>
-     : All Observable Properties of a System can be Inferred from its Wavefunction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
-     7.2.2.
-     <strong>
-      Schrodinger Postulate
-     </strong>
-     : The wavefunction is found by solving the Schrödinger equation.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
-     7.2.3.
-     <strong>
-      Born Postulate
-     </strong>
-     :
-     <span class="math notranslate nohighlight">
-      \(\left|\Psi(x,t) \right|^2\)
-     </span>
-     is the probability of observing the system at position
-     <span class="math notranslate nohighlight">
-      \(x\)
-     </span>
-     at time
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     .
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
-     7.2.4.
-     <strong>
-      Correspondence Principle
-     </strong>
-     : Every observable operator corresponds to a linear Hermitian operator.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system">
-   7.3. Completeness of
-   <span class="math notranslate nohighlight">
-    \(\Psi\)
-   </span>
-   as a descriptor of a quantum system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schrodinger-postulate">
-   7.4. Schrödinger Postulate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#born-postulate">
-   7.5. Born Postulate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#correspondence-principle-and-hermitian-operators">
-   7.6. Correspondence Principle and Hermitian Operators
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-principle">
-     7.6.1. Correspondence Principle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hermitian-operators">
-     7.6.2. Hermitian Operators
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
-       7.6.2.1. 📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-momentum-operator-is-hermitian">
-       7.6.2.2. 📝 Exercise: Show that the momentum operator is Hermitian.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#observable-values">
-     7.6.3. Observable Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
-       7.6.3.1. 📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis">
-     7.6.4. Eigenvectors of Hermitian Operators form a Complete Basis
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
-       7.6.4.1. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-values">
-     7.6.5. Expectation Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-equality-in-the-last-equation-is-true">
-       7.6.5.1. 📝 Exercise: Show that the equality in the last equation is true
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
-       7.6.5.2. 📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wavefunction-collapse">
-     7.6.6. Wavefunction “Collapse”
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-born-postulate-revisited">
-     7.6.7. The Born Postulate, revisited
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bra-ket-notation-and-the-analogy-to-linear-algebra">
-   7.7. Bra-Ket Notation and the Analogy to Linear Algebra
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-expansion-in-a-basis-set">
-   7.8. Application: Expansion in a Basis Set
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">
-     7.8.1. 📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
-     7.8.2. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-heisenberg-uncertainty-principle">
-   7.9. Application: Heisenberg Uncertainty Principle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-variational-principle">
-   7.10. Application: Variational Principle
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
-     7.10.1. 📝 Exercise: Show why the expectation value of
-     <span class="math notranslate nohighlight">
-      \(Q\)
-     </span>
-     is always a lower bound on the largest eigenvalue of
-     <span class="math notranslate nohighlight">
-      \(\hat{Q}\)
-     </span>
-     .
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">
-     7.10.2. 📝 Exercise: Demonstrate that the variational principle for
-     <span class="math notranslate nohighlight">
-      \(\hat{Q}\)
-     </span>
-     holds even if the wavefunction is not normalized.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   7.11. Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#self-reflection">
-   7.12. 🪞 Self-Reflection
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#thought-provoking-questions">
-   7.13. 🤔 Thought-Provoking Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knowledge-tests">
-   7.14. ❓ Knowledge Tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recapitulation">
-   7.15. 🔁 Recapitulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-up">
-   7.16. 🔮 Next Up…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   7.17. 📚 References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">7.1. 🥅 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. Postulates of Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">7.2.1. <strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">7.2.2. <strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">7.2.3. <strong>Born Postulate</strong>: <span class="math notranslate nohighlight">\(\left|\Psi(x,t) \right|^2\)</span> is the probability of observing the system at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">7.2.4. <strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system">7.3. Completeness of <span class="math notranslate nohighlight">\(\Psi\)</span> as a descriptor of a quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-postulate">7.4. Schrödinger Postulate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#born-postulate">7.5. Born Postulate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle-and-hermitian-operators">7.6. Correspondence Principle and Hermitian Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">7.6.1. Correspondence Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">7.6.2. Hermitian Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">7.6.2.1. 📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-momentum-operator-is-hermitian">7.6.2.2. 📝 Exercise: Show that the momentum operator is Hermitian.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observable-values">7.6.3. Observable Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">7.6.3.1. 📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis">7.6.4. Eigenvectors of Hermitian Operators form a Complete Basis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">7.6.4.1. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-values">7.6.5. Expectation Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-equality-in-the-last-equation-is-true">7.6.5.1. 📝 Exercise: Show that the equality in the last equation is true</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">7.6.5.2. 📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-collapse">7.6.6. Wavefunction “Collapse”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-postulate-revisited">7.6.7. The Born Postulate, revisited</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation-and-the-analogy-to-linear-algebra">7.7. Bra-Ket Notation and the Analogy to Linear Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-expansion-in-a-basis-set">7.8. Application: Expansion in a Basis Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">7.8.1. 📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">7.8.2. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-heisenberg-uncertainty-principle">7.9. Application: Heisenberg Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-variational-principle">7.10. Application: Variational Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">7.10.1. 📝 Exercise: Show why the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is always a lower bound on the largest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">7.10.2. 📝 Exercise: Demonstrate that the variational principle for <span class="math notranslate nohighlight">\(\hat{Q}\)</span> holds even if the wavefunction is not normalized.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.11. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">7.12. 🪞 Self-Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">7.13. 🤔 Thought-Provoking Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-tests">7.14. ❓ Knowledge Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">7.15. 🔁 Recapitulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">7.16. 🔮 Next Up…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">7.17. 📚 References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Postulates of Quantum Mechanics</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   7.1. 🥅 Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   7.2. Postulates of Quantum Mechanics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
-     7.2.1.
-     <strong>
-      Completeness
-     </strong>
-     : All Observable Properties of a System can be Inferred from its Wavefunction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
-     7.2.2.
-     <strong>
-      Schrodinger Postulate
-     </strong>
-     : The wavefunction is found by solving the Schrödinger equation.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
-     7.2.3.
-     <strong>
-      Born Postulate
-     </strong>
-     :
-     <span class="math notranslate nohighlight">
-      \(\left|\Psi(x,t) \right|^2\)
-     </span>
-     is the probability of observing the system at position
-     <span class="math notranslate nohighlight">
-      \(x\)
-     </span>
-     at time
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     .
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
-     7.2.4.
-     <strong>
-      Correspondence Principle
-     </strong>
-     : Every observable operator corresponds to a linear Hermitian operator.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system">
-   7.3. Completeness of
-   <span class="math notranslate nohighlight">
-    \(\Psi\)
-   </span>
-   as a descriptor of a quantum system
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schrodinger-postulate">
-   7.4. Schrödinger Postulate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#born-postulate">
-   7.5. Born Postulate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#correspondence-principle-and-hermitian-operators">
-   7.6. Correspondence Principle and Hermitian Operators
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-principle">
-     7.6.1. Correspondence Principle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hermitian-operators">
-     7.6.2. Hermitian Operators
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
-       7.6.2.1. 📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-momentum-operator-is-hermitian">
-       7.6.2.2. 📝 Exercise: Show that the momentum operator is Hermitian.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#observable-values">
-     7.6.3. Observable Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
-       7.6.3.1. 📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis">
-     7.6.4. Eigenvectors of Hermitian Operators form a Complete Basis
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
-       7.6.4.1. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-values">
-     7.6.5. Expectation Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-equality-in-the-last-equation-is-true">
-       7.6.5.1. 📝 Exercise: Show that the equality in the last equation is true
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
-       7.6.5.2. 📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wavefunction-collapse">
-     7.6.6. Wavefunction “Collapse”
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-born-postulate-revisited">
-     7.6.7. The Born Postulate, revisited
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bra-ket-notation-and-the-analogy-to-linear-algebra">
-   7.7. Bra-Ket Notation and the Analogy to Linear Algebra
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-expansion-in-a-basis-set">
-   7.8. Application: Expansion in a Basis Set
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">
-     7.8.1. 📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
-     7.8.2. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-heisenberg-uncertainty-principle">
-   7.9. Application: Heisenberg Uncertainty Principle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-variational-principle">
-   7.10. Application: Variational Principle
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
-     7.10.1. 📝 Exercise: Show why the expectation value of
-     <span class="math notranslate nohighlight">
-      \(Q\)
-     </span>
-     is always a lower bound on the largest eigenvalue of
-     <span class="math notranslate nohighlight">
-      \(\hat{Q}\)
-     </span>
-     .
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">
-     7.10.2. 📝 Exercise: Demonstrate that the variational principle for
-     <span class="math notranslate nohighlight">
-      \(\hat{Q}\)
-     </span>
-     holds even if the wavefunction is not normalized.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   7.11. Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#self-reflection">
-   7.12. 🪞 Self-Reflection
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#thought-provoking-questions">
-   7.13. 🤔 Thought-Provoking Questions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#knowledge-tests">
-   7.14. ❓ Knowledge Tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recapitulation">
-   7.15. 🔁 Recapitulation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-up">
-   7.16. 🔮 Next Up…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   7.17. 📚 References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Solvay Conference" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SolvayBerny.jfif?raw=true" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="postulates-of-quantum-mechanics">
-<h1><span class="section-number">7. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#postulates-of-quantum-mechanics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-objectives">
-<h2><span class="section-number">7.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="postulates-of-quantum-mechanics">
+<h1><span class="section-number">7. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#postulates-of-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+<section id="learning-objectives">
+<h2><span class="section-number">7.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>List and Discuss the Postulates of Quantum Mechanics.</p></li>
 <li><p>Use Bra- Ket- notation.</p></li>
 <li><p>Learn how to manipulate quantum-mechanical operators.</p></li>
 <li><p>Understand the Heisenberg Uncertainty Principle.</p></li>
 </ul>
-</div>
-<div class="section" id="id1">
-<h2><span class="section-number">7.2. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
-<h3><span class="section-number">7.2.1. </span><strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction<a class="headerlink" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h2><span class="section-number">7.2. </span>Postulates of Quantum Mechanics<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">
+<h3><span class="section-number">7.2.1. </span><strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction<a class="headerlink" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\Psi \rightarrow \text{everything}\)</span></p>
 </div></blockquote>
-</div>
-<div class="section" id="schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
-<h3><span class="section-number">7.2.2. </span><strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.<a class="headerlink" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">
+<h3><span class="section-number">7.2.2. </span><strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.<a class="headerlink" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\hat{H}\Psi(x,t) = i \hbar \dot{\Psi}\)</span> or <span class="math notranslate nohighlight">\(\hat{H}\Psi = E \Psi\)</span>.</p>
 <p>Relativitistic quantum mechanics (the Dirac equation) is needed when particles are moving close to the speed of light</p>
 </div></blockquote>
-</div>
-<div class="section" id="born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
-<h3><span class="section-number">7.2.3. </span><strong>Born Postulate</strong>: <span class="math notranslate nohighlight">\(\left|\Psi(x,t) \right|^2\)</span> is the probability of observing the system at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.<a class="headerlink" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">
+<h3><span class="section-number">7.2.3. </span><strong>Born Postulate</strong>: <span class="math notranslate nohighlight">\(\left|\Psi(x,t) \right|^2\)</span> is the probability of observing the system at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.<a class="headerlink" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> is the “square root of reality”.</p>
 </div></blockquote>
-</div>
-<div class="section" id="correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
-<h3><span class="section-number">7.2.4. </span><strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.<a class="headerlink" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">
+<h3><span class="section-number">7.2.4. </span><strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.<a class="headerlink" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>The analogue of a classical measurement is evaluating the expectation value of a suitable Hermitian operator. The only possible values that can be obtained from a measurement are the eigenvalues of the corresponding Hermitian operator.</p>
 </div></blockquote>
 <p>We will now elaborate on each of these key postulates. Note that <a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/intro_estruc/node4.html">some</a> <a class="reference external" href="http://web.mit.edu/8.05/handouts/jaffe1.pdf">people</a> list <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics">more</a> postulates. There is a some choice in how one groups the information in the postulates together, and I prefer to group the statements about Hermitian operators together.</p>
-</div>
-</div>
-<div class="section" id="completeness-of-psi-as-a-descriptor-of-a-quantum-system">
-<h2><span class="section-number">7.3. </span>Completeness of <span class="math notranslate nohighlight">\(\Psi\)</span> as a descriptor of a quantum system<a class="headerlink" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="completeness-of-psi-as-a-descriptor-of-a-quantum-system">
+<h2><span class="section-number">7.3. </span>Completeness of <span class="math notranslate nohighlight">\(\Psi\)</span> as a descriptor of a quantum system<a class="headerlink" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system" title="Permalink to this heading">#</a></h2>
 <p>The wavefunction is sufficient to determine all observable information about a quantum system. This does not mean that all information about a system can be observed. For example, while every classical observable corresponds to a Hermitian operator, it can be impossible to determine the values of multiple classical observables simultaneously.</p>
 <p>As is often true, there are subtleties related to this postulate. In practice, we often use a density matrix, rather than a wavefunction, to describe a quantum system. A density matrix is just a mathematical way to capture a mixture of different quantum states, and can be written as,</p>
 <div class="math notranslate nohighlight">
@@ -1149,21 +620,21 @@ const thebe_selector_output = ".output, .cell_output"
 1 = \sum_{k=1}^{\infty} p_k \qquad 0 \le p_k \le 1
 \]</div>
 <p>As with the wavefunction, the normalization of the density matrix is really only a convention. Any bounded (i.e. normalizable) positive semidefinite Hermitian operator can be interpreted as a density matrix. Bounded, positive semidefinite, non-Hermitian operators can be interpreted as transition density matrices, and are the mathematical representation for a change in a quantum state.</p>
-</div>
-<div class="section" id="schrodinger-postulate">
-<h2><span class="section-number">7.4. </span>Schrödinger Postulate<a class="headerlink" href="#schrodinger-postulate" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="schrodinger-postulate">
+<h2><span class="section-number">7.4. </span>Schrödinger Postulate<a class="headerlink" href="#schrodinger-postulate" title="Permalink to this heading">#</a></h2>
 <p>The wavefunction (or density matrix) is the central object in quantum mechanics. It is found by solving the Schrödinger equation in its time-independent or time-dependent form. For relativisitic particles, one needs to instead consider the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_equation">Dirac equation</a>, and for relativisitic particles interacting with light, one needs to consider <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_electrodynamics">quantum electrodynamics</a>. If one needs to go beyond this (e.g., to include <span class="math notranslate nohighlight">\(\beta\)</span> decay of nuclei), then one needs to extend even further, eventually all the way to the <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model">standard model</a>.</p>
 <p>For the purposes of this course, the Schrödinger equation is adequate. <a class="reference external" href="https://en.wikipedia.org/wiki/Relativistic_quantum_chemistry#Periodic-table_deviations">Relativisitic effects</a> are <a class="reference external" href="https://www.annualreviews.org/doi/10.1146/annurev-physchem-032511-143755">important</a> in <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.3702628">chemistry</a>: it is not uncommon to consider that corrections to the nonrelativistic Schrödinger equation become important for molecules containing elements heavier than Zinc (Z=30) or Krypton (Z=36). However, even actinide compounds can, <a class="reference external" href="https://en.wikipedia.org/wiki/Foldy%E2%80%93Wouthuysen_transformation">by mathematical trickery</a>, be treated by embellishing the Schrödinger equation in most cases. This means that for the purposes of understanding the structures of molecules and materials, their stability and thermodynamic properties, and the structural and chemical transformations between materials, the (relativistically-corrected) Schrödinger equation is used.</p>
-</div>
-<div class="section" id="born-postulate">
-<h2><span class="section-number">7.5. </span>Born Postulate<a class="headerlink" href="#born-postulate" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="born-postulate">
+<h2><span class="section-number">7.5. </span>Born Postulate<a class="headerlink" href="#born-postulate" title="Permalink to this heading">#</a></h2>
 <p>Colloquially, the Born postulate states that <em>the wavefunction is the square root of reality</em>. The wavefunction is a mathematical artifice, and is not directly observable. It’s complex square is observable (<span class="math notranslate nohighlight">\(|\Psi(x,t)|^2\)</span> indicates the probability of finding the quantum system at the location <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>) and the overlap (interference patterns) between two wavefunctions (e.g., the system’s wavefunction and <a class="reference external" href="https://www.nature.com/articles/ncomms5156">light</a> or another <a class="reference external" href="https://www.nature.com/articles/nature03183">electron</a>) can also be observed.</p>
-</div>
-<div class="section" id="correspondence-principle-and-hermitian-operators">
-<h2><span class="section-number">7.6. </span>Correspondence Principle and Hermitian Operators<a class="headerlink" href="#correspondence-principle-and-hermitian-operators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="correspondence-principle-and-hermitian-operators">
+<h2><span class="section-number">7.6. </span>Correspondence Principle and Hermitian Operators<a class="headerlink" href="#correspondence-principle-and-hermitian-operators" title="Permalink to this heading">#</a></h2>
 <p>The first two postulate of quantum mechanics indicate that the wavefunction is the conveyor of all information about a quantum system and how the wavefunction is to be determined. The remaining postulate(s) all indicate that information about a quantum system is deduced from the action of Hermitian operators.</p>
-<div class="section" id="correspondence-principle">
-<h3><span class="section-number">7.6.1. </span>Correspondence Principle<a class="headerlink" href="#correspondence-principle" title="Permalink to this headline">¶</a></h3>
+<section id="correspondence-principle">
+<h3><span class="section-number">7.6.1. </span>Correspondence Principle<a class="headerlink" href="#correspondence-principle" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Correspondence_principle">correspondence principle</a> says that to every classical observable, there exists a Hermitian operator. This Hermitian operator provides the quantum manifestation of that classical observable. In the classical limit (where Planck’s constant approaches zero, <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>), the quantum mechanical operator and the classical observable coincide. For example, we have used that the quantum mechanical operator for the momentum of a particle moving in one dimension is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1184,9 +655,9 @@ f(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N;\mathbf{p}_1,\mathbf{p}_2,\dots,
 <li><p>some classical observables do not have a unique quantum-mechanical analogue.</p></li>
 <li><p>some inherently quantum-mechanical concepts do not have a classical analogue, nor do they have a unique mathematical representation within quantum mechanics.</p></li>
 </ul>
-</div>
-<div class="section" id="hermitian-operators">
-<h3><span class="section-number">7.6.2. </span>Hermitian Operators<a class="headerlink" href="#hermitian-operators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hermitian-operators">
+<h3><span class="section-number">7.6.2. </span>Hermitian Operators<a class="headerlink" href="#hermitian-operators" title="Permalink to this heading">#</a></h3>
 <p>Quantum-mechanical observables correspond to Hermitian operators. An operator, <span class="math notranslate nohighlight">\(\hat{Q}\)</span> is Hermitian if for any wavefunctions <span class="math notranslate nohighlight">\(\psi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(x)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -1198,8 +669,8 @@ f(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N;\mathbf{p}_1,\mathbf{p}_2,\dots,
 <blockquote>
 <div><p><strong>Note:</strong> Quantum-mechanical observables do not need to be Hermitian; it is sufficient for them to be <a class="reference external" href="https://en.wikipedia.org/wiki/Self-adjoint_operator">essentially self-adjoint</a>, which is a somewhat weaker concept. While this is not quite a mere mathematical nuance (e.g., the molecular Hamiltonian is essentially self-adjoint), it does not affect the way we use quantum mechanics as a computational tool within chemistry.</p>
 </div></blockquote>
-<div class="section" id="exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
-<h4><span class="section-number">7.6.2.1. </span>📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.<a class="headerlink" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">
+<h4><span class="section-number">7.6.2.1. </span>📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.<a class="headerlink" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition" title="Permalink to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
 \int \left( \Psi(x) \right)^* \hat{Q} \Psi(x) dx 
@@ -1208,28 +679,28 @@ f(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N;\mathbf{p}_1,\mathbf{p}_2,\dots,
 <blockquote>
 <div><p>Hint: Choose <span class="math notranslate nohighlight">\(\Psi(x) = \psi(x) + i \phi(x)\)</span>.</p>
 </div></blockquote>
-</div>
-<div class="section" id="exercise-show-that-the-momentum-operator-is-hermitian">
-<h4><span class="section-number">7.6.2.2. </span>📝 Exercise: Show that the momentum operator is Hermitian.<a class="headerlink" href="#exercise-show-that-the-momentum-operator-is-hermitian" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="exercise-show-that-the-momentum-operator-is-hermitian">
+<h4><span class="section-number">7.6.2.2. </span>📝 Exercise: Show that the momentum operator is Hermitian.<a class="headerlink" href="#exercise-show-that-the-momentum-operator-is-hermitian" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><p>Hint: use integration by parts and assume the wavefunction and its derivatives are zero at <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="observable-values">
-<h3><span class="section-number">7.6.3. </span>Observable Values<a class="headerlink" href="#observable-values" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="observable-values">
+<h3><span class="section-number">7.6.3. </span>Observable Values<a class="headerlink" href="#observable-values" title="Permalink to this heading">#</a></h3>
 <p><img alt="Schrodinger's cat" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Schrodinger_cat_in_box.jpg" />
 In an experimental measurement of a quantum-mechanical observable, the measured value is always one of the eigenvalues of the Hermitian operator.</p>
 <p>Recall that Hermitian operators have real eigenvalues. This explains why Hermitian operators are so central to quantum mechanics: the result of an experimental measurement must be a real number. The “chunkiness” inherent in quantum mechanics emerges from the fact one cannot observe an arbitrary value for the observable, but only the discrete eigenvalues of the corresponding quantum-mechanical operator. Ergo, <a class="reference external" href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat">Schrödinger’s cat</a> can be alive or dead, but not half-dead.</p>
-<div class="section" id="exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
-<h4><span class="section-number">7.6.3.1. </span>📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.<a class="headerlink" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">
+<h4><span class="section-number">7.6.3.1. </span>📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.<a class="headerlink" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><p>Hint: Use the Hermitian property of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> to evaluate <span class="math notranslate nohighlight">\(\int \left(\psi_k(x)\right)^* \hat{Q} \psi_k(x) dx\)</span> in two different ways.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="eigenvectors-of-hermitian-operators-form-a-complete-basis">
-<h3><span class="section-number">7.6.4. </span>Eigenvectors of Hermitian Operators form a Complete Basis<a class="headerlink" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="eigenvectors-of-hermitian-operators-form-a-complete-basis">
+<h3><span class="section-number">7.6.4. </span>Eigenvectors of Hermitian Operators form a Complete Basis<a class="headerlink" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis" title="Permalink to this heading">#</a></h3>
 <p>Denote the eigenvectors and eigenvalues of a Hermitian operator in the obvious way,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1267,15 +738,15 @@ In an experimental measurement of a quantum-mechanical observable, the measured 
 \end{cases}
 \end{split}\]</div>
 <p>denotes the <a class="reference external" href="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</a> symbol. The Kronecker delta symbol is the analogue of the identity matrix (extended to infinite dimensions).</p>
-<div class="section" id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
-<h4><span class="section-number">7.6.4.1. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">
+<h4><span class="section-number">7.6.4.1. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><p>Hint: Use the Hermitian property of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> to evaluate <span class="math notranslate nohighlight">\(\int \left(\psi_k(x)\right)^* \hat{Q} \psi_l(x) dx\)</span> in two different ways.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="expectation-values">
-<h3><span class="section-number">7.6.5. </span>Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="expectation-values">
+<h3><span class="section-number">7.6.5. </span>Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this heading">#</a></h3>
 <p>When we expand a wavefunction in the eigenfunctions of a Hermitian operator, we say it is a superposition of the eigenstates of that operator.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1296,14 +767,14 @@ In an experimental measurement of a quantum-mechanical observable, the measured 
 \[
 \left&lt;Q \right&gt; = \frac{\sum_{k=0}^{k=\infty} |c_k|^2 q_k}{\sum_{k=0}^{k=\infty} |c_k|^2} = \frac{\int \left( \Psi(x) \right)^* \hat{Q} \Psi(x) dx}{\int \left( \Psi(x) \right)^* \Psi(x) dx}
 \]</div>
-<div class="section" id="exercise-show-that-the-equality-in-the-last-equation-is-true">
-<h4><span class="section-number">7.6.5.1. </span>📝 Exercise: Show that the equality in the last equation is true<a class="headerlink" href="#exercise-show-that-the-equality-in-the-last-equation-is-true" title="Permalink to this headline">¶</a></h4>
+<section id="exercise-show-that-the-equality-in-the-last-equation-is-true">
+<h4><span class="section-number">7.6.5.1. </span>📝 Exercise: Show that the equality in the last equation is true<a class="headerlink" href="#exercise-show-that-the-equality-in-the-last-equation-is-true" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><p>Hint: expand the wavefunction in the eigenbasis, use the eigenvalue relation and the orthonormality of the eigenvectors.</p>
 </div></blockquote>
-</div>
-<div class="section" id="exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
-<h4><span class="section-number">7.6.5.2. </span>📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.<a class="headerlink" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">
+<h4><span class="section-number">7.6.5.2. </span>📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.<a class="headerlink" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><p>It is OK (but not essential) to assume that you are interested in the Laplacian operator in 1 dimension, <span class="math notranslate nohighlight">\(\nabla^2 = \frac{d^2}{dx^2}\)</span>. When we say that <span class="math notranslate nohighlight">\(\nabla^2\)</span> is negative definite, we mean that for <em>any</em> <span class="math notranslate nohighlight">\(\Psi\)</span>, it is <em>always</em> true that
 $<span class="math notranslate nohighlight">\(
@@ -1312,10 +783,10 @@ $<span class="math notranslate nohighlight">\(
 Note: You may assume that the wavefunction, and its first first and second derivatives, vanish at the ends of the region of integration. However, there are also ways to answer these questions without explicitly invoking those assumptions.
 <a class="reference internal" href="documents/LaplacianProperties.html"><span class="doc std std-doc">Solution.</span></a></p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="wavefunction-collapse">
-<h3><span class="section-number">7.6.6. </span>Wavefunction “Collapse”<a class="headerlink" href="#wavefunction-collapse" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="wavefunction-collapse">
+<h3><span class="section-number">7.6.6. </span>Wavefunction “Collapse”<a class="headerlink" href="#wavefunction-collapse" title="Permalink to this heading">#</a></h3>
 <p>Immediately after performing a measurement of <span class="math notranslate nohighlight">\(Q\)</span> for the system defined by <span class="math notranslate nohighlight">\(\Psi(x)\)</span>, one knows definitively that the state of the system is described by <span class="math notranslate nohighlight">\(\Psi(x) = \psi_k(x)\)</span>, with eigenvalue <span class="math notranslate nohighlight">\(q_k\)</span>. This seems weird, as the wavefunction seems to have changed abruptly from <span class="math notranslate nohighlight">\(\Psi(x)\)</span> to <span class="math notranslate nohighlight">\(\psi_k(x)\)</span> <em>because</em> of the measurement. This would somehow imply that if the wavefunction for Schrödinger’s cat were:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1329,9 +800,9 @@ Note: You may assume that the wavefunction, and its first first and second deriv
 \]</div>
 <p>I guess my home is only .01% clean (up to my mother’s standards, at least).</p>
 <p>The sudden change in the wavefunction upon observation is called <a class="reference external" href="https://en.wikipedia.org/wiki/Wave_function_collapse">wavefunction collapse</a>. While the reality of wavefunction collapse in a physical sense is irresolvable, it is the mathematical description of what happens in a quantum system, and gives rise to strange quantum effects. If you find such things interesting, you may be interested to know that the aphorism that “a watched pot never boils” is <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_Zeno_effect">justifiable</a>, quantum-mechanically.</p>
-</div>
-<div class="section" id="the-born-postulate-revisited">
-<h3><span class="section-number">7.6.7. </span>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-born-postulate-revisited">
+<h3><span class="section-number">7.6.7. </span>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Permalink to this heading">#</a></h3>
 <p>While the Born postulate is usually presented separately, it is in fact a corollary of the fact that physical observables are represented by Hermitian operators. The Hermitian operator that represents a particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is <span class="math notranslate nohighlight">\(\delta(x-x_0)\)</span>, where the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</a> is effectively defined by its so-called <em>sifting property</em>.</p>
 <blockquote>
 <div><p><strong>Sifting property of the Dirac Delta function:</strong> Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a bounded function. Then
@@ -1352,10 +823,10 @@ $<span class="math notranslate nohighlight">\(
 \)</span>$</p>
 </div></blockquote>
 <p>This can be deduced directly from the definition, since <span class="math notranslate nohighlight">\(\delta_{jk}\)</span> is one when <span class="math notranslate nohighlight">\(j=k\)</span>, and zero otherwise.</p>
-</div>
-</div>
-<div class="section" id="bra-ket-notation-and-the-analogy-to-linear-algebra">
-<h2><span class="section-number">7.7. </span>Bra-Ket Notation and the Analogy to Linear Algebra<a class="headerlink" href="#bra-ket-notation-and-the-analogy-to-linear-algebra" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="bra-ket-notation-and-the-analogy-to-linear-algebra">
+<h2><span class="section-number">7.7. </span>Bra-Ket Notation and the Analogy to Linear Algebra<a class="headerlink" href="#bra-ket-notation-and-the-analogy-to-linear-algebra" title="Permalink to this heading">#</a></h2>
 <p>At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for <a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac bra-ket notation</a>. A rather thorough explanation of this notation is available in my <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/LinAlgAnalogy.pdf">pdf notes</a>, so I am only presenting the elements here. The basic idea is that a wavefunction is written as a <em>ket</em>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1386,9 +857,9 @@ $<span class="math notranslate nohighlight">\(
 \[
 \langle \Phi | \hat{Q} |\Psi \rangle = \int \left(\Phi(x)\right)^* \hat{Q} \Psi(x) dx
 \]</div>
-</div>
-<div class="section" id="application-expansion-in-a-basis-set">
-<h2><span class="section-number">7.8. </span>Application: Expansion in a Basis Set<a class="headerlink" href="#application-expansion-in-a-basis-set" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="application-expansion-in-a-basis-set">
+<h2><span class="section-number">7.8. </span>Application: Expansion in a Basis Set<a class="headerlink" href="#application-expansion-in-a-basis-set" title="Permalink to this heading">#</a></h2>
 <p>A set of functions, <span class="math notranslate nohighlight">\(\{\phi_k(x) \}\)</span> is said to be a complete basis set if any wavefunction can be written exactly as a linear combination of these basis functions,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1431,22 +902,22 @@ $<span class="math notranslate nohighlight">\(
 c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
 \]</div>
 <p><em>This is the equation for the expansion coefficient of a wavefunction in an orthonormal basis.</em></p>
-<div class="section" id="exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">
-<h3><span class="section-number">7.8.1. </span>📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:<a class="headerlink" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">
+<h3><span class="section-number">7.8.1. </span>📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:<a class="headerlink" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \sum_{k=0}^{\infty} c_k \int \left( \phi_j(x) \right)^* \phi_k(x) \, dx  = \int \left( \phi_j(x) \right)^* \Psi(x) dx 
 \]</div>
-</div>
-<div class="section" id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
-<h3><span class="section-number">7.8.2. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">
+<h3><span class="section-number">7.8.2. </span>📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.<a class="headerlink" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Hint: Assume the eigenvectors associated with a given eigenvalue are orthogonal; show that you do not have to choose them to be orthogonal. Then, for the (more difficult) converse, assume the eigenvectors associated with a given eigenvalue are not orthogonal, and construct a linear transformation of them that is orthogonal.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="application-heisenberg-uncertainty-principle">
-<h2><span class="section-number">7.9. </span>Application: Heisenberg Uncertainty Principle<a class="headerlink" href="#application-heisenberg-uncertainty-principle" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="application-heisenberg-uncertainty-principle">
+<h2><span class="section-number">7.9. </span>Application: Heisenberg Uncertainty Principle<a class="headerlink" href="#application-heisenberg-uncertainty-principle" title="Permalink to this heading">#</a></h2>
 <p>We have already alluded to the <a class="reference external" href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg Uncertainty Principle</a>, which states that some quantum-mechanical properties cannot be observed simultaneously. To provide a mathematical description of the Heisenberg Uncertainty Principle, we need to define what it means for operators to commute and anticommute.</p>
 <blockquote>
 <div><p>Two operators, <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{B}\)</span>, are said to <em>commute</em> if for any wavefunction <span class="math notranslate nohighlight">\(\Psi(x)\)</span>,</p>
@@ -1484,9 +955,9 @@ c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx
 - \langle \Psi |\hat{A}| \Psi \rangle \langle \Psi |\hat{B}| \Psi \rangle \right|^2 + \tfrac{1}{4} \left|\langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
 \]</div>
 <p>A detailed derivation of these uncertainty principles is provided as a <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Heisenberg.pdf">pdf</a>.</p>
-</div>
-<div class="section" id="application-variational-principle">
-<h2><span class="section-number">7.10. </span>Application: Variational Principle<a class="headerlink" href="#application-variational-principle" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="application-variational-principle">
+<h2><span class="section-number">7.10. </span>Application: Variational Principle<a class="headerlink" href="#application-variational-principle" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p><a class="reference external" href="https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)"><strong>Quantum-Mechanical Variational Principle</strong></a>: Given a wavefunction <span class="math notranslate nohighlight">\(\Psi(x)\)</span> and a bounded Hermitian operator <span class="math notranslate nohighlight">\(\hat{Q}\)</span>, the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is no less than the lowest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span> and no greater than the largest eigenvalue.</p>
 </div></blockquote>
@@ -1532,15 +1003,15 @@ c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx
 \min_\kappa \langle \Psi(\kappa) |\hat{H} | \Psi(\kappa) \rangle
 \]</div>
 <p>The variational principle is one of the most important ways we approximate the energy and wavefunction of quantum systems.</p>
-<div class="section" id="exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
-<h3><span class="section-number">7.10.1. </span>📝 Exercise: Show why the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is always a lower bound on the largest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>.<a class="headerlink" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">
-<h3><span class="section-number">7.10.2. </span>📝 Exercise: Demonstrate that the variational principle for <span class="math notranslate nohighlight">\(\hat{Q}\)</span> holds even if the wavefunction is not normalized.<a class="headerlink" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="summary">
-<h2><span class="section-number">7.11. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<section id="exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">
+<h3><span class="section-number">7.10.1. </span>📝 Exercise: Show why the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is always a lower bound on the largest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>.<a class="headerlink" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">
+<h3><span class="section-number">7.10.2. </span>📝 Exercise: Demonstrate that the variational principle for <span class="math notranslate nohighlight">\(\hat{Q}\)</span> holds even if the wavefunction is not normalized.<a class="headerlink" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="summary">
+<h2><span class="section-number">7.11. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>Based on the preceding, the key postulates of quantum mechanics are</p>
 <ul class="simple">
 <li><p>the Schrödinger equation determines the wavefunction</p></li>
@@ -1548,17 +1019,17 @@ c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx
 <li><p>observable properties of a quantum system, and their observable values, correspond to Hermitian operators
 You should be able to apply, and expand upon, these principles at length.</p></li>
 </ul>
-</div>
-<div class="section" id="self-reflection">
-<h2><span class="section-number">7.12. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="self-reflection">
+<h2><span class="section-number">7.12. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Try to come up with your own version of a Schrödinger’s cat paradox. Have <a class="reference external" href="https://www.straightdope.com/21341296/the-story-of-schroedinger-s-cat-an-epic-poem">fun with it</a>.</p></li>
 <li><p>What is an example of a classical observable that is not a quantum-mechanical observable?</p></li>
 <li><p>Give an example of two quantum-mechanical operators that commute. What about two operators that don’t commute?</p></li>
 </ul>
-</div>
-<div class="section" id="thought-provoking-questions">
-<h2><span class="section-number">7.13. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="thought-provoking-questions">
+<h2><span class="section-number">7.13. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Can you imagine a case where the Hermitian nature of the Hamiltonian operator would be useful?</p></li>
 <li><p>Can you imagine a way to use the variational principle in practice?</p></li>
@@ -1568,15 +1039,15 @@ You should be able to apply, and expand upon, these principles at length.</p></l
 \[
 \min_\Psi \langle \Psi - \psi_0 | \Psi - \psi_0 \rangle
 \]</div>
-</div>
-<div class="section" id="knowledge-tests">
-<h2><span class="section-number">7.14. </span>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="knowledge-tests">
+<h2><span class="section-number">7.14. </span>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Quantum-mechanical mathematical postulates, techniques, and notation. <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">GitHub Classroom Link</a></p></li>
 </ul>
-</div>
-<div class="section" id="recapitulation">
-<h2><span class="section-number">7.15. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="recapitulation">
+<h2><span class="section-number">7.15. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What are the postulates of quantum mechanics?</p></li>
 <li><p>Why is it important that quantum-mechanical observables correspond to Hermitian operators?</p></li>
@@ -1585,15 +1056,15 @@ You should be able to apply, and expand upon, these principles at length.</p></l
 <li><p>List all the Hermitian operators you know.</p></li>
 <li><p>What do the Dirac and Kronecker delta notations mean?</p></li>
 </ul>
-</div>
-<div class="section" id="next-up">
-<h2><span class="section-number">7.16. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="next-up">
+<h2><span class="section-number">7.16. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Multielectron systems</p></li>
 </ul>
-</div>
-<div class="section" id="references">
-<h2><span class="section-number">7.17. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2><span class="section-number">7.17. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
@@ -1606,10 +1077,10 @@ You should be able to apply, and expand upon, these principles at length.</p></l
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics#Postulates_of_quantum_mechanics">Postulates of Quantum Mechanics</a></p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_theory#Spectral_theorem_and_Rayleigh_quotient">Variational Principle</a></p></li>
 </ul>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1623,7 +1094,7 @@ You should be able to apply, and expand upon, these principles at length.</p></l
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1631,44 +1102,155 @@ You should be able to apply, and expand upon, these principles at length.</p></l
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ParticleInMultiD.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Multi-dimensional Particle-in-a-Box</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ParticleInMultiD.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Multi-dimensional Particle-in-a-Box</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="OneElectronAtoms.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="OneElectronAtoms.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">8. </span>One-Electron Atoms</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">7.1. 🥅 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. Postulates of Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completeness-all-observable-properties-of-a-system-can-be-inferred-from-its-wavefunction">7.2.1. <strong>Completeness</strong>: All Observable Properties of a System can be Inferred from its Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-postulate-the-wavefunction-is-found-by-solving-the-schrodinger-equation">7.2.2. <strong>Schrodinger Postulate</strong>: The wavefunction is found by solving the Schrödinger equation.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#born-postulate-left-psi-x-t-right-2-is-the-probability-of-observing-the-system-at-position-x-at-time-t">7.2.3. <strong>Born Postulate</strong>: <span class="math notranslate nohighlight">\(\left|\Psi(x,t) \right|^2\)</span> is the probability of observing the system at position <span class="math notranslate nohighlight">\(x\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle-every-observable-operator-corresponds-to-a-linear-hermitian-operator">7.2.4. <strong>Correspondence Principle</strong>: Every observable operator corresponds to a linear Hermitian operator.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completeness-of-psi-as-a-descriptor-of-a-quantum-system">7.3. Completeness of <span class="math notranslate nohighlight">\(\Psi\)</span> as a descriptor of a quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-postulate">7.4. Schrödinger Postulate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#born-postulate">7.5. Born Postulate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle-and-hermitian-operators">7.6. Correspondence Principle and Hermitian Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">7.6.1. Correspondence Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">7.6.2. Hermitian Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-an-alternative-definition-for-an-hermitian-operator-is-below-show-that-this-is-equivalent-to-the-preceding-definition">7.6.2.1. 📝 Exercise: An alternative definition for an Hermitian operator is below. Show that this is equivalent to the preceding definition.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-momentum-operator-is-hermitian">7.6.2.2. 📝 Exercise: Show that the momentum operator is Hermitian.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observable-values">7.6.3. Observable Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvalues-of-hermitian-operators-are-always-real">7.6.3.1. 📝 Exercise: Show that the eigenvalues of Hermitian operators are always real.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-of-hermitian-operators-form-a-complete-basis">7.6.4. Eigenvectors of Hermitian Operators form a Complete Basis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-different-eigenvalues-are-always-orthogonal">7.6.4.1. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-values">7.6.5. Expectation Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-equality-in-the-last-equation-is-true">7.6.5.1. 📝 Exercise: Show that the equality in the last equation is true</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-laplacian-is-a-linear-hermitian-negative-definite-operator">7.6.5.2. 📝 Exercise: Show that the Laplacian is a linear, Hermitian, negative-definite operator.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-collapse">7.6.6. Wavefunction “Collapse”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-postulate-revisited">7.6.7. The Born Postulate, revisited</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation-and-the-analogy-to-linear-algebra">7.7. Bra-Ket Notation and the Analogy to Linear Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-expansion-in-a-basis-set">7.8. Application: Expansion in a Basis Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-expansion-coefficient-for-a-wavefunction-in-a-nonorthogonal-basis-can-be-determined-by-solving-the-system-of-linear-equations">7.8.1. 📝 Exercise: Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving the system of linear equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-that-the-eigenvectors-of-a-hermitian-operator-with-the-same-eigenvalue-can-always-be-chosen-to-be-orthogonal-but-do-not-have-to-be">7.8.2. 📝 Exercise: Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-heisenberg-uncertainty-principle">7.9. Application: Heisenberg Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-variational-principle">7.10. Application: Variational Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-show-why-the-expectation-value-of-q-is-always-a-lower-bound-on-the-largest-eigenvalue-of-hat-q">7.10.1. 📝 Exercise: Show why the expectation value of <span class="math notranslate nohighlight">\(Q\)</span> is always a lower bound on the largest eigenvalue of <span class="math notranslate nohighlight">\(\hat{Q}\)</span>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-demonstrate-that-the-variational-principle-for-hat-q-holds-even-if-the-wavefunction-is-not-normalized">7.10.2. 📝 Exercise: Demonstrate that the variational principle for <span class="math notranslate nohighlight">\(\hat{Q}\)</span> holds even if the wavefunction is not normalized.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.11. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">7.12. 🪞 Self-Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">7.13. 🤔 Thought-Provoking Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-tests">7.14. ❓ Knowledge Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">7.15. 🔁 Recapitulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">7.16. 🔮 Next Up…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">7.17. 📚 References</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

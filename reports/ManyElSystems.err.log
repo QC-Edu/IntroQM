@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import ipywidgets as widgets
+import math
+    
+# Define a function for the wavelength associated with the
+# lowest-frequency excitation of a cyanine dye with 
+# specified value of k
+def compute_wavelength(k):
+    "Compute absorption wavelength of a cyanine dye with 2k+6 pi electrons in nm."
+    # length of box:
+    a = 10.71 + 4.71 * (k + 1)
+    # angular frequency of absorption and excitation energy are the same in a.u.
+    omega = math.pi**2 * (2 * k + 7) / (2 * a**2)
+    # compute absorption wavelength in Bohr (a.u.)
+    lambda_au = (2 * math.pi * 137.036)/omega
+    # convert Bohr to nanometers
+    lambda_nm = lambda_au * 0.0529177
+    return lambda_nm
+
+print("For a cyanine dye, there are 2k+6 conjugated pi electrons in the box.")
+print("For reference, the experimental absorption wavelengths for various k are:")
+print("k = 0 (6 pi electrons):  313 nm")
+print("k = 1 (8 pi electrons):  416 nm")
+print("k = 2 (10 pi electrons): 519 nm")
+print("k = 3 (12 pi electrons): 625 nm")
+
+
+# set up the value k for the size of the dye.
+k = 12
+
+def print_wavelength(k):
+    print(f'The experimental absorption wavelength for k={k} is {compute_wavelength(k):.0f} nm')
+
+print_wavelength(k)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mas[39;00m [38;5;21;01mwidgets[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmath[39;00m
+[1;32m      4[0m [38;5;66;03m# Define a function for the wavelength associated with the[39;00m
+[1;32m      5[0m [38;5;66;03m# lowest-frequency excitation of a cyanine dye with [39;00m
+[1;32m      6[0m [38;5;66;03m# specified value of k[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'ipywidgets'
+
