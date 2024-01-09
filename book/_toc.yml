@@ -19,7 +19,7 @@ parts:
       sections:
       - url: https://qchem.qc-edu.org/problems/ghfundamentals.html
         title: "Practice: GitHub (Classroom)"
-      - file: problems/Tutorial_0.ipynb
+      - url: https://qchem.qc-edu.org/problems/Tutorial_0.html
         title: "Schrodinger Cat"
 
     - file: jupyter.ipynb
