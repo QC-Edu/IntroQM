@@ -17,8 +17,10 @@ parts:
     - file: documents/GitHub.md
       title: GitHub
       sections:
-      - url: https://qchem.qc-edu.org/ghfundamentals.html
+      - url: https://qchem.qc-edu.org/problems/ghfundamentals.html
         title: "Practice: GitHub (Classroom)"
+      - file: problems/Tutorial_0.ipynb
+        title: "Schrodinger Cat"
 
     - file: jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
