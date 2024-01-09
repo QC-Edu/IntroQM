@@ -45,7 +45,7 @@ parts:
         title: Intro to QM slides+notes
       - url: https://classroom.github.com/a/d3E1lA4j
         title: "Quiz: Demo w/ GH Classroom"
-      - url: https://classroom.github.com/a/DMg3v70o
+      - url: https://classroom.github.com/a/uENjzJ2B
         title: "Quiz: QM Intro"
 
     - file: SchrodingerEq.ipynb
