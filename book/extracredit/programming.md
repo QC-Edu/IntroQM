@@ -21,7 +21,7 @@ You can complete relevant LinkedIn Learning courses to earn extra points. For ex
 - [Python for Engineers and Scientists](https://www.linkedin.com/learning/python-for-engineers-and-scientists)
 - [Working with Data](https://www.linkedin.com/learning/advanced-python-working-with-data?u=56982905)
 - [Intermediate Numpy](https://www.linkedin.com/learning/numpy-essential-training-2-matplotlib-and-linear-algebra-capabilities)
-- [Julia Power like Python, Speed like C](hhttps://www.linkedin.com/learning/learning-julia?u=56982905)
+- [Julia Power like Python, Speed like C](https://www.linkedin.com/learning/learning-julia?u=56982905)
 
 
 ## Online Python Tests
