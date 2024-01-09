@@ -33,7 +33,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
   - [GitHub Classroom for Students](https://www.youtube.com/watch?v=ObaFRGp_Eko)
 
 ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
-- You will learn more about GitHub through the [assignment](../ghfundamentals.ipynb). This includes a brief overview of GitHub terminology and links to the GitHub starter courses.
+- You will learn more about GitHub through the [assignment](../problems/ghfundamentals.ipynb). This includes a brief overview of GitHub terminology and links to the GitHub starter courses.
 
 ## Suggestion
 - Sign up for [GitHub Education](https://education.github.com/students) and especially the [Student Developer Pack](https://education.github.com/pack). This gives you access to a lot of free software and tools, plus a free domain name (and free web hosting of the domain for one year).
