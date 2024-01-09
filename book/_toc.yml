@@ -29,7 +29,7 @@ parts:
         title: "Practice: Python, Jupyter, Numpy"
       - url: https://qchem.qc-edu.org/problems/Tutorial_0.html
         title: "Practice: Google Colab"
-      - url: https://qchem.qc-edu.org/ipynb/tutorial_1.html
+      - url: https://qchem.qc-edu.org/problems/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/faZ6D_fY
         title: "Extra practice: Computing Student Marks (< 2022)"
