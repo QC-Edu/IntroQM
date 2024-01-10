@@ -16,7 +16,7 @@
 
 ## Assessment
 - **Assignments** are provided via [Github Classroom](https://classroom.github.com/). To learn more about Github Classroom, see our [tutorial](problems/Tutorial_0.ipynb). Each assignment is graded automatically on GitHub (for correctness and quality)
-- **Extra Points** may be earned by [making pull requests](contributing.md) to [this repository](https://github.com/QC-Edu/IntroQM). The aim is to encourage you to contribute/refine content that benefits other students. While all contributions ar   e encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. [More information is available here.](extracredit/overview.md) Points are earned commensurate with the contribution, so even something as simple as correcting a typographical error in a notebook will receive some reward. 
+- **Extra Points** may be earned by [making pull requests](contributing.md) to [this repository](https://github.com/QC-Edu/IntroQM). The aim is to encourage students who are "formally" taking the course to contribute/refine content that benefits everyone. While all contributions are encouraged, if you wish to ensure that extra credit will be granted, ask for prior approval/guidance from the instructor. [More information is available here.](extracredit/overview.md) Points are earned commensurate with the contribution, so even something as simple as correcting a typographical error in a notebook will receive some reward. New programming assignments and quizzes are especially welcome.
 - **Auditing** the course is allowed. This course was designed to help self-motivated independent learners. GitHub classroom assignments should be accessible, and auto-graded, without issue. Personal support is, unfortunately but necessarily, much more limited.
 
 ## Other resources
@@ -25,5 +25,5 @@
 
 ## Using and Contributing
 - [**QC-Devs Code of Conduct:**](https://qcdevs.org/guidelines/QCDevsCodeOfConduct/) Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
-- [**How to Contribute:**](contributing.md) Contributions are accepted and encouraged!
+- [**How to Contribute:**](contributing.md) Contributions are accepted and encouraged! This includes contributions from those who are not formally, or informally, involved/enrolled in the course.
 - [**CC0 version 1.0**](license.md) license. But where we have reposted/adapted/linked content from other sources, they retain their own copyright/license.
