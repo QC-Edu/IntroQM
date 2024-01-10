@@ -27,6 +27,8 @@ parts:
       sections:
       - url: https://qchem.qc-edu.org/problems/JupyterPythonNumpy.html
         title: "Practice: Python, Jupyter, Numpy"
+      - url: https://qchem.qc-edu.org/problems/Tutorial_0.html
+        title: "Practice: Google Colab"
       - url: https://qchem.qc-edu.org/problems/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
       - url: https://classroom.github.com/a/faZ6D_fY
@@ -41,9 +43,9 @@ parts:
         title: Intro to QM video
       - url: https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
-      - url: https://classroom.github.com/a/d3E1lA4j
+      - url: https://classroom.github.com/a/uENjzJ2B
         title: "Quiz: Demo w/ GH Classroom"
-      - url: https://classroom.github.com/a/DMg3v70o
+      - url: https://classroom.github.com/a/2l8X1SU_
         title: "Quiz: QM Intro"
 
     - file: SchrodingerEq.ipynb
