@@ -34,6 +34,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
 
 ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
 - You will learn more about GitHub through the [assignment](../problems/ghfundamentals.ipynb). This includes a brief overview of GitHub terminology and links to the GitHub starter courses.
+- You will learn more about how to use GitHub Classroom and Google Colaboratory through the [assignment](problems/Tutorial_0.ipynb). (This assignment is really more of a tutorial. The only programming you really need to know is that the `True` and `False` (with leading capital letter) are the Boolean values for true and false in Python, respectively. The only quantum mechanics you need to know is that [Schr&ouml;dinger's cat](https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat) is [neither fully alive nor fully dead](https://www.straightdope.com/21341296/the-story-of-schroedinger-s-cat-an-epic-poem).
 
 ## Suggestion
 - Sign up for [GitHub Education](https://education.github.com/students) and especially the [Student Developer Pack](https://education.github.com/pack). This gives you access to a lot of free software and tools, plus a free domain name (and free web hosting of the domain for one year).
