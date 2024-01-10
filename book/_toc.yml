@@ -49,7 +49,7 @@ parts:
     - file: SchrodingerEq.ipynb
       title: The Schrödinger Equation
       sections:
-      - url: https://classroom.github.com/a/yXuh6NJt
+      - url: https://classroom.github.com/a/MXPa73KZ
         title: "Quiz: The Schrodinger Eq."
 
     - file: ParticleIn1DBox.ipynb
@@ -61,7 +61,7 @@ parts:
         title: "Practice: Moments of the P-in-Box"
       - url: https://classroom.github.com/a/yBzABlb-
         title: "Practice: The Sudden Approximation"
-      - url: https://classroom.github.com/a/1Y48deKP
+      - url: https://classroom.github.com/a/LhlUNH30
         title: "Quiz: 1D P-in-Box"
 
     - file: ParticleInMultiD.ipynb
