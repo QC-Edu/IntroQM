@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5.24. Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box &#8212; Quantum Chemistry</title>
+    <title>Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box &#8212; Quantum Chemistry</title>
   
   
   
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/problems/Jupyter.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems/Jupyter.html">Practice: Python, Jupyter, Numpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/faZ6D_fY">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.24. Example notebook for Moments</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Example notebook for Moments</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">Practice: Moments of the P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Practice: The Sudden Approximation</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LhlUNH30">Quiz: 1D P-in-Box</a></li>
@@ -479,8 +479,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">5.24.1. Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">5.24.2. Task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task:</a></li>
 </ul>
             </nav>
         </div>
@@ -493,9 +493,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="computing-the-expectation-value-of-langle-x-4-rangle-for-the-1-dimensional-particle-in-a-box">
-<h1><span class="section-number">5.24. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box<a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h1>
+<h1>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box<a class="headerlink" href="#computing-the-expectation-value-of-langle-x-4-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h1>
 <section id="here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">
-<h2><span class="section-number">5.24.1. </span>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.<a class="headerlink" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h2>
 <p>The average position is expected to be</p>
 <div class="math notranslate nohighlight">
 \[
@@ -534,7 +534,7 @@ document.write(`
 \end{split}\]</div>
 </section>
 <section id="task">
-<h2><span class="section-number">5.24.2. </span>Task:<a class="headerlink" href="#task" title="Permalink to this heading">#</a></h2>
+<h2>Task:<a class="headerlink" href="#task" title="Permalink to this heading">#</a></h2>
 <p>Use the above example to calculate <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span>. You can follow next steps:</p>
 <ol class="arabic simple">
 <li><p>Complete the <code class="docutils literal notranslate"><span class="pre">compute_wavefunction</span></code> function by coding the expression for calculating the wavefunction. Don’t forget the normalization constant. Also, take into account that <span class="math notranslate nohighlight">\(x\)</span> values could be negative and greater than <span class="math notranslate nohighlight">\(a\)</span>, and that <span class="math notranslate nohighlight">\(x\)</span> values could be a simple real number (a <code class="docutils literal notranslate"><span class="pre">float</span></code>) or a list of numbers (a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>).</p></li>
@@ -726,8 +726,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">5.24.1. Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">5.24.2. Task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-an-example-of-calculating-langle-x-rangle-and-langle-x-2-rangle-for-the-1-dimensional-particle-in-a-box">Here is an example of calculating <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>  and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> for the 1-dimensional particle-in-a-box.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task:</a></li>
 </ul>
   </nav></div>
 

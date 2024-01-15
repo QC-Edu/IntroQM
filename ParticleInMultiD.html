@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="7. Postulates of Quantum Mechanics" href="Postulates.html" />
-    <link rel="prev" title="5.24. Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box" href="x4_mocked.html" />
+    <link rel="prev" title="Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box" href="x4_mocked.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/problems/Jupyter.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems/Jupyter.html">Practice: Python, Jupyter, Numpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/faZ6D_fY">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">5.24. Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">Example notebook for Moments</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">Practice: Moments of the P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Practice: The Sudden Approximation</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LhlUNH30">Quiz: 1D P-in-Box</a></li>
@@ -479,44 +479,44 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">6.1. 🥅 Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2-dimensional-particle-in-a-box">6.2. The 2-Dimensional Particle-in-a-Box</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box">6.3. 📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">6.4. Separation of Variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct">6.4.1. 📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">6.4.2. 📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">🥅 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2-dimensional-particle-in-a-box">The 2-Dimensional Particle-in-a-Box</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box">📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">Separation of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct">📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-states">6.5. Degenerate States</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrons-in-a-3-dimensional-box-cuboid">6.6. Electrons in a 3-dimensional box (cuboid)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid">6.7. 📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid">6.8. 📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-circle">6.9. Particle-in-a-circle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">6.9.1. The Schrödinger equation for a particle confined to a circular disk.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-polar-coordinates">6.9.2. The Schrödinger Equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-schrodinger-equation-in-polar-coordinates">6.9.3. The Angular Schrödinger equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-polar-coordinates">6.9.4. The Radial Schrödinger equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">6.9.5. The Radial Schrödinger Equation for a Particle Confined to a Circular Disk</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk">6.9.6. Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-states">Degenerate States</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrons-in-a-3-dimensional-box-cuboid">Electrons in a 3-dimensional box (cuboid)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid">📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid">📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-circle">Particle-in-a-circle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">The Schrödinger equation for a particle confined to a circular disk.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-polar-coordinates">The Schrödinger Equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-schrodinger-equation-in-polar-coordinates">The Angular Schrödinger equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-polar-coordinates">The Radial Schrödinger equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">The Radial Schrödinger Equation for a Particle Confined to a Circular Disk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk">Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-spherical-ball">6.10. Particle-in-a-Spherical Ball</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">6.10.1. The Schrödinger equation for a particle confined to a spherical ball</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-spherical-coordinates">6.10.2. The Schrödinger Equation in Spherical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-wavefunction-in-spherical-coordinates">6.10.3. The Angular Wavefunction in Spherical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-spherical-coordinates">6.10.4. The Radial Schrödinger equation in Spherical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-spherical-ball">Particle-in-a-Spherical Ball</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">The Schrödinger equation for a particle confined to a spherical ball</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-spherical-coordinates">The Schrödinger Equation in Spherical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-wavefunction-in-spherical-coordinates">The Angular Wavefunction in Spherical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-spherical-coordinates">The Radial Schrödinger equation in Spherical Coordinates</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere">6.11. 📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">6.11.1. Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere">📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball">6.12. 📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">6.13. 🪞 Self-Reflection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">6.14. 🤔 Thought-Provoking Questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">6.15. 🔁 Recapitulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">6.16. 🔮 Next Up…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">6.17. 📚 References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball">📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">🪞 Self-Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">🤔 Thought-Provoking Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">🔁 Recapitulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">🔮 Next Up…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">📚 References</a></li>
 </ul>
             </nav>
         </div>
@@ -532,7 +532,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="multi-dimensional-particle-in-a-box">
 <h1><span class="section-number">6. </span>Multi-dimensional Particle-in-a-Box<a class="headerlink" href="#multi-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h1>
 <section id="learning-objectives">
-<h2><span class="section-number">6.1. </span>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hamiltonian for a two-dimensional particle-in-a-box</p></li>
 <li><p>Hamiltonian for a three-dimensional particle-in-a-box</p></li>
@@ -544,7 +544,7 @@ document.write(`
 </ul>
 </section>
 <section id="the-2-dimensional-particle-in-a-box">
-<h2><span class="section-number">6.2. </span>The 2-Dimensional Particle-in-a-Box<a class="headerlink" href="#the-2-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>The 2-Dimensional Particle-in-a-Box<a class="headerlink" href="#the-2-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h2>
 <p><img alt="Particles in a 2-dimensional box" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/1024px-Particle2D.svg.png?raw=true" />
 We have treated the particle in a one-dimensional box, where the (time-independent) Schrödinger equation was:</p>
 <div class="math notranslate nohighlight">
@@ -614,10 +614,10 @@ E_{n_x n_y} =  \frac{h^2}{8m}\left(\frac{n_x^2}{a_x^2}+\frac{n_y^2}{a_y^2}\right
 \]</div>
 </section>
 <section id="exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box">
-<h2><span class="section-number">6.3. </span>📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.<a class="headerlink" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box" title="Permalink to this heading">#</a></h2>
+<h2>📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.<a class="headerlink" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="separation-of-variables">
-<h2><span class="section-number">6.4. </span>Separation of Variables<a class="headerlink" href="#separation-of-variables" title="Permalink to this heading">#</a></h2>
+<h2>Separation of Variables<a class="headerlink" href="#separation-of-variables" title="Permalink to this heading">#</a></h2>
 <p>The preceding solution is a very special case of a general approach called separation of variables.</p>
 <blockquote>
 <div><p>Given a <span class="math notranslate nohighlight">\(D\)</span>-dimensional Hamiltonian that is a sum of independent terms,</p>
@@ -668,15 +668,15 @@ p(x_1,x_2,\ldots,x_D) = p_1(x_1) p_2(x_2) \ldots p_D(x_D)
 \]</div>
 <p>It is reassuring that the separation-of-independent-variables solution to the <span class="math notranslate nohighlight">\(D\)</span>-dimensional Schrödinger equation reproduces this intuitive conclusion.</p>
 <section id="exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct">
-<h3><span class="section-number">6.4.1. </span>📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.<a class="headerlink" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.<a class="headerlink" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">
-<h3><span class="section-number">6.4.2. </span>📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.<a class="headerlink" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.<a class="headerlink" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="MultiDExercise1.html"><span class="doc std std-doc">Answer</span></a></p>
 </section>
 </section>
 <section id="degenerate-states">
-<h2><span class="section-number">6.5. </span>Degenerate States<a class="headerlink" href="#degenerate-states" title="Permalink to this heading">#</a></h2>
+<h2>Degenerate States<a class="headerlink" href="#degenerate-states" title="Permalink to this heading">#</a></h2>
 <p>When two quantum states have the same energy, they are said to be degenerate. For example, for a square box, where <span class="math notranslate nohighlight">\(a_x = a_y = a\)</span>, the states with <span class="math notranslate nohighlight">\(n_x=1; n_y=2\)</span> and <span class="math notranslate nohighlight">\(n_x=2;n_y=1\)</span> are degenerate because:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -707,7 +707,7 @@ E_{4,3} =  \frac{h^2}{8m}\left(\frac{4^2}{(2a)^2}+\frac{3^2}{(3a)^2}\right)
 <p>This is called an <em>accidental</em> degeneracy because it is not related to a symmetry of the system, like the <span class="math notranslate nohighlight">\(x \sim y\)</span> symmetry that induces the degeneracy in the case of particles in a square box.</p>
 </section>
 <section id="electrons-in-a-3-dimensional-box-cuboid">
-<h2><span class="section-number">6.6. </span>Electrons in a 3-dimensional box (cuboid)<a class="headerlink" href="#electrons-in-a-3-dimensional-box-cuboid" title="Permalink to this heading">#</a></h2>
+<h2>Electrons in a 3-dimensional box (cuboid)<a class="headerlink" href="#electrons-in-a-3-dimensional-box-cuboid" title="Permalink to this heading">#</a></h2>
 <p><img alt="Particles in a 3-dimensional box" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Particle3Dbox.png?raw=true" /></p>
 <p>Suppose that particles are confined to a <a class="reference external" href="https://en.wikipedia.org/wiki/Cuboid">cuboid</a> (or rectangular prism) with side-lengths <span class="math notranslate nohighlight">\(a_x\)</span>, <span class="math notranslate nohighlight">\(a_y\)</span>, and <span class="math notranslate nohighlight">\(a_z\)</span>. Then the Schrödinger equation is:</p>
 <div class="math notranslate nohighlight">
@@ -797,16 +797,16 @@ E_{5,8,15} = E_{5,15,8} = E_{8,5,15} = E_{8,15,5} = E_{15,5,8} = E_{15,8,5} = E_
 \]</div>
 </section>
 <section id="exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid">
-<h2><span class="section-number">6.7. </span>📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.<a class="headerlink" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid" title="Permalink to this heading">#</a></h2>
+<h2>📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.<a class="headerlink" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid">
-<h2><span class="section-number">6.8. </span>📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.<a class="headerlink" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid" title="Permalink to this heading">#</a></h2>
+<h2>📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.<a class="headerlink" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid" title="Permalink to this heading">#</a></h2>
 <p>(Hint: this is a lot easier than you may think.)</p>
 </section>
 <section id="particle-in-a-circle">
-<h2><span class="section-number">6.9. </span>Particle-in-a-circle<a class="headerlink" href="#particle-in-a-circle" title="Permalink to this heading">#</a></h2>
+<h2>Particle-in-a-circle<a class="headerlink" href="#particle-in-a-circle" title="Permalink to this heading">#</a></h2>
 <section id="the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">
-<h3><span class="section-number">6.9.1. </span>The Schrödinger equation for a particle confined to a circular disk.<a class="headerlink" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
+<h3>The Schrödinger equation for a particle confined to a circular disk.<a class="headerlink" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
 <p><img alt="Particle in a Ring" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/The_Well_(Quantum_Corral).jpg?raw=true" /></p>
 <p>What happens if instead of being confined to a rectangle or a cuboid, the electrons were confined to some other shape? For example, it is not uncommon to have electrons confined in a circular disk (<a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_mirage">quantum corral</a>) or a sphere (<a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_dot">quantum dot</a>). It is relatively easy to write the Hamiltonian in these cases, but less easy to solve it because Cartesian (i.e., <span class="math notranslate nohighlight">\(x,y,z\)</span>) coordinates are less natural for these geometries.</p>
 <p>The Schrödinger equation for a particle confined to a circular disk of radius <span class="math notranslate nohighlight">\(a\)</span> is:</p>
@@ -850,7 +850,7 @@ V(r) =
 \end{split}\]</div>
 </section>
 <section id="the-schrodinger-equation-in-polar-coordinates">
-<h3><span class="section-number">6.9.2. </span>The Schrödinger Equation in Polar Coordinates<a class="headerlink" href="#the-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Schrödinger Equation in Polar Coordinates<a class="headerlink" href="#the-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
 <p>In order to solve this Schrödinger equation, we need to rewrite the Laplacian, <span class="math notranslate nohighlight">\(\nabla^2 = \frac{d^2}{dx^2} + \frac{d^2}{dy^2}\)</span> in polar coordinates. Deriving the Laplacian in alternative coordinate systems is a standard (and tedious) exercise that you hopefully saw in your calculus class. (If not, cf. <a class="reference external" href="https://en.wikipedia.org/wiki/Laplace_operator">wikipedia</a> or this <a class="reference external" href="https://www.math.ucdavis.edu/~saito/courses/21C.w11/polar-lap.pdf">meticulous derivation</a>.) The result is that:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -877,7 +877,7 @@ E r^2 +\frac{\hbar^2}{2m}\frac{r^2}{R(r)} \left(\frac{d^2 R(r)}{dr^2} + \frac{1}
 <p>The right-hand-side depends only on <span class="math notranslate nohighlight">\(r\)</span> and the left-hand-side depends only on <span class="math notranslate nohighlight">\(\theta\)</span>; this can only be true for all <span class="math notranslate nohighlight">\(r\)</span> and all <span class="math notranslate nohighlight">\(\theta\)</span> if both sides are equal to the same constant. This problem can therefore be solved by separation of variables, though it is a slightly different form from the one we considered previously.</p>
 </section>
 <section id="the-angular-schrodinger-equation-in-polar-coordinates">
-<h3><span class="section-number">6.9.3. </span>The Angular Schrödinger equation in Polar Coordinates<a class="headerlink" href="#the-angular-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Angular Schrödinger equation in Polar Coordinates<a class="headerlink" href="#the-angular-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
 <p>To find the solution, we first solve the set the left-hand-side equal to a constant, which gives a 1-dimensional Schrödinger equations for the angular motion of the particle around the circle,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -895,7 +895,7 @@ E_{\theta,l} = \tfrac{\hbar^2 l^2}{2m}
 \]</div>
 </section>
 <section id="the-radial-schrodinger-equation-in-polar-coordinates">
-<h3><span class="section-number">6.9.4. </span>The Radial Schrödinger equation in Polar Coordinates<a class="headerlink" href="#the-radial-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Radial Schrödinger equation in Polar Coordinates<a class="headerlink" href="#the-radial-schrodinger-equation-in-polar-coordinates" title="Permalink to this heading">#</a></h3>
 <p>Inserting the results for the angular wavefunction into the Schrödinger equation, we obtain</p>
 <div class="math notranslate nohighlight">
 \[
@@ -909,7 +909,7 @@ E r^2 +\frac{\hbar^2}{2m}\frac{r^2}{R(r)} \left(\frac{d^2 R(r)}{dr^2} + \frac{1}
 <p>Notice that the radial eigenfunctions, <span class="math notranslate nohighlight">\(R_{n,l}(r)\)</span>, and the energy eigenvalues, <span class="math notranslate nohighlight">\(E_{n,l}\)</span>, depend on the angular motion of the particle, as quantized by <span class="math notranslate nohighlight">\(l\)</span>. The term <span class="math notranslate nohighlight">\(\frac{\hbar^2 l^2}{2mr^2}\)</span> is exactly the centrifugal potential, indicating that it takes energy to hold a rotating particle in an orbit with radius <span class="math notranslate nohighlight">\(r\)</span>, and that the potential energy that is required grows with <span class="math notranslate nohighlight">\(r^{-2}\)</span>. Notice also that no assumptions have been made about the nature of the circular potential, <span class="math notranslate nohighlight">\(V(r)\)</span>. The preceding analysis holds for <em>any</em> circular-symmetric potential.</p>
 </section>
 <section id="the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">
-<h3><span class="section-number">6.9.5. </span>The Radial Schrödinger Equation for a Particle Confined to a Circular Disk<a class="headerlink" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
+<h3>The Radial Schrödinger Equation for a Particle Confined to a Circular Disk<a class="headerlink" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
 <p>For the circular disk, where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -978,7 +978,7 @@ E_{n,l} = \frac{\hbar^2 x_{n,l}^2}{2ma^2} = \frac{h^2 x_{n,l}^2}{8 m \pi^2 a^2}
 <p><img alt="Vibrations of a Circular Drum-Head" src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Vibrating_drum_Bessel_function.gif" /></p>
 </section>
 <section id="eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk">
-<h3><span class="section-number">6.9.6. </span>Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk<a class="headerlink" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
+<h3>Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk<a class="headerlink" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk" title="Permalink to this heading">#</a></h3>
 <p>The energies of a particle confined to a circular disk of radius <span class="math notranslate nohighlight">\(a\)</span> are:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1067,9 +1067,9 @@ E_{n,l} = \tfrac{x_{n,l}^2}{2a^2}
 </section>
 </section>
 <section id="particle-in-a-spherical-ball">
-<h2><span class="section-number">6.10. </span>Particle-in-a-Spherical Ball<a class="headerlink" href="#particle-in-a-spherical-ball" title="Permalink to this heading">#</a></h2>
+<h2>Particle-in-a-Spherical Ball<a class="headerlink" href="#particle-in-a-spherical-ball" title="Permalink to this heading">#</a></h2>
 <section id="the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">
-<h3><span class="section-number">6.10.1. </span>The Schrödinger equation for a particle confined to a spherical ball<a class="headerlink" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball" title="Permalink to this heading">#</a></h3>
+<h3>The Schrödinger equation for a particle confined to a spherical ball<a class="headerlink" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball" title="Permalink to this heading">#</a></h3>
 <p><img alt="Quantum Dot" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Colloidal_nanoparticle_of_lead_sulfide_%28selenide%29_with_complete_passivation.png/842px-Colloidal_nanoparticle_of_lead_sulfide_%28selenide%29_with_complete_passivation.png" /></p>
 <p>The final model we will consider for now is a particle confined to a spherical ball with radius <span class="math notranslate nohighlight">\(a\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1114,7 +1114,7 @@ V(r) =
 \end{split}\]</div>
 </section>
 <section id="the-schrodinger-equation-in-spherical-coordinates">
-<h3><span class="section-number">6.10.2. </span>The Schrödinger Equation in Spherical Coordinates<a class="headerlink" href="#the-schrodinger-equation-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Schrödinger Equation in Spherical Coordinates<a class="headerlink" href="#the-schrodinger-equation-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
 <p>In order to solve the Schrödinger equation for a particle in a spherical ball, we need to rewrite the Laplacian, <span class="math notranslate nohighlight">\(\nabla^2 = \frac{d^2}{dx^2} + \frac{d^2}{dy^2} + \frac{d^2}{dz^2}\)</span> in polar coordinates. A meticulous derivation of the <a class="reference external" href="https://en.wikipedia.org/wiki/Laplace_operator">Laplacian</a> and its <a class="reference external" href="http://galileo.phys.virginia.edu/classes/252/Classical_Waves/Classical_Waves.html">eigenfunctions</a> The result is that:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1158,7 +1158,7 @@ T = \sum_{i=1}^{N_{\text{particles}}} \frac{p_{r;i}^2}{2m_i} + \frac{\mathbf{L}_
 \]</div>
 </section>
 <section id="the-angular-wavefunction-in-spherical-coordinates">
-<h3><span class="section-number">6.10.3. </span>The Angular Wavefunction in Spherical Coordinates<a class="headerlink" href="#the-angular-wavefunction-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Angular Wavefunction in Spherical Coordinates<a class="headerlink" href="#the-angular-wavefunction-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
 <p><img alt="Spherical Harmonics" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Spherical_Harmonics.png/1024px-Spherical_Harmonics.png" /></p>
 <p>The Schrödinger equation for a spherically-symmetric system can be solved by separation of variables. If one compares to the result in polar coordinates, it is already clear that the angular wavefunction has the form <span class="math notranslate nohighlight">\(\Theta(\theta,\phi) = P(\theta)e^{im_l\phi}\)</span>. From this starting point we could deduce the eigenfunctions of <span class="math notranslate nohighlight">\(\hat{L}^2\)</span>, but instead we will just present the eigenfunctions and eigenvalues,</p>
 <div class="math notranslate nohighlight">
@@ -1168,7 +1168,7 @@ T = \sum_{i=1}^{N_{\text{particles}}} \frac{p_{r;i}^2}{2m_i} + \frac{\mathbf{L}_
 <p>The functions <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_harmonics"><span class="math notranslate nohighlight">\(Y_l^{m_l} (\theta, \phi)\)</span></a> are called <a class="reference external" href="https://mathworld.wolfram.com/SphericalHarmonic.html">spherical harmonics</a>, and they are the fundamental vibrational modes of the surface of a spherical membrane. Note that these functions resemble s-orbitals (<span class="math notranslate nohighlight">\(l=0\)</span>), p-orbitals (<span class="math notranslate nohighlight">\(l=1\)</span>), d-orbitals (<span class="math notranslate nohighlight">\(l=2\)</span>), etc., and that the number of choices for <span class="math notranslate nohighlight">\(m_l\)</span>, <span class="math notranslate nohighlight">\(2l+1\)</span>, is equal to the number of <span class="math notranslate nohighlight">\(l\)</span>-type orbitals.</p>
 </section>
 <section id="the-radial-schrodinger-equation-in-spherical-coordinates">
-<h3><span class="section-number">6.10.4. </span>The Radial Schrödinger equation in Spherical Coordinates<a class="headerlink" href="#the-radial-schrodinger-equation-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>The Radial Schrödinger equation in Spherical Coordinates<a class="headerlink" href="#the-radial-schrodinger-equation-in-spherical-coordinates" title="Permalink to this heading">#</a></h3>
 <p>Using separation of variables, we write the wavefunction as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1244,9 +1244,9 @@ E_{n,l} = \frac{\hbar^2 y_{n,l}^2}{2ma^2} = \frac{h^2 y_{n,l}^2}{8 m \pi^2 a^2}
 </section>
 </section>
 <section id="exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere">
-<h2><span class="section-number">6.11. </span>📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.<a class="headerlink" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere" title="Permalink to this heading">#</a></h2>
+<h2>📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.<a class="headerlink" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere" title="Permalink to this heading">#</a></h2>
 <section id="solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">
-<h3><span class="section-number">6.11.1. </span>Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball<a class="headerlink" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball" title="Permalink to this heading">#</a></h3>
+<h3>Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball<a class="headerlink" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball" title="Permalink to this heading">#</a></h3>
 <p><img alt="Eigenfunction Animation" src="https://upload.wikimedia.org/wikipedia/commons/8/86/Hydrogen_Wave.gif" />
 The energies of a particle confined to a spherical ball of radius <span class="math notranslate nohighlight">\(a\)</span> are:</p>
 <div class="math notranslate nohighlight">
@@ -1330,10 +1330,10 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
 </section>
 </section>
 <section id="exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball">
-<h2><span class="section-number">6.12. </span>📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?<a class="headerlink" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball" title="Permalink to this heading">#</a></h2>
+<h2>📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?<a class="headerlink" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="self-reflection">
-<h2><span class="section-number">6.13. </span>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this heading">#</a></h2>
+<h2>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Can you think of other physical or chemical systems where a multi-dimensional particle-in-a-box Hamiltonian would be appropriate? What shape would the box be?</p></li>
 <li><p>Can you think of another chemical system where separation of variables would be useful?</p></li>
@@ -1344,7 +1344,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
 </ul>
 </section>
 <section id="thought-provoking-questions">
-<h2><span class="section-number">6.14. </span>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this heading">#</a></h2>
+<h2>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How would you write the Hamiltonian for two electrons confined to a box? Could you solve this system with separation of variables? Why or why not?</p></li>
 <li><p>Write the time-independent Schrödinger equation for an electron in an cylindrical box. What are its eigenfunctions and eigenvalues?</p></li>
@@ -1355,7 +1355,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
 </ul>
 </section>
 <section id="recapitulation">
-<h2><span class="section-number">6.15. </span>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this heading">#</a></h2>
+<h2>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Write the Hamiltonian, time-independent Schrödinger equation, eigenfunctions, and eigenvalues for two-dimensional and three-dimensional particles in a box.</p></li>
 <li><p>What is the definition of degeneracy? How does an “accidental” degeneracy differ from an ordinary degeneracy?</p></li>
@@ -1367,7 +1367,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
 </ul>
 </section>
 <section id="next-up">
-<h2><span class="section-number">6.16. </span>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this heading">#</a></h2>
+<h2>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>1-electron atoms</p></li>
 <li><p>Approximate methods for quantum mechanics</p></li>
@@ -1375,7 +1375,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
 </ul>
 </section>
 <section id="references">
-<h2><span class="section-number">6.17. </span>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a> (See Chapter 3)</p></li>
@@ -1432,7 +1432,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.24. </span>Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box</p>
+        <p class="prev-next-title">Computing the expectation value of <span class="math notranslate nohighlight">\(\langle x^4 \rangle\)</span> for the 1-dimensional particle-in-a-box</p>
       </div>
     </a>
     <a class="right-next"
@@ -1459,44 +1459,44 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">6.1. 🥅 Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2-dimensional-particle-in-a-box">6.2. The 2-Dimensional Particle-in-a-Box</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box">6.3. 📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">6.4. Separation of Variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct">6.4.1. 📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">6.4.2. 📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">🥅 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2-dimensional-particle-in-a-box">The 2-Dimensional Particle-in-a-Box</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-above-equation-for-the-energy-eigenvalues-of-a-particle-confined-to-a-rectangular-box">📝 Exercise: Verify the above equation for the energy eigenvalues of a particle confined to a rectangular box.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">Separation of Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-by-direct-substitution-verify-that-the-above-expressions-for-the-eigenvalues-and-eigenvectors-of-a-hamiltonian-sum-are-correct">📝 Exercise: By direct substitution, verify that the above expressions for the eigenvalues and eigenvectors of a Hamiltonian-sum are correct.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-write-the-time-dependent-schrodinger-equation-for-one-particle-in-three-dimensions-confined-by-the-time-dependent-potential-v-x-y-z-t">📝 Exercise: Write the Time-Dependent Schrödinger equation for one particle, in three dimensions, confined by the time-dependent potential <span class="math notranslate nohighlight">\(V(x,y,z,t)\)</span>.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-states">6.5. Degenerate States</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrons-in-a-3-dimensional-box-cuboid">6.6. Electrons in a 3-dimensional box (cuboid)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid">6.7. 📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid">6.8. 📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-circle">6.9. Particle-in-a-circle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">6.9.1. The Schrödinger equation for a particle confined to a circular disk.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-polar-coordinates">6.9.2. The Schrödinger Equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-schrodinger-equation-in-polar-coordinates">6.9.3. The Angular Schrödinger equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-polar-coordinates">6.9.4. The Radial Schrödinger equation in Polar Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">6.9.5. The Radial Schrödinger Equation for a Particle Confined to a Circular Disk</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk">6.9.6. Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-states">Degenerate States</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrons-in-a-3-dimensional-box-cuboid">Electrons in a 3-dimensional box (cuboid)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-the-expressions-for-the-eigenvalues-and-eigenvectors-of-a-particle-in-a-cuboid">📝 Exercise: Verify the expressions for the eigenvalues and eigenvectors of a particle in a cuboid.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-construct-an-accidentally-degenerate-state-for-the-particle-in-a-cuboid">📝 Exercise: Construct an accidentally degenerate state for the particle-in-a-cuboid.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-circle">Particle-in-a-circle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">The Schrödinger equation for a particle confined to a circular disk.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-polar-coordinates">The Schrödinger Equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-schrodinger-equation-in-polar-coordinates">The Angular Schrödinger equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-polar-coordinates">The Radial Schrödinger equation in Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-for-a-particle-confined-to-a-circular-disk">The Radial Schrödinger Equation for a Particle Confined to a Circular Disk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenfunctions-for-a-particle-confined-to-a-circular-disk">Eigenvalues and Eigenfunctions for a Particle Confined to a Circular Disk</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-spherical-ball">6.10. Particle-in-a-Spherical Ball</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">6.10.1. The Schrödinger equation for a particle confined to a spherical ball</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-spherical-coordinates">6.10.2. The Schrödinger Equation in Spherical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-wavefunction-in-spherical-coordinates">6.10.3. The Angular Wavefunction in Spherical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-spherical-coordinates">6.10.4. The Radial Schrödinger equation in Spherical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-spherical-ball">Particle-in-a-Spherical Ball</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">The Schrödinger equation for a particle confined to a spherical ball</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation-in-spherical-coordinates">The Schrödinger Equation in Spherical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-angular-wavefunction-in-spherical-coordinates">The Angular Wavefunction in Spherical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-schrodinger-equation-in-spherical-coordinates">The Radial Schrödinger equation in Spherical Coordinates</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere">6.11. 📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">6.11.1. Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-equation-for-the-zeros-of-sin-x-to-write-the-wavefunction-and-energy-for-the-one-dimensional-particle-in-a-box-in-a-form-similar-to-the-expressions-for-the-particle-in-a-disk-and-the-particle-in-a-sphere">📝 Exercise: Use the equation for the zeros of <span class="math notranslate nohighlight">\(\sin x\)</span> to write the wavefunction and energy for the one-dimensional particle-in-a-box in a form similar to the expressions for the particle-in-a-disk and the particle-in-a-sphere.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-to-the-schrodinger-equation-for-a-particle-confined-to-a-spherical-ball">Solutions to the Schrödinger Equation for a Particle Confined to a Spherical Ball</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball">6.12. 📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">6.13. 🪞 Self-Reflection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">6.14. 🤔 Thought-Provoking Questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">6.15. 🔁 Recapitulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">6.16. 🔮 Next Up…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">6.17. 📚 References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-for-the-hydrogen-atom-the-2s-orbital-n-2-l-0-and-2p-orbitals-n-2-l-1-m-l-1-0-1-have-the-same-energy-is-this-true-for-the-particle-in-a-ball">📝 Exercise: For the hydrogen atom, the 2s orbital (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) and 2p orbitals (<span class="math notranslate nohighlight">\(n=2\)</span>,<span class="math notranslate nohighlight">\(l=1\)</span>,<span class="math notranslate nohighlight">\(m_l=-1,0,1\)</span>) have the same energy. Is this true for the particle-in-a-ball?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">🪞 Self-Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">🤔 Thought-Provoking Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recapitulation">🔁 Recapitulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-up">🔮 Next Up…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">📚 References</a></li>
 </ul>
   </nav></div>
 
