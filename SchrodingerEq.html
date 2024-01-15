@@ -735,13 +735,16 @@ $<span class="math notranslate nohighlight">\(
 <div class="math notranslate nohighlight">
 \[- i\hbar \frac{\partial}{\partial t} \phi(t) = -E\phi(t) \]</div>
 <p>In the first equation, we have chosen the eigenvalue of the TDSE to be the energy since we know that the Hamiltonian is the quantum-mechanical operator for the energy. The second equation is a separable differential equation, which can be solved as follows:</p>
-<p>\begin{align}
--i\hbar \frac{\partial}{\partial t} \phi(t) &amp;= -E\phi(t) \
-\frac{1}{\phi} d\phi &amp;= -\frac{i}{\hbar}E dt \
-\int \frac{1}{\phi} d\phi = \int \frac{-i}{\hbar}E dt \
-\ln \phi(t) &amp;= \frac{-iEt}{\hbar} + \text{constant of integration}\
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+-i\hbar \frac{\partial}{\partial t} \phi(t) &amp;= -E\phi(t) \\
+\frac{1}{\phi} d\phi &amp;= -\frac{i}{\hbar}E dt \\ 
+\int \frac{1}{\phi} d\phi = \int \frac{-i}{\hbar}E dt \\
+\ln \phi(t) &amp;= \frac{-iEt}{\hbar} + \text{constant of integration}\\
 \phi(t)  &amp;\propto e^{\frac{-iEt}{\hbar}}
-\end{align</p>
+\end{align}
+\end{split}\]</div>
 <p>Therefore,</p>
 <div class="math notranslate nohighlight">
 \[ \Psi(x,t) = \psi(x) \phi(t) \propto \psi(x) e^{\frac{-iEt}{\hbar}} \]</div>
@@ -775,8 +778,6 @@ $<span class="math notranslate nohighlight">\(
 <li><p>What are the eigenfunctions of the kinetic-energy operator?</p></li>
 <li><p>Is every eigenfunction of the momentum operator also an eigenfunction of the kinetic-energy operator? Is the <a class="reference external" href="https://en.wikipedia.org/wiki/Converse_(logic)">converse</a> also true?</p></li>
 <li><p>Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, <span class="math notranslate nohighlight">\(x=0\)</span>, increases proportionally to its distance, <span class="math notranslate nohighlight">\(F = -kx\)</span>. What would the Hamiltonian be?</p></li>
-<li><p>What are the eigenfunctions of the kinetic-energy operator?</p></li>
-<li><p>What are the eigenfunctions of the momentum operator?</p></li>
 <li><p>Show, mathematically, that the eigenvectors and eigenvalues of a separable operator, <span class="math notranslate nohighlight">\(\hat{A}(x,y) = \hat{A}(x) + \hat{A}(y)\)</span> are given by the above expressions.</p></li>
 </ul>
 </section>
