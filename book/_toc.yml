@@ -25,7 +25,7 @@ parts:
     - file: jupyter.ipynb
       title: Basics of Jupyter, Python, and Programming
       sections:
-      - file: https://qchem.qc-edu.org/problems/problems/Jupyter.html
+      - url: https://qchem.qc-edu.org/problems/problems/Jupyter.html
         title: "Practice: Python, Jupyter, Numpy"
       - url: https://qchem.qc-edu.org/problems/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
