@@ -66,6 +66,9 @@ parts:
 
     - file: ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
+      sections:
+      - url: https://classroom.github.com/a/dOOP2PpB
+        title: "Practice: 2D P-in-Box"
 
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
