@@ -66,6 +66,11 @@ parts:
 
     - file: ParticleInMultiD.ipynb
       title: Particles confined in two and three dimensions
+      sections:
+      - url: https://classroom.github.com/assignment-invitations/4b010a0969b75b7787a0af82c24a4d4a_
+        title: "Practice: Effective Low-Dimensional Systems"
+      - url: https://classroom.github.com/a/6Z3Z3Z3_
+        title: "Quiz: 2D P-in-Box"
 
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
