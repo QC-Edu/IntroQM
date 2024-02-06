@@ -71,6 +71,8 @@ parts:
         title: "Practice: Effective Low-Dimensional Systems"
       - url: https://classroom.github.com/a/8wy0Ss-1
         title: "Quiz: MultiD P-in-Box"
+      - url: https://classroom.github.com/a/jYuKLWfw
+        title: "Interacting particles in a box"
 
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
