@@ -72,7 +72,7 @@ parts:
       - url: https://classroom.github.com/a/8wy0Ss-1
         title: "Quiz: MultiD P-in-Box"
       - url: https://classroom.github.com/a/jYuKLWfw
-        title: "Interacting particles in a box"
+        title: "Practice: Interacting particles in a box"
 
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
@@ -85,6 +85,9 @@ parts:
 
     - file: ApproximateMethods.ipynb
       title: Approximate Methods
+      - url: https://classroom.github.com/a/uYXRb0cZ
+        title: "Practice: Tilted P-in-Box"
+
 
     - file: ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
