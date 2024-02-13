@@ -85,6 +85,7 @@ parts:
 
     - file: ApproximateMethods.ipynb
       title: Approximate Methods
+      sections:
       - url: https://classroom.github.com/a/uYXRb0cZ
         title: "Practice: Tilted P-in-Box"
 
