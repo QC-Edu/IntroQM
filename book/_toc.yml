@@ -120,6 +120,8 @@ parts:
       title: (Extra) Practice Problems
     - url: https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683
       title: Videos
+    - url: https://classroom.github.com/a/xMhLRINd
+      title: "Example of buggy code"
 
   - caption: Contributing and Using
     chapters:
