@@ -1,0 +1,37 @@
+
+1. Is it possible for the wavelength of the scattered photon in Compton Scattering to be infinite? (I.e., could the photon be entirely absorbed?)
+
+
+
+1. What are the units of the wavefunction?
+
+
+1. Once upon a time, one of the professors at McMaster was asked "why is the quantum-mechanical momentum operator associated with the derivative" and, unable to answer the student, sent the student to me for clarification. Can you justify why the quantum mechanical momentum operator is $\hat{p} = -i \hbar \nabla$?
+
+
+1.  Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was "the negative of something squared", namely, $\hat{T} = \tfrac{-1}{2m}\nabla^2$. How would you answer this question?
+1.  What are the eigenfunctions of the momentum operator?
+1. What are the eigenfunctions of the kinetic-energy operator?
+1. Is every eigenfunction of the momentum operator also an eigenfunction of the kinetic-energy operator? Is the [converse](https://en.wikipedia.org/wiki/Converse_(logic)) also true?
+1. Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, $x=0$, increases proportionally to its distance, $F = -kx$. What would the Hamiltonian be?
+1. Show, mathematically, that the eigenvectors and eigenvalues of a separable operator, $\hat{A}(x,y) = \hat{A}(x) + \hat{A}(y)$ are given by the above expressions.
+
+1. How would the wavefunction and ground-state energy change if you made a small change in the particle-in-a-box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side?
+1. Any system with a zero-point energy of zero is classical. Why?
+1. How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons? If it contained 8 electrons? The probability of observing an electron at the center of a box with 3 electrons is sometimes *lower* than the probability of observing an electron at the center of a box with 2 electrons. Why?
+1. Demonstrate that the kinetic energy operator is linear and Hermitian.
+1. What is the lowest-energy excitation energy for the particle-in-a-box?
+1. Suppose you wanted to design a one-dimensional box containing a single electron that absorbed blue light? How long would the box be?
+
+
+1. Explain why separation of variables is consistent with the Born Postulate that the square-magnitude of a particle's wavefunction is the probability distribution function for the particle.
+1. What is the expression for the zero-point energy and ground-state wavefunction of an electron in a 4-dimensional box? Can you identify some states of the 4-dimensional box with especially high degeneracy?
+1. What is the degeneracy of the k-th excited state of a particle confined to a circular disk? What is the degeneracy of the k-th excited state of a particle confined in a spherical ball?
+
+1. How would you write the Hamiltonian for two electrons confined to a box? Could you solve this system with separation of variables? Why or why not?
+1. Write the time-independent Schr&ouml;dinger equation for an electron in an cylindrical box. What are its eigenfunctions and eigenvalues?
+1. Construct an example of a four-fold *accidental* degeneracy for a particle in a 2-dimensional rectangular (not square!) box.
+1. If there is any degenerate state (either accidental or due to symmetry) for the multi-dimensional particle-in-a-box, then there are always an infinite number of other degenerate states. Why?
+
+1. What is an example of a classical observable that is not a quantum-mechanical observable?
+1. Give an example of two quantum-mechanical operators that commute. What about two operators that don't commute?
