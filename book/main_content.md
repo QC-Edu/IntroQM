@@ -27,3 +27,6 @@
 - [**QC-Devs Code of Conduct:**](https://qcdevs.org/guidelines/QCDevsCodeOfConduct/) Treat others with respect, kindness, and empathy; assume they're doing the same. Communicate clearly. Be helpful. Be open. Be nice. If someone says stop; stop.
 - [**How to Contribute:**](contributing.md) Contributions are accepted and encouraged! This includes contributions from those who are not formally, or informally, involved/enrolled in the course.
 - [**CC0 version 1.0**](license.md) license. But where we have reposted/adapted/linked content from other sources, they retain their own copyright/license.
+
+## QC-Edu
+This course is part of the [QC-Edu initiative](https://qc-edu.org/intro.html), which is the educational arm of the QC-Devs organization. The goal of QC-Edu is to provide high-quality, open-source educational resources for quantum chemistry and related fields. QC-Edu was envisioned, and is supported, by Farnaz Heidar-Zadeh, Valerii Chuiko, and Paul W. Ayers.
