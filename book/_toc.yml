@@ -71,6 +71,8 @@ parts:
         title: "Practice: Effective Low-Dimensional Systems"
       - url: https://classroom.github.com/a/8wy0Ss-1
         title: "Quiz: MultiD P-in-Box"
+      - url: https://classroom.github.com/a/jYuKLWfw
+        title: "Practice: Interacting particles in a box"
 
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
@@ -80,9 +82,16 @@ parts:
 
     - file: OneElectronAtoms.ipynb
       title: 1-electron atoms
+      sections:
+      - url: https://classroom.github.com/a/obZrhA4q
+        title: "Practice: hydrogenic atoms"
 
     - file: ApproximateMethods.ipynb
       title: Approximate Methods
+      sections:
+      - url: https://classroom.github.com/a/uYXRb0cZ
+        title: "Practice: Tilted P-in-Box"
+
 
     - file: ManyElSystems.ipynb
       title:  "Many-electron systems: Structure and Spectroscopy"
@@ -111,6 +120,8 @@ parts:
       title: (Extra) Practice Problems
     - url: https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683
       title: Videos
+    - url: https://classroom.github.com/a/xMhLRINd
+      title: "Example of buggy code"
 
   - caption: Contributing and Using
     chapters:
