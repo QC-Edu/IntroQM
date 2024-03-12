@@ -122,6 +122,8 @@ parts:
       title: Videos
     - url: https://classroom.github.com/a/xMhLRINd
       title: "Example of buggy code"
+    - url: https://classroom.github.com/a/KAk_xxph
+      title: "FixMe. Midterm 2"
 
   - caption: Contributing and Using
     chapters:
