@@ -108,6 +108,8 @@ parts:
         title: Molecules
       - url: https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf
         title: Spectroscopy
+      - url: https://classroom.github.com/a/EOXYGtiD
+        title: "Practice: Selection Rules"
 
     - file: HOandMorse.ipynb
       title: "Diatomic Molecules' Nuclear Schrodinger Equation"
