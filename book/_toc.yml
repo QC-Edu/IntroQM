@@ -93,6 +93,8 @@ parts:
       sections:
       - url: https://classroom.github.com/a/uYXRb0cZ
         title: "Practice: Tilted P-in-Box"
+      - url: https://classroom.github.com/a/L_iBB1Pp
+        title: "Practice: Gaussian Wall"
 
 
     - file: ManyElSystems.ipynb
@@ -108,6 +110,8 @@ parts:
         title: Molecules
       - url: https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf
         title: Spectroscopy
+      - url: https://classroom.github.com/a/EOXYGtiD
+        title: "Practice: Selection Rules"
 
     - file: HOandMorse.ipynb
       title: "Diatomic Molecules' Nuclear Schrodinger Equation"
@@ -124,6 +128,14 @@ parts:
       title: Videos
     - url: https://classroom.github.com/a/xMhLRINd
       title: "Example of buggy code"
+    - url: https://classroom.github.com/a/KAk_xxph
+      title: "FixMe. Midterm 2"
+    - url: https://classroom.github.com/a/McjRehT6
+      title: "Knowledge Test 1"
+    - url: https://classroom.github.com/a/gseTkT5p
+      title: "Knowledge Test 2"
+    - url: https://classroom.github.com/a/pf4re3Xy
+      title: "Knowledge Test 3"
 
   - caption: Contributing and Using
     chapters:
