@@ -531,7 +531,7 @@ These questions are taken from the course notes, tutorial discussions, and previ
 \[\begin{split}
 \begin{align}
 \hat{H}_1 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} + V_{a_x}(x) + V_{a_y}(y) \\
-\hat{H}_2(\lambda) &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m} \frac{d^2}{dx_2^2} + V_{a}(x_1) + V_{a}(x_2) 
+\hat{H}_2(\lambda) &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m} \frac{d^2}{dx_2^2} + V_{a}(x_1) + V_{a}(x_2)
 - \lambda |x_1 - x_2|\\
 \hat{H}_3(\lambda) &amp;= -\tfrac{1}{2} \nabla_1^2 -\tfrac{1}{2} \nabla_2^2- \tfrac{Z}{r_1} - \tfrac{Z}{r_2} + \tfrac{\lambda}{|\mathbf{r}_1 - \mathbf{r}_2|}\\
 \hat{H}_4 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V_{a}\left(\sqrt{x^2 + y^2 +z^2}\right) \\
@@ -543,7 +543,7 @@ These questions are taken from the course notes, tutorial discussions, and previ
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-V_a(x) = 
+V_a(x) =
 \begin{cases}
     +\infty &amp; x\leq 0\\
     0       &amp; 0\lt x \lt a\\
@@ -608,7 +608,7 @@ V_a(x) =
 <h2>❓ Questions about Quantum Mechanical Principles and Formalism<a class="headerlink" href="#questions-about-quantum-mechanical-principles-and-formalism" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="35">
 <li><p>Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, <span class="math notranslate nohighlight">\(F=-kx\)</span>, increases proportionally to its distance. What would the Hamiltonian be?</p></li>
-<li><p>Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was “the negative of something squared”, namely,  <span class="math notranslate nohighlight">\(E = -\tfrac{1}{2m}\nabla^2\)</span>. How would you answer this question?</p></li>
+<li><p>Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was “the negative of something squared”, namely, <span class="math notranslate nohighlight">\(E = -\tfrac{1}{2m}\nabla^2\)</span>. How would you answer this question?</p></li>
 <li><p>How would the wavefunction and ground-state energy change if you made a small change in the particle-in a box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side?</p></li>
 <li><p>Any system with a zero-point energy of zero is classical. Why?</p></li>
 <li><p>How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons?</p></li>
@@ -672,13 +672,13 @@ V_a(x) =
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0} 
-+ \frac{F^2}{2!} \left[\frac{d^2E_k}{d F^2} \right]_{F=0} 
-+ \frac{F^3}{3!} \left[\frac{d^3E_k}{d F^3} \right]_{F=0} 
+E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
++ \frac{F^2}{2!} \left[\frac{d^2E_k}{d F^2} \right]_{F=0}
++ \frac{F^3}{3!} \left[\frac{d^3E_k}{d F^3} \right]_{F=0}
 + \frac{F^4}{4!} \left[\frac{d^4E_k}{d F^4} \right]_{F=0} + \cdots \\
-&amp;= E_k(0) - F \mu_{F=0} 
-- \frac{F^2}{2!} \alpha_{F=0} 
-- \frac{F^3}{3!} \beta_{F=0} 
+&amp;= E_k(0) - F \mu_{F=0}
+- \frac{F^2}{2!} \alpha_{F=0}
+- \frac{F^3}{3!} \beta_{F=0}
 - \frac{F^4}{4!} \gamma_{F=0} + \cdots \\
 \end{align}
 \end{split}\]</div>
@@ -700,7 +700,7 @@ $<span class="math notranslate nohighlight">\(
 \)</span>$</p></li>
 <li><p>The Coulomb potential governing interparticle attraction/repulsion between two particles, with charges <span class="math notranslate nohighlight">\(q_m\)</span> and <span class="math notranslate nohighlight">\(q_n\)</span> and positions <span class="math notranslate nohighlight">\(\mathbf{r}_m\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_n\)</span> in a d-dimensional system is given below. Note that these expressions are <em>not</em> the usual inverse power of the distance. Nonetheless, when considering systems like the cyanine dyes or 2-dimensional quantum dots, we usually use the 3-dimensional Coulomb potential. Why?
 $<span class="math notranslate nohighlight">\(
-V_{\text{Coulomb}} = 
+V_{\text{Coulomb}} =
 \begin{cases}
 (q_m q_n) \left|\mathbf{r}_m - \mathbf{r}_n \right|^{2-d} &amp; d&gt; 0 \text{ and } d \ne 2 \\
 (q_m q_n)\ln\left|\mathbf{r}_m - \mathbf{r}_n \right|  &amp; d = 2
@@ -714,11 +714,11 @@ $<span class="math notranslate nohighlight">\(
 \hat{H}_{\text{p-in-cylinder}} = - \frac{\hbar^2}{2m} \nabla^2 + V_{a_z}(z) + V_{a_r}(r)
 \)</span><span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(
-V_a(x) = 
+V_a(x) =
 \begin{cases}
-+\infty &amp; x\leq 0\\
-0       &amp; 0\lt x \lt a\\
-+\infty &amp; a \leq x
+    +\infty &amp; x\leq 0\\
+    0       &amp; 0\lt x \lt a\\
+    +\infty &amp; a \leq x
 \end{cases}
 \)</span>$</p></li>
 </ol>
