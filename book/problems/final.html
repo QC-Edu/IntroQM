@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Final Question List for Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="final_files/libs/quarto-html/quarto.js"></script>
+<script src="final_files/libs/quarto-html/popper.min.js"></script>
+<script src="final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="final_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="final_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Question List for Quantum Mechanics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="questions-for-understanding-and-review" class="level1">
+<h1>Questions for Understanding and Review</h1>
+<p>👨‍🏫 <strong>Overview:</strong> These questions are taken from the course notes, tutorial discussions, and previous years’ oral exams.</p>
+<p>📜 <strong>Instructions:</strong> Be prepared to discuss the following questions/topics. I will randomly assign questions.</p>
+</section>
+<section id="questions-for-understanding-and-review-1" class="level1">
+<h1>Questions for Understanding and Review</h1>
+<p>👨‍🏫 <strong>Overview:</strong> These questions are taken from the course notes, tutorial discussions, and previous years’ oral exams.</p>
+<p>📜 <strong>Instructions:</strong> Be prepared to discuss the following questions/topics. I will randomly select questions.</p>
+<section id="what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians." class="level2">
+<h2 class="anchored" data-anchor-id="what-are-the-eigenfunctions-and-eigenvalues-for-the-following-hamiltonians.">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</h2>
+<p>You should be able to explain key characteristics of the systems and the general strategy for (possibly approximate) solving the associated time-independent Schrödinger equation.</p>
+<p><span class="math display">\[
+\begin{align}
+\hat{H}_1 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} + V_{a_x}(x) + V_{a_y}(y) \\
+\hat{H}_2(\lambda) &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx_1^2} -\frac{\hbar^2}{2m} \frac{d^2}{dx_2^2} + V_{a}(x_1) + V_{a}(x_2)
+- \lambda |x_1 - x_2|\\
+\hat{H}_3(\lambda) &amp;= -\tfrac{1}{2} \nabla_1^2 -\tfrac{1}{2} \nabla_2^2- \tfrac{Z}{r_1} - \tfrac{Z}{r_2} + \tfrac{\lambda}{|\mathbf{r}_1 - \mathbf{r}_2|}\\
+\hat{H}_4 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V_{a}\left(\sqrt{x^2 + y^2 +z^2}\right) \\
+\hat{H}_5(\mathbf{R}_B) &amp;=  -\tfrac{1}{2} \nabla_{\mathbf{r}}^2 - \tfrac{Z_A}{r} - \tfrac{Z_B}{|\mathbf{r} - \mathbf{R}_B|} \\
+\hat{H}_6 &amp;= -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} -\frac{\hbar^2}{2m} \frac{d^2}{dy^2} -\frac{\hbar^2}{2m} \frac{d^2}{dz^2} + V_{a_z}(z) + V_{a_r}(\sqrt{x^2+y^2}) \\
+\hat{H}_7 &amp;= -\frac{\hbar^2}{2m}\nabla^2 +\frac{a}{r^2} - \frac{b}{r}
+\end{align}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+V_a(x) =
+\begin{cases}
+    +\infty &amp; x\leq 0\\
+    0       &amp; 0\lt x \lt a\\
+    +\infty &amp; a \leq x
+\end{cases}
+\]</span></p>
+</section>
+<section id="describe-the-following-effectsexperimentsequations-and-explain-their-importance-to-the-origins-of-quantum-mechanics." class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-following-effectsexperimentsequations-and-explain-their-importance-to-the-origins-of-quantum-mechanics.">🔁 Describe the following effects/experiments/equations, and explain their importance to the origins of quantum mechanics.</h2>
+<ol start="8" type="1">
+<li>Black-Body Radiation and the Ultraviolet Catastrophe.</li>
+<li>The Davisson-Germer experiment and Electron Scattering.</li>
+<li>Compton Scattering.</li>
+<li>The Photoelectric Effect</li>
+<li>The Rydberg Formula</li>
+<li>The Stern-Gerlach Experiment</li>
+</ol>
+</section>
+<section id="explain-the-following-topics." class="level2">
+<h2 class="anchored" data-anchor-id="explain-the-following-topics.">🔁 Explain the following topics.</h2>
+<ol start="14" type="1">
+<li>What are the key postulates of quantum mechanics?</li>
+<li>What is the Heisenberg Uncertainty Principle? What does it say about the fundamentals of quantum mechanics? What is the commutator between two operators, and how does it relate to the Heisenberg Uncertainty Principle?</li>
+<li>Explain what the Born-Oppenheimer Approximation is and why it is important.</li>
+<li>Explain what the united-atom and separated-atom limit are for a diatomic molecule. How do these limits relate to molecular-orbital theory and the linear-combination-of-atomic-orbitals technique.</li>
+<li>What are the quantum numbers that describe the state of an atom (neglecting relativity)? What do these quantum numbers have to do with term symbols? What do these quantum numbers have to do with simultaneous observables?</li>
+<li>What is the Stern Gerlach experiment? Can you describe what is happening in the following diagram?</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/SternGerlach3.jpg?raw=true" title="Describe what is happening in this picture" class="img-fluid figure-img"></p>
+<figcaption>SG3</figcaption>
+</figure>
+</div>
+</section>
+<section id="discuss-the-following-in-your-own-words." class="level2">
+<h2 class="anchored" data-anchor-id="discuss-the-following-in-your-own-words.">🤔 Discuss the following in your own words.</h2>
+<ol start="20" type="1">
+<li>What is a Slater determinant? Why does one use a Slater determinant for a many-fermion system? When is the exact ground-state wavefunction for a many-fermion system a Slater determinant?</li>
+<li>What is the variational principle? How is it used to approximate the ground-state energy and wavefunction of realistic, not-exactly-solvable, Hamiltonians? Can you give an example of how it is used?</li>
+<li>What is the Hartree-Fock method? What is the intuition behind it, and when is it used?</li>
+<li>What is Perturbation Theory? When is perturbation theory most appropriate? Least appropriate?</li>
+<li>What is the secular equation? How does it relate to the technique of expanding a wavefunction in a basis set?</li>
+<li>What is electron correlation? How can one approximate the effects of electron correlation?</li>
+</ol>
+</section>
+<section id="questions-about-pythonjupyter" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-pythonjupyter">❓ Questions about Python/Jupyter</h2>
+<ol start="26" type="1">
+<li>What is the difference between interpreted and compiled languages? What type of language is Python? Can you explain why we need two different types of languages?</li>
+<li>What’s the relationship of a class and the instance of a class? Why do we need classes?</li>
+<li>Why do we need functions? What is a recursive function?</li>
+<li>What cell formats are supported in a Jupyter Notebook? What are magic commands and why are they useful?</li>
+</ol>
+</section>
+<section id="questions-about-wave-particle-duality-and-the-origins-of-quantum-mechanics" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-wave-particle-duality-and-the-origins-of-quantum-mechanics">❓ Questions about Wave-Particle Duality and the Origins of Quantum Mechanics</h2>
+<ol start="30" type="1">
+<li>How would you describe wave-particle duality in a simple way that a novice can understand?</li>
+<li>Is it possible for the wavelength of the scattered photon in Compton Scattering to be infinite? (I.e., could the photon be entirely absorbed?)</li>
+<li>What are the units of the wavefunction?</li>
+<li>What are the eigenfunctions of the kinetic-energy operator?</li>
+<li>What are the eigenfunctions of the momentum operator?</li>
+<li>Justify why the quantum mechanical momentum operator is <span class="math inline">\(\hat{p} = -i \hbar \nabla\)</span>.</li>
+</ol>
+</section>
+<section id="questions-about-quantum-mechanical-principles-and-formalism" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-quantum-mechanical-principles-and-formalism">❓ Questions about Quantum Mechanical Principles and Formalism</h2>
+<ol start="36" type="1">
+<li>Suppose that one has an electron that is tethered to the origin by a spring, so that the force the electrons feels towards the origin, <span class="math inline">\(F=-kx\)</span>, increases proportionally to its distance. What would the Hamiltonian be?</li>
+<li>Once upon a time, a person interviewing for a job as a quantum chemist was asked how it was possible that the kinetic energy of a quantum system was always positive, given that the quantum-mechanical operator for the kinetic energy was “the negative of something squared”, namely, <span class="math inline">\(E = -\tfrac{1}{2m}\nabla^2\)</span>. How would you answer this question?</li>
+<li>How would the wavefunction and ground-state energy change if you made a small change in the particle-in a box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side?</li>
+<li>Any system with a zero-point energy of zero is classical. Why?</li>
+<li>How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons?</li>
+<li>The probability of observing an electron at the center of a box with 3 electrons is sometimes lower than the probability of observing an electron at the center of a box with 2 electrons. Why?</li>
+<li>Demonstrate that the kinetic energy operator is linear</li>
+<li>Demonstrate that the kinetic energy operator is Hermitian</li>
+<li>What is the lowest-energy excitation energy for the particle-in-a-box?</li>
+<li>Suppose you wanted to design a one-dimensional box containing a single electron that absorbed blue light? How long would the box be?</li>
+<li>How would you compute the uncertainty in <span class="math inline">\(x^4\)</span>?</li>
+<li>Explain why separation of variables is consistent with the Born Postulate that the square-magnitude of a particle’s wavefunction is the probability distribution function for the particle.</li>
+<li>What is the time-dependent Schrödinger equation? If the Hamiltonian is time-independent, how can one solve the time-dependent Schrödinger equation, and what is the form of the solution?</li>
+</ol>
+</section>
+<section id="questions-about-quantum-mechanical-operators." class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-quantum-mechanical-operators.">❓ Questions about Quantum-mechanical Operators.</h2>
+<ol start="49" type="1">
+<li>Write an expression for the expectation value of the energy without assuming that the wavefunction is normalized.</li>
+<li>Show that the momentum operator is Hermitian.</li>
+<li>Show that the eigenvalues of Hermitian operators are always real.</li>
+<li>Show that the eigenvectors of a Hermitian operator with different eigenvalues are always orthogonal.</li>
+<li>Show that the Laplacian is negative definite.</li>
+<li>Show why the expectation value of an operator is always less than its maximum eigenvalue.</li>
+<li>What is an example of a classical observable that is not a quantum-mechanical observable?</li>
+<li>Give an example of two quantum-mechanical operators that commute. What about two operators that don’t commute?</li>
+<li>Explain why minimizing the distance to the ground-state wavefunction variationally is different from minimizing the energy.</li>
+<li>Show that the expansion coefficient for a wavefunction in a nonorthogonal basis can be determined by solving a system of linear equations.</li>
+<li>Show that the eigenvectors of a Hermitian operator with the same eigenvalue can always be chosen to be orthogonal, but do not have to be.</li>
+<li>Show, mathematically, that for a separable operator, <span class="math inline">\(\hat{C}(x,y) = \hat{A}(x) + \hat{B}(y)\)</span>, the eigenvalues are the sum of the constituent operators’ eigenvalues and the eigenvectors are the product of the constituent operators eigenvectors.</li>
+</ol>
+</section>
+<section id="questions-about-solving-the-schrödinger-equation." class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-solving-the-schrödinger-equation.">❓ Questions about Solving the Schrödinger Equation.</h2>
+<ol start="61" type="1">
+<li>Describe the technique of separation of variables? When can it be applied?</li>
+<li>What is the expression for the zero-point energy and ground-state wavefunction of an electron in a 4-dimensional box? Can you identify some states of the 4-dimensional box with especially high degeneracy?</li>
+<li>What is the degeneracy of the k-th excited state of a particle confined to a circular disk? What is the degeneracy of the k-th excited state of a particle confined in a spherical ball?</li>
+<li>Consider an electron confined to a circular harmonic well, <span class="math inline">\(V=\tfrac{1}{2}k(x^2+y^2)\)</span>. What is the angular kinetic energy and angular wavefunction for this system?</li>
+<li>How would you write the Hamiltonian for two electrons confined to a box? Could you solve this system with separation of variables? Why or why not?</li>
+<li>Write the time-independent Schrödinger equation for an electron in an cylindrical box. What are its eigenfunctions and eigenvalues?</li>
+<li>What is the definition of degeneracy? How does an “accidental” degeneracy differ from an ordinary degeneracy?</li>
+<li>If there is any degenerate state (either accidental or due to symmetry) for the multi-dimensional particle-in-a-box, then there are always an infinite number of other degenerate states. Why?</li>
+<li>Construct an example of a four-fold accidental degeneracy for a particle in a 2-dimensional rectangular (not square!) box.</li>
+<li>What would the time-independent Schrödinger equation for electrons in an elliptical box look like? (You may find it useful to reference elliptical and ellipsoidal coordinates.)</li>
+<li>Consider the hydrogen molecule ion, <span class="math inline">\(\text{H}_2^+\)</span>. Is it more sensible to use the secular equation (basis-set-expansion) or perturbation theory? What if the bond length is very small? What if the bond length is very large?</li>
+<li>How is the Hellmann-Feynman theorem related to perturbation theory?</li>
+<li>What is perturbation theory? What is the expression for the first-order perturbed wavefunction?</li>
+<li>What is the Hamiltonian for the rigid rotor? What are the eigenfunctions and eigenvalues of the rigid rotor?</li>
+<li>What is the Hamiltonian for the harmonic oscillator? What are the eigenfunctions and eigenvalues of the harmonic oscillator?</li>
+<li>What is the Hamiltonian for the one-electron atom? What are the eigenfunctions and eigenvalues of the one-electron atom?</li>
+<li>What is the Hamiltonian for the particle-in-a-box? What are the eigenfunctions and eigenvalues of the particle-in-a-box?</li>
+</ol>
+</section>
+<section id="questions-about-electronic-systems." class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-electronic-systems.">❓ Questions about Electronic Systems.</h2>
+<ol start="78" type="1">
+<li>What is the Hamiltonian for a many-electron molecule? How would you (approximately) solve the associated Schrödinger equation?</li>
+<li>What is the electronic Hamiltonian for a many-electron molecule? How would you (approximately) solve the associated Schrödinger equation?</li>
+<li>What is the nuclear Hamiltonian for a many-electron molecule? How would you (approximately) solve the associated Schrödinger equation?</li>
+<li>Suppose electrons did not repel each other. Can you write the wavefunction for a many-electron atom in that case?</li>
+<li>Why do you think solving the Schrödinger equation for the one-electron molecule is more complicated than solving the Schrödinger equation for the one-electron atom?</li>
+<li>For what atomic number, <span class="math inline">\(Z\)</span>, is the energy of a one-electron atom comparable to the rest-mass energy of an electron, <span class="math inline">\(m_e c^2\)</span>? For atomic numbers close to this value, relativistic effects become extremely important.</li>
+<li>What are eigenfunctions for the <span class="math inline">\(n=l+1\)</span> state of a one-electron atom?</li>
+<li>Show that if you minimize the energy as a function of the basis-set coefficients using the variational principle, then you obtain the secular equation.</li>
+<li>The Hellmann-Feynman theorem indicates that given the ground-state wavefunction for a molecule, the force on the nuclei can be obtained. Explain how.</li>
+<li>What does it mean that perturbation theory is inaccurate when the perturbation is large?</li>
+<li>Can you explain why the energy goes down when the electron-in-a-box is placed in an external electric field? (Assume that the point where the potential is defined to be zero is in the center of the box, so that the <em>average</em> potential is not changing.)</li>
+<li>For a sufficiently-highly excited state, the effect of an external electric field is negligible. Why is this true intuitively? Can you show it graphically? Can you explain it mathematically?</li>
+<li>If a uniform external electric field of magnitude <span class="math inline">\(F\)</span> in the <span class="math inline">\(\hat{\mathbf{u}} = [\hat{u}_x,\hat{u}_y,\hat{u}_z]^T\)</span> direction is applied to a particle with charge <span class="math inline">\(q\)</span>, the potential <span class="math inline">\(V(x,y,z) = -qF(u_x x + u_y y + u_z z)\)</span> is added to the Hamiltonian. (This follows from the fact that the force applied to the particles is proportional to the electric field, <span class="math inline">\(\text{force} = q \vec{E} = q F \hat{\mathbf{u}}\)</span> and the force is <span class="math inline">\(\text{force} = - \nabla V(x,y,z)\)</span>. If the field is weak, then perturbation theory can be used, and the energy can be written as a Taylor series. The coefficients of the Taylor series give the dipole moment (<span class="math inline">\(\mu\)</span>), dipole polarizability (<span class="math inline">\(\alpha\)</span>), first dipole hyperpolarizability (<span class="math inline">\(\beta\)</span>), second dipole hyperpolarizability (<span class="math inline">\(\gamma\)</span>) in the <span class="math inline">\(\hat{\mathbf{u}}\)</span> direction.
+<ul>
+<li>The dipole moment, <span class="math inline">\(\mu\)</span>, of any spherical system is zero. Explain why.</li>
+<li>The polarizability, <span class="math inline">\(\alpha\)</span>, of any system is always positive. Explain why.</li>
+</ul></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
++ \frac{F^2}{2!} \left[\frac{d^2E_k}{d F^2} \right]_{F=0}
++ \frac{F^3}{3!} \left[\frac{d^3E_k}{d F^3} \right]_{F=0}
++ \frac{F^4}{4!} \left[\frac{d^4E_k}{d F^4} \right]_{F=0} + \cdots \\
+&amp;= E_k(0) - F \mu_{F=0}
+- \frac{F^2}{2!} \alpha_{F=0}
+- \frac{F^3}{3!} \beta_{F=0}
+- \frac{F^4}{4!} \gamma_{F=0} + \cdots \\
+\end{align}
+\]</span></p>
+</section>
+<section id="questions-about-many-electron-systems-and-their-approximation." class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-many-electron-systems-and-their-approximation.">❓ Questions about Many-Electron Systems and their Approximation.</h2>
+<ol start="91" type="1">
+<li><p>What are bosons? What are fermions? How do the wavefunctions differ?</p></li>
+<li><p>Write the Schrödinger equation for a many-electron molecule in the Born-Oppenheimer approximation.</p></li>
+<li><p>What is the fundamental assumption that underlies the orbital approximation?</p></li>
+<li><p>What is a Slater determinant?</p></li>
+<li><p>What is the fundamental idea behind Hartree-Fock theory?</p></li>
+<li><p>How does one use the secular equation to approximate the wavefunction for a many-electron system?</p></li>
+<li><p>Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration <span class="math inline">\(1s^2 2s^1 2p^3\)</span>. Assume all unpaired electrons have <span class="math inline">\(\alpha\)</span> spin.</p></li>
+<li><p>By explicit evaluation, confirm that the 3x3 Slater determinant recovers the result that would be obtained by explicit antisymmetrization.</p></li>
+<li><p>Show that the spin-angular-momentum operators commute with the molecular Hamiltonian? What is the implication of that in terms of the observability of a molecule’s spin.</p></li>
+<li><p>When will the orbital approximation be most accurate? Least accurate?</p></li>
+<li><p>Explain what the Hartree-Fock approximation has to do with the concept of effective nuclear charge.</p></li>
+<li><p>Can you think of a system where a single Slater determinant would be an extremely poor approximation?</p></li>
+<li><p>To what extent is the shape of the spherical harmonic intuitive, especially the doughnut shapes associated with an electron’s angular momentum around the z axis.</p></li>
+<li><p>Derive the Rydberg formula.</p></li>
+<li><p>Can you derive a Rydberg-like formula for the wavenumber of excitations for a particle-in-a-box? How would this formula become more complicated for particles-in-a-box in higher dimensions?</p></li>
+<li><p>An <a href="https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf">advanced</a> (and approximate) version of the <a href="https://en.wikipedia.org/wiki/Rydberg_state">Rydberg formula</a> holds for highly-excited states of most atoms and molecules, and is particularly accurate for excitations from the highest occupied (<span class="math inline">\(ns\)</span> orbital) of <a href="https://en.wikipedia.org/wiki/Rydberg_atom">alkali metal atoms</a>. The basic idea is that the excitation energy can be expressed as a formula like the below, where the <a href="https://en.wikipedia.org/wiki/Quantum_defect">quantum defect</a>, <span class="math inline">\(\delta_{l}\)</span>, <a href="https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf">depends on the orbital angular momentum of the state</a>. Can you understand where the below formula for the excitation energy comes from? Why does the quantum defect depend on angular momentum? Why does the quantum defect decrease as the angular momentum of the state? (For example, for Rubidium, <span class="math inline">\(\delta_0 = 3.13\)</span> but <span class="math inline">\(\delta_2 = 1.35\)</span>.) Why does the quantum defect increase for heavier alkali metal atoms? (For example, for Li, <span class="math inline">\(\delta_0 = 0.41\)</span> but for Cs, <span class="math inline">\(\delta_0 = 4.13\)</span>.) <span class="math display">\[
+\Delta E_{ns \rightarrow n'l'} \approx \frac{1}{2}\left(\frac{1}{(n-\delta_0)^2}-\frac{1}{(n'-\delta_{l'})^2}\right)
+\]</span></p></li>
+<li><p>The Coulomb potential governing interparticle attraction/repulsion between two particles, with charges <span class="math inline">\(q_m\)</span> and <span class="math inline">\(q_n\)</span> and positions <span class="math inline">\(\mathbf{r}_m\)</span> and <span class="math inline">\(\mathbf{r}_n\)</span> in a d-dimensional system is given below. Note that these expressions are <em>not</em> the usual inverse power of the distance. Nonetheless, when considering systems like the cyanine dyes or 2-dimensional quantum dots, we usually use the 3-dimensional Coulomb potential. Why? <span class="math display">\[
+V_{\text{Coulomb}} =
+\begin{cases}
+(q_m q_n) \left|\mathbf{r}_m - \mathbf{r}_n \right|^{2-d} &amp; d&gt; 0 \text{ and } d \ne 2 \\
+(q_m q_n)\ln\left|\mathbf{r}_m - \mathbf{r}_n \right|  &amp; d = 2
+\end{cases}
+\]</span></p></li>
+<li><p>For conjugated linear molecules like the cyanine dyes, the <span class="math inline">\(\pi\)</span>-electrons are really confined to a 3-dimensional region, but the size of the region that is perpendicular to the conjugation is much smaller. For example, one could consider a 3-dimensional box or a 3-dimension cylinder: <span class="math display">\[
+\hat{H}_{\text{p-in-3d-box}} = - \frac{\hbar^2}{2m} \nabla^2 + V_{a_x}(x) + V_{a_y}(y) + V_{a_z}(z)
+\]</span> <span class="math display">\[
+\hat{H}_{\text{p-in-cylinder}} = - \frac{\hbar^2}{2m} \nabla^2 + V_{a_z}(z) + V_{a_r}(r)
+\]</span> <span class="math display">\[
+V_a(x) =
+\begin{cases}
+    +\infty &amp; x\leq 0\\
+    0       &amp; 0\lt x \lt a\\
+    +\infty &amp; a \leq x
+\end{cases}
+\]</span></p></li>
+</ol>
+<ul>
+<li>What are the eigenfunctions and eigenenergies for these systems?</li>
+<li>Why is the one-dimensional particle-in-a-box model sufficient for describing the <em>spectroscopy</em> of cyanine dyes? How long does the chain need to be (e.g., for what value of <span class="math inline">\(k\)</span>) before the non-one-dimensionality of the box becomes important? You can assume the following (reasonable-ish) values for the parameters:</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+a_x &amp;= a_y = 2 \cdot 10^{-10} \text{ m} \\
+a_r &amp;= 1 \cdot 10^{-10} \text{ m} \\
+a_z &amp;= \left(5.67 + 2.49 (k + 1)\right) \cdot 10^{-10} \text{ m} = \left(10.71 + 4.71 (k + 1)\right)\text{ a.u.}
+\end{align}
+\]</span></p>
+</section>
+<section id="questions-about-many-electron-atoms-and-molecules." class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-many-electron-atoms-and-molecules.">❓ Questions about Many-Electron Atoms and Molecules.</h2>
+<ol start="109" type="1">
+<li>Solve the Schrödinger equation for a muon bound to Neon nucleus.</li>
+<li>How does the energy of a one-electron atom decrease as the atomic number increases?</li>
+<li>The ground-state term symbol for Samarium (Sm, atomic number 62) is <span class="math inline">\({}^7F\)</span>. (a) How many nominally degenerate spatial and spin states are associated with this term symbol? (b) In addition to J=0, what other J values are possible for this term symbol?</li>
+<li>Write an expression for the lowest-energy molecular orbital of <span class="math inline">\(\text{H}_3^{+2}\)</span>.</li>
+<li>What is the most probable distance to find an electron from the nucleus in the 4f orbital of a hydrogen atom?</li>
+<li>What is the expectation value of <span class="math inline">\(r^{-1}\)</span> for Hydrogenic Atoms</li>
+<li>Write a slater determinant for the excited-state configuration of the Beryllium atom: <span class="math inline">\(1s^2 2s^1 3s^1\)</span>.</li>
+<li>Write expressions for the energies of the harmonic oscillator using creation and annihilation operators.</li>
+<li>What are the term symbols for the Cobalt atom; <span class="math inline">\([Ar]4s^2 3d^7\)</span>. What is the ground-state term predicted by Hund’s rules?</li>
+</ol>
+</section>
+<section id="questions-about-molecular-spectroscopy" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-molecular-spectroscopy">❓ Questions about Molecular Spectroscopy</h2>
+<ol start="118" type="1">
+<li>Write down and interpret Fermi’s Golden Rule.</li>
+<li>What are spectroscopic selection rules? How can one tell if an excitation is electric-dipole allowed?</li>
+<li>Explain the long-wavelength approximation? What corrections appear when the long-wavelength approximation is not accurate?</li>
+<li>Explain the long-time approximation? What corrections appear when the long-time approximation is not accurate?</li>
+<li>Explain the weak-field approximation? What corrections appear when the weak-field approximation is not accurate?</li>
+<li>What are electric-dipole selection rules for atoms?</li>
+<li>What are electric-dipole selection rules for the harmonic oscillator?</li>
+<li>What are electric-dipole selection rules for the rigid rotor?</li>
+<li>What ar electric-dipole selection rules for the particle in a box?</li>
+<li>Given two orbitals, show how to determine whether a transition between them is an electric-dipole-allowed transition.</li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
