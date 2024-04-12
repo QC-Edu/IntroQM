@@ -1,11 +1,3 @@
-# Questions for Understanding and Review
-&#x1f468;&#x200d;&#x1f3eb; **Overview:**
-These questions are taken from the course notes, tutorial discussions, and previous years' oral exams.
-
-&#x1f4dc; **Instructions:** Be prepared to discuss the following questions/topics. I will randomly assign questions.
-
-# Questions for Understanding and Review
-
 &#x1f468;&#x200d;&#x1f3eb; **Overview:**
 These questions are taken from the course notes, tutorial discussions, and previous years' oral exams.
 
