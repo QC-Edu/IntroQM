@@ -137,7 +137,7 @@ parts:
     - url: https://classroom.github.com/a/pf4re3Xy
       title: "Knowledge Test 3"
     - file: problems/final.md
-      title: Final Exam Question List
+      title: "Final Exam Question List"
 
   - caption: Contributing and Using
     chapters:
