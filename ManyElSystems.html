@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>10. Many-Electron Systems &#8212; Quantum Chemistry</title>
   
@@ -15,63 +14,63 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ManyElSystems';</script>
-    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="11. Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator" href="HOandMorse.html" />
     <link rel="prev" title="9. Approximate Methods for Solving One-Particle Schrödinger Equations" href="ApproximateMethods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,32 +78,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -112,7 +95,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -120,16 +102,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -144,6 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="main_content.html">
   
@@ -157,11 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Quantum Chemistry - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,57 +177,57 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="problems/JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/faZ6D_fY">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/uENjzJ2B">Quiz: Demo w/ GH Classroom</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/2l8X1SU_">Quiz: QM Intro</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/MXPa73KZ">Quiz: The Schrodinger Eq.</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleIn1DBox.html">5. The Particle in a Box</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">Example notebook for Moments</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/QVQ3Lpm1">Practice: Moments of the P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LnlSFUa2">Practice: The Sudden Approximation</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LhlUNH30">Quiz: 1D P-in-Box</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/dOOP2PpB">Practice: Effective Low-Dimensional Systems</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/tR__Vztb">Practice: The Sudden Approximation in 2-D</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/jYuKLWfw">Practice: Interacting particles in a box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/8wy0Ss-1">Quiz: MultiD P-in-Box</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates.html">7. The Postulates of Quantum Mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yN4Hktkg">Quiz: Applying the Postulates</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/obZrhA4q">Practice: hydrogenic atoms</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/uYXRb0cZ">Practice: Tilted P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/L_iBB1Pp">Practice: Gaussian Well(s)</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. Many-electron systems: Structure and Spectroscopy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. Many-electron systems: Structure and Spectroscopy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/EOXYGtiD">Practice: Selection Rules</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
@@ -275,14 +275,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -291,14 +296,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -323,14 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/ManyElSystems.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -470,27 +475,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -547,14 +544,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><img alt="Remdesivir" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Remdesivir.png?raw=true" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="many-electron-systems">
-<h1><span class="section-number">10. </span>Many-Electron Systems<a class="headerlink" href="#many-electron-systems" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Many-Electron Systems<a class="headerlink" href="#many-electron-systems" title="Link to this heading">#</a></h1>
 <p>In general, the Schrödinger equation for many-electron systems cannot be solved exactly. For atoms and molecules, even accurate approximations are difficult, and finding more accurate ways to solve many-electron systems, at low enough computational cost to allow interesting and important molecules and their chemical phenomena to be modeled, is an extremely active area of scientific research.</p>
 <section id="two-electrons-in-a-box">
-<h2>Two Electrons in a Box<a class="headerlink" href="#two-electrons-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>Two Electrons in a Box<a class="headerlink" href="#two-electrons-in-a-box" title="Link to this heading">#</a></h2>
 <p>Arguably the simplest possible two-electron system is two electrons confined to a one-dimensional box of length <span class="math notranslate nohighlight">\(a\)</span>. The Hamiltonian contains terms for the kinetic energy of the two electrons, the potential that binds each electron, and the electron-electron repulsion between the electrons</p>
 <div class="math notranslate nohighlight">
 \[
@@ -597,7 +594,7 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 <p>This wavefunction is not quite right, however. Electrons are identical particles, so it is not allowable to label electron 1 with quantum number <span class="math notranslate nohighlight">\(n_1\)</span> and electron 2 with quantum number <span class="math notranslate nohighlight">\(n_2\)</span>. Solving this problem, however, requires a consideration of electron spin.</p>
 </section>
 <section id="electron-spin-and-the-pauli-principle">
-<h2>Electron Spin and the Pauli Principle<a class="headerlink" href="#electron-spin-and-the-pauli-principle" title="Permalink to this heading">#</a></h2>
+<h2>Electron Spin and the Pauli Principle<a class="headerlink" href="#electron-spin-and-the-pauli-principle" title="Link to this heading">#</a></h2>
 <p>Consider a wavefunction for <span class="math notranslate nohighlight">\(N\)</span> identical particles, <span class="math notranslate nohighlight">\(\Psi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)\)</span>. We know that the particles are identical, so all observables cannot depend on the specific order in which the particle coordinates are listed. In particular, the probability of observing particles at specified positions cannot depend on <em>which</em> particle is at the specified positions. Ergo,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -659,7 +656,7 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 \end{split}\]</div>
 <p>In cases where no specific choice of spin is made, one usually uses the generic notation <span class="math notranslate nohighlight">\(\sigma \in \left\{\alpha,\beta \right\}\)</span></p>
 <section id="two-electrons-with-spin-in-a-box">
-<h3>Two Electrons (with Spin) in a Box<a class="headerlink" href="#two-electrons-with-spin-in-a-box" title="Permalink to this heading">#</a></h3>
+<h3>Two Electrons (with Spin) in a Box<a class="headerlink" href="#two-electrons-with-spin-in-a-box" title="Link to this heading">#</a></h3>
 <p>In order to describe two-electron systems, we need to embellish the electronic positions with spin coordinates. Going back to the wavefunction of two noninteracting electrons in a box, we have:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -674,10 +671,10 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 <p>The factor of <span class="math notranslate nohighlight">\(\tfrac{1}{\sqrt{2}}\)</span> is a normalization constant.</p>
 </section>
 <section id="exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle">
-<h3>📝 Exercise: Confirm that the wavefunction we just defined <span class="math notranslate nohighlight">\(\psi_{n_1,m_{s,1},n_2,m_{s,2}}(x_1,\sigma_1;x_2,\sigma_2) \)</span> is normalized and satisfies the Pauli antisymmetry relation and the Pauli exclusion principle.<a class="headerlink" href="#exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: Confirm that the wavefunction we just defined <span class="math notranslate nohighlight">\(\psi_{n_1,m_{s,1},n_2,m_{s,2}}(x_1,\sigma_1;x_2,\sigma_2) \)</span> is normalized and satisfies the Pauli antisymmetry relation and the Pauli exclusion principle.<a class="headerlink" href="#exercise-confirm-that-the-wavefunction-we-just-defined-psi-n-1-m-s-1-n-2-m-s-2-x-1-sigma-1-x-2-sigma-2-is-normalized-and-satisfies-the-pauli-antisymmetry-relation-and-the-pauli-exclusion-principle" title="Link to this heading">#</a></h3>
 </section>
 <section id="two-electron-atoms">
-<h3>Two-Electron Atoms<a class="headerlink" href="#two-electron-atoms" title="Permalink to this heading">#</a></h3>
+<h3>Two-Electron Atoms<a class="headerlink" href="#two-electron-atoms" title="Link to this heading">#</a></h3>
 <p>In a two-electron atom, there are five times in the Hamiltonian: the kinetic energy of both electrons (2 terms), the potential of attraction between the electron and the nucleus (2 terms), and the electron-electron repulsion potential (1 term).</p>
 <div class="math notranslate nohighlight">
 \[
@@ -709,7 +706,7 @@ E_{n_1,n_2} = E_{n_1}+E_{n_2} = \frac{h^2(n_1^2 + n_2^2)}{8ma^2}
 E_{n_1,n_2} = -\frac{Z^2}{2n_1^2}-\frac{Z^2}{2n_2^2} = -\frac{Z^2}{2}\left(\frac{1}{n_1^2} + \frac{1}{n_2^2} \right)
 \]</div>
 <section id="perturbative-treatment-of-the-2-electron-atom">
-<h4>Perturbative Treatment of the 2-electron atom<a class="headerlink" href="#perturbative-treatment-of-the-2-electron-atom" title="Permalink to this heading">#</a></h4>
+<h4>Perturbative Treatment of the 2-electron atom<a class="headerlink" href="#perturbative-treatment-of-the-2-electron-atom" title="Link to this heading">#</a></h4>
 <p>The energy and wavefunction obtained by totally neglecting the electron-electron repulsion are woefully inaccurate. (E.g., the ground-state energy of the Helium atom is too small by <span class="math notranslate nohighlight">\(\sim 3000 \text{kJ/mol}\)</span> if you neglect the electron-electron repulsion. We can attempt to account for the effects of electron-electron correlation with perturbation theory. The Hamiltonian of interest, in atomic units, is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -736,7 +733,7 @@ E_{\text{accurate}} = -2.9037 \text{ a.u.}
 <p>A more detailed derivations of this result is included in the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/2elatom.pdf?raw=true">pdf</a>.</p>
 </section>
 <section id="variational-treatment-of-the-2-electron-atom">
-<h4>Variational Treatment of the 2-electron atom<a class="headerlink" href="#variational-treatment-of-the-2-electron-atom" title="Permalink to this heading">#</a></h4>
+<h4>Variational Treatment of the 2-electron atom<a class="headerlink" href="#variational-treatment-of-the-2-electron-atom" title="Link to this heading">#</a></h4>
 <p>The ground-state wavefunction for the 2-electron atom, with electron-electron repulsion excluded, is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -792,7 +789,7 @@ E_{\text{accurate}} = -2.9037 \text{ a.u.}
 </section>
 </section>
 <section id="many-electron-wavefunctions-the-slater-determinant">
-<h2>Many-electron wavefunctions: the Slater Determinant<a class="headerlink" href="#many-electron-wavefunctions-the-slater-determinant" title="Permalink to this heading">#</a></h2>
+<h2>Many-electron wavefunctions: the Slater Determinant<a class="headerlink" href="#many-electron-wavefunctions-the-slater-determinant" title="Link to this heading">#</a></h2>
 <p>For more than two electrons, explicitly antisymmetrizing the wavefunction becomes extremely tedious. For example, for a 3-electron system, with electrons in the spatial orbitals <span class="math notranslate nohighlight">\(\phi_1(\mathbf{r})\)</span>, <span class="math notranslate nohighlight">\(\phi_2(\mathbf{r})\)</span>, and <span class="math notranslate nohighlight">\(\phi_3(\mathbf{r})\)</span>, the antisymmetrized wavefunction is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -864,15 +861,15 @@ E_{\text{accurate}} = -2.9037 \text{ a.u.}
 <p>The Slater determinant captures the Pauli antisymmetry relation because when you interchange two rows of a determinant (corresponding to interchanging the coordinates of two electrons) the determinant changes by a multiplicative factor of -1. Similarly, the Pauli exclusions principle is satisfied because when two electrons are at the same location, two rows of the determinant are equal, and the determinant is zero. In addition to the (spatial) Pauli principles, the Slater determinant indicates that you cannot put two electrons in the same spin-orbital (because the determinant is zero if two columns are the same). The ability to satisfy these key mathematical properties of fermions with a compact wavefunction form is why the Slater determinant is certral to practical quantum chemistry.</p>
 <p>Incidentally, <a class="reference external" href="https://en.wikipedia.org/wiki/Fock_space">for bosons the situation is similar</a>, but instead of a Slater determinant one has a Slater <a class="reference external" href="https://en.wikipedia.org/wiki/Permanent_(mathematics)">permanent</a>. A permanent is similar to a determinant, but when rows (or columns) are interchanged, the permanent of a matrix does not change. Unfortunately, permanents are much more difficult to evaluate, computationally, than determinants.</p>
 <section id="exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization">
-<h3>📝 Exercise: By explicit evaluation, confirm that the <span class="math notranslate nohighlight">\(2 \times 2\)</span> and <span class="math notranslate nohighlight">\(3 \times 3\)</span> Slater determinants recover the result that would be obtained by explicit antisymmetrization.<a class="headerlink" href="#exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: By explicit evaluation, confirm that the <span class="math notranslate nohighlight">\(2 \times 2\)</span> and <span class="math notranslate nohighlight">\(3 \times 3\)</span> Slater determinants recover the result that would be obtained by explicit antisymmetrization.<a class="headerlink" href="#exercise-by-explicit-evaluation-confirm-that-the-2-times-2-and-3-times-3-slater-determinants-recover-the-result-that-would-be-obtained-by-explicit-antisymmetrization" title="Link to this heading">#</a></h3>
 </section>
 <section id="exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin">
-<h3>📝 Exercise: Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration <span class="math notranslate nohighlight">\(\text{1s}^2 \text{2s}^1 \text{2p}_0^1 \text{2p}_{+1}^1 \text{2p}_{-1}^1\)</span>. Assume all unpaired electrons have <span class="math notranslate nohighlight">\(\alpha\)</span> spin.<a class="headerlink" href="#exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: Write a Slater determinant for the lowest-energy pentuplet state of the Carbon atom, with electron configuration <span class="math notranslate nohighlight">\(\text{1s}^2 \text{2s}^1 \text{2p}_0^1 \text{2p}_{+1}^1 \text{2p}_{-1}^1\)</span>. Assume all unpaired electrons have <span class="math notranslate nohighlight">\(\alpha\)</span> spin.<a class="headerlink" href="#exercise-write-a-slater-determinant-for-the-lowest-energy-pentuplet-state-of-the-carbon-atom-with-electron-configuration-text-1s-2-text-2s-1-text-2p-0-1-text-2p-1-1-text-2p-1-1-assume-all-unpaired-electrons-have-alpha-spin" title="Link to this heading">#</a></h3>
 <p><img alt="Cyanine Dyes" src="https://github.com/QC-Edu/IntroQM2022/blob/master/linkedFiles/CyanineDyes.svg?raw=true?" /></p>
 </section>
 </section>
 <section id="example-many-electrons-in-a-box">
-<h2>Example: Many electrons in a Box<a class="headerlink" href="#example-many-electrons-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>Example: Many electrons in a Box<a class="headerlink" href="#example-many-electrons-in-a-box" title="Link to this heading">#</a></h2>
 <p>The Hamiltonian for <span class="math notranslate nohighlight">\(N\)</span> electrons confined to a box is, in atomic units,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -974,12 +971,12 @@ E_{\text{e.s.; no e-e repulsion}} = \sum_{n=1}^{N/2-1} 2\epsilon_n + \epsilon_{N
 E_{\text{no e-e repulsion}} = \sum_{k=1}^{\infty} n_k \epsilon_k 
 \]</div>
 <section id="exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons">
-<h3>📝 Exercise: Write the Slater determinant for, and an approximate energy expression for, the ground state and first excited state of 2 electrons in a 2-dimensional square box and 2 electrons in a 3-dimension square box. What changes when you repeat the exercise for 3 electrons?<a class="headerlink" href="#exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: Write the Slater determinant for, and an approximate energy expression for, the ground state and first excited state of 2 electrons in a 2-dimensional square box and 2 electrons in a 3-dimension square box. What changes when you repeat the exercise for 3 electrons?<a class="headerlink" href="#exercise-write-the-slater-determinant-for-and-an-approximate-energy-expression-for-the-ground-state-and-first-excited-state-of-2-electrons-in-a-2-dimensional-square-box-and-2-electrons-in-a-3-dimension-square-box-what-changes-when-you-repeat-the-exercise-for-3-electrons" title="Link to this heading">#</a></h3>
 <p><img alt="Spectroscopy" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/Spectroscopy.jpg?raw=true" /></p>
 </section>
 </section>
 <section id="example-spectroscopy-of-cyanine-dyes">
-<h2>Example: Spectroscopy of Cyanine Dyes<a class="headerlink" href="#example-spectroscopy-of-cyanine-dyes" title="Permalink to this heading">#</a></h2>
+<h2>Example: Spectroscopy of Cyanine Dyes<a class="headerlink" href="#example-spectroscopy-of-cyanine-dyes" title="Link to this heading">#</a></h2>
 <p>We are now, finally, in position to revisit the spectrum of the cynanine dyes we began our treatment of quantum mechanics with. Recall that for the cyanine dyes, we can approximate the length of the box with</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1021,13 +1018,13 @@ N = 2k + 6
 <p>The following code block computes the excitation energies for cyanine dyes of a given length, <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
     
 <span class="c1"># Define a function for the wavelength associated with the</span>
 <span class="c1"># lowest-frequency excitation of a cyanine dye with </span>
 <span class="c1"># specified value of k</span>
-<span class="k">def</span> <span class="nf">compute_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="s2">&quot;Compute absorption wavelength of a cyanine dye with 2k+6 pi electrons in nm.&quot;</span>
     <span class="c1"># length of box:</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mf">10.71</span> <span class="o">+</span> <span class="mf">4.71</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -1050,7 +1047,7 @@ N = 2k + 6
 <span class="c1"># set up the value k for the size of the dye.</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="k">def</span> <span class="nf">print_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The experimental absorption wavelength for k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">compute_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> nm&#39;</span><span class="p">)</span>
 
 <span class="n">print_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
@@ -1061,8 +1058,8 @@ N = 2k + 6
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Define a function for the wavelength associated with the</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># lowest-frequency excitation of a cyanine dye with </span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># specified value of k</span>
@@ -1075,7 +1072,7 @@ N = 2k + 6
 <p><img alt="Molecular Magnet" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Struktur_SMM-Mn12.png" /></p>
 </section>
 <section id="many-electron-atoms-and-molecules">
-<h2>Many-Electron Atoms and Molecules<a class="headerlink" href="#many-electron-atoms-and-molecules" title="Permalink to this heading">#</a></h2>
+<h2>Many-Electron Atoms and Molecules<a class="headerlink" href="#many-electron-atoms-and-molecules" title="Link to this heading">#</a></h2>
 <p>Detailed notes on <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/atomsshort.pdf?raw=true">many-electron atoms</a> and <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/molecules.pdf?raw=true">molecules</a> are available as PDFs.</p>
 <p>For a molecule in the <a class="reference external" href="https://en.wikipedia.org/wiki/Born%E2%80%93Oppenheimer_approximation">Born-Oppenheimer approximation</a>, the <a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/Chpt%201.pdf?raw=true">electronic Hamiltonian</a> for <span class="math notranslate nohighlight">\(N\)</span> electrons at positions <span class="math notranslate nohighlight">\(\mathbf{r}_1, \mathbf{r}_2, \ldots \mathbf{r}_N\)</span> and <span class="math notranslate nohighlight">\(P_{\text{atoms}}\)</span> nuclei at positions <span class="math notranslate nohighlight">\(\mathbf{R}_1, \mathbf{R}_2, \ldots \mathbf{R}_P\)</span> is, in atomic units,</p>
 <div class="math notranslate nohighlight">
@@ -1134,7 +1131,7 @@ E_{\text{ind. el}} = \epsilon_1 + \epsilon_2 + \cdots + \epsilon_N
 <p><img alt="H2 orbitals" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/H2OrbitalsAnimation.gif?raw=true" /></p>
 </section>
 <section id="self-reflection">
-<h2>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this heading">#</a></h2>
+<h2>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>When will the orbital approximation be most accurate? Least accurate?</p></li>
 <li><p>Explain what the Hartree-Fock approximation has to do with the concept of effective nuclear charge.</p></li>
@@ -1142,7 +1139,7 @@ E_{\text{ind. el}} = \epsilon_1 + \epsilon_2 + \cdots + \epsilon_N
 </ul>
 </section>
 <section id="thought-provoking-questions">
-<h2>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this heading">#</a></h2>
+<h2>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>When will the orbital approximation be most accurate? Least accurate?</p></li>
 <li><p>Show that the spin-angular-momentum operators commute with the molecular Hamiltonian? What is the implication of that in terms of the observability of a molecule’s spin.</p></li>
@@ -1202,7 +1199,7 @@ V_{\text{Coulomb}} =
 \end{split}\]</div>
 </section>
 <section id="recapitulation">
-<h2>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this heading">#</a></h2>
+<h2>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What are bosons? What are fermions? How do the wavefunctions differ?</p></li>
 <li><p>Write the Schrödinger equation for a many-electron molecule in the Born-Oppenheimer approximation.</p></li>
@@ -1215,13 +1212,13 @@ V_{\text{Coulomb}} =
 </ul>
 </section>
 <section id="next-up">
-<h2>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this heading">#</a></h2>
+<h2>🔮 Next Up…<a class="headerlink" href="#next-up" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hückel Theory and Its Extensions</p></li>
 </ul>
 </section>
 <section id="references">
-<h2>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>📚 References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf?raw=true">Randy’s book</a></p></li>
@@ -1264,7 +1261,7 @@ V_{\text{Coulomb}} =
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1292,7 +1289,9 @@ V_{\text{Coulomb}} =
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1351,7 +1350,7 @@ By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter B
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1375,8 +1374,8 @@ By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter B
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

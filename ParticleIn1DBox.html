@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>5. The One-Dimensional Particle in a Box &#8212; Quantum Chemistry</title>
   
@@ -15,63 +14,63 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ParticleIn1DBox';</script>
-    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Computing the expectation value of \(\langle x^4 \rangle\) for the 1-dimensional particle-in-a-box" href="x4_mocked.html" />
     <link rel="prev" title="4. The Schrödinger Equation" href="SchrodingerEq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,32 +78,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -112,7 +95,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -120,16 +102,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -144,6 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="main_content.html">
   
@@ -157,11 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Quantum Chemistry - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,57 +177,57 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="problems/JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/faZ6D_fY">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/uENjzJ2B">Quiz: Demo w/ GH Classroom</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/2l8X1SU_">Quiz: QM Intro</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/MXPa73KZ">Quiz: The Schrodinger Eq.</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. The Particle in a Box</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. The Particle in a Box</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="x4_mocked.html">Example notebook for Moments</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/QVQ3Lpm1">Practice: Moments of the P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LnlSFUa2">Practice: The Sudden Approximation</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/LhlUNH30">Quiz: 1D P-in-Box</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/dOOP2PpB">Practice: Effective Low-Dimensional Systems</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/tR__Vztb">Practice: The Sudden Approximation in 2-D</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/jYuKLWfw">Practice: Interacting particles in a box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/8wy0Ss-1">Quiz: MultiD P-in-Box</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates.html">7. The Postulates of Quantum Mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/yN4Hktkg">Quiz: Applying the Postulates</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/obZrhA4q">Practice: hydrogenic atoms</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/uYXRb0cZ">Practice: Tilted P-in-Box</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/L_iBB1Pp">Practice: Gaussian Well(s)</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/EOXYGtiD">Practice: Selection Rules</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
@@ -275,14 +275,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -291,14 +296,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -323,14 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/ParticleIn1DBox.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -470,27 +475,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -546,13 +543,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/cyanine.jfif?raw=true" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-one-dimensional-particle-in-a-box">
-<h1><span class="section-number">5. </span>The One-Dimensional Particle in a Box<a class="headerlink" href="#the-one-dimensional-particle-in-a-box" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>The One-Dimensional Particle in a Box<a class="headerlink" href="#the-one-dimensional-particle-in-a-box" title="Link to this heading">#</a></h1>
 <section id="learning-objectives">
-<h2>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>🥅 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Determine the energies and eigenfunctions of the particle-in-a-box.</p></li>
 <li><p>Learn how to normalize a wavefunction.</p></li>
@@ -561,7 +558,7 @@ document.write(`
 </ul>
 </section>
 <section id="cyanine-dyes">
-<h2>Cyanine Dyes<a class="headerlink" href="#cyanine-dyes" title="Permalink to this heading">#</a></h2>
+<h2>Cyanine Dyes<a class="headerlink" href="#cyanine-dyes" title="Link to this heading">#</a></h2>
 <p><img alt="Cyanine Dyes" src="https://github.com/PaulWAyers/IntroQChem/blob/main/linkedFiles/CyanineDyes.svg?raw=true?" /></p>
 <p>Cyanine dye molecules are often modelled as one-dimension particles in a box. To understand why, start by thinking classically.  You learn in organic chemistry that electrons can more “freely” along alternating double bonds.  If this is true, then you can imagine that the electrons can more from one Nitrogen to the other, almost without resistance.  On the other hand, there are sp<sup>3</sup>-hybridized functional groups attached to the Nitrogen atom, so once the electron gets to Nitrogen atom, it has to turn around and go back whence it came.   A very, very, very simple model would be to imagine that the electron is totally free between the Nitrogen atoms, and totally forbidden from going much beyond the Nitrogen atoms.  This suggests modeling these systems a potential energy function like:</p>
 <div class="math notranslate nohighlight">
@@ -580,7 +577,7 @@ a = \left(5.67 + 2.49 (k + 1)\right) \cdot 10^{-10} \text{ m}
 \]</div>
 </section>
 <section id="postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability">
-<h2>Postulate: The squared magnitude of the wavefunction is proportional to probability<a class="headerlink" href="#postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability" title="Permalink to this heading">#</a></h2>
+<h2>Postulate: The squared magnitude of the wavefunction is proportional to probability<a class="headerlink" href="#postulate-the-squared-magnitude-of-the-wavefunction-is-proportional-to-probability" title="Link to this heading">#</a></h2>
 <p>What is the interpretation of the wavefunction? The Born postulate indicates that the squared magnitude of the wavefunction is proportional to the probability of observing the system at that location. E.g., if <span class="math notranslate nohighlight">\(\psi(x)\)</span> is the wavefunction for an electron as a function of <span class="math notranslate nohighlight">\(x\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -589,7 +586,7 @@ p(x) = |\psi(x)|^2
 <p>is the probability of observing an electron at the point <span class="math notranslate nohighlight">\(x\)</span>. This is called the Born Postulate.</p>
 </section>
 <section id="the-wavefunctions-of-the-particle-in-a-box-boundary-conditions">
-<h2>The Wavefunctions of the Particle in a Box (boundary conditions)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-boundary-conditions" title="Permalink to this heading">#</a></h2>
+<h2>The Wavefunctions of the Particle in a Box (boundary conditions)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-boundary-conditions" title="Link to this heading">#</a></h2>
 <p><img alt="Particle in a Box Potential" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Infinite_potential_well-en.svg/308px-Infinite_potential_well-en.svg.png" /></p>
 <p>The nice thing about this “particle in a box” model is that it is easy to solve the time-independent Schrödinger equation in this case.  Because there is no chance that the particle could ever “escape” an infinite box like this (such an electron would have infinite potential energy!), <span class="math notranslate nohighlight">\(|\psi(x)|^2\)</span> must equal zero outside the box. Therefore the wavefunction can only be nonzero inside the box. In addition, the wavefunction should be zero at the edges of the box, because otherwise the wavefunction will not be continuous.  So we should have a wavefunction like</p>
 <div class="math notranslate nohighlight">
@@ -603,12 +600,12 @@ p(x) = |\psi(x)|^2
 \end{split}\]</div>
 </section>
 <section id="postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation">
-<h2>Postulate: The wavefunction of a system is determined by solving the Schrödinger equation<a class="headerlink" href="#postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation" title="Permalink to this heading">#</a></h2>
+<h2>Postulate: The wavefunction of a system is determined by solving the Schrödinger equation<a class="headerlink" href="#postulate-the-wavefunction-of-a-system-is-determined-by-solving-the-schrodinger-equation" title="Link to this heading">#</a></h2>
 <p>How do we find the wavefunction for the particle-in-a-box or, for that matter, any other system? The wavefunction can be determined by solving the time-independent (when the potential is time-independent) or time-dependent (when the potential is time-dependent) Schrödinger equation.</p>
 <p><img alt="Wavefunction gif" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/InfiniteSquareWellAnimation.gif" /></p>
 </section>
 <section id="the-wavefunctions-of-the-particle-in-a-box-solution">
-<h2>The Wavefunctions of the Particle in a Box (solution)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-solution" title="Permalink to this heading">#</a></h2>
+<h2>The Wavefunctions of the Particle in a Box (solution)<a class="headerlink" href="#the-wavefunctions-of-the-particle-in-a-box-solution" title="Link to this heading">#</a></h2>
 <p>To find the wavefunctions for a system, one solves the Schrödinger equation. For a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in a one-dimensional box, the (time-independent) Schrödinger equation is:</p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -655,7 +652,7 @@ V(x) =
 \]</div>
 </section>
 <section id="normalization-of-wavefunctions">
-<h2>Normalization of Wavefunctions<a class="headerlink" href="#normalization-of-wavefunctions" title="Permalink to this heading">#</a></h2>
+<h2>Normalization of Wavefunctions<a class="headerlink" href="#normalization-of-wavefunctions" title="Link to this heading">#</a></h2>
 <p>As seen in the previous section, if a wavefunction solves the Schrödinger equation, any constant multiple of the wavefunction also solves the Schrödinger equation,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -676,7 +673,7 @@ V(x) =
 &amp;= \left|A_n\right|^2\int_0^a \sin^2\left(\tfrac{n \pi x}{a}\right) dx
 \end{align}
 \end{split}\]</div>
-<p>To evaluate this integral, it is useful to remember some <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities">trigonometric identities</a>. (You can learn more about how I remember trigonometric identities <a class="reference internal" href="linkedFiles/TrigIdentities.html"><span class="doc std std-doc">here</span></a>.) The specific identity we need here is <span class="math notranslate nohighlight">\(\sin^2 x = \tfrac{1}{2}(1-\cos 2x)\)</span>:</p>
+<p>To evaluate this integral, it is useful to remember some <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities">trigonometric identities</a>. (You can learn more about how I remember trigonometric identities <a class="reference internal" href="#../linkedFiles/TrigIdentities.md"><span class="xref myst">here</span></a>.) The specific identity we need here is <span class="math notranslate nohighlight">\(\sin^2 x = \tfrac{1}{2}(1-\cos 2x)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -715,7 +712,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 <p>While this normalization convention is used 99% of the time, there are some cases where it is more convenient to make a different choice for the amplitude of the wavefunctions. I say this to remind you that normalization the wavefunction is something we do for convenience; it is not required by physics!</p>
 </section>
 <section id="normalization-check">
-<h2>Normalization Check<a class="headerlink" href="#normalization-check" title="Permalink to this heading">#</a></h2>
+<h2>Normalization Check<a class="headerlink" href="#normalization-check" title="Link to this heading">#</a></h2>
 <p>One advantage of using Jupyter is that we can easily check our (symbolic) mathematics. Let’s confirm that the wavefunction is normalized by evaluating,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -729,16 +726,16 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 <span class="c1">#       importing numpy directly. However, to make automatic differentiation work,</span>
 <span class="c1">#       you should NOT import numpy directly by `import numpy as np`.</span>
 
-<span class="kn">import</span> <span class="nn">autograd.numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">autograd</span> <span class="kn">import</span> <span class="n">elementwise_grad</span> <span class="k">as</span> <span class="n">egrad</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">autograd.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">autograd</span><span class="w"> </span><span class="kn">import</span> <span class="n">elementwise_grad</span> <span class="k">as</span> <span class="n">egrad</span>
 
 <span class="c1"># import numpy as np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
 
-<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># set the size of the plot</span>
 <span class="c1"># plt.rcParams[&#39;figure.figsize&#39;] = [10, 5]</span>
@@ -747,16 +744,15 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># set the size of the plot</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># plt.rcParams[&#39;figure.figsize&#39;] = [10, 5]</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">autograd</span><span class="w"> </span><span class="kn">import</span> <span class="n">elementwise_grad</span> <span class="k">as</span> <span class="n">egrad</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># import numpy as np</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">trapz</span><span class="p">,</span> <span class="n">quad</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
+<span class="ne">ImportError</span>: cannot import name &#39;trapz&#39; from &#39;scipy.integrate&#39; (/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/scipy/integrate/__init__.py)
 </pre></div>
 </div>
 </div>
@@ -764,7 +760,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a function for the wavefunction</span>
-<span class="k">def</span> <span class="nf">compute_wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute 1-dimensional particle-in-a-box wave-function value(s).</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
@@ -799,7 +795,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
     <span class="k">return</span> <span class="n">value</span>
 
 <span class="c1"># Define a function for the wavefunction squared</span>
-<span class="k">def</span> <span class="nf">compute_probability</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_probability</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute 1-dimensional particle-in-a-box probablity value(s).</span>
 <span class="sd">    </span>
 <span class="sd">    See `compute_wavefunction` parameters.</span>
@@ -807,7 +803,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
     <span class="k">return</span> <span class="n">compute_wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="c1">#This next bit of code just prints out the normalization error</span>
-<span class="k">def</span> <span class="nf">check_normalization</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_normalization</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="c1">#check the computed values of the moments against the analytic formula</span>
     <span class="n">normalization</span><span class="p">,</span><span class="n">error</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">compute_probability</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normalization of wavefunction = &quot;</span><span class="p">,</span> <span class="n">normalization</span><span class="p">)</span>
@@ -832,7 +828,7 @@ A_n = \left(\cos(\theta) \pm i \sin(\theta) \right) \sqrt{\tfrac{2}{a}}
 </div>
 </section>
 <section id="the-energies-of-the-particle-in-a-box">
-<h2>The Energies of the Particle in a Box<a class="headerlink" href="#the-energies-of-the-particle-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>The Energies of the Particle in a Box<a class="headerlink" href="#the-energies-of-the-particle-in-a-box" title="Link to this heading">#</a></h2>
 <p>How do we compute the energy of a particle in a box? All we need to do is substitute the eigenfunctions of the Hamiltonian, <span class="math notranslate nohighlight">\(\psi_n(x)\)</span> back into the Schrödinger equation to determine the eigenenergies, <span class="math notranslate nohighlight">\(E_n\)</span>. That is, from</p>
 <div class="math notranslate nohighlight">
 \[
@@ -863,7 +859,7 @@ E_n &amp;= \frac{\hbar^2 n^2 \pi^2}{2ma^2} \qquad \qquad n=1,2,3,\ldots\\
 <p>Notice that only certain energies are allowed. This is a fundamental principle of quantum mechanics, and it is related to the “waviness” of particles. Certain “frequencies” are resonant, and other “frequencies” cannot be observed. <em>The <strong>only</strong> energies that can be observed for a particle-in-a-box are the ones given by the above formula.</em></p>
 </section>
 <section id="zero-point-energy">
-<h2>Zero-Point Energy<a class="headerlink" href="#zero-point-energy" title="Permalink to this heading">#</a></h2>
+<h2>Zero-Point Energy<a class="headerlink" href="#zero-point-energy" title="Link to this heading">#</a></h2>
 <p>Naïvely, you might expect that the lowest-energy state of a particle in a box has zero energy. (The potential in the box is zero, after all, so shouldn’t the lowest-energy state be the state with zero kinetic energy? And if the kinetic energy were zero and the potential energy were zero, then the total energy would be zero.)</p>
 <p>But this doesn’t happen. It turns out that you can never “stop” a quantum particle; it always has a zero-point motion, typically a resonant oscillation about the lowest-potential-energy location(s). Indeed, the more you try to confine a particle to stop it, the bigger its kinetic energy becomes. This is clear in the particle-in-a-box, which has only kinetic energy. There the (kinetic) energy increases rapidly, as <span class="math notranslate nohighlight">\(a^{-2}\)</span>, as the box becomes smaller:</p>
 <div class="math notranslate nohighlight">
@@ -890,7 +886,7 @@ V_{\text{min}}= \min_x V(x)
 </div></blockquote>
 </section>
 <section id="atomic-units">
-<h2>Atomic Units<a class="headerlink" href="#atomic-units" title="Permalink to this heading">#</a></h2>
+<h2>Atomic Units<a class="headerlink" href="#atomic-units" title="Link to this heading">#</a></h2>
 <p>Because Planck’s constant and the electron mass are tiny numbers, it is often useful to use <a class="reference external" href="https://en.wikipedia.org/wiki/Hartree_atomic_units">atomic units</a> when performing calculations. We’ll learn more about atomic units later but, for now, we only need to know that, in atomic units, <span class="math notranslate nohighlight">\(\hbar\)</span>, the mass of the electron, <span class="math notranslate nohighlight">\(m_e\)</span>, the charge of the electron, <span class="math notranslate nohighlight">\(e\)</span>, and the average (mean) distance of an electron from the nucleus in the Hydrogen atom, <span class="math notranslate nohighlight">\(a_0\)</span>, are all defined to be equal to 1.0 in atomic units.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -913,14 +909,14 @@ E_h =4.359744722 \times 10^{-18} \text{ J} = 1 \text{ Hartree} = 1 \text{ a.u.}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a function for the energy of a particle in a box</span>
 <span class="c1"># with length a and quantum number n [in atomic units!]</span>
 <span class="c1"># The length is input in Bohr (atomic units)</span>
-<span class="k">def</span> <span class="nf">compute_energy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_energy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
     <span class="s2">&quot;Compute 1-dimensional particle-in-a-box energy.&quot;</span>
     <span class="k">return</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Define a function for the energy of an electron in a box</span>
 <span class="c1"># with length a and quantum number n [in SI units!]. </span>
 <span class="c1"># The length is input in meters.</span>
-<span class="k">def</span> <span class="nf">compute_energy_si</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_energy_si</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
     <span class="s2">&quot;Compute 1-dimensional particle-in-a-box energy.&quot;</span>
     <span class="k">return</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">m_e</span><span class="o">*</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
@@ -929,7 +925,7 @@ E_h =4.359744722 \times 10^{-18} \text{ J} = 1 \text{ Hartree} = 1 \text{ a.u.}
 
 
 <span class="c1">#This next bit of code just prints out the energy in atomic and SI units</span>
-<span class="k">def</span> <span class="nf">print_energy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_energy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron in a box of length </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u. with &#39;</span>
        <span class="sa">f</span><span class="s1">&#39;quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">compute_energy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron in a box of length </span><span class="si">{</span><span class="n">a</span><span class="o">*</span><span class="n">a0</span><span class="si">:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1"> m with &#39;</span>
@@ -953,11 +949,11 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 </div>
 </div>
 <section id="exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a">
-<h3>📝 Exercise: Write a function that returns the length, <span class="math notranslate nohighlight">\(a\)</span>, of a box for which the lowest-energy-excitation of the ground state, <span class="math notranslate nohighlight">\(n = 1 \rightarrow n=2\)</span>, corresponds to the system absorbing light with a given wavelength, <span class="math notranslate nohighlight">\(\lambda\)</span>. The input is <span class="math notranslate nohighlight">\(\lambda\)</span>; the output is <span class="math notranslate nohighlight">\(a\)</span>.<a class="headerlink" href="#exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a" title="Permalink to this heading">#</a></h3>
+<h3>📝 Exercise: Write a function that returns the length, <span class="math notranslate nohighlight">\(a\)</span>, of a box for which the lowest-energy-excitation of the ground state, <span class="math notranslate nohighlight">\(n = 1 \rightarrow n=2\)</span>, corresponds to the system absorbing light with a given wavelength, <span class="math notranslate nohighlight">\(\lambda\)</span>. The input is <span class="math notranslate nohighlight">\(\lambda\)</span>; the output is <span class="math notranslate nohighlight">\(a\)</span>.<a class="headerlink" href="#exercise-write-a-function-that-returns-the-length-a-of-a-box-for-which-the-lowest-energy-excitation-of-the-ground-state-n-1-rightarrow-n-2-corresponds-to-the-system-absorbing-light-with-a-given-wavelength-lambda-the-input-is-lambda-the-output-is-a" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system">
-<h2>Postulate: The wavefunction contains all the physically meaningful information about a system.<a class="headerlink" href="#postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system" title="Permalink to this heading">#</a></h2>
+<h2>Postulate: The wavefunction contains all the physically meaningful information about a system.<a class="headerlink" href="#postulate-the-wavefunction-contains-all-the-physically-meaningful-information-about-a-system" title="Link to this heading">#</a></h2>
 <p>While the wavefunction is not itself observable, all observable properties of a system can be determined from the wavefunction. However, just because the wavefunction encapsulates all the <em>observable</em> properties of a system does not mean that it contains <em>all information</em> about a system. In quantum mechanics, some things are not observable. Consider that for the ground (<span class="math notranslate nohighlight">\(n=1\)</span>) state of the particle in a box, the root-mean-square average momentum,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -966,7 +962,7 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 <p>increases as you squeeze the box. That is, the more you try to constrain the particle in space, the faster it moves. You can’t “stop” the particle no matter how hard you squeeze it, so it’s impossible to exactly know where the particle is located. You can only determine its <em>average</em> position.</p>
 </section>
 <section id="postulate-observable-quantities-correspond-to-linear-hermitian-operators">
-<h2>Postulate: Observable Quantities Correspond to Linear, Hermitian Operators.<a class="headerlink" href="#postulate-observable-quantities-correspond-to-linear-hermitian-operators" title="Permalink to this heading">#</a></h2>
+<h2>Postulate: Observable Quantities Correspond to Linear, Hermitian Operators.<a class="headerlink" href="#postulate-observable-quantities-correspond-to-linear-hermitian-operators" title="Link to this heading">#</a></h2>
 <p>The <em>correspondence</em> principle says that for every classical observable there is a linear, Hermitian, operator that allows computation of the quantum-mechanical observable. An operator, <span class="math notranslate nohighlight">\(\hat{C}\)</span> is linear if for any complex numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and any wavefunctions <span class="math notranslate nohighlight">\(\psi_1(x)\)</span> and <span class="math notranslate nohighlight">\(\psi_2(x)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1077,7 +1073,7 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Compute &lt;x^power&gt;, the expectation value of x^power</span>
-<span class="k">def</span> <span class="nf">compute_moment</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_moment</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the x^power moment of the 1-dimensional particle-in-a-box.</span>
 <span class="sd">    </span>
 <span class="sd">    See `compute_wavefunction` parameters.</span>
@@ -1085,7 +1081,7 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
     <span class="k">return</span> <span class="n">compute_probability</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">power</span>
 
 <span class="c1">#This next bit of code just prints out the values.</span>
-<span class="k">def</span> <span class="nf">check_moments</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_moments</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="c1">#check the computed values of the moments against the analytic formula</span>
     <span class="n">avg_r</span><span class="p">,</span><span class="n">error</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">compute_moment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="n">avg_r2</span><span class="p">,</span><span class="n">error</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">compute_moment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -1116,7 +1112,7 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 </div>
 </section>
 <section id="heisenberg-uncertainty-principle">
-<h2>Heisenberg Uncertainty Principle<a class="headerlink" href="#heisenberg-uncertainty-principle" title="Permalink to this heading">#</a></h2>
+<h2>Heisenberg Uncertainty Principle<a class="headerlink" href="#heisenberg-uncertainty-principle" title="Link to this heading">#</a></h2>
 <p>The previous example gives a first example of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg Uncertainty Principle</a>. One specific manifestation of the Heisenberg Uncertaity Principle is that the variance of the position, <span class="math notranslate nohighlight">\(\sigma_x^2 = \langle x^2 \rangle - \langle x \rangle^2\)</span>, times the variance of the momentum. <span class="math notranslate nohighlight">\(\sigma_p^2 = \langle \hat{p}^2 \rangle - \langle \hat{p} \rangle^2\)</span> is greater than <span class="math notranslate nohighlight">\(\tfrac{\hbar^2}{4}\)</span>. We can verify this formula for the particle in a box.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1139,7 +1135,7 @@ The energy of an electron in a box of length 5.29e-12 m with quantum number 1 is
 \end{split}\]</div>
 </section>
 <section id="double-checking-the-energy-of-a-particle-in-a-box">
-<h2>Double-Checking the Energy of a Particle-in-a-Box<a class="headerlink" href="#double-checking-the-energy-of-a-particle-in-a-box" title="Permalink to this heading">#</a></h2>
+<h2>Double-Checking the Energy of a Particle-in-a-Box<a class="headerlink" href="#double-checking-the-energy-of-a-particle-in-a-box" title="Link to this heading">#</a></h2>
 <p>To check the energy of the particle in a box, we can compute the kinetic energy density, then integrate it over all space. That is, we define:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1158,13 +1154,13 @@ T_n = \int_0^a \tau_n(x) dx
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The next few lines just set up the sliders for setting parameters.</span>
 <span class="c1">#Principle quantum number slider:</span>
 
-<span class="k">def</span> <span class="nf">compute_wavefunction_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_wavefunction_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute 1-dimensional particle-in-a-box kinetic energy density.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Argument order is expected to be a positive integer!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">v</span>
 
@@ -1188,7 +1184,7 @@ T_n = \int_0^a \tau_n(x) dx
     <span class="k">return</span> <span class="n">deriv</span>
 
 
-<span class="k">def</span> <span class="nf">compute_kinetic_energy_density</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_kinetic_energy_density</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute 1-dimensional particle-in-a-box kinetic energy density.</span>
 <span class="sd">    </span>
 <span class="sd">    See `compute_wavefunction` parameters.</span>
@@ -1199,7 +1195,7 @@ T_n = \int_0^a \tau_n(x) dx
     <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">wf</span> <span class="o">*</span> <span class="n">d2</span>
 
 <span class="c1">#This next bit of code just prints out the values.</span>
-<span class="k">def</span> <span class="nf">check_energy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_energy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="c1">#check the computed values of the moments against the analytic formula</span>
     <span class="n">ke</span><span class="p">,</span><span class="n">error</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">compute_kinetic_energy_density</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
     <span class="n">energy</span> <span class="o">=</span> <span class="n">compute_energy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
@@ -1226,12 +1222,12 @@ The energy computed directly is 0.01708
 </div>
 </section>
 <section id="visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc">
-<h2>Visualizing the Particle-in-a-Box Wavefunctions, Probabilities, etc.<a class="headerlink" href="#visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing the Particle-in-a-Box Wavefunctions, Probabilities, etc.<a class="headerlink" href="#visualizing-the-particle-in-a-box-wavefunctions-probabilities-etc" title="Link to this heading">#</a></h2>
 <p>In the next code block, the wavefunction, probability density, derivative, second-derivative, and kinetic energy density for the particle-in-a-box are shown. Notice that the kinetic-energy-density is proportional to the probability density, and that the first and second derivatives are not zero at the edge of the box, but the wavefunction and probability density are. It’s useful to change the parameters in the below figures to build your intuition for the particle-in-a-box.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This next bit of code makes the plots and prints out the energy</span>
-<span class="k">def</span> <span class="nf">make_plots</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_plots</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="c1">#check the computed values of the moments against the analytic formula</span>
     <span class="n">energy</span> <span class="o">=</span> <span class="n">compute_energy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The energy computed directly is </span><span class="si">{</span><span class="n">energy</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1315,14 +1311,14 @@ The energy computed directly is 0.01708
 </div>
 </section>
 <section id="self-reflection">
-<h2>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Permalink to this heading">#</a></h2>
+<h2>🪞 Self-Reflection<a class="headerlink" href="#self-reflection" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Can you think of other physical or chemical systems where the particle-in-a-box Hamiltonian would be appropriate?</p></li>
 <li><p>Can you think of another property density, besides the kinetic energy density, that cannot be uniquely defined in quantum mechanics?</p></li>
 </ul>
 </section>
 <section id="thought-provoking-questions">
-<h2>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Permalink to this heading">#</a></h2>
+<h2>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How would the wavefunction and ground-state energy change if you made a small change in the particle-in-a-box Hamiltonian, so that the right-hand-side of the box was a little higher than the left-hand-side?</p></li>
 <li><p>Any system with a zero-point energy of zero is classical. Why?</p></li>
@@ -1333,29 +1329,29 @@ The energy computed directly is 0.01708
 </ul>
 </section>
 <section id="knowledge-tests">
-<h2>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Permalink to this heading">#</a></h2>
+<h2>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Questions about the Particle-in-a-Box and related concepts. <a class="reference external" href="https://classroom.github.com/a/1Y48deKP">GitHub Classroom Link</a></p></li>
 </ul>
 </section>
 <section id="assignments">
-<h2>👩🏽‍💻 Assignments<a class="headerlink" href="#assignments" title="Permalink to this heading">#</a></h2>
+<h2>👩🏽‍💻 Assignments<a class="headerlink" href="#assignments" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Compute and understand expectation values by computing moments of the particle-in-a-box <a class="reference external" href="https://github.com/McMasterQM/PinBox-Moments/blob/main/moments.ipynb">assignment</a>. [Github classroom link]<a class="reference external" href="https://classroom.github.com/a/9yzWI5Vt">https://classroom.github.com/a/9yzWI5Vt</a>.</p></li>
 <li><p>This <a class="reference external" href="https://github.com/McMasterQM/Sudden-Approximation/blob/main/SuddenPinBox.ipynb">assignment</a> on the sudden approximation provides an introduction to time-dependent phenomena. <a class="reference external" href="https://classroom.github.com/a/yBzABlb-">Github classroom link</a>.</p></li>
 </ul>
 </section>
 <section id="recapitulation">
-<h2>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Permalink to this heading">#</a></h2>
+<h2>🔁 Recapitulation<a class="headerlink" href="#recapitulation" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Write the Hamiltonian, time-independent Schrödinger equation, eigenfunctions, and eigenvalues for the one-dimensional particle in a box.</p></li>
 <li><p>Play around with the eigenfunctions and eigenenergies of the particle-in-a-box to build intuition for them.</p></li>
 <li><p>How would you compute the uncertainty in <span class="math notranslate nohighlight">\(x^4\)</span>?</p></li>
-<li><p>Practice your calculus by explicitly computing, using integration by parts, <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span>. This can be implemented in a <a class="reference internal" href="x4_mocked.html"><span class="doc std std-doc">Jupyter notebook</span></a>.</p></li>
+<li><p>Practice your calculus by explicitly computing, using integration by parts, <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span>. This can be implemented in a <a class="reference internal" href="x4_mocked.html"><span class="std std-doc">Jupyter notebook</span></a>.</p></li>
 </ul>
 </section>
 <section id="next-up">
-<h2>🔮 Next Up…<a class="headerlink" href="#next-up" title="Permalink to this heading">#</a></h2>
+<h2>🔮 Next Up…<a class="headerlink" href="#next-up" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Postulates of Quantum Mechanics</p></li>
 <li><p>Multielectron particle-in-a-box.</p></li>
@@ -1364,7 +1360,7 @@ The energy computed directly is 0.01708
 </ul>
 </section>
 <section id="references">
-<h2>📚 References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>📚 References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <p>My favorite sources for this material are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/PaulWAyers/IntroQChem/blob/main/documents/DumontBook.pdf">Randy’s book</a> has an excellent treatment of the particle-in-a-box model, including several extensions to the material covered here. (Chapter 3)</p></li>
@@ -1415,7 +1411,7 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1443,7 +1439,9 @@ and <a class="reference external" href="https://chem.libretexts.org/Bookshelves/
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1501,7 +1499,7 @@ By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter B
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1525,8 +1523,8 @@ By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter B
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
