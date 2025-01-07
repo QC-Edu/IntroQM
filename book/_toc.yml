@@ -29,7 +29,7 @@ parts:
         title: "Practice: Python, Jupyter, Numpy"
       - url: https://qchem.qc-edu.org/problems/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
-      - url: https://classroom.github.com/a/faZ6D_fY
+      - url: https://classroom.github.com/a/UK988zUD
         title: "Extra practice: Computing Student Marks (< 2022)"
       - url: https://qchem.qc-edu.org/extracredit/programming.html
         title: "Extra training: Jupyter/Python/GitHub exercises"
