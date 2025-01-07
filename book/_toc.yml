@@ -41,9 +41,9 @@ parts:
         title: Intro to QM video
       - url: https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
-      - url: https://classroom.github.com/a/uENjzJ2B
+      - url: https://classroom.github.com/a/z8XA59RO
         title: "Quiz: Demo w/ GH Classroom"
-      - url: https://classroom.github.com/a/2l8X1SU_
+      - url: https://classroom.github.com/a/BvVWEPyd
         title: "Quiz: QM Intro"
 
     - file: SchrodingerEq.ipynb
