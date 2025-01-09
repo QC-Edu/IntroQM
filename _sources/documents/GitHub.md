@@ -25,7 +25,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
 
 - **GitHub** as a tool to manage our Git repositories online.
   - [What is GitHub?](https://www.youtube.com/watch?v=w3jLJU7DT5E)
-  - [The Basics of GitHub from GitHub Education](https://github.com/education/github-starter-course)
+  - [The Basics of GitHub from GitHub Education](https://github.com/classroom-resources/github-starter-course)
   - Consider uploading a [profile picture](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#changing-your-profile-picture) or linking to a [gravatar](https://en.gravatar.com/). This isn't essential for using GitHub, but it is really useful to be able to have some memorable and distinguishing image for you rather than just the [identicon](https://github.blog/2013-08-14-identicons/). Don't be scared to have fun with this! You can always change this later.
 
 - **GitHub Classroom** as a way to disseminate, test, give feedback on, revise, and mark assignments.
