@@ -25,7 +25,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
 
 - **GitHub** as a tool to manage our Git repositories online.
   - [What is GitHub?](https://www.youtube.com/watch?v=w3jLJU7DT5E)
-  - [The Basics of GitHub from GitHub Education](https://github.com/education/github-starter-course)
+  - [The Basics of GitHub from GitHub Education](https://github.com/classroom-resources/github-starter-course)
   - Consider uploading a [profile picture](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#changing-your-profile-picture) or linking to a [gravatar](https://en.gravatar.com/). This isn't essential for using GitHub, but it is really useful to be able to have some memorable and distinguishing image for you rather than just the [identicon](https://github.blog/2013-08-14-identicons/). Don't be scared to have fun with this! You can always change this later.
 
 - **GitHub Classroom** as a way to disseminate, test, give feedback on, revise, and mark assignments.
@@ -34,7 +34,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
 
 ## &#x1f469;&#x1f3fd;&#x200d;&#x1f4bb; Assignment
 - You will learn more about GitHub through the [assignment](../problems/ghfundamentals.ipynb). This includes a brief overview of GitHub terminology and links to the GitHub starter courses.
-- You will learn more about how to use GitHub Classroom and Google Colaboratory through the [assignment](problems/Tutorial_0.ipynb). (This assignment is really more of a tutorial. The only programming you really need to know is that the `True` and `False` (with leading capital letter) are the Boolean values for true and false in Python, respectively. The only quantum mechanics you need to know is that [Schr&ouml;dinger's cat](https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat) is [neither fully alive nor fully dead](https://www.straightdope.com/21341296/the-story-of-schroedinger-s-cat-an-epic-poem).
+- You will learn more about how to use GitHub Classroom and Google Colaboratory through the [assignment](https://qchem.qc-edu.org/problems/Tutorial_0.html). (This assignment is really more of a tutorial. The only programming you really need to know is that the `True` and `False` (with leading capital letter) are the Boolean values for true and false in Python, respectively. The only quantum mechanics you need to know is that [Schr&ouml;dinger's cat](https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat) is [neither fully alive nor fully dead](https://www.straightdope.com/21341296/the-story-of-schroedinger-s-cat-an-epic-poem).
 
 ## Suggestion
 - Sign up for [GitHub Education](https://education.github.com/students) and especially the [Student Developer Pack](https://education.github.com/pack). This gives you access to a lot of free software and tools, plus a free domain name (and free web hosting of the domain for one year).

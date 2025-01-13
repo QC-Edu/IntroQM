@@ -29,7 +29,7 @@ parts:
         title: "Practice: Python, Jupyter, Numpy"
       - url: https://qchem.qc-edu.org/problems/tutorial_1.html
         title: "Practice: Wavefunction Normalization"
-      - url: https://classroom.github.com/a/faZ6D_fY
+      - url: https://classroom.github.com/a/UK988zUD
         title: "Extra practice: Computing Student Marks (< 2022)"
       - url: https://qchem.qc-edu.org/extracredit/programming.html
         title: "Extra training: Jupyter/Python/GitHub exercises"
@@ -41,15 +41,15 @@ parts:
         title: Intro to QM video
       - url: https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf
         title: Intro to QM slides+notes
-      - url: https://classroom.github.com/a/uENjzJ2B
+      - url: https://classroom.github.com/a/z8XA59RO
         title: "Quiz: Demo w/ GH Classroom"
-      - url: https://classroom.github.com/a/2l8X1SU_
+      - url: https://classroom.github.com/a/BvVWEPyd
         title: "Quiz: QM Intro"
 
     - file: SchrodingerEq.ipynb
       title: The Schrödinger Equation
       sections:
-      - url: https://classroom.github.com/a/MXPa73KZ
+      - url: https://classroom.github.com/a/ygMVfNU_
         title: "Quiz: The Schrodinger Eq."
 
     - file: ParticleIn1DBox.ipynb
@@ -57,11 +57,11 @@ parts:
       sections:
       - file: x4_mocked.ipynb
         title: Example notebook for Moments
-      - url: https://classroom.github.com/a/QVQ3Lpm1
+      - url: https://classroom.github.com/a/kGuJ9yal
         title: "Practice: Moments of the P-in-Box"
-      - url: https://classroom.github.com/a/LnlSFUa2
+      - url: https://classroom.github.com/a/b-eY9gqA
         title: "Practice: The Sudden Approximation"
-      - url: https://classroom.github.com/a/LhlUNH30
+      - url: https://classroom.github.com/a/IMpMFk0v
         title: "Quiz: 1D P-in-Box"
 
     - file: ParticleInMultiD.ipynb
