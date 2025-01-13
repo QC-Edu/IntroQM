@@ -8,7 +8,7 @@
 1. Randy Dumont's book, [An Emergent Reality Part 2. Quantum Mechanics](DumontBook.pdf) (courtesy of [Randy Dumont](https://chemistry.mcmaster.ca/component/comprofiler/userprofile/dumontr.html))
 1. [Prof. Fang Liu's](https://flgroup.emorychem.science/) python-based quantum [tutorial examples](https://liu-group.github.io/).
 1. My friend Prof. [Raghu Ramakrishnan's](https://moldis-group.github.io/) [numerical quantum chemistry](https://github.com/raghurama123/NumQM_Basic) repository has some great examples. His GitHub organization has [even more interesting and relevant material](https://github.com/raghurama123).
-1. [A similar Jupyter Book course](https://dpotoyan.github.io/Chem324/intro.html) from Iowa State University by [Davit Potoyan](https://www.chem.iastate.edu/people/davit-potoyan).
+1. [A similar Jupyter Book course](https://dpotoyan.github.io/Chem324/index.html) from Iowa State University by [Davit Potoyan](https://www.chem.iastate.edu/people/davit-potoyan).
 1. [From Newton to Schrödinger](IntroQM.pdf) (Paul's notes)
 1. [The Particle in a Box](PinBox.pdf) (Paul's notes)
 1. [Notes on the Analogy between Quantum Mechanics' Math and Linear Algebra](LinAlgAnalogy.pdf)
