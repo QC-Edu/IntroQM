@@ -49,7 +49,7 @@ parts:
     - file: SchrodingerEq.ipynb
       title: The Schrödinger Equation
       sections:
-      - url: https://classroom.github.com/a/MXPa73KZ
+      - url: https://classroom.github.com/a/ygMVfNU_
         title: "Quiz: The Schrodinger Eq."
 
     - file: ParticleIn1DBox.ipynb
