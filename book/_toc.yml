@@ -57,7 +57,7 @@ parts:
       sections:
       - file: x4_mocked.ipynb
         title: Example notebook for Moments
-      - url: https://classroom.github.com/a/QVQ3Lpm1
+      - url: https://classroom.github.com/a/kGuJ9yal
         title: "Practice: Moments of the P-in-Box"
       - url: https://classroom.github.com/a/LnlSFUa2
         title: "Practice: The Sudden Approximation"
