@@ -28,7 +28,7 @@ import autograd.numpy as np
 from autograd import elementwise_grad as egrad
 
 # import numpy as np
-from scipy.integrate import trapz, quad
+from scipy.integrate import quad
 from scipy import constants
 
 import ipywidgets as widgets
@@ -41,13 +41,14 @@ import matplotlib.pyplot as plt
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[1], line 11[0m
-[1;32m      8[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mautograd[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m elementwise_grad [38;5;28;01mas[39;00m egrad
-[1;32m     10[0m [38;5;66;03m# import numpy as np[39;00m
-[0;32m---> 11[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mintegrate[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m trapz, quad
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 14[0m
+[1;32m     11[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mintegrate[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m quad
 [1;32m     12[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m constants
-[1;32m     14[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mwidgets[39;00m
+[0;32m---> 14[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mwidgets[39;00m
+[1;32m     16[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[1;32m     18[0m [38;5;66;03m# set the size of the plot[39;00m
+[1;32m     19[0m [38;5;66;03m# plt.rcParams['figure.figsize'] = [10, 5][39;00m
 
-[0;31mImportError[0m: cannot import name 'trapz' from 'scipy.integrate' (/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/scipy/integrate/__init__.py)
+[0;31mModuleNotFoundError[0m: No module named 'ipywidgets'
 
