@@ -16,6 +16,8 @@ You can complete additional courses on LinkedIn Learning or other venues for add
 You can complete relevant LinkedIn Learning courses to earn extra points. For example, you can choose to complete some of the courses you've already (partly) seen in the course material. Simply add the LinkedIn Learning certificate of completion to the list in your `Course-Certificates` repository.
 
 - [Programming Foundations: Fundamentals](https://www.linkedin.com/learning/programming-foundations-fundamentals-3?u=56982905). Other courses in the "programming foundations" series are also acceptable. The courses [beyond fundamentals](https://www.linkedin.com/learning/programming-foundations-beyond-the-fundamentals?u=56982905) and [numerical mathematics](https://www.linkedin.com/learning/programming-foundations-numerical-mathematics-and-calculations?u=56982905) are especially relevant.
+- [Python Essentials Training](https://www.linkedin.com/learning/python-essential-training-18764650)
+- [Python for Non-Programmers](https://www.linkedin.com/learning/python-for-non-programmers)
 - [Learning GitHub](https://www.linkedin.com/learning/learning-github-18719601?u=56982905)
 - [GitHub Essential Training](https://www.linkedin.com/learning/github-essential-training-1-the-basics?u=56982905)
 - [Python for Engineers and Scientists](https://www.linkedin.com/learning/python-for-engineers-and-scientists)
