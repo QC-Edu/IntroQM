@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Quantum Chemistry</title>
+    <title>📝 Exercise &#8212; Quantum Chemistry</title>
   
   
   
@@ -449,7 +449,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>📝 Exercise</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -458,9 +458,9 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-state-energy-of-the-morse-potential">Ground-State Energy of the Morse Potential</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -471,23 +471,27 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>#📝 Exercise</p>
-<p>##Ground-State Energy of the Morse Potential
-The Morse potential is often used as an approximate model for the vibrations of diatomic molecules. In convenient units where <span class="math notranslate nohighlight">\(\frac{\hslash ^{2}}{2m}=1\)</span>, the time-independent Schrödinger equation for a Morse oscillator can be written as:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise">
+<h1>📝 Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h1>
+<section id="ground-state-energy-of-the-morse-potential">
+<h2>Ground-State Energy of the Morse Potential<a class="headerlink" href="#ground-state-energy-of-the-morse-potential" title="Link to this heading">#</a></h2>
+<p>The Morse potential is often used as an approximate model for the vibrations of diatomic molecules. In convenient units where <span class="math notranslate nohighlight">\(\frac{\hslash ^{2}}{2m}=1\)</span>, the time-independent Schrödinger equation for a Morse oscillator can be written as:</p>
 <div class="math notranslate nohighlight">
 \[
 \left(-\frac{d^{2}}{dx^{2}}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)\psi _{n}\left(x\right)=E_{n}\psi _{n}\left(x\right)
 \]</div>
-<p>The first two eigenfunctions of the Morse oscillator are given by the following expressions (which are not normalized)
-$<span class="math notranslate nohighlight">\(
+<p>The first two eigenfunctions of the Morse oscillator are given by the following expressions (which are not normalized)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align}
 \psi _{0}\left(x\right)&amp;=\exp \left(-\left(\lambda -\tfrac{1}{2}\right)x-\lambda e^{-x}\right)\\
 \psi _{1}\left(x\right)&amp;=\exp \left(-\left(\lambda -\tfrac{3}{2}\right)x-\lambda e^{-x}\right)\left(2\lambda -2-2\lambda e^{-x}\right)
 \end{align}
-\)</span>$</p>
+\end{split}\]</div>
 <p><strong>What is the expression for the ground-state energy for the Morse oscillator?</strong></p>
-<p>This requires applying the Hamiltonian to the ground-state wavefunction of the Morse oscillator and finding the eigenvalue. It’s a straightforward but tedious exercise:
-$<span class="math notranslate nohighlight">\(
+<p>This requires applying the Hamiltonian to the ground-state wavefunction of the Morse oscillator and finding the eigenvalue. It’s a straightforward but tedious exercise:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align}
 &amp;\frac{d}{dx}\left[\exp \left(-\left(\lambda -\tfrac{1}{2}\right)x-\lambda e^{-x}\right)\right]=\exp \left(-\left(\lambda -\tfrac{1}{2}\right)x-\lambda e^{-x}\right)\cdot \frac{d}{dx}\left[-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right]\\
 &amp;\qquad=\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\cdot \left[-\left(\lambda -\frac{1}{2}\right)+\lambda e^{-x}\right]\\
@@ -499,17 +503,20 @@ $<span class="math notranslate nohighlight">\(
 &amp;\qquad=\left(\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right)\cdot \left(\left(\lambda -\frac{1}{2}\right)^{2}-2\lambda ^{2}e^{-x}+\lambda ^{2}e^{-2x}\right)\\
 &amp;\qquad=\left(\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right)\cdot \left(\left(\lambda -\frac{1}{2}\right)^{2}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)
 \end{align}
-\)</span><span class="math notranslate nohighlight">\(
-Substituting into the Schr&amp;ouml;dinger equation gives:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Substituting into the Schrödinger equation gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align}
 &amp;\left(-\frac{d^{2}}{dx^{2}}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)\left[\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right]\\
 &amp; \qquad =-\left(\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right)\cdot \left(\left(\lambda -\frac{1}{2}\right)^{2}+\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right)\\
 &amp;\qquad \qquad+\left[\lambda ^{2}\left(e^{-2x}-2e^{-x}\right)\right]\left(\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right)\\
 &amp;\qquad =-\left(\lambda -\frac{1}{2}\right)^{2}\left(\exp \left(-\left(\lambda -\frac{1}{2}\right)x-\lambda e^{-x}\right)\right)
 \end{align}
-\)</span><span class="math notranslate nohighlight">\(
-So the ground-state energy of the Morse oscillator is \)</span>E=-\left(\lambda -\frac{1}{2}\right)^{2}$.</p>
+\end{split}\]</div>
+<p>So the ground-state energy of the Morse oscillator is <span class="math notranslate nohighlight">\(E=-\left(\lambda -\frac{1}{2}\right)^{2}\)</span>.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -557,9 +564,9 @@ So the ground-state energy of the Morse oscillator is \)</span>E=-\left(\lambda 
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-state-energy-of-the-morse-potential">Ground-State Energy of the Morse Potential</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
