@@ -79,7 +79,7 @@ parts:
     - file: Postulates.ipynb
       title: The Postulates of Quantum Mechanics
       sections:
-      - url: https://classroom.github.com/a/yN4Hktkg
+      - url: https://classroom.github.com/a/aby7w6cC
         title: "Quiz: Applying the Postulates"
 
     - file: OneElectronAtoms.ipynb
