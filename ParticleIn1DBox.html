@@ -1135,10 +1135,7 @@ T_n = \int_0^a \tau_n(x) dx
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The next few lines just set up the sliders for setting parameters.</span>
-<span class="c1">#Principle quantum number slider:</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">compute_wavefunction_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_wavefunction_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute 1-dimensional particle-in-a-box kinetic energy density.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
@@ -1272,23 +1269,15 @@ The energy computed directly is 0.01708
     <span class="c1">#Show Plot</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-
-<span class="c1">#Principle quantum number slider:</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1">#Box length slider:</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-
 <span class="n">make_plots</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The energy computed directly is 4.93480
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The energy computed directly is 0.01708
 </pre></div>
 </div>
-<img alt="_images/a7a7898c91de39d76f0993609e7560f82a0d16a517eb09ec48277d407a2397ae.png" src="_images/a7a7898c91de39d76f0993609e7560f82a0d16a517eb09ec48277d407a2397ae.png" />
+<img alt="_images/d8cbacea4b3ca90fd91bfd1515dff2cbed038d1032f23e6d169ce230f83b3228.png" src="_images/d8cbacea4b3ca90fd91bfd1515dff2cbed038d1032f23e6d169ce230f83b3228.png" />
 </div>
 </div>
 </section>
