@@ -1059,23 +1059,21 @@ E_{n,l} = \tfrac{x_{n,l}^2}{2a^2}
        <span class="sa">f</span><span class="s1">&#39; principle quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, and angular quantum number </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; is </span><span class="si">{</span><span class="n">compute_energy_disk</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
 
-
-<span class="c1">#Principle quantum number slider:</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1">#Angular quantum number slider:</span>
-<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1">#Box length slider:</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-
 <span class="n">print_energy_disk</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The energy of an electron confined to a disk with radius 1.00 a.u., principle quantum number 1, and angular quantum number 0 is 2.892 a.u..
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">def</span><span class="w"> </span><span class="nf">print_energy_disk</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron confined to a disk with radius </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u.,&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>        <span class="sa">f</span><span class="s1">&#39; principle quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, and angular quantum number </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>        <span class="sa">f</span><span class="s1">&#39; is </span><span class="si">{</span><span class="n">compute_energy_disk</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">print_energy_disk</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;a&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1321,17 +1319,6 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron confined to a ball with radius </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u.,&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; principle quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, and angular quantum number </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; is </span><span class="si">{</span><span class="n">compute_energy_ball</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">5.2f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
-
-
-<span class="c1">#Principle quantum number slider:</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1">#Angular quantum number slider:</span>
-<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1">#Box length slider:</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
 
 <span class="n">print_energy_ball</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
 </pre></div>
