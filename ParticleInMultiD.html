@@ -1035,21 +1035,8 @@ E_{n,l} = \tfrac{x_{n,l}^2}{2a^2}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">special</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">special</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
+<span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span>
 </pre></div>
 </div>
 </div>
@@ -1071,8 +1058,8 @@ E_{n,l} = \tfrac{x_{n,l}^2}{2a^2}
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron confined to a disk with radius </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u.,&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; principle quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, and angular quantum number </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; is </span><span class="si">{</span><span class="n">compute_energy_disk</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
-    
-    
+
+
 <span class="c1">#Principle quantum number slider:</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -1334,7 +1321,7 @@ j_l(x) = \sqrt{\frac{\pi}{2x}} J_{l+\tfrac{1}{2}}(x)
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The energy of an electron confined to a ball with radius </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> a.u.,&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; principle quantum number </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, and angular quantum number </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">&#39;</span>
        <span class="sa">f</span><span class="s1">&#39; is </span><span class="si">{</span><span class="n">compute_energy_ball</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="si">:</span><span class="s1">5.2f</span><span class="si">}</span><span class="s1"> a.u..&#39;</span><span class="p">)</span>
-    
+
 
 <span class="c1">#Principle quantum number slider:</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
