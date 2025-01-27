@@ -219,7 +219,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/obZrhA4q">Practice: hydrogenic atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/josBNSqF">Practice: hydrogenic atoms</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -463,77 +463,90 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kratzer-fues-potential">
 <h1>Kratzer-Fues Potential<a class="headerlink" href="#kratzer-fues-potential" title="Link to this heading">#</a></h1>
-<p>The Kratzer-Fues potential is a <a class="reference external" href="https://doi.org/10.1063/1.1841277">reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions</a>, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). It has the form
-$<span class="math notranslate nohighlight">\(
+<p>The Kratzer-Fues potential is a <a class="reference external" href="https://doi.org/10.1063/1.1841277">reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions</a>, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). It has the form</p>
+<div class="math notranslate nohighlight">
+\[
 V_{\text{Kratzer-Fues}}(r) = \frac{a}{r^2} - \frac{b}{r} \qquad \qquad a&gt;0 \text{ and } b&gt;0
-\)</span><span class="math notranslate nohighlight">\(
-and so the Schr&amp;ouml;dinger equation has the form:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and so the Schrödinger equation has the form:</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m}\nabla^2 +\frac{a}{r^2} - \frac{b}{r} \right) \psi(\mathbf{r}) = E\psi(\mathbf{r}) 
-\)</span>$</p>
-<p>This is a spherically-symmetric Schrödinger equation in 3 dimensions. This means that the solution is  the product of a radial part and a spherical harmonic,
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>This is a spherically-symmetric Schrödinger equation in 3 dimensions. This means that the solution is  the product of a radial part and a spherical harmonic,</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_{nlm_l}(r,\theta,\phi) = R_{nl}(r) Y_l^{m_l} (\theta,\phi)
-\)</span><span class="math notranslate nohighlight">\(
-and the radial wavefunction, \)</span>R_{nl}(r)<span class="math notranslate nohighlight">\( satisfies the radial Schr&amp;ouml;dinger equation for a 3-dimensional system,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and the radial wavefunction, <span class="math notranslate nohighlight">\(R_{nl}(r)\)</span> satisfies the radial Schrödinger equation for a 3-dimensional system,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{\hbar^2 l(l+1)}{2mr^2} + \frac{a}{r^2} - \frac{b}{r} \right)
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
-\)</span><span class="math notranslate nohighlight">\(
-or, simplifying slightly,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>or, simplifying slightly,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{\hbar^2 l(l+1) + 2ma}{2mr^2} - \frac{b}{r} \right)
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
-\)</span>$</p>
-<p>This is a spherically-symmetric Schrödinger equation in 3 dimensions. This means that the solution is  the product of a radial part and a spherical harmonic,
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>This is a spherically-symmetric Schrödinger equation in 3 dimensions. This means that the solution is  the product of a radial part and a spherical harmonic,</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_{nlm_l}(r,\theta,\phi) = R_{nl}(r) Y_l^{m_l} (\theta,\phi)
-\)</span><span class="math notranslate nohighlight">\(
-and the radial wavefunction, \)</span>R_{nl}(r)<span class="math notranslate nohighlight">\( satisfies the radial Schr&amp;ouml;dinger equation for a 3-dimensional system,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and the radial wavefunction, <span class="math notranslate nohighlight">\(R_{nl}(r)\)</span> satisfies the radial Schrödinger equation for a 3-dimensional system,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{\hbar^2 l(l+1)}{2mr^2} + \frac{a}{r^2} - \frac{b}{r} \right)
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
-\)</span><span class="math notranslate nohighlight">\(
-or, simplifying slightly,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>or, simplifying slightly,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{\hbar^2 l(l+1) + 2ma}{2mr^2} - \frac{b}{r} \right)
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
-\)</span>$</p>
-<p>Notice that the radial Hamiltonian for the Kratzer-Fues potential looks <em>a lot</em> like the Hydrogenic atom, which has the Hamiltonian,
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Notice that the radial Hamiltonian for the Kratzer-Fues potential looks <em>a lot</em> like the Hydrogenic atom, which has the Hamiltonian,</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{1}{2} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{l(l+1)}{2r^2} - \frac{Z}{r} \right)
       R_{n,l}(r) 
 = E_{n,l}R_{n,l}(r)
-\)</span><span class="math notranslate nohighlight">\(
-Returning to the Kratzer-Fues case, if one uses atomic units multiplies both sides of the equation by \)</span>m<span class="math notranslate nohighlight">\(, then
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Returning to the Kratzer-Fues case, if one uses atomic units multiplies both sides of the equation by <span class="math notranslate nohighlight">\(m\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{1}{2} \left( \frac{d^2}{dr^2}+ \frac{2}{r} \frac{d}{dr}\right) 
       + \frac{l(l+1) + 2ma}{2r^2} - \frac{bm}{r} \right)
       R_{n,l}(r) 
 = \left(mE_{n,l}\right)R_{n,l}(r)
-\)</span><span class="math notranslate nohighlight">\(
-If you then defined a value, \)</span>l’<span class="math notranslate nohighlight">\(, such that
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>If you then defined a value, <span class="math notranslate nohighlight">\(l'\)</span>, such that</p>
+<div class="math notranslate nohighlight">
+\[
 l'(l'+1) = l(l+1) + 2ma
-\)</span><span class="math notranslate nohighlight">\(
-the solutions would be Hydrogenic, 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>the solutions would be Hydrogenic,</p>
+<div class="math notranslate nohighlight">
+\[
 E_{\text{Kratzer-Fues},n} = -\frac{mb^2}{2n^2}
-\)</span><span class="math notranslate nohighlight">\(
-and
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
 R_{n,l}(r) \propto \left( \frac{2mbr}{n} \right)^{l'} L_{n-1-l'}^{2l'+1}\left(\frac{2mbr}{n}\right) e^{-\frac{mbr}{n}}
-\)</span><span class="math notranslate nohighlight">\(
-This treatment is quite naive, insofar as there is no guarantee that \)</span>l’<span class="math notranslate nohighlight">\( is an integer. In practice, this solution is not quite right except for the exceptional cases where \)</span>l’<span class="math notranslate nohighlight">\( is an integer less than \)</span>n$. But this is the <em>idea</em> of the solution. The exact solution can be found various places, see, <a class="reference external" href="https://arxiv.org/abs/0802.0589v1">for</a> <a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.741.7716&amp;amp;rep=rep1&amp;amp;type=pdf">example</a>. The detailed solution can be found at in</p>
+\]</div>
+<p>This treatment is quite naive, insofar as there is no guarantee that <span class="math notranslate nohighlight">\(l'\)</span> is an integer. In practice, this solution is not quite right except for the exceptional cases where <span class="math notranslate nohighlight">\(l'\)</span> is an integer less than <span class="math notranslate nohighlight">\(n\)</span>. But this is the <em>idea</em> of the solution. The exact solution can be found various places, see, <a class="reference external" href="https://arxiv.org/abs/0802.0589v1">for</a> <a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.741.7716&amp;amp;rep=rep1&amp;amp;type=pdf">example</a>. The detailed solution can be found at in</p>
 <blockquote>
 <div><p>S. Flügge <em>Practical Quantum Mechanics</em> (Berlin:Springer, 1957)</p>
 </div></blockquote>
