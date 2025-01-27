@@ -85,7 +85,7 @@ parts:
     - file: OneElectronAtoms.ipynb
       title: 1-electron atoms
       sections:
-      - url: https://classroom.github.com/a/obZrhA4q
+      - url: https://classroom.github.com/a/josBNSqF
         title: "Practice: hydrogenic atoms"
 
     - file: ApproximateMethods.ipynb
