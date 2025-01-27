@@ -611,7 +611,7 @@
 <blockquote>
 <div><p>The analogue of a classical measurement is evaluating the expectation value of a suitable Hermitian operator. The only possible values that can be obtained from a measurement are the eigenvalues of the corresponding Hermitian operator.</p>
 </div></blockquote>
-<p>We will now elaborate on each of these key postulates. Note that <a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/intro_estruc/node4.html">some</a> <a class="reference external" href="http://web.mit.edu/8.05/handouts/jaffe1.pdf">people</a> list <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics">more</a> postulates. There is a some choice in how one groups the information in the postulates together, and I prefer to group the statements about Hermitian operators together.</p>
+<p>We will now elaborate on each of these key postulates. Note that <a class="reference external" href="https://vergil.chemistry.gatech.edu">some</a> <a class="reference external" href="http://web.mit.edu/8.05/handouts/jaffe1.pdf">people</a> list <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics">more</a> postulates. There is a some choice in how one groups the information in the postulates together, and I prefer to group the statements about Hermitian operators together.</p>
 </section>
 </section>
 <section id="completeness-of-psi-as-a-descriptor-of-a-quantum-system">
@@ -789,7 +789,7 @@ $<span class="math notranslate nohighlight">\(
 \langle \Psi | \nabla^2 | \Psi \rangle &lt; 0
 \)</span>$
 Note: You may assume that the wavefunction, and its first first and second derivatives, vanish at the ends of the region of integration. However, there are also ways to answer these questions without explicitly invoking those assumptions.
-<a class="reference internal" href="#../documents/LaplacianProperties.md"><span class="xref myst">Solution.</span></a></p>
+<a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/laplacianproperties.pdf">Solution.</a></p>
 </div></blockquote>
 </section>
 </section>
@@ -813,10 +813,10 @@ Note: You may assume that the wavefunction, and its first first and second deriv
 <h3>The Born Postulate, revisited<a class="headerlink" href="#the-born-postulate-revisited" title="Link to this heading">#</a></h3>
 <p>While the Born postulate is usually presented separately, it is in fact a corollary of the fact that physical observables are represented by Hermitian operators. The Hermitian operator that represents a particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is <span class="math notranslate nohighlight">\(\delta(x-x_0)\)</span>, where the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</a> is effectively defined by its so-called <em>sifting property</em>.</p>
 <blockquote>
-<div><p><strong>Sifting property of the Dirac Delta function:</strong> Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a bounded function. Then
-$<span class="math notranslate nohighlight">\(
-\int_{-\infty}^{+\infty} f(x) \delta(x-x_0) dx = f(x_0)
-\)</span>$</p>
+<div><p><strong>Sifting property of the Dirac Delta function:</strong> Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a bounded function. Then</p>
+</div></blockquote>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty} f(x) \delta(x-x_0) dx = f(x_0)\)</span></p>
 </div></blockquote>
 <p>Now according to the Hermitian postulate, the probability of observing the particle at position <span class="math notranslate nohighlight">\(x_0\)</span> is given by</p>
 <div class="math notranslate nohighlight">
@@ -826,16 +826,14 @@ $<span class="math notranslate nohighlight">\(
 <p>which is the Born postulate.</p>
 <blockquote>
 <div><p><strong>Note</strong>: The Kronecker delta function has a sifting property similar to the Dirac delta function,
-$<span class="math notranslate nohighlight">\(
-\sum_j f_j \delta_{jk} = f_k
-\)</span>$</p>
+<span class="math notranslate nohighlight">\(\sum_j f_j \delta_{jk} = f_k\)</span></p>
 </div></blockquote>
 <p>This can be deduced directly from the definition, since <span class="math notranslate nohighlight">\(\delta_{jk}\)</span> is one when <span class="math notranslate nohighlight">\(j=k\)</span>, and zero otherwise.</p>
 </section>
 </section>
 <section id="bra-ket-notation-and-the-analogy-to-linear-algebra">
 <h2>Bra-Ket Notation and the Analogy to Linear Algebra<a class="headerlink" href="#bra-ket-notation-and-the-analogy-to-linear-algebra" title="Link to this heading">#</a></h2>
-<p>At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for <a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac bra-ket notation</a>. A rather thorough explanation of this notation is available in my <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/LinAlgAnalogy.pdf">pdf notes</a>, so I am only presenting the elements here. The basic idea is that a wavefunction is written as a <em>ket</em>,</p>
+<p>At this stage, your hand may be starting to hurt from writing integrals and wavefunctions. This is the motivation for <a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac bra-ket notation</a>. A rather thorough explanation of this notation is available in my <a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/LinAlgAnalogy.pdf">pdf notes</a>, so I am only presenting the elements here. The basic idea is that a wavefunction is written as a <em>ket</em>,</p>
 <div class="math notranslate nohighlight">
 \[
 | \Psi \rangle = \Psi(x)
@@ -962,7 +960,7 @@ c_j = \int \left( \phi_j(x) \right)^* \Psi(x) dx
 \sigma_A^2 \sigma_B^2 \ge  \left| \tfrac{1}{2}\langle \Psi |\{\hat{A},\hat{B}\}| \Psi \rangle 
 - \langle \Psi |\hat{A}| \Psi \rangle \langle \Psi |\hat{B}| \Psi \rangle \right|^2 + \tfrac{1}{4} \left|\langle \Psi |[\hat{A},\hat{B}]| \Psi \rangle \right|^2
 \]</div>
-<p>A detailed derivation of these uncertainty principles is provided as a <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/documents/Heisenberg.pdf">pdf</a>.</p>
+<p>A detailed derivation of these uncertainty principles is provided as a <a class="reference external" href="https://github.com/QC-Edu/IntroQM2022/blob/master/book/documents/Heisenberg.pdf">pdf</a>.</p>
 </section>
 <section id="application-variational-principle">
 <h2>Application: Variational Principle<a class="headerlink" href="#application-variational-principle" title="Link to this heading">#</a></h2>
@@ -1051,7 +1049,7 @@ You should be able to apply, and expand upon, these principles at length.</p></l
 <section id="knowledge-tests">
 <h2>❓ Knowledge Tests<a class="headerlink" href="#knowledge-tests" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Quantum-mechanical mathematical postulates, techniques, and notation. <a class="reference external" href="https://classroom.github.com/a/UeStyjxT">GitHub Classroom Link</a></p></li>
+<li><p>Quantum-mechanical mathematical postulates, techniques, and notation. <a class="reference external" href="https://classroom.github.com/a/aby7w6cC">GitHub Classroom Link</a></p></li>
 </ul>
 </section>
 <section id="recapitulation">
