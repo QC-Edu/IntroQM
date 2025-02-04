@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Trigonometric Identities &#8212; Quantum Chemistry</title>
+    <title>Why a Trial Wavefunction Close in Energy is An Accurate Approximation to the True Ground-State Wavefunction &#8212; Quantum Chemistry</title>
   
   
   
@@ -60,9 +60,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'linkedFiles/TrigIdentities';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/energy_wavefunction_approx';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -183,7 +181,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../problems/JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/UK988zUD">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
@@ -248,7 +246,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/McjRehT6">Knowledge Test 1</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/gseTkT5p">Knowledge Test 2</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/pf4re3Xy">Knowledge Test 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
 
 
 
@@ -343,7 +341,7 @@
       
       
       
-      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2FlinkedFiles/TrigIdentities.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/energy_wavefunction_approx.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +371,7 @@
       
       
       
-      <li><a href="../_sources/linkedFiles/TrigIdentities.md" target="_blank"
+      <li><a href="../_sources/problems/energy_wavefunction_approx.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +434,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -447,11 +447,24 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Trigonometric Identities</h1>
+    <h1>Why a Trial Wavefunction Close in Energy is An Accurate Approximation to the True Ground-State Wavefunction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expansion-in-the-energy-eigenbasis">1. Expansion in the Energy Eigenbasis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-variational-principle">2. The Variational Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-e-mathrm-trial-in-the-eigenbasis">3. Expressing (E_{\mathrm{trial}}) in the Eigenbasis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-the-overlap-with-the-ground-state">4. Bounding the Overlap with the Ground State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-in-norm">5. Closeness in Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -461,69 +474,138 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="trigonometric-identities">
-<h1>Trigonometric Identities<a class="headerlink" href="#trigonometric-identities" title="Link to this heading">#</a></h1>
-<p>There are a large number of trigonometric identities that one can memorize, but I tend to remember only a few bare essentials. Specifically, I remember the following angle-addition identities:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sin(x \pm y) &amp;= \sin x \cos y \pm \sin y \cos x \\
-\cos(x \pm y) &amp;= \cos x \cos y \mp \sin x \sin y
-\end{aligned}
-\end{split}\]</div>
-<p>Note that in fact you need to memorize only the identities with the <span class="math notranslate nohighlight">\(+\)</span> sign, because the others can be deduced by changing <span class="math notranslate nohighlight">\(y \rightarrow -y\)</span> and remembering that the cosine is an even function and the sine is an odd function,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\cos(-x) &amp;= \cos(x) \\
-\sin(-x) &amp;= - \sin(x)
-\end{aligned}
-\end{split}\]</div>
-<p>So in fact I only “memorize”</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sin(x + y) &amp;= \sin x \cos y + \sin y \cos x \\
-\cos(x + y) &amp;= \cos x \cos y - \sin x \sin y
-\end{aligned}
-\end{split}\]</div>
-<p>From these I can deduce many other identities very easily. For example, by choosing <span class="math notranslate nohighlight">\(x=y\)</span> in the angle-addition identities, I can deduce the double-angle identities and the Pythagorean identity:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sin(2x) &amp;= 2 \sin x \cos x \\
-\cos(2x) &amp;= \cos^2 x - \sin^2 x \\
-\cos(0) &amp;= 1 = \cos^2 x + \sin^x
-\end{aligned}
-\end{split}\]</div>
-<p>Adding the second two equations gives</p>
-<div class="math notranslate nohighlight">
-\[
-\cos 2x + 1 = 2 \cos^2 x
-\]</div>
-<p>and subtracting the second two equations gives</p>
-<div class="math notranslate nohighlight">
-\[
-1 - \cos 2x = 2 \sin^2 x
-\]</div>
-<p>Alternatively, going back to the angle-addition identities, you can deduce (by adding and subtracting each equation from itself) the product-to-sum identities:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-2 \sin x \cos y &amp;= \sin(x+y) + \sin(x-y) \\
-2 \sin x \sin y &amp;= \cos(x-y) - \cos(x+y) \\
-2 \cos x \cos y &amp;= \cos(x-y) + \cos(x+y)
-\end{aligned}
-\end{split}\]</div>
-<p>The double-angle formulas could also be deduced by setting <span class="math notranslate nohighlight">\(x = y\)</span> in these equations. One can also deduce the sum-to-product identities:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sin x + \sin y &amp;= 2\sin \left(\tfrac{a + b}{2}\right)\cos \left(\tfrac{a - b}{2}\right) \\
-\cos x + \cos y &amp;= 2\cos \left(\tfrac{a + b}{2}\right)\cos \left(\tfrac{a - b}{2}\right) \\
-\cos x - \cos y &amp;= -2\sin \left(\tfrac{a + b}{2}\right)\sin \left(\tfrac{a - b}{2}\right)
-\end{aligned}
-\end{split}\]</div>
+  <p>Below is a <strong>markdown</strong> version of the explanation, including mathematical typesetting with LaTeX syntax in code blocks.</p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="why-a-trial-wavefunction-close-in-energy-is-an-accurate-approximation-to-the-true-ground-state-wavefunction">
+<h1>Why a Trial Wavefunction Close in Energy is An Accurate Approximation to the True Ground-State Wavefunction<a class="headerlink" href="#why-a-trial-wavefunction-close-in-energy-is-an-accurate-approximation-to-the-true-ground-state-wavefunction" title="Link to this heading">#</a></h1>
+<p>(Adapted from ChatGPT’s explanation.)</p>
+<p>Assume we have:</p>
+<ul class="simple">
+<li><p>A nondegenerate ground state (\lvert \psi_0 \rangle) of a Hamiltonian (H) with energy (E_0).</p></li>
+<li><p>A complete orthonormal set of eigenstates ({\lvert \psi_n \rangle}) of (H), with eigenvalues (E_n) such that:
+[
+H \lvert \psi_n \rangle = E_n \lvert \psi_n \rangle,
+\quad E_0 &lt; E_1 \le E_2 \le \cdots
+]</p></li>
+<li><p>A normalized trial wavefunction (\lvert \psi_{\mathrm{trial}} \rangle) with energy expectation (E_{\mathrm{trial}}):
+[
+E_{\mathrm{trial}} = \langle \psi_{\mathrm{trial}} \lvert H \rvert \psi_{\mathrm{trial}} \rangle.
+]</p></li>
+</ul>
+<p>The variational principle states:
+[
+E_{\mathrm{trial}} ;\ge; E_0.
+]</p>
+<p>We will show that if (E_{\mathrm{trial}}) is very close to (E_0), then (\lvert \psi_{\mathrm{trial}} \rangle) must be very close to (\lvert \psi_0 \rangle) in the (L^2) (norm) sense.</p>
+<hr class="docutils" />
+<section id="expansion-in-the-energy-eigenbasis">
+<h2>1. Expansion in the Energy Eigenbasis<a class="headerlink" href="#expansion-in-the-energy-eigenbasis" title="Link to this heading">#</a></h2>
+<p>Any normalized (\lvert \psi_{\mathrm{trial}} \rangle) can be expanded in the basis ({\lvert \psi_n \rangle}) as</p>
+<p>[
+\lvert \psi_{\mathrm{trial}} \rangle
+= c_0 \lvert \psi_0 \rangle</p>
+<ul class="simple">
+<li><p>c_1 \lvert \psi_1 \rangle</p></li>
+<li><p>c_2 \lvert \psi_2 \rangle</p></li>
+<li><p>\dots
+]</p></li>
+</ul>
+<p>where the coefficients satisfy</p>
+<p>[
+\sum_{n=0}^{\infty} |c_n|^2 = 1.
+]</p>
+</section>
+<hr class="docutils" />
+<section id="the-variational-principle">
+<h2>2. The Variational Principle<a class="headerlink" href="#the-variational-principle" title="Link to this heading">#</a></h2>
+<p>From the variational principle, we know:</p>
+<p>[
+E_{\mathrm{trial}}
+= \langle \psi_{\mathrm{trial}} \lvert H \rvert \psi_{\mathrm{trial}} \rangle
+;\ge; E_0.
+]</p>
+<p>Define (\epsilon = E_{\mathrm{trial}} - E_0 \ge 0). Our goal is to relate (\epsilon) to the overlap (|c_0|^2) with the ground state.</p>
+</section>
+<hr class="docutils" />
+<section id="expressing-e-mathrm-trial-in-the-eigenbasis">
+<h2>3. Expressing (E_{\mathrm{trial}}) in the Eigenbasis<a class="headerlink" href="#expressing-e-mathrm-trial-in-the-eigenbasis" title="Link to this heading">#</a></h2>
+<p>We can write:</p>
+<p>[
+E_{\mathrm{trial}}
+= \sum_{n=0}^\infty |c_n|^2 , E_n
+= |c_0|^2 E_0 + |c_1|^2 E_1 + |c_2|^2 E_2 + \cdots.
+]</p>
+<p>Then,</p>
+<p>[
+E_{\mathrm{trial}} - E_0
+= \sum_{n=0}^\infty |c_n|^2 E_n ;-; E_0
+= |c_0|^2 E_0 + \sum_{n=1}^\infty |c_n|^2 E_n - E_0.
+]</p>
+<p>Since (\sum_{n=0}^\infty |c_n|^2 = 1), we have:</p>
+<p>[
+1 - |c_0|^2 = \sum_{n=1}^\infty |c_n|^2.
+]</p>
+<p>Thus,</p>
+<p>[
+E_{\mathrm{trial}} - E_0
+= \sum_{n=1}^\infty |c_n|^2 (E_n - E_0)
+;\equiv; \epsilon.
+]</p>
+</section>
+<hr class="docutils" />
+<section id="bounding-the-overlap-with-the-ground-state">
+<h2>4. Bounding the Overlap with the Ground State<a class="headerlink" href="#bounding-the-overlap-with-the-ground-state" title="Link to this heading">#</a></h2>
+<p>Because (E_n \ge E_1) for all (n \ge 1) and (E_1 &gt; E_0) (nondegenerate ground state implies a gap),</p>
+<p>[
+E_n - E_0 ;\ge; E_1 - E_0 &gt; 0,
+\quad \text{for all } n \ge 1.
+]</p>
+<p>[
+\epsilon
+= \sum_{n=1}^\infty |c_n|^2 (E_n - E_0)
+;\ge; (E_1 - E_0) \sum_{n=1}^\infty |c_n|^2
+= (E_1 - E_0) \bigl(1 - |c_0|^2\bigr).
+]</p>
+<p>So</p>
+<p>[
+1 - |c_0|^2
+;\le; \frac{\epsilon}{E_1 - E_0}.
+]</p>
+<p>Hence, if (\epsilon) is very small, then (1 - |c_0|^2) must also be small, implying (|c_0|^2) (the overlap squared with (\lvert \psi_0 \rangle)) is very close to 1.</p>
+</section>
+<hr class="docutils" />
+<section id="closeness-in-norm">
+<h2>5. Closeness in Norm<a class="headerlink" href="#closeness-in-norm" title="Link to this heading">#</a></h2>
+<p>Since (|c_0|^2 \to 1), the sum of all (|c_n|^2) for (n \ge 1) goes to 0. Therefore,</p>
+<p>[
+|\psi_{\mathrm{trial}} - \psi_0|^2
+= 2 \bigl[1 - \Re\langle \psi_0 \mid \psi_{\mathrm{trial}} \rangle \bigr]
+]</p>
+<p>is small because (\langle \psi_0 \mid \psi_{\mathrm{trial}} \rangle = c_0^*\approx 1). Concretely,</p>
+<p>[
+|\psi_{\mathrm{trial}} - \psi_0|^2
+= \bigl|c_0 \lvert \psi_0 \rangle + \sum_{n=1}^\infty c_n \lvert \psi_n \rangle - \psi_0 \bigr|^2
+= |,(c_0 - 1),\psi_0 + \sum_{n=1}^\infty c_n \psi_n|^2.
+]</p>
+<p>[
+\text{As } |c_0|^2 \to 1 \quad (\text{i.e. } c_0 \to 1\ \text{up to a global phase}),
+\quad \sum_{n=1}^\infty |c_n|^2 \to 0,
+]</p>
+<p>so the norm difference goes to 0.</p>
+<p>Thus, <strong>closeness in energy</strong> ((E_{\mathrm{trial}} \approx E_0)) <strong>implies closeness in wavefunction</strong> ((\lvert \psi_{\mathrm{trial}} \rangle \approx \lvert \psi_0 \rangle)) when the ground state is nondegenerate.</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Expand</strong> (\lvert \psi_{\mathrm{trial}} \rangle) in the eigenbasis.</p></li>
+<li><p><strong>Use</strong> the variational principle: (E_{\mathrm{trial}} \ge E_0).</p></li>
+<li><p><strong>Relate</strong> the energy gap (\epsilon = E_{\mathrm{trial}} - E_0) to (\lvert c_0 \rvert^2).</p></li>
+<li><p><strong>Show</strong> that a small (\epsilon) forces (\lvert c_0 \rvert^2\approx 1).</p></li>
+<li><p><strong>Conclude</strong> (\lvert \psi_{\mathrm{trial}} \rangle) is close in norm to (\lvert \psi_0 \rangle).</p></li>
+</ol>
+<p>Hence, <strong>getting an energy close to the exact ground-state energy ensures your trial wavefunction is also close (in the (L^2) sense) to the true ground-state wavefunction</strong>, provided there is a nonzero energy gap between the ground state and the first excited state.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -539,7 +621,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./linkedFiles"
+            path: "./problems"
         },
         predefinedOutput: true
     }
@@ -562,6 +644,27 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expansion-in-the-energy-eigenbasis">1. Expansion in the Energy Eigenbasis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-variational-principle">2. The Variational Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressing-e-mathrm-trial-in-the-eigenbasis">3. Expressing (E_{\mathrm{trial}}) in the Eigenbasis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-the-overlap-with-the-ground-state">4. Bounding the Overlap with the Ground State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-in-norm">5. Closeness in Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
