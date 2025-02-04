@@ -768,6 +768,9 @@ h_{jk} =
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
 <img alt="_images/d8bd28e1daa38bb8926245f161ecf9f3bed44734a950ca25f01173584fa5c0f8.png" src="_images/d8bd28e1daa38bb8926245f161ecf9f3bed44734a950ca25f01173584fa5c0f8.png" />
 </div>
 </div>
@@ -1327,12 +1330,12 @@ V_{mn} =
 <p>The second-order correction to the energy is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
- E_n''(0) = 2 \sum_{m=1\\m \ne n}^{\infty}\frac{ V_{mn}^2}{E_m(0) - E_n(0)} 
+ E_n''(0) = 2 \sum_{\substack{{m=1} \\ {m \ne n}}}^{\infty}\frac{ V_{mn}^2}{E_n(0) - E_m(0)} 
 \end{split}\]</div>
-<p>This infinite sum is not trivial to evaluate, but we can investigate the first non-vanishing term for the ground state. (This is the so-called Unsold approximation.) Thus:</p>
+<p>This infinite sum is not trivial to evaluate, but we can investigate the first non-vanishing term for the ground state. (This is the so-called Unsold approximation, and it’s based on the fact that the largest contribution to the sum probably comes from the term with the smallest denominator (corresponding to the closest-energy state to the reference state).) Thus:</p>
 <div class="math notranslate nohighlight">
 \[
-E_0''(0) = 2 \frac{V_{21}^2}{E_1(0) - E_2(0)} = 2 \frac{\left(\tfrac{4}{\pi^2}(1-\tfrac{1}{9})\right)^2}{\tfrac{\pi^2}{8} - \tfrac{4\pi^2}{8}} 
+E_1''(0) = 2 \frac{V_{21}^2}{E_1(0) - E_2(0)} = 2 \frac{\left(\tfrac{4}{\pi^2}(1-\tfrac{1}{9})\right)^2}{\tfrac{\pi^2}{8} - \tfrac{4\pi^2}{8}} 
 = -\frac{16384 }{243 \pi^6} = -0.0701
 \]</div>
 <p>Using this, we can estimate the ground-state energy for different field strengths as</p>
