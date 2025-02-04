@@ -85,13 +85,13 @@ parts:
     - file: OneElectronAtoms.ipynb
       title: 1-electron atoms
       sections:
-      - url: https://classroom.github.com/a/obZrhA4q
+      - url: https://classroom.github.com/a/josBNSqF
         title: "Practice: hydrogenic atoms"
 
     - file: ApproximateMethods.ipynb
       title: Approximate Methods
       sections:
-      - url: https://classroom.github.com/a/uYXRb0cZ
+      - url: https://classroom.github.com/a/XDXroWCO
         title: "Practice: Tilted P-in-Box"
       - url: https://classroom.github.com/a/L_iBB1Pp
         title: "Practice: Gaussian Well(s)"
