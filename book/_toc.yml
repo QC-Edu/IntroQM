@@ -110,7 +110,7 @@ parts:
         title: Molecules
       - url: https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf
         title: Spectroscopy
-      - url: https://classroom.github.com/a/EOXYGtiD
+      - url: https://classroom.github.com/a/3YJksRnl
         title: "Practice: Selection Rules"
 
     - file: HOandMorse.ipynb
