@@ -138,6 +138,8 @@ parts:
       title: "Knowledge Test 3"
     - file: problems/final.md
       title: "Final Exam Question List"
+    - file: problems/midterms_2025.md
+      title: "Midterm 2025 Questions"
 
   - caption: Contributing and Using
     chapters:
