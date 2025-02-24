@@ -93,7 +93,7 @@ parts:
       sections:
       - url: https://classroom.github.com/a/XDXroWCO
         title: "Practice: Tilted P-in-Box"
-      - url: https://classroom.github.com/a/L_iBB1Pp
+      - url: https://classroom.github.com/a/944Xl5a8
         title: "Practice: Gaussian Well(s)"
 
 
@@ -110,7 +110,7 @@ parts:
         title: Molecules
       - url: https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf
         title: Spectroscopy
-      - url: https://classroom.github.com/a/EOXYGtiD
+      - url: https://classroom.github.com/a/3YJksRnl
         title: "Practice: Selection Rules"
 
     - file: HOandMorse.ipynb
@@ -126,15 +126,15 @@ parts:
       title: (Extra) Practice Problems
     - url: https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683
       title: Videos
-    - url: https://classroom.github.com/a/xMhLRINd
+    - url: https://classroom.github.com/a/qocaY79s
       title: "Example of buggy code"
     - url: https://classroom.github.com/a/KAk_xxph
       title: "FixMe. Midterm 2"
-    - url: https://classroom.github.com/a/McjRehT6
+    - url: https://classroom.github.com/a/Hlh2RR2B
       title: "Knowledge Test 1"
-    - url: https://classroom.github.com/a/gseTkT5p
+    - url: https://classroom.github.com/a/vcK-gMqL
       title: "Knowledge Test 2"
-    - url: https://classroom.github.com/a/pf4re3Xy
+    - url: https://classroom.github.com/a/-9FnyjZF
       title: "Knowledge Test 3"
     - file: problems/final.md
       title: "Final Exam Question List"
