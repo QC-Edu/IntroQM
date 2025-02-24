@@ -687,9 +687,9 @@ E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
 <li><p>Derive the Rydberg formula.</p></li>
 <li><p>Can you derive a Rydberg-like formula for the wavenumber of excitations for a particle-in-a-box? How would this formula become more complicated for particles-in-a-box in higher dimensions?</p></li>
 <li><p>An <a class="reference external" href="https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf">advanced</a> (and approximate) version of the <a class="reference external" href="https://en.wikipedia.org/wiki/Rydberg_state">Rydberg formula</a> holds for highly-excited states of most atoms and molecules, and is particularly accurate for excitations from the highest occupied (<span class="math notranslate nohighlight">\(ns\)</span> orbital) of <a class="reference external" href="https://en.wikipedia.org/wiki/Rydberg_atom">alkali metal atoms</a>. The basic idea is that the excitation energy can be expressed as a formula like the below, where the <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_defect">quantum defect</a>, <span class="math notranslate nohighlight">\(\delta_{l}\)</span>, <a class="reference external" href="https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf">depends on the orbital angular momentum of the state</a>. Can you understand where the below formula for the excitation energy comes from? Why does the quantum defect depend on angular momentum? Why does the quantum defect decrease as the angular momentum of the state? (For example, for Rubidium, <span class="math notranslate nohighlight">\(\delta_0 = 3.13\)</span> but <span class="math notranslate nohighlight">\(\delta_2 = 1.35\)</span>.) Why does the quantum defect increase for heavier alkali metal atoms? (For example, for Li, <span class="math notranslate nohighlight">\(\delta_0 = 0.41\)</span> but for Cs, <span class="math notranslate nohighlight">\(\delta_0 = 4.13\)</span>.)
-$<span class="math notranslate nohighlight">\(
-\Delta E_{ns \rightarrow n'l'} \approx \frac{1}{2}\left(\frac{1}{(n-\delta_0)^2}-\frac{1}{(n'-\delta_{l'})^2}\right)
-\)</span>$</p></li>
+\begin{equation*}
+\Delta E_{ns \rightarrow n’l’} \approx \frac{1}{2}\left(\frac{1}{(n-\delta_0)^2}-\frac{1}{(n’-\delta_{l’})^2}\right)
+\end{equation*}</p></li>
 <li><p>For conjugated linear molecules like the cyanine dyes, the <span class="math notranslate nohighlight">\(\pi\)</span>-electrons are really confined to a 3-dimensional region, but the size of the region that is perpendicular to the conjugation is much smaller. For example, one could consider a 3-dimensional box or a 3-dimension cylinder:
 $<span class="math notranslate nohighlight">\(
 \hat{H}_{\text{p-in-3d-box}} = - \frac{\hbar^2}{2m} \nabla^2 + V_{a_x}(x) + V_{a_y}(y) + V_{a_z}(z)
@@ -700,9 +700,9 @@ $<span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(
 V_a(x) =
 \begin{cases}
-    +\infty &amp; x\leq 0\\
-    0       &amp; 0\lt x \lt a\\
-    +\infty &amp; a \leq x
+   +\infty &amp; x\leq 0\\
+   0       &amp; 0\lt x \lt a\\
+   +\infty &amp; a \leq x
 \end{cases}
 \)</span>$</p></li>
 </ol>
