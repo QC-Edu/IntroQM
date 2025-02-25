@@ -718,7 +718,7 @@ V(u) = V(r_e) + V'(r_e)(u-r_e) + \tfrac{1}{2!}V''(r_e)(u - r_e)^2 + \cdots
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It&#39;s useful to import these libraries. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It&#39;s useful to import these libraries.</span>
 <span class="c1"># You can import others or not even use these, though.</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
@@ -782,7 +782,7 @@ r_e^2 = \frac{\hbar^2}{\mu h c \tilde{\nu}} = \frac{(2 \pi)^2 h}{\mu h c \tilde{
 <span class="n">re_HCl</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">wavenumber_T37Cl</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="c1"># We start by computing the reduced mass of the species of interest. Use </span>
+<span class="c1"># We start by computing the reduced mass of the species of interest. Use</span>
 <span class="n">mu_H35Cl</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.00782</span><span class="o">*</span><span class="mf">34.9688</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">1.00782</span><span class="o">+</span><span class="mf">34.9688</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 <span class="n">mu_T37Cl</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.01605</span><span class="o">*</span><span class="mf">36.9659</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">3.01605</span><span class="o">+</span><span class="mf">36.9659</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 
@@ -792,11 +792,11 @@ r_e^2 = \frac{\hbar^2}{\mu h c \tilde{\nu}} = \frac{(2 \pi)^2 h}{\mu h c \tilde{
 <span class="n">wavenumber_T37Cl</span> <span class="o">=</span> <span class="n">wavenumber_H35Cl</span> <span class="o">*</span> <span class="n">mu_H35Cl</span><span class="o">/</span><span class="n">mu_T37Cl</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1">#Divide by 100 to get to cm-1</span>
 
 <span class="c1"># For Part A, we have the transition energy in Joules</span>
-<span class="n">dE_H35Cl</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">wavenumber_H35Cl</span> 
-<span class="c1"># The square of the bond length is. </span>
+<span class="n">dE_H35Cl</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">wavenumber_H35Cl</span>
+<span class="c1"># The square of the bond length is.</span>
 <span class="n">re_sq_HCl</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">dE_H35Cl</span> <span class="o">*</span> <span class="n">mu_H35Cl</span><span class="p">)</span>
 <span class="c1"># Multiply by 1e12 to get picometers from meters</span>
-<span class="n">re_HCl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">re_sq_HCl</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e12</span>  
+<span class="n">re_HCl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">re_sq_HCl</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e12</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The equilibrium bond length of HCl is </span><span class="si">{</span><span class="n">re_HCl</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> pm.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The wavenumber of the J=0 -&gt; 1 transition in TCl(37) </span><span class="si">{</span><span class="n">wavenumber_T37Cl</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> cm-1.&quot;</span><span class="p">)</span>
@@ -905,7 +905,7 @@ E_k = \hbar \omega \left( k+ \tfrac{1}{2} \right) = \hbar \sqrt{\frac{\kappa_e}{
 <span class="n">kappa_e</span> <span class="o">=</span> <span class="kc">None</span>                <span class="c1">#Force constant in N/m</span>
 <span class="n">wavenumber_6Li_2</span> <span class="o">=</span> <span class="kc">None</span>       <span class="c1">#wavenumber in cm-1</span>
 
-<span class="c1"># We start by computing the reduced mass of the species of interest. Use </span>
+<span class="c1"># We start by computing the reduced mass of the species of interest. Use</span>
 <span class="n">mu_6Li_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.0151</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">6.0151</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 <span class="n">mu_7Li_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.0160</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">7.0160</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 
@@ -915,11 +915,11 @@ E_k = \hbar \omega \left( k+ \tfrac{1}{2} \right) = \hbar \sqrt{\frac{\kappa_e}{
 <span class="n">wavenumber_6Li_2</span> <span class="o">=</span> <span class="n">wavenumber_7Li_2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mu_7Li_2</span><span class="o">/</span><span class="n">mu_6Li_2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1">#Divide by 100 to get to cm-1</span>
 
 <span class="c1"># For Part A, we have the transition energy in Joules</span>
-<span class="n">dE_7Li_2</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">wavenumber_7Li_2</span> 
+<span class="n">dE_7Li_2</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">wavenumber_7Li_2</span>
 <span class="c1"># Therefore</span>
 <span class="n">sqrt_kappa_e</span> <span class="o">=</span> <span class="n">dE_7Li_2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mu_7Li_2</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">hbar</span>
 <span class="c1"># The force constant is</span>
-<span class="n">kappa_e</span> <span class="o">=</span> <span class="n">sqrt_kappa_e</span><span class="o">**</span><span class="mi">2</span>  
+<span class="n">kappa_e</span> <span class="o">=</span> <span class="n">sqrt_kappa_e</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The force constant at equilibrium bond length of the Lithium dimer is </span><span class="si">{</span><span class="n">kappa_e</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> N/m.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The wavenumber of the k=0 -&gt; 1 transition in the Li-6 dimer is </span><span class="si">{</span><span class="n">wavenumber_6Li_2</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> cm-1.&quot;</span><span class="p">)</span>
@@ -1031,7 +1031,7 @@ E_0^{(\text{Morse})} = E_0^{(\text{harmosc})} - \frac{\left(E_0^{(\text{harmosc}
 <span class="n">zero_pt_6Li_2_Morse</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1">#float. zero-point energy in Li-6 dimer in the Morse potential in Joules</span>
 <span class="n">zero_pt_6Li_2_harmosc</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#float. zero-point energy in Li-6 dimer in the harmonic oscillator in Joules</span>
 
-<span class="c1"># We start by computing the reduced mass of the species of interest. Use </span>
+<span class="c1"># We start by computing the reduced mass of the species of interest. Use</span>
 <span class="n">mu_6Li_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.0151</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">6.0151</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 <span class="n">mu_7Li_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.0160</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">7.0160</span><span class="p">)</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;atomic mass constant&quot;</span><span class="p">)</span>
 
@@ -1202,7 +1202,7 @@ V_{kl} =
 \[
 \tfrac{1}{2}\kappa_e(u-r_e)^2 - q_e (u-r_e) F = \tfrac{1}{2}\kappa_e\left(u - r_e - \frac{qF}{\kappa_e}\right)^2 - \frac{q^2F^2}{2 \kappa_e}
 \]</div>
-<p>The force constant in this new shifted harmonic oscillator is the still <span class="math notranslate nohighlight">\(\kappa_e\)</span>, but the bond length</p>
+<p>The force constant in this new shifted harmonic oscillator is still <span class="math notranslate nohighlight">\(\kappa_e\)</span>, but the bond length</p>
 <div class="math notranslate nohighlight">
 \[
 r_e(F) = r_e + \frac{qF}{\kappa_e}
@@ -1212,7 +1212,7 @@ r_e(F) = r_e + \frac{qF}{\kappa_e}
 \[
 E_k^{\text{shifted}}(F) = \hbar \sqrt{\frac{\kappa_e}{\mu}}\left(k+\frac{1}{2}\right) - \frac{q^2F^2}{2 \kappa_e}
 \]</div>
-<p>have chagned. Referring to the definitions above, the vibrational polarization energy is:</p>
+<p>have changed. Referring to the definitions above, the vibrational polarization energy is:</p>
 <div class="math notranslate nohighlight">
 \[
 E_k^{\text{polarization}}(F) = - \frac{q^2}{2 \kappa_e}F^2
@@ -1248,7 +1248,7 @@ E_k(F) = \hbar \sqrt{\frac{\kappa_e}{\mu}}\left(k+\frac{1}{2}\right) - q r_e F- 
 
 <span class="n">charge_H</span> <span class="o">=</span> <span class="mf">1.91</span><span class="o">*</span><span class="mf">3.33564e-30</span><span class="o">/</span><span class="mf">91.68e-12</span>   <span class="c1">#Charge on the hydrogen in Coulombs</span>
 <span class="n">field</span> <span class="o">=</span> <span class="mf">1.0e6</span>
-<span class="n">kappa_e</span> <span class="o">=</span> <span class="mi">920</span> 
+<span class="n">kappa_e</span> <span class="o">=</span> <span class="mi">920</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mf">6.361e-25</span>
 <span class="n">re</span> <span class="o">=</span> <span class="mf">91.68e-12</span>
 
@@ -1352,11 +1352,11 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I&#39;ve initialized key variables to None. These quantities are printed in the next cell.</span>
-<span class="n">epol_pt</span> <span class="o">=</span> <span class="kc">None</span>    <span class="c1">#Energy of polarization computed using first and second-order perturbation theory, </span>
+<span class="n">epol_pt</span> <span class="o">=</span> <span class="kc">None</span>    <span class="c1">#Energy of polarization computed using first and second-order perturbation theory,</span>
                   <span class="c1">#    in Joules</span>
 <span class="n">epol_basis</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#Energy of polarization computed using basis-set expansion, in Joules</span>
 
-<span class="c1"># The below code provides key quantities that are needed for this treatment. </span>
+<span class="c1"># The below code provides key quantities that are needed for this treatment.</span>
 <span class="c1"># All inputs are assumed to be in SI units.</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigh</span>
@@ -1390,10 +1390,10 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 
 <span class="k">def</span><span class="w"> </span><span class="nf">compute_V</span><span class="p">(</span><span class="n">De</span><span class="p">,</span> <span class="n">omega0</span><span class="p">,</span> <span class="n">kappa_e</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the matrix &lt;m|x|n&gt; for a Morse oscillator</span>
-<span class="sd">    </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    De : scalar </span>
+<span class="sd">    De : scalar</span>
 <span class="sd">        The depth energy of the Morse potential in SI units (Joules)</span>
 <span class="sd">    omega0 : scalar</span>
 <span class="sd">        the fundamental vibrational frequency parameter in Hz; equal to (kappa_e/mu)^(1/2) where mu is the reduced mass.</span>
@@ -1406,23 +1406,23 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <span class="sd">    -------</span>
 <span class="sd">    V : array-like (nbasis, nbasis)</span>
 <span class="sd">         Matrix elements V_mn = &lt;m | (u - r_e) | n&gt; for the Morse Oscillator in units of meters</span>
-<span class="sd">         </span>
+
 <span class="sd">    Note: based on equations in</span>
 <span class="sd">        Vasan &amp; Cross; The Journal of Chemical Physics 78, 3869–3871 (1983).</span>
-<span class="sd">    </span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="c1"># Compute key parameters</span>
     <span class="n">lmbda</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">De</span> <span class="o">/</span> <span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">hbar</span> <span class="o">*</span> <span class="n">omega0</span><span class="p">)</span>  <span class="c1">#lambda is a special word in Python so we can&#39;t use it. :-(</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa_e</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">De</span><span class="p">))</span>
-    
+
     <span class="c1"># This program will crash and burn if the number of states is too large, because factorials of large numbers</span>
-    <span class="c1"># are too big. So </span>
+    <span class="c1"># are too big. So</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">n_basis</span> <span class="o">&lt;</span> <span class="mi">150</span><span class="p">),</span> <span class="s2">&quot;n_basis is too large, so we stop gracefully to avoid overflow&quot;</span>
-    
+
     <span class="c1"># initialize V to a zero matrix</span>
     <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span><span class="n">n_basis</span><span class="p">))</span>
-    
+
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
         <span class="n">V</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="mi">13</span><span class="o">/</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">7</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span><span class="p">)</span> \
                   <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">lmbda</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
@@ -1432,7 +1432,7 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
             <span class="k">if</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">):</span>
                <span class="c1">#we can use the conventional expressions for the gamma function</span>
                <span class="n">radicand</span> <span class="o">*=</span> <span class="n">gamma</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="n">gamma</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span>
-               <span class="n">radical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">radicand</span><span class="p">)</span> 
+               <span class="n">radical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">radicand</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                <span class="n">radical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">radicand</span><span class="p">)</span>
                <span class="c1">#we need to use an asymptotic formula to estimate the gamma-function ratio. Using the Stirling</span>
@@ -1440,15 +1440,15 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
                <span class="n">radical</span> <span class="o">*=</span> <span class="n">Stirling_ratio</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">lmbda</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
             <span class="n">V</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefactor</span> <span class="o">*</span> <span class="n">radical</span>
             <span class="n">V</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">]</span>
-    
+
     <span class="k">return</span> <span class="n">V</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">compute_E0</span><span class="p">(</span><span class="n">De</span><span class="p">,</span> <span class="n">omega0</span><span class="p">,</span> <span class="n">n_basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the eigenenerties of the Morse oscillator in the absence of an electric field</span>
-<span class="sd">    </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    De : scalar </span>
+<span class="sd">    De : scalar</span>
 <span class="sd">        The depth energy of the Morse potential in SI units (Joules)</span>
 <span class="sd">    omega0 : scalar</span>
 <span class="sd">        the fundamental vibrational frequency parameter in Hz; equal to (kappa_e/mu)^(1/2) where mu is the reduced mass.</span>
@@ -1460,12 +1460,12 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <span class="sd">    E0 : array-like (nbasis)</span>
 <span class="sd">         eigenenergies of the Morse oscillator in units of Joules</span>
 <span class="sd">               E0(m) =  hbar * omega0 (k + 1/2) - (hbar * omega0 (k + 1/2))^2 / 4 De</span>
-<span class="sd">    </span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># initialize E0 to a zero vector</span>
     <span class="n">E0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_basis</span><span class="p">)</span>
-                                           
+
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_basis</span><span class="p">):</span>
         <span class="n">E0_harmosc</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">hbar</span> <span class="o">*</span> <span class="n">omega0</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">E0</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">E0_harmosc</span> <span class="o">-</span> <span class="n">E0_harmosc</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">De</span><span class="p">)</span>
@@ -1474,10 +1474,10 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 
 <span class="k">def</span><span class="w"> </span><span class="nf">compute_H</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the Hamiltonian matrix &lt;m|H(field)|n&gt; for a Morse oscillator of a molecular dipole in a field.</span>
-<span class="sd">    </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    De : scalar </span>
+<span class="sd">    De : scalar</span>
 <span class="sd">        The depth energy of the Morse potential in SI units (Joules)</span>
 <span class="sd">    omega0 : scalar</span>
 <span class="sd">        the fundamental vibrational frequency parameter in Hz; equal to (kappa_e/mu)^(1/2) where mu is the reduced mass.</span>
@@ -1495,16 +1495,16 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 <span class="sd">    H : array-like (nbasis, nbasis)</span>
 <span class="sd">         Matrix elements H_mn = &lt;m | H(F=0) + charge*field(u-r_e) | n&gt; for the Morse Oscillator in units of Joules</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="n">V</span> <span class="o">=</span> <span class="n">compute_V</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
     <span class="n">E0</span> <span class="o">=</span> <span class="n">compute_E0</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
-    
+
     <span class="c1">#Initialize H to zeros:</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_basis</span><span class="p">,</span><span class="n">n_basis</span><span class="p">))</span>
-    
+
     <span class="c1">#Fill diagonal of H with the energies at zero field and add appropriated scaled multiple of V.</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">E0</span><span class="p">)</span> 
-    
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">E0</span><span class="p">)</span>
+
     <span class="n">H</span> <span class="o">-=</span> <span class="n">charge</span><span class="o">*</span><span class="n">field</span><span class="o">*</span><span class="n">V</span>                      <span class="c1">#Use negatively signed field.</span>
 
     <span class="k">return</span> <span class="n">H</span>
@@ -1515,32 +1515,32 @@ a = \sqrt{\frac{\kappa_e}{2D_e}}
 
 <span class="k">def</span><span class="w"> </span><span class="nf">egs_pol_pt</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the polarization energy of the ground state using 1st- and 2nd-order perturbation theory&quot;&quot;&quot;</span>
-    
+
     <span class="n">V</span> <span class="o">=</span> <span class="n">compute_V</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
     <span class="n">E0</span> <span class="o">=</span> <span class="n">compute_E0</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
-    
+
     <span class="c1">#At first order, the derivative is just the expectation value V_mm, scaled by q</span>
     <span class="n">egs_pol_der1</span> <span class="o">=</span> <span class="n">charge</span><span class="o">*</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-    
+
     <span class="c1">#At second order, one needs to sum over the bound states</span>
     <span class="n">egs_pol_der2</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
-        <span class="n">egs_pol_der2</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">charge</span><span class="o">*</span><span class="n">V</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">E0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">E0</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>  
+        <span class="n">egs_pol_der2</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">charge</span><span class="o">*</span><span class="n">V</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">E0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">E0</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
 
     <span class="k">return</span> <span class="n">egs_pol_der1</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">field</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">egs_pol_der2</span><span class="o">*</span><span class="n">field</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">egs_pol_basis</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the polarization energy for the ground state of Morse Oscillator using basis-set expansion &quot;&quot;&quot;</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">compute_H</span><span class="p">(</span><span class="n">De</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">kappa_e</span><span class="p">,</span><span class="n">charge</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">n_basis</span><span class="p">)</span>
-    
+
     <span class="c1">#compute energies by diagonalization</span>
     <span class="n">energies</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">eigvals_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
+
     <span class="c1">#ground-state energy of polarization requires subtracting off the harmonic-oscillator term:</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">energies</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">hbar</span> <span class="o">*</span> <span class="n">omega0</span><span class="p">)</span>
-    
-    
-<span class="c1">#Now we can compute what we need:    </span>
+
+
+<span class="c1">#Now we can compute what we need:</span>
 <span class="n">charge</span> <span class="o">=</span> <span class="mf">1.91</span><span class="o">*</span><span class="mf">3.33564e-30</span><span class="o">/</span><span class="mf">91.68e-12</span>          <span class="c1">#copied from the previous problem</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mf">6.361e-25</span>                               <span class="c1">#reduced mass in kg</span>
 <span class="n">kappa_e</span> <span class="o">=</span> <span class="mi">920</span>                                <span class="c1">#N/m given in this problem.</span>
