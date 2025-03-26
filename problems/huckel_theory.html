@@ -1835,7 +1835,7 @@ The following plots correspond to the following atomic property labels:
 atomic charges
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:52:22] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:58:36] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
 <img alt="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" src="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" />
@@ -1928,9 +1928,11 @@ atomic populations
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the excitation from the HOMO to the LUMO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the excitation from the HOMO to the LUMO and print out the dipole moment</span>
+<span class="c1"># and its size</span>
 <span class="n">transition_dipole</span> <span class="o">=</span> <span class="n">compute_transition_dipole</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">transition_dipole</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The transition dipole moment of azulene (HOMO to LUMO) is </span><span class="si">{</span><span class="n">transition_dipole</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The magnitude of the transition dipole moment is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">transition_dipole</span><span class="p">)</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
 
 <span class="c1"># Plot the orbital product</span>
 <span class="n">coeffs</span> <span class="o">=</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]</span>
@@ -1942,12 +1944,13 @@ atomic populations
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4309424285321684
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The transition dipole moment of azulene (HOMO to LUMO) is [-0.01674969 -2.42803264  0.11772008] Debye.
+The magnitude of the transition dipole moment is 2.4309424285321684 Debye.
 The following plots correspond to the following atomic property labels:
 product of HOMO and LUMO orbitals
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:52:23] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:58:36] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
 <img alt="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" src="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" />
