@@ -1,0 +1,2118 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. Hückel Theory &#8212; Quantum Chemistry</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/huckel_theory';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Materials" href="../documents/refs.html" />
+    <link rel="prev" title="11. Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator" href="../HOandMorse.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../main_content.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/UK988zUD">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/z8XA59RO">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/BvVWEPyd">Quiz: QM Intro</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/ygMVfNU_">Quiz: The Schrodinger Eq.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleIn1DBox.html">5. The Particle in a Box</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../x4_mocked.html">Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/kGuJ9yal">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/b-eY9gqA">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/IMpMFk0v">Quiz: 1D P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/5LGPHyJD">Practice: Effective Low-Dimensional Systems</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/BnZQkNi2">Practice: The Sudden Approximation in 2-D</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/TSS2Sbin">Practice: Interacting particles in a box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/gHbKRyrp">Quiz: MultiD P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/aby7w6cC">Quiz: Applying the Postulates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/josBNSqF">Practice: hydrogenic atoms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/XDXroWCO">Practice: Tilted P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/944Xl5a8">Practice: Gaussian Well(s)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/3YJksRnl">Practice: Selection Rules</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Hückel Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extracredit/overview.html">(Extra) Practice Problems</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/qocaY79s">Example of buggy code</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/KAk_xxph">FixMe. Midterm 2</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/Hlh2RR2B">Knowledge Test 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/vcK-gMqL">Knowledge Test 2</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/-9FnyjZF">Knowledge Test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterms_2025.html">Midterm Questions</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/problems/huckel_theory.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/huckel_theory.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/problems/huckel_theory.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hückel Theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-complete-the-below-notebook">👩🏽‍💻 Assignment: Complete the Below Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-of-huckel-theory">Motivation of Hückel Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-huckel-hamiltonian">Building the Hückel Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-carbon-polyacetylenes-ce-h2c-ch-n-2-ch2"><span class="math notranslate nohighlight">\(n\)</span>-Carbon Polyacetylenes; <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-carbon-annulenes-ce-ch-n"><span class="math notranslate nohighlight">\(n\)</span>-Carbon Annulenes; <span class="math notranslate nohighlight">\(\ce{(CH)_n}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-that-the-molecular-orbital-energies-and-coefficients-reported-for-annulenes-and-polyacetylenes-are-correct">📝 Exercise: Verify that the molecular orbital energies and coefficients reported for annulenes and polyacetylenes are correct.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-implementation-annulenes">Numerical Implementation: Annulenes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-implementation-polyacetylenes-ce-h2c-ch-n-2-ch2">Numerical Implementation: Polyacetylenes <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-huckel-hamiltonian-from-smiles">Building the Hückel Hamiltonian from SMILES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-molecules-with-rdkit">Visualizing Molecules with RDKit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-an-adjacency-matrix-with-rdkit">Generating an Adjacency Matrix with RDKit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-the-huckel-hamiltonian-from-a-smiles-string">Generate the Hückel Hamiltonian from a SMILES String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-molecular-orbitals-and-other-properties">Exploring Molecular Orbitals (and other properties)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-properties-atomic-charges-and-multipole-moments">Molecular Properties: Atomic Charges (and Multipole Moments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-dipole-moments">Transition Dipole Moments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">🤔 Thought-Provoking Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marking-scheme">⚖️ Marking Scheme</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="huckel-theory">
+<h1><span class="section-number">12. </span>Hückel Theory<a class="headerlink" href="#huckel-theory" title="Link to this heading">#</a></h1>
+<section id="assignment-complete-the-below-notebook">
+<h2>👩🏽‍💻 Assignment: Complete the Below Notebook<a class="headerlink" href="#assignment-complete-the-below-notebook" title="Link to this heading">#</a></h2>
+<p>To do this, complete the code blocks indicated by <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">START</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> and <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">END</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> .</p>
+<p>The detailed steps you’ll follow are:</p>
+<ol class="arabic simple">
+<li><p>Read the theoretical background of the Hückel method and its revisions.</p></li>
+<li><p>Complete a function for evaluating the MO coefficients, MO energies, and total energy from the Hückel Hamiltonian.</p></li>
+<li><p>Complete a function to evaluate the adjacency matrix for a polyacetylene.</p></li>
+<li><p>Plot molecular orbitals for some aromatic molecules.</p></li>
+<li><p>Complete a function to evaluate the transition density between two orbitals.</p></li>
+<li><p>Complete a function to evaluate the transition dipole moment between two orbitals.</p></li>
+<li><p>Complete a function to plot the absorbance spectrum of an aromatic molecule.</p></li>
+<li><p>Learn about the effects of electron-electron repulsion from the Pariser-Parr-Pople (PPP) (a.k.a. Hubbard) model.</p></li>
+<li><p>Complete a function to evaluate the MO coefficients, MO energies, and total energy at the Hartree-Fock level for the PPP model.</p></li>
+<li><p>Examine Koopmans’ theorem.</p></li>
+</ol>
+</section>
+<section id="motivation-of-huckel-theory">
+<h2>Motivation of Hückel Theory<a class="headerlink" href="#motivation-of-huckel-theory" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/H%C3%BCckel_method">Huckel theory</a> is the simplest method for evaluating the molecular orbitals of systems with one (active, valence) electron per center. In chemistry, Huckel theory is usually used to model <span class="math notranslate nohighlight">\(\pi\)</span>-electron systems. <a class="reference external" href="https://en.wikipedia.org/wiki/Ali_Alavi">Ali Alavi</a> wrote an <a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/linkedFiles/AlaviHuckel.pdf">excellent tutorial review of Hückel theory</a>.</p>
+<p>It is a deep result that for in <span class="math notranslate nohighlight">\(\pi\)</span>-electron systems, <a class="reference external" href="https://pubs.aip.org/aip/jcp/article/24/6/1166/76445/On-the-Pi-Electron-Approximation-and-Its-Possible">the <span class="math notranslate nohighlight">\(\sigma\)</span>-bond framework can be neglected</a>. The essential requirement is that we write the wavefunction as a product of a <span class="math notranslate nohighlight">\(\sigma\)</span>-bond framework and a <span class="math notranslate nohighlight">\(\pi\)</span>-electron part. The <span class="math notranslate nohighlight">\(\sigma\)</span>-bond framework is assumed to be known and fixed, and the <span class="math notranslate nohighlight">\(\pi\)</span>-electron part is the part we are interested in. I.e., we assume:</p>
+<div class="math notranslate nohighlight">
+\[
+\Ket{\Psi} = \Ket{\Psi_{\sigma}} \Ket{\Psi_{\pi}}
+\]</div>
+<p>There are several different models for the <span class="math notranslate nohighlight">\(\pi\)</span>-electron framework, but the simplest is Hückel theory. Assume that a conjugated molecule lies in the <span class="math notranslate nohighlight">\(xy\)</span>-plane; then the <span class="math notranslate nohighlight">\(\pi\)</span>-electrons are in <span class="math notranslate nohighlight">\(p_z\)</span>-orbitals. The <span class="math notranslate nohighlight">\(2p_z\)</span> orbitals (one for each conjugated atom) will be the basis for the system. The <span class="math notranslate nohighlight">\(\pi\)</span>-electron part of the wavefunction is then a Slater determinant of molecular orbitals, each of which is a linear combination of the atomic <span class="math notranslate nohighlight">\(2p_z\)</span> orbitals. Since there is just one spatial orbital per atom, we can just index the orbitals by their atomic labels, and the molecular orbitals can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\Ket{\phi_p} = \sum_{A} c_{pA} \Ket{\chi_A}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\chi_A(\mathbf{r})\)</span> is a <span class="math notranslate nohighlight">\(2p_z\)</span> orbital on atom <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>A Slater determinant of the <span class="math notranslate nohighlight">\(\pi\)</span>-molecular orbitals is the exact wavefunction only if we neglect electron-electron repulsion between the <span class="math notranslate nohighlight">\(\pi\)</span>-electrons. The resulting <span class="math notranslate nohighlight">\(\pi\)</span>-electron Hamiltonian has the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = \sum_{i=1}^{N_{\pi}} \left(-\tfrac{1}{2} \nabla_i^2 + v(\mathbf{r_i}) + w_{\sigma}(\mathbf{r_i})\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v(\mathbf{r})\)</span> is the electron-nuclear attraction potential and <span class="math notranslate nohighlight">\(w_{\sigma}(\mathbf{r})\)</span> is the electron-electron repulsion potential due to the <span class="math notranslate nohighlight">\(\sigma\)</span>-electrons. The equations for the molecular orbitals are:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\tfrac{1}{2} \nabla^2 + v(\mathbf{r}) + w_{\sigma}(\mathbf{r}) \right) \sum_{B} c_{pB} \chi_B(\mathbf{r}) = \epsilon_p \sum_{B} c_{pB} \chi_B(\mathbf{r})
+\]</div>
+<p>Multiplying on the left by <span class="math notranslate nohighlight">\(\chi_A^*(\mathbf{r})\)</span> and integrating over all space, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_B \Braket{\chi_A | -\tfrac{1}{2} \nabla^2 + v + w_{\sigma} | \chi_B} c_{pB} = \epsilon_p \sum_B \Braket{\chi_A | \chi_B} c_{pB}
+\]</div>
+<p>This is a secular equation,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_B h_{AB} c_{pB} = \epsilon_p \sum_B s_{AB} c_{pB}
+\]</div>
+<p>To obtain Hückel theory, we make the following approximations:</p>
+<ol class="arabic simple">
+<li><p><strong>The atomic orbitals are orthogonal.</strong> This means the overlap matrix is the identity matrix.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+s_{AB} = \Braket{\chi_A | \chi_B} = \delta_{AB}
+\]</div>
+<p>This is (superficially) an approximation, but this equation can be satisfied by <a class="reference external" href="https://pubs.aip.org/aip/jcp/article/18/3/365/201550/On-the-Non-Orthogonality-Problem-Connected-with">Löwdin (a.k.a. symmetric) orthogonalization</a> of the atomic orbitals, so it is not a fundamental limitation.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>The Hamiltonian matrix elements, <span class="math notranslate nohighlight">\(h_{AB}\)</span> are zero unless <span class="math notranslate nohighlight">\(A=B\)</span> (diagonal terms) or atoms <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are bonded to each other.</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_{AB} =
+\begin{cases}
+\alpha &amp; \text{if } A=B \\
+\beta &amp; \text{if } A \text{ and } B \text{ are bonded} \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+</section>
+<section id="building-the-huckel-hamiltonian">
+<h2>Building the Hückel Hamiltonian<a class="headerlink" href="#building-the-huckel-hamiltonian" title="Link to this heading">#</a></h2>
+<p>We will build the Hückel Hamiltonian for two types of simple molecules: polyacetylenes (linear polyenes, <span class="math notranslate nohighlight">\(\ce{H2C(CH)_nCH2}\)</span>) and annulenes (cyclic polyenes <span class="math notranslate nohighlight">\(\ce{(CH)_n}\)</span>). These are especially interesting because the molecular orbital energies (and the orbitals themselves) are known analytically.</p>
+<section id="n-carbon-polyacetylenes-ce-h2c-ch-n-2-ch2">
+<h3><span class="math notranslate nohighlight">\(n\)</span>-Carbon Polyacetylenes; <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span><a class="headerlink" href="#n-carbon-polyacetylenes-ce-h2c-ch-n-2-ch2" title="Link to this heading">#</a></h3>
+<p>The Hamiltonian matrix is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_{AB} =
+\begin{cases}
+\alpha &amp; \text{if } B=A \\
+\beta &amp; \text{if } |B-A| = 1 \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+<p>or, more explicitly:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{H} = \begin{bmatrix}
+\alpha &amp; \beta &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+\beta &amp; \alpha &amp; \beta &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; \beta &amp; \alpha &amp; \beta &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; \beta &amp; \alpha &amp; \beta &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp;  0 &amp; \beta &amp; \alpha &amp; \beta &amp; 0\\
+0 &amp; 0  &amp; \cdots &amp;  0 &amp; 0  &amp; \beta &amp; \alpha &amp; \beta \\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp;  0 &amp; \beta &amp; \alpha
+\end{bmatrix}
+\end{split}\]</div>
+<p>The molecular orbital energies are:</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon_p = \alpha + 2\beta \cos\left(\frac{\pi p}{n+1}\right)
+\]</div>
+<p>and the molecular orbital coefficients are:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{pA} = \sqrt{\frac{2}{n+1}} \sin\left(\frac{\pi p A}{n+1}\right)
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+p&amp;=1,2,\ldots,n \\
+A&amp;=1,2,\ldots,n
+\end{split}
+\end{split}\]</div>
+<p>It is not coincidental that the coefficients have the same form as a particle-in-a-box: one can think of the electrons as moving back and forth along the chain, but unable to move off the chain.</p>
+</section>
+<section id="n-carbon-annulenes-ce-ch-n">
+<h3><span class="math notranslate nohighlight">\(n\)</span>-Carbon Annulenes; <span class="math notranslate nohighlight">\(\ce{(CH)_n}\)</span><a class="headerlink" href="#n-carbon-annulenes-ce-ch-n" title="Link to this heading">#</a></h3>
+<p>The Hamiltonian matrix is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_{AB} =
+\begin{cases}
+\alpha &amp; \text{if } B=A \\
+\beta &amp; \text{if } |B-A| = 1 \\
+\beta &amp; \text{if } A=1 \text{ and } B=n \\
+\beta &amp; \text{if } B=1 \text{ and } A=n \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+<p>or, more explicitly:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{H} = \begin{bmatrix}
+\alpha &amp; \beta &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; \beta \\
+\beta &amp; \alpha &amp; \beta &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; \beta &amp; \alpha &amp; \beta &amp; 0 &amp; \cdots &amp; 0  &amp; 0 \\
+0 &amp; 0 &amp; \beta &amp; \alpha &amp; \beta &amp; \ddots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp;  0 &amp; \beta &amp; \alpha &amp; \beta &amp; 0\\
+0 &amp; 0  &amp; \cdots &amp;  0 &amp; 0  &amp; \beta &amp; \alpha &amp; \beta \\
+\beta &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp;  0 &amp; \beta &amp; \alpha
+\end{bmatrix}
+\end{split}\]</div>
+<p>The extra factors of <span class="math notranslate nohighlight">\(\beta\)</span> in the corners of the Hamiltonian matrix are due to the fact that the first and last atoms are bonded together.</p>
+<p>The molecular orbital energies are:</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon_p = \alpha + 2\beta \cos\left(\frac{2\pi p}{n}\right)
+\]</div>
+<p>and the molecular orbital coefficients are:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{pA} = \tfrac{1}{\sqrt{n}} e^{\left(\frac{2\pi p A i}{n} \right)}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rfloor+\text{mod}(n+1,2)
+\]</div>
+<p>The notation <span class="math notranslate nohighlight">\(\lfloor x \rfloor\)</span> indicates the “floor” function: the greatest integer less than or equal to <span class="math notranslate nohighlight">\(x\)</span>. Note that because <span class="math notranslate nohighlight">\(\cos(x) = \cos(-x)\)</span>, all the orbitals except the lowest (and, for even <span class="math notranslate nohighlight">\(n\)</span>, the highest) are doubly degenerate. It is not coincidental that the molecular orbital coefficients look like the wavefunction form of a particle-in-a-ring: the electrons are moving around the ring. The last allowable quantum number only appears for even <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</section>
+<section id="exercise-verify-that-the-molecular-orbital-energies-and-coefficients-reported-for-annulenes-and-polyacetylenes-are-correct">
+<h3>📝 Exercise: Verify that the molecular orbital energies and coefficients reported for annulenes and polyacetylenes are correct.<a class="headerlink" href="#exercise-verify-that-the-molecular-orbital-energies-and-coefficients-reported-for-annulenes-and-polyacetylenes-are-correct" title="Link to this heading">#</a></h3>
+</section>
+<section id="numerical-implementation-annulenes">
+<h3>Numerical Implementation: Annulenes<a class="headerlink" href="#numerical-implementation-annulenes" title="Link to this heading">#</a></h3>
+<p>The easiest way to build a Hückel Hamiltonian is to construct an adjacency matrix for the molecule, then multiply it by the <span class="math notranslate nohighlight">\(\beta\)</span> parameter and add <span class="math notranslate nohighlight">\(\alpha\)</span> to the diagonal. The adjacency matrix, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(a_{ij}\)</span> equal to 1 if atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are bonded, and 0 otherwise. For annulenes, the adjacency matrix is a circulant matrix with 1s on the first and last off-diagonals.</p>
+<p>We want to check that the implementation is correct. We can do this by writing functions that evaluate the MO energies and coefficients exactly, then comparing the numerical results to the exact results.</p>
+<p>The complication occurs because for degenerate MOs, any linear combination of the degenerate MOs is also an MO with the same energy. To compare the MO coefficients, we prove that each computed MO is <em>exactly</em> a linear combination of the two degenerate exact MOs. Specifically, we denoting the computed MOs as <span class="math notranslate nohighlight">\(\tilde{\phi}_p(\mathbf{r})\)</span> and the degenerate exact MOs as <span class="math notranslate nohighlight">\(\phi_{p}(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\phi_{p'}(\mathbf{r})\)</span>, we want to show that:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\Braket{\tilde{\phi}_p | \phi_{p}}\right|^2 + \left|\Braket{\tilde{\phi}_p | \phi_{p'}}\right|^2 = 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_adjacency_annulene</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the adjacency matrix of an annulene, CnHn, with n vertices.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The number of atoms in the annulene, CnHn.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The adjacency matrix of the annulene.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; get_adjacency_annulene(5)</span>
+<span class="sd">    array([[0., 1., 0., 0., 1.],</span>
+<span class="sd">           [1., 0., 1., 0., 0.],</span>
+<span class="sd">           [0., 1., 0., 1., 0.],</span>
+<span class="sd">           [0., 0., 1., 0., 1.],</span>
+<span class="sd">           [1., 0., 0., 1., 0.]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Make sure that the number of vertices is at least 3,</span>
+    <span class="c1"># as the smallest annulene is cyclopropene.</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The smallest annulene is cyclopropene.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Return the adjacency matrix of the annulene.</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="c1"># Each atom, i, is bonded to the atom preceding it in the ring.</span>
+        <span class="c1">#    This approach uses the fact that the -1 index refers to the last</span>
+        <span class="c1">#    element in the array.</span>
+        <span class="n">adjacency</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># Each atom is also bonded to the atom following it in the ring; we construct</span>
+    <span class="c1"># this by adding the tranpose of the adjacency matrix to itself.</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">adjacency</span> <span class="o">+</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="k">return</span> <span class="n">adjacency</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_huckel_hamiltonian_adjacency</span><span class="p">(</span><span class="n">adjacency</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the Huckel Hamiltonian for a given adjacency matrix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    adjacency : numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The adjacency matrix of the annulene.</span>
+<span class="sd">    alpha : float</span>
+<span class="sd">        The alpha parameter in the Huckel Hamiltonian.</span>
+<span class="sd">        The default value is the -0.414, corresponding to the carbon atom.</span>
+<span class="sd">    beta : float</span>
+<span class="sd">        The beta parameter in the Huckel Hamiltonian.</span>
+<span class="sd">        The default value is the -0.533, corresponding to the carbon-carbon bond.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The Huckel Hamiltonian from the adjacency matrix, in atomic units (Hartree)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; adjacency = get_adjacency_annulene(5)</span>
+<span class="sd">    &gt;&gt;&gt; get_huckel_hamiltonian_adjacency(adjacency,alpha=-2.0,beta=-1.0)</span>
+<span class="sd">    array([[-2., -1.,  0.,  0., -1.],</span>
+<span class="sd">           [-1., -2., -1.,  0.,  0.],</span>
+<span class="sd">           [ 0., -1., -2., -1.,  0.],</span>
+<span class="sd">           [ 0.,  0., -1., -2., -1.],</span>
+<span class="sd">           [-1.,  0.,  0., -1., -2.]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check to make sure that the adjacency matrix is square, symmetric, has</span>
+    <span class="c1"># only 0s and 1s, has no diagonal elements, and has no more than 1 bond.</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The adjacency matrix is not square.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;There should be at least two atoms.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">adjacency</span><span class="p">,</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">T</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The adjacency matrix is not symmetric.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">adjacency</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">adjacency</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The adjacency matrix has elements other than 0 and 1.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">adjacency</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The adjacency matrix has non-zero diagonal elements.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Set default values for alpha and beta if not provided. These are</span>
+    <span class="c1"># taken from Rauk&#39;s work, as encapsulated in the ModelHamiltonian package.</span>
+    <span class="c1">#      https://github.com/theochem/ModelHamiltonian</span>
+    <span class="c1"># The values are in atomic units (Hartree).</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.414</span>
+    <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0533</span>
+
+    <span class="c1"># Construct the Huckel Hamiltonian.</span>
+    <span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+    <span class="c1"># alpha times the identity matrix (for the diagonal) plus beta times the adjacency matrix.</span>
+    <span class="n">hamiltonian</span> <span class="o">+=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">adjacency</span>
+
+    <span class="k">return</span> <span class="n">hamiltonian</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">n_electrons</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the total energy and the MO energies/coefficients for the Huckel Hamiltonian.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Hamiltonian : numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The Huckel Hamiltonian. But any Hamiltonian could be used.</span>
+<span class="sd">    n_electrons : int</span>
+<span class="sd">        The number of electrons in the annulene. If not provided, the number of</span>
+<span class="sd">        electrons is assumed to be the number of atoms.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n,))</span>
+<span class="sd">        The eigenvalues of the Huckel Hamiltonian.</span>
+<span class="sd">    numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The eigenvectors of the Huckel Hamiltonian.</span>
+<span class="sd">    float</span>
+<span class="sd">        The total energy of the system.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check to make sure that the Hamiltonian is square.</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Hamiltonian is not square.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;There should be at least two atoms.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># If the number of electrons is not provided, assume it is the number of atoms.</span>
+    <span class="k">if</span> <span class="n">n_electrons</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n_electrons</span> <span class="o">=</span> <span class="n">n</span>
+
+    <span class="c1"># Solve the Huckel Hamiltonian.</span>
+    <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the total energy.</span>
+    <span class="c1"># There are two electrons per MO, so we sum over the first</span>
+    <span class="c1"># n_electrons/2 MOs.</span>
+    <span class="c1">#</span>
+    <span class="c1"># However, if the number of electrons is odd, there is a singly-occupied</span>
+    <span class="c1"># MO that contributes to the total energy.</span>
+    <span class="n">total_energy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">[:</span> <span class="n">n_electrons</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">n_electrons</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">total_energy</span> <span class="o">+=</span> <span class="n">mo_energies</span><span class="p">[</span><span class="n">n_electrons</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_huckel_annulene</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check the Huckel theory for an annulene, CnHn, with n vertices.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The number of atoms in the annulene, CnHn.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">        The function fails with an informative error message if the</span>
+<span class="sd">        numerical results do not match the expected results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check that n is an integer larger than 2.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The number of atoms must be an integer.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The smallest annulene is cyclopropene.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get the adjacency matrix of the annulene.</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">get_adjacency_annulene</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># Get the Huckel Hamiltonian from the adjacency matrix.</span>
+    <span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">get_huckel_hamiltonian_adjacency</span><span class="p">(</span><span class="n">adjacency</span><span class="p">)</span>
+
+    <span class="c1"># Solve the Huckel Hamiltonian.</span>
+    <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span> <span class="o">=</span> <span class="n">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+
+    <span class="c1"># Compute the exact MO energies and MO coefficients</span>
+    <span class="c1"># for the annulene. To do this, we need to know what the values of</span>
+    <span class="c1"># alpha and beta are. We extract them from the Hamiltonian matrix</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">exact_mo_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="c1"># The exact MO energies are given by the formula. This actually, for even n, gives</span>
+    <span class="c1"># extends the range of quantum numbers on the negative side instead of the positive side, but</span>
+    <span class="c1"># that doesn&#39;t affect the result.</span>
+    <span class="n">exact_mo_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">alpha</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># The exact MO coefficient for atom A in the p-th MO can be computed from the formula,</span>
+    <span class="c1"># c = 1/sqrt(n) exp^(2*pi*p*A*i/n}</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">exact_mo_coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span>
+    <span class="p">)</span>  <span class="c1"># We need to inialize to &quot;complex zeros&quot;</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">exact_mo_coeffs</span><span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">p</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># The MO coefficients (and their corresponding MO energies) are sorted in terms of increasing orbital energy.</span>
+    <span class="c1"># We need to sort the exact MO energies and MO coefficients in the same way.</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">exact_mo_energies</span><span class="p">)</span>
+    <span class="n">exact_mo_energies</span> <span class="o">=</span> <span class="n">exact_mo_energies</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">exact_mo_coeffs</span> <span class="o">=</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">]</span>
+
+    <span class="c1"># Check that the MO energies and MO coefficients match the expected values.</span>
+    <span class="c1"># First, check that the first and last eigenenergies are correct (the latter one, only for even n)</span>
+    <span class="k">assert</span> <span class="n">exact_mo_energies</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">alpha</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">exact_mo_energies</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">alpha</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span>
+
+    <span class="c1"># Check that the MO energies match the expected values.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">,</span> <span class="n">exact_mo_energies</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The MO energies do not match the expected values.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># We construct an array that contains the square-norm of the numerical MO coefficients expanded in terms</span>
+    <span class="c1"># of the exact MO coefficients. This should be an array of ones.&#39;</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># This eigenvector is nondegenerate, but the MO coefficient is only determined up to a phase factor.</span>
+            <span class="n">test</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># When the number of atoms is even, the highest-energy eigenvector is also nondegenerate.</span>
+            <span class="n">test</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">p</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># For even p, the degenerate eigenvectors are this one and the immediately preceding one.</span>
+            <span class="n">test</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+                <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># For odd p, the degenerate eigenvectors are this one and the immediately following one.</span>
+            <span class="n">test</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+                <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="p">)</span>
+
+    <span class="c1"># Check that the MO coefficients match the expected values.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The MO coefficients do not match the expected values.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following checks the code for the annulenes:</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">check_huckel_annulene</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-implementation-polyacetylenes-ce-h2c-ch-n-2-ch2">
+<h3>Numerical Implementation: Polyacetylenes <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span><a class="headerlink" href="#numerical-implementation-polyacetylenes-ce-h2c-ch-n-2-ch2" title="Link to this heading">#</a></h3>
+<p>The adjacency matrix for polyacetylenes is a tridiagonal matrix with 1s on the above and below the main diagonal, corresponding to each carbon atom being bonded to the two adjacent carbon atoms except for the terminal carbon atoms, which are bonded to just one other carbon atom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_adjacency_polyacetylene</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the adjacency matrix of a polyacetylene, H2C(CH)_{n-2}CH2, with n atoms.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The number of atoms in the polyacetylene, H2C(CH)_{n-2}CH2.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The adjacency matrix of the polyacetylene.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; get_adjacency_polyacetylene(5)</span>
+<span class="sd">    array([[0., 1., 0., 0., 0.],</span>
+<span class="sd">           [1., 0., 1., 0., 0.],</span>
+<span class="sd">           [0., 1., 0., 1., 0.],</span>
+<span class="sd">           [0., 0., 1., 0., 1.],</span>
+<span class="sd">           [0., 0., 0., 1., 0.]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Make sure that there are at least three atoms,</span>
+    <span class="c1"># as the smallest polyacetylene is ethylene.</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The smallest polyacetylene is ethylene.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Return the adjacency matrix of the polyacetylene.</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">adjacency</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_huckel_polyacetylene</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check the Huckel theory for a polyacetylene, H2C(CH)_{n-2}CH2, with n atoms.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The number of atoms in the polyacetylene, H2C(CH)_{n-2}CH2.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">        The function fails with an informative error message if the</span>
+<span class="sd">        numerical results do not match the expected results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check that n is an integer larger than 2.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The number of atoms must be an integer.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The smallest polyacetylene is ethylene.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get the adjacency matrix of the polyacetylene.</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">get_adjacency_polyacetylene</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># Get the Huckel Hamiltonian from the adjacency matrix.</span>
+    <span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">get_huckel_hamiltonian_adjacency</span><span class="p">(</span><span class="n">adjacency</span><span class="p">)</span>
+
+    <span class="c1"># Solve the Huckel Hamiltonian.</span>
+    <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span> <span class="o">=</span> <span class="n">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+
+    <span class="c1"># Compute the exact MO energies and MO coefficients</span>
+    <span class="c1"># for the polyacetylene. To do this, we need to know what the values of</span>
+    <span class="c1"># alpha and beta are. We extract them from the Hamiltonian matrix</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">exact_mo_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="c1"># The exact MO energies are given by the formula. This actually, for even n, gives</span>
+    <span class="c1"># extends the range of quantum numbers on the negative side instead of the positive side, but</span>
+    <span class="c1"># that doesn&#39;t affect the result.</span>
+    <span class="n">exact_mo_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">alpha</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">p</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># The exact MO coefficient for atom A in the p-th MO can be computed from the formula,</span>
+    <span class="c1"># c = 1/sqrt(n) exp^(2*pi*p*A*i/n}</span>
+    <span class="n">exact_mo_coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">exact_mo_coeffs</span><span class="p">[</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="c1"># The MOs in this case are already sorted in increasing order of energy. So we just need to compare them</span>
+    <span class="c1"># directly to the numerical MOs.</span>
+    <span class="c1"># Check that the MO energies match the expected values.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">,</span> <span class="n">exact_mo_energies</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The MO energies do not match the expected values.&quot;</span><span class="p">)</span>
+    <span class="c1"># Check that the MO coefficients match the expected values (to within a phase factor).</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="c1"># This eigenvector is nondegenerate, but the MO coefficient is only determined up to a phase factor.</span>
+        <span class="n">test</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">],</span> <span class="n">exact_mo_coeffs</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following checks the code for the polyacetylenes. If there is no return, then the tests all passed.</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">check_huckel_polyacetylene</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="building-the-huckel-hamiltonian-from-smiles">
+<h2>Building the Hückel Hamiltonian from SMILES<a class="headerlink" href="#building-the-huckel-hamiltonian-from-smiles" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">Simplified Molecular Input Line Entry System (SMILES)</a> is a compact way to specify a molecule. For example, the SMILES for benzene is <code class="docutils literal notranslate"><span class="pre">c1ccccc1</span></code> and the SMILES for hexatriene is <code class="docutils literal notranslate"><span class="pre">C=CC=CC=C</span></code>. In general, aromatic rings are specified by using lower-case atomic symbols. However, one can but one can also use the Kekule structure <code class="docutils literal notranslate"><span class="pre">C1=CC=CC=C1</span></code> or the specification for an aromatic bond, <code class="docutils literal notranslate"><span class="pre">C1:C:C:C:C:C1</span></code>. Fused rings can be specified using additional numbers to lable common atoms. For example, the SMILES for azulene is <code class="docutils literal notranslate"><span class="pre">c1ccc2cccc2cc1</span></code>. Heteroatoms are specified by the appropriate atomic symbol. For example, the SMILES for pyridine is <code class="docutils literal notranslate"><span class="pre">n1ccccc1</span></code>.</p>
+<p>Chemdraw will convert a drawn molecule into a SMILES string. PubChem contains SMILES strings for many molecules.</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> package to convert SMILES strings into molecular graphs. We will then use the molecular graphs to build the Hückel Hamiltonian. Let’s first see how to visualize molecules from their SMILES strings.</p>
+<section id="visualizing-molecules-with-rdkit">
+<h3>Visualizing Molecules with RDKit<a class="headerlink" href="#visualizing-molecules-with-rdkit" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rdkit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">rdDetermineBonds</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">rdmolops</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">rdmolfiles</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem.Draw</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimilarityMaps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="c1"># Try three different ways to represent benzene and one way to write hexatriene</span>
+<span class="n">benzene1</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;c1ccccc1&quot;</span><span class="p">)</span>
+<span class="n">benzene2</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;C1:C:C:C:C:C1&quot;</span><span class="p">)</span>
+<span class="n">benzene3</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;C1=CC=CC=C1&quot;</span><span class="p">)</span>
+<span class="n">hexatriene</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;C=CC=CC=C&quot;</span><span class="p">)</span>
+<span class="n">azulene</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;c1ccc2cccc2cc1&quot;</span><span class="p">)</span>
+<span class="n">pyridine</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;c1ccncc1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Store these molecules as an array</span>
+<span class="n">molecules</span> <span class="o">=</span> <span class="p">[</span><span class="n">benzene1</span><span class="p">,</span> <span class="n">benzene2</span><span class="p">,</span> <span class="n">benzene3</span><span class="p">,</span> <span class="n">hexatriene</span><span class="p">,</span> <span class="n">azulene</span><span class="p">,</span> <span class="n">pyridine</span><span class="p">]</span>
+
+<span class="c1"># Draw the molecules</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span>
+    <span class="n">molecules</span><span class="p">,</span>
+    <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;benzene1&quot;</span><span class="p">,</span> <span class="s2">&quot;benzene2&quot;</span><span class="p">,</span> <span class="s2">&quot;benzene3&quot;</span><span class="p">,</span> <span class="s2">&quot;hexatriene&quot;</span><span class="p">,</span> <span class="s2">&quot;azulene&quot;</span><span class="p">,</span> <span class="s2">&quot;pyridine&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># Show that all three ways of drawing benzene are the same, plus show some examples of other molecules.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">rdkit</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdkit&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generating-an-adjacency-matrix-with-rdkit">
+<h3>Generating an Adjacency Matrix with RDKit<a class="headerlink" href="#generating-an-adjacency-matrix-with-rdkit" title="Link to this heading">#</a></h3>
+<p>The molecular adjacency matrix indicates which atoms are bonded together, and which are not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate adjacency matrix from azulene along with image embellished by atomic indices</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mol_with_atom_index</span><span class="p">(</span><span class="n">mol</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+        <span class="n">atom</span><span class="o">.</span><span class="n">SetProp</span><span class="p">(</span><span class="s2">&quot;atomNote&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()))</span>
+    <span class="k">return</span> <span class="n">mol</span>
+
+
+<span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="n">rdmolops</span><span class="o">.</span><span class="n">GetAdjacencyMatrix</span><span class="p">(</span><span class="n">azulene</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">)</span>
+
+<span class="n">azulene</span> <span class="o">=</span> <span class="n">mol_with_atom_index</span><span class="p">(</span><span class="n">azulene</span><span class="p">)</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolToImage</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 0 0 0 0 0 0 0 1]
+ [1 0 1 0 0 0 0 0 0 0]
+ [0 1 0 1 0 0 0 0 0 0]
+ [0 0 1 0 1 0 0 1 0 0]
+ [0 0 0 1 0 1 0 0 0 0]
+ [0 0 0 0 1 0 1 0 0 0]
+ [0 0 0 0 0 1 0 1 0 0]
+ [0 0 0 1 0 0 1 0 1 0]
+ [0 0 0 0 0 0 0 1 0 1]
+ [1 0 0 0 0 0 0 0 1 0]]
+</pre></div>
+</div>
+<img alt="../_images/60ad2f57d95b45d2aa7a85c24b67ad235439a85a677ae5e7866ec54b4ed1f9ed.png" src="../_images/60ad2f57d95b45d2aa7a85c24b67ad235439a85a677ae5e7866ec54b4ed1f9ed.png" />
+</div>
+</div>
+</section>
+<section id="generate-the-huckel-hamiltonian-from-a-smiles-string">
+<h3>Generate the Hückel Hamiltonian from a SMILES String<a class="headerlink" href="#generate-the-huckel-hamiltonian-from-a-smiles-string" title="Link to this heading">#</a></h3>
+<p>We can use the adjacency matrix to generate the Hückel Hamiltonian. The following code works only for specific atoms types, and assumes that every atom has a <span class="math notranslate nohighlight">\(2p_z\)</span> orbital. This code is intended only to work in the specific context of this assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_huckel_hamiltonian_smiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">,</span> <span class="n">alpha_c</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">beta_c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the Huckel Hamiltonian from a SMILES string.</span>
+
+<span class="sd">    This function constructs the Huckel Hamiltonian for a given SMILES string.</span>
+<span class="sd">    The only allowed atom types are aromatic Boron, Carbon, Nitrogen, and Oxygen atoms.</span>
+<span class="sd">    The alpha and beta parameters are taken from Rauk&#39;s work.</span>
+
+<span class="sd">    We do not support substituents (e.g., a carbonyl group or a nitrile bound to the ring).</span>
+<span class="sd">    We do not support nitrogen atoms that are bound to a hydrogen atom (NH) groups.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    smiles : str</span>
+<span class="sd">        The SMILES string of the molecule.</span>
+<span class="sd">    alpha_c : float</span>
+<span class="sd">        The alpha parameter for Carbon atoms. The default value is -0.414.</span>
+<span class="sd">    beta_c : float</span>
+<span class="sd">        The beta parameter for Carbon-Carbon bonds. The default value is -0.0533.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n, n))</span>
+<span class="sd">        The Huckel Hamiltonian from the SMILES string.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; get_huckel_hamiltonian_smiles(&#39;c1ccccc1&#39;)</span>
+<span class="sd">    array([[-0.414, -0.0533 ,  0.    ,  0.    ,  0.    , -0.0533],</span>
+<span class="sd">           [-0.0533, -0.414 , -0.0533,  0.    ,  0.    ,  0.    ],</span>
+<span class="sd">           [ 0.    , -0.0533, -0.414 , -0.0533,  0.    ,  0.    ],</span>
+<span class="sd">           [ 0.    ,  0.    , -0.0533, -0.414 , -0.0533,  0.    ],</span>
+<span class="sd">           [ 0.    ,  0.    ,  0.    , -0.0533, -0.414 , -0.0533],</span>
+<span class="sd">           [-0.0533,  0.    ,  0.    ,  0.    , -0.0533, -0.414 ]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If the alpha and beta parameters are not provided, use the default values.</span>
+    <span class="k">if</span> <span class="n">alpha_c</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">alpha_c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.414</span>
+    <span class="k">if</span> <span class="n">beta_c</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">beta_c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0533</span>
+
+    <span class="c1"># Set up the dictionary of alpha and beta values.</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="c1"># For aromatic Boron:</span>
+    <span class="n">alpha</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_c</span> <span class="o">+</span> <span class="mf">0.45</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.87</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a B:B bond.</span>
+    <span class="c1"># For aromatic Carbon:</span>
+    <span class="n">alpha</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_c</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.73</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a B:C bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span> <span class="o">=</span> <span class="n">beta_c</span>  <span class="c1"># for a C:C bond.</span>
+    <span class="c1"># For aromatic Nitrogen:</span>
+    <span class="n">alpha</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_c</span> <span class="o">-</span> <span class="mf">0.51</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.66</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a B:N bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.02</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a C:N bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.09</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a N:N bond.</span>
+    <span class="c1"># For aromatic Oxygen:</span>
+    <span class="n">alpha</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_c</span> <span class="o">-</span> <span class="mf">2.09</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.35</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a B:O bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.66</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a C:O bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.80</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a N:O bond.</span>
+    <span class="n">beta</span><span class="p">[(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_c</span><span class="p">)</span>  <span class="c1"># for a O:O bond.</span>
+
+    <span class="c1"># Convert the SMILES string to a molecule object.</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+
+    <span class="c1"># Construct the adjacency matrix for the molecule</span>
+    <span class="n">adjacency</span> <span class="o">=</span> <span class="n">rdmolops</span><span class="o">.</span><span class="n">GetAdjacencyMatrix</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="c1"># Construct the atom list for the molecule. This is used to determine the</span>
+    <span class="c1"># alpha and beta parameters for the Huckel Hamiltonian.</span>
+    <span class="n">atom_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()]</span>
+
+    <span class="c1"># Get the number of atoms</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+
+    <span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="c1"># Fill the diagonal of the Hamiltonian with the alpha values.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">hamiltonian</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">[</span><span class="n">atom_list</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="c1"># Fill the off-diagonal elements with the beta values only when there is a bond between the atoms.</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="n">hamiltonian</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">atom_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">atom_list</span><span class="p">[</span><span class="n">j</span><span class="p">]]))]</span><span class="o">*</span><span class="n">adjacency</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">hamiltonian</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">hamiltonian</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-molecular-orbitals-and-other-properties">
+<h3>Exploring Molecular Orbitals (and other properties)<a class="headerlink" href="#exploring-molecular-orbitals-and-other-properties" title="Link to this heading">#</a></h3>
+<p>RDKit can be used to visualize molecular orbitals and other properties. The following code snippets
+provide useful functionality to do this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">label_atoms_with_properties</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atomic_properties</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Label the atoms in a molecule with their properties.</span>
+
+<span class="sd">    This function labels the atoms in a molecule with their properties. The</span>
+<span class="sd">    primary use case is labelling the atoms with their molecular orbital (MO)</span>
+<span class="sd">    coefficients.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The molecule to label.</span>
+<span class="sd">    atomic_properties : ndarray(shape = (n,))</span>
+<span class="sd">        A list of atomic properties to label the atoms with.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The molecule with the atoms labelled.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; mol = Chem.MolFromSmiles(&#39;c1ccccc1&#39;,mo_coeffs[:,p])</span>
+<span class="sd">    This would label the atoms with the MO coefficients of the p-th MO.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check to make sure that the number of atoms in the molecule</span>
+    <span class="c1"># is the same as the number of atomic properties.</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atomic_properties</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of atomic properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Label the atoms in the molecule with their properties.</span>
+    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span>
+        <span class="n">at_property</span> <span class="o">=</span> <span class="n">atomic_properties</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">at_property</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">atom</span><span class="o">.</span><span class="n">SetProp</span><span class="p">(</span><span class="s2">&quot;atomNote&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve the Schrodinger equation for azulene and print the MO coefficients.</span>
+<span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">get_huckel_hamiltonian_smiles</span><span class="p">(</span><span class="s2">&quot;c1ccc2cccc2cc1&quot;</span><span class="p">)</span>
+<span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span> <span class="o">=</span> <span class="n">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MO Energies:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">))</span>
+
+<span class="c1"># Label the atoms in azulene with the MO coefficients of the 5th MO (HOMO)</span>
+<span class="n">azulene_homo</span> <span class="o">=</span> <span class="n">label_atoms_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># You need to make a second copy of the molecule to plot a second orbital.</span>
+<span class="n">azulene2</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="n">azulene</span><span class="p">)</span>
+<span class="n">azulene_lumo</span> <span class="o">=</span> <span class="n">label_atoms_with_properties</span><span class="p">(</span><span class="n">azulene2</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">azulene_homo</span><span class="p">,</span> <span class="n">azulene_lumo</span><span class="p">],</span>
+    <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;HOMO&quot;</span><span class="p">,</span> <span class="s2">&quot;LUMO&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO Energies:[-0.53713776 -0.5020288  -0.48625744 -0.46127578 -0.43943796 -0.39265909
+ -0.37468377 -0.32982768 -0.31437089 -0.30232083]
+</pre></div>
+</div>
+<img alt="../_images/eb15ade018a681fc618edcb9923c5369ab71783ae93ef58d60ab8cc44b5811bd.png" src="../_images/eb15ade018a681fc618edcb9923c5369ab71783ae93ef58d60ab8cc44b5811bd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw a rough contour plot of the LUMO based on the coefficients.</span>
+<span class="n">drawer</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolDraw2DCairo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">SimilarityMaps</span><span class="o">.</span><span class="n">GetSimilarityMapFromWeights</span><span class="p">(</span>
+    <span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">draw2d</span><span class="o">=</span><span class="n">drawer</span><span class="p">,</span> <span class="n">colorMap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span> <span class="n">contourLines</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+
+<span class="n">drawer</span><span class="o">.</span><span class="n">FinishDrawing</span><span class="p">()</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">drawer</span><span class="o">.</span><span class="n">GetDrawingText</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/54c3ad4faad634e5f3da85dc8de1b47a6cf6fbaa1f229b7b783dc75328018675.png" src="../_images/54c3ad4faad634e5f3da85dc8de1b47a6cf6fbaa1f229b7b783dc75328018675.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_molecules_with_properties</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atomic_properties</span><span class="p">,</span> <span class="n">legends</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Given a set of properties, plot a molecules properties</span>
+
+<span class="sd">    This function reads in an RDKit molecule object and a list of</span>
+<span class="sd">    atomic properties for the molecule, and then generates a grid</span>
+<span class="sd">    of structures labelled with the properties.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The n-atom molecule to label.</span>
+<span class="sd">    atomic_properties : ndarray(shape = (n,m))</span>
+<span class="sd">        A list of atomic properties to label the atoms with.</span>
+<span class="sd">        Each of the m columns represents a property/label.</span>
+<span class="sd">    legends : list of length m</span>
+<span class="sd">        A list of legends for the atomic properties.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Grid image of labelled molecular drawings</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Check to make sure the number of atoms in the molecule is equal to the</span>
+    <span class="c1"># first (zeroth) dimension of the properties.</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of atomic properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># If only one property is passed in, then make it a 2D array.</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">atomic_properties</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">atomic_properties</span><span class="p">,</span> <span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># Make sure that the length of the legends is equal to the number of properties.</span>
+    <span class="c1"># If no legends given, then use the array position.</span>
+    <span class="k">if</span> <span class="n">legends</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">legends</span><span class="p">)</span> <span class="o">!=</span> <span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of legends does not match the number of properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Make copies of the molecule for each property.</span>
+    <span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+
+    <span class="c1"># If no legends given, index by array position.</span>
+    <span class="k">if</span> <span class="n">legends</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_properties</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">legends</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_properties</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of legends does not match the number of properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Label the atoms in the molecule with their properties.</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">T</span><span class="p">):</span>
+        <span class="n">mols</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">label_atoms_with_properties</span><span class="p">(</span><span class="n">mols</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">prop</span><span class="p">)</span>
+
+    <span class="c1"># Draw the molecules.</span>
+    <span class="k">return</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span>
+        <span class="n">mols</span><span class="p">,</span>
+        <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+        <span class="n">legends</span><span class="o">=</span><span class="n">legends</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;MO: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">)[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">draw_molecules_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/26ec6a8cf1d19a3e27a58b073dcffcbbbffa85ccca5e68fde9900ad64f76d72f.png" src="../_images/26ec6a8cf1d19a3e27a58b073dcffcbbbffa85ccca5e68fde9900ad64f76d72f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function generates a grid of contour plots showing atomic properties.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atomic_properties</span><span class="p">,</span> <span class="n">legends</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw contour plots visualizing the atomic properties.</span>
+
+<span class="sd">    This generates a grid of contour plots showing atomic properties.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : RDKit molecule object</span>
+<span class="sd">        The molecule of interest.</span>
+<span class="sd">    atomic_properties : ndarray(shape = (n,m))</span>
+<span class="sd">        A list of atomic properties to label the atoms with.</span>
+<span class="sd">        Each of the m columns represents a property/label.</span>
+<span class="sd">    legends : list of length m</span>
+<span class="sd">        A list of legends for the atomic properties. If None, then the</span>
+<span class="sd">        legends are the column numbers.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Grid image of labelled molecular drawings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Check to make sure the number of atoms in the molecule is equal to the</span>
+    <span class="c1"># first (zeroth) dimension of the properties.</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+
+    <span class="c1"># If only one property is passed in, then make it a 2D array.</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">atomic_properties</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">atomic_properties</span><span class="p">,</span> <span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">n_properties</span> <span class="o">=</span> <span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of atomic properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Make sure that the length of the legends is equal to the number of properties.</span>
+    <span class="c1"># If no legends given, then use the array position.</span>
+    <span class="k">if</span> <span class="n">legends</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_properties</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">legends</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_properties</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of legends does not match the number of properties.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">drawer</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolDraw2DCairo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following plots correspond to the following atomic property labels:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_properties</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">legends</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">label_atoms_with_properties</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">atomic_properties</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">SimilarityMaps</span><span class="o">.</span><span class="n">GetSimilarityMapFromWeights</span><span class="p">(</span>
+            <span class="n">mol</span><span class="p">,</span> <span class="n">atomic_properties</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">draw2d</span><span class="o">=</span><span class="n">drawer</span><span class="p">,</span> <span class="n">colorMap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span> <span class="n">contourLines</span><span class="o">=</span><span class="mi">10</span>
+        <span class="p">)</span>
+        <span class="n">drawer</span><span class="o">.</span><span class="n">FinishDrawing</span><span class="p">()</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">drawer</span><span class="o">.</span><span class="n">GetDrawingText</span><span class="p">()))</span>  <span class="c1"># Show image inline</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;MO: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">)[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following plots correspond to the following atomic property labels:
+MO: 0
+</pre></div>
+</div>
+<img alt="../_images/626044163327dcaf5dfdb3531802dbb6213a5eaf40023b9224a7487e75a944eb.png" src="../_images/626044163327dcaf5dfdb3531802dbb6213a5eaf40023b9224a7487e75a944eb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 1
+</pre></div>
+</div>
+<img alt="../_images/1657a76cf75eafc4d22ffec438acbf1b3d803f1640a5ba93c6b725d18f34dedd.png" src="../_images/1657a76cf75eafc4d22ffec438acbf1b3d803f1640a5ba93c6b725d18f34dedd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 2
+</pre></div>
+</div>
+<img alt="../_images/55bd6f20294ad7443d0adeabb881446880733f5ceef6b1e8600d44a4234e94d4.png" src="../_images/55bd6f20294ad7443d0adeabb881446880733f5ceef6b1e8600d44a4234e94d4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 3
+</pre></div>
+</div>
+<img alt="../_images/6387e6e41fa551ddcbb559bc0044ee49671e3844cfcae0c48a90133d762ceb39.png" src="../_images/6387e6e41fa551ddcbb559bc0044ee49671e3844cfcae0c48a90133d762ceb39.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 4
+</pre></div>
+</div>
+<img alt="../_images/7720ff81d34075b091f1d8e1f1035c48b38a1a613f1cbd1b86a07f734eecacf5.png" src="../_images/7720ff81d34075b091f1d8e1f1035c48b38a1a613f1cbd1b86a07f734eecacf5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 5
+</pre></div>
+</div>
+<img alt="../_images/56cb20d0f2af058a4e8c2dd02f3afd749fb2bea881f4e5f0c8f064b8eecf1153.png" src="../_images/56cb20d0f2af058a4e8c2dd02f3afd749fb2bea881f4e5f0c8f064b8eecf1153.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 6
+</pre></div>
+</div>
+<img alt="../_images/7a90cacc932130b29a05c0ff57a472a0125cc890019069290215dde51a073880.png" src="../_images/7a90cacc932130b29a05c0ff57a472a0125cc890019069290215dde51a073880.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 7
+</pre></div>
+</div>
+<img alt="../_images/c4cd1cc73e4748df75072e85c3b25df27504b67908ca7f0f77a438a464eac2b0.png" src="../_images/c4cd1cc73e4748df75072e85c3b25df27504b67908ca7f0f77a438a464eac2b0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 8
+</pre></div>
+</div>
+<img alt="../_images/26969ec2e0db21c4aea71c8d7595e9027aed1f8d505c5b31306c56c06c246dcd.png" src="../_images/26969ec2e0db21c4aea71c8d7595e9027aed1f8d505c5b31306c56c06c246dcd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 9
+</pre></div>
+</div>
+<img alt="../_images/2702b7305ca641551618b4f13aad0247316ec5a34f3beba0d7437c543932fb1b.png" src="../_images/2702b7305ca641551618b4f13aad0247316ec5a34f3beba0d7437c543932fb1b.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="molecular-properties-atomic-charges-and-multipole-moments">
+<h2>Molecular Properties: Atomic Charges (and Multipole Moments)<a class="headerlink" href="#molecular-properties-atomic-charges-and-multipole-moments" title="Link to this heading">#</a></h2>
+<p>At the level of Hückel theory, the atomic population is the probability of observing a <span class="math notranslate nohighlight">\(\pi\)</span>-electron on each atom. The atomic charge is based on the idea that the sigma framework (and lone pairs, for oxygen) neutralizes most of the nuclear charge, so that the remaining charge deficiency is merely +1 (requiring one electron to achieve charge neutrality) for Boron (bonded only to other atoms in the ring), Carbon (bonded to a hydrogen), and Nitrogen (with a lone pair); for Oxygen (with a lone pair) the core charge is +2 for Oxygen.</p>
+<p>To compute the dipole moment, we need to know the positions of the atoms. RDKit will give approximate positions, so that the dipole moment can be computed from the charges.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_atomic_charges</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">mo_energies</span><span class="p">,</span> <span class="n">n_pi_electrons</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the atomic charges from the MO coefficients.</span>
+
+<span class="sd">    This function computes the atomic charges from the MO coefficients.</span>
+<span class="sd">    The atomic charges are calculated as the sum of the squares of the MO coefficients.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The molecule to calculate the atomic charges for.</span>
+<span class="sd">    mo_coeffs : numpy.ndarray (shape = (n, m))</span>
+<span class="sd">        The MO coefficients for the molecule. Usually m is equal</span>
+<span class="sd">        to the number of atoms, but this isn&#39;t strictly required</span>
+<span class="sd">        as only the occupied orbitals are necessary. The MO energies and coefficients</span>
+<span class="sd">        are in increasing order of energy.</span>
+<span class="sd">    mo_energies : numpy.ndarray (shape = (m,))</span>
+<span class="sd">        The MO energies for the molecule. These are in increasing order of energy.</span>
+<span class="sd">    n_pi_electrons : int</span>
+<span class="sd">        The number of pi-electrons in the molecule. If not provided, the number of</span>
+<span class="sd">        pi-electrons is assumed based on the number and type of atoms. Specifically,</span>
+<span class="sd">        each Carbon atom contributes 1 pi-electron, Nitrogen and Oxygen atoms contribute</span>
+<span class="sd">        2 pi-electrons, and Boron contributes no pi-electrons.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (n,))</span>
+<span class="sd">        The atomic charges for the molecule.</span>
+<span class="sd">    numpy.ndarray (shape = (n,))</span>
+<span class="sd">        The atomic populations for the molecule.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Check to make sure that the number of atoms in the molecule</span>
+    <span class="c1"># is the same as the number of atomic properties.</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="n">n_mos</span> <span class="o">=</span> <span class="n">mo_coeffs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">mo_coeffs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of MO coefficients.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Make sure that the number of MOs provided is no larger than the number of atoms</span>
+    <span class="k">if</span> <span class="n">n_mos</span> <span class="o">&gt;</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of MOs is larger than the number of atoms. This means the MOs are linearly dependent.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Check to make sure that the number of MO energies is the same as the number of MO coefficients.</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_mos</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of MO energies does not match the number of MO coefficients.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Check to make sure that the MO energies are in nondecreasing order.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The MO energies are not in nondecreasing order.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># If the number of pi-electrons is not provided, calculate it based on the number of atoms.</span>
+    <span class="c1"># Also compute the base charge for each element</span>
+    <span class="n">core_charge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_pi_electrons</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n_pi_electrons</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+            <span class="n">atomic_num</span> <span class="o">=</span> <span class="n">atom</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">n_pi_electrons</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">core_charge</span><span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">n_pi_electrons</span> <span class="o">+=</span> <span class="mi">2</span>
+                <span class="n">core_charge</span><span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+                <span class="n">n_pi_electrons</span> <span class="o">+=</span> <span class="mi">2</span>
+                <span class="n">core_charge</span><span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()]</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">atomic_num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">core_charge</span><span class="p">[</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atomic number </span><span class="si">{</span><span class="n">atomic_num</span><span class="si">}</span><span class="s2"> not supported.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the orbital occupation numbers</span>
+    <span class="n">n_mo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_mos</span><span class="p">)</span>                      <span class="c1"># initialize orbital occupation numbers</span>
+
+    <span class="c1"># Check to see if the HOMO is degenerate. The HOMO is the orbital</span>
+    <span class="c1"># ni_pi_electrons / 2 (if the number of pi electrons is even)</span>
+    <span class="c1"># and n_pi_electrons / 2 + 1 (if the number of pi electrons is odd)</span>
+    <span class="c1"># The HOMO orbital index is then below. The minus one occurs because the</span>
+    <span class="c1"># lowest orbital has index zero (not one).</span>
+    <span class="n">p_HOMO</span> <span class="o">=</span> <span class="n">n_pi_electrons</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">n_pi_electrons</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="c1"># Determine the degenerate molecular orbitals</span>
+    <span class="n">degenerate_mos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_mos</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mo_energies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">mo_energies</span><span class="p">[</span><span class="n">p_HOMO</span><span class="p">]:</span>
+            <span class="n">degenerate_mos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># The number of electrons in the degenerate MOs is</span>
+    <span class="n">n_degen_electrons</span> <span class="o">=</span> <span class="n">n_pi_electrons</span> <span class="o">-</span> <span class="n">degenerate_mos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_mos</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">degenerate_mos</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="c1"># up until the HOMO, all orbitals are doubly-occupied.</span>
+            <span class="n">n_mo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">degenerate_mos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># beyond the (possibly degenerate) HOMOs, all orbitals</span>
+            <span class="c1"># are empty</span>
+            <span class="n">n_mo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># When there is degeneracy, the charge and dipole moment are not well-defined. We need to</span>
+            <span class="c1"># make a choice. We choose to occupy the degenerate orbitals equally.</span>
+            <span class="n">n_mo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_degen_electrons</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">degenerate_mos</span><span class="p">)</span>
+
+    <span class="c1"># Atomic charges consist of adding up the square of the molecular orbital coefficient times the occupation numbers</span>
+    <span class="c1"># over all the orbitals,</span>
+    <span class="n">atomic_populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">):</span>
+        <span class="n">atomic_populations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">n_mo</span><span class="p">)</span>
+
+    <span class="c1"># Atomic charges are the atomic core charge minus the number of pi electrons on the atoms,</span>
+    <span class="n">atomic_charges</span> <span class="o">=</span> <span class="n">core_charge</span> <span class="o">-</span> <span class="n">atomic_populations</span>
+
+    <span class="k">return</span> <span class="n">atomic_charges</span><span class="p">,</span> <span class="n">atomic_populations</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_molecular_dipole</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span><span class="n">atomic_charges</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute a molecules dipole moment (in Debye).</span>
+<span class="sd">    This function computes the dipole moment of a molecule from the atomic charges.</span>
+<span class="sd">    The dipole moment is calculated as the sum of the atomic charges times their positions (minus the center of mass).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The molecule to calculate the dipole moment for.</span>
+<span class="sd">    atomic_charges : numpy.ndarray (shape = (n,))</span>
+<span class="sd">        The atomic charges for the molecule.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (3,))</span>
+<span class="sd">        The dipole moment of the molecule in Debye.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check to make sure that the number of atoms in the molecule</span>
+    <span class="c1"># is the same as the number of atomic properties.</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atomic_charges</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of atomic charges.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Get the coordinates of the atoms in the molecule.</span>
+    <span class="c1"># Generate 3D coordinates</span>
+    <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ETKDG</span><span class="p">())</span>
+
+    <span class="c1"># Get the conformer (geometry)</span>
+    <span class="n">conf</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetConformer</span><span class="p">()</span>
+
+    <span class="c1"># Extract coordinates</span>
+    <span class="n">atomic_positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">conf</span><span class="o">.</span><span class="n">GetAtomPosition</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())]</span>
+
+    <span class="c1"># Convert to a numpy array; then convert from Angstroms to atomic units.</span>
+    <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">z</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">atomic_positions</span><span class="p">])</span>
+    <span class="n">coords</span> <span class="o">*=</span> <span class="mf">1.88973</span>  <span class="c1"># Convert from Angstroms to atomic units.</span>
+
+    <span class="c1"># Get the atomic masses of the atoms in the molecule.</span>
+    <span class="n">atomic_masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">GetMass</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
+
+    <span class="c1"># Calculate the center of mass of the molecule.</span>
+    <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">coords</span> <span class="o">*</span> <span class="n">atomic_masses</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="n">atomic_masses</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Calculate the dipole moment.</span>
+    <span class="n">dipole_moment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">coords</span> <span class="o">-</span> <span class="n">center_of_mass</span><span class="p">)</span> <span class="o">*</span> <span class="n">atomic_charges</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Convert to Debye (1 Debye = 2.541746 a.u.)</span>
+    <span class="n">dipole_moment</span> <span class="o">*=</span> <span class="mf">2.541746</span>
+
+    <span class="k">return</span> <span class="n">dipole_moment</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atomic_charges</span><span class="p">,</span> <span class="n">atomic_populations</span> <span class="o">=</span> <span class="n">compute_atomic_charges</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">mo_energies</span><span class="p">)</span>
+
+<span class="n">dipole_moment</span> <span class="o">=</span> <span class="n">compute_molecular_dipole</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">atomic_charges</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The dipole moment of azulene is </span><span class="si">{</span><span class="n">dipole_moment</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize atomic charges for the azulene molecule</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atomic charges&quot;</span><span class="p">]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">atomic_charges</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atomic populations&quot;</span><span class="p">]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">atomic_populations</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.12999862  0.01355315  0.14505434 -0.0274276  -0.17287934 -0.04659971
+ -0.17287934 -0.0274276   0.14505434  0.01355315]
+The dipole moment of azulene is [-6.41709778  0.08331062 -0.2732621 ] Debye.
+The following plots correspond to the following atomic property labels:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:30:03] Molecule does not have explicit Hs. Consider calling AddHs()
+</pre></div>
+</div>
+<img alt="../_images/cfbe266c0c5f062555e69c3476225b0d1ac3b5f84399c0e14a3ce47450fa0d9f.png" src="../_images/cfbe266c0c5f062555e69c3476225b0d1ac3b5f84399c0e14a3ce47450fa0d9f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following plots correspond to the following atomic property labels:
+</pre></div>
+</div>
+<img alt="../_images/05228bccd8400670d4d6f77a0d7125070b09bd637cca4ae53371b4200a95e3ea.png" src="../_images/05228bccd8400670d4d6f77a0d7125070b09bd637cca4ae53371b4200a95e3ea.png" />
+</div>
+</div>
+</section>
+<section id="transition-dipole-moments">
+<h2>Transition Dipole Moments<a class="headerlink" href="#transition-dipole-moments" title="Link to this heading">#</a></h2>
+<p>To determine whether a transition from an occupied molecular orbital to an unoccupied molecular orbital is allowed, we need to compute the transition dipole moment. To do this, we use the same formula as the dipole moment, but using the transition density.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_transition_dipole</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">n_i</span><span class="p">,</span> <span class="n">n_f</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the transition dipole moment from the MO coefficients.</span>
+
+<span class="sd">    This function computes the transition dipole moment from the MO coefficients.</span>
+<span class="sd">    The transition dipole moment is calculated from the product of the MO coefficients</span>
+<span class="sd">      in the intial and finial orbitals</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mol : rdkit.Chem.rdchem.Mol</span>
+<span class="sd">        The molecule to calculate the transition dipole moment for.</span>
+<span class="sd">    mo_coeffs : numpy.ndarray (shape = (n, m))</span>
+<span class="sd">        The MO coefficients for the molecule. Usually m is equal</span>
+<span class="sd">        to the number of atoms, but this isn&#39;t strictly required</span>
+<span class="sd">        as only the occupied orbitals are necessary. The MO energies and coefficients</span>
+<span class="sd">        are in increasing order of energy.</span>
+<span class="sd">    n_i : int</span>
+<span class="sd">        The index of the initial orbital.</span>
+<span class="sd">    n_f : int</span>
+<span class="sd">        The index of the final orbital.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray (shape = (3,))</span>
+<span class="sd">        The transition dipole moment of the molecule in Debye.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check to make sure that the number of atoms in the molecule</span>
+    <span class="c1"># is the same as the number of MO coefficients</span>
+    <span class="n">n_atoms</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+    <span class="n">n_mos</span> <span class="o">=</span> <span class="n">mo_coeffs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">mo_coeffs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The number of atoms in the molecule does not match the number of MO coefficients.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Make sure that the initial and final orbitals are within the range of MOs</span>
+    <span class="k">if</span> <span class="nb">min</span><span class="p">(</span><span class="n">n_i</span><span class="p">,</span> <span class="n">n_f</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Initial and final orbital indices cannot be negative.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">n_i</span><span class="p">,</span> <span class="n">n_f</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">n_mos</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Initial and final orbital indices cannot be larger than the number of MOs.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Compute the atomic positions</span>
+    <span class="c1"># Generate 3D coordinates</span>
+    <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ETKDG</span><span class="p">())</span>
+    <span class="c1"># Get the conformer (geometry)</span>
+    <span class="n">conf</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetConformer</span><span class="p">()</span>
+    <span class="c1"># Extract coordinates</span>
+    <span class="n">atomic_positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">conf</span><span class="o">.</span><span class="n">GetAtomPosition</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">())]</span>
+    <span class="c1"># Convert to a numpy array; then convert from Angstroms to atomic units.</span>
+    <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">z</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">atomic_positions</span><span class="p">])</span>
+    <span class="n">coords</span> <span class="o">*=</span> <span class="mf">1.88973</span>  <span class="c1"># Convert from Angstroms to atomic units.</span>
+
+    <span class="c1"># Get the atomic masses of the atoms in the molecule.</span>
+    <span class="n">atomic_masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">GetMass</span><span class="p">()</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()])</span>
+    <span class="c1"># Calculate the center of mass of the molecule.</span>
+    <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">coords</span> <span class="o">*</span> <span class="n">atomic_masses</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="n">atomic_masses</span>
+    <span class="p">)</span>
+    <span class="c1"># Calculate the transition dipole moment.</span>
+    <span class="n">transition_dipole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">coords</span> <span class="o">-</span> <span class="n">center_of_mass</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">n_i</span><span class="p">]</span> <span class="o">*</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">n_f</span><span class="p">])[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="c1"># Convert to Debye (1 Debye = 2.541746 a.u.)</span>
+    <span class="n">transition_dipole</span> <span class="o">*=</span> <span class="mf">2.541746</span>
+
+    <span class="k">return</span> <span class="n">transition_dipole</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the excitation from the HOMO to the LUMO</span>
+<span class="n">transition_dipole</span> <span class="o">=</span> <span class="n">compute_transition_dipole</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">transition_dipole</span><span class="p">))</span>
+
+<span class="c1"># Plot the orbital product</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Visualize atomic charges for the azulene molecule</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;product of HOMO and LUMO orbitals&quot;</span><span class="p">]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4378609697025335
+The following plots correspond to the following atomic property labels:
+product of HOMO and LUMO orbitals
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:44:35] Molecule does not have explicit Hs. Consider calling AddHs()
+</pre></div>
+</div>
+<img alt="../_images/b6e6a026d1c03e497cb9a215e032e7f6bd48181974ab81f5a8952a30cd1afa54.png" src="../_images/b6e6a026d1c03e497cb9a215e032e7f6bd48181974ab81f5a8952a30cd1afa54.png" />
+</div>
+</div>
+<section id="thought-provoking-questions">
+<h3>🤔 Thought-Provoking Questions<a class="headerlink" href="#thought-provoking-questions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Based on the expression for the energy-levels and wavefunctions for polyacetylene, can you explain why the particle-in-a-box is a good model for a cyanine dye? How would you construct a Hückel Hamiltonian for two-dimensional particle in a box? For a three-dimensional particle in a box?</p></li>
+<li><p>Can you explain, intuitively, why azulene has a substantial dipole moment?</p></li>
+<li><p>Can you give an visual explanation for the allowed and forbidden transitions in polyacetylene?</p></li>
+</ul>
+</section>
+</section>
+<section id="marking-scheme">
+<h2>⚖️ Marking Scheme<a class="headerlink" href="#marking-scheme" title="Link to this heading">#</a></h2>
+<p>☑️ Successful completion of the notebook, together with the ability to discuss your strategy, earns an <strong>S</strong>.</p>
+<p>💰 For an <strong>S+</strong>, complete two of the following tasks:</p>
+<ul>
+<li><p>Solve the mathematical exercise.</p></li>
+<li><p>There are three different ways to add one Nitrogen and one Boron at to an aromatic ring. What is the lowest-energy choice? Can you give a conceptual explanation for this choice? There are also three different ways to add three nitrogen atoms and three boron atoms to an aromatic ring. What is the lowest-energy choice? Can you give a conceptual explanation for this choice?</p></li>
+<li><p>Answer at least three of the thought-provoking questions.</p>
+<p>Add markdown cells to complete these tasks. You can add images of hand-written answers to the markdown cells if you prefer, but write neatly.</p>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../HOandMorse.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Vibrational Polarizability: The Harmonic Oscillator and the Morse Oscillator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documents/refs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reference Materials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-complete-the-below-notebook">👩🏽‍💻 Assignment: Complete the Below Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-of-huckel-theory">Motivation of Hückel Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-huckel-hamiltonian">Building the Hückel Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-carbon-polyacetylenes-ce-h2c-ch-n-2-ch2"><span class="math notranslate nohighlight">\(n\)</span>-Carbon Polyacetylenes; <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-carbon-annulenes-ce-ch-n"><span class="math notranslate nohighlight">\(n\)</span>-Carbon Annulenes; <span class="math notranslate nohighlight">\(\ce{(CH)_n}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-that-the-molecular-orbital-energies-and-coefficients-reported-for-annulenes-and-polyacetylenes-are-correct">📝 Exercise: Verify that the molecular orbital energies and coefficients reported for annulenes and polyacetylenes are correct.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-implementation-annulenes">Numerical Implementation: Annulenes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-implementation-polyacetylenes-ce-h2c-ch-n-2-ch2">Numerical Implementation: Polyacetylenes <span class="math notranslate nohighlight">\(\ce{H2C(CH)_{n-2}CH2}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-huckel-hamiltonian-from-smiles">Building the Hückel Hamiltonian from SMILES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-molecules-with-rdkit">Visualizing Molecules with RDKit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-an-adjacency-matrix-with-rdkit">Generating an Adjacency Matrix with RDKit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-the-huckel-hamiltonian-from-a-smiles-string">Generate the Hückel Hamiltonian from a SMILES String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-molecular-orbitals-and-other-properties">Exploring Molecular Orbitals (and other properties)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-properties-atomic-charges-and-multipole-moments">Molecular Properties: Atomic Charges (and Multipole Moments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-dipole-moments">Transition Dipole Moments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-provoking-questions">🤔 Thought-Provoking Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marking-scheme">⚖️ Marking Scheme</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

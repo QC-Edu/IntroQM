@@ -38,14 +38,14 @@ print_energy_disk(a, n, l)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[2], line 17[0m
-[1;32m     12[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mprint_energy_disk[39m(a, n, l):
-[1;32m     13[0m     [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mThe energy of an electron confined to a disk with radius [39m[38;5;132;01m{[39;00ma[38;5;132;01m:[39;00m[38;5;124m.2f[39m[38;5;132;01m}[39;00m[38;5;124m a.u.,[39m[38;5;124m'[39m
-[1;32m     14[0m        [38;5;124mf[39m[38;5;124m'[39m[38;5;124m principle quantum number [39m[38;5;132;01m{[39;00mn[38;5;132;01m}[39;00m[38;5;124m, and angular quantum number [39m[38;5;132;01m{[39;00ml[38;5;132;01m}[39;00m[38;5;124m'[39m
-[1;32m     15[0m        [38;5;124mf[39m[38;5;124m'[39m[38;5;124m is [39m[38;5;132;01m{[39;00mcompute_energy_disk(n,[38;5;250m [39ml,[38;5;250m [39ma)[38;5;132;01m:[39;00m[38;5;124m.3f[39m[38;5;132;01m}[39;00m[38;5;124m a.u..[39m[38;5;124m'[39m)
-[0;32m---> 17[0m print_energy_disk([43ma[49m, n, l)
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 17[39m
+[32m     12[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mprint_energy_disk[39m(a, n, l):
+[32m     13[39m     [38;5;28mprint[39m([33mf[39m[33m'[39m[33mThe energy of an electron confined to a disk with radius [39m[38;5;132;01m{[39;00ma[38;5;132;01m:[39;00m[33m.2f[39m[38;5;132;01m}[39;00m[33m a.u.,[39m[33m'[39m
+[32m     14[39m        [33mf[39m[33m'[39m[33m principle quantum number [39m[38;5;132;01m{[39;00mn[38;5;132;01m}[39;00m[33m, and angular quantum number [39m[38;5;132;01m{[39;00ml[38;5;132;01m}[39;00m[33m'[39m
+[32m     15[39m        [33mf[39m[33m'[39m[33m is [39m[38;5;132;01m{[39;00mcompute_energy_disk(n,[38;5;250m [39ml,[38;5;250m [39ma)[38;5;132;01m:[39;00m[33m.3f[39m[38;5;132;01m}[39;00m[33m a.u..[39m[33m'[39m)
+[32m---> [39m[32m17[39m print_energy_disk([43ma[49m, n, l)
 
-[0;31mNameError[0m: name 'a' is not defined
+[31mNameError[39m: name 'a' is not defined
 
