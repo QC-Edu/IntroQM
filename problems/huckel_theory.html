@@ -1461,6 +1461,8 @@ provide useful functionality to do this.</p>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">atomic_properties</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">atomic_properties</span><span class="p">,</span> <span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
+    <span class="n">n_properties</span> <span class="o">=</span> <span class="n">atomic_properties</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
     <span class="c1"># Make sure that the length of the legends is equal to the number of properties.</span>
     <span class="c1"># If no legends given, then use the array position.</span>
     <span class="k">if</span> <span class="n">legends</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1583,43 +1585,43 @@ provide useful functionality to do this.</p>
 MO: 0
 </pre></div>
 </div>
-<img alt="../_images/626044163327dcaf5dfdb3531802dbb6213a5eaf40023b9224a7487e75a944eb.png" src="../_images/626044163327dcaf5dfdb3531802dbb6213a5eaf40023b9224a7487e75a944eb.png" />
+<img alt="../_images/5c5b1046a903739517a9b39d1a6102d425fefce8ae203b4fa755d10dfc556e38.png" src="../_images/5c5b1046a903739517a9b39d1a6102d425fefce8ae203b4fa755d10dfc556e38.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 1
 </pre></div>
 </div>
-<img alt="../_images/1657a76cf75eafc4d22ffec438acbf1b3d803f1640a5ba93c6b725d18f34dedd.png" src="../_images/1657a76cf75eafc4d22ffec438acbf1b3d803f1640a5ba93c6b725d18f34dedd.png" />
+<img alt="../_images/d9af9534d03b45d0e24fe09481ffa1a81b8c31f5da85b3d2ed944679c0545566.png" src="../_images/d9af9534d03b45d0e24fe09481ffa1a81b8c31f5da85b3d2ed944679c0545566.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 2
 </pre></div>
 </div>
-<img alt="../_images/55bd6f20294ad7443d0adeabb881446880733f5ceef6b1e8600d44a4234e94d4.png" src="../_images/55bd6f20294ad7443d0adeabb881446880733f5ceef6b1e8600d44a4234e94d4.png" />
+<img alt="../_images/05e17993d4615113dfb59aae662fdbfca38807ce1830c6a4ce825e9877d54a76.png" src="../_images/05e17993d4615113dfb59aae662fdbfca38807ce1830c6a4ce825e9877d54a76.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 3
 </pre></div>
 </div>
-<img alt="../_images/6387e6e41fa551ddcbb559bc0044ee49671e3844cfcae0c48a90133d762ceb39.png" src="../_images/6387e6e41fa551ddcbb559bc0044ee49671e3844cfcae0c48a90133d762ceb39.png" />
+<img alt="../_images/d1a151c576a9374cf80d3466ad58b0e8a171a8c9915c7bfbdc089fb263a31a34.png" src="../_images/d1a151c576a9374cf80d3466ad58b0e8a171a8c9915c7bfbdc089fb263a31a34.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 4
 </pre></div>
 </div>
-<img alt="../_images/7720ff81d34075b091f1d8e1f1035c48b38a1a613f1cbd1b86a07f734eecacf5.png" src="../_images/7720ff81d34075b091f1d8e1f1035c48b38a1a613f1cbd1b86a07f734eecacf5.png" />
+<img alt="../_images/59a469dc871cefd30b9958f27ebc7aad3a6346e9cc104b002a7bce59538b0790.png" src="../_images/59a469dc871cefd30b9958f27ebc7aad3a6346e9cc104b002a7bce59538b0790.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 5
 </pre></div>
 </div>
-<img alt="../_images/56cb20d0f2af058a4e8c2dd02f3afd749fb2bea881f4e5f0c8f064b8eecf1153.png" src="../_images/56cb20d0f2af058a4e8c2dd02f3afd749fb2bea881f4e5f0c8f064b8eecf1153.png" />
+<img alt="../_images/692c59b73a1e76a9f55176b9a516a46a5b7d3a5fbfa48e49b88fd959a63ad724.png" src="../_images/692c59b73a1e76a9f55176b9a516a46a5b7d3a5fbfa48e49b88fd959a63ad724.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 6
 </pre></div>
 </div>
-<img alt="../_images/7a90cacc932130b29a05c0ff57a472a0125cc890019069290215dde51a073880.png" src="../_images/7a90cacc932130b29a05c0ff57a472a0125cc890019069290215dde51a073880.png" />
+<img alt="../_images/3576ee40a116ea51a7019d037dffb66c3686382f01466be7a67223e87e4f3a5d.png" src="../_images/3576ee40a116ea51a7019d037dffb66c3686382f01466be7a67223e87e4f3a5d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 7
 </pre></div>
 </div>
-<img alt="../_images/c4cd1cc73e4748df75072e85c3b25df27504b67908ca7f0f77a438a464eac2b0.png" src="../_images/c4cd1cc73e4748df75072e85c3b25df27504b67908ca7f0f77a438a464eac2b0.png" />
+<img alt="../_images/ff0993347044c4e81e9764007d9ee69d45e1622e65e02b08ad4991cda804d8d7.png" src="../_images/ff0993347044c4e81e9764007d9ee69d45e1622e65e02b08ad4991cda804d8d7.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 8
 </pre></div>
 </div>
-<img alt="../_images/26969ec2e0db21c4aea71c8d7595e9027aed1f8d505c5b31306c56c06c246dcd.png" src="../_images/26969ec2e0db21c4aea71c8d7595e9027aed1f8d505c5b31306c56c06c246dcd.png" />
+<img alt="../_images/ec185ff1e806ca560baab5e8f6d2dcb84212ea23101e894022b2fe5ca7f6d61c.png" src="../_images/ec185ff1e806ca560baab5e8f6d2dcb84212ea23101e894022b2fe5ca7f6d61c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 9
 </pre></div>
 </div>
-<img alt="../_images/2702b7305ca641551618b4f13aad0247316ec5a34f3beba0d7437c543932fb1b.png" src="../_images/2702b7305ca641551618b4f13aad0247316ec5a34f3beba0d7437c543932fb1b.png" />
+<img alt="../_images/7e2b5819680a414630e6a4dc9f63193b8d6734c540b812d679ef5885bc4e2463.png" src="../_images/7e2b5819680a414630e6a4dc9f63193b8d6734c540b812d679ef5885bc4e2463.png" />
 </div>
 </div>
 </section>
@@ -1828,20 +1830,20 @@ MO: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.12999862  0.01355315  0.14505434 -0.0274276  -0.17287934 -0.04659971
- -0.17287934 -0.0274276   0.14505434  0.01355315]
-The dipole moment of azulene is [-6.41709778  0.08331062 -0.2732621 ] Debye.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The dipole moment of azulene is [-6.34697302 -0.11262017  0.45202865] Debye.
 The following plots correspond to the following atomic property labels:
+atomic charges
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:30:03] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:52:22] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
-<img alt="../_images/cfbe266c0c5f062555e69c3476225b0d1ac3b5f84399c0e14a3ce47450fa0d9f.png" src="../_images/cfbe266c0c5f062555e69c3476225b0d1ac3b5f84399c0e14a3ce47450fa0d9f.png" />
+<img alt="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" src="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following plots correspond to the following atomic property labels:
+atomic populations
 </pre></div>
 </div>
-<img alt="../_images/05228bccd8400670d4d6f77a0d7125070b09bd637cca4ae53371b4200a95e3ea.png" src="../_images/05228bccd8400670d4d6f77a0d7125070b09bd637cca4ae53371b4200a95e3ea.png" />
+<img alt="../_images/1af4d5e6fedb101044a90f2c6d740e44f6c9e47674b0408caf36e39295d9cf52.png" src="../_images/1af4d5e6fedb101044a90f2c6d740e44f6c9e47674b0408caf36e39295d9cf52.png" />
 </div>
 </div>
 </section>
@@ -1940,15 +1942,15 @@ The following plots correspond to the following atomic property labels:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4378609697025335
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4309424285321684
 The following plots correspond to the following atomic property labels:
 product of HOMO and LUMO orbitals
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:44:35] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:52:23] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
-<img alt="../_images/b6e6a026d1c03e497cb9a215e032e7f6bd48181974ab81f5a8952a30cd1afa54.png" src="../_images/b6e6a026d1c03e497cb9a215e032e7f6bd48181974ab81f5a8952a30cd1afa54.png" />
+<img alt="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" src="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" />
 </div>
 </div>
 <section id="thought-provoking-questions">
