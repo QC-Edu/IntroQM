@@ -768,9 +768,9 @@ E_{\text{accurate}} = -2.9037 \text{ a.u.}
 <p>However, we know that one effect of the electron-electron repulsion is that the nucleus is screened. That is, electron 1 feels a reduced attraction to the nucleus because of its repulsion to electron 2. Obviously when the electron is very close to the nucleus, it feels the full nuclear charge (<span class="math notranslate nohighlight">\(Z_{eff}(0) = Z\)</span>) and when an electron is far from the nucleus, the nuclear charge is reduced one because of the other electron (<span class="math notranslate nohighlight">\(Z_{eff}(\infty) = Z-1\)</span>). This suggests using an orbital like:</p>
 <div class="math notranslate nohighlight">
 \[
-\phi_{\text{1s}}(r) \propto e^{-\zeta(r)r}
+\phi_{\text{1s}}(r) \propto e^{-\zeta(r) r}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\zeta(r)\)</span> is chosen to minimize the energy. When this is done, and the variational principle is invoked to minimize <span class="math notranslate nohighlight">\(\zeta(r)\)</span>, one is doing a <em>Hartree-Fock</em> calculation on the two-electron atom. For the ground state of the Helium atom, this would give,</p>
+<p>{where <span class="math notranslate nohighlight">\(\zeta(r)\)</span> is chosen to minimize the energy. When this is done, and the variational principle is invoked to minimize <span class="math notranslate nohighlight">\(\zeta(r)\)</span>, one is doing a <em>Hartree-Fock</em> calculation on the two-electron atom. I.e., <span class="math notranslate nohighlight">\(E_{\text{Hartree-Fock}} = \min_{\zeta(r)} \braket{\Psi(\zeta(r))|\hat{H}|\Psi(\zeta(r))}\)</span>. So, for the ground state of the Helium atom, one has:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 E_{\zeta = Z} = -2.75 \text{ a.u.} \\
@@ -1041,9 +1041,9 @@ N = 2k + 6
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-    
+
 <span class="c1"># Define a function for the wavelength associated with the</span>
-<span class="c1"># lowest-frequency excitation of a cyanine dye with </span>
+<span class="c1"># lowest-frequency excitation of a cyanine dye with</span>
 <span class="c1"># specified value of k</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">compute_wavelength</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="s2">&quot;Compute absorption wavelength of a cyanine dye with 2k+6 pi electrons in nm.&quot;</span>
@@ -1082,7 +1082,7 @@ N = 2k + 6
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Define a function for the wavelength associated with the</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># lowest-frequency excitation of a cyanine dye with </span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># lowest-frequency excitation of a cyanine dye with</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># specified value of k</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;

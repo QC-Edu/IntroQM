@@ -157,9 +157,11 @@ $$
 1. Derive the Rydberg formula.
 1. Can you derive a Rydberg-like formula for the wavenumber of excitations for a particle-in-a-box? How would this formula become more complicated for particles-in-a-box in higher dimensions?
 1. An [advanced](https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf) (and approximate) version of the [Rydberg formula](https://en.wikipedia.org/wiki/Rydberg_state) holds for highly-excited states of most atoms and molecules, and is particularly accurate for excitations from the highest occupied ($ns$ orbital) of [alkali metal atoms](https://en.wikipedia.org/wiki/Rydberg_atom). The basic idea is that the excitation energy can be expressed as a formula like the below, where the [quantum defect](https://en.wikipedia.org/wiki/Quantum_defect), $\delta_{l}$, [depends on the orbital angular momentum of the state](https://www.weimer.itp.uni-hannover.de/fileadmin/weimer-group/qdt.pdf). Can you understand where the below formula for the excitation energy comes from? Why does the quantum defect depend on angular momentum? Why does the quantum defect decrease as the angular momentum of the state? (For example, for Rubidium, $\delta_0 = 3.13$ but $\delta_2 = 1.35$.) Why does the quantum defect increase for heavier alkali metal atoms? (For example, for Li, $\delta_0 = 0.41$ but for Cs, $\delta_0 = 4.13$.)
+
 \begin{equation*}
    \Delta E_{ns \rightarrow n'l'} \approx \frac{1}{2}\left(\frac{1}{(n-\delta_0)^2}-\frac{1}{(n'-\delta_{l'})^2}\right)
 \end{equation*}
+
 12. For conjugated linear molecules like the cyanine dyes, the $\pi$-electrons are really confined to a 3-dimensional region, but the size of the region that is perpendicular to the conjugation is much smaller. For example, one could consider a 3-dimensional box or a 3-dimension cylinder:
    $$
    \hat{H}_{\text{p-in-3d-box}} = - \frac{\hbar^2}{2m} \nabla^2 + V_{a_x}(x) + V_{a_y}(y) + V_{a_z}(z)
