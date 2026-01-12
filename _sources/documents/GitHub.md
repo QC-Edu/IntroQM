@@ -4,7 +4,7 @@
 As you write a computer program or any other document, it is important to be able to save your work. This includes
 
 - saving your work at intermediate stages
-- creating multiple versions], so that you can select the option that balances the goals of being elegant (easy-to-understand), approachable (easy-to-use), and efficient (requiring less resources).
+- creating multiple versions, so that you can select the option that balances the goals of being elegant (easy-to-understand), approachable (easy-to-use), and efficient (requiring less resources).
 - editing files and groups of files collaboratively in a way that minimizes conflicts/inconsistencies and maximizes teamwork/accountability.
 
 ## &#x1f945; Learning Objectives
