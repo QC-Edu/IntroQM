@@ -43,7 +43,7 @@ In this course, we use web-based version control (specifically Git and GitHub) t
 You can learn more about Git and GitHub via LinkedIn Learning Courses. I have listed one, but there are many.
 - [Learning Git and GitHub](https://www.linkedin.com/learning/learning-git-and-github-23011330?u=56982905)
 - [Git Tutorial for Beginners: Learn Git in 1 Hour](https://www.youtube.com/watch?v=8JJ101D3knE)
-- [GitHub and GitHub Clasroom for Students](https://github.com/rzn-example-classroom/git-and-github-intro)
+- [GitHub and GitHub Classroom for Students](https://github.com/rzn-example-classroom/git-and-github-intro)
 
 <br><br>
 >> **Hat Tip:** Farnaz Heidar-Zadeh of Queen's University. This is adapted from her orientation notes in the QC-Edu Boot Camp.
