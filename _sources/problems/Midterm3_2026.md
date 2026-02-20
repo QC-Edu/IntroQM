@@ -1,7 +1,8 @@
 # Midterm 2, 2026
 You will select two of the following questions and choose one to answer. If you answer it quickly, you may attempt the second question as well.
 
-- You can be asked a question from
+You can be asked a question from:
+<br><br>
  <br><br>
  - Quiz: Multi-dimensional Particle in a Box (module 6), Question 1
 <br><br>
