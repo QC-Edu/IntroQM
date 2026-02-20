@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Midterm 2, 2026 &#8212; Quantum Chemistry</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/Midterm3_2026';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../main_content.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Quantum Chemistry - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/tmQKz_xl">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/dwsY-nra">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hXNw1zoD">Quiz: QM Intro</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Sz6CquPN">Quiz: The Schrodinger Eq.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleIn1DBox.html">5. The Particle in a Box</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../x4_mocked.html">Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/7dcqxTCt">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/i4mEherX">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/ccraSEtd">Quiz: 1D P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/xolaix2b">Practice: Effective Low-Dimensional Systems</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/d96R94xY">Practice: The Sudden Approximation in 2-D</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/AszsREQn">Practice: Interacting particles in a box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hGNAhgfZ">Quiz: MultiD P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Ob0ASrMA">Quiz: Applying the Postulates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9S1quIUi">Practice: hydrogenic atoms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/g8EWPe8d">Practice: Tilted P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Xo4obBPk">Practice: Gaussian Well(s)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/8CQBLG4h">Practice: Selection Rules</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extracredit/overview.html">(Extra) Practice Problems</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/JYvF-FH1">FixMe</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/OV3lpBtU">FixMe. Midterm Samples</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/weHKK5Z5">Knowledge Test 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/NdEtC5xL">Knowledge Test 2</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/qdBKA1zr">Knowledge Test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterms_2025.html">Midterm Questions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterm3.html">❓ Questions about Many-Electron Systems and their Approximation.</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github-reinvite-blue.vercel.app">Re-invite to GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/Midterm3_2026.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/problems/Midterm3_2026.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Midterm 2, 2026</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="midterm-2-2026">
+<h1>Midterm 2, 2026<a class="headerlink" href="#midterm-2-2026" title="Link to this heading">#</a></h1>
+<p>You will select two of the following questions and choose one to answer. If you answer it quickly, you may attempt the second question as well.</p>
+<ul class="simple">
+<li><p>You can be asked a question from
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 1
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 2
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 3
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 4
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 5
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 6
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 7
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 8
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 9
+<br><br></p></li>
+<li><p>Quiz: Multi-dimensional Particle in a Box (module 6), Question 10
+<br><br></p></li>
+<li><p>The variational principle allows one to choose a wavefunction that gives the lowest energy, which provides the best wavefunction in an energetic sense. This isn’t the same as finding the closest wavefunction to the ground-state wavefunction (see below) but if your energy is close enough to the ground-state energy, you can be assured that the wavefunction is also very close to the ground-state wavefunction. Explain why. (Assume, for simplicity, that the ground state is nondegenerate.)
+<br><br></p></li>
+<li><p>Any system with a zero-point energy of zero is classical. Why?
+<br><br></p></li>
+<li><p>How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons? If it contained 8 electrons? The probability of observing an electron at the center of a box with 3 electrons is sometimes <em>lower</em> than the probability of observing an electron at the center of a box with 2 electrons. Why?
+<br><br></p></li>
+<li><p>In one-electron atoms, the eigenenergies depend only on the principle quantum number, <span class="math notranslate nohighlight">\(n\)</span>, and not the angular momentum quantum number, <span class="math notranslate nohighlight">\(l\)</span>. Why are <span class="math notranslate nohighlight">\(s\)</span> orbitals lower in energy than <span class="math notranslate nohighlight">\(p\)</span> orbitals in real multielectron atoms, but not one-electron atoms? It turns out this is <em>not</em> an accidental degeneracy, but a hidden symmetry of the Hydrogen atom.
+<br><br></p></li>
+<li><p>Suppose electrons did not repel each other. Can you write the wavefunction for a many-electron atom in that case?
+<br><br></p></li>
+<li><p>Why do you think solving the Schrödinger equation for the one-electron molecule is more complicated than solving the Schrödinger equation for the one-electron atom?
+<br><br></p></li>
+<li><p>For what <span class="math notranslate nohighlight">\(Z\)</span> is the energy of a one-electron atom comparable to the rest-mass energy of an electron, <span class="math notranslate nohighlight">\(mc^2\)</span>? For atomic numbers close to this value, relativistic effects become extremely important.
+<br><br></p></li>
+<li><p>The Kratzer-Fues potential, <span class="math notranslate nohighlight">\(V_{\text{Kratzer-Fues}}(r) = \frac{a}{r^2} - \frac{b}{r}\)</span> (here <span class="math notranslate nohighlight">\(a&gt;0\)</span> and <span class="math notranslate nohighlight">\(b&gt;0\)</span>) is a reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). What are the solutions to the Schrödinger equation for the Kratzer-Fues potential?</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{\hbar^2}{2m}\nabla^2 +\frac{a}{r^2} - \frac{b}{r} \right) \psi(\mathbf{r}) = E\psi(\mathbf{r})
+\]</div>
+<p><br><br></p>
+<ul class="simple">
+<li><p>Show that if you minimize the energy as a function of the basis-set coefficients using the variational principle, then you obtain the secular equation.
+<br><br></p></li>
+<li><p>If a uniform external electric field of magnitude <span class="math notranslate nohighlight">\(F\)</span> in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}} = [\hat{u}_x,\hat{u}_y,\hat{u}_z]^T\)</span> direction is applied to a particle with charge <span class="math notranslate nohighlight">\(q\)</span>, the potential <span class="math notranslate nohighlight">\(V(x,y,z) = -qF(u_x x + u_y y + u_z z)\)</span> is added to the Hamiltonian. (This follows from the fact that the force applied to the particles is proportional to the electric field, <span class="math notranslate nohighlight">\(\text{force} = q \vec{E} = q F \hat{\mathbf{u}}\)</span> and the force is <span class="math notranslate nohighlight">\(\text{force} = - \nabla V(x,y,z)\)</span>. If the field is weak, then perturbation theory can be used, and the energy can be written as a Taylor series. The coefficients of the Taylor series give the dipole moment (<span class="math notranslate nohighlight">\(\mu\)</span>), dipole polarizability (<span class="math notranslate nohighlight">\(\alpha\)</span>), first dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\beta\)</span>), second dipole hyperpolarizability (<span class="math notranslate nohighlight">\(\gamma\)</span>) in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span> direction.</p>
+<ul>
+<li><p>The dipole moment, <span class="math notranslate nohighlight">\(\mu\)</span>, of any spherical system is zero. Explain why.</p></li>
+<li><p>The polarizability, <span class="math notranslate nohighlight">\(\alpha\)</span>, of any system is always positive. Explain why.</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+E_k(F) &amp;= E_k(0) + F \left[\frac{dE_k}{d F} \right]_{F=0}
++ \frac{F^2}{2!} \left[\frac{d^2E_k}{d F^2} \right]_{F=0}
++ \frac{F^3}{3!} \left[\frac{d^3E_k}{d F^3} \right]_{F=0}
++ \frac{F^4}{4!} \left[\frac{d^4E_k}{d F^4} \right]_{F=0} + \cdots \\
+&amp;= E_k(0) - F \mu_{F=0}
+- \frac{F^2}{2!} \alpha_{F=0}
+- \frac{F^3}{3!} \beta_{F=0}
+- \frac{F^4}{4!} \gamma_{F=0} + \cdots \\
+\end{align}
+\end{split}\]</div>
+<p><br><br></p>
+<ul class="simple">
+<li><p>The Hellmann-Feynman theorem indicates that given the ground-state wavefunction for a molecule, the force on the nuclei can be obtained. Explain how.
+<br><br></p></li>
+<li><p>What does it mean that perturbation theory is inaccurate when the perturbation is large?
+<br><br></p></li>
+<li><p>Can you explain why the energy goes down when the electron-in-a-box is placed in an external field?
+<br><br></p></li>
+<li><p>For a sufficiently-highly excited state of the particle-in-a-box, the effect of an external electric field is negligible. Why is this true intuitively? Can you show it graphically? Can you explain it mathematically?
+<br><br></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
