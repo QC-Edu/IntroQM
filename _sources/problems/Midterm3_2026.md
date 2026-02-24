@@ -26,9 +26,8 @@ You can be asked a question from:
 <br><br>
 - The variational principle allows one to choose a wavefunction that gives the lowest energy, which provides the best wavefunction in an energetic sense. This isn’t the same as finding the closest wavefunction to the ground-state wavefunction (see below) but if your energy is close enough to the ground-state energy, you can be assured that the wavefunction is also very close to the ground-state wavefunction. Explain why. (Assume, for simplicity, that the ground state is nondegenerate.)
 <br><br>
-- Any system with a zero-point energy of zero is classical. Why?
 <br><br>
-- How would you compute the probability of observing an electron at the center of a box if the box contained 2 electrons? If it contained 4 electrons? If it contained 8 electrons? The probability of observing an electron at the center of a box with 3 electrons is sometimes *lower* than the probability of observing an electron at the center of a box with 2 electrons. Why?
+
 <br><br>
 - In one-electron atoms, the eigenenergies depend only on the principle quantum number, $n$, and not the angular momentum quantum number, $l$. Why are $s$ orbitals lower in energy than $p$ orbitals in real multielectron atoms, but not one-electron atoms? It turns out this is *not* an accidental degeneracy, but a hidden symmetry of the Hydrogen atom.
 <br><br>
