@@ -38,7 +38,7 @@ You can be asked a question from:
 <br><br>
 - For what $Z$ is the energy of a one-electron atom comparable to the rest-mass energy of an electron, $mc^2$? For atomic numbers close to this value, relativistic effects become extremely important.
 <br><br>
-- The Kratzer-Fues potential, $V_{\text{Kratzer-Fues}}(r) = \frac{a}{r^2} - \frac{b}{r}$ (here $a>0$ and $b>0$) is a reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). What are the solutions to the Schr&ouml;dinger equation for the Kratzer-Fues potential? 
+- The Kratzer-Fues potential, $V_{\text{Kratzer-Fues}}(r) = \frac{a}{r^2} - \frac{b}{r}$ (here $a>0$ and $b>0$) is a reasonable model for a diatomic molecule rotating and vibrating in 3 dimensions, or even a ion-pair complex (e.g., an single ion pair from an ionic solvent in the gas phase). What are the solutions to the Schr&ouml;dinger equation for the Kratzer-Fues potential?
 
 $$
 \left(-\frac{\hbar^2}{2m}\nabla^2 +\frac{a}{r^2} - \frac{b}{r} \right) \psi(\mathbf{r}) = E\psi(\mathbf{r})
