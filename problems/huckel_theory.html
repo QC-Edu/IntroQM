@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -578,9 +578,6 @@ document.write(`
 <li><p>Complete a function to evaluate the transition density between two orbitals.</p></li>
 <li><p>Complete a function to evaluate the transition dipole moment between two orbitals.</p></li>
 <li><p>Complete a function to plot the absorbance spectrum of an aromatic molecule.</p></li>
-<li><p>Learn about the effects of electron-electron repulsion from the Pariser-Parr-Pople (PPP) (a.k.a. Hubbard) model.</p></li>
-<li><p>Complete a function to evaluate the MO coefficients, MO energies, and total energy at the Hartree-Fock level for the PPP model.</p></li>
-<li><p>Examine Koopmans’ theorem.</p></li>
 </ol>
 </section>
 <section id="motivation-of-huckel-theory">
@@ -748,7 +745,8 @@ p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rflo
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>rdkit<span class="w"> </span>#<span class="w"> </span>Not<span class="w"> </span>necessary<span class="w"> </span><span class="k">if</span><span class="w"> </span>running<span class="w"> </span>locally<span class="w"> </span>and<span class="w"> </span>rdkit<span class="w"> </span>is<span class="w"> </span>already<span class="w"> </span>installed.
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_adjacency_annulene</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -899,6 +897,39 @@ p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rflo
         <span class="n">total_energy</span> <span class="o">+=</span> <span class="n">mo_energies</span><span class="p">[</span><span class="n">n_electrons</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rdkit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading rdkit-2025.9.6-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from rdkit) (2.4.2)
+Requirement already satisfied: Pillow in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from rdkit) (12.1.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading rdkit-2025.9.6-cp314-cp314-manylinux_2_28_x86_64.whl (36.7 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/36.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.9/36.7 MB</span> <span class=" -Color -Color-Red">16.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.2/36.7 MB</span> <span class=" -Color -Color-Red">27.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">27.5/36.7 MB</span> <span class=" -Color -Color-Red">48.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/36.7 MB</span> <span class=" -Color -Color-Red">54.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: rdkit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed rdkit-2025.9.6
 </pre></div>
 </div>
 </div>
@@ -1185,17 +1216,7 @@ p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rflo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">rdkit</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdkit&#39;
-</pre></div>
-</div>
+<img alt="../_images/670e8bf325452b32788cb1e00d1d61459bfd33ab8543f2a7d898cfa981714f89.png" src="../_images/670e8bf325452b32788cb1e00d1d61459bfd33ab8543f2a7d898cfa981714f89.png" />
 </div>
 </div>
 </section>
@@ -1232,7 +1253,7 @@ p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rflo
  [1 0 0 0 0 0 0 0 1 0]]
 </pre></div>
 </div>
-<img alt="../_images/60ad2f57d95b45d2aa7a85c24b67ad235439a85a677ae5e7866ec54b4ed1f9ed.png" src="../_images/60ad2f57d95b45d2aa7a85c24b67ad235439a85a677ae5e7866ec54b4ed1f9ed.png" />
+<img alt="../_images/0a2a2e134f69d1b7c14e9c6d3a05a6ad342361225a3b2da527453ecc95ce5c22.png" src="../_images/0a2a2e134f69d1b7c14e9c6d3a05a6ad342361225a3b2da527453ecc95ce5c22.png" />
 </div>
 </div>
 </section>
@@ -1408,7 +1429,7 @@ provide useful functionality to do this.</p>
  -0.37468377 -0.32982768 -0.31437089 -0.30232083]
 </pre></div>
 </div>
-<img alt="../_images/eb15ade018a681fc618edcb9923c5369ab71783ae93ef58d60ab8cc44b5811bd.png" src="../_images/eb15ade018a681fc618edcb9923c5369ab71783ae93ef58d60ab8cc44b5811bd.png" />
+<img alt="../_images/0887ee6bcd5a1db3796911b9597afdc028585b5e255d6756639e6e78ca5d3c8f.png" src="../_images/0887ee6bcd5a1db3796911b9597afdc028585b5e255d6756639e6e78ca5d3c8f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1425,7 +1446,7 @@ provide useful functionality to do this.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/54c3ad4faad634e5f3da85dc8de1b47a6cf6fbaa1f229b7b783dc75328018675.png" src="../_images/54c3ad4faad634e5f3da85dc8de1b47a6cf6fbaa1f229b7b783dc75328018675.png" />
+<img alt="../_images/140ffa9e439d1ec58a04d87c662ce9642d0b30e51185e8148e6be5e8d7a20b71.png" src="../_images/140ffa9e439d1ec58a04d87c662ce9642d0b30e51185e8148e6be5e8d7a20b71.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1510,7 +1531,7 @@ provide useful functionality to do this.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/26ec6a8cf1d19a3e27a58b073dcffcbbbffa85ccca5e68fde9900ad64f76d72f.png" src="../_images/26ec6a8cf1d19a3e27a58b073dcffcbbbffa85ccca5e68fde9900ad64f76d72f.png" />
+<img alt="../_images/9c5937eaaa5b68cb7075fdaaf1fc2f5900c98219db9fb195d0111addb7de7c15.png" src="../_images/9c5937eaaa5b68cb7075fdaaf1fc2f5900c98219db9fb195d0111addb7de7c15.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1589,43 +1610,43 @@ provide useful functionality to do this.</p>
 MO: 0
 </pre></div>
 </div>
-<img alt="../_images/5c5b1046a903739517a9b39d1a6102d425fefce8ae203b4fa755d10dfc556e38.png" src="../_images/5c5b1046a903739517a9b39d1a6102d425fefce8ae203b4fa755d10dfc556e38.png" />
+<img alt="../_images/ac8b48d55fe7bb8a5a2e0227775456c1f75a747710958b58c8345bc5fa3a70b2.png" src="../_images/ac8b48d55fe7bb8a5a2e0227775456c1f75a747710958b58c8345bc5fa3a70b2.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 1
 </pre></div>
 </div>
-<img alt="../_images/d9af9534d03b45d0e24fe09481ffa1a81b8c31f5da85b3d2ed944679c0545566.png" src="../_images/d9af9534d03b45d0e24fe09481ffa1a81b8c31f5da85b3d2ed944679c0545566.png" />
+<img alt="../_images/3574d4cfa8305c1e346a1d76b5a50477f88a44c061e506f885fe6e5da910c34c.png" src="../_images/3574d4cfa8305c1e346a1d76b5a50477f88a44c061e506f885fe6e5da910c34c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 2
 </pre></div>
 </div>
-<img alt="../_images/05e17993d4615113dfb59aae662fdbfca38807ce1830c6a4ce825e9877d54a76.png" src="../_images/05e17993d4615113dfb59aae662fdbfca38807ce1830c6a4ce825e9877d54a76.png" />
+<img alt="../_images/03c002aec62c8529827f8edfed00bbeaf33c7c299f0ba8faf0c01ec5e521f901.png" src="../_images/03c002aec62c8529827f8edfed00bbeaf33c7c299f0ba8faf0c01ec5e521f901.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 3
 </pre></div>
 </div>
-<img alt="../_images/d1a151c576a9374cf80d3466ad58b0e8a171a8c9915c7bfbdc089fb263a31a34.png" src="../_images/d1a151c576a9374cf80d3466ad58b0e8a171a8c9915c7bfbdc089fb263a31a34.png" />
+<img alt="../_images/b912852a8f6683456efc67c57f424f525520b6ba319719ec73d9573d8c54dd4a.png" src="../_images/b912852a8f6683456efc67c57f424f525520b6ba319719ec73d9573d8c54dd4a.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 4
 </pre></div>
 </div>
-<img alt="../_images/59a469dc871cefd30b9958f27ebc7aad3a6346e9cc104b002a7bce59538b0790.png" src="../_images/59a469dc871cefd30b9958f27ebc7aad3a6346e9cc104b002a7bce59538b0790.png" />
+<img alt="../_images/01fc8370d208b18fed75183a18e9db967bf3386a769cbf68fb506483d0e925d1.png" src="../_images/01fc8370d208b18fed75183a18e9db967bf3386a769cbf68fb506483d0e925d1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 5
 </pre></div>
 </div>
-<img alt="../_images/692c59b73a1e76a9f55176b9a516a46a5b7d3a5fbfa48e49b88fd959a63ad724.png" src="../_images/692c59b73a1e76a9f55176b9a516a46a5b7d3a5fbfa48e49b88fd959a63ad724.png" />
+<img alt="../_images/4f6ab2e6422e153ee17f3799aefd42453750e4a361b56aa79ede8d5a6365c121.png" src="../_images/4f6ab2e6422e153ee17f3799aefd42453750e4a361b56aa79ede8d5a6365c121.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 6
 </pre></div>
 </div>
-<img alt="../_images/3576ee40a116ea51a7019d037dffb66c3686382f01466be7a67223e87e4f3a5d.png" src="../_images/3576ee40a116ea51a7019d037dffb66c3686382f01466be7a67223e87e4f3a5d.png" />
+<img alt="../_images/a7f71f69e3ed92997bc3dc4235946de1a18e6c0375d5262d571cb86dc5e54e5d.png" src="../_images/a7f71f69e3ed92997bc3dc4235946de1a18e6c0375d5262d571cb86dc5e54e5d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 7
 </pre></div>
 </div>
-<img alt="../_images/ff0993347044c4e81e9764007d9ee69d45e1622e65e02b08ad4991cda804d8d7.png" src="../_images/ff0993347044c4e81e9764007d9ee69d45e1622e65e02b08ad4991cda804d8d7.png" />
+<img alt="../_images/9c1786dd8f93c10bb9e16caa64ddfe6491cb071c6ff8f026e247a5a201d4f293.png" src="../_images/9c1786dd8f93c10bb9e16caa64ddfe6491cb071c6ff8f026e247a5a201d4f293.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 8
 </pre></div>
 </div>
-<img alt="../_images/ec185ff1e806ca560baab5e8f6d2dcb84212ea23101e894022b2fe5ca7f6d61c.png" src="../_images/ec185ff1e806ca560baab5e8f6d2dcb84212ea23101e894022b2fe5ca7f6d61c.png" />
+<img alt="../_images/b326fc7cdff53b49ddff3d7aad25f8f9ffa9193aa81639a3453c4616188565ba.png" src="../_images/b326fc7cdff53b49ddff3d7aad25f8f9ffa9193aa81639a3453c4616188565ba.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 9
 </pre></div>
 </div>
-<img alt="../_images/7e2b5819680a414630e6a4dc9f63193b8d6734c540b812d679ef5885bc4e2463.png" src="../_images/7e2b5819680a414630e6a4dc9f63193b8d6734c540b812d679ef5885bc4e2463.png" />
+<img alt="../_images/66e0eb73c3a7cac456039d12c23dcc317b6d0c2e1d7d681ac7beba1d8a824304.png" src="../_images/66e0eb73c3a7cac456039d12c23dcc317b6d0c2e1d7d681ac7beba1d8a824304.png" />
 </div>
 </div>
 </section>
@@ -1823,6 +1844,7 @@ MO: 0
 
 <span class="n">dipole_moment</span> <span class="o">=</span> <span class="n">compute_molecular_dipole</span><span class="p">(</span><span class="n">azulene</span><span class="p">,</span> <span class="n">atomic_charges</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The dipole moment of azulene is </span><span class="si">{</span><span class="n">dipole_moment</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The magnitude of the dipole moment of azulene is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dipole_moment</span><span class="p">)</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
 
 <span class="c1"># Visualize atomic charges for the azulene molecule</span>
 <span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atomic charges&quot;</span><span class="p">]</span>
@@ -1834,20 +1856,21 @@ MO: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The dipole moment of azulene is [-6.34697302 -0.11262017  0.45202865] Debye.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The dipole moment of azulene is [-6.33547703 -0.14843086  0.73536286] Debye.
+The magnitude of the dipole moment of azulene is 6.3797382001651215 Debye.
 The following plots correspond to the following atomic property labels:
 atomic charges
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:58:36] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16:11:39] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
-<img alt="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" src="../_images/82a370689fb0a6bce1898d8275a1bf41fa1a6e70e51f905615bd4e75a2b28a3f.png" />
+<img alt="../_images/00415562a70dda7ab5213a130a2fd766257ad5305ef150f1f381f42d2292992d.png" src="../_images/00415562a70dda7ab5213a130a2fd766257ad5305ef150f1f381f42d2292992d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following plots correspond to the following atomic property labels:
 atomic populations
 </pre></div>
 </div>
-<img alt="../_images/1af4d5e6fedb101044a90f2c6d740e44f6c9e47674b0408caf36e39295d9cf52.png" src="../_images/1af4d5e6fedb101044a90f2c6d740e44f6c9e47674b0408caf36e39295d9cf52.png" />
+<img alt="../_images/a1c1a465d4155b9dcebccca79c703326d4f6f75724f2482eb259896153338788.png" src="../_images/a1c1a465d4155b9dcebccca79c703326d4f6f75724f2482eb259896153338788.png" />
 </div>
 </div>
 </section>
@@ -1949,15 +1972,15 @@ atomic populations
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The transition dipole moment of azulene (HOMO to LUMO) is [-0.01674969 -2.42803264  0.11772008] Debye.
-The magnitude of the transition dipole moment is 2.4309424285321684 Debye.
+The magnitude of the transition dipole moment is 2.430942428532167 Debye.
 The following plots correspond to the following atomic property labels:
 product of HOMO and LUMO orbitals
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[08:58:36] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16:11:39] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
-<img alt="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" src="../_images/cd0e5a4d894a15d59a13c152f77fcac7e1fb6aecc79fa800f63423537f0b646f.png" />
+<img alt="../_images/c330cff89af02b36bd756058fda619a7ba9ba885c541615f8948533071168101.png" src="../_images/c330cff89af02b36bd756058fda619a7ba9ba885c541615f8948533071168101.png" />
 </div>
 </div>
 <section id="thought-provoking-questions">
@@ -1980,6 +2003,100 @@ product of HOMO and LUMO orbitals
 <p>Add markdown cells to complete these tasks. You can add images of hand-written answers to the markdown cells if you prefer, but write neatly.</p>
 </li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at pyridine</span>
+<span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">get_huckel_hamiltonian_smiles</span><span class="p">(</span><span class="n">smiles</span><span class="o">=</span><span class="s2">&quot;c1ccncc1&quot;</span><span class="p">)</span>
+<span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span> <span class="o">=</span> <span class="n">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Molecular Orbital Energies:&quot;</span><span class="p">,</span> <span class="n">mo_energies</span><span class="p">)</span>
+
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;MO: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">mo_coeffs</span><span class="p">)[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">pyridine</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+
+<span class="n">atomic_charges</span><span class="p">,</span> <span class="n">atomic_populations</span> <span class="o">=</span> <span class="n">compute_atomic_charges</span><span class="p">(</span><span class="n">pyridine</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">mo_energies</span><span class="p">)</span>
+
+<span class="n">dipole_moment</span> <span class="o">=</span> <span class="n">compute_molecular_dipole</span><span class="p">(</span><span class="n">pyridine</span><span class="p">,</span> <span class="n">atomic_charges</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The dipole moment of pyridine is </span><span class="si">{</span><span class="n">dipole_moment</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The magnitude of the dipole moment of pyridine is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dipole_moment</span><span class="p">)</span><span class="si">}</span><span class="s2"> Debye.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize atomic charges for the pyridine molecule</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atomic charges&quot;</span><span class="p">]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">pyridine</span><span class="p">,</span> <span class="n">atomic_charges</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;atomic populations&quot;</span><span class="p">]</span>
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">pyridine</span><span class="p">,</span> <span class="n">atomic_populations</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Molecular Orbital Energies: [-0.52741628 -0.47683491 -0.4673     -0.36848972 -0.3607     -0.31044209]
+The following plots correspond to the following atomic property labels:
+MO: 0
+</pre></div>
+</div>
+<img alt="../_images/393cfb85d4ead9eedcfc494b6966497120598d054784853558aea182097ae577.png" src="../_images/393cfb85d4ead9eedcfc494b6966497120598d054784853558aea182097ae577.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 1
+</pre></div>
+</div>
+<img alt="../_images/ab5b4c26970413c11c846e8e22bc1bae79e8ee971694d0523e011a30085b96aa.png" src="../_images/ab5b4c26970413c11c846e8e22bc1bae79e8ee971694d0523e011a30085b96aa.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 2
+</pre></div>
+</div>
+<img alt="../_images/535baaaf6289efdbe87a0fde0f32208a55550fabdb2aecaaa469367582b1fc36.png" src="../_images/535baaaf6289efdbe87a0fde0f32208a55550fabdb2aecaaa469367582b1fc36.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 3
+</pre></div>
+</div>
+<img alt="../_images/74e5f8fba4291949c306c9e25ec136d1306ec44177e8f130b36056d3f8abdeec.png" src="../_images/74e5f8fba4291949c306c9e25ec136d1306ec44177e8f130b36056d3f8abdeec.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 4
+</pre></div>
+</div>
+<img alt="../_images/3ef530f33e931aaa6ea8e6d63b3192166135a0e96fcd53bde7284e4eeced5da0.png" src="../_images/3ef530f33e931aaa6ea8e6d63b3192166135a0e96fcd53bde7284e4eeced5da0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO: 5
+</pre></div>
+</div>
+<img alt="../_images/a448cb59ccfe6c8d5857b789c0f0b10eca201c416c479c22208ac0c5b1ff814c.png" src="../_images/a448cb59ccfe6c8d5857b789c0f0b10eca201c416c479c22208ac0c5b1ff814c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The dipole moment of pyridine is [0.97769467 0.5636719  0.0959975 ] Debye.
+The magnitude of the dipole moment of pyridine is 1.1326201483663665 Debye.
+The following plots correspond to the following atomic property labels:
+atomic charges
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16:11:39] Molecule does not have explicit Hs. Consider calling AddHs()
+</pre></div>
+</div>
+<img alt="../_images/15475492accbc715dbadb19e7a88be612c964f04042885d70f0446ebd2c827c2.png" src="../_images/15475492accbc715dbadb19e7a88be612c964f04042885d70f0446ebd2c827c2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following plots correspond to the following atomic property labels:
+atomic populations
+</pre></div>
+</div>
+<img alt="../_images/54b0fa666366b179be230a5f846f1a75fc4941b08c893cbbe933d5d570458a1a.png" src="../_images/54b0fa666366b179be230a5f846f1a75fc4941b08c893cbbe933d5d570458a1a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve the Schrodinger equation for benzene and print the MO coefficients.</span>
+<span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">get_huckel_hamiltonian_smiles</span><span class="p">(</span><span class="s2">&quot;c1ccccc1&quot;</span><span class="p">)</span>
+<span class="n">mo_energies</span><span class="p">,</span> <span class="n">mo_coeffs</span><span class="p">,</span> <span class="n">total_energy</span> <span class="o">=</span> <span class="n">solve_huckel</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MO Energies:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">))</span>
+
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">mo_coeffs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="n">coeffs</span> <span class="o">+=</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">mo_coeffs</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">mo_energies</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">mo_energies</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">visualize_molecules_with_properties</span><span class="p">(</span><span class="n">benzene1</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MO Energies:[-0.5206 -0.4673 -0.4673 -0.3607 -0.3607 -0.3074]
+The following plots correspond to the following atomic property labels:
+atomic populations
+</pre></div>
+</div>
+<img alt="../_images/1434e106f9d43460120812a382020c8cbad5487caf62ae47ffee6266d96c4d03.png" src="../_images/1434e106f9d43460120812a382020c8cbad5487caf62ae47ffee6266d96c4d03.png" />
+</div>
+</div>
 </section>
 </section>
 

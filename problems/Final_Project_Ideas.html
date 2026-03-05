@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -485,18 +485,18 @@ document.write(`
 <h1>Final Project Ideas<a class="headerlink" href="#final-project-ideas" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Understanding spooky behavior like above-barrier reflection and below-barrier transmission (tunnelling). You could use a plane wave impinging on a square barrier or, fancier, an Eckart barrier. Another fancier option would be to use a (Gaussian) wavepacket instead of a plane wave.</p></li>
-<li><p>Crystal Field Theory. You could use a simple point-charge model to understand the splitting of d-orbitals in different ligand fields (octahedral, tetrahedral, square planar, etc.) You could also use a more sophisticated model, such as the angular overlap model, to understand the splitting of d-orbitals in a ligand field.</p></li>
-<li><p>“Gravitational” atoms. Pretend that the electrons and nuclei did not have charge, but only mass. What would atoms look like? How big is the “correction” (as a perturbation) due to gravitational attraction for 1- and 2-electron atoms?</p></li>
+<li><p>~~Crystal Field Theory. You could use a simple point-charge model to understand the splitting of d-orbitals in different ligand fields (octahedral, tetrahedral, square planar, etc.) You could also use a more sophisticated model, such as the angular overlap model, to understand the splitting of d-orbitals in a ligand field~~ (Project Claimed).</p></li>
+<li><p>~~”Gravitational” atoms. Pretend that the electrons and nuclei did not have charge, but only mass. What would atoms look like? How big is the “correction” (as a perturbation) due to gravitational attraction for 1- and 2-electron atoms?~~ (Project claimed)</p></li>
 <li><p>Relativistic effects. Use scalar relativity (the zero order regular approximation is easiest) to correct the energy.</p></li>
 <li><p>Understand Hund’s rules by computing the electron-electron repulsion integrals and comparing different energies.</p></li>
-<li><p>Apply the sudden approximation to a 1-electron atom, exploring what happens when the nuclear charge suddenly increases or decreases due to radioactive decay.</p></li>
-<li><p>Consider a particle in a box with finite, rather than infinite walls. What about the case where two boxes are separated by a barrier?</p></li>
+<li><p>~~Apply the sudden approximation to a 1-electron atom, exploring what happens when the nuclear charge suddenly increases or decreases due to radioactive decay.~~ (Project Claimed)</p></li>
+<li><p>~~Consider a particle in a box with finite, rather than infinite walls. What about the case where two boxes are separated by a barrier?~~ (Project Claimed)</p></li>
 <li><p>Consider a quartic potential, which is a model for a double-well (a simplified model for a chemical reaction and for electron transfer).</p></li>
 <li><p>Solve, numerically, the wavefunction for the proton in the malonaldehyde molecule, which is a model for tunelling effects in hydrogen bonding.</p></li>
 <li><p>Understand the kinetic isotope effect, which is mainly an effect of zero-point energies (but tunneling corrections can also be considered).</p></li>
 <li><p>Explore how basis sets (e.g., polynomial or Gaussian basis sets) converge to the exact solution as the number of basis functions increases. Are there differences when electron-electron repulsion is included?</p></li>
 <li><p>Correction for the finite size of the nucleus. A Gaussian model for the nuclear charge distribution can be used, for example.</p></li>
-<li><p>Computing the spin-orbital (relativistic) correction.</p></li>
+<li><p>~~Computing the spin-orbit (relativistic) correction. I’d recommend using perturbation theory for this.~~ (Project Claimed)</p></li>
 <li><p>Computing (homogeneous) spectral broadening due to the finite lifetime of excited states and/or pressure (collisional) effects.</p></li>
 <li><p>Computing (inhomogeneous) spectral broadening due to temperature (thermal) or solvent (spatial inhomogenity) effects.</p></li>
 <li><p>Computation of the rotational spectrum of a polyatomic molecule.</p></li>
@@ -508,6 +508,11 @@ document.write(`
 <li><p>Plot the effective nuclear charge felt by an electron in an orbital. How does it relate to the decay rate of the orbital?</p></li>
 <li><p>Build a simple “lattice” models for solids in 1, 2, and/or 3 dimensions.</p></li>
 <li><p>Exemplify symmetry breaking in molecular dissociation (e.g., for the hydrogen molecule), characterizing the Coulson-Fischer point.</p></li>
+<li><p>Adiabatic approximation. We considered the sudden approximation for the particle in a box (which changes size). Consider changing the size of the box gradually instead. Show what happens, showing that the sudden approximation results when the change in the box is fast but that the adiabatic approximation—in which the system remains always in the initial state—results when the change in the box is slow.</p></li>
+<li><p>(Refer to above). Think about the sudden approximation and the adiabatic approximation for a harmonic oscillator. Imagine, for example, the difference between “suddenly imposing an external field” and “slowly imposing an external field”.</p></li>
+<li><p>Learn about the effects of electron-electron repulsion by adding contributions from the Pariser-Parr-Pople (PPP) (a.k.a. Hubbard) model to the Hückel model. (This could be done with perturbation theory). You could also do this with the Hartree-Fock method.</p></li>
+<li><p>Examine Koopmans’ theorem.</p></li>
+<li><p>Understand favorable substitution patterns in heterocyclic aromatic molecules using “alchemical” transformations, where one of the atoms in the molecule is changed from one element to another. This can be done with perturbation theory, for example.</p></li>
 </ol>
 </section>
 
