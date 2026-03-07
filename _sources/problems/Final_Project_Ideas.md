@@ -18,7 +18,7 @@
 
 1. Solve, numerically, the wavefunction for the proton in the malonaldehyde molecule, which is a model for tunelling effects in hydrogen bonding.
 
-1. Understand the kinetic isotope effect, which is mainly an effect of zero-point energies (but tunneling corrections can also be considered).
+1. ~~Understand the kinetic isotope effect, which is mainly an effect of zero-point energies (but tunneling corrections can also be considered).~~ (Project Claimed)
 
 1. Explore how basis sets (e.g., polynomial or Gaussian basis sets) converge to the exact solution as the number of basis functions increases. Are there differences when electron-electron repulsion is included?
 
