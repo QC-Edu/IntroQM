@@ -2,8 +2,9 @@
 - By drawing a diagram with sequential Stern-Gerlach apparatuses, explain how non-commutation of angular momentum operators around various axes works? Can you think of an example where the apparatus commutes instead?
 - What are good quantum numbers for atoms (in the absence of spin-orbit interactions/relativistic corrections)? How do they relate to term symbols?
 - What is the effective nuclear charge felt by an electron close to the nucleus in a many-electron atom? What about far away from the nucleus? What happens in a specific example like, say, the Argon dication?
-- Write a Slater determinant wavefunction that is an angular-momentum and spin-angular-momentum eigenfunction for the ${}^4 F$ term ($[Ar]4s^23d^3$ configuration (Vanadium)). The ${}^6 D$ term is only .0096 a.u. above this state. Why?
+- Write a Slater determinant wavefunction that is an angular-momentum and spin-angular-momentum eigenfunction for the ${}^4 F$ term ($\text{[Ar]}4s^23d^3$ configuration (Vanadium)). The ${}^6 D$ term is only .0096 a.u. above this state. Why?
 - Explain why the Hartree-Fock method is equivalent to "optimizing the effective nuclear charge of each orbital in a Slater determinant via the variational principle?"
+- What are the possible $L$ and $S$ values for a $\text{[closed shell]}s^1 p^1 d^1$ electron configuration? What is the ground-state term symbol (assuming Hund's rules hold) and what are the $J$ values associated with it?
 - Explain why a Slater determinant encodes the Pauli exclusion principles that electrons with the same spin cannot be at the same position and that no two electrons can occupy the same spin orbital.
 - Write down the electronic and nuclear Hamiltonians for a molecule and explain each term. Under what circumstances can one solve these equations "exactly?"
 - Explain the Born-Oppenheimer approximation. What are its assumptions? When does it break down?
