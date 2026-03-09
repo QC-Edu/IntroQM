@@ -58,3 +58,5 @@
 
 1. Understand favorable substitution patterns in heterocyclic aromatic molecules using "alchemical" transformations, where one of the atoms in the molecule is changed from one element to another. This can be done with perturbation theory, for example.
 
+1. Model ro-vibrational spectra for a diatomic molecule, including corrections for anharmonicity and centrifugal distortion.
+
