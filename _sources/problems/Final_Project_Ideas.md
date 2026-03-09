@@ -46,7 +46,7 @@
 
 1. Build a simple "lattice" models for solids in 1, 2, and/or 3 dimensions.
 
-1. Exemplify symmetry breaking in molecular dissociation (e.g., for the hydrogen molecule), characterizing the Coulson-Fischer point.
+1. ~~Exemplify symmetry breaking in molecular dissociation (e.g., for the hydrogen molecule), characterizing the Coulson-Fischer point.~~ (Project Claimed)
 
 1. Adiabatic approximation. We considered the sudden approximation for the particle in a box (which changes size). Consider changing the size of the box gradually instead. Show what happens, showing that the sudden approximation results when the change in the box is fast but that the adiabatic approximation---in which the system remains always in the initial state---results when the change in the box is slow.
 
