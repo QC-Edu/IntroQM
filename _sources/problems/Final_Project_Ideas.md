@@ -54,7 +54,7 @@
 
 1. Learn about the effects of electron-electron repulsion by adding contributions from the Pariser-Parr-Pople (PPP) (a.k.a. Hubbard) model to the H&uuml;ckel model. (This could be done with perturbation theory). You could also do this with the Hartree-Fock method.
 
-1. Examine Koopmans' theorem.
+1. ~~Examine Koopmans' theorem.~~ (Project Claimed)
 
 1. Understand favorable substitution patterns in heterocyclic aromatic molecules using "alchemical" transformations, where one of the atoms in the molecule is changed from one element to another. This can be done with perturbation theory, for example.
 
