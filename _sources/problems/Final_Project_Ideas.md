@@ -8,7 +8,7 @@
 
 1. ~~Relativistic effects. Use scalar relativity (the zero order regular approximation is easiest) to correct the energy.~~ (Project Claimed)
 
-1. Understand Hund's rules by computing the electron-electron repulsion integrals and comparing different energies.
+1. ~~Understand Hund's rules by computing the electron-electron repulsion integrals and comparing different energies.~~ (Project Claimed)
 
 1. ~~Apply the sudden approximation to a 1-electron atom, exploring what happens when the nuclear charge suddenly increases or decreases due to radioactive decay.~~ (Project Claimed)
 
