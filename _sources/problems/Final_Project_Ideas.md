@@ -34,7 +34,7 @@
 
 1. Computation of the vibrational spectrum of a polyatomic molecule.
 
-1. Write simple molecular-orbital models for the hydrogen molecule and/or polyatomic hydrogen clusters.
+1. ~~Write simple molecular-orbital models for the hydrogen molecule and/or polyatomic hydrogen clusters.~~ (Project Claimed)
 
 1. Write simple valence-bond models for the hydrogen molecule and/or polyatomic hydrogen clusters.
 
