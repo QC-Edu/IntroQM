@@ -8,7 +8,7 @@
 
 1. Write a Slater determinant wavefunction that is an angular-momentum and spin-angular-momentum eigenfunction for the ${}^4 F$ term ($\text{[Ar]}4s^23d^3$ configuration (Vanadium)). The ${}^6 D$ term is only .0096 a.u. above this state. Why?
 
-1. Explain why the Hartree-Fock method is equivalent to "optimizing the effective nuclear charge of each orbital in a Slater determinant via the variational principle?"
+1. Explain why the Hartree-Fock method is related to "optimizing the effective nuclear charge of each orbital in a Slater determinant via the variational principle?" (This is rigorous for an atomic orbital without nodes; for an atomic orbital with nodes you can still make a hand-waving argument.)
 
 1. What are the possible $L$ and $S$ values for a $\text{[closed shell]}s^1 p^1 d^1$ electron configuration? What is the ground-state term symbol (assuming Hund's rules hold) and what are the $J$ values associated with it?
 
