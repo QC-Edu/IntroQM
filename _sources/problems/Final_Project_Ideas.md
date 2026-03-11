@@ -14,7 +14,7 @@
 
 1. ~~Consider a particle in a box with finite, rather than infinite walls. What about the case where two boxes are separated by a barrier?~~ (Project Claimed)
 
-1. Consider a quartic potential, which is a model for a double-well (a simplified model for a chemical reaction and for electron transfer).
+1. ~~Consider a quartic potential, which is a model for a double-well (a simplified model for a chemical reaction and for electron transfer)~~ (Project Claimed).
 
 1. Solve, numerically, the wavefunction for the proton in the malonaldehyde molecule, which is a model for tunelling effects in hydrogen bonding.
 
