@@ -44,7 +44,7 @@
 
 1. ~~Plot the effective nuclear charge felt by an electron in an orbital. How does it relate to the decay rate of the orbital?~~ (Project Claimed)
 
-1. Build a simple "lattice" models for solids in 1, 2, and/or 3 dimensions.
+1. ~~Build a simple "lattice" models for solids in 1, 2, and/or 3 dimensions.~~ (Project Claimed)
 
 1. ~~Exemplify symmetry breaking in molecular dissociation (e.g., for the hydrogen molecule), characterizing the Coulson-Fischer point.~~ (Project Claimed)
 
