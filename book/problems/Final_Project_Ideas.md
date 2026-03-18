@@ -32,13 +32,13 @@
 
 1. ~~Computation of the rotational spectrum of a polyatomic molecule.~~ (Project Claimed)
 
-1. Computation of the vibrational spectrum of a polyatomic molecule.
+1. ~~ Computation of the vibrational spectrum of a polyatomic molecule.~~ (Project Claimed)
 
 1. ~~Write simple molecular-orbital models for the hydrogen molecule and/or polyatomic hydrogen clusters.~~ (Project Claimed)
 
 1. Write simple valence-bond models for the hydrogen molecule and/or polyatomic hydrogen clusters.
 
-1. Compute the Stark or Zeeman effects for a simple system.
+1. Compute the Stark or Zeeman effects for a simple system. (2 possible projects here.)
 
 1. Compute the polarizability of H atom, showing that the bound-state H-atom wavefunctions are not a complete set. (Also look at expanding a sharp and/or a diffuse orbital with a H-atom basis.)
 
