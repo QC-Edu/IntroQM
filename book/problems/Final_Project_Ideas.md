@@ -40,7 +40,7 @@
 
 1. Compute the Stark or Zeeman effects for a simple system. (2 possible projects here.)
 
-1. Compute the polarizability of H atom, showing that the bound-state H-atom wavefunctions are not a complete set. (Also look at expanding a sharp and/or a diffuse orbital with a H-atom basis.)
+1. Compute the polarizability of H atom, showing that the bound-state H-atom wavefunctions are not a complete set. (Also look at expanding a sharp and/or a diffuse orbital with a H-atom basis.) There is a clever trick from Dalgarno for doing this.
 
 1. ~~Plot the effective nuclear charge felt by an electron in an orbital. How does it relate to the decay rate of the orbital?~~ (Project Claimed)
 
