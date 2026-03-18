@@ -1,0 +1,142 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import scipy
+from scipy.special import erf
+import json
+import atomdb
+from iodata import load_one
+from grid.onedgrid import GaussLegendre
+from grid.rtransform import BeckeRTransform
+from grid.becke import BeckeWeights
+from grid.molgrid import MolGrid
+from gbasis.integrals.overlap import overlap_integral
+from gbasis.integrals.kinetic_energy import kinetic_energy_integral
+from gbasis.integrals.nuclear_electron_attraction import nuclear_electron_attraction_integral
+from gbasis.integrals.electron_repulsion import electron_repulsion_integral
+from gbasis.evals.eval import evaluate_basis
+from gbasis.evals.density import evaluate_density
+
+# Make a decent(ish) grid.
+def make_grid(atnums, atcoords, rad_points=100, preset="ultrafine"):
+    '''Make a grid object from a molecule
+    Args:
+        atnums (list of int): Atomic numbers of the atoms in the molecule
+        atcoords (numpy.ndarray): Coordinates of the atoms in the molecule
+        rad_points (int): number of radial points
+        preset (str): preset grid type
+            "coarse", "medium", "fine", "veryfine", "ultrafine", "insane"
+    Returns:
+        mol_grid (Grid): grid object
+    '''
+    # create a radial grid with rad_points points
+    oned_grid = GaussLegendre(rad_points)
+    radial_grid = BeckeRTransform(0.0, R=1.5).transform_1d_grid(oned_grid)
+
+    # create a pruned molecular grid with the preset angular convention
+    mol_grid = MolGrid.from_preset(atnums, atcoords, preset, rgrid=radial_grid, store=True)
+
+    return mol_grid
+
+# Compute overlap integrals
+def compute_overlap(ao_basis):
+    r"""Compute the overlap matrix in the AO basis.
+
+    Parameters
+    ----------
+    ao_basis : list of `GeneralizedContractionShell` instances
+        Atomic orbital basis set for the molecule.
+
+    Returns
+    -------
+    S : numpy.ndarray[float, shape=(n_ao, n_ao)]
+        Overlap matrix in the AO basis.
+    """
+
+    return overlap_integral(ao_basis)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mImportError[39m                               Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 7[39m
+[32m      5[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01matomdb[39;00m
+[32m      6[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01miodata[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m load_one
+[32m----> [39m[32m7[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01monedgrid[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m GaussLegendre
+[32m      8[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mrtransform[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m BeckeRTransform
+[32m      9[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mbecke[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m BeckeWeights
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/grid/__init__.py:25[39m
+[32m     21[39m [33;03m"""Grid Module."""[39;00m
+[32m     22[39m [38;5;66;03m# flake8: noqa[39;00m
+[32m---> [39m[32m25[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mangular[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m *
+[32m     26[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01matomgrid[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m *
+[32m     27[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mbasegrid[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m *
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/grid/angular.py:75[39m
+[32m     72[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m     73[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mimportlib_resources[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m files
+[32m---> [39m[32m75[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mbasegrid[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Grid
+[32m     77[39m [38;5;66;03m# Lebedev dictionary for grid's number of points (keys) and degrees (values)[39;00m
+[32m     78[39m LEBEDEV_NPOINTS = {
+[32m     79[39m     [32m6[39m: [32m3[39m,
+[32m     80[39m     [32m18[39m: [32m5[39m,
+[32m   (...)[39m[32m    110[39m     [32m5810[39m: [32m131[39m,
+[32m    111[39m }
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/grid/basegrid.py:25[39m
+[32m     22[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m     23[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[34;01m.[39;00m[34;01mspatial[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m cKDTree
+[32m---> [39m[32m25[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgrid[39;00m[34;01m.[39;00m[34;01mutils[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m (
+[32m     26[39m     convert_cart_to_sph,
+[32m     27[39m     generate_orders_horton_order,
+[32m     28[39m     solid_harmonics,
+[32m     29[39m )
+[32m     32[39m [38;5;28;01mclass[39;00m[38;5;250m [39m[34;01mGrid[39;00m:
+[32m     33[39m [38;5;250m    [39m[33;03m"""Basic Grid class for grid information storage."""[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/grid/utils.py:23[39m
+[32m     20[39m [33;03m"""Utility Module."""[39;00m
+[32m     22[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m---> [39m[32m23[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[34;01m.[39;00m[34;01mspecial[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m sph_harm
+[32m     25[39m _bragg = np.array(
+[32m     26[39m     [
+[32m     27[39m         np.nan,  [38;5;66;03m# index 0, place holder[39;00m
+[32m   (...)[39m[32m    114[39m     ]
+[32m    115[39m )
+[32m    117[39m _cambridge = np.array(
+[32m    118[39m     [
+[32m    119[39m         np.nan,  [38;5;66;03m# index 0, place holder[39;00m
+[32m   (...)[39m[32m    206[39m     ]
+[32m    207[39m )
+
+[31mImportError[39m: cannot import name 'sph_harm' from 'scipy.special' (/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/special/__init__.py)
+
