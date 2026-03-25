@@ -1,6 +1,6 @@
 # Final Project Ideas
 
-1. Understanding spooky behavior like above-barrier reflection and below-barrier transmission (tunnelling). You could use a plane wave impinging on a square barrier or, fancier, an Eckart barrier. Another fancier option would be to use a (Gaussian) wavepacket instead of a plane wave.
+1. ~~Understanding spooky behavior like above-barrier reflection and below-barrier transmission (tunnelling). You could use a plane wave impinging on a square barrier or, fancier, an Eckart barrier. Another fancier option would be to use a (Gaussian) wavepacket instead of a plane wave.~~(Project Claimed)
 
 1. ~~Crystal Field Theory. You could use a simple point-charge model to understand the splitting of d-orbitals in different ligand fields (octahedral, tetrahedral, square planar, etc.) You could also use a more sophisticated model, such as the angular overlap model, to understand the splitting of d-orbitals in a ligand field~~ (Project Claimed).
 
