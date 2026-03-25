@@ -20,7 +20,7 @@
 
 1. ~~Understand the kinetic isotope effect, which is mainly an effect of zero-point energies (but tunneling corrections can also be considered).~~ (Project Claimed)
 
-1. Explore how basis sets (e.g., polynomial or Gaussian basis sets) converge to the exact solution as the number of basis functions increases. Are there differences when electron-electron repulsion is included?
+1. ~~Explore how basis sets (e.g., polynomial or Gaussian basis sets) converge to the exact solution as the number of basis functions increases. Are there differences when electron-electron repulsion is included?~~ (Project Claimed)
 
 1. Correction for the finite size of the nucleus. A Gaussian model for the nuclear charge distribution can be used, for example.
 
