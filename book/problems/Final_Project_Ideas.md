@@ -36,7 +36,7 @@
 
 1. ~~Write simple molecular-orbital models for the hydrogen molecule and/or polyatomic hydrogen clusters.~~ (Project Claimed)
 
-1. Write simple valence-bond models for the hydrogen molecule and/or polyatomic hydrogen clusters.
+1. ~~Write simple valence-bond models for the hydrogen molecule and/or polyatomic hydrogen clusters.~~(Project Claimed)
 
 1. ~~Compute the Stark effect for a simple system.~~ (Project Claimed)
 
