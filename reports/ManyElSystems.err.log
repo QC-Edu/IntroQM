@@ -67,11 +67,10 @@ print_wavelength(k)
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mwidgets[39;00m
-[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmath[39;00m
+[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m ipywidgets [38;5;28;01mas[39;00m widgets
+[32m      2[39m [38;5;28;01mimport[39;00m math
+[32m      3[39m 
 [32m      4[39m [38;5;66;03m# Define a function for the wavelength associated with the[39;00m
-[32m      5[39m [38;5;66;03m# lowest-frequency excitation of a cyanine dye with[39;00m
-[32m      6[39m [38;5;66;03m# specified value of k[39;00m
 
 [31mModuleNotFoundError[39m: No module named 'ipywidgets'
 

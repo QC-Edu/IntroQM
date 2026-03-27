@@ -40,18 +40,16 @@ np.testing.assert_almost_equal(total_mark_xc([0, 0], 0, 1200), 40)
 [31mNotImplementedError[39m                       Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[2][39m[32m, line 2[39m
 [32m      1[39m [38;5;66;03m# It's good to always test to make sure your code is right.[39;00m
-[32m----> [39m[32m2[39m np.testing.assert_almost_equal([43mtotal_mark_xc[49m[43m([49m[43m[[49m[32;43m100[39;49m[43m,[49m[43m [49m[32;43m100[39;49m[43m,[49m[43m [49m[32;43m100[39;49m[43m,[49m[43m [49m[32;43m100[39;49m[43m][49m[43m,[49m[43m [49m[32;43m0[39;49m[43m)[49m, [32m80[39m)
+[32m----> [39m[32m2[39m np.testing.assert_almost_equal(total_mark_xc([[32m100[39m, [32m100[39m, [32m100[39m, [32m100[39m], [32m0[39m), [32m80[39m)
 [32m      3[39m np.testing.assert_almost_equal(total_mark_xc([[32m0[39m, [32m0[39m], [32m100[39m, [32m0[39m), [32m100[39m)
 [32m      4[39m np.testing.assert_almost_equal(total_mark_xc([[32m0[39m, [32m0[39m], [32m0[39m, [32m1200[39m), [32m40[39m)
 
 [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 23[39m, in [36mtotal_mark_xc[39m[34m(assignments, exam, extra_credit_pages)[39m
-[32m      5[39m [38;5;250m[39m[33;03m"""Computes the final mark for one student in CHEM 3PA3 in 2021[39;00m
-[32m      6[39m 
-[32m      7[39m [33;03mParameters[39;00m
-[32m   (...)[39m[32m     19[39m [33;03m     The final mark in the course, computed according to the syllabus.[39;00m
-[32m     20[39m [33;03m"""[39;00m
-[32m     22[39m [38;5;66;03m# YOUR CODE HERE[39;00m
-[32m---> [39m[32m23[39m [38;5;28;01mraise[39;00m [38;5;167;01mNotImplementedError[39;00m()
+[32m     19[39m          The final mark [38;5;28;01min[39;00m the course, computed according to the syllabus.
+[32m     20[39m     """
+[32m     21[39m 
+[32m     22[39m     [38;5;66;03m# YOUR CODE HERE[39;00m
+[32m---> [39m[32m23[39m     [38;5;28;01mraise[39;00m NotImplementedError()
 
 [31mNotImplementedError[39m: 
 

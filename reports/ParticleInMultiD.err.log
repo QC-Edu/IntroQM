@@ -51,11 +51,11 @@ print_energy_disk(a, n, l)
 [31m---------------------------------------------------------------------------[39m
 [31mNameError[39m                                 Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[2][39m[32m, line 17[39m
-[32m     12[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mprint_energy_disk[39m(a, n, l):
-[32m     13[39m     [38;5;28mprint[39m([33mf[39m[33m'[39m[33mThe energy of an electron confined to a disk with radius [39m[38;5;132;01m{[39;00ma[38;5;132;01m:[39;00m[33m.2f[39m[38;5;132;01m}[39;00m[33m a.u.,[39m[33m'[39m
-[32m     14[39m        [33mf[39m[33m'[39m[33m principle quantum number [39m[38;5;132;01m{[39;00mn[38;5;132;01m}[39;00m[33m, and angular quantum number [39m[38;5;132;01m{[39;00ml[38;5;132;01m}[39;00m[33m'[39m
-[32m     15[39m        [33mf[39m[33m'[39m[33m is [39m[38;5;132;01m{[39;00mcompute_energy_disk(n,[38;5;250m [39ml,[38;5;250m [39ma)[38;5;132;01m:[39;00m[33m.3f[39m[38;5;132;01m}[39;00m[33m a.u..[39m[33m'[39m)
-[32m---> [39m[32m17[39m print_energy_disk([43ma[49m, n, l)
+[32m     13[39m     print(f'The energy of an electron confined to a disk with radius {a:.2f} a.u.,'
+[32m     14[39m        f' principle quantum number {n}, and angular quantum number {l}'
+[32m     15[39m        f' is {compute_energy_disk(n, l, a):.3f} a.u..')
+[32m     16[39m 
+[32m---> [39m[32m17[39m print_energy_disk(a, n, l)
 
 [31mNameError[39m: name 'a' is not defined
 
