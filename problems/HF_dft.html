@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Self-Consistent Field Methods &#8212; Quantum Chemistry</title>
+    <title>13. Self-Consistent Field Methods &#8212; Quantum Chemistry</title>
   
   
   
@@ -66,6 +66,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Materials" href="../documents/refs.html" />
+    <link rel="prev" title="12. Hückel Theory" href="huckel_theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -116,8 +118,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -176,7 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
@@ -239,6 +239,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Hartree-Fock and DFT</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
 <ul class="nav bd-sidenav">
@@ -543,7 +544,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="self-consistent-field-methods">
-<h1>Self-Consistent Field Methods<a class="headerlink" href="#self-consistent-field-methods" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Self-Consistent Field Methods<a class="headerlink" href="#self-consistent-field-methods" title="Link to this heading">#</a></h1>
 <section id="assignment-complete-the-below-notebook">
 <h2>👩🏽‍💻 Assignment: Complete the Below Notebook<a class="headerlink" href="#assignment-complete-the-below-notebook" title="Link to this heading">#</a></h2>
 <p>To do this, complete the code blocks indicated by <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">START</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> and <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">END</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> .</p>
@@ -650,20 +651,24 @@ Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
   Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
-Collecting h5py&gt;=3.6.0 (from qc-atomdb)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h5py&gt;=3.6.0 (from qc-atomdb)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
-Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
   Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
-Collecting pooch&gt;=1.8.1 (from qc-atomdb)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pooch&gt;=1.8.1 (from qc-atomdb)
   Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
 Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
 Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
@@ -673,54 +678,57 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Pyth
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/62.0 MB</span> <span class=" -Color -Color-Red">17.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.2/62.0 MB</span> <span class=" -Color -Color-Red">28.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/62.0 MB</span> <span class=" -Color -Color-Red">21.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.9/62.0 MB</span> <span class=" -Color -Color-Red">24.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.6/62.0 MB</span> <span class=" -Color -Color-Red">21.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.6/62.0 MB</span> <span class=" -Color -Color-Red">25.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/62.0 MB</span> <span class=" -Color -Color-Red">22.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">19.9/62.0 MB</span> <span class=" -Color -Color-Red">26.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">23.1/62.0 MB</span> <span class=" -Color -Color-Red">23.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">25.2/62.0 MB</span> <span class=" -Color -Color-Red">26.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">26.2/62.0 MB</span> <span class=" -Color -Color-Red">22.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">29.4/62.0 MB</span> <span class=" -Color -Color-Red">26.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.5/62.0 MB</span> <span class=" -Color -Color-Red">22.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">35.7/62.0 MB</span> <span class=" -Color -Color-Red">26.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.8/62.0 MB</span> <span class=" -Color -Color-Red">24.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.9/62.0 MB</span> <span class=" -Color -Color-Red">23.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━ <span class=" -Color -Color-Green">44.0/62.0 MB</span> <span class=" -Color -Color-Red">25.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━ <span class=" -Color -Color-Green">46.1/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ <span class=" -Color -Color-Green">49.3/62.0 MB</span> <span class=" -Color -Color-Red">25.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">51.4/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">55.3/62.0 MB</span> <span class=" -Color -Color-Red">25.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━ <span class=" -Color -Color-Green">56.6/62.0 MB</span> <span class=" -Color -Color-Red">23.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">60.8/62.0 MB</span> <span class=" -Color -Color-Red">25.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">60.8/62.0 MB</span> <span class=" -Color -Color-Red">23.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">24.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:02</span>
+?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">22.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:02</span>
-?25hDownloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">181.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">240.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
 Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
-Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
 Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
 </pre></div>
 </div>
@@ -758,7 +766,7 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">64.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">28.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -772,9 +780,7 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_gbasis-0.1.0-py3-none-any.whl.metadata (7.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
+Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
 Requirement already satisfied: importlib-resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.14.0)
 Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (2.4.4)
@@ -792,62 +798,43 @@ Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_grid-0.0.9.post1-py3-none-any.whl.metadata (4.5 kB)
-Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.4)
-Collecting pytest&gt;=8.0.0 (from qc-grid)
-  Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytest&gt;=8.0.0 (from qc-grid)
+  Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
 Requirement already satisfied: importlib_resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.14.0)
-Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
 Requirement already satisfied: packaging&gt;=22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (26.0)
-Collecting pluggy&lt;2,&gt;=1.5 (from pytest&gt;=8.0.0-&gt;qc-grid)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pluggy&lt;2,&gt;=1.5 (from pytest&gt;=8.0.0-&gt;qc-grid)
   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
 Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.20.0)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-grid) (1.3.0)
-Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/66.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/66.1 MB</span> <span class=" -Color -Color-Red">55.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.3/66.1 MB</span> <span class=" -Color -Color-Red">108.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">65.0/66.1 MB</span> <span class=" -Color -Color-Red">136.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">27.3/66.1 MB</span> <span class=" -Color -Color-Red">12.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">59.0/66.1 MB</span> <span class=" -Color -Color-Red">24.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">26.3 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">92.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading pytest-9.0.2-py3-none-any.whl (374 kB)
 </pre></div>
 </div>
@@ -872,9 +859,7 @@ Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [qc-grid]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [qc-grid]
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [qc-grid]
 ?25h
 Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.post1
 </pre></div>
@@ -883,35 +868,41 @@ Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.p
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading basis_set_exchange-0.12-py3-none-any.whl.metadata (6.7 kB)
+Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
-Collecting argcomplete (from basis_set_exchange)
-  Downloading argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argcomplete (from basis_set_exchange)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting regex (from basis_set_exchange)
   Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
-Collecting unidecode (from basis_set_exchange)
-  Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting unidecode (from basis_set_exchange)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
 Requirement already satisfied: attrs&gt;=22.2.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (26.1.0)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (2025.9.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.37.0)
 Requirement already satisfied: rpds-py&gt;=0.25.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.30.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
+Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/40.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">31.5/40.1 MB</span> <span class=" -Color -Color-Red">163.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.4/40.1 MB</span> <span class=" -Color -Color-Red">58.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">129.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">117.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
-Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/800.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.9/800.9 kB</span> <span class=" -Color -Color-Red">187.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.9/800.9 kB</span> <span class=" -Color -Color-Red">168.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
 </pre></div>
 </div>
@@ -947,7 +938,9 @@ Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [basis_set_exchange]
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [basis_set_exchange]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [basis_set_exchange]
 ?25h
 Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.3.32 unidecode-1.4.0
 </pre></div>
@@ -960,7 +953,9 @@ Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.3.32
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_BFit-0.1.2-py3-none-any.whl (561 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/561.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">64.0 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">5.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -2722,6 +2717,24 @@ SCF converged in 66 iterations.
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="huckel_theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Hückel Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documents/refs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reference Materials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
