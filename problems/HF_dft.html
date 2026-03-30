@@ -549,8 +549,9 @@
 <p>To do this, complete the code blocks indicated by <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">START</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> and <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">END</span> <span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> .</p>
 <p>The detailed steps you’ll follow are:</p>
 <ol class="arabic simple">
-<li><p>Read the theoretical background of the Hückel method and its revisions.</p></li>
-<li><p>safdafds</p></li>
+<li><p>Read the theoretical background on the self-consistent field (SCF) method.</p></li>
+<li><p>Implement the “core Hamiltonian” guess.</p></li>
+<li><p>Implement the addition of an electric field to the Hamiltonian and compute the dipole moment and polarizability.</p></li>
 </ol>
 </section>
 <section id="motivation-of-mean-field-average-potential-methods">
@@ -579,11 +580,13 @@ where \)</span>\rho(\mathbf{r})$ is the total electron density. The Hartree mode
 <section id="fermi-amaldi-model">
 <h4>Fermi-Amaldi Model<a class="headerlink" href="#fermi-amaldi-model" title="Link to this heading">#</a></h4>
 <p>The Fermi-Amaldi model is the simplest way to impose a self-interaction correction. It accounts for the fact that an <span class="math notranslate nohighlight">\(\alpha\)</span>-spin electron interacts with all of the <span class="math notranslate nohighlight">\(\beta\)</span>-spin electrons but only <span class="math notranslate nohighlight">\(N_\alpha - 1\)</span> of the <span class="math notranslate nohighlight">\(\alpha\)</span>-spin electrons, and vice versa for <span class="math notranslate nohighlight">\(\beta\)</span>-spin electrons. Therefore, the Fermi-Amaldi average potential is given by
+$<span class="math notranslate nohighlight">\(
 \begin{align*}
-w_{\text{FA};\alpha}(\mathbf{r}) &amp;= \frac{N_\alpha-1}{N_\alpha} \int \frac{\rho_\alpha(\mathbf{r}’)}{|\mathbf{r} - \mathbf{r}’|} d\mathbf{r}’ + \int \frac{\rho_\beta(\mathbf{r}’)}{|\mathbf{r} - \mathbf{r}’|} d\mathbf{r}’\
-w_{\text{FA};\beta}(\mathbf{r}) &amp;= \frac{N_\beta-1}{N_\beta} \int \frac{\rho_\beta(\mathbf{r}’)}{|\mathbf{r} - \mathbf{r}’|} d\mathbf{r}’ + \int \frac{\rho_\alpha(\mathbf{r}’)}{|\mathbf{r} - \mathbf{r}’|} d\mathbf{r}’
+w_{\text{FA};\alpha}(\mathbf{r}) &amp;= \frac{N_\alpha-1}{N_\alpha} \int \frac{\rho_\alpha(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r}' + \int \frac{\rho_\beta(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r}'\\
+w_{\text{FA};\beta}(\mathbf{r}) &amp;= \frac{N_\beta-1}{N_\beta} \int \frac{\rho_\beta(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r}' + \int \frac{\rho_\alpha(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r}'
 \end{align*}
-where <span class="math notranslate nohighlight">\(\rho_\alpha(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\rho_\beta(\mathbf{r})\)</span> are the electron densities for <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> spins, respectively.</p>
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\rho_\alpha(\mathbf{r})<span class="math notranslate nohighlight">\( and \)</span>\rho_\beta(\mathbf{r})<span class="math notranslate nohighlight">\( are the electron densities for \)</span>\alpha<span class="math notranslate nohighlight">\( and \)</span>\beta$ spins, respectively.</p>
 </section>
 </section>
 <section id="kohn-sham-density-functional-theory">
@@ -607,6 +610,7 @@ The exchange operator, accounting for the Pauli exclusion principle, only acts o
 <section id="initial-guess">
 <h2>Initial Guess<a class="headerlink" href="#initial-guess" title="Link to this heading">#</a></h2>
 <p>In the separated-atom limit, a molecule’s density is the sum of the isolated atomic densities. Even at (near) equilibrium geometries, this <em>promolecular approximation</em> is often a good starting point. When we do this, we say we are using the <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.31.1770">Harris functional</a> as an initial guess. The Harris functional can be used with any pure density functional (including the Hartree, Fermi-Amaldi, and LSDA).</p>
+<p>An easier alternative is the <em>core Hamiltonian</em> guess, which is the solution to the one-electron Schrödinger equation with only the kinetic energy and nuclear attraction terms. This guess isn’t as accurate, but it is easy to compute and for systems with weakly bound electrons, it sometimes performs better than the (raw) Harris functional guess. (An even better guess, however, is often the Harris functional guess but using the electron density of the molecular cation.)</p>
 </section>
 <section id="external-packages-needed">
 <h2>External Packages Needed<a class="headerlink" href="#external-packages-needed" title="Link to this heading">#</a></h2>
@@ -636,28 +640,30 @@ The exchange operator, accounting for the Pauli exclusion principle, only acts o
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl.metadata (7.0 kB)
-Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (2.4.3)
+Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (2.4.4)
 Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (1.17.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack&gt;=1.0.0 (from qc-atomdb)
   Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
-Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
+  Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
 Collecting h5py&gt;=3.6.0 (from qc-atomdb)
-  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
   Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
 Collecting pooch&gt;=1.8.1 (from qc-atomdb)
   Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
 Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.0)
-Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
 Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
@@ -667,57 +673,51 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Pyth
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.2/62.0 MB</span> <span class=" -Color -Color-Red">20.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/62.0 MB</span> <span class=" -Color -Color-Red">17.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.3/62.0 MB</span> <span class=" -Color -Color-Red">20.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/62.0 MB</span> <span class=" -Color -Color-Red">21.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.5/62.0 MB</span> <span class=" -Color -Color-Red">18.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.6/62.0 MB</span> <span class=" -Color -Color-Red">21.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.7/62.0 MB</span> <span class=" -Color -Color-Red">18.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/62.0 MB</span> <span class=" -Color -Color-Red">22.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.8/62.0 MB</span> <span class=" -Color -Color-Red">18.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">23.1/62.0 MB</span> <span class=" -Color -Color-Red">23.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.0/62.0 MB</span> <span class=" -Color -Color-Red">18.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">26.2/62.0 MB</span> <span class=" -Color -Color-Red">22.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">26.2/62.0 MB</span> <span class=" -Color -Color-Red">19.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.5/62.0 MB</span> <span class=" -Color -Color-Red">22.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.4/62.0 MB</span> <span class=" -Color -Color-Red">19.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">35.7/62.0 MB</span> <span class=" -Color -Color-Red">19.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.9/62.0 MB</span> <span class=" -Color -Color-Red">23.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.8/62.0 MB</span> <span class=" -Color -Color-Red">20.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━ <span class=" -Color -Color-Green">46.1/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.9/62.0 MB</span> <span class=" -Color -Color-Red">19.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">51.4/62.0 MB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━ <span class=" -Color -Color-Green">46.1/62.0 MB</span> <span class=" -Color -Color-Red">19.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━ <span class=" -Color -Color-Green">56.6/62.0 MB</span> <span class=" -Color -Color-Red">23.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">51.4/62.0 MB</span> <span class=" -Color -Color-Red">19.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">60.8/62.0 MB</span> <span class=" -Color -Color-Red">23.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">55.6/62.0 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">60.8/62.0 MB</span> <span class=" -Color -Color-Red">20.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">22.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:02</span>
 ?25hDownloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">164.0 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">240.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
 Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
 Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
@@ -731,7 +731,7 @@ Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [h5py]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [h5py]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3/6</span> [pooch]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
@@ -749,14 +749,16 @@ Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpa
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_iodata-1.0.1-py3-none-any.whl.metadata (4.4 kB)
-Requirement already satisfied: numpy&gt;=1.26.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (2.4.3)
+Requirement already satisfied: numpy&gt;=1.26.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (2.4.4)
 Requirement already satisfied: scipy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (1.17.1)
 Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (26.1.0)
-Downloading qc_iodata-1.0.1-py3-none-any.whl (3.4 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_iodata-1.0.1-py3-none-any.whl (3.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">104.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">64.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -770,10 +772,12 @@ Downloading qc_iodata-1.0.1-py3-none-any.whl (3.4 MB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_gbasis-0.1.0-py3-none-any.whl.metadata (7.4 kB)
-Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
 Requirement already satisfied: importlib-resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.14.0)
-Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (2.4.3)
+Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (2.4.4)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-gbasis) (1.3.0)
 Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
@@ -788,12 +792,12 @@ Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_grid-0.0.9.post1-py3-none-any.whl.metadata (4.5 kB)
-Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.3)
+Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.4)
+Collecting pytest&gt;=8.0.0 (from qc-grid)
+  Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytest&gt;=8.0.0 (from qc-grid)
-  Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
-Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
 Requirement already satisfied: importlib_resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.14.0)
 Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
@@ -801,70 +805,54 @@ Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
 Requirement already satisfied: packaging&gt;=22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (26.0)
 Collecting pluggy&lt;2,&gt;=1.5 (from pytest&gt;=8.0.0-&gt;qc-grid)
   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.19.2)
+Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.20.0)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-grid) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
+Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/66.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/66.1 MB</span> <span class=" -Color -Color-Red">64.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.4/66.1 MB</span> <span class=" -Color -Color-Red">25.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.6/66.1 MB</span> <span class=" -Color -Color-Red">24.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">15.7/66.1 MB</span> <span class=" -Color -Color-Red">19.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">18.9/66.1 MB</span> <span class=" -Color -Color-Red">20.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.0/66.1 MB</span> <span class=" -Color -Color-Red">19.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">27.3/66.1 MB</span> <span class=" -Color -Color-Red">19.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.4/66.1 MB</span> <span class=" -Color -Color-Red">19.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/66.1 MB</span> <span class=" -Color -Color-Red">20.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.8/66.1 MB</span> <span class=" -Color -Color-Red">19.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/66.1 MB</span> <span class=" -Color -Color-Red">125.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ <span class=" -Color -Color-Green">47.2/66.1 MB</span> <span class=" -Color -Color-Red">21.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">27.3/66.1 MB</span> <span class=" -Color -Color-Red">12.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━ <span class=" -Color -Color-Green">49.3/66.1 MB</span> <span class=" -Color -Color-Red">21.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">59.0/66.1 MB</span> <span class=" -Color -Color-Red">24.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">51.4/66.1 MB</span> <span class=" -Color -Color-Red">19.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━ <span class=" -Color -Color-Green">56.6/66.1 MB</span> <span class=" -Color -Color-Red">20.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━ <span class=" -Color -Color-Green">59.8/66.1 MB</span> <span class=" -Color -Color-Red">20.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">20.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">20.3 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">26.3 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:02</span>
 ?25hDownloading pytest-9.0.2-py3-none-any.whl (374 kB)
-Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pluggy, iniconfig, pytest, qc-grid
@@ -895,35 +883,35 @@ Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.p
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading basis_set_exchange-0.12-py3-none-any.whl.metadata (6.7 kB)
-Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
 Collecting argcomplete (from basis_set_exchange)
   Downloading argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting regex (from basis_set_exchange)
-  Downloading regex-2026.2.28-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+  Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
 Collecting unidecode (from basis_set_exchange)
   Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=22.2.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (26.1.0)
+Requirement already satisfied: attrs&gt;=22.2.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (26.1.0)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (2025.9.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.37.0)
 Requirement already satisfied: rpds-py&gt;=0.25.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.30.0)
-Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/40.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">33.6/40.1 MB</span> <span class=" -Color -Color-Red">175.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">31.5/40.1 MB</span> <span class=" -Color -Color-Red">163.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">149.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">129.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading regex-2026.2.28-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/801.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">801.5/801.5 kB</span> <span class=" -Color -Color-Red">174.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/800.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.9/800.9 kB</span> <span class=" -Color -Color-Red">187.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
 </pre></div>
 </div>
@@ -934,7 +922,7 @@ Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0/4</span> [unidecode]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1/4</span> [regex]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/4</span> [argcomplete]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [basis_set_exchange]
@@ -958,20 +946,21 @@ Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [basis_set_exchange]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [basis_set_exchange]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [basis_set_exchange]
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [basis_set_exchange]
 ?25h
-Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.2.28 unidecode-1.4.0
+Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.3.32 unidecode-1.4.0
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-bfit
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_BFit-0.1.2-py3-none-any.whl.metadata (49 kB)
-Downloading qc_BFit-0.1.2-py3-none-any.whl (561 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/561.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">54.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_BFit-0.1.2-py3-none-any.whl (561 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/561.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">64.0 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1993,82 +1982,6 @@ where
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/theochem/BFit/master/bfit/data/kl_slsqp_results.npz&quot;</span>
-<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;kl_slsqp_results.npz&quot;</span><span class="p">)</span>
-
-<span class="n">results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kl_slsqp_results.npz&quot;</span><span class="p">)</span>
-<span class="n">num_s</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;c_num_s&quot;</span><span class="p">]</span>   <span class="c1"># Number of s-type Gaussian functions</span>
-<span class="n">num_p</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;c_num_p&quot;</span><span class="p">]</span>   <span class="c1"># Number of p-type Gaussian functions</span>
-<span class="n">coefficients</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;c_coeffs&quot;</span><span class="p">]</span>
-<span class="n">exponents</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;c_exps&quot;</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s-type exponents&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">exponents</span><span class="p">[:</span><span class="n">num_s</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-type exponents&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">exponents</span><span class="p">[</span><span class="n">num_s</span><span class="p">:])</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/theochem/BFit/master/bfit/data/kl_slsqp_results.json&quot;</span>
-<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;kl_slsqp_results.json&quot;</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;kl_slsqp_results.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="n">data_element</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">element</span><span class="p">]</span>
-
-    <span class="n">num_s</span> <span class="o">=</span> <span class="n">data_element</span><span class="p">[</span><span class="s2">&quot;num_s&quot;</span><span class="p">]</span>
-    <span class="n">num_p</span> <span class="o">=</span> <span class="n">data_element</span><span class="p">[</span><span class="s2">&quot;num_p&quot;</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">num_s</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">num_p</span><span class="p">)</span>
-    <span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_element</span><span class="p">[</span><span class="s2">&quot;coeffs&quot;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
-    <span class="n">exponents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_element</span><span class="p">[</span><span class="s2">&quot;exps&quot;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">exponents</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s-type exponents
-[7.35242869e+04 8.38017907e+03 8.26161416e+03 8.24910214e+03
- 8.23646137e+03 1.08339469e+03 1.06537727e+03 1.05659703e+03
- 1.03668906e+03 5.35028042e+02 2.65307946e+02 1.32261772e+02
- 7.44672471e+01 4.31514587e+01 2.63777735e+01 1.71100157e+01
- 1.10842668e+01 3.36238386e+00 1.22294935e+00 7.89277295e-01
- 5.56940810e-01 3.99590381e-01 2.02398282e-01]
-p-type exponents
-[5.70493798e+02 3.12349589e+02 1.69947856e+02 9.47671697e+01
- 5.41373204e+01 3.20080709e+01 1.90911747e+01 1.17175017e+01
- 2.48946826e+00 1.68367068e+00 1.07961545e+00 6.47321427e-01
- 3.85643338e-01 1.40389959e-01 8.58851069e-02]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
-15
-[5.93769224e-07 1.00000002e-12 1.00000000e-12 1.00000000e-12
- 8.30768752e-05 5.40011165e-03 1.00000000e-12 1.00000068e-12
- 1.00000000e-12 2.65986323e-02 1.00000004e-12 1.00000556e-12
- 2.25697411e-02 1.33098108e-01 1.53452838e-01 3.48473458e-01
- 3.48732357e-02 7.38274377e-02 2.24213552e-01 3.97999907e-01
- 4.86754560e-01 4.43611367e-01 4.03052254e-01 1.61541240e-02
- 5.88993806e-02 1.07471089e-01 1.62735415e-01 2.03267131e-01
- 2.27758869e-01 2.06390500e-01 1.93075708e-01 2.29863910e-01
- 3.72785839e-01 6.01689282e-01 5.32135672e-01 3.15231732e-01
- 1.79027973e-02 6.33124682e-04]
-[7.35242869e+04 8.38017907e+03 8.26161416e+03 8.24910214e+03
- 8.23646137e+03 1.08339469e+03 1.06537727e+03 1.05659703e+03
- 1.03668906e+03 5.35028042e+02 2.65307946e+02 1.32261772e+02
- 7.44672471e+01 4.31514587e+01 2.63777735e+01 1.71100157e+01
- 1.10842668e+01 3.36238386e+00 1.22294935e+00 7.89277295e-01
- 5.56940810e-01 3.99590381e-01 2.02398282e-01 5.70493798e+02
- 3.12349589e+02 1.69947856e+02 9.47671697e+01 5.41373204e+01
- 3.20080709e+01 1.90911747e+01 1.17175017e+01 2.48946826e+00
- 1.68367068e+00 1.07961545e+00 6.47321427e-01 3.85643338e-01
- 1.40389959e-01 8.58851069e-02]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate the Coulomb potential of a Gaussian and r^2 times a Gaussian (on a grid)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">coulomb_gaussian_s</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
@@ -2149,7 +2062,10 @@ p-type exponents
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">vjp</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the LSDA Harris-functional guess for the exchange-correlation potential matrix.</span>
 
 <span class="sd">    The LSDA Harris-functional guess is computed by evaluating the Fock matrix using the promolecular density</span>
@@ -2179,7 +2095,7 @@ p-type exponents
 
     <span class="c1"># Compute the promolecular density on the grid.</span>
     <span class="c1"># evaluate the promolecular density on the grid</span>
-    <span class="n">promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="n">promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">)</span>
     <span class="n">promol_dens</span> <span class="o">=</span> <span class="n">promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Get spin-densities.</span>
@@ -2194,15 +2110,15 @@ p-type exponents
     <span class="n">promol_dens_b</span> <span class="o">=</span> <span class="n">promol_dens</span> <span class="o">*</span> <span class="n">n_b</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_total</span><span class="p">)</span>
 
     <span class="c1"># Compute the LSDA exchange-correlation potential on the grid.</span>
-    <span class="n">vxc_a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">promol_dens_a</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># LSDA exchange potential for alpha spin</span>
+    <span class="n">vxc_a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">promol_dens_a</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># LSDA exchange potential for alpha spin</span>
     <span class="n">vxc_b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">promol_dens_b</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># LSDA exchange potential for beta spin</span>
 
     <span class="c1"># Evaluate the exchange-correlation potential matrix elements in the AO basis.</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="n">evaluate_basis</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
     <span class="c1"># AO matrices for alpha and beta</span>
     <span class="n">Fxc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_a</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_b</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_a</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_b</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">Fxc</span>
 
@@ -2224,9 +2140,8 @@ p-type exponents
 <span class="sd">        Number of electrons in the molecule (of each spin channel).</span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    hartree_pot : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
-<span class="sd">        Hartree potential matrix elements. The first component of the last dimension</span>
-<span class="sd">        corresponds to the alpha spin, and the second component corresponds to the beta spin.</span>
+<span class="sd">    hartree_pot : numpy.ndarray[float, shape=(n_ao, n_ao)]</span>
+<span class="sd">        Hartree potential matrix elements.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n_a</span><span class="p">,</span> <span class="n">n_b</span> <span class="o">=</span> <span class="n">n_electrons</span>
     <span class="n">n_total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">atnums</span><span class="p">)</span>
@@ -2261,6 +2176,8 @@ p-type exponents
 
         <span class="c1"># Evaluate the Coulomb potential from the atom at each grid point using the BFit model.</span>
         <span class="c1"># Break the coefficients and exponents into s-type and p-type contributions.</span>
+        <span class="c1"># Our code uses unnormalized Gaussians but BFit produces normalized Gaussians, so we need to</span>
+        <span class="c1"># multiply the coefficients by the normalization factors (cf. eqs. (22) and (23)).</span>
         <span class="n">c_s</span> <span class="o">=</span> <span class="n">coefficients</span><span class="p">[:</span><span class="n">num_s</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">exponents</span><span class="p">[:</span><span class="n">num_s</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">a_s</span> <span class="o">=</span> <span class="n">exponents</span><span class="p">[:</span><span class="n">num_s</span><span class="p">]</span>
         <span class="n">c_p</span> <span class="o">=</span> <span class="n">coefficients</span><span class="p">[</span><span class="n">num_s</span><span class="p">:</span><span class="n">num_s</span><span class="o">+</span><span class="n">num_p</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span><span class="n">exponents</span><span class="p">[</span><span class="n">num_s</span><span class="p">:</span><span class="n">num_s</span><span class="o">+</span><span class="n">num_p</span><span class="p">]</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -2269,12 +2186,10 @@ p-type exponents
 
     <span class="c1"># Evaluate the Hartree potential matrix elements in the AO basis.</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="n">evaluate_basis</span><span class="p">(</span><span class="n">ao_basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-    <span class="n">vj_a</span> <span class="o">=</span> <span class="n">hartree_pot</span> <span class="o">*</span> <span class="n">n_a</span> <span class="o">/</span> <span class="n">n_total</span>  <span class="c1"># Scale the Hartree potential by the fraction of alpha electrons.</span>
-    <span class="n">vj_b</span> <span class="o">=</span> <span class="n">hartree_pot</span> <span class="o">*</span> <span class="n">n_b</span> <span class="o">/</span> <span class="n">n_total</span>  <span class="c1"># Scale the Hartree potential by the fraction of beta electrons.</span>
+    <span class="n">vj</span> <span class="o">=</span> <span class="n">hartree_pot</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_a</span> <span class="o">+</span><span class="n">n_b</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_total</span>  <span class="c1"># Scale the Hartree potential if the molecule is not neutral.</span>
     <span class="c1"># AO matrices for alpha and beta</span>
-    <span class="n">fj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">fj</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vj_a</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-    <span class="n">fj</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vj_b</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="n">fj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">fj</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vj</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fj</span>
 
@@ -2308,20 +2223,17 @@ p-type exponents
     <span class="n">kin_energy</span> <span class="o">=</span> <span class="n">kinetic_energy_integral</span><span class="p">(</span><span class="n">ao_basis</span><span class="p">)</span>
     <span class="n">nuc_attraction</span> <span class="o">=</span> <span class="n">nuclear_electron_attraction_integral</span><span class="p">(</span><span class="n">ao_basis</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">atnums</span><span class="p">)</span>
     <span class="c1"># Assign the hartree potentials for a and b based on the last axis of compute_harris_hartree.</span>
-    <span class="n">hartree_a</span> <span class="o">=</span> <span class="n">compute_harris_hartree</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">hartree_b</span> <span class="o">=</span> <span class="n">compute_harris_hartree</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">vj</span> <span class="o">=</span> <span class="n">compute_harris_hartree</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
 
     <span class="n">fock</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">kin_energy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">kin_energy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">kin_energy</span> <span class="o">+</span> <span class="n">nuc_attraction</span> <span class="o">+</span> <span class="n">hartree_a</span> <span class="o">+</span> <span class="n">hartree_b</span>
+    <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">kin_energy</span> <span class="o">+</span> <span class="n">nuc_attraction</span> <span class="o">+</span> <span class="n">vj</span>
     <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="n">guess_type</span> <span class="o">==</span> <span class="s2">&quot;lsda&quot;</span><span class="p">:</span>
         <span class="n">fock</span> <span class="o">+=</span> <span class="n">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">guess_type</span> <span class="o">==</span> <span class="s2">&quot;fermi-amaldi&quot;</span><span class="p">:</span>
-        <span class="n">n_a</span><span class="p">,</span> <span class="n">n_b</span> <span class="o">=</span> <span class="n">n_electrons</span>
-        <span class="n">n_total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">atnums</span><span class="p">)</span>
-        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_a</span><span class="p">)</span> <span class="o">*</span> <span class="n">hartree_a</span>
-        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_b</span><span class="p">)</span> <span class="o">*</span> <span class="n">hartree_b</span>
+        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_a</span><span class="p">)</span> <span class="o">*</span> <span class="n">vj</span>
+        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_b</span><span class="p">)</span> <span class="o">*</span> <span class="n">vj</span>
     <span class="c1">#make sure there is no weird case where the user choose a forbidden option</span>
     <span class="k">elif</span> <span class="n">guess_type</span> <span class="o">!=</span> <span class="s2">&quot;hartree&quot;</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid guess type: </span><span class="si">{</span><span class="n">guess_type</span><span class="si">}</span><span class="s2">. Must be one of &#39;fermi-amaldi&#39;, &#39;lsda&#39;, or &#39;hartree&#39;.&quot;</span><span class="p">)</span>
@@ -2335,6 +2247,7 @@ p-type exponents
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve for the eigenvalues and eigenvectors of the Harris guess Fock matrix to get the initial guess density matrix.</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">phi</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">compute_overlap</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
 <span class="n">n_electrons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>  <span class="c1"># Number of electrons in the molecule (of each spin channel).</span>
@@ -2342,30 +2255,103 @@ p-type exponents
 <span class="n">eps_a</span><span class="p">,</span> <span class="n">phi_a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span>  <span class="c1"># Solve the generalized eigenvalue problem for the alpha spin channel</span>
 <span class="n">eps_b</span><span class="p">,</span> <span class="n">phi_b</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span>  <span class="c1"># Solve the generalized eigenvalue problem for the beta spin channel</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">eps_a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eps_b</span><span class="p">)</span>
+<span class="c1"># Put the eigenvalues and MOs into a 2-d array for easier indexing.</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">eps_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">eps</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">eps_a</span>
+<span class="n">eps</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eps_b</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">phi</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi_a</span>
+<span class="n">phi</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-12.08075411  -0.46871256  -0.23367214   0.41662724   0.54818897
-   0.94981463   1.03096596]
-[-12.08075411  -0.46871256  -0.23367214   0.41662724   0.54818897
-   0.94981463   1.03096596]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 5 number of electrons in each spin channel
+0.2 0.2 number of electrons in each spin channel
+(7, 7, 2)
+[[-14.3825598  -14.3825598 ]
+ [ -1.12906637  -1.12906637]
+ [ -0.8205876   -0.8205876 ]
+ [ -0.44593379  -0.44593379]
+ [ -0.34309427  -0.34309427]
+ [  0.11801745   0.11801745]
+ [  0.19562679   0.19562679]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate Fermi-Amaldi Harris guess to self-consistency by recomputing the Hartree potential from the density of the previous iteration,</span>
-<span class="c1"># and then recomputing the Fock matrix and solving for new eigenvalues and eigenvectors until convergence.</span>
-<span class="n">dm1_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi_a</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">phi_a</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">dm1_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi_b</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">phi_b</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">N</span>
 
-<span class="n">h_core</span> <span class="o">=</span> <span class="n">kinetic_energy_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span> <span class="o">+</span> <span class="n">nuclear_electron_attraction_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">get_eri_ao</span><span class="p">(</span><span class="n">basis</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the density matrix from the eigenvalues and eigenvectors of the Fock matrix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    eps : numpy.ndarray[float, shape=(n_ao, 2)]</span>
+<span class="sd">        Eigenvalues of the Fock matrix.</span>
+<span class="sd">    phi : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
+<span class="sd">        Eigenvectors of the Fock matrix.</span>
+<span class="sd">    n_electrons : numpy.ndarray[int, shape=(2,)]</span>
+<span class="sd">        Number of electrons in the molecule (of a given spin channel).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    density_matrix : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
+<span class="sd">        Density matrix in the AO basis.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_a</span><span class="p">,</span> <span class="n">n_b</span> <span class="o">=</span> <span class="n">n_electrons</span>
+    <span class="c1"># Compute the density matrix as D = sum_i |phi_i&gt;&lt;phi_i| where i runs over the occupied orbitals.</span>
+    <span class="n">density_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_a</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_a</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_b</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">phi</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_b</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">density_matrix</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_normalization</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">overlap</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Check the normalization of the density matrix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    density_matrix : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
+<span class="sd">        Density matrix in the AO basis.</span>
+<span class="sd">    n_electrons : numpy.ndarray[int, shape=(2,)]</span>
+<span class="sd">        Number of electrons in the molecule (of each spin channel).</span>
+<span class="sd">    overlap : numpy.ndarray[float, shape=(n_ao, n_ao)]</span>
+<span class="sd">        Overlap matrix in the AO basis.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    is_normalized : bool</span>
+<span class="sd">        True if the density matrix is normalized, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_a</span><span class="p">,</span> <span class="n">n_b</span> <span class="o">=</span> <span class="n">n_electrons</span>
+    <span class="c1"># The number of electrons can be computed as N = Tr(D S) where D is the density matrix and S is the overlap matrix.</span>
+    <span class="n">n_a_computed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="n">overlap</span><span class="p">)</span>
+    <span class="n">n_b_computed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="n">overlap</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n_a_computed</span><span class="p">,</span> <span class="n">n_b_computed</span><span class="p">,</span> <span class="s2">&quot;number of electrons in each spin channel computed from the density matrix&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">n_a_computed</span><span class="p">,</span> <span class="n">n_a</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">n_b_computed</span><span class="p">,</span> <span class="n">n_b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">check_normalization</span><span class="p">(</span><span class="n">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">),</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">s</span> <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_eri_ao</span><span class="p">(</span><span class="n">basis</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return AO two-electron integrals in chemist notation:</span>
 <span class="sd">        eri[mu, nu, lam, sig] = (mu nu | lam sig)</span>
@@ -2417,7 +2403,7 @@ p-type exponents
     <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ls,mlns-&gt;mn&quot;</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">D_a</span><span class="p">,</span> <span class="n">D_b</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">calc_type</span> <span class="o">=</span> <span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">overlap</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span> <span class="o">=</span> <span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Build the AO Fock matrix for a given density matrix and ERI tensor.</span>
 
@@ -2425,12 +2411,14 @@ p-type exponents
 <span class="sd">    ----------</span>
 <span class="sd">    h_core : (nao, nao) ndarray</span>
 <span class="sd">        AO core Hamiltonian matrix.</span>
-<span class="sd">    D_a : (nao, nao) ndarray</span>
-<span class="sd">        AO alpha density matrix.</span>
-<span class="sd">    D_b : (nao, nao) ndarray</span>
-<span class="sd">        AO beta density matrix.</span>
+<span class="sd">    density_matrix : (nao, nao, 2) ndarray</span>
+<span class="sd">        AO density matrix for both spin channels.</span>
 <span class="sd">    eri : (nao, nao, nao, nao) ndarray</span>
 <span class="sd">        AO ERI tensor in chemist notation.</span>
+<span class="sd">    overlap : (nao, nao) ndarray</span>
+<span class="sd">        AO overlap matrix.</span>
+<span class="sd">    n_electrons : array-like of shape (2,)</span>
+<span class="sd">        Number of electrons in the molecule (of each spin channel).</span>
 <span class="sd">    calc_type : str</span>
 <span class="sd">        Type of calculation to perform. Choices are &#39;fermi-amaldi&#39;, &#39;lsda&#39;, and &#39;hartree&#39;.</span>
 
@@ -2441,10 +2429,15 @@ p-type exponents
 <span class="sd">    F_b : (nao, nao) ndarray</span>
 <span class="sd">        AO Fock matrix for the beta spin channel.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">D_a</span> <span class="o">=</span> <span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">D_b</span> <span class="o">=</span> <span class="n">density_matrix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">J_a</span> <span class="o">=</span> <span class="n">build_j_ao</span><span class="p">(</span><span class="n">D_a</span><span class="p">,</span> <span class="n">eri</span><span class="p">)</span>
     <span class="n">J_b</span> <span class="o">=</span> <span class="n">build_j_ao</span><span class="p">(</span><span class="n">D_b</span><span class="p">,</span> <span class="n">eri</span><span class="p">)</span>
     <span class="n">K_a</span> <span class="o">=</span> <span class="n">build_k_ao</span><span class="p">(</span><span class="n">D_a</span><span class="p">,</span> <span class="n">eri</span><span class="p">)</span>
     <span class="n">K_b</span> <span class="o">=</span> <span class="n">build_k_ao</span><span class="p">(</span><span class="n">D_b</span><span class="p">,</span> <span class="n">eri</span><span class="p">)</span>
+
+    <span class="c1"># For consistency check that the number of electrons targetted is consistent with the density matrix given.</span>
+    <span class="n">check_normalization</span><span class="p">(</span><span class="n">density_matrix</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">overlap</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">calc_type</span> <span class="o">==</span> <span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">:</span>
         <span class="n">F_a</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">J_a</span>
@@ -2459,7 +2452,7 @@ p-type exponents
 
     <span class="k">return</span> <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">D_a</span><span class="p">,</span> <span class="n">D_b</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;hartree&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Perform the SCF cycle to self-consistency.</span>
 
@@ -2467,10 +2460,8 @@ p-type exponents
 <span class="sd">    ----------</span>
 <span class="sd">    h_core : (nao, nao) ndarray</span>
 <span class="sd">        AO core Hamiltonian matrix.</span>
-<span class="sd">    D_a : (nao, nao) ndarray</span>
-<span class="sd">        Initial AO alpha density matrix.</span>
-<span class="sd">    D_b : (nao, nao) ndarray</span>
-<span class="sd">        Initial AO beta density matrix.</span>
+<span class="sd">    density_matrix : (nao, nao, 2) ndarray</span>
+<span class="sd">        Initial AO density matrix for both spin channels.</span>
 <span class="sd">    eri : (nao, nao, nao, nao) ndarray</span>
 <span class="sd">        AO ERI tensor in chemist notation.</span>
 <span class="sd">    s : (nao, nao) ndarray</span>
@@ -2486,35 +2477,207 @@ p-type exponents
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    D_a : (nao, nao) ndarray</span>
-<span class="sd">        Final AO alpha density matrix at convergence.</span>
-<span class="sd">    D_b : (nao, nao) ndarray</span>
-<span class="sd">        Final AO beta density matrix at convergence.</span>
-<span class="sd">    eps_a : 1D ndarray</span>
-<span class="sd">        Orbital energies for the alpha spin channel at convergence.</span>
-<span class="sd">    eps_b : 1D ndarray</span>
-<span class="sd">        Orbital energies for the beta spin channel at convergence.</span>
+<span class="sd">    eps : (n_ao, 2) ndarray</span>
+<span class="sd">        Eigenvalues of the final Fock matrix.</span>
+<span class="sd">    phi : (n_ao, n_ao, 2) ndarray</span>
+<span class="sd">        Eigenvectors of the final Fock matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nao</span> <span class="o">=</span> <span class="n">h_core</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
-        <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span> <span class="o">=</span> <span class="n">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">D_a</span><span class="p">,</span> <span class="n">D_b</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">calc_type</span><span class="p">)</span>
+        <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span> <span class="o">=</span> <span class="n">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="p">)</span>
         <span class="n">eps_a</span><span class="p">,</span> <span class="n">phi_a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">F_a</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
         <span class="n">eps_b</span><span class="p">,</span> <span class="n">phi_b</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">F_b</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 
-        <span class="n">D_a_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi_a</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">phi_a</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-        <span class="n">D_b_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;pi,qi-&gt;pq&quot;</span><span class="p">,</span> <span class="n">phi_b</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">phi_b</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_electrons</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="c1"># Put the eigenvalues and MOs into a 2-d array for easier indexing.</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">eps_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">eps</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">eps_a</span>
+        <span class="n">eps</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eps_b</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi_a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">phi</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi_a</span>
+        <span class="n">phi</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi_b</span>
+
+        <span class="c1"># Compute the new density matrix.</span>
+        <span class="n">density_matrix_new</span> <span class="o">=</span> <span class="n">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
 
         <span class="c1"># Check for convergence</span>
-        <span class="n">delta_D_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">D_a_new</span> <span class="o">-</span> <span class="n">D_a</span><span class="p">)</span>
-        <span class="n">delta_D_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">D_b_new</span> <span class="o">-</span> <span class="n">D_b</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">delta_D_a</span> <span class="o">&lt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">delta_D_b</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">delta_dm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">density_matrix</span> <span class="o">-</span> <span class="n">density_matrix_new</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="n">iteration</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: delta_dm = </span><span class="si">{</span><span class="n">delta_dm</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">delta_dm</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SCF converged in </span><span class="si">{</span><span class="n">iteration</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> iterations.&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">D_a_new</span><span class="p">,</span> <span class="n">D_b_new</span><span class="p">,</span> <span class="n">eps_a</span><span class="p">,</span> <span class="n">eps_b</span>
+            <span class="k">return</span> <span class="n">eps</span><span class="p">,</span> <span class="n">phi</span>
 
-        <span class="n">D_a</span> <span class="o">=</span> <span class="n">D_a_new</span>
-        <span class="n">D_b</span> <span class="o">=</span> <span class="n">D_b_new</span>
+        <span class="n">density_matrix</span> <span class="o">=</span> <span class="n">density_matrix_new</span> <span class="o">*</span><span class="mf">0.1</span> <span class="o">+</span> <span class="n">density_matrix</span> <span class="o">*</span><span class="mf">0.9</span>  <span class="c1"># Simple damping to help convergence.</span>
 
     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;SCF did not converge within the maximum number of iterations.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_core</span> <span class="o">=</span> <span class="n">kinetic_energy_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span> <span class="o">+</span> <span class="n">nuclear_electron_attraction_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">)</span>
+<span class="n">eri</span> <span class="o">=</span> <span class="n">get_eri_ao</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">eps</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">),</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 1: delta_dm = 8.721948e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 2: delta_dm = 6.968417e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 3: delta_dm = 5.535624e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 4: delta_dm = 4.376849e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 5: delta_dm = 3.447615e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+Iteration 6: delta_dm = 2.707680e-01
+4.999999999999999 4.999999999999999 number of electrons in each spin channel computed from the density matrix
+Iteration 7: delta_dm = 2.121951e-01
+4.999999999999999 4.999999999999999 number of electrons in each spin channel computed from the density matrix
+Iteration 8: delta_dm = 1.660635e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 9: delta_dm = 1.298940e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 10: delta_dm = 1.016537e-01
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 11: delta_dm = 7.969379e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 12: delta_dm = 6.268727e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 13: delta_dm = 4.957182e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 14: delta_dm = 3.949935e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 15: delta_dm = 3.179343e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 16: delta_dm = 2.591426e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 17: delta_dm = 2.143127e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 18: delta_dm = 1.800230e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 19: delta_dm = 1.535821e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+Iteration 20: delta_dm = 1.329112e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 21: delta_dm = 1.164426e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 22: delta_dm = 1.030264e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 23: delta_dm = 9.184056e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 24: delta_dm = 8.231012e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 25: delta_dm = 7.403846e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 26: delta_dm = 6.675343e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 27: delta_dm = 6.026734e-03
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+Iteration 28: delta_dm = 5.444860e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 29: delta_dm = 4.920244e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 30: delta_dm = 4.445804e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 31: delta_dm = 4.016019e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 32: delta_dm = 3.626401e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 33: delta_dm = 3.273159e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 34: delta_dm = 2.952990e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 35: delta_dm = 2.662948e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 36: delta_dm = 2.400372e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 37: delta_dm = 2.162826e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 38: delta_dm = 1.948080e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 39: delta_dm = 1.754078e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 40: delta_dm = 1.578931e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 41: delta_dm = 1.420901e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 42: delta_dm = 1.278395e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 43: delta_dm = 1.149949e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 44: delta_dm = 1.034229e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 45: delta_dm = 9.300134e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 46: delta_dm = 8.361914e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 47: delta_dm = 7.517517e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 48: delta_dm = 6.757761e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 49: delta_dm = 6.074316e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 50: delta_dm = 5.459638e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 51: delta_dm = 4.906902e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 52: delta_dm = 4.409936e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 53: delta_dm = 3.963169e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 54: delta_dm = 3.561570e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 55: delta_dm = 3.200606e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 56: delta_dm = 2.876186e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 57: delta_dm = 2.584629e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 58: delta_dm = 2.322619e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+Iteration 59: delta_dm = 2.087168e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+Iteration 60: delta_dm = 1.875593e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 61: delta_dm = 1.685475e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 62: delta_dm = 1.514641e-04
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+Iteration 63: delta_dm = 1.361136e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 64: delta_dm = 1.223204e-04
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+Iteration 65: delta_dm = 1.099264e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+Iteration 66: delta_dm = 9.878971e-05
+SCF converged in 66 iterations.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function to solve the self-consistent field equations using the Harris-functional guess.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_scf</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">guess_type</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+    <span class="sa">r</span><span class="s2">&quot;&quot;&quot;Solve the self-consistent field equations using the Harris-functional guess.</span>
+
+<span class="s2">    Parameters</span>
+<span class="s2">    ----------</span>
+<span class="s2">    atnums : list of int</span>
+<span class="s2">        Atomic numbers of the atoms in the molecule.</span>
+<span class="s2">    atcoords : numpy.ndarray[float, shape=(n_atoms, 3)]</span>
+<span class="s2">        Coordinates of the atoms in the molecule.</span>
+<span class="s2">    ao_basis : list of `GeneralizedContractionShell` instances</span>
+<span class="s2">        Atomic orbital basis set for the molecule.</span>
+<span class="s2">    n_electrons : numpy.ndarray[int, shape=(2,)]</span>
+<span class="s2">        Number of electrons in the molecule (of each spin channel).</span>
+<span class="s2">    guess_type : {&quot;fermi-amaldi&quot;, &quot;lsda&quot;, &quot;hartree&quot;}</span>
+<span class="s2">        Type of Harris-functional guess to compute. Choices are LSDA (exchange-only), Fermi-Amaldi, and Hartree.</span>
 </pre></div>
 </div>
 </div>
