@@ -121,6 +121,9 @@ parts:
     - file: problems/huckel_theory.ipynb
       title: "Hückel Theory"
 
+    - file: problems/HF_dft.ipynb
+      title: "Hartree-Fock and DFT"
+
   - caption: Additional resources
     chapters:
     - file: documents/refs.md
