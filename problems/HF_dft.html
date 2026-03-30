@@ -561,7 +561,7 @@
 $<span class="math notranslate nohighlight">\(\hat{H} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 - \sum_{i=1}^N \sum_{A=1}^P \frac{Z_A}{|\mathbf{r}_i - \mathbf{R}_A|} + \sum_{i&lt;j} \frac{1}{|\mathbf{r}_i - \mathbf{r}_j|}\)</span>$</p>
 <p>This Hamiltonian cannot be solved by separation of variables because the electrons are coupled through the electron-electron repulsion term. Mean-field, or average potential, approximations decouple electrons by treating the effect of all other electrons on a given electron as an average potential (operator), <span class="math notranslate nohighlight">\(\hat{w}(\mathbf{r})\)</span>. (I.e., individual electrons feel only the effects of the “cloud” of other electrons.) With this revision, the electronic Hamiltonian becomes,
 $<span class="math notranslate nohighlight">\(\hat{H}_{\text{avg}} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 + \sum_{i=1}^N v(\mathbf{r}_i)  + \sum_{i=1}^N \hat{w}(\mathbf{r}_i)\)</span><span class="math notranslate nohighlight">\(
-where the external potential is defined as 
+where the external potential is defined as
 \)</span><span class="math notranslate nohighlight">\(v(\mathbf{r}) = -\sum_{A=1}^P \frac{Z_A}{|\mathbf{r} - \mathbf{R}_A|}\)</span>$</p>
 <p>The electronic Schrödinger equation for the mean-field Hamiltonian is
 $<span class="math notranslate nohighlight">\(\hat{H}_{\text{avg}} \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N) = E \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)\)</span><span class="math notranslate nohighlight">\(
@@ -603,7 +603,7 @@ $<span class="math notranslate nohighlight">\(v_{\text{xc};\alpha}(\mathbf{r}) =
 <h3>Hartree-Fock Theory<a class="headerlink" href="#hartree-fock-theory" title="Link to this heading">#</a></h3>
 <p>Hartree-Fock (HF) theory is an average potential model that includes an exchange potential, <span class="math notranslate nohighlight">\(\hat{K}\)</span>, to account for the effects of electron exchange. The HF average potential is given by
 $<span class="math notranslate nohighlight">\(\hat{w}_{\text{HF}}(\mathbf{r}) = w_{\text{H}}(\mathbf{r}) + \hat{k}(\mathbf{r})\)</span><span class="math notranslate nohighlight">\(
-where 
+where
 \)</span><span class="math notranslate nohighlight">\(\hat{k}(\mathbf{r}) \phi_p(\mathbf{r}) = -\sum_{q=1}^N  \delta_{\sigma_q \sigma_p}\int \frac{\phi_q^*(\mathbf{r}') \phi_p(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|}d\mathbf{r}' \phi_q(\mathbf{r}) \)</span>$
 The exchange operator, accounting for the Pauli exclusion principle, only acts on orbitals with the same spin.</p>
 </section>
@@ -641,9 +641,7 @@ The exchange operator, accounting for the Pauli exclusion principle, only acts o
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl.metadata (7.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (2.4.4)
+Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (2.4.4)
 Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (1.17.1)
 </pre></div>
 </div>
@@ -663,45 +661,31 @@ Collecting pooch&gt;=1.8.1 (from qc-atomdb)
   Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
-Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.0)
+Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.1)
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
 Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
+Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
+?25l
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.1/62.0 MB</span> <span class=" -Color -Color-Red">41.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.5/62.0 MB</span> <span class=" -Color -Color-Red">168.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">15.7/62.0 MB</span> <span class=" -Color -Color-Red">41.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">61.3/62.0 MB</span> <span class=" -Color -Color-Red">157.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">24.1/62.0 MB</span> <span class=" -Color -Color-Red">41.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">141.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.7/62.0 MB</span> <span class=" -Color -Color-Red">39.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">39.8/62.0 MB</span> <span class=" -Color -Color-Red">40.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">48.2/62.0 MB</span> <span class=" -Color -Color-Red">40.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━ <span class=" -Color -Color-Green">56.6/62.0 MB</span> <span class=" -Color -Color-Red">40.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">61.9/62.0 MB</span> <span class=" -Color -Color-Red">39.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">37.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:01</span>
-?25hDownloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">326.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">221.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
 Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
 Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
@@ -724,10 +708,7 @@ Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6/6</span> [qc-atomdb]
 ?25h
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpack-numpy-0.4.8 pooch-1.9.0 qc-atomdb-0.0.2.post5
+Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpack-numpy-0.4.8 pooch-1.9.0 qc-atomdb-0.0.2.post5
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-iodata
@@ -741,7 +722,7 @@ Downloading qc_iodata-1.0.1-py3-none-any.whl (3.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">39.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">122.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -760,7 +741,9 @@ Requirement already satisfied: importlib-resources in /opt/hostedtoolcache/Pytho
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.14.0)
 Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (2.4.4)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-gbasis) (1.3.0)
-Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qc-gbasis
@@ -773,12 +756,14 @@ Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_grid-0.0.9.post1-py3-none-any.whl.metadata (4.5 kB)
-Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytest&gt;=8.0.0 (from qc-grid)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (2.4.4)
+Collecting pytest&gt;=8.0.0 (from qc-grid)
   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
-Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
 Requirement already satisfied: importlib_resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.14.0)
 Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
@@ -788,16 +773,17 @@ Collecting pluggy&lt;2,&gt;=1.5 (from pytest&gt;=8.0.0-&gt;qc-grid)
   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
 Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.20.0)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-grid) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
+Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/66.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/66.1 MB</span> <span class=" -Color -Color-Red">199.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">28.3/66.1 MB</span> <span class=" -Color -Color-Red">163.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">172.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━ <span class=" -Color -Color-Green">62.4/66.1 MB</span> <span class=" -Color -Color-Red">160.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">145.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading pytest-9.0.2-py3-none-any.whl (374 kB)
 Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
 Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
@@ -810,9 +796,6 @@ Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/4</span> [pytest]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/4</span> [pytest]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [qc-grid]
 </pre></div>
 </div>
@@ -820,7 +803,9 @@ Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [qc-grid]
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [qc-grid]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [qc-grid]
 ?25h
 Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.post1
 </pre></div>
@@ -848,14 +833,13 @@ Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/40.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">236.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">191.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">245.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
-Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/800.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.9/800.9 kB</span> <span class=" -Color -Color-Red">166.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/800.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.9/800.9 kB</span> <span class=" -Color -Color-Red">161.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
 </pre></div>
 </div>
@@ -863,10 +847,7 @@ Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_
 ?25l
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0/4</span> [unidecode]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/4</span> [argcomplete]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1/4</span> [regex]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [basis_set_exchange]
@@ -892,18 +873,23 @@ Downloading regex-2026.3.32-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [basis_set_exchange]
 ?25h
-Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.3.32 unidecode-1.4.0
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.3.32 unidecode-1.4.0
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-bfit
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_BFit-0.1.2-py3-none-any.whl.metadata (49 kB)
-Downloading qc_BFit-0.1.2-py3-none-any.whl (561 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_BFit-0.1.2-py3-none-any.whl (561 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/561.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">70.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">44.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -2005,10 +1991,7 @@ where
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">vjp</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the LSDA Harris-functional guess for the exchange-correlation potential matrix.</span>
 
 <span class="sd">    The LSDA Harris-functional guess is computed by evaluating the Fock matrix using the promolecular density</span>
@@ -2152,8 +2135,9 @@ where
 <span class="sd">        Atomic orbital basis set for the molecule.</span>
 <span class="sd">    n_electrons : numpy.ndarray[int, shape=(2,)]</span>
 <span class="sd">        Number of electrons in the molecule (of each spin channel).</span>
-<span class="sd">    guess_type : {&quot;fermi-amaldi&quot;, &quot;lsda&quot;, &quot;hartree&quot;}</span>
-<span class="sd">        Type of Harris-functional guess to compute. Choices are LSDA (exchange-only), Fermi-Amaldi, and Hartree.</span>
+<span class="sd">    guess_type : {&quot;fermi-amaldi&quot;, &quot;lsda&quot;, &quot;hartree&quot;, &quot;core&quot;}</span>
+<span class="sd">        Type of Harris-functional guess to compute.</span>
+<span class="sd">        Choices are core, LSDA (exchange-only), Fermi-Amaldi, and Hartree.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -2165,12 +2149,17 @@ where
     <span class="n">n_a</span><span class="p">,</span> <span class="n">n_b</span> <span class="o">=</span> <span class="n">n_electrons</span>
     <span class="n">kin_energy</span> <span class="o">=</span> <span class="n">kinetic_energy_integral</span><span class="p">(</span><span class="n">ao_basis</span><span class="p">)</span>
     <span class="n">nuc_attraction</span> <span class="o">=</span> <span class="n">nuclear_electron_attraction_integral</span><span class="p">(</span><span class="n">ao_basis</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">atnums</span><span class="p">)</span>
-    <span class="c1"># Assign the hartree potentials for a and b based on the last axis of compute_harris_hartree.</span>
-    <span class="n">vj</span> <span class="o">=</span> <span class="n">compute_harris_hartree</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
 
+    <span class="c1"># Assign the core Hamiltonian for a and b.</span>
     <span class="n">fock</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">kin_energy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">kin_energy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">kin_energy</span> <span class="o">+</span> <span class="n">nuc_attraction</span> <span class="o">+</span> <span class="n">vj</span>
+    <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">kin_energy</span> <span class="o">+</span> <span class="n">nuc_attraction</span>
     <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Assign the hartree potential using compute_harris_hartree.</span>
+    <span class="k">if</span> <span class="n">guess_type</span> <span class="o">!=</span> <span class="s2">&quot;core&quot;</span><span class="p">:</span>
+        <span class="n">vj</span> <span class="o">=</span> <span class="n">compute_harris_hartree</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
+        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">vj</span>
+        <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">vj</span>
 
     <span class="k">if</span> <span class="n">guess_type</span> <span class="o">==</span> <span class="s2">&quot;lsda&quot;</span><span class="p">:</span>
         <span class="n">fock</span> <span class="o">+=</span> <span class="n">compute_harris_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">)</span>
@@ -2178,8 +2167,8 @@ where
         <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_a</span><span class="p">)</span> <span class="o">*</span> <span class="n">vj</span>
         <span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n_b</span><span class="p">)</span> <span class="o">*</span> <span class="n">vj</span>
     <span class="c1">#make sure there is no weird case where the user choose a forbidden option</span>
-    <span class="k">elif</span> <span class="n">guess_type</span> <span class="o">!=</span> <span class="s2">&quot;hartree&quot;</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid guess type: </span><span class="si">{</span><span class="n">guess_type</span><span class="si">}</span><span class="s2">. Must be one of &#39;fermi-amaldi&#39;, &#39;lsda&#39;, or &#39;hartree&#39;.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">guess_type</span> <span class="o">!=</span> <span class="s2">&quot;core&quot;</span> <span class="ow">and</span> <span class="n">guess_type</span> <span class="o">!=</span> <span class="s2">&quot;hartree&quot;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid guess type: </span><span class="si">{</span><span class="n">guess_type</span><span class="si">}</span><span class="s2">. Must be one of &#39;core&#39;, &#39;fermi-amaldi&#39;, &#39;lsda&#39;, or &#39;hartree&#39;.&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fock</span>
 </pre></div>
@@ -2194,7 +2183,7 @@ where
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">compute_overlap</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
 <span class="n">n_electrons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>  <span class="c1"># Number of electrons in the molecule (of each spin channel).</span>
-<span class="n">fock</span> <span class="o">=</span> <span class="n">compute_harris_guess</span><span class="p">(</span><span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">guess_type</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">)</span>
+<span class="n">fock</span> <span class="o">=</span> <span class="n">compute_harris_guess</span><span class="p">(</span><span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">guess_type</span><span class="o">=</span><span class="s1">&#39;core&#39;</span><span class="p">)</span>
 <span class="n">eps_a</span><span class="p">,</span> <span class="n">phi_a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span>  <span class="c1"># Solve the generalized eigenvalue problem for the alpha spin channel</span>
 <span class="n">eps_b</span><span class="p">,</span> <span class="n">phi_b</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">fock</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span>  <span class="c1"># Solve the generalized eigenvalue problem for the beta spin channel</span>
 
@@ -2212,26 +2201,21 @@ where
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 5 number of electrons in each spin channel
-0.2 0.2 number of electrons in each spin channel
-(7, 7, 2)
-[[-14.3825598  -14.3825598 ]
- [ -1.12906637  -1.12906637]
- [ -0.8205876   -0.8205876 ]
- [ -0.44593379  -0.44593379]
- [ -0.34309427  -0.34309427]
- [  0.11801745   0.11801745]
- [  0.19562679   0.19562679]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 7, 2)
+[[-33.03926628 -33.03926628]
+ [ -8.34758288  -8.34758288]
+ [ -7.77418972  -7.77418972]
+ [ -7.48618707  -7.48618707]
+ [ -7.47336021  -7.47336021]
+ [ -4.22880819  -4.22880819]
+ [ -4.2186479   -4.2186479 ]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">N</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the density matrix from the eigenvalues and eigenvectors of the Fock matrix.</span>
 
 <span class="sd">    Parameters</span>
@@ -2286,7 +2270,7 @@ where
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999999 4.999999999999999 number of electrons in each spin channel computed from the density matrix
 True
 </pre></div>
 </div>
@@ -2346,7 +2330,69 @@ True
     <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ls,mlns-&gt;mn&quot;</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">overlap</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span> <span class="o">=</span> <span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">):</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_vxc_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute the LSDA contribution to the Fock matrix for the exchange-correlation potential matrix.</span>
+
+<span class="sd">    The LSDA is computed by evaluating the Fock matrix using the electron density</span>
+<span class="sd">    as computed from the density matrix.</span>
+
+<span class="sd">    The exchange-correlation potential is computed using the</span>
+<span class="sd">    local spin-density approximation (LSDA).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atnums : list of int</span>
+<span class="sd">        Atomic numbers of the atoms in the molecule.</span>
+<span class="sd">    atcoords : numpy.ndarray[float, shape=(n_atoms, 3)]</span>
+<span class="sd">        Coordinates of the atoms in the molecule.</span>
+<span class="sd">    ao_basis : list of `GeneralizedContractionShell` instances</span>
+<span class="sd">        Atomic orbital basis set for the molecule.</span>
+<span class="sd">    D : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
+<span class="sd">        Density matrix in the AO basis</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    F_lsda : numpy.ndarray[float, shape=(n_ao, n_ao, 2)]</span>
+<span class="sd">        LSDA exchange-correlation potential matrix elements.</span>
+<span class="sd">        The first component of the last dimension corresponds to the alpha</span>
+<span class="sd">        spin, and the second component corresponds to the beta spin.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># We use `AtomDB` to compute the promolecular density of the molecule. We assume</span>
+    <span class="c1"># that the spin-densities are proportional to the total density.</span>
+
+    <span class="c1"># Make a grid. No need to be super accurate here.</span>
+    <span class="n">mol_grid</span> <span class="o">=</span> <span class="n">make_grid</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">rad_points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">preset</span><span class="o">=</span><span class="s2">&quot;veryfine&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Compute the density on the grid.</span>
+    <span class="n">rdm_a</span> <span class="o">=</span> <span class="n">D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">rdm_b</span> <span class="o">=</span> <span class="n">D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">rho_a</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm_a</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+    <span class="n">rho_b</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm_b</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+    <span class="c1">#Check normalization</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of alpha-spin electrons&quot;</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">rho_a</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of beta-spin electrons&quot;</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">rho_b</span><span class="p">))</span>
+
+    <span class="c1"># Compute the LSDA exchange-correlation potential on the grid.</span>
+    <span class="n">vxc_a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho_a</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># LSDA exchange potential for alpha spin</span>
+    <span class="n">vxc_b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho_b</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># LSDA exchange potential for beta spin</span>
+
+    <span class="c1"># Evaluate the exchange-correlation potential matrix elements in the AO basis.</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">evaluate_basis</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+    <span class="c1"># AO matrices for alpha and beta</span>
+    <span class="n">Fxc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_a</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+    <span class="n">Fxc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ip,p,jp-&gt;ij&quot;</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">weights</span> <span class="o">*</span> <span class="n">vxc_b</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Fxc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">overlap</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">calc_type</span> <span class="o">=</span> <span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Build the AO Fock matrix for a given density matrix and ERI tensor.</span>
 
@@ -2363,7 +2409,8 @@ True
 <span class="sd">    n_electrons : array-like of shape (2,)</span>
 <span class="sd">        Number of electrons in the molecule (of each spin channel).</span>
 <span class="sd">    calc_type : str</span>
-<span class="sd">        Type of calculation to perform. Choices are &#39;fermi-amaldi&#39;, &#39;lsda&#39;, and &#39;hartree&#39;.</span>
+<span class="sd">        Type of calculation to perform.</span>
+<span class="sd">        Choices are &#39;fermi-amaldi&#39;, &#39;lsda&#39;, &#39;hartree&#39;, and &#39;hartree-fock&#39;.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -2389,13 +2436,18 @@ True
         <span class="n">F_a</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span>
         <span class="n">F_b</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span>
     <span class="k">elif</span> <span class="n">calc_type</span> <span class="o">==</span> <span class="s1">&#39;lsda&#39;</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;LSDA calculation is not implemented yet.&quot;</span><span class="p">)</span>
+        <span class="n">F_xc</span> <span class="o">=</span> <span class="n">build_vxc_lsda</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">)</span>
+        <span class="n">F_a</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span> <span class="o">+</span> <span class="n">F_xc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">F_b</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span> <span class="o">+</span> <span class="n">F_xc</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">calc_type</span> <span class="o">==</span> <span class="s1">&#39;hartree-fock&#39;</span><span class="p">:</span>
+        <span class="n">F_a</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span> <span class="o">-</span> <span class="n">K_a</span>
+        <span class="n">F_b</span> <span class="o">=</span> <span class="n">h_core</span> <span class="o">+</span> <span class="n">J_a</span> <span class="o">+</span> <span class="n">J_b</span> <span class="o">-</span> <span class="n">K_b</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid calculation type: </span><span class="si">{</span><span class="n">calc_type</span><span class="si">}</span><span class="s2">. Must be one of &#39;fermi-amaldi&#39;, &#39;lsda&#39;, or &#39;hartree&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid calculation type: </span><span class="si">{</span><span class="n">calc_type</span><span class="si">}</span><span class="s2">. Must be one of &#39;fermi-amaldi&#39;, &#39;lsda&#39;, &#39;hartree&#39;, or &#39;hartree-fock&#39;.&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;hartree&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;hartree&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Perform the SCF cycle to self-consistency.</span>
 
@@ -2427,7 +2479,7 @@ True
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nao</span> <span class="o">=</span> <span class="n">h_core</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
-        <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span> <span class="o">=</span> <span class="n">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="p">)</span>
+        <span class="n">F_a</span><span class="p">,</span> <span class="n">F_b</span> <span class="o">=</span> <span class="n">build_fock_ao</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">calc_type</span><span class="p">)</span>
         <span class="n">eps_a</span><span class="p">,</span> <span class="n">phi_a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">F_a</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
         <span class="n">eps_b</span><span class="p">,</span> <span class="n">phi_b</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">F_b</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 
@@ -2460,22 +2512,701 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_core</span> <span class="o">=</span> <span class="n">kinetic_energy_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span> <span class="o">+</span> <span class="n">nuclear_electron_attraction_integral</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">)</span>
 <span class="n">eri</span> <span class="o">=</span> <span class="n">get_eri_ao</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
-<span class="n">eps</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">),</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;fermi-amaldi&#39;</span><span class="p">)</span>
+<span class="n">eps</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">scf_cycle</span><span class="p">(</span><span class="n">h_core</span><span class="p">,</span> <span class="n">compute_density_matrix</span><span class="p">(</span><span class="n">eps</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">),</span> <span class="n">eri</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_electrons</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">h2o</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;lsda&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final eigenvalues (orbital energies):&quot;</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0 5.0 number of electrons in each spin channel computed from the density matrix
-Iteration 1: delta_dm = 3.746842e-06
-SCF converged in 1 iterations.
-Final eigenvalues (orbital energies): [[-17.35918998 -17.35918998]
- [ -0.83428658  -0.83428658]
- [ -0.42319285  -0.42319285]
- [ -0.14136572  -0.14136572]
- [ -0.07400932  -0.07400932]
- [  0.27785362   0.27785362]
- [  0.40140387   0.40140387]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999997 4.999999999999997 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000018635667
+number of beta-spin electrons 5.000000018635667
+Iteration 1: delta_dm = 6.662467e-01
+4.999999999999997 4.999999999999997 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000023559732
+number of beta-spin electrons 5.000000023559732
+Iteration 2: delta_dm = 5.063657e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000266482285
+number of beta-spin electrons 5.0000000266482285
+Iteration 3: delta_dm = 3.923964e-01
+4.999999999999999 4.999999999999999 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000028410751
+number of beta-spin electrons 5.000000028410751
+Iteration 4: delta_dm = 3.129721e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000029243338
+number of beta-spin electrons 5.000000029243338
+Iteration 5: delta_dm = 2.582153e-01
+4.999999999999998 4.999999999999998 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.00000002944251
+number of beta-spin electrons 5.00000002944251
+Iteration 6: delta_dm = 2.200430e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000029224866
+number of beta-spin electrons 5.000000029224866
+Iteration 7: delta_dm = 1.923691e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000028745944
+number of beta-spin electrons 5.000000028745944
+Iteration 8: delta_dm = 1.710448e-01
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000028115635
+number of beta-spin electrons 5.000000028115635
+Iteration 9: delta_dm = 1.535059e-01
+4.999999999999999 4.999999999999999 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000027410395
+number of beta-spin electrons 5.000000027410395
+Iteration 10: delta_dm = 1.382978e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000026682283
+number of beta-spin electrons 5.000000026682283
+Iteration 11: delta_dm = 1.246537e-01
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000025965765
+number of beta-spin electrons 5.000000025965765
+Iteration 12: delta_dm = 1.121940e-01
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000252827235
+number of beta-spin electrons 5.0000000252827235
+Iteration 13: delta_dm = 1.007407e-01
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000024646134
+number of beta-spin electrons 5.000000024646134
+Iteration 14: delta_dm = 9.021014e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000024062705
+number of beta-spin electrons 5.000000024062705
+Iteration 15: delta_dm = 8.055784e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000023534907
+number of beta-spin electrons 5.000000023534907
+Iteration 16: delta_dm = 7.175018e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000023062301
+number of beta-spin electrons 5.000000023062301
+Iteration 17: delta_dm = 6.375256e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000022642649
+number of beta-spin electrons 5.000000022642649
+Iteration 18: delta_dm = 5.652517e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000022272569
+number of beta-spin electrons 5.000000022272569
+Iteration 19: delta_dm = 5.002274e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000021948085
+number of beta-spin electrons 5.000000021948085
+Iteration 20: delta_dm = 4.419581e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000021664992
+number of beta-spin electrons 5.000000021664992
+Iteration 21: delta_dm = 3.899251e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000021419039
+number of beta-spin electrons 5.000000021419039
+Iteration 22: delta_dm = 3.436030e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000021206159
+number of beta-spin electrons 5.000000021206159
+Iteration 23: delta_dm = 3.024740e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000021022485
+number of beta-spin electrons 5.000000021022485
+Iteration 24: delta_dm = 2.660389e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020864494
+number of beta-spin electrons 5.000000020864494
+Iteration 25: delta_dm = 2.338248e-02
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000207289395
+number of beta-spin electrons 5.0000000207289395
+Iteration 26: delta_dm = 2.053897e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020612914
+number of beta-spin electrons 5.000000020612914
+Iteration 27: delta_dm = 1.803257e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000205138155
+number of beta-spin electrons 5.0000000205138155
+Iteration 28: delta_dm = 1.582592e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020429369
+number of beta-spin electrons 5.000000020429369
+Iteration 29: delta_dm = 1.388511e-02
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020357541
+number of beta-spin electrons 5.000000020357541
+Iteration 30: delta_dm = 1.217953e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.00000002029654
+number of beta-spin electrons 5.00000002029654
+Iteration 31: delta_dm = 1.068172e-02
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020244834
+number of beta-spin electrons 5.000000020244834
+Iteration 32: delta_dm = 9.367094e-03
+5.0 5.0 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020201095
+number of beta-spin electrons 5.000000020201095
+Iteration 33: delta_dm = 8.213794e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020164154
+number of beta-spin electrons 5.000000020164154
+Iteration 34: delta_dm = 7.202391e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020133006
+number of beta-spin electrons 5.000000020133006
+Iteration 35: delta_dm = 6.315681e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020106776
+number of beta-spin electrons 5.000000020106776
+Iteration 36: delta_dm = 5.538461e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020084738
+number of beta-spin electrons 5.000000020084738
+Iteration 37: delta_dm = 4.857317e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020066237
+number of beta-spin electrons 5.000000020066237
+Iteration 38: delta_dm = 4.260436e-03
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020050768
+number of beta-spin electrons 5.000000020050768
+Iteration 39: delta_dm = 3.737423e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020037829
+number of beta-spin electrons 5.000000020037829
+Iteration 40: delta_dm = 3.279144e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020027035
+number of beta-spin electrons 5.000000020027035
+Iteration 41: delta_dm = 2.877579e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000020018039
+number of beta-spin electrons 5.000000020018039
+Iteration 42: delta_dm = 2.525691e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000200105905
+number of beta-spin electrons 5.0000000200105905
+Iteration 43: delta_dm = 2.217309e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000200044
+number of beta-spin electrons 5.0000000200044
+Iteration 44: delta_dm = 1.947026e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019999291
+number of beta-spin electrons 5.000000019999291
+Iteration 45: delta_dm = 1.710106e-03
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019995079
+number of beta-spin electrons 5.000000019995079
+Iteration 46: delta_dm = 1.502398e-03
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019991615
+number of beta-spin electrons 5.000000019991615
+Iteration 47: delta_dm = 1.320271e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019988775
+number of beta-spin electrons 5.000000019988775
+Iteration 48: delta_dm = 1.160545e-03
+5.000000000000001 5.000000000000001 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019986469
+number of beta-spin electrons 5.000000019986469
+Iteration 49: delta_dm = 1.020436e-03
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019984584
+number of beta-spin electrons 5.000000019984584
+Iteration 50: delta_dm = 8.975082e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019983067
+number of beta-spin electrons 5.000000019983067
+Iteration 51: delta_dm = 7.896311e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019981835
+number of beta-spin electrons 5.000000019981835
+Iteration 52: delta_dm = 6.949389e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019980857
+number of beta-spin electrons 5.000000019980857
+Iteration 53: delta_dm = 6.117992e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019980081
+number of beta-spin electrons 5.000000019980081
+Iteration 54: delta_dm = 5.387833e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019979466
+number of beta-spin electrons 5.000000019979466
+Iteration 55: delta_dm = 4.746411e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019978979
+number of beta-spin electrons 5.000000019978979
+Iteration 56: delta_dm = 4.182782e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019978605
+number of beta-spin electrons 5.000000019978605
+Iteration 57: delta_dm = 3.687366e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019978316
+number of beta-spin electrons 5.000000019978316
+Iteration 58: delta_dm = 3.251778e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019978111
+number of beta-spin electrons 5.000000019978111
+Iteration 59: delta_dm = 2.868673e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977956
+number of beta-spin electrons 5.000000019977956
+Iteration 60: delta_dm = 2.531621e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977849
+number of beta-spin electrons 5.000000019977849
+Iteration 61: delta_dm = 2.234991e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.00000001997777
+number of beta-spin electrons 5.00000001997777
+Iteration 62: delta_dm = 1.973847e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977729
+number of beta-spin electrons 5.000000019977729
+Iteration 63: delta_dm = 1.743867e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977706
+number of beta-spin electrons 5.000000019977706
+Iteration 64: delta_dm = 1.541262e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977697
+number of beta-spin electrons 5.000000019977697
+Iteration 65: delta_dm = 1.362711e-04
+5.000000000000003 5.000000000000003 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977695
+number of beta-spin electrons 5.000000019977695
+Iteration 66: delta_dm = 1.205302e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.0000000199777155
+number of beta-spin electrons 5.0000000199777155
+Iteration 67: delta_dm = 1.066482e-04
+5.000000000000002 5.000000000000002 number of electrons in each spin channel computed from the density matrix
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:895: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of alpha-spin electrons 5.000000019977742
+number of beta-spin electrons 5.000000019977742
+Iteration 68: delta_dm = 9.440095e-05
+SCF converged in 68 iterations.
+Final eigenvalues (orbital energies): [[-13.42793249 -13.42793249]
+ [  0.32197238   0.32197238]
+ [  0.65587047   0.65587047]
+ [  1.12855014   1.12855014]
+ [  1.18940063   1.18940063]
+ [  1.39706998   1.39706998]
+ [  1.55935324   1.55935324]]
 </pre></div>
 </div>
 </div>
@@ -2499,6 +3230,14 @@ Final eigenvalues (orbital energies): [[-17.35918998 -17.35918998]
 <span class="s2">        Number of electrons in the molecule (of each spin channel).</span>
 <span class="s2">    guess_type : {&quot;fermi-amaldi&quot;, &quot;lsda&quot;, &quot;hartree&quot;}</span>
 <span class="s2">        Type of Harris-functional guess to compute. Choices are LSDA (exchange-only), Fermi-Amaldi, and Hartree.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+    <span class="sa">r</span><span class="s2">&quot;&quot;&quot;Solve the self-consistent field equations using the Harris-functional guess.</span>
+<span class="s2">    ^</span>
+<span class="ne">SyntaxError</span>: incomplete input
 </pre></div>
 </div>
 </div>
