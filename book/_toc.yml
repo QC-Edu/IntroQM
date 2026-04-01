@@ -124,6 +124,12 @@ parts:
     - file: problems/HF_dft.ipynb
       title: "Hartree-Fock and DFT"
 
+    - file: problems/hirshfeld_conventional.ipynb
+      title: "Atomic Charges"
+
+    - file: problems/EEM.ipynb
+      title: "Electronegativity Equalization Method (EEM)"
+
   - caption: Additional resources
     chapters:
     - file: documents/refs.md
