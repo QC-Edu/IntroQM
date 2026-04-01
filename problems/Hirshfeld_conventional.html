@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hirshfeld Partitioning &#8212; Quantum Chemistry</title>
+    <title>14. Hirshfeld Partitioning &#8212; Quantum Chemistry</title>
   
   
   
@@ -66,6 +66,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="15. Electronegativity Equalization Method" href="EEM.html" />
+    <link rel="prev" title="13. Self-Consistent Field Methods" href="HF_dft.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -116,8 +118,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -176,7 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
@@ -240,7 +240,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EEM.html">14. Electronegativity Equalization Method (EEM)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Atomic Charges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EEM.html">15. Electronegativity Equalization Method (EEM)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
 <ul class="nav bd-sidenav">
@@ -533,7 +534,7 @@
                   
   <p>This set of notes shows how to do Hirshfeld(-style) partitioning using <code class="docutils literal notranslate"><span class="pre">AtomDB</span></code>, <code class="docutils literal notranslate"><span class="pre">Grid</span></code>, <code class="docutils literal notranslate"><span class="pre">GBasis</span></code>, and <code class="docutils literal notranslate"><span class="pre">IOdata</span></code>.</p>
 <section class="tex2jax_ignore mathjax_ignore" id="hirshfeld-partitioning">
-<h1>Hirshfeld Partitioning<a class="headerlink" href="#hirshfeld-partitioning" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Hirshfeld Partitioning<a class="headerlink" href="#hirshfeld-partitioning" title="Link to this heading">#</a></h1>
 <p>Given a molecule, build the promolecule using neutral atoms,
 $<span class="math notranslate nohighlight">\(
 \rho^0(\mathbf{r}) = \sum_A \rho_A^0(\mathbf{r} - \mathbf{R}_A)
@@ -920,6 +921,24 @@ The KL divergence is:  0.225480
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="HF_dft.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Self-Consistent Field Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EEM.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Electronegativity Equalization Method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
