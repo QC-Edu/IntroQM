@@ -240,7 +240,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Atomic Charges</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Hirshfeld Partitioning</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="EEM.html">15. Electronegativity Equalization Method (EEM)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
@@ -520,8 +521,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">14. Hirshfeld Partitioning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-hirshfeld-partitioning">14. Iterative Hirshfeld Partitioning</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-basis-iterative-stockholder-mbis">Minimal Basis Iterative Stockholder (MBIS)</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -800,6 +806,19 @@ The KL divergence is:  0.225480
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iterative-hirshfeld-partitioning">
+<h1><span class="section-number">14. </span>Iterative Hirshfeld Partitioning<a class="headerlink" href="#iterative-hirshfeld-partitioning" title="Link to this heading">#</a></h1>
+<p>Iterative Hirshfeld partitioning is the same, but one uses charged proatoms. The pro-atom charge is taken from the previous iteration.</p>
+<p>I.e., the atomic weights are:
+$<span class="math notranslate nohighlight">\(
+w_{A,k}(\mathbf{r}) = \frac{\rho_{A,q_{k-1}}^0(\mathbf{r})}{\rho_{k-1}^0(\mathbf{r})}
+\)</span><span class="math notranslate nohighlight">\(
+where the atomic densities are chosen to have the charge from the previous iteration (initialized to the Hirshfeld densities),
+\)</span><span class="math notranslate nohighlight">\(
+q_{A;k-1} = Z_A - \int w_{A;k-1}(\mathbf{r}) \rho(\mathbf{r}) d\mathbf{r}
+\)</span>$
+The charged atomic densities are defined by linear interpolation, as is “correct” in DFT.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hirshfeld_i_partitioning</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
@@ -957,8 +976,13 @@ The KL divergence is:  0.225480
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">14. Hirshfeld Partitioning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-hirshfeld-partitioning">14. Iterative Hirshfeld Partitioning</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-basis-iterative-stockholder-mbis">Minimal Basis Iterative Stockholder (MBIS)</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

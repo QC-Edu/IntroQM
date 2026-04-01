@@ -240,7 +240,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Hückel Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Hirshfeld_conventional.html">14. Atomic Charges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hirshfeld_conventional.html">14. Hirshfeld Partitioning</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="EEM.html">15. Electronegativity Equalization Method (EEM)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
@@ -896,18 +897,23 @@ p=0,\pm 1, \pm 2 \ldots \pm \lfloor\tfrac{n}{2}\rfloor, \lfloor\tfrac{n}{2}\rflo
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading rdkit-2025.9.6-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
 Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from rdkit) (2.4.4)
-Requirement already satisfied: Pillow in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from rdkit) (12.1.1)
-Downloading rdkit-2025.9.6-cp314-cp314-manylinux_2_28_x86_64.whl (36.7 MB)
+Requirement already satisfied: Pillow in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from rdkit) (12.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading rdkit-2025.9.6-cp314-cp314-manylinux_2_28_x86_64.whl (36.7 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/36.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.5/36.7 MB</span> <span class=" -Color -Color-Red">25.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.6/36.7 MB</span> <span class=" -Color -Color-Red">37.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">19.4/36.7 MB</span> <span class=" -Color -Color-Red">52.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━ <span class=" -Color -Color-Green">29.4/36.7 MB</span> <span class=" -Color -Color-Red">85.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/36.7 MB</span> <span class=" -Color -Color-Red">70.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━ <span class=" -Color -Color-Green">31.5/36.7 MB</span> <span class=" -Color -Color-Red">54.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/36.7 MB</span> <span class=" -Color -Color-Red">57.0 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1847,7 +1853,7 @@ The following plots correspond to the following atomic property labels:
 atomic charges
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13:18:51] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15:02:02] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
 <img alt="../_images/00415562a70dda7ab5213a130a2fd766257ad5305ef150f1f381f42d2292992d.png" src="../_images/00415562a70dda7ab5213a130a2fd766257ad5305ef150f1f381f42d2292992d.png" />
@@ -1962,7 +1968,7 @@ The following plots correspond to the following atomic property labels:
 product of HOMO and LUMO orbitals
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13:18:52] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15:02:02] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
 <img alt="../_images/c330cff89af02b36bd756058fda619a7ba9ba885c541615f8948533071168101.png" src="../_images/c330cff89af02b36bd756058fda619a7ba9ba885c541615f8948533071168101.png" />
@@ -2046,7 +2052,7 @@ The following plots correspond to the following atomic property labels:
 atomic charges
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13:18:52] Molecule does not have explicit Hs. Consider calling AddHs()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15:02:02] Molecule does not have explicit Hs. Consider calling AddHs()
 </pre></div>
 </div>
 <img alt="../_images/15475492accbc715dbadb19e7a88be612c964f04042885d70f0446ebd2c827c2.png" src="../_images/15475492accbc715dbadb19e7a88be612c964f04042885d70f0446ebd2c827c2.png" />

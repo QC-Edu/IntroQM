@@ -16,7 +16,7 @@
 
 1. ~~Consider a quartic potential, which is a model for a double-well (a simplified model for a chemical reaction and for electron transfer)~~ (Project Claimed).
 
-1. Solve, numerically, the wavefunction for the proton in the malonaldehyde molecule, which is a model for tunelling effects in hydrogen bonding.
+1. ~~Solve, numerically, the wavefunction for the proton in the malonaldehyde molecule, which is a model for tunelling effects in hydrogen bonding.~~ (Project claimed)
 
 1. ~~Understand the kinetic isotope effect, which is mainly an effect of zero-point energies (but tunneling corrections can also be considered).~~ (Project Claimed)
 
@@ -32,7 +32,7 @@
 
 1. ~~Computation of the rotational spectrum of a polyatomic molecule.~~ (Project Claimed)
 
-1. ~~ Computation of the vibrational spectrum of a polyatomic molecule.~~ (Project Claimed)
+1. ~~Computation of the vibrational spectrum of a polyatomic molecule.~~ (Project Claimed)
 
 1. ~~Write simple molecular-orbital models for the hydrogen molecule and/or polyatomic hydrogen clusters.~~ (Project Claimed)
 

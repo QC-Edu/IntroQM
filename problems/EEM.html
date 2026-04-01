@@ -240,7 +240,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Hirshfeld_conventional.html">14. Atomic Charges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hirshfeld_conventional.html">14. Hirshfeld Partitioning</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Electronegativity Equalization Method (EEM)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
@@ -625,22 +626,20 @@ Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack&gt;=1.0.0 (from qc-atomdb)
   Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
+Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
   Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h5py&gt;=3.6.0 (from qc-atomdb)
-  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
   Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
+Collecting pooch&gt;=1.8.1 (from qc-atomdb)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pooch&gt;=1.8.1 (from qc-atomdb)
-  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
 Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.1)
@@ -648,93 +647,29 @@ Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtool
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
 Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
+Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/62.0 MB</span> <span class=" -Color -Color-Red">17.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">19.4/62.0 MB</span> <span class=" -Color -Color-Red">108.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/62.0 MB</span> <span class=" -Color -Color-Red">17.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.4/62.0 MB</span> <span class=" -Color -Color-Red">109.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.2/62.0 MB</span> <span class=" -Color -Color-Red">15.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">61.9/62.0 MB</span> <span class=" -Color -Color-Red">114.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.5/62.0 MB</span> <span class=" -Color -Color-Red">15.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.7/62.0 MB</span> <span class=" -Color -Color-Red">15.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:04</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.8/62.0 MB</span> <span class=" -Color -Color-Red">15.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.0/62.0 MB</span> <span class=" -Color -Color-Red">15.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">23.1/62.0 MB</span> <span class=" -Color -Color-Red">15.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">26.2/62.0 MB</span> <span class=" -Color -Color-Red">14.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">28.3/62.0 MB</span> <span class=" -Color -Color-Red">14.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.5/62.0 MB</span> <span class=" -Color -Color-Red">14.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.6/62.0 MB</span> <span class=" -Color -Color-Red">14.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">36.7/62.0 MB</span> <span class=" -Color -Color-Red">14.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">39.8/62.0 MB</span> <span class=" -Color -Color-Red">14.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━ <span class=" -Color -Color-Green">43.0/62.0 MB</span> <span class=" -Color -Color-Red">14.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ <span class=" -Color -Color-Green">45.1/62.0 MB</span> <span class=" -Color -Color-Red">14.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">48.2/62.0 MB</span> <span class=" -Color -Color-Red">14.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━ <span class=" -Color -Color-Green">50.3/62.0 MB</span> <span class=" -Color -Color-Red">14.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">52.4/62.0 MB</span> <span class=" -Color -Color-Red">14.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ <span class=" -Color -Color-Green">54.5/62.0 MB</span> <span class=" -Color -Color-Red">13.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ <span class=" -Color -Color-Green">57.7/62.0 MB</span> <span class=" -Color -Color-Red">13.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ <span class=" -Color -Color-Green">59.8/62.0 MB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">61.9/62.0 MB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">13.3 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:04</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">101.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">183.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">247.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
-Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
-Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
+Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
+Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: msgpack, importlib-resources, h5py, pooch, msgpack-numpy, qc-atomdb
@@ -744,7 +679,10 @@ Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [h5py]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3/6</span> [pooch]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [h5py]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
@@ -771,7 +709,7 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">28.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">27.3 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
