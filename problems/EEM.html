@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>14. Electronegativity Equalization Method &#8212; Quantum Chemistry</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/EEM';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Materials" href="../documents/refs.html" />
+    <link rel="prev" title="13. Self-Consistent Field Methods" href="HF_dft.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../main_content.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Quantum Chemistry - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/tmQKz_xl">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/dwsY-nra">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hXNw1zoD">Quiz: QM Intro</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Sz6CquPN">Quiz: The Schrodinger Eq.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleIn1DBox.html">5. The Particle in a Box</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../x4_mocked.html">Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/7dcqxTCt">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/i4mEherX">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/ccraSEtd">Quiz: 1D P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/xolaix2b">Practice: Effective Low-Dimensional Systems</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/d96R94xY">Practice: The Sudden Approximation in 2-D</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/AszsREQn">Practice: Interacting particles in a box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hGNAhgfZ">Quiz: MultiD P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Ob0ASrMA">Quiz: Applying the Postulates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9S1quIUi">Practice: hydrogenic atoms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/g8EWPe8d">Practice: Tilted P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Xo4obBPk">Practice: Gaussian Well(s)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../last_tht_provoke.html">Thought Provoking ?s</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/8CQBLG4h">Practice: Selection Rules</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Electronegativity Equalization Method (EEM)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extracredit/overview.html">(Extra) Practice Problems</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/JYvF-FH1">FixMe</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/OV3lpBtU">FixMe. Midterm Samples</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/weHKK5Z5">Knowledge Test 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/NdEtC5xL">Knowledge Test 2</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/qdBKA1zr">Knowledge Test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterms_2025.html">Midterm Questions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterm3.html">❓ Questions about Many-Electron Systems and their Approximation.</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github-reinvite-blue.vercel.app">Re-invite to GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/problems/EEM.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/EEM.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/problems/EEM.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Electronegativity Equalization Method</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="electronegativity-equalization-method">
+<h1><span class="section-number">14. </span>Electronegativity Equalization Method<a class="headerlink" href="#electronegativity-equalization-method" title="Link to this heading">#</a></h1>
+<p>This notebook shows how to compute atomic charges using the electronegativity equalization method. The basic idea is that dependence of the energy of an atom (or group) in a molecule can be written as a Taylor series,</p>
+<div class="math notranslate nohighlight">
+\[
+E_A(N_0 + \Delta N) = E(N_0) + \left( \frac{\partial E_A}{\partial N} \right)_{N_0} \Delta N + \frac{1}{2} \left( \frac{\partial^2 E_A}{\partial N^2} \right)_{N_0} (\Delta N)^2 + \ldots
+\]</div>
+<p>which, by convention, we truncate at second order. The first derivative is the electronic chemical potential (the negative of the electronegativity, <span class="math notranslate nohighlight">\(\chi\)</span>; also called the Fermi level) and the second derivative is the chemical hardness, <span class="math notranslate nohighlight">\(\eta\)</span> (also called the band gap). Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[
+E_A(N_0 + \Delta N) = E(N_0) + \mu_A \Delta N + \tfrac{1}{2} \eta_A (\Delta N)^2
+\]</div>
+<p>Using the known energies of the <span class="math notranslate nohighlight">\(N_0\)</span>, <span class="math notranslate nohighlight">\(N_0 + 1\)</span>, and <span class="math notranslate nohighlight">\(N_0 - 1\)</span> states, we can solve for <span class="math notranslate nohighlight">\(\mu_A\)</span> and <span class="math notranslate nohighlight">\(\eta_A\)</span>, obtaining the Mulliken electronegativity and Parr-Pearson hardness,
+$<span class="math notranslate nohighlight">\(
+\mu_A = \frac{1}{2} (E(N_0 + 1) - E(N_0 - 1)) = -\tfrac{1}{2} (I + A)
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\eta_A = E(N_0 + 1) + E(N_0 - 1) - 2E(N_0) = I - A
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>I = E(N_0) - E(N_0 + 1) \ge 0<span class="math notranslate nohighlight">\( is the ionization potential and \)</span>A = E(N_0 - 1) - E(N_0) \ge 0$ is the electron affinity.</p>
+<p>The total energy is then,
+$<span class="math notranslate nohighlight">\(
+\begin{split}
+E_{\text{total}} &amp;= \sum_A E_A(N_{A,0} + \Delta N_A) \\
+&amp;= \sum_A E_A(N_{A,0}) + \sum_A \mu_A \Delta N_A + \frac{1}{2} \sum_A \eta_A (\Delta N_A)^2 + \frac{1}{2} \sum_{A \ne B} J_{AB} \Delta N_A \Delta N_B
+\end{split}
+\)</span><span class="math notranslate nohighlight">\(
+This assumes that the atoms/groups &quot;reference state&quot; is neutral so that their charge is just \)</span>q_A = -\Delta N_A<span class="math notranslate nohighlight">\(. The last term is the Coulomb interaction between the charges, where \)</span>J_{AB}<span class="math notranslate nohighlight">\( is the Coulomb integral between the charge distributions of atoms/groups \)</span>A<span class="math notranslate nohighlight">\( and \)</span>B<span class="math notranslate nohighlight">\(. We could evaluate the Coulomb integral between the charge distributions analytically using [`AtomDB`](https://atomdb.qcdevs.org/api/index.html) or [`Bfit`](https://bfit.qcdevs.org/), but this is not what is usually done in practice. Instead, the Coulomb interaction is usually screened, so that for electrostatic interactions between bonded atoms and atoms bonded to a common atom (linked by a bond angle) the Coulomb interaction is nearly neglected, while for atoms linked by a torsion the electrostatic interaction is screened. We'll use an [erfgau screening](https://arxiv.org/pdf/physics/0410062),
+\)</span><span class="math notranslate nohighlight">\(
+J_{AB} = \frac{\operatorname{erf}(\alpha R_{AB})}{R_{AB}} - \frac{2\alpha}{\sqrt{\pi}}  \exp\left({-\tfrac{\alpha^2R_{AB}^2}{3}}\right)
+\)</span>$</p>
+<p>Now, to obtain the charges, we minimize the total energy with respect to the amount of electron transfer, <span class="math notranslate nohighlight">\(\Delta N_A\)</span>, subject to the constraint that the total charge is fixed, <span class="math notranslate nohighlight">\(\sum_A \Delta N_A = -Q\)</span>.
+$<span class="math notranslate nohighlight">\(
+\min_{\{\Delta N_A\}} E_{\text{total}} \quad \text{subject to} \quad \sum_A \Delta N_A = -Q
+\)</span><span class="math notranslate nohighlight">\(
+Forcing the constraint with the Lagrange multiplier, \)</span>\mu_{\text{total}}<span class="math notranslate nohighlight">\(, we have the Lagrangian,
+\)</span><span class="math notranslate nohighlight">\(
+\mathcal{L} = E_{\text{total}} + \mu_{\text{total}} \left( \sum_A \Delta N_A + Q \right)
+\)</span><span class="math notranslate nohighlight">\(
+Differentiating the Lagrangian and setting it equal to zero gives a system of \)</span>P+1<span class="math notranslate nohighlight">\( linear equations, where \)</span>P<span class="math notranslate nohighlight">\( is the number of atoms/groups,
+\)</span><span class="math notranslate nohighlight">\(
+\begin{split}
+0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_1} + \mu_{\text{total}} \\
+0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_2} + \mu_{\text{total}} \\
+&amp;\vdots \\
+0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_P} + \mu_{\text{total}} \\
+0 &amp;= \sum_A \Delta N_A + Q
+\end{split}
+\)</span><span class="math notranslate nohighlight">\(
+Using the explicit expression for the total energy, this system of equations can be written in matrix form as
+\)</span><span class="math notranslate nohighlight">\(
+\mathbf{A}\boldsymbol{\delta}=\mathbf{m},
+\)</span><span class="math notranslate nohighlight">\(
+where
+\)</span>$
+\begin{aligned}
+\mathbf{A} &amp;=
+\begin{bmatrix}
+\eta_1  &amp; J_{12} &amp; \cdots &amp; J_{1P} &amp; 1 \
+J_{21}  &amp; \eta_2 &amp; \cdots &amp; J_{2P} &amp; 1 \
+\vdots  &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \
+J_{P1}  &amp; J_{P2} &amp; \cdots &amp; \eta_P &amp; 1 \
+1       &amp; 1      &amp; \cdots &amp; 1      &amp; 0
+\end{bmatrix}, \[1em]
+\boldsymbol{\delta} &amp;=
+\begin{bmatrix}
+\Delta N_1 \
+\Delta N_2 \
+\vdots \
+\Delta N_P \
+\mu_{\mathrm{total}}
+\end{bmatrix}, \[1em]
+\mathbf{m} &amp;=
+\begin{bmatrix}
+\mu_1 \
+\mu_2 \
+\vdots \
+\mu_P \</p>
+<ul class="simple">
+<li><p>Q
+\end{bmatrix}.
+\end{aligned}
+$$</p></li>
+</ul>
+<p>We take benchmark values of the chemical potentials and hardnesses from <a class="reference external" href="https://pubs.rsc.org/en/content/articlelanding/2016/cp/c6cp04533b">this reference</a>, using <a class="reference external" href="https://atomdb.qcdevs.org/api/index.html"><code class="docutils literal notranslate"><span class="pre">AtomDB</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qc-atomdb
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qc-iodata
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-atomdb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl.metadata (7.0 kB)
+Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (2.4.4)
+Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-atomdb) (1.17.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack&gt;=1.0.0 (from qc-atomdb)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+Collecting msgpack-numpy&gt;=0.4.8 (from qc-atomdb)
+  Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h5py&gt;=3.6.0 (from qc-atomdb)
+  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
+  Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
+Collecting pooch&gt;=1.8.1 (from qc-atomdb)
+  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
+Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.1)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.6)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
+Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
+Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">25.2/62.0 MB</span> <span class=" -Color -Color-Red">133.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━ <span class=" -Color -Color-Green">54.0/62.0 MB</span> <span class=" -Color -Color-Red">138.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">119.8 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">164.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
+Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
+Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: msgpack, importlib-resources, h5py, pooch, msgpack-numpy, qc-atomdb
+?25l
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [h5py]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3/6</span> [pooch]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">5/6</span> [qc-atomdb]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6/6</span> [qc-atomdb]
+?25h
+Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpack-numpy-0.4.8 pooch-1.9.0 qc-atomdb-0.0.2.post5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-iodata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_iodata-1.0.1-py3-none-any.whl.metadata (4.4 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.26.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (2.4.4)
+Requirement already satisfied: scipy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (1.17.1)
+Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-iodata) (26.1.0)
+Downloading qc_iodata-1.0.1-py3-none-any.whl (3.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">96.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qc-iodata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed qc-iodata-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">erf</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">erfgau</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Savin&#39;s erfgau long-range interaction:</span>
+
+<span class="sd">        v(r) = erf(mu*r)/r - (2*mu/sqrt(pi)) * exp(-(mu*r)^2 / 3)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r</span>
+<span class="sd">        Interparticle distance(s). May be a positive float or a NumPy array</span>
+<span class="sd">        of positive distances.</span>
+<span class="sd">    alpha</span>
+<span class="sd">        Range-separation parameter. Must be nonnegative. The default</span>
+<span class="sd">        value is set so that for a 1-3 interactions of ~6 bohr the erfgau</span>
+<span class="sd">        screening is roughly 20%. As this number increases the screening becomes</span>
+<span class="sd">        less aggressive.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float or np.ndarray</span>
+<span class="sd">        The erfgau interaction evaluated at r.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;alpha must be nonnegative.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Set a tolerance for zero to avoid issues with very small distances</span>
+    <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-12</span>
+
+    <span class="c1"># Treat scalar case separately</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;r must be positive.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="c1"># For very small r, use the limit as r -&gt; 0 to avoid numerical issues</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">r</span>
+            <span class="k">return</span> <span class="n">erf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
+
+    <span class="n">r_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">r_arr</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;All elements of r must be positive.&quot;</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">r_arr</span>
+
+    <span class="c1"># Form an array to hold the input and initalize it to zero</span>
+    <span class="n">erfgau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">r_arr</span><span class="p">)</span>
+    <span class="c1"># For very small r, zero is the answer so the intialization is correct.</span>
+    <span class="c1"># For larger r, compute the erfgau interaction as normal. We can do this with</span>
+    <span class="c1"># np.where.</span>
+    <span class="n">erfgau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">r_arr</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">erf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">r_arr</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">erfgau</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the Water molecule geometry from an XYZ file (using IOData)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">iodata</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_one</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/theochem/chemtools/raw/refs/heads/master/chemtools/data/examples/dichloropyridine26_q+0.fchk&quot;</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;dichloropyridine26_q0.fchk&quot;</span><span class="p">)</span>
+
+<span class="n">mol0</span> <span class="o">=</span> <span class="n">load_one</span><span class="p">(</span><span class="s2">&quot;dichloropyridine26_q0.fchk&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mol0</span><span class="o">.</span><span class="n">atnums</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mol0</span><span class="o">.</span><span class="n">atcoords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17 17  7  6  6  6  6  6  1  1  1]
+[[-4.95130924e+00  2.31173977e+00 -2.64561659e-04]
+ [ 4.95149821e+00  2.31139962e+00  2.07869875e-04]
+ [ 7.55890453e-05  1.84250188e+00 -1.88972613e-05]
+ [-9.44863066e-05 -3.41775868e+00  1.13383568e-04]
+ [-2.28277027e+00 -2.09580077e+00 -1.88972613e-05]
+ [ 2.28267578e+00 -2.09595195e+00  1.70075352e-04]
+ [-2.13763930e+00  5.39856962e-01 -3.77945227e-05]
+ [ 2.13769600e+00  5.39705784e-01  7.55890453e-05]
+ [-1.70075352e-04 -5.47831606e+00  1.51178091e-04]
+ [-4.10063012e+00 -3.05289036e+00 -7.55890453e-05]
+ [ 4.10047894e+00 -3.05315492e+00  2.83458920e-04]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve the chemical potentials and hardnesses using AtomDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">atomdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
+
+<span class="k">for</span> <span class="n">atnum</span> <span class="ow">in</span> <span class="n">mol0</span><span class="o">.</span><span class="n">atnums</span><span class="p">:</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">get_mu</span><span class="p">(</span><span class="n">atnum</span><span class="p">)</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">get_eta</span><span class="p">(</span><span class="n">atnum</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atom </span><span class="si">{</span><span class="n">atnum</span><span class="si">}</span><span class="s2">: mu = </span><span class="si">{</span><span class="n">mu</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Retrieve the chemical potentials and hardnesses using AtomDB</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">atomdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">atnum</span> <span class="ow">in</span> <span class="n">mol0</span><span class="o">.</span><span class="n">atnums</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">mu</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">get_mu</span><span class="p">(</span><span class="n">atnum</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">eta</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">get_eta</span><span class="p">(</span><span class="n">atnum</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atom </span><span class="si">{</span><span class="n">atnum</span><span class="si">}</span><span class="s2">: mu = </span><span class="si">{</span><span class="n">mu</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;atomdb&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="HF_dft.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Self-Consistent Field Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documents/refs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reference Materials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hirshfeld Partitioning &#8212; Quantum Chemistry</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/Hirshfeld_conventional';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../main_content.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Quantum Chemistry - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Quantum Chemistry - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main_content.html">
+                    Quantum Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/objectives.html">Detailed Learning Objectives</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documents/GitHub.html">1. GitHub</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/ghfundamentals.html">Practice: GitHub (Classroom)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/Tutorial_0.html">Practice: Schrodinger Cat Colab</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../jupyter.html">2. Basics of Jupyter, Python, and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="JupyterPythonNumpy.html">Practice: Python, Jupyter, Numpy</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/problems/tutorial_1.html">Practice: Wavefunction Normalization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/tmQKz_xl">Extra practice: Computing Student Marks (&lt; 2022)</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://qchem.qc-edu.org/extracredit/programming.html">Extra training: Jupyter/Python/GitHub exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../History.html">3. From Newton to Schrödinger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.macvideo.ca/media/1_IntroQM/1_rbe31g5b/197276683">Intro to QM video</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/presentations/1_IntroQM.pdf">Intro to QM slides+notes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/dwsY-nra">Quiz: Demo w/ GH Classroom</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hXNw1zoD">Quiz: QM Intro</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SchrodingerEq.html">4. The Schrödinger Equation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Sz6CquPN">Quiz: The Schrodinger Eq.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleIn1DBox.html">5. The Particle in a Box</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../x4_mocked.html">Example notebook for Moments</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/7dcqxTCt">Practice: Moments of the P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/i4mEherX">Practice: The Sudden Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/ccraSEtd">Quiz: 1D P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ParticleInMultiD.html">6. Particles confined in two and three dimensions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/xolaix2b">Practice: Effective Low-Dimensional Systems</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/d96R94xY">Practice: The Sudden Approximation in 2-D</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/AszsREQn">Practice: Interacting particles in a box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/hGNAhgfZ">Quiz: MultiD P-in-Box</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Postulates.html">7. The Postulates of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Ob0ASrMA">Quiz: Applying the Postulates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../OneElectronAtoms.html">8. 1-electron atoms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/9S1quIUi">Practice: hydrogenic atoms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ApproximateMethods.html">9. Approximate Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/g8EWPe8d">Practice: Tilted P-in-Box</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/Xo4obBPk">Practice: Gaussian Well(s)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ManyElSystems.html">10. Many-electron systems: Structure and Spectroscopy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/2elatom.pdf">2-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/atomsshort.pdf">Many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/PES.pdf">The Born-Oppenheimer Approximation</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/molecules.pdf">Molecules</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/QC-Edu/IntroQM/blob/master/book/documents/spectroscopy.pdf">Spectroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../last_tht_provoke.html">Thought Provoking ?s</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://classroom.github.com/a/8CQBLG4h">Practice: Selection Rules</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HF_dft.html">13. Hartree-Fock and DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EEM.html">14. Electronegativity Equalization Method (EEM)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../documents/refs.html">Reference Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extracredit/overview.html">(Extra) Practice Problems</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.macvideo.ca/channel/CHEM%2B3PA3/197276683">Videos</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/JYvF-FH1">FixMe</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/OV3lpBtU">FixMe. Midterm Samples</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/weHKK5Z5">Knowledge Test 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/NdEtC5xL">Knowledge Test 2</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://classroom.github.com/a/qdBKA1zr">Knowledge Test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">🔁 What are the eigenfunctions and eigenvalues for the following Hamiltonians.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterms_2025.html">Midterm Questions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="midterm3.html">❓ Questions about Many-Electron Systems and their Approximation.</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing and Using</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github-reinvite-blue.vercel.app">Re-invite to GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/QC-Edu/IntroQM2022/blob/master/book/problems/Hirshfeld_conventional.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/QC-Edu/IntroQM2022/issues/new?title=Issue%20on%20page%20%2Fproblems/Hirshfeld_conventional.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/problems/Hirshfeld_conventional.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hirshfeld Partitioning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-basis-iterative-stockholder-mbis">Minimal Basis Iterative Stockholder (MBIS)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>This set of notes shows how to do Hirshfeld(-style) partitioning using <code class="docutils literal notranslate"><span class="pre">AtomDB</span></code>, <code class="docutils literal notranslate"><span class="pre">Grid</span></code>, <code class="docutils literal notranslate"><span class="pre">GBasis</span></code>, and <code class="docutils literal notranslate"><span class="pre">IOdata</span></code>.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="hirshfeld-partitioning">
+<h1>Hirshfeld Partitioning<a class="headerlink" href="#hirshfeld-partitioning" title="Link to this heading">#</a></h1>
+<p>Given a molecule, build the promolecule using neutral atoms,
+$<span class="math notranslate nohighlight">\(
+\rho^0(\mathbf{r}) = \sum_A \rho_A^0(\mathbf{r} - \mathbf{R}_A)
+\)</span><span class="math notranslate nohighlight">\(
+The atomic weights and charges are
+\)</span><span class="math notranslate nohighlight">\(
+w_A(\mathbf{r}) = \frac{\rho_A^0(\mathbf{r})}{\rho^0(\mathbf{r})}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+q_A = Z_A - \int w_A(\mathbf{r}) \rho(\mathbf{r}) d\mathbf{r}
+\)</span><span class="math notranslate nohighlight">\(
+The KL information loss is
+\)</span><span class="math notranslate nohighlight">\(
+\mathcal{F} = \int \rho^0(\mathbf{r}) \log \left( \frac{\rho^0(\mathbf{r})}{\rho(\mathbf{r})} \right) d\mathbf{r}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If running on Google Colab or any environment where the following packages are not installed, uncomment the following lines</span>
+<span class="c1">#!pip install qc-gbasis</span>
+<span class="c1">#!pip install qc-iodata</span>
+<span class="c1">#!pip install qc-atomDB</span>
+<span class="c1">#!pip install qc-grid</span>
+<span class="c1">#!pip install qc-denspart</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Key import statements</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gbasis.wrappers</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_iodata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gbasis.evals.density</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_density</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">atomdb</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">iodata</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_one</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">grid.onedgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussLegendre</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">grid.rtransform</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeckeRTransform</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">grid.becke</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeckeWeights</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">grid.molgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">MolGrid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gbasis.evals.density</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_density</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">atomdb</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">iodata</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_one</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.onedgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussLegendre</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.rtransform</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeckeRTransform</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.becke</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeckeWeights</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.molgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">MolGrid</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.14.3</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.14</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">grid</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Grid Module.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="c1"># flake8: noqa</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.angular</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.atomgrid</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.basegrid</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.14.3</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.14</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">grid</span><span class="o">/</span><span class="n">angular</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">75</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="kn">from</span><span class="w"> </span><span class="nn">importlib_resources</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+<span class="ne">---&gt; </span><span class="mi">75</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.basegrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="c1"># Lebedev dictionary for grid&#39;s number of points (keys) and degrees (values)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="n">LEBEDEV_NPOINTS</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="mi">6</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="mi">18</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">110</span>     <span class="mi">5810</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="p">}</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.14.3</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.14</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">grid</span><span class="o">/</span><span class="n">basegrid</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">cKDTree</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">grid.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">convert_cart_to_sph</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">generate_orders_horton_order</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="n">solid_harmonics</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">class</span><span class="w"> </span><span class="nc">Grid</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Basic Grid class for grid information storage.&quot;&quot;&quot;</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.14.3</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.14</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">grid</span><span class="o">/</span><span class="n">utils</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Utility Module.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">sph_harm</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">_bragg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>  <span class="c1"># index 0, place holder</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">114</span>     <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="n">_cambridge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>         <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>  <span class="c1"># index 0, place holder</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">206</span>     <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="p">)</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;sph_harm&#39; from &#39;scipy.special&#39; (/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/special/__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_grid</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">rad_points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">preset</span><span class="o">=</span><span class="s2">&quot;ultrafine&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make a grid object from a molecule</span>
+<span class="sd">    Args:</span>
+<span class="sd">        mol (IOData): molecule object</span>
+<span class="sd">        rad_points (int): number of radial points</span>
+<span class="sd">        preset (str): preset grid type</span>
+<span class="sd">            &quot;coarse&quot;, &quot;medium&quot;, &quot;fine&quot;, &quot;veryfine&quot;, &quot;ultrafine&quot;, &quot;insane&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        mol_grid (Grid): grid object</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># create a radial grid with rad_points points</span>
+    <span class="n">oned_grid</span> <span class="o">=</span> <span class="n">GaussLegendre</span><span class="p">(</span><span class="n">rad_points</span><span class="p">)</span>
+    <span class="n">radial_grid</span> <span class="o">=</span> <span class="n">BeckeRTransform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">transform_1d_grid</span><span class="p">(</span><span class="n">oned_grid</span><span class="p">)</span>
+
+    <span class="c1"># create a pruned molecular grid with the preset angular convention</span>
+    <span class="n">mol_grid</span> <span class="o">=</span> <span class="n">MolGrid</span><span class="o">.</span><span class="n">from_preset</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span><span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span><span class="n">preset</span><span class="p">,</span><span class="n">rgrid</span><span class="o">=</span><span class="n">radial_grid</span><span class="p">,</span><span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mol_grid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate the molecular density on a grid</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eval_density</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="s2">&quot;a+b&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Evaluate the molecular density on a grid</span>
+<span class="sd">    Args:</span>
+<span class="sd">        mol (IOData): molecule object</span>
+<span class="sd">        mol_grid (Grid): grid object</span>
+<span class="sd">        spin (str): spin type</span>
+<span class="sd">            &quot;a+b&quot; (total), &quot;a&quot;, &quot;b&quot;, &quot;a-b&quot; (magnetization)</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dens (np.ndarray): molecular density</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Construct molecular basis from wave-function information read by IOData</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="n">from_iodata</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="c1"># Compute the 1DM and then the electron density</span>
+    <span class="k">if</span> <span class="n">spin</span> <span class="o">==</span> <span class="s2">&quot;a+b&quot;</span><span class="p">:</span>
+        <span class="n">rdm</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">one_rdms</span><span class="p">[</span><span class="s2">&quot;scf&quot;</span><span class="p">]</span>
+        <span class="n">dens</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rdm</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">one_rdms</span><span class="p">[</span><span class="s2">&quot;scf_spin&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">spin</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+            <span class="n">dens</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">spin</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span>
+            <span class="n">dens</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">spin</span> <span class="o">==</span> <span class="s2">&quot;a-b&quot;</span><span class="p">:</span>
+            <span class="n">dens</span> <span class="o">=</span> <span class="n">evaluate_density</span><span class="p">(</span><span class="n">rdm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">rdm</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">basis</span><span class="p">,</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid spin type: </span><span class="si">{</span><span class="n">spin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">dens</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># KL Divergence</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ext_kl_divergence</span><span class="p">(</span><span class="n">rho0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Compute the extended KL divergence between two densities</span>
+<span class="sd">    Args:</span>
+<span class="sd">        rho0 (np.ndarray): reference density</span>
+<span class="sd">        rho (np.ndarray): density</span>
+<span class="sd">        mol_grid (Grid): grid object</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        F (float): KL divergence</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># We only evaluate the integrand in locations where the molecular</span>
+    <span class="c1"># and promolecular density are sufficiently large.</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
+
+    <span class="c1"># Initialize the integrand with zeros</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
+
+    <span class="c1"># Compute the integrand only where the mask is true</span>
+    <span class="n">integrand</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">rho</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">rho0</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">+</span> <span class="n">rho0</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">-</span> <span class="n">rho</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hirshfeld_partitioning</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Hirshfeld partitioning of a IOData molecule</span>
+<span class="sd">    Args:</span>
+<span class="sd">        mol (IOData): molecule object</span>
+<span class="sd">        mol_grid (Grid): grid object</span>
+<span class="sd">        dataset (AtomDB): atomic database</span>
+<span class="sd">           &quot;gaussian&quot;, &quot;slater&quot;, &quot;hci&quot;, &quot;numeric&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        q (np.ndarray): atomic atomic charges</span>
+<span class="sd">        f_ekl (float): extended KL information loss</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># evaluate the molecular density on the grid</span>
+    <span class="n">dens</span> <span class="o">=</span> <span class="n">eval_density</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">dens</span><span class="p">))</span>
+
+    <span class="c1"># evaluate the promolecular density on the grid</span>
+    <span class="n">promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="n">promol_dens</span> <span class="o">=</span> <span class="n">promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Compute the KL divergence</span>
+    <span class="n">f_ekl</span> <span class="o">=</span> <span class="n">ext_kl_divergence</span><span class="p">(</span><span class="n">promol_dens</span><span class="p">,</span> <span class="n">dens</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">)</span>
+
+    <span class="c1"># compute the atomic weights, populations, and</span>
+    <span class="n">at_charges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">))</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dens</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">)):</span>
+        <span class="n">proatom</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">proatom_dens</span> <span class="o">=</span> <span class="n">proatom</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Do not attempt to compute the weight if the pro-atom density is zero</span>
+        <span class="c1"># Set it equal to zero directly.</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">proatom_dens</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">proatom_dens</span><span class="p">)</span>
+        <span class="n">weight</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">proatom_dens</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">promol_dens</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+        <span class="n">population</span> <span class="o">=</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">dens</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span>
+        <span class="n">at_charges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">population</span>
+
+    <span class="k">return</span> <span class="n">at_charges</span><span class="p">,</span> <span class="n">f_ekl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of Hirshfeld partitioning of a molecule</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">load_one</span><span class="p">(</span><span class="s2">&quot;ch2o_q+0.fchk&quot;</span><span class="p">)</span>
+<span class="n">mol_grid</span> <span class="o">=</span> <span class="n">make_grid</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">rad_points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">preset</span><span class="o">=</span><span class="s2">&quot;ultrafine&quot;</span><span class="p">)</span>
+<span class="n">promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">promol</span><span class="o">.</span><span class="n">coeffs</span><span class="p">)</span>
+<span class="n">promol_dens</span> <span class="o">=</span> <span class="n">promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">promol_dens</span><span class="p">)</span>
+<span class="n">charges</span><span class="p">,</span> <span class="n">f_ekl</span> <span class="o">=</span>  <span class="n">hirshfeld_partitioning</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">)</span>
+<span class="n">formatted_charges</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">charge</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The atomic charges are: </span><span class="si">{</span><span class="n">formatted_charges</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The KL divergence is: </span><span class="si">{</span><span class="n">f_ekl</span><span class="si">:</span><span class="s2"> .6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\ayers\AppData\Local\Programs\Python\Python312\Lib\site-packages\grid\atomgrid.py:896: UserWarning: Lebedev weights are negative which can introduce round-off errors.
+  sphere_grid = AngularGrid(degree=deg_i, method=method)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 1.0, 1.0, 1.0]
+16.00000757755703
+The atomic charges are: -0.216955, 0.124497, 0.046231, 0.046218
+The KL divergence is:  0.225480
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hirshfeld_i_partitioning</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Iterative Hirshfeld partitioning of a IOData molecule</span>
+<span class="sd">    Args:</span>
+<span class="sd">        mol (IOData): molecule object</span>
+<span class="sd">        mol_grid (Grid): grid object</span>
+<span class="sd">        dataset (AtomDB): atomic database</span>
+<span class="sd">           &quot;gaussian&quot;, &quot;slater&quot;, &quot;hci&quot;, &quot;numeric&quot;</span>
+<span class="sd">        max_iter (int): maximum number of iterations</span>
+<span class="sd">        tol (float): convergence tolerance</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        q (np.ndarray): atomic atomic charges</span>
+<span class="sd">        f_ekl (float): extended KL information loss</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Initialize with Hirshfeld partitioning</span>
+    <span class="n">at_charges</span><span class="p">,</span> <span class="n">f_ekl</span> <span class="o">=</span> <span class="n">hirshfeld_partitioning</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
+
+    <span class="c1"># evaluate the molecular density on the grid</span>
+    <span class="n">dens</span> <span class="o">=</span> <span class="n">eval_density</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">dens</span><span class="p">))</span>
+
+    <span class="c1"># Iterate until convergence or maximum number of iterations is exceeded</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="c1">#Store old charges</span>
+        <span class="n">at_charges_old</span> <span class="o">=</span> <span class="n">at_charges</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="c1"># evaluate the promolecular density on the grid</span>
+        <span class="n">promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">charges</span><span class="o">=</span><span class="n">at_charges</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">promol_dens</span> <span class="o">=</span> <span class="n">promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Compute the KL divergence</span>
+        <span class="n">f_ekl</span> <span class="o">=</span> <span class="n">ext_kl_divergence</span><span class="p">(</span><span class="n">promol_dens</span><span class="p">,</span> <span class="n">dens</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">)</span>
+
+        <span class="c1"># compute the atomic weights, populations, and</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dens</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j_atom</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">)):</span>
+            <span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">[</span><span class="n">j_atom</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">[</span><span class="n">j_atom</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+            <span class="n">proatom</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">[</span><span class="n">j_atom</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">[</span><span class="n">j_atom</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+                                                <span class="n">charges</span><span class="o">=</span><span class="n">at_charges</span><span class="p">[</span><span class="n">j_atom</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+            <span class="n">proatom_dens</span> <span class="o">=</span> <span class="n">proatom</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">mol_grid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># Do not attempt to compute the weight if the pro-atom density is zero</span>
+            <span class="c1"># Set it equal to zero directly.</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">proatom_dens</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">proatom_dens</span><span class="p">)</span>
+            <span class="n">weight</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">proatom_dens</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">promol_dens</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+            <span class="n">population</span> <span class="o">=</span> <span class="n">mol_grid</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">dens</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span>
+            <span class="n">at_charges</span><span class="p">[</span><span class="n">j_atom</span><span class="p">]</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">[</span><span class="n">j_atom</span><span class="p">]</span> <span class="o">-</span> <span class="n">population</span>
+
+        <span class="c1"># Check to see if the maximum change in the charges is</span>
+        <span class="c1"># less than the tolerance</span>
+        <span class="n">at_charge_convergence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">at_charges</span> <span class="o">-</span> <span class="n">at_charges_old</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: KL divergence = </span><span class="si">{</span><span class="n">f_ekl</span><span class="si">:</span><span class="s2"> .6f</span><span class="si">}</span><span class="s2">, Charge convergence = </span><span class="si">{</span><span class="n">at_charge_convergence</span><span class="si">:</span><span class="s2"> .6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">at_charge_convergence</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">max_iter</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum number of iterations exceeded&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">at_charges</span><span class="p">,</span> <span class="n">f_ekl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="minimal-basis-iterative-stockholder-mbis">
+<h2>Minimal Basis Iterative Stockholder (MBIS)<a class="headerlink" href="#minimal-basis-iterative-stockholder-mbis" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">denspart.mbis</span><span class="w"> </span><span class="kn">import</span> <span class="n">MBISProModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">denspart.vh</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize_reduce_pro_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">denspart.properties</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_radial_moments</span><span class="p">,</span> <span class="n">compute_multipole_moments</span><span class="p">,</span> <span class="n">safe_ratio</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">load_one</span><span class="p">(</span><span class="s2">&quot;ch2o_q+0.fchk&quot;</span><span class="p">)</span>
+<span class="n">mol_grid</span> <span class="o">=</span> <span class="n">make_grid</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">rad_points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">preset</span><span class="o">=</span><span class="s2">&quot;ultrafine&quot;</span><span class="p">)</span>
+<span class="n">density</span> <span class="o">=</span> <span class="n">eval_density</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol_grid</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="s2">&quot;a+b&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MBIS Partitioning&quot;</span><span class="p">)</span>
+<span class="n">pro_model_init</span> <span class="o">=</span> <span class="n">MBISProModel</span><span class="o">.</span><span class="n">from_geometry</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atnums</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">atcoords</span><span class="p">)</span>
+<span class="n">pro_model</span><span class="p">,</span> <span class="n">localgrids</span> <span class="o">=</span> <span class="n">optimize_reduce_pro_model</span><span class="p">(</span><span class="n">pro_model_init</span><span class="p">,</span><span class="n">mol_grid</span><span class="p">,</span><span class="n">density</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">pro_model</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="n">results</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">pro_model</span><span class="o">.</span><span class="n">charges</span><span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atomic Charges    = &quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;charges&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "QC-Edu/IntroQM2022",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-basis-iterative-stockholder-mbis">Minimal Basis Iterative Stockholder (MBIS)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Paul W. Ayers, Valerii Chuiko, and friends, with the support of The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
