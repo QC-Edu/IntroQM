@@ -124,7 +124,7 @@ parts:
     - file: problems/HF_dft.ipynb
       title: "Hartree-Fock and DFT"
 
-    - file: problems/hirshfeld_conventional.ipynb
+    - file: problems/Hirshfeld_conventional.ipynb
       title: "Atomic Charges"
 
     - file: problems/EEM.ipynb
