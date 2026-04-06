@@ -535,35 +535,42 @@ E_A(N_0 + \Delta N) = E(N_0) + \left( \frac{\partial E_A}{\partial N} \right)_{N
 \[
 E_A(N_0 + \Delta N) = E(N_0) + \mu_A \Delta N + \tfrac{1}{2} \eta_A (\Delta N)^2
 \]</div>
-<p>Using the known energies of the <span class="math notranslate nohighlight">\(N_0\)</span>, <span class="math notranslate nohighlight">\(N_0 + 1\)</span>, and <span class="math notranslate nohighlight">\(N_0 - 1\)</span> states, we can solve for <span class="math notranslate nohighlight">\(\mu_A\)</span> and <span class="math notranslate nohighlight">\(\eta_A\)</span>, obtaining the Mulliken electronegativity and Parr-Pearson hardness,
-$<span class="math notranslate nohighlight">\(
+<p>Using the known energies of the <span class="math notranslate nohighlight">\(N_0\)</span>, <span class="math notranslate nohighlight">\(N_0 + 1\)</span>, and <span class="math notranslate nohighlight">\(N_0 - 1\)</span> states, we can solve for <span class="math notranslate nohighlight">\(\mu_A\)</span> and <span class="math notranslate nohighlight">\(\eta_A\)</span>, obtaining the Mulliken electronegativity and Parr-Pearson hardness,</p>
+<div class="math notranslate nohighlight">
+\[
 \mu_A = \frac{1}{2} (E(N_0 + 1) - E(N_0 - 1)) = -\tfrac{1}{2} (I + A)
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \eta_A = E(N_0 + 1) + E(N_0 - 1) - 2E(N_0) = I - A
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>I = E(N_0) - E(N_0 + 1) \ge 0<span class="math notranslate nohighlight">\( is the ionization potential and \)</span>A = E(N_0 - 1) - E(N_0) \ge 0$ is the electron affinity.</p>
-<p>The total energy is then,
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(I = E(N_0) - E(N_0 + 1) \ge 0\)</span> is the ionization potential and <span class="math notranslate nohighlight">\(A = E(N_0 - 1) - E(N_0) \ge 0\)</span> is the electron affinity.</p>
+<p>The total energy is then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{split}
 E_{\text{total}} &amp;= \sum_A E_A(N_{A,0} + \Delta N_A) \\
 &amp;= \sum_A E_A(N_{A,0}) + \sum_A \mu_A \Delta N_A + \frac{1}{2} \sum_A \eta_A (\Delta N_A)^2 + \frac{1}{2} \sum_{A \ne B} J_{AB} \Delta N_A \Delta N_B
 \end{split}
-\)</span><span class="math notranslate nohighlight">\(
-This assumes that the atoms/groups &quot;reference state&quot; is neutral so that their charge is just \)</span>q_A = -\Delta N_A<span class="math notranslate nohighlight">\(. The last term is the Coulomb interaction between the charges, where \)</span>J_{AB}<span class="math notranslate nohighlight">\( is the Coulomb integral between the charge distributions of atoms/groups \)</span>A<span class="math notranslate nohighlight">\( and \)</span>B<span class="math notranslate nohighlight">\(. We could evaluate the Coulomb integral between the charge distributions analytically using [`AtomDB`](https://atomdb.qcdevs.org/api/index.html) or [`Bfit`](https://bfit.qcdevs.org/), but this is not what is usually done in practice. Instead, the Coulomb interaction is usually screened, so that for electrostatic interactions between bonded atoms and atoms bonded to a common atom (linked by a bond angle) the Coulomb interaction is nearly neglected, while for atoms linked by a torsion the electrostatic interaction is screened. We'll use an [erfgau screening](https://arxiv.org/pdf/physics/0410062),
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>This assumes that the atoms/groups “reference state” is neutral so that their charge is just <span class="math notranslate nohighlight">\(q_A = -\Delta N_A\)</span>. The last term is the Coulomb interaction between the charges, where <span class="math notranslate nohighlight">\(J_{AB}\)</span> is the Coulomb integral between the charge distributions of atoms/groups <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. We could evaluate the Coulomb integral between the charge distributions analytically using <a class="reference external" href="https://atomdb.qcdevs.org/api/index.html"><code class="docutils literal notranslate"><span class="pre">AtomDB</span></code></a> or <a class="reference external" href="https://bfit.qcdevs.org/"><code class="docutils literal notranslate"><span class="pre">Bfit</span></code></a>, but this is not what is usually done in practice. Instead, the Coulomb interaction is usually screened, so that for electrostatic interactions between bonded atoms and atoms bonded to a common atom (linked by a bond angle) the Coulomb interaction is nearly neglected, while for atoms linked by a torsion the electrostatic interaction is screened. We’ll use an <a class="reference external" href="https://arxiv.org/pdf/physics/0410062">erfgau screening</a>,</p>
+<div class="math notranslate nohighlight">
+\[
 J_{AB} = \frac{\operatorname{erf}(\alpha R_{AB})}{R_{AB}} - \frac{2\alpha}{\sqrt{\pi}}  \exp\left({-\tfrac{\alpha^2R_{AB}^2}{3}}\right)
-\)</span>$</p>
-<p>Now, to obtain the charges, we minimize the total energy with respect to the amount of electron transfer, <span class="math notranslate nohighlight">\(\Delta N_A\)</span>, subject to the constraint that the total charge is fixed, <span class="math notranslate nohighlight">\(\sum_A \Delta N_A = -Q\)</span>.
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Now, to obtain the charges, we minimize the total energy with respect to the amount of electron transfer, <span class="math notranslate nohighlight">\(\Delta N_A\)</span>, subject to the constraint that the total charge is fixed, <span class="math notranslate nohighlight">\(\sum_A \Delta N_A = -Q\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
 \min_{\{\Delta N_A\}} E_{\text{total}} \quad \text{subject to} \quad \sum_A \Delta N_A = -Q
-\)</span><span class="math notranslate nohighlight">\(
-Forcing the constraint with the Lagrange multiplier, \)</span>\mu_{\text{total}}<span class="math notranslate nohighlight">\(, we have the Lagrangian,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Forcing the constraint with the Lagrange multiplier, <span class="math notranslate nohighlight">\(\mu_{\text{total}}\)</span>, we have the Lagrangian,</p>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{L} = E_{\text{total}} + \mu_{\text{total}} \left( \sum_A \Delta N_A + Q \right)
-\)</span><span class="math notranslate nohighlight">\(
-Differentiating the Lagrangian and setting it equal to zero gives a system of \)</span>P+1<span class="math notranslate nohighlight">\( linear equations, where \)</span>P<span class="math notranslate nohighlight">\( is the number of atoms/groups,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Differentiating the Lagrangian and setting it equal to zero gives a system of <span class="math notranslate nohighlight">\(P+1\)</span> linear equations, where <span class="math notranslate nohighlight">\(P\)</span> is the number of atoms/groups,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{split}
 0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_1} + \mu_{\text{total}} \\
 0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_2} + \mu_{\text{total}} \\
@@ -571,42 +578,42 @@ Differentiating the Lagrangian and setting it equal to zero gives a system of \)
 0 &amp;= \frac{\partial E_{\text{total}}}{\partial \Delta N_P} + \mu_{\text{total}} \\
 0 &amp;= \sum_A \Delta N_A + Q
 \end{split}
-\)</span><span class="math notranslate nohighlight">\(
-Using the explicit expression for the total energy, this system of equations can be written in matrix form as
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Using the explicit expression for the total energy, this system of equations can be written in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[
 \mathbf{A}\boldsymbol{\delta}=\mathbf{m},
-\)</span><span class="math notranslate nohighlight">\(
-where
-\)</span>$
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
 \mathbf{A} &amp;=
 \begin{bmatrix}
-\eta_1  &amp; J_{12} &amp; \cdots &amp; J_{1P} &amp; 1 \
-J_{21}  &amp; \eta_2 &amp; \cdots &amp; J_{2P} &amp; 1 \
-\vdots  &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \
-J_{P1}  &amp; J_{P2} &amp; \cdots &amp; \eta_P &amp; 1 \
+\eta_1  &amp; J_{12} &amp; \cdots &amp; J_{1P} &amp; 1 \\
+J_{21}  &amp; \eta_2 &amp; \cdots &amp; J_{2P} &amp; 1 \\
+\vdots  &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+J_{P1}  &amp; J_{P2} &amp; \cdots &amp; \eta_P &amp; 1 \\
 1       &amp; 1      &amp; \cdots &amp; 1      &amp; 0
-\end{bmatrix}, \[1em]
+\end{bmatrix}, \\[1em]
 \boldsymbol{\delta} &amp;=
 \begin{bmatrix}
-\Delta N_1 \
-\Delta N_2 \
-\vdots \
-\Delta N_P \
+\Delta N_1 \\
+\Delta N_2 \\
+\vdots \\
+\Delta N_P \\
 \mu_{\mathrm{total}}
-\end{bmatrix}, \[1em]
+\end{bmatrix}, \\[1em]
 \mathbf{m} &amp;=
 \begin{bmatrix}
-\mu_1 \
-\mu_2 \
-\vdots \
-\mu_P \</p>
-<ul class="simple">
-<li><p>Q
+\mu_1 \\
+\mu_2 \\
+\vdots \\
+\mu_P \\
+- Q
 \end{bmatrix}.
 \end{aligned}
-$$</p></li>
-</ul>
+\end{split}\]</div>
 <p>We take benchmark values of the chemical potentials and hardnesses from <a class="reference external" href="https://pubs.rsc.org/en/content/articlelanding/2016/cp/c6cp04533b">this reference</a>, using <a class="reference external" href="https://atomdb.qcdevs.org/api/index.html"><code class="docutils literal notranslate"><span class="pre">AtomDB</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,21 +640,19 @@ Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h5py&gt;=3.6.0 (from qc-atomdb)
+  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
-Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting importlib-resources&gt;=3.0.0 (from qc-atomdb)
   Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
+Collecting pooch&gt;=1.8.1 (from qc-atomdb)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pooch&gt;=1.8.1 (from qc-atomdb)
-  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (4.9.4)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (26.0)
 Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pooch&gt;=1.8.1-&gt;qc-atomdb) (2.33.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.7)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.4.7)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (3.11)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2.6.3)
 Requirement already satisfied: certifi&gt;=2023.5.7 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.8.1-&gt;qc-atomdb) (2026.2.25)
@@ -655,21 +660,30 @@ Downloading qc_AtomDB-0.0.2.post5-py3-none-any.whl (62.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/62.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.1/62.0 MB</span> <span class=" -Color -Color-Red">73.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.4/62.0 MB</span> <span class=" -Color -Color-Red">61.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">31.5/62.0 MB</span> <span class=" -Color -Color-Red">87.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.6/62.0 MB</span> <span class=" -Color -Color-Red">38.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ <span class=" -Color -Color-Green">59.8/62.0 MB</span> <span class=" -Color -Color-Red">105.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/62.0 MB</span> <span class=" -Color -Color-Red">29.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">95.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">29.1/62.0 MB</span> <span class=" -Color -Color-Red">36.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">38.8/62.0 MB</span> <span class=" -Color -Color-Red">39.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">55.6/62.0 MB</span> <span class=" -Color -Color-Red">50.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.0/62.0 MB</span> <span class=" -Color -Color-Red">47.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:01</span>
 ?25hDownloading h5py-3.16.0-cp314-cp314-manylinux_2_28_x86_64.whl (5.4 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">124.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">113.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
 Downloading msgpack-1.1.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (419 kB)
 </pre></div>
@@ -696,10 +710,7 @@ Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6/6</span> [qc-atomdb]
 ?25h
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpack-numpy-0.4.8 pooch-1.9.0 qc-atomdb-0.0.2.post5
+Successfully installed h5py-3.16.0 importlib-resources-6.5.2 msgpack-1.1.2 msgpack-numpy-0.4.8 pooch-1.9.0 qc-atomdb-0.0.2.post5
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qc-iodata
@@ -715,10 +726,7 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━ <span class=" -Color -Color-Green">2.6/3.4 MB</span> <span class=" -Color -Color-Red">15.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">16.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">28.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -809,7 +817,7 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2852/1849752753.py:55: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2894/1849752753.py:55: RuntimeWarning: invalid value encountered in divide
   erfgau = np.where(r_arr &lt; tol, 0.0, erf(x) / r_arr - (2.0 * alpha / np.sqrt(np.pi)) * np.exp(-(x**2) / 3.0))
 </pre></div>
 </div>
