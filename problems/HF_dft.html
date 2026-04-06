@@ -239,8 +239,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../HOandMorse.html">11. Diatomic Molecules' Nuclear Schrodinger Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="huckel_theory.html">12. Hückel Theory</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Self-Consistent Field Methods</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Hartree-Fock and DFT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Hirshfeld_conventional.html">14. Hirshfeld Partitioning</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="EEM.html">15. Electronegativity Equalization Method (EEM)</a></li>
@@ -522,7 +521,6 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13. Self-Consistent Field Methods</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-complete-the-below-notebook">👩🏽‍💻 Assignment: Complete the Below Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-of-mean-field-average-potential-methods">Motivation of Mean-Field (Average Potential) Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-potential-models">Average Potential Models</a><ul class="nav section-nav flex-column">
@@ -543,12 +541,6 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-correlation">Electron Correlation</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-approximate-the-effects-of-electron-correlation-by-using-either-the-variational-principle-or-perturbation-theory-in-the-variational-approach-we-use-a-linear-combination-of-the-slater-determinants-that-diagonalize-the-average-potential-approximation-in-perturbation-theory-we-consider-the-difference-between-the-exact-hamiltonian-and-the-average-potential-hamiltonian-as-a-perturbation-and-compute-corrections-to-the-energy-and-wavefunction-order-by-order-in-perturbation-theory-the-simplest-perturbative-correction-is-the-moller-plesset-second-order-mp2-correction-which-accounts-for-the-missing-correlation-energy-in-hartree-fock-theory-e-mathrm-mp2-mathrm-uhf">13. We can approximate the effects of electron correlation by using either the variational principle or perturbation theory. In the variational approach, we use a linear combination of the Slater determinants that diagonalize the average-potential approximation. In perturbation theory, we consider the difference between the exact Hamiltonian and the average-potential Hamiltonian as a perturbation and compute corrections to the energy and wavefunction order by order in perturbation theory. The simplest perturbative correction is the Møller-Plesset second-order (MP2) correction, which accounts for the missing correlation energy in Hartree-Fock theory.
-$$
-E_{\mathrm{MP2}}^{\mathrm{UHF}}</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -573,19 +565,27 @@ E_{\mathrm{MP2}}^{\mathrm{UHF}}</a></li>
 </section>
 <section id="motivation-of-mean-field-average-potential-methods">
 <h2>Motivation of Mean-Field (Average Potential) Methods<a class="headerlink" href="#motivation-of-mean-field-average-potential-methods" title="Link to this heading">#</a></h2>
-<p>In atomic units, the electronic Hamiltonian for an <span class="math notranslate nohighlight">\(N\)</span>-electron molecule, with <span class="math notranslate nohighlight">\(P\)</span> atoms with atomic numbers <span class="math notranslate nohighlight">\(Z_A\)</span> at positions <span class="math notranslate nohighlight">\(\mathbf{R}_A\)</span>, is given by
-$<span class="math notranslate nohighlight">\(\hat{H} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 - \sum_{i=1}^N \sum_{A=1}^P \frac{Z_A}{|\mathbf{r}_i - \mathbf{R}_A|} + \sum_{i&lt;j} \frac{1}{|\mathbf{r}_i - \mathbf{r}_j|}\)</span>$</p>
-<p>This Hamiltonian cannot be solved by separation of variables because the electrons are coupled through the electron-electron repulsion term. Mean-field, or average potential, approximations decouple electrons by treating the effect of all other electrons on a given electron as an average potential (operator), <span class="math notranslate nohighlight">\(\hat{w}(\mathbf{r})\)</span>. (I.e., individual electrons feel only the effects of the “cloud” of other electrons.) With this revision, the electronic Hamiltonian becomes,
-$<span class="math notranslate nohighlight">\(\hat{H}_{\text{avg}} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 + \sum_{i=1}^N v(\mathbf{r}_i)  + \sum_{i=1}^N \hat{w}(\mathbf{r}_i)\)</span><span class="math notranslate nohighlight">\(
-where the external potential is defined as
-\)</span><span class="math notranslate nohighlight">\(v(\mathbf{r}) = -\sum_{A=1}^P \frac{Z_A}{|\mathbf{r} - \mathbf{R}_A|}\)</span>$</p>
-<p>The electronic Schrödinger equation for the mean-field Hamiltonian is
-$<span class="math notranslate nohighlight">\(\hat{H}_{\text{avg}} \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N) = E \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)\)</span><span class="math notranslate nohighlight">\(
-which can be solved by separation of variables, yielding a set of one-electron equations,
-\)</span><span class="math notranslate nohighlight">\(\left[-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}(\mathbf{r})\right] \phi_p(\mathbf{r}) = \epsilon_p \phi_p(\mathbf{r})\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\phi_p(\mathbf{r})<span class="math notranslate nohighlight">\( is the \)</span>p<span class="math notranslate nohighlight">\(-th molecular orbital. However, the average potential \)</span>\hat{w}<span class="math notranslate nohighlight">\( depends on the wavefunction \)</span>\Phi<span class="math notranslate nohighlight">\(, which is a Slater determinant of the molecular orbitals \)</span>\phi_p<span class="math notranslate nohighlight">\(. Making this dependence explicit, we have,
-\)</span><span class="math notranslate nohighlight">\(\left[-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right] \phi_p(\mathbf{r}) = \epsilon_p \phi_p(\mathbf{r})\)</span><span class="math notranslate nohighlight">\(
-This is a *nonlinear* Schr&amp;ouml;dinger equation because the operator \)</span>\hat{w}<span class="math notranslate nohighlight">\( depends on the orbitals \)</span>{\phi_q}$, which are the solutions to the equation. Since we cannot write the Hamiltonian without knowing the orbitals, and cannot know the orbitals without writing the Hamiltonian, we have a circular problem. The simplest self-consistent-field (SCF) method solves this problem by starting from an initial guess for the orbitals, constructing the Hamiltonian, solving for the orbitals, and then updating the Hamiltonian using those orbitals. This procedure is iterated until the orbitals used to construct the Hamiltonian are the same as the orbitals obtained from solving the Schrödinger equation, at which point we have a <em>self-consistent solution</em>.</p>
+<p>In atomic units, the electronic Hamiltonian for an <span class="math notranslate nohighlight">\(N\)</span>-electron molecule, with <span class="math notranslate nohighlight">\(P\)</span> atoms with atomic numbers <span class="math notranslate nohighlight">\(Z_A\)</span> at positions
+<span class="math notranslate nohighlight">\(\mathbf{R}_A\)</span>, is given by</p>
+<div class="math notranslate nohighlight">
+\[\hat{H} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 - \sum_{i=1}^N \sum_{A=1}^P \frac{Z_A}{|\mathbf{r}_i - \mathbf{R}_A|} + \sum_{i&lt;j} \frac{1}{|\mathbf{r}_i - \mathbf{r}_j|}\]</div>
+<p>This Hamiltonian cannot be solved by separation of variables because the electrons are coupled through the electron-electron repulsion term. Mean-field, or average potential, approximations decouple electrons by treating the effect of all other electrons on a given electron as an average potential (operator), <span class="math notranslate nohighlight">\(\hat{w}(\mathbf{r})\)</span>. (I.e., individual electrons feel only the effects of the “cloud” of other electrons.) With this revision, the electronic Hamiltonian becomes,</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}_{\text{avg}} = -\sum_{i=1}^N \frac{1}{2} \nabla_i^2 + \sum_{i=1}^N v(\mathbf{r}_i)  + \sum_{i=1}^N \hat{w}(\mathbf{r}_i)$
+\]</div>
+<p>where the external potential is defined as</p>
+<div class="math notranslate nohighlight">
+\[v(\mathbf{r}) = -\sum_{A=1}^P \frac{Z_A}{|\mathbf{r} - \mathbf{R}_A|}\]</div>
+<p>The electronic Schrödinger equation for the mean-field Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}_{\text{avg}} \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N) = E \Phi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)\]</div>
+<p>which can be solved by separation of variables, yielding a set of one-electron equations,</p>
+<div class="math notranslate nohighlight">
+\[\left[-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}(\mathbf{r})\right] \phi_p(\mathbf{r}) = \epsilon_p \phi_p(\mathbf{r})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_p(\mathbf{r})\)</span> is the <span class="math notranslate nohighlight">\(p\)</span>-th molecular orbital. However, the average potential <span class="math notranslate nohighlight">\(\hat{w}\)</span> depends on the wavefunction <span class="math notranslate nohighlight">\(\Phi\)</span>, which is a Slater determinant of the molecular orbitals <span class="math notranslate nohighlight">\(\phi_p\)</span>. Making this dependence explicit, we have,</p>
+<div class="math notranslate nohighlight">
+\[\left[-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right] \phi_p(\mathbf{r}) = \epsilon_p \phi_p(\mathbf{r})\]</div>
+<p>This is a <em>nonlinear</em> Schrödinger equation because the operator <span class="math notranslate nohighlight">\(\hat{w}\)</span> depends on the orbitals <span class="math notranslate nohighlight">\(\{\phi_q\}\)</span>, which are the solutions to the equation. Since we cannot write the Hamiltonian without knowing the orbitals, and cannot know the orbitals without writing the Hamiltonian, we have a circular problem. The simplest self-consistent-field (SCF) method solves this problem by starting from an initial guess for the orbitals, constructing the Hamiltonian, solving for the orbitals, and then updating the Hamiltonian using those orbitals. This procedure is iterated until the orbitals used to construct the Hamiltonian are the same as the orbitals obtained from solving the Schrödinger equation, at which point we have a <em>self-consistent solution</em>.</p>
 <section id="average-potential-models">
 <h3>Average Potential Models<a class="headerlink" href="#average-potential-models" title="Link to this heading">#</a></h3>
 <section id="hartree-model">
@@ -680,14 +680,14 @@ Requirement already satisfied: attrs&gt;=21.3.0 in /opt/hostedtoolcache/Python/3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading qc_gbasis-0.1.0-py3-none-any.whl.metadata (7.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
+Requirement already satisfied: scipy&gt;=1.11.1 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.17.1)
 Requirement already satisfied: importlib-resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (1.14.0)
 Requirement already satisfied: numpy&gt;=1.22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-gbasis) (2.4.4)
 Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-gbasis) (1.3.0)
-Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_gbasis-0.1.0-py3-none-any.whl (97 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: qc-gbasis
@@ -708,42 +708,31 @@ Requirement already satisfied: numpy&gt;=1.16 in /opt/hostedtoolcache/Python/3.1
 Requirement already satisfied: scipy&gt;=1.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.17.1)
 Requirement already satisfied: importlib_resources in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (6.5.2)
 Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from qc-grid) (1.14.0)
-Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting iniconfig&gt;=1.0.1 (from pytest&gt;=8.0.0-&gt;qc-grid)
+  Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
 Requirement already satisfied: packaging&gt;=22 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (26.0)
 Collecting pluggy&lt;2,&gt;=1.5 (from pytest&gt;=8.0.0-&gt;qc-grid)
-  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
-Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.20.0)
-Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-grid) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Requirement already satisfied: pygments&gt;=2.7.2 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from pytest&gt;=8.0.0-&gt;qc-grid) (2.20.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from sympy-&gt;qc-grid) (1.3.0)
+Downloading qc_grid-0.0.9.post1-py3-none-any.whl (66.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/66.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/66.1 MB</span> <span class=" -Color -Color-Red">40.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">27.3/66.1 MB</span> <span class=" -Color -Color-Red">158.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">25.2/66.1 MB</span> <span class=" -Color -Color-Red">95.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">55.8/66.1 MB</span> <span class=" -Color -Color-Red">148.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.1/66.1 MB</span> <span class=" -Color -Color-Red">82.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━ <span class=" -Color -Color-Green">60.8/66.1 MB</span> <span class=" -Color -Color-Red">87.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">70.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.1/66.1 MB</span> <span class=" -Color -Color-Red">133.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25hDownloading pytest-9.0.2-py3-none-any.whl (374 kB)
 Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pluggy, iniconfig, pytest, qc-grid
@@ -762,9 +751,6 @@ Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [qc-grid]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━ <span class=" -Color -Color-Green">3/4</span> [qc-grid]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/4</span> [qc-grid]
 ?25h
 Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.post1
@@ -774,40 +760,44 @@ Successfully installed iniconfig-2.3.0 pluggy-1.6.0 pytest-9.0.2 qc-grid-0.0.9.p
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading basis_set_exchange-0.12-py3-none-any.whl.metadata (6.7 kB)
+Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from basis_set_exchange) (4.26.0)
-Collecting argcomplete (from basis_set_exchange)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argcomplete (from basis_set_exchange)
   Downloading argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting regex (from basis_set_exchange)
+  Downloading regex-2026.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading regex-2026.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
-Collecting unidecode (from basis_set_exchange)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting unidecode (from basis_set_exchange)
+  Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
 Requirement already satisfied: attrs&gt;=22.2.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (26.1.0)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (2025.9.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.37.0)
 Requirement already satisfied: rpds-py&gt;=0.25.0 in /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages (from jsonschema-&gt;basis_set_exchange) (0.30.0)
-Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading basis_set_exchange-0.12-py3-none-any.whl (40.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/40.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.0/40.1 MB</span> <span class=" -Color -Color-Red">39.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.8/40.1 MB</span> <span class=" -Color -Color-Red">100.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">121.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">40.1/40.1 MB</span> <span class=" -Color -Color-Red">114.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading regex-2026.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
+Downloading regex-2026.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (800 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/800.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.6/800.6 kB</span> <span class=" -Color -Color-Red">163.0 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">800.6/800.6 kB</span> <span class=" -Color -Color-Red">151.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: unidecode, regex, argcomplete, basis_set_exchange
@@ -857,7 +847,7 @@ Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.4.4 
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/561.1 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">7.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.1/561.1 kB</span> <span class=" -Color -Color-Red">7.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1742,42 +1732,56 @@ Successfully installed argcomplete-3.6.3 basis_set_exchange-0.12 regex-2026.4.4 
 </section>
 <section id="secular-equations">
 <h2>Secular Equations<a class="headerlink" href="#secular-equations" title="Link to this heading">#</a></h2>
-<p>Given a set of basis functions <span class="math notranslate nohighlight">\(\{\chi_\lambda\}\)</span>, we can expand the molecular orbitals as linear combinations of the basis functions,
-$<span class="math notranslate nohighlight">\(\phi_p(\mathbf{r}) = \sum_\lambda c_{\lambda p} \chi_\lambda(\mathbf{r})\)</span><span class="math notranslate nohighlight">\(
-where \)</span>c_{\lambda p}<span class="math notranslate nohighlight">\( is the coefficient of the \)</span>\lambda<span class="math notranslate nohighlight">\(-th basis function in the expansion of the \)</span>p<span class="math notranslate nohighlight">\(-th molecular orbital. Substituting this expansion into the one-electron equations and projecting onto a basis function \)</span>\chi_\kappa<span class="math notranslate nohighlight">\(, we obtain the secular equations,
-\)</span><span class="math notranslate nohighlight">\(\sum_\lambda \left[ \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right) \chi_\lambda(\mathbf{r}) d\mathbf{r} \right] c_{\lambda p} = \epsilon_p \sum_\lambda \left[ \int \chi_\kappa^*(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r} \right] c_{\lambda p}\)</span><span class="math notranslate nohighlight">\(
-Defining the Hamiltonian matrix elements as
-\)</span><span class="math notranslate nohighlight">\(F_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right) \chi_\lambda(\mathbf{r}) d\mathbf{r}\)</span><span class="math notranslate nohighlight">\(
-and the overlap matrix elements as
-\)</span><span class="math notranslate nohighlight">\(S_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\)</span><span class="math notranslate nohighlight">\(
-the secular equations can be written in matrix form as
-\)</span><span class="math notranslate nohighlight">\(\mathbf{F} \mathbf{c}_p = \epsilon_p \mathbf{S} \mathbf{c}_p\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\mathbf{F}<span class="math notranslate nohighlight">\( is the Fock matrix, \)</span>\mathbf{S}<span class="math notranslate nohighlight">\( is the overlap matrix, and \)</span>\mathbf{c}_p<span class="math notranslate nohighlight">\( is the vector of coefficients for the \)</span>p<span class="math notranslate nohighlight">\(-th molecular orbital. This is a generalized eigenvalue problem that can be solved to obtain the molecular orbitals and their corresponding energies. Note that one needs to (usually) solve for the \)</span>\alpha<span class="math notranslate nohighlight">\(- and \)</span>\beta$-spin orbitals separately, which leads to separate Fock matrices for each spin.</p>
-<p>The Fock matrix is a sum of three parts, the kinetic energy matrix, the nuclear attraction matrix, and the average potential matrix,
-$<span class="math notranslate nohighlight">\(F_{\kappa \lambda} = T_{\kappa \lambda} + V_{\kappa \lambda} + W_{\kappa \lambda}\)</span><span class="math notranslate nohighlight">\(
-where
-\)</span><span class="math notranslate nohighlight">\(T_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2\right) \chi_\lambda(\mathbf{r}) d\mathbf{r}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(V_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) v(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(W_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \hat{w}[\{\phi_q\}](\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\)</span>$</p>
+<p>Given a set of basis functions <span class="math notranslate nohighlight">\(\{\chi_\lambda\}\)</span>, we can expand the molecular orbitals as linear combinations of the basis functions,</p>
+<div class="math notranslate nohighlight">
+\[\phi_p(\mathbf{r}) = \sum_\lambda c_{\lambda p} \chi_\lambda(\mathbf{r})\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_{\lambda p}\)</span> is the coefficient of the <span class="math notranslate nohighlight">\(\lambda\)</span>-th basis function in the expansion of the <span class="math notranslate nohighlight">\(p\)</span>-th molecular orbital. Substituting this expansion into the one-electron equations and projecting onto a basis function <span class="math notranslate nohighlight">\(\chi_\kappa\)</span>, we obtain the secular equations,</p>
+<div class="math notranslate nohighlight">
+\[\sum_\lambda \left[ \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right) \chi_\lambda(\mathbf{r}) d\mathbf{r} \right] c_{\lambda p} = \epsilon_p \sum_\lambda \left[ \int \chi_\kappa^*(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r} \right] c_{\lambda p}\]</div>
+<p>Defining the Hamiltonian matrix elements as</p>
+<div class="math notranslate nohighlight">
+\[F_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2 + v(\mathbf{r}) + \hat{w}[\{\phi_q\}](\mathbf{r})\right) \chi_\lambda(\mathbf{r}) d\mathbf{r}\]</div>
+<p>and the overlap matrix elements as</p>
+<div class="math notranslate nohighlight">
+\[S_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\]</div>
+<p>the secular equations can be written in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F} \mathbf{c}_p = \epsilon_p \mathbf{S} \mathbf{c}_p\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is the Fock matrix, <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> is the overlap matrix, and <span class="math notranslate nohighlight">\(\mathbf{c}_p\)</span> is the vector of coefficients for the <span class="math notranslate nohighlight">\(p\)</span>-th molecular orbital. This is a generalized eigenvalue problem that can be solved to obtain the molecular orbitals and their corresponding energies. Note that one needs to (usually) solve for the <span class="math notranslate nohighlight">\(\alpha\)</span>- and <span class="math notranslate nohighlight">\(\beta\)</span>-spin orbitals separately, which leads to separate Fock matrices for each spin.</p>
+<p>The Fock matrix is a sum of three parts, the kinetic energy matrix, the nuclear attraction matrix, and the average potential matrix,</p>
+<div class="math notranslate nohighlight">
+\[F_{\kappa \lambda} = T_{\kappa \lambda} + V_{\kappa \lambda} + W_{\kappa \lambda}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[T_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \left(-\frac{1}{2} \nabla^2\right) \chi_\lambda(\mathbf{r}) d\mathbf{r}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) v(\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\]</div>
+<div class="math notranslate nohighlight">
+\[W_{\kappa \lambda} = \int \chi_\kappa^*(\mathbf{r}) \hat{w}[\{\phi_q\}](\mathbf{r}) \chi_\lambda(\mathbf{r}) d\mathbf{r}\]</div>
 </section>
 <section id="density-matrices">
 <h2>Density Matrices<a class="headerlink" href="#density-matrices" title="Link to this heading">#</a></h2>
-<p>These formulae are most simply expressed in the language of density matrices. The one-electron reduced density matrix is defined as
-$<span class="math notranslate nohighlight">\(
+<p>These formulae are most simply expressed in the language of density matrices. The one-electron reduced density matrix is defined as</p>
+<div class="math notranslate nohighlight">
+\[
 \gamma(\mathbf{r}, \mathbf{r}') = \sum_{i=1}^K n_p \phi_p(\mathbf{r}) \phi_p^*(\mathbf{r}')
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>n_p<span class="math notranslate nohighlight">\( is the occupation number of the \)</span>p<span class="math notranslate nohighlight">\(-th molecular orbital. The electron density can be obtained from the density matrix by evaluating it at \)</span>\mathbf{r} = \mathbf{r}’<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(\rho(\mathbf{r}) = \gamma(\mathbf{r}, \mathbf{r}) = \sum_{i=1}^K n_p |\phi_p(\mathbf{r})|^2\)</span>$</p>
-<p>In terms of atomic orbitals, the density matrix can be expressed as
-$<span class="math notranslate nohighlight">\(\gamma(\mathbf{r}, \mathbf{r}') = \sum_{p=1}^K n_p c_{\kappa p}^* c_{\lambda p}^* \chi_{\kappa}^*(\mathbf{r}') \chi_{\lambda}(\mathbf{r})\)</span><span class="math notranslate nohighlight">\(
-The quantity 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_p\)</span> is the occupation number of the <span class="math notranslate nohighlight">\(p\)</span>-th molecular orbital. The electron density can be obtained from the density matrix by evaluating it at <span class="math notranslate nohighlight">\(\mathbf{r} = \mathbf{r}'\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\rho(\mathbf{r}) = \gamma(\mathbf{r}, \mathbf{r}) = \sum_{i=1}^K n_p |\phi_p(\mathbf{r})|^2\]</div>
+<p>In terms of atomic orbitals, the density matrix can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\gamma(\mathbf{r}, \mathbf{r}') = \sum_{p=1}^K n_p c_{\kappa p}^* c_{\lambda p}^* \chi_{\kappa}^*(\mathbf{r}') \chi_{\lambda}(\mathbf{r})\]</div>
+<p>The quantity</p>
+<div class="math notranslate nohighlight">
+\[
 D_{\kappa \lambda} = \sum_{p=1}^K n_p c_{\kappa p}^* c_{\lambda p}
-\)</span><span class="math notranslate nohighlight">\( 
-is known as the density matrix (in the atomic orbital basis). The density matrix is normalized by its relation to the total electron number, 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>is known as the density matrix (in the atomic orbital basis). The density matrix is normalized by its relation to the total electron number,</p>
+<div class="math notranslate nohighlight">
+\[
 \sum_{\kappa \lambda} D_{\kappa \lambda}S_{\kappa \lambda} = \iint \gamma(\mathbf{r}, \mathbf{r}') \delta(\mathbf{r} - \mathbf{r}') d\mathbf{r} d\mathbf{r}' = \sum_{\kappa,\lambda}\sum_{p=1}^K n_p c_{\kappa p}^* c_{\lambda p} S_{\kappa \lambda} = N
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -3533,15 +3537,16 @@ Final eigenvalues (orbital energies): [[-13.42794989 -13.42794989]
 </div>
 <section id="energy-computation">
 <h3>Energy Computation<a class="headerlink" href="#energy-computation" title="Link to this heading">#</a></h3>
-<p>After the SCF procedure has converged, we can compute the total electronic energy. If the electrons moved independently in the average potential, then the total energy would simply be the sum of the orbital energies. However, this <em>double counts</em> the electron-electron repulsion energy: each electron interacts with <span class="math notranslate nohighlight">\(N-1\)</span> other electrons, so summing over all the electrons counts each electron-electron interaction twice. We can correct for this by subtracting the spurious interaction terms from the sum of orbital energies or just directly compute the energy from the relevant terms in the Hamiltonian. I.e.,
-$<span class="math notranslate nohighlight">\(
+<p>After the SCF procedure has converged, we can compute the total electronic energy. If the electrons moved independently in the average potential, then the total energy would simply be the sum of the orbital energies. However, this <em>double counts</em> the electron-electron repulsion energy: each electron interacts with <span class="math notranslate nohighlight">\(N-1\)</span> other electrons, so summing over all the electrons counts each electron-electron interaction twice. We can correct for this by subtracting the spurious interaction terms from the sum of orbital energies or just directly compute the energy from the relevant terms in the Hamiltonian. I.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{split}
 E_{\text{Hartree}} &amp;= \operatorname{Tr}[\hat{h}_{\text{core}}(D_\alpha + D_\beta)] + \tfrac{1}{2} \operatorname{Tr}[(D_\alpha + D_\beta)(J_\alpha + J_\beta)]\\
 E_{\text{Fermi-Amaldi}} &amp;= E_{\text{Hartree}} - \left( \tfrac{1}{N_{\alpha}} \operatorname{Tr}[D_\alpha J_\alpha] - \tfrac{1}{N_{\beta}} \operatorname{Tr}[D_\beta J_\beta] \right)\\
 E_{\text{LSDA}} &amp;= E_{\text{Hartree}} + \tfrac{4}{3}\int \rho(\mathbf{r}) v_{\text{xc}}(\mathbf{r}) d\mathbf{r}\\
 E_{\text{HF}} &amp;= E_{\text{Hartree}} - \frac{1}{2} \operatorname{Tr}[D_\alpha K_\alpha + D_\beta K_\beta]
 \end{split}
-\)</span>$</p>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_total_energy</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">h_core</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">density_matrix</span><span class="p">,</span> <span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">ao_basis</span><span class="p">,</span> <span class="n">calc_type</span><span class="o">=</span><span class="s1">&#39;hartree&#39;</span><span class="p">):</span>
@@ -3606,13 +3611,12 @@ E_{\text{HF}} &amp;= E_{\text{Hartree}} - \frac{1}{2} \operatorname{Tr}[D_\alpha
 </section>
 <section id="electron-correlation">
 <h2>Electron Correlation<a class="headerlink" href="#electron-correlation" title="Link to this heading">#</a></h2>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="we-can-approximate-the-effects-of-electron-correlation-by-using-either-the-variational-principle-or-perturbation-theory-in-the-variational-approach-we-use-a-linear-combination-of-the-slater-determinants-that-diagonalize-the-average-potential-approximation-in-perturbation-theory-we-consider-the-difference-between-the-exact-hamiltonian-and-the-average-potential-hamiltonian-as-a-perturbation-and-compute-corrections-to-the-energy-and-wavefunction-order-by-order-in-perturbation-theory-the-simplest-perturbative-correction-is-the-moller-plesset-second-order-mp2-correction-which-accounts-for-the-missing-correlation-energy-in-hartree-fock-theory-e-mathrm-mp2-mathrm-uhf">
-<h1><span class="section-number">13. </span>We can approximate the effects of electron correlation by using either the variational principle or perturbation theory. In the variational approach, we use a linear combination of the Slater determinants that diagonalize the average-potential approximation. In perturbation theory, we consider the difference between the exact Hamiltonian and the average-potential Hamiltonian as a perturbation and compute corrections to the energy and wavefunction order by order in perturbation theory. The simplest perturbative correction is the Møller-Plesset second-order (MP2) correction, which accounts for the missing correlation energy in Hartree-Fock theory.
-$$
-E_{\mathrm{MP2}}^{\mathrm{UHF}}<a class="headerlink" href="#we-can-approximate-the-effects-of-electron-correlation-by-using-either-the-variational-principle-or-perturbation-theory-in-the-variational-approach-we-use-a-linear-combination-of-the-slater-determinants-that-diagonalize-the-average-potential-approximation-in-perturbation-theory-we-consider-the-difference-between-the-exact-hamiltonian-and-the-average-potential-hamiltonian-as-a-perturbation-and-compute-corrections-to-the-energy-and-wavefunction-order-by-order-in-perturbation-theory-the-simplest-perturbative-correction-is-the-moller-plesset-second-order-mp2-correction-which-accounts-for-the-missing-correlation-energy-in-hartree-fock-theory-e-mathrm-mp2-mathrm-uhf" title="Link to this heading">#</a></h1>
-<p>\frac{1}{2}
+<p>We can approximate the effects of electron correlation by using either the variational principle or perturbation theory. In the variational approach, we use a linear combination of the Slater determinants that diagonalize the average-potential approximation. In perturbation theory, we consider the difference between the exact Hamiltonian and the average-potential Hamiltonian as a perturbation and compute corrections to the energy and wavefunction order by order in perturbation theory. The simplest perturbative correction is the Møller-Plesset second-order (MP2) correction, which accounts for the missing correlation energy in Hartree-Fock theory.</p>
+<div class="math notranslate nohighlight">
+\[
+E_{\mathrm{MP2}}^{\mathrm{UHF}}
+=
+\frac{1}{2}
 \sum_{iajb}
 \frac{(ia|jb)\left[(ia|jb)-(ib|ja)\right]}
 {\epsilon_i^\alpha+\epsilon_j^\alpha-\epsilon_a^\alpha-\epsilon_b^\alpha}
@@ -3625,8 +3629,8 @@ E_{\mathrm{MP2}}^{\mathrm{UHF}}<a class="headerlink" href="#we-can-approximate-t
 \sum_{iaJB}
 \frac{(ia|JB)^2}
 {\epsilon_i^\alpha+\epsilon_J^\beta-\epsilon_a^\alpha-\epsilon_B^\beta}.
-$$
-where the integrals are written in the molecular-orbital basis.</p>
+\]</div>
+<p>where the integrals are written in the molecular-orbital basis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ump2_energy</span><span class="p">(</span><span class="n">eps_a</span><span class="p">,</span> <span class="n">eps_b</span><span class="p">,</span> <span class="n">c_a</span><span class="p">,</span> <span class="n">c_b</span><span class="p">,</span> <span class="n">eri_ao</span><span class="p">,</span> <span class="n">nalpha</span><span class="p">,</span> <span class="n">nbeta</span><span class="p">):</span>
@@ -3776,6 +3780,7 @@ UMP2 correlation energy: -0.03539395957358995
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3843,7 +3848,6 @@ UMP2 correlation energy: -0.03539395957358995
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13. Self-Consistent Field Methods</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-complete-the-below-notebook">👩🏽‍💻 Assignment: Complete the Below Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-of-mean-field-average-potential-methods">Motivation of Mean-Field (Average Potential) Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-potential-models">Average Potential Models</a><ul class="nav section-nav flex-column">
@@ -3864,12 +3868,6 @@ UMP2 correlation energy: -0.03539395957358995
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-correlation">Electron Correlation</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-approximate-the-effects-of-electron-correlation-by-using-either-the-variational-principle-or-perturbation-theory-in-the-variational-approach-we-use-a-linear-combination-of-the-slater-determinants-that-diagonalize-the-average-potential-approximation-in-perturbation-theory-we-consider-the-difference-between-the-exact-hamiltonian-and-the-average-potential-hamiltonian-as-a-perturbation-and-compute-corrections-to-the-energy-and-wavefunction-order-by-order-in-perturbation-theory-the-simplest-perturbative-correction-is-the-moller-plesset-second-order-mp2-correction-which-accounts-for-the-missing-correlation-energy-in-hartree-fock-theory-e-mathrm-mp2-mathrm-uhf">13. We can approximate the effects of electron correlation by using either the variational principle or perturbation theory. In the variational approach, we use a linear combination of the Slater determinants that diagonalize the average-potential approximation. In perturbation theory, we consider the difference between the exact Hamiltonian and the average-potential Hamiltonian as a perturbation and compute corrections to the energy and wavefunction order by order in perturbation theory. The simplest perturbative correction is the Møller-Plesset second-order (MP2) correction, which accounts for the missing correlation energy in Hartree-Fock theory.
-$$
-E_{\mathrm{MP2}}^{\mathrm{UHF}}</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
